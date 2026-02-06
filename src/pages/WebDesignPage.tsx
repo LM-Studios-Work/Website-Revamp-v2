@@ -2,25 +2,27 @@ export const WebDesignPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative box-border caret-transparent pt-64 pb-10 md:pb-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
-          <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
+      <section className="relative flex flex-col justify-center items-center min-h-[70vh] pt-40 pb-16 px-6">
+        <div className="max-w-[900px] w-full text-center">
+          <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
             Web Design
-            <svg
-              className="inline-block ml-4 w-[120px] h-[20px] md:w-[200px] md:h-[30px]"
-              viewBox="0 0 200 30"
-            >
-              <path
-                d="M 0 15 Q 50 5, 100 15 T 200 15"
-                stroke="#d4ff00"
-                strokeWidth="3"
-                fill="none"
-              />
-            </svg>
           </h1>
-        </div>
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
-          <p className="box-border caret-transparent text-center mt-6 mb-8">
+          <svg
+            className="mx-auto mb-12 w-[200px] h-[18px]"
+            viewBox="0 0 400 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
+              stroke="#d4ff00"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed">
             We design and develop user-friendly websites using the Odoo
             framework, offering both standard features or custom solutions to
             meet your needs. Whether you opt for a simple setup with built-in
@@ -84,91 +86,104 @@ export const WebDesignPage = () => {
         </div>
       </section>
 
+      {/* Standard Pack Section */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div className="md:w-1/2">
+              <div className="mb-6">
+                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                  <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+                    Standard Pack
+                  </span>
+                  <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#67e8f9] text-[#67e8f9] px-4 py-2 rounded-full">
+                    25h min.
+                  </span>
+                </h2>
+              </div>
+              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+                No-fuss web design for your business
+              </h3>
+              <p className="text-lg text-white/80 leading-relaxed">
+                Our Standard Pack is designed for{" "}
+                <strong className="font-semibold text-white">
+                  small projects that prioritize simplicity and efficiency
+                </strong>
+                . Built exclusively with Odoo's Website Builder, standard
+                options, and Bootstrap variables, it's perfect for clients who
+                need a clean, functional website{" "}
+                <strong className="font-semibold text-white">
+                  without customizations
+                </strong>
+                .
+              </p>
+            </div>
+            <div className="md:w-1/2">
+              <div className="relative rounded-2xl overflow-hidden">
+                <img
+                  src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
+                  alt="Team working on web design projects"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Process Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
-          <div className="items-start box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] mb-12 md:w-5/12">
-              <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-6 font-obviously md:text-[64px] md:leading-[76.8px]">
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
+            <div className="md:w-5/12 shrink-0">
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                 Our{" "}
-                <span className="[text-shadow:_-1px_-1px_0_#fff,_1px_-1px_0_#fff,_-1px_1px_0_#fff,_1px_1px_0_#fff] text-transparent">
+                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
                   process
                 </span>
               </h2>
-              <p className="box-border caret-transparent text-lg mb-8">
+              <p className="text-lg text-white/70 leading-relaxed">
                 From concept to launch, we craft user-friendly, visually
                 striking websites tailored to your brand.
               </p>
-              <div className="box-border caret-transparent flex gap-4">
-                <button className="bg-[#d4ff00] text-black box-border caret-transparent w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#c4ef00] transition-colors">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </button>
-                <button className="bg-[#d4ff00] text-black box-border caret-transparent w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#c4ef00] transition-colors">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
             </div>
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] md:w-7/12">
-              <div className="box-border caret-transparent flex gap-6 overflow-x-auto pb-4">
-                <div className="backdrop-blur-[3px] bg-[#e9d5ff] text-black box-border caret-transparent min-w-[320px] p-8 rounded-[20px] flex-shrink-0">
-                  <div className="box-border caret-transparent text-sm font-medium mb-4 opacity-60">
+            <div className="md:w-7/12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     1
                   </div>
-                  <h3 className="text-[28px] font-semibold box-border caret-transparent leading-[33.6px] mb-4 font-obviously">
+                  <h3 className="text-2xl font-bold leading-tight mb-4">
                     Kick off meeting
                   </h3>
-                  <p className="box-border caret-transparent text-base leading-relaxed">
+                  <p className="text-sm leading-relaxed text-black/80">
                     Let's start your project by aligning on your website
                     objectives with your dedicated designer.
                   </p>
                 </div>
-                <div className="backdrop-blur-[3px] bg-[#d4ff00] text-black box-border caret-transparent min-w-[320px] p-8 rounded-[20px] flex-shrink-0">
-                  <div className="box-border caret-transparent text-sm font-medium mb-4 opacity-60">
+                <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     2
                   </div>
-                  <h3 className="text-[28px] font-semibold box-border caret-transparent leading-[33.6px] mb-4 font-obviously">
+                  <h3 className="text-2xl font-bold leading-tight mb-4">
                     Sitemap
                   </h3>
-                  <p className="box-border caret-transparent text-base leading-relaxed">
+                  <p className="text-sm leading-relaxed text-black/80">
                     We create a structured blueprint that maps your website's
                     pages and their relationships.
                   </p>
                 </div>
-                <div className="backdrop-blur-[3px] bg-[#6ee7b7] text-black box-border caret-transparent min-w-[320px] p-8 rounded-[20px] flex-shrink-0">
-                  <div className="box-border caret-transparent text-sm font-medium mb-4 opacity-60">
+                <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     3
                   </div>
-                  <h3 className="text-[28px] font-semibold box-border caret-transparent leading-[33.6px] mb-4 font-obviously">
+                  <h3 className="text-2xl font-bold leading-tight mb-4">
                     Wireframes
-                    <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-black/30 ml-2 px-3 py-2 rounded-[800px] border-2 border-solid">
+                    <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
                       Custom Pack only
                     </span>
                   </h3>
-                  <p className="box-border caret-transparent text-base leading-relaxed">
+                  <p className="text-sm leading-relaxed text-black/80">
                     Wireframes outline layout and functionality, providing a
                     clear, ready page structure.
                   </p>
@@ -310,6 +325,71 @@ export const WebDesignPage = () => {
                   </svg>
                 </span>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Your website is in good hands */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="relative mb-12 md:mb-20">
+            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
+              Your website is
+              <br />
+              in{" "}
+              <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+                good hands
+              </span>
+            </h2>
+            <div className="absolute hidden md:flex flex-col items-center -top-14 right-6 z-10">
+              <p className="text-xl text-white font-caveat -rotate-12 leading-tight text-center mb-0.5">
+                We do SEO
+                <br />
+                as well
+              </p>
+              <svg className="w-4 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 16 32" strokeWidth={1.2}>
+                <path d="M8 2C6 8 10 14 8 20C7 23 9 26 8 30" strokeLinecap="round" />
+                <path d="M5 25C7 28 8 30 8 30C8 30 9 28 11 25" strokeLinecap="round" />
+              </svg>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
+              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
+                1
+              </div>
+              <h3 className="text-2xl font-bold leading-tight mb-4">
+                Experienced designers
+              </h3>
+              <p className="text-base leading-relaxed text-black/80">
+                We have high-end designers ready to conceive stunning designs
+                matching your brand style.
+              </p>
+            </div>
+            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
+              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
+                2
+              </div>
+              <h3 className="text-2xl font-bold leading-tight mb-4">
+                eCommerce experts
+              </h3>
+              <p className="text-base leading-relaxed text-black/80">
+                Our functional consultants can help you setting-up all your
+                products in your eCommerce.
+              </p>
+            </div>
+            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
+              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
+                3
+              </div>
+              <h3 className="text-2xl font-bold leading-tight mb-4">
+                Front-end developers
+              </h3>
+              <p className="text-base leading-relaxed text-black/80">
+                Our front-end developers implement tailor-made features to take
+                your website to the next level.
+              </p>
             </div>
           </div>
         </div>

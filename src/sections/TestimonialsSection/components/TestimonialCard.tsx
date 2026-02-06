@@ -7,25 +7,25 @@ export type TestimonialCardProps = {
 
 export const TestimonialCard = (props: TestimonialCardProps) => {
   return (
-    <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4">
-      <div className="relative backdrop-blur-[3px] bg-white/10 box-border caret-transparent flex flex-col h-full break-words overflow-hidden rounded-[20px]">
-        <div className="items-center box-border caret-transparent flex min-h-[150px] break-words pt-8 px-8 rounded-t-[20px]">
+    <div className="w-full px-3 py-2 md:w-1/2 md:py-3">
+      <div className="bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5">
+        <div className="flex items-center pt-6 px-6">
           <img
             src={props.imageUrl}
             alt={props.name}
-            className="box-border caret-transparent max-w-full min-h-px break-words mr-4 rounded-[800px]"
+            className="w-12 h-12 rounded-full object-cover mr-4"
           />
-          <div className="box-border caret-transparent flex flex-col break-words">
-            <span className="text-xl font-semibold box-border caret-transparent block leading-9 break-words">
+          <div className="flex flex-col">
+            <span className="text-lg font-semibold text-white">
               {props.name}
             </span>
-            <span className="text-base box-border caret-transparent block leading-[28.8px] opacity-75 break-words">
+            <span className="text-sm text-white/60">
               {props.title}
             </span>
           </div>
         </div>
-        <div className="box-border caret-transparent grow break-words p-8 rounded-b-[20px]">
-          <p className="box-border caret-transparent break-words">
+        <div className="grow p-6">
+          <p className="text-white/70 text-sm leading-relaxed">
             {props.testimonial}
           </p>
         </div>

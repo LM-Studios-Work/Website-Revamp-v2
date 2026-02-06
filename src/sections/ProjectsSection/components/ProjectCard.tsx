@@ -1,7 +1,6 @@
 export type ProjectCardProps = {
   imageUrl: string;
   imageAlt: string;
-  clockIconUrl: string;
   timeText: string;
   title: string;
   tags: Array<{
@@ -10,55 +9,52 @@ export type ProjectCardProps = {
   }>;
   description: string;
   discoverMoreUrl: string;
-  discoverMoreIconUrl: string;
 };
 
 export const ProjectCard = (props: ProjectCardProps) => {
   return (
-    <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-4/12 md:py-4">
-      <div className="relative backdrop-blur-[3px] bg-white/10 box-border caret-transparent flex flex-col h-full break-words overflow-hidden rounded-[20px]">
-        <div className="relative aspect-video bg-black/0 box-border caret-transparent break-words overflow-hidden rounded-t-[20px]">
+    <div className="shrink-0 w-full px-3 py-2 md:w-1/3 md:py-4">
+      <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
           <img
             src={props.imageUrl}
             alt={props.imageAlt}
-            className="absolute box-border caret-transparent h-full object-cover opacity-80 break-words translate-x-[-50.0%] translate-y-[-50.0%] w-full rounded-t-[20px] left-2/4 top-2/4"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
-        <div className="box-border caret-transparent grow break-words p-8">
-          <span className="text-teal-300 text-base box-border caret-transparent flex leading-[28.8px] break-words">
-            <img
-              src={props.clockIconUrl}
-              alt="Clock icon"
-              className="box-border caret-transparent max-w-full break-words mr-2"
-            />
+        <div className="grow p-6">
+          <div className="flex items-center text-teal-300 text-sm mb-2">
+            <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+              <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
+            </svg>
             {props.timeText}
-          </span>
-          <h3 className="text-[23.05px] font-medium box-border caret-transparent leading-[27.66px] break-words mt-2 mb-1 md:text-[28px] md:leading-[33.6px]">
+          </div>
+          <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
             {props.title}
           </h3>
-          <ul className="box-border caret-transparent list-none break-words mb-4 pl-0 py-4">
+          <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
             {props.tags.map((tag, index) => (
               <li key={index} className={tag.className}>
                 {tag.text}
               </li>
             ))}
           </ul>
-          <p className="box-border caret-transparent opacity-75 break-words">
+          <p className="text-white/60 text-sm leading-relaxed line-clamp-3">
             {props.description}
           </p>
         </div>
-        <div className="box-border caret-transparent break-words pb-8 px-8 rounded-b-[20px]">
+        <div className="px-6 pb-6">
           <a
-            role="button"
             href={props.discoverMoreUrl}
-            className="text-sm font-normal box-border caret-transparent leading-[25.2px] break-words md:text-base md:font-semibold md:leading-[28.8px] after:accent-auto after:box-border after:caret-transparent after:text-white after:block after:text-sm after:not-italic after:normal-nums after:font-normal after:tracking-[normal] after:leading-[25.2px] after:list-outside after:list-disc after:break-words after:pointer-events-auto after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:z-[1] after:border-separate after:inset-0 after:font-inter after:md:text-base after:md:font-semibold after:md:leading-[28.8px] hover:text-purple-400 hover:border-purple-400"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors"
           >
-            <img
-              src={props.discoverMoreIconUrl}
-              alt="Icon"
-              className="relative text-sm font-normal bg-[#a1ff0a] box-border caret-transparent h-[30px] leading-[25.2px] -rotate-45 w-[30px] mr-2.5 p-[9.6px] rounded-[50%] top-0 md:text-base md:font-semibold md:h-[50px] md:leading-[28.8px] md:w-[50px] md:p-[18.4px]"
-            />{" "}
-            Discover more{" "}
+            <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
+              <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+            Discover more
           </a>
         </div>
       </div>

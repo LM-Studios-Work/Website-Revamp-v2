@@ -2,9 +2,9 @@ export const NavbarLogo = () => {
   return (
     <a
       href="/"
-      className="text-neutral-900 text-2xl box-border caret-transparent block shrink-0 leading-[normal] max-w-[75%] text-nowrap hover:text-black hover:border-black font-bold"
+      className="text-white text-2xl block shrink-0 leading-none text-nowrap font-bold tracking-tight"
     >
-      LM Studios
+      <span className="font-sans font-bold">LM Studios</span>
     </a>
   );
 };
