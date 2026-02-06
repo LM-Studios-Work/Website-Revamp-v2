@@ -5,17 +5,18 @@ export const HeroHeading = () => {
         <span className="relative inline-block">
           LM Studios
           <svg
-            className="absolute -bottom-1 left-0 w-full h-[14px]"
-            viewBox="0 0 300 14"
+            className="absolute -bottom-2 left-0 w-full h-[18px]"
+            viewBox="0 0 400 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
             <path
-              d="M2 7C10 3 18 11 26 7C34 3 42 11 50 7C58 3 66 11 74 7C82 3 90 11 98 7C106 3 114 11 122 7C130 3 138 11 146 7C154 3 162 11 170 7C178 3 186 11 194 7C202 3 210 11 218 7C226 3 234 11 242 7C250 3 258 11 266 7C274 3 282 11 290 7C298 3"
+              d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
               stroke="#d4ff00"
-              strokeWidth="2.5"
+              strokeWidth="3"
               strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </span>
