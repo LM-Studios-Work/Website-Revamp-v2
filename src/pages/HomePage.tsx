@@ -1,5 +1,4 @@
 import { Hero } from "@/sections/Hero";
-import { SocialSidebar } from "@/components/SocialSidebar";
 import { LatestProjectsHeader } from "@/sections/ProjectsSection/components/LatestProjectsHeader";
 import { ProjectsGrid } from "@/sections/ProjectsSection/components/ProjectsGrid";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
@@ -12,7 +11,6 @@ export const HomePage = () => {
   return (
     <>
       <Hero />
-      <SocialSidebar />
       <LatestProjectsHeader />
       <ProjectsGrid />
       <ServicesMarquee

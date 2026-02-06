@@ -1,6 +1,6 @@
 export const SocialSidebar = () => {
   return (
-    <aside className="fixed right-6 top-1/2 -translate-y-1/2 z-[999] hidden lg:flex flex-col items-center">
+    <aside className="absolute right-6 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center">
       <p className="text-sm text-white/60 tracking-widest uppercase mb-6 [writing-mode:vertical-lr] rotate-180">
         Follow us
       </p>
