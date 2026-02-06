@@ -1,11 +1,25 @@
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
+import { useState } from "react";
 
 export const AboutPage = () => {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[70vh] pt-40 pb-20 px-6">
-        <div className="text-center max-w-[900px] mx-auto mb-16">
+      <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          {!videoError ? (
+            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          )}
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        </div>
+        <div className="relative z-10 text-center max-w-[900px] mx-auto mb-16">
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             <span className="relative inline-block">
               About us
@@ -29,10 +43,10 @@ export const AboutPage = () => {
         </div>
 
         {/* Two Column Text */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px] mx-auto text-white/80 leading-relaxed">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px] mx-auto text-white/80 leading-relaxed">
           <p className="text-base md:text-lg">
             Founded in 2021, our Web Design Service has become the cornerstone of
-            Odoo's web agency, delivering exceptional digital solutions tailored to our
+            LM Studios' web agency, delivering exceptional digital solutions tailored to our
             clients' needs. Our team is composed of seasoned professionals with
             expertise spanning digital agencies, SaaS providers, and freelance design,
             bringing a wealth of knowledge and creativity to every project. Before any
@@ -84,8 +98,8 @@ export const AboutPage = () => {
               </div>
               <h3 className="text-3xl font-bold mb-4">Simplicity</h3>
               <p className="text-base leading-relaxed text-black/90">
-                Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on Odoo
-                based, user-friendly experiences that make navigation seamless and content impactful.
+                Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on
+                clean, user-friendly experiences that make navigation seamless and content impactful.
               </p>
             </div>
 

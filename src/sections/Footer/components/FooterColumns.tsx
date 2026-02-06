@@ -24,28 +24,20 @@ export const FooterColumns = () => {
         title="Offices"
         links={[
           {
-            href: "https://www.google.com/maps/dir//Rue du Laid Burniat 5",
-            text: "Belgium",
+            href: "https://www.google.com/maps/dir//Johannesburg, South Africa",
+            text: "Johannesburg",
           },
           {
-            href: "https://maps.app.goo.gl/rz4znQDZNZfxDLQt8",
-            text: "Buffalo",
+            href: "https://www.google.com/maps/dir//Cape Town, South Africa",
+            text: "Cape Town",
           },
           {
-            href: "https://www.google.com/maps/dir//Dubai south A5 building, 3rd Floor Building A5 - Dubai Logistics City - Dubai - United Arab Emirates",
-            text: "Dubaï",
+            href: "https://www.google.com/maps/dir//Durban, South Africa",
+            text: "Durban",
           },
           {
-            href: "https://www.google.com/maps/dir//401 & 402, Floor 4, IT Tower 3 InfoCity Gate, 1, Gandhinagar, Gujarat 382007, India",
-            text: "Gujarat",
-          },
-          {
-            href: "https://www.google.com/maps/dir//32 Connaught Rd W, Sai Wan, Hong Kong",
-            text: "Hong-Kong",
-          },
-          {
-            href: "https://www.google.com/maps/dir//Blvd. Miguel de Cervantes Saavedra 23, Granada, Miguel Hidalgo, 11520 Ciudad de México, CDMX, Mexico",
-            text: "Mexico",
+            href: "https://www.google.com/maps/dir//Pretoria, South Africa",
+            text: "Pretoria",
           },
         ]}
       />
@@ -53,17 +45,17 @@ export const FooterColumns = () => {
         title="Follow us"
         links={[
           {
-            href: "https://www.behance.net/odoo-designer",
+            href: "https://www.behance.net/lm-studios",
             text: "Behance",
             title: "Behance",
           },
           {
-            href: "https://dribbble.com/OdooBe",
+            href: "https://dribbble.com/LMStudios",
             text: "Dribbble",
             title: "Dribbble",
           },
           {
-            href: "https://www.instagram.com/odoo.official/",
+            href: "https://www.instagram.com/lmstudios.official/",
             text: "Instagram",
             title: "Instagram",
           },

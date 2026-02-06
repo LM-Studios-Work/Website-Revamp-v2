@@ -1,9 +1,24 @@
+import { useState } from "react";
+
 export const WebDesignPage = () => {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-[70vh] pt-40 pb-16 px-6">
-        <div className="max-w-[900px] w-full text-center">
+      <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          {!videoError ? (
+            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          )}
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        </div>
+        <div className="relative z-10 max-w-[900px] w-full text-center">
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
             Web Design
           </h1>
@@ -23,8 +38,8 @@ export const WebDesignPage = () => {
             />
           </svg>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-            We design and develop user-friendly websites using the Odoo
-            framework, offering both standard features or custom solutions to
+            We design and develop user-friendly websites using modern
+            frameworks, offering both standard features or custom solutions to
             meet your needs. Whether you opt for a simple setup with built-in
             functionalities or a fully tailored design with unique features, our
             approach ensures an efficient solution that aligns perfectly with
@@ -53,7 +68,7 @@ export const WebDesignPage = () => {
               <div className="relative box-border caret-transparent h-full min-h-[400px] w-full overflow-hidden rounded-[20px]">
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
-                  alt="Odoo Web Design team in the office"
+                  alt="LM Studios Web Design team in the office"
                   className="absolute box-border caret-transparent h-full max-w-full object-cover translate-x-[-50.0%] translate-y-[-50.0%] w-full left-2/4 top-2/4"
                 />
               </div>
@@ -109,7 +124,7 @@ export const WebDesignPage = () => {
                 <strong className="font-semibold text-white">
                   small projects that prioritize simplicity and efficiency
                 </strong>
-                . Built exclusively with Odoo's Website Builder, standard
+                . Built exclusively with LM Studios' Website Builder, standard
                 options, and Bootstrap variables, it's perfect for clients who
                 need a clean, functional website{" "}
                 <strong className="font-semibold text-white">
@@ -227,6 +242,126 @@ export const WebDesignPage = () => {
               </a>
             </div>
           </div>
+          {/* Project Cards */}
+          <div className="flex flex-wrap -mx-3">
+            <div className="shrink-0 w-full px-3 py-2 md:w-1/3 md:py-4">
+              <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <img
+                    src="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024.jpg"
+                    alt="Penguin"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="grow p-6">
+                  <div className="flex items-center text-teal-300 text-sm mb-2">
+                    <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+                      <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
+                    </svg>
+                    50:00
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">Penguin</h3>
+                  <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#d4ff00] px-3 py-1.5 rounded-full border border-solid text-[#d4ff00]">Apparel</li>
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-purple-300 px-3 py-1.5 rounded-full border border-solid text-purple-300">Standard</li>
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-teal-300 px-3 py-1.5 rounded-full border border-solid text-teal-300">Website</li>
+                  </ul>
+                  <p className="text-white/60 text-sm leading-relaxed line-clamp-3">
+                    Founded over 20 years ago from a passion for freeriding, Penguin creates technically advanced, functional apparel designed for uncompromising performance in the powder.
+                  </p>
+                </div>
+                <div className="px-6 pb-6">
+                  <a href="/projects/21" className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors">
+                    <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
+                      <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                    Discover more
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="shrink-0 w-full px-3 py-2 md:w-1/3 md:py-4">
+              <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <img
+                    src="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-1.jpg"
+                    alt="Plugin Company"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="grow p-6">
+                  <div className="flex items-center text-teal-300 text-sm mb-2">
+                    <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+                      <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
+                    </svg>
+                    50:00
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">Plugin Company</h3>
+                  <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#d4ff00] px-3 py-1.5 rounded-full border border-solid text-[#d4ff00]">Energy</li>
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-purple-300 px-3 py-1.5 rounded-full border border-solid text-purple-300">Standard</li>
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-teal-300 px-3 py-1.5 rounded-full border border-solid text-teal-300">Website</li>
+                  </ul>
+                  <p className="text-white/60 text-sm leading-relaxed line-clamp-3">
+                    Pioneers in car charging in Belgium, Plugin company has been offering since 2009 personalised and reliable solutions to support businesses striving for sustainability.
+                  </p>
+                </div>
+                <div className="px-6 pb-6">
+                  <a href="/projects/18" className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors">
+                    <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
+                      <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                    Discover more
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="shrink-0 w-full px-3 py-2 md:w-1/3 md:py-4">
+              <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <img
+                    src="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-2.jpg"
+                    alt="Laboratoires PRED"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="grow p-6">
+                  <div className="flex items-center text-teal-300 text-sm mb-2">
+                    <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+                      <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
+                    </svg>
+                    250:00
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">Laboratoires PRED</h3>
+                  <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#d4ff00] px-3 py-1.5 rounded-full border border-solid text-[#d4ff00]">Health & Medical</li>
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-purple-300 px-3 py-1.5 rounded-full border border-solid text-purple-300">Custom</li>
+                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-teal-300 px-3 py-1.5 rounded-full border border-solid text-teal-300">Website</li>
+                  </ul>
+                  <p className="text-white/60 text-sm leading-relaxed line-clamp-3">
+                    Laboratoires PRED mission is to improve oral health and help practitioners offer patients their best smile by promoting minimally invasive, evidence-based dentistry.
+                  </p>
+                </div>
+                <div className="px-6 pb-6">
+                  <a href="/projects/17" className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors">
+                    <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
+                      <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                    Discover more
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -248,9 +383,9 @@ export const WebDesignPage = () => {
                 </h3>
               </div>
               <p className="box-border caret-transparent mb-8">
-                Odoo's Website app is growing in popularity, and many customers
+                LM Studios' web platform is growing in popularity, and many customers
                 seek to improve their SEO, whether starting fresh or migrating
-                to Odoo. Our team of experts provides{" "}
+                to our platform. Our team of experts provides{" "}
                 <strong className="font-semibold">
                   a tailored 25-hour SEO service
                 </strong>{" "}
@@ -258,7 +393,7 @@ export const WebDesignPage = () => {
                 better search engine rankings and maximum visibility.
               </p>
               <a
-                href="https://www.odoo.com/services/seo"
+                href="/services/seo"
                 className="text-sm font-normal bg-[#8b5cf6] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#8b5cf6] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-colors"
               >
                 More about SEO
@@ -305,7 +440,7 @@ export const WebDesignPage = () => {
                 that delivers measurable results.
               </p>
               <a
-                href="https://www.odoo.com/services/marketing"
+                href="/services/marketing"
                 className="text-sm font-normal bg-[#8b5cf6] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#8b5cf6] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-colors"
               >
                 More about marketing

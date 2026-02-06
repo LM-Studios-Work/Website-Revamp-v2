@@ -1,14 +1,29 @@
+import { useState } from "react";
+
 export const ContactPage = () => {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative box-border caret-transparent pt-64 pb-10 md:pb-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
+      <section className="relative box-border caret-transparent min-h-screen pt-64 pb-10 md:pb-20 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          {!videoError ? (
+            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          )}
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        </div>
+        <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
           <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
             Contact Us
           </h1>
         </div>
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
+        <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
           <p className="box-border caret-transparent text-center mt-6 mb-8">
             Ready to bring your vision to life? Get in touch with our team and
             let's discuss how we can help you create an exceptional web
@@ -118,10 +133,10 @@ export const ContactPage = () => {
                       Email
                     </p>
                     <a
-                      href="mailto:design@odoo.com"
+                      href="mailto:hello@lmstudios.co.za"
                       className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
                     >
-                      design@odoo.com
+                      hello@lmstudios.co.za
                     </a>
                   </div>
                   <div className="box-border caret-transparent">
@@ -129,10 +144,10 @@ export const ContactPage = () => {
                       Phone
                     </p>
                     <a
-                      href="tel:+3222903490"
+                      href="tel:+27100001234"
                       className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
                     >
-                      +32 2 290 34 90
+                      +27 10 000 1234
                     </a>
                   </div>
                 </div>
@@ -143,10 +158,10 @@ export const ContactPage = () => {
                   Main Office
                 </h3>
                 <p className="box-border caret-transparent opacity-75">
-                  Rue du Laid Burniat 5<br />
-                  1348 Louvain-la-Neuve
+                  Johannesburg<br />
+                  Gauteng
                   <br />
-                  Belgium
+                  South Africa
                 </p>
               </div>
 
@@ -156,7 +171,7 @@ export const ContactPage = () => {
                 </h3>
                 <div className="box-border caret-transparent flex gap-4">
                   <a
-                    href="https://www.behance.net/odoo-designer"
+                    href="https://www.behance.net/lm-studios"
                     className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -164,7 +179,7 @@ export const ContactPage = () => {
                     Behance
                   </a>
                   <a
-                    href="https://dribbble.com/OdooBe"
+                    href="https://dribbble.com/LMStudios"
                     className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -172,7 +187,7 @@ export const ContactPage = () => {
                     Dribbble
                   </a>
                   <a
-                    href="https://www.instagram.com/odoo.official/"
+                    href="https://www.instagram.com/lmstudios.official/"
                     className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
                     target="_blank"
                     rel="noopener noreferrer"

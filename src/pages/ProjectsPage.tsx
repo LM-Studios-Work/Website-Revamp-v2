@@ -5,12 +5,24 @@ export const ProjectsPage = () => {
   const [filterType, setFilterType] = useState("All");
   const [filterApp, setFilterApp] = useState("All");
   const [filterIndustry, setFilterIndustry] = useState("All");
+  const [videoError, setVideoError] = useState(false);
 
   return (
-    <div className="min-h-screen pt-32 pb-20">
+    <div className="min-h-screen pb-20">
       {/* Hero Section */}
-      <section className="relative px-6 pb-16 md:pb-24">
-        <div className="max-w-[1400px] w-full mx-auto">
+      <section className="relative min-h-screen px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          {!videoError ? (
+            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          )}
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        </div>
+        <div className="relative z-10 max-w-[1400px] w-full mx-auto">
           <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-tight text-white text-center mb-16">
             Dive into our{" "}
             <span className="relative inline-block">

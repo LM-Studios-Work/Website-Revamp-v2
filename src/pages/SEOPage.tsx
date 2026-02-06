@@ -1,11 +1,25 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const SEOPage = () => {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-[70vh] pt-40 pb-16 px-6">
-        <div className="max-w-[900px] w-full text-center">
+      <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          {!videoError ? (
+            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          )}
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        </div>
+        <div className="relative z-10 max-w-[900px] w-full text-center">
           <p className="text-white/50 text-sm md:text-base uppercase tracking-widest mb-4">
             Data-Driven SEO Strategy
           </p>

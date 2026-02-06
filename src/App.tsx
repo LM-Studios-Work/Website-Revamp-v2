@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Header } from "@/sections/Header";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ParticleBackground } from "@/components/ParticleBackground";
 import { HomePage } from "@/pages/HomePage";
 import { AboutPage } from "@/pages/AboutPage";
 import { ProjectsPage } from "@/pages/ProjectsPage";
@@ -14,7 +15,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-        <div className="relative text-white text-base font-light bg-black h-full w-full overflow-hidden font-sans">
+        <div className="relative text-white text-base font-light h-full w-full overflow-hidden font-sans">
           <div className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full z-0">
           <Header />
           <main className="grow shrink-0">
@@ -104,53 +105,18 @@ export const App = () => {
                   </div>
                 </div>
               </section>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute box-border caret-transparent opacity-50 pointer-events-none w-[262.5px] z-[-3] right-0 bottom-0 md:w-[896px]"
-              >
-                <source
-                  src="/website_rogueone/static/src/videos/bottom.mp4"
-                  type="video/mp4"
-                  className="text-black text-base font-normal box-border caret-transparent leading-[normal] pointer-events-auto font-times_new_roman"
-                />
-                Your browser does not support the video tag.{" "}
-              </video>
             </div>
           </footer>
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="[mask-image:linear-gradient(to_top,rgba(0,0,0,0),rgb(0,0,0)_50%)] absolute box-border caret-transparent shrink-0 h-[1000px] object-cover opacity-65 pointer-events-none translate-x-[-50.0%] w-screen z-[-3] left-2/4 top-0"
-          >
-            <source
-              src="/website_rogueone/static/src/videos/waves-loop.mp4"
-              type="video/mp4"
-              className="text-black text-base font-normal box-border caret-transparent leading-[normal] pointer-events-auto font-times_new_roman"
-            />
-            Your browser does not support the video tag.{" "}
-          </video>
-          <div className="[mask-image:linear-gradient(rgba(0,0,0,0),rgb(0,0,0)_50%)] fixed box-border caret-transparent shrink-0 h-[1000px] w-screen z-[-2] inset-0">
-            <img
-              src="https://c.animaapp.com/mlaz3dsraozDAl/assets/image-1.png"
-              className="aspect-[auto_1280_/_1000] box-border caret-transparent h-full w-full"
-            />
-          </div>
-          <div className="fixed bg-[url('https://design.odoo.com/website_rogueone/static/src/img/content/img_grain.png')] bg-no-repeat bg-cover box-border caret-transparent shrink-0 h-[1000px] opacity-50 w-screen z-[-1] bg-center inset-0"></div>
         </div>
-        <div className="box-border caret-transparent">
-          <div className="box-border caret-transparent"></div>
-          <div className="box-border caret-transparent"></div>
-          <div className="absolute text-base box-border caret-transparent leading-[28.8px] z-[1055] left-[55px] right-4 top-[52.9px] md:left-[960px]"></div>
-          <div className="absolute box-border caret-transparent z-[1055] left-[55px] right-4 top-[52.9px] md:left-[960px]"></div>
-          <div className="absolute box-border caret-transparent h-full pointer-events-none w-full top-0">
-            <div className="items-end box-border caret-transparent flex flex-col max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]"></div>
-          </div>
+        {/* Background for sections below the hero */}
+        <div className="fixed box-border caret-transparent shrink-0 w-screen h-screen z-[-1] inset-0">
+          <img
+            src="/dark-background-solid.png"
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
+        <ParticleBackground />
       </div>
     </BrowserRouter>
   );
