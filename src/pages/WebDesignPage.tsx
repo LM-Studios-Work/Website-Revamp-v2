@@ -87,90 +87,58 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
-          <div className="items-start box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] mb-12 md:w-5/12">
-              <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-6 font-obviously md:text-[64px] md:leading-[76.8px]">
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
+            <div className="md:w-5/12 shrink-0">
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                 Our{" "}
-                <span className="[text-shadow:_-1px_-1px_0_#fff,_1px_-1px_0_#fff,_-1px_1px_0_#fff,_1px_1px_0_#fff] text-transparent">
+                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
                   process
                 </span>
               </h2>
-              <p className="box-border caret-transparent text-lg mb-8">
+              <p className="text-lg text-white/70 leading-relaxed">
                 From concept to launch, we craft user-friendly, visually
                 striking websites tailored to your brand.
               </p>
-              <div className="box-border caret-transparent flex gap-4">
-                <button className="bg-[#d4ff00] text-black box-border caret-transparent w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#c4ef00] transition-colors">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </button>
-                <button className="bg-[#d4ff00] text-black box-border caret-transparent w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#c4ef00] transition-colors">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
             </div>
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] md:w-7/12">
-              <div className="box-border caret-transparent flex gap-6 overflow-x-auto pb-4">
-                <div className="backdrop-blur-[3px] bg-[#e9d5ff] text-black box-border caret-transparent min-w-[320px] p-8 rounded-[20px] flex-shrink-0">
-                  <div className="box-border caret-transparent text-sm font-medium mb-4 opacity-60">
+            <div className="md:w-7/12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     1
                   </div>
-                  <h3 className="text-[28px] font-semibold box-border caret-transparent leading-[33.6px] mb-4 font-obviously">
+                  <h3 className="text-2xl font-bold leading-tight mb-4">
                     Kick off meeting
                   </h3>
-                  <p className="box-border caret-transparent text-base leading-relaxed">
+                  <p className="text-sm leading-relaxed text-black/80">
                     Let's start your project by aligning on your website
                     objectives with your dedicated designer.
                   </p>
                 </div>
-                <div className="backdrop-blur-[3px] bg-[#d4ff00] text-black box-border caret-transparent min-w-[320px] p-8 rounded-[20px] flex-shrink-0">
-                  <div className="box-border caret-transparent text-sm font-medium mb-4 opacity-60">
+                <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     2
                   </div>
-                  <h3 className="text-[28px] font-semibold box-border caret-transparent leading-[33.6px] mb-4 font-obviously">
+                  <h3 className="text-2xl font-bold leading-tight mb-4">
                     Sitemap
                   </h3>
-                  <p className="box-border caret-transparent text-base leading-relaxed">
+                  <p className="text-sm leading-relaxed text-black/80">
                     We create a structured blueprint that maps your website's
                     pages and their relationships.
                   </p>
                 </div>
-                <div className="backdrop-blur-[3px] bg-[#6ee7b7] text-black box-border caret-transparent min-w-[320px] p-8 rounded-[20px] flex-shrink-0">
-                  <div className="box-border caret-transparent text-sm font-medium mb-4 opacity-60">
+                <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     3
                   </div>
-                  <h3 className="text-[28px] font-semibold box-border caret-transparent leading-[33.6px] mb-4 font-obviously">
+                  <h3 className="text-2xl font-bold leading-tight mb-4">
                     Wireframes
-                    <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-black/30 ml-2 px-3 py-2 rounded-[800px] border-2 border-solid">
+                    <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
                       Custom Pack only
                     </span>
                   </h3>
-                  <p className="box-border caret-transparent text-base leading-relaxed">
+                  <p className="text-sm leading-relaxed text-black/80">
                     Wireframes outline layout and functionality, providing a
                     clear, ready page structure.
                   </p>
