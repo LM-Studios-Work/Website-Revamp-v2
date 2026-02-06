@@ -285,6 +285,71 @@ export const WebDesignPage = () => {
         </div>
       </section>
 
+      {/* Your website is in good hands */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="relative mb-12 md:mb-20">
+            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
+              Your website is
+              <br />
+              in{" "}
+              <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+                good hands
+              </span>
+            </h2>
+            <div className="absolute hidden md:flex flex-col items-center -top-14 right-6 z-10">
+              <p className="text-xl text-white font-caveat -rotate-12 leading-tight text-center mb-0.5">
+                We do SEO
+                <br />
+                as well
+              </p>
+              <svg className="w-4 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 16 32" strokeWidth={1.2}>
+                <path d="M8 2C6 8 10 14 8 20C7 23 9 26 8 30" strokeLinecap="round" />
+                <path d="M5 25C7 28 8 30 8 30C8 30 9 28 11 25" strokeLinecap="round" />
+              </svg>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
+              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
+                1
+              </div>
+              <h3 className="text-2xl font-bold leading-tight mb-4">
+                Experienced designers
+              </h3>
+              <p className="text-base leading-relaxed text-black/80">
+                We have high-end designers ready to conceive stunning designs
+                matching your brand style.
+              </p>
+            </div>
+            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
+              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
+                2
+              </div>
+              <h3 className="text-2xl font-bold leading-tight mb-4">
+                eCommerce experts
+              </h3>
+              <p className="text-base leading-relaxed text-black/80">
+                Our functional consultants can help you setting-up all your
+                products in your eCommerce.
+              </p>
+            </div>
+            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
+              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
+                3
+              </div>
+              <h3 className="text-2xl font-bold leading-tight mb-4">
+                Front-end developers
+              </h3>
+              <p className="text-base leading-relaxed text-black/80">
+                Our front-end developers implement tailor-made features to take
+                your website to the next level.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative box-border caret-transparent py-10 md:py-20">
         <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
