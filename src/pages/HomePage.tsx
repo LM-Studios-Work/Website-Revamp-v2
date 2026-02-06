@@ -6,7 +6,7 @@ import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesM
 import { ServicesSection } from "@/sections/ServicesSection";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
-import { ClientLogos } from "@/sections/ClientLogos";
+import { FAQ } from "@/sections/FAQ";
 
 export const HomePage = () => {
   return (
@@ -24,6 +24,7 @@ export const HomePage = () => {
         variant="pb-16 md:pb-28"
         primaryText="Our services"
         secondaryText="What we do"
+        reverse
       />
       <ServicesSection />
       <TestimonialsHeader />
@@ -71,14 +72,15 @@ export const HomePage = () => {
                     Our functional consultants can help you setting-up all your
                     products in your eCommerce.
                   </p>
-                  <div className="absolute hidden md:flex flex-col items-center -top-12 right-4 z-10">
-                    <p className="text-sm text-white font-light italic -rotate-12 leading-tight text-center mb-1">
+                  <div className="absolute hidden md:flex flex-col items-center -top-14 right-6 z-10">
+                    <p className="text-xl text-white font-caveat -rotate-12 leading-tight text-center mb-0.5">
                       We do SEO
                       <br />
                       as well
                     </p>
-                    <svg className="w-3 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 12 24" strokeWidth={1.5}>
-                      <path d="M6 0v18M2 14l4 6 4-6" />
+                    <svg className="w-4 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 16 32" strokeWidth={1.2}>
+                      <path d="M8 2C6 8 10 14 8 20C7 23 9 26 8 30" strokeLinecap="round" />
+                      <path d="M5 25C7 28 8 30 8 30C8 30 9 28 11 25" strokeLinecap="round" />
                     </svg>
                   </div>
                 </div>
@@ -102,7 +104,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <ClientLogos />
+      <FAQ />
     </>
   );
 };
