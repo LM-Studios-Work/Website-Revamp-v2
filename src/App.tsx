@@ -7,6 +7,7 @@ import { ProjectsPage } from "@/pages/ProjectsPage";
 import { ServicesPage } from "@/pages/ServicesPage";
 import { ContactPage } from "@/pages/ContactPage";
 import { WebDesignPage } from "@/pages/WebDesignPage";
+import { SEOPage } from "@/pages/SEOPage";
 
 export const App = () => {
   return (
@@ -25,6 +26,10 @@ export const App = () => {
                 <Route
                   path="/services/web-design"
                   element={<WebDesignPage />}
+                />
+                <Route
+                  path="/services/seo"
+                  element={<SEOPage />}
                 />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
