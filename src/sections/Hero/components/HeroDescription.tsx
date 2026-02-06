@@ -1,26 +1,33 @@
+import { Link } from "react-router-dom";
+
 export const HeroDescription = () => {
   return (
-    <div
-      className="box-border caret-transparent shrink-0 max-w-full min-h-6 w-full ml-0 px-[15px] md:w-
-[58.3333%] md:ml-[8.33333%]"
-    >
-      <p
-        className="text-[21.525px] font-normal box-border caret-transparent leading-[38.745px] opacity-75
-my-12 md:text-2xl md:leading-[43.2px]"
-      >
+    <div className="max-w-2xl mt-8">
+      <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10">
         We craft aesthetic, functional, and user-centric websites that help
         businesses thrive in the digital world.
       </p>
-      <p className="box-border caret-transparent mb-8">
-        <a
-          href="https://www.odoo.com/appointment/832?invite_token=99607771-ba4b-4cc7-b119-
-146501232d64&filter_appointment_type_ids=%5B832%5D"
-          className="text-sm font-normal bg-zinc-600 box-border caret-transparent inline-block leading-[21px] text-center align-middle border-zinc-600 pl-4 pr-2 py-2 rounded-[50px] border-2 border-solid font-semibold md:text-base md:font-semibold md:leading-6 md:pl-6 hover:bg-neutral-600 hover:border-zinc-700"
-        >
-          Ask for a quote{" "}
-         
-        </a>
-      </p>
+      <Link
+        to="/contact"
+        className="inline-flex items-center text-sm md:text-base font-semibold bg-white/10 backdrop-blur-sm text-white pl-6 pr-2 py-2 rounded-full border-2 border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
+      >
+        Ask for a quote
+        <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#d4ff00] rounded-full flex items-center justify-center">
+          <svg
+            className="w-4 h-4 text-black -rotate-45"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </span>
+      </Link>
     </div>
   );
 };

@@ -7,28 +7,20 @@ export type ServicesMarqueeProps = {
 export const ServicesMarquee = (props: ServicesMarqueeProps) => {
   return (
     <section
-      className={`relative box-border caret-transparent w-full overflow-hidden ${props.variant}`}
+      className={`relative w-full overflow-hidden ${props.variant}`}
     >
-      <h2 className="relative text-[58.125px] font-medium box-border caret-transparent flex leading-[69.75px] uppercase mb-2 md:text-[120px] md:leading-[144px]">
-        <span className="text-[58.125px] box-border caret-transparent block leading-[69.75px] text-nowrap md:text-[120px] md:leading-[144px]">
-          {props.primaryText}
-        </span>
-        <span className="text-transparent text-[58.125px] box-border block leading-[69.75px] text-nowrap md:text-[120px] md:leading-[144px]">
-          {props.secondaryText}
-        </span>
-        <span className="text-[58.125px] box-border caret-transparent block leading-[69.75px] text-nowrap md:text-[120px] md:leading-[144px]">
-          {props.primaryText}
-        </span>
-        <span className="text-transparent text-[58.125px] box-border block leading-[69.75px] text-nowrap md:text-[120px] md:leading-[144px]">
-          {props.secondaryText}
-        </span>
-        <span className="text-[58.125px] box-border caret-transparent block leading-[69.75px] text-nowrap md:text-[120px] md:leading-[144px]">
-          {props.primaryText}
-        </span>
-        <span className="text-transparent text-[58.125px] box-border block leading-[69.75px] text-nowrap md:text-[120px] md:leading-[144px]">
-          {props.secondaryText}
-        </span>
-      </h2>
+      <div className="flex animate-marquee whitespace-nowrap">
+        {[...Array(4)].map((_, i) => (
+          <div key={i} className="flex items-center shrink-0">
+            <span className="text-[60px] md:text-[120px] font-bold text-white uppercase leading-none px-4">
+              {props.primaryText}
+            </span>
+            <span className="text-[60px] md:text-[120px] font-bold uppercase leading-none px-4 text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">
+              {props.secondaryText}
+            </span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

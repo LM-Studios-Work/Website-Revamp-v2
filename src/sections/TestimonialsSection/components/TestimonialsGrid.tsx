@@ -2,9 +2,9 @@ import { TestimonialCard } from "@/sections/TestimonialsSection/components/Testi
 
 export const TestimonialsGrid = () => {
   return (
-    <section className="relative box-border caret-transparent px-4 py-8 md:px-8 md:py-16">
-      <div className="relative box-border caret-transparent w-full mx-auto px-[15px] before:accent-auto before:box-border before:caret-transparent before:clear-both before:text-white before:table before:text-lg before:not-italic before:normal-nums before:font-light before:tracking-[normal] before:leading-[32.4px] before:list-outside before:list-disc before:pointer-events-auto before:text-start before:indent-[0px] before:normal-case before:visible before:border-separate before:font-inter after:accent-auto after:box-border after:caret-transparent after:clear-both after:text-white after:table after:text-lg after:not-italic after:normal-nums after:font-light after:tracking-[normal] after:leading-[32.4px] after:list-outside after:list-disc after:pointer-events-auto after:text-start after:indent-[0px] after:normal-case after:visible after:border-separate after:font-inter">
-        <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
+    <section className="relative px-6 py-8 md:py-16">
+      <div className="max-w-[1200px] w-full mx-auto">
+        <div className="flex flex-wrap -mx-3">
           <TestimonialCard
             imageUrl="https://c.animaapp.com/mlaz3dsraozDAl/assets/img_testimonial_aerospacelab.jpg"
             name="Thibault Libioulle"

@@ -1,11 +1,8 @@
 export const ClientLogos = () => {
   return (
-    <section className="relative box-border caret-transparent py-8 md:py-16">
-      <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
-        <div className="box-border caret-transparent text-center">
-          <h2 className="text-2xl font-semibold mb-8">Our Clients</h2>
-          {/* Client logos would go here */}
-        </div>
+    <section className="relative py-12 md:py-20 px-6">
+      <div className="max-w-[1200px] w-full mx-auto text-center">
+        <h2 className="text-2xl font-semibold text-white/80 mb-8">Our Clients</h2>
       </div>
     </section>
   );
