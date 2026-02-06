@@ -2,25 +2,27 @@ export const WebDesignPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative box-border caret-transparent pt-64 pb-10 md:pb-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
-          <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
+      <section className="relative flex flex-col justify-center items-center min-h-[70vh] pt-40 pb-16 px-6">
+        <div className="max-w-[900px] w-full text-center">
+          <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
             Web Design
-            <svg
-              className="inline-block ml-4 w-[120px] h-[20px] md:w-[200px] md:h-[30px]"
-              viewBox="0 0 200 30"
-            >
-              <path
-                d="M 0 15 Q 50 5, 100 15 T 200 15"
-                stroke="#d4ff00"
-                strokeWidth="3"
-                fill="none"
-              />
-            </svg>
           </h1>
-        </div>
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
-          <p className="box-border caret-transparent text-center mt-6 mb-8">
+          <svg
+            className="mx-auto mb-12 w-[200px] h-[18px]"
+            viewBox="0 0 400 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
+              stroke="#d4ff00"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed">
             We design and develop user-friendly websites using the Odoo
             framework, offering both standard features or custom solutions to
             meet your needs. Whether you opt for a simple setup with built-in

@@ -71,35 +71,6 @@ export const ProjectsGrid = () => {
             description="TORVISCO GROUP has been a leading name in the bathroom and sanitary sector since 1979. With over 40 years of expertise, the company employs more than 300 professionals."
             discoverMoreUrl="/projects/20"
           />
-          <ProjectCard
-            imageUrl="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-4.jpg"
-            imageAlt="Cefora"
-            timeText="500:00+"
-            title="Cefora"
-            tags={[
-              { text: "Education", className: tagStyle.lime },
-              { text: "Custom", className: tagStyle.purple },
-              { text: "Website", className: tagStyle.teal },
-              { text: "Events", className: tagStyle.teal },
-              { text: "Blog", className: tagStyle.teal },
-            ]}
-            description="Cefora is a major Belgian training organization serving over 500,000 employees and 60,000 companies within the country's largest employment sector."
-            discoverMoreUrl="/projects/22"
-          />
-          <ProjectCard
-            imageUrl="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-5.jpg"
-            imageAlt="Julie's House"
-            timeText="200:00"
-            title="Julie's House"
-            tags={[
-              { text: "Food & Restaurant", className: tagStyle.lime },
-              { text: "Custom", className: tagStyle.purple },
-              { text: "Website", className: tagStyle.teal },
-              { text: "Ecommerce", className: tagStyle.teal },
-            ]}
-            description="Julie's House was born from Julie's childhood dream of a dollhouse made of cake. Fueled by her passion for sweets and honed by her pastry training."
-            discoverMoreUrl="/projects/11"
-          />
         </div>
       </div>
     </section>
