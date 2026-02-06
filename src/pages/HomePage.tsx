@@ -25,8 +25,6 @@ export const HomePage = () => {
         reverse
       />
       <ServicesSection />
-      <TestimonialsHeader />
-      <TestimonialsGrid />
 
       {/* Your website is in good hands */}
       <section className="relative py-16 md:py-28 px-6">
@@ -101,6 +99,9 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+
+      <TestimonialsHeader />
+      <TestimonialsGrid />
 
       <FAQ />
     </>
