@@ -86,6 +86,51 @@ export const WebDesignPage = () => {
         </div>
       </section>
 
+      {/* Standard Pack Section */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div className="md:w-1/2">
+              <div className="mb-6">
+                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                  <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+                    Standard Pack
+                  </span>
+                  <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#67e8f9] text-[#67e8f9] px-4 py-2 rounded-full">
+                    25h min.
+                  </span>
+                </h2>
+              </div>
+              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+                No-fuss web design for your business
+              </h3>
+              <p className="text-lg text-white/80 leading-relaxed">
+                Our Standard Pack is designed for{" "}
+                <strong className="font-semibold text-white">
+                  small projects that prioritize simplicity and efficiency
+                </strong>
+                . Built exclusively with Odoo's Website Builder, standard
+                options, and Bootstrap variables, it's perfect for clients who
+                need a clean, functional website{" "}
+                <strong className="font-semibold text-white">
+                  without customizations
+                </strong>
+                .
+              </p>
+            </div>
+            <div className="md:w-1/2">
+              <div className="relative rounded-2xl overflow-hidden">
+                <img
+                  src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
+                  alt="Team working on web design projects"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Process Section */}
       <section className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
