@@ -111,10 +111,11 @@ export const App = () => {
         {/* Background for sections below the hero */}
         <div className="fixed box-border caret-transparent shrink-0 w-screen h-screen z-[-1] inset-0">
           <img
-            src="/dark-background-solid.png"
+            src="/fallback.webp"
             alt=""
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black/70" />
         </div>
         <ParticleBackground />
       </div>

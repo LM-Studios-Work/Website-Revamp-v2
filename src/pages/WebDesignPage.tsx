@@ -1,21 +1,124 @@
-import { useState } from "react";
+import {
+  Briefcase,
+  Globe,
+  Layers,
+  Calendar,
+  ShoppingCart,
+  Check,
+  Clock,
+  ArrowRight,
+} from "lucide-react";
+
+const packages = [
+  {
+    title: "PERSONAL PORTFOLIO WEBSITE",
+    price: "R1,999",
+    type: "once-off",
+    delivery: "4–6 working days",
+    iconName: "Briefcase" as const,
+    features: [
+      "Single-page or up to 3 sections",
+      "Modern scrolling design with animations",
+      "Project / work gallery",
+      "CV / Resume download",
+      "Contact form and social links",
+      "Mobile-responsive design",
+      "Basic SEO",
+      "Custom domain setup",
+    ],
+  },
+  {
+    title: "ESSENTIAL BUSINESS WEBSITE",
+    price: "R2,999",
+    type: "once-off",
+    delivery: "5–7 working days",
+    iconName: "Globe" as const,
+    features: [
+      "3 pages (Home, Services, Contact)",
+      "Clean, professional design",
+      "Mobile-responsive layout",
+      "Contact form with email notifications",
+      "Click-to-call and WhatsApp buttons",
+      "Social media integration",
+      "Basic SEO",
+      "Custom domain setup",
+    ],
+  },
+  {
+    title: "PROFESSIONAL BUSINESS WEBSITE",
+    price: "R5,499",
+    type: "once-off",
+    delivery: "7–12 working days",
+    popular: true,
+    iconName: "Layers" as const,
+    features: [
+      "Up to 6 pages",
+      "Professionally structured content",
+      "Image gallery or portfolio",
+      "Client testimonials",
+      "Google Maps integration",
+      "Advanced contact forms",
+      "Local SEO optimization",
+      "Custom domain",
+      "Professional email setup",
+    ],
+  },
+  {
+    title: "EVENT WEBSITE",
+    subtitle: "(Birthdays, Weddings, etc.)",
+    price: "R3,999",
+    type: "once-off",
+    delivery: "5–8 working days",
+    iconName: "Calendar" as const,
+    features: [
+      "Event details and schedule",
+      "RSVP form with guest list management",
+      "Photo and video gallery",
+      "Countdown timer",
+      "Location map",
+      "Gift registry or payment links",
+      "Optional password protection",
+      "Mobile-friendly design",
+    ],
+  },
+  {
+    title: "E-COMMERCE WEBSITE",
+    price: "R7,999",
+    type: "once-off",
+    delivery: "10–15 working days",
+    iconName: "ShoppingCart" as const,
+    features: [
+      "Up to 20 products",
+      "Shopping cart and checkout",
+      "Secure payment gateway integration",
+      "Product categories",
+      "Order management",
+      "Inventory setup",
+      "Mobile-optimized store",
+      "Basic product SEO",
+      "Custom domain",
+    ],
+  },
+];
+
+const iconMap = {
+  Briefcase,
+  Globe,
+  Layers,
+  Calendar,
+  ShoppingCart,
+};
 
 export const WebDesignPage = () => {
-  const [videoError, setVideoError] = useState(false);
-
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+      <section className="relative z-10 flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          {!videoError ? (
-            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          )}
+          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/50 pointer-events-none" />
         </div>
         <div className="relative z-10 max-w-[900px] w-full text-center">
@@ -49,7 +152,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Behind the scenes section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
+      <section className="relative z-10 box-border caret-transparent py-10 md:py-20">
         <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
           <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
             <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4">
@@ -102,7 +205,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Standard Pack Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <div className="md:w-1/2">
@@ -146,24 +249,103 @@ export const WebDesignPage = () => {
         </div>
       </section>
 
-      {/* Our Process Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      {/* Service Packages Section */}
+      <section className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
-            <div className="md:w-5/12 shrink-0">
-              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                Our{" "}
-                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
-                  process
-                </span>
-              </h2>
-              <p className="text-lg text-white/70 leading-relaxed">
-                From concept to launch, we craft user-friendly, visually
-                striking websites tailored to your brand.
-              </p>
-            </div>
-            <div className="md:w-7/12">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mb-16">
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
+              Service Packages
+              <span className="h-px flex-1 bg-white/10 ml-4"></span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {packages.map((pkg) => {
+              const IconComponent = iconMap[pkg.iconName];
+              return (
+                <div
+                  key={pkg.title}
+                  className="relative flex flex-col h-full rounded-3xl p-8 border border-white/5 bg-[#121212] transition-all duration-300 group hover:border-[#C3FF00]/30 hover:bg-[#151515] hover:ring-1 hover:ring-[#C3FF00]/20"
+                >
+                  {pkg.popular && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#8b5cf6] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-[#8b5cf6]/20">
+                      Most Popular
+                    </div>
+                  )}
+
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="p-3 rounded-2xl bg-white/5 text-white transition-colors duration-300 group-hover:bg-[#C3FF00] group-hover:text-black">
+                      <IconComponent className="w-5 h-5" />
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#C3FF00]">
+                        {pkg.price}
+                      </div>
+                      <div className="text-xs text-white/40 uppercase tracking-wider">
+                        {pkg.type}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold font-obviously leading-tight uppercase tracking-wide">
+                      {pkg.title}
+                    </h3>
+                    {pkg.subtitle && (
+                      <p className="text-xs text-white/40 mt-1">
+                        {pkg.subtitle}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="flex-1 space-y-4 mb-10">
+                    {pkg.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-start gap-3">
+                        <Check className="w-4 h-4 mt-0.5 shrink-0 text-white/40 transition-colors duration-300 group-hover:text-[#C3FF00]" />
+                        <span className="text-sm text-white/70 leading-relaxed">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto space-y-6">
+                    <div className="flex items-center gap-3 py-4 border-t border-white/5">
+                      <Clock className="w-4 h-4 text-white/30" />
+                      <span className="text-xs text-white/40 font-medium tracking-wide">
+                        DELIVERY:{" "}
+                        <span className="text-white/80">{pkg.delivery}</span>
+                      </span>
+                    </div>
+
+                    <button className="w-full py-4 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-white/5 text-white hover:bg-white/10 group-hover:bg-[#C3FF00] group-hover:text-black group-hover:hover:bg-[#d4ff3d]">
+                      Select Package
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+              Our{" "}
+              <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+                process
+              </span>
+            </h2>
+            <p className="text-lg text-white/70 leading-relaxed max-w-[600px]">
+              From concept to launch, we craft user-friendly, visually
+              striking websites tailored to your brand.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     1
@@ -203,22 +385,20 @@ export const WebDesignPage = () => {
                     clear, ready page structure.
                   </p>
                 </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Our Projects Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
-          <div className="items-center box-border caret-transparent flex flex-wrap justify-between ml-[-15px] mr-[-15px] mb-12">
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] md:w-auto">
-              <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] font-obviously md:text-[64px] md:leading-[76.8px]">
+      <section className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-wrap items-center justify-between mb-12">
+            <div>
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
                 Our projects
               </h2>
             </div>
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] mt-6 md:w-auto md:mt-0">
+            <div className="mt-6 md:mt-0">
               <a
                 href="/projects"
                 className="text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#d4ff00] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#d4ff00] hover:text-black transition-colors"
@@ -243,8 +423,8 @@ export const WebDesignPage = () => {
             </div>
           </div>
           {/* Project Cards */}
-          <div className="flex flex-wrap -mx-3">
-            <div className="shrink-0 w-full px-3 py-2 md:w-1/3 md:py-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
               <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img
@@ -283,7 +463,7 @@ export const WebDesignPage = () => {
                 </div>
               </div>
             </div>
-            <div className="shrink-0 w-full px-3 py-2 md:w-1/3 md:py-4">
+            <div>
               <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img
@@ -322,7 +502,7 @@ export const WebDesignPage = () => {
                 </div>
               </div>
             </div>
-            <div className="shrink-0 w-full px-3 py-2 md:w-1/3 md:py-4">
+            <div>
               <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img
@@ -366,11 +546,11 @@ export const WebDesignPage = () => {
       </section>
 
       {/* SEO & Marketing Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
-          <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
+      <section className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             {/* SEO */}
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pr-8 md:py-0">
+            <div>
               <div className="box-border caret-transparent mb-6">
                 <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
                   SEO
@@ -416,7 +596,7 @@ export const WebDesignPage = () => {
             </div>
 
             {/* Marketing */}
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pl-8 md:py-0">
+            <div>
               <div className="box-border caret-transparent mb-6">
                 <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
                   Marketing
@@ -466,7 +646,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Your website is in good hands */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="relative mb-12 md:mb-20">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
@@ -531,8 +711,8 @@ export const WebDesignPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
+      <section className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
           <div className="relative box-border caret-transparent flex flex-col break-words overflow-hidden rounded-[20px]">
             <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent grow break-words p-10 rounded-[20px]">
               <div className="items-center box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px] break-words">
