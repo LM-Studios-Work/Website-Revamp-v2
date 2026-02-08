@@ -54,7 +54,7 @@ export const ScrollableCardRow = ({
           <button
             onClick={() => scroll("left")}
             aria-label="Scroll left"
-            className={`w-10 h-10 rounded-full bg-[#c0ff00] flex items-center justify-center transition-opacity ${
+            className={`w-10 h-10 rounded-full bg-[#C3FF00] flex items-center justify-center transition-opacity ${
               canScrollLeft ? "opacity-100" : "opacity-30"
             }`}
           >
@@ -65,7 +65,7 @@ export const ScrollableCardRow = ({
           <button
             onClick={() => scroll("right")}
             aria-label="Scroll right"
-            className={`w-10 h-10 rounded-full bg-[#c0ff00] flex items-center justify-center transition-opacity ${
+            className={`w-10 h-10 rounded-full bg-[#C3FF00] flex items-center justify-center transition-opacity ${
               canScrollRight ? "opacity-100" : "opacity-30"
             }`}
           >

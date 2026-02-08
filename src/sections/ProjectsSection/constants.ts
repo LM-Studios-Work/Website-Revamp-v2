@@ -1,7 +1,7 @@
 import type { ProjectCardProps } from "@/sections/ProjectsSection/components/ProjectCard";
 
 export const tagStyle = {
-  lime: "text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#d4ff00] px-3 py-1.5 rounded-full border border-solid text-[#d4ff00]",
+  lime: "text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#C3FF00] px-3 py-1.5 rounded-full border border-solid text-[#C3FF00]",
   purple:
     "text-xs font-semibold inline-block text-center uppercase text-nowrap border-purple-300 px-3 py-1.5 rounded-full border border-solid text-purple-300",
   teal: "text-xs font-semibold inline-block text-center uppercase text-nowrap border-teal-300 px-3 py-1.5 rounded-full border border-solid text-teal-300",

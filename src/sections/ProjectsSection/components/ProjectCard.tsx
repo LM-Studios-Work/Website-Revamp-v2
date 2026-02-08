@@ -47,9 +47,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
         <div className="px-6 pb-6">
           <a
             href={props.discoverMoreUrl}
-            className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-[#C3FF00] transition-colors"
           >
-            <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
+            <span className="w-8 h-8 bg-[#C3FF00] rounded-full flex items-center justify-center mr-2.5">
               <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>

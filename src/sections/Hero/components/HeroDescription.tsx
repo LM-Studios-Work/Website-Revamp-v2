@@ -12,7 +12,7 @@ export const HeroDescription = () => {
         className="inline-flex items-center text-sm md:text-base font-semibold bg-white/10 backdrop-blur-sm text-white pl-6 pr-2 py-2 rounded-full border-2 border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
       >
         Ask for a quote
-        <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#d4ff00] rounded-full flex items-center justify-center">
+        <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#C3FF00] rounded-full flex items-center justify-center">
           <svg
             className="w-4 h-4 text-black -rotate-45"
             fill="none"

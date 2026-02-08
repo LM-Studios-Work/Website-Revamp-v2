@@ -8,7 +8,7 @@ export const MobileMenuButton = ({ onClick }: MobileMenuButtonProps) => {
       type="button"
       aria-label="Open navigation menu"
       onClick={onClick}
-      className="md:hidden block text-white hover:text-[#d4ff00] transition-colors"
+      className="md:hidden block text-white hover:text-[#C3FF00] transition-colors"
     >
       <svg
         className="w-6 h-6"

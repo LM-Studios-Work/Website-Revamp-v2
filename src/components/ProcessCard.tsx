@@ -17,10 +17,10 @@ const VARIANT_STYLES = {
     descBg: "bg-[#b4f0c0]",
   },
   yellow: {
-    container: "bg-[#c0ff00] text-black",
+    container: "bg-[#C3FF00] text-black",
     circle: "bg-black/10 text-black",
     text: "text-black/70",
-    descBg: "bg-[#d8ff66]",
+    descBg: "bg-[#d4ff3d]",
   },
   cyan: {
     container: "bg-[#4dd4e8] text-black",

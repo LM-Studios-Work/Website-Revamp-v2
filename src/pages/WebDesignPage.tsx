@@ -164,7 +164,7 @@ export const WebDesignPage = () => {
           >
             <path
               d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-              stroke="#d4ff00"
+              stroke="#C3FF00"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -415,10 +415,10 @@ export const WebDesignPage = () => {
             <div className="mt-6 md:mt-0">
               <a
                 href="/projects"
-                className="text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#d4ff00] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#d4ff00] hover:text-black transition-colors"
+                className="text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#C3FF00] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#C3FF00] hover:text-black transition-colors"
               >
                 See all projects
-                <span className="relative text-sm font-normal bg-[#d4ff00] text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
+                <span className="relative text-sm font-normal bg-[#C3FF00] text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
                   <svg
                     className="w-4 h-4"
                     fill="none"
