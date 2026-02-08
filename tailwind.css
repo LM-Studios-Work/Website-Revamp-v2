@@ -86,6 +86,16 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Use Inter as the default site font */
+  body {
+    @apply font-sans;
+  }
+
+  /* Headings use a heavier weight to match Inter Bold/Extra Bold */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-extrabold;
+  }
 }
 
 @layer utilities {
@@ -95,5 +105,20 @@
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Outlined text utility - transparent fill with stroked outline */
+  .text-outline {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255,255,255,1);
+  }
+
+  .text-outline-black {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0,0,0,1);
   }
 }
