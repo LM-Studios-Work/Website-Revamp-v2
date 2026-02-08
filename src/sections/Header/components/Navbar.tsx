@@ -30,7 +30,7 @@ export const Navbar = () => {
     <>
       <nav
         aria-label="Main"
-        className="relative items-center flex flex-wrap justify-between max-w-[1400px] mx-auto w-full py-4 px-6 md:flex-nowrap md:justify-between"
+        className="relative items-center flex flex-wrap justify-between max-w-[1400px] mx-auto w-full py-8 px-6 md:flex-nowrap md:justify-between"
       >
         <NavbarLogo />
         <DesktopMenu />
