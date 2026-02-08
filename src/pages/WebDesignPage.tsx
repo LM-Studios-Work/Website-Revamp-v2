@@ -241,7 +241,7 @@ export const WebDesignPage = () => {
             <div className="md:w-1/2">
               <div className="mb-6">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                  <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+                  <span className="italic text-outline-2">
                     Standard Pack
                   </span>
                   <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#67e8f9] text-[#67e8f9] px-4 py-2 rounded-full">
@@ -366,7 +366,7 @@ export const WebDesignPage = () => {
           <div className="mb-12">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
               Our{" "}
-              <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+              <span className="italic text-outline-15">
                 process
               </span>
             </h2>
@@ -555,8 +555,8 @@ export const WebDesignPage = () => {
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
               Your website is
               <br />
-              in{" "}
-              <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+              in {" "}
+              <span className="italic text-outline-2">
                 good hands
               </span>
             </h2>

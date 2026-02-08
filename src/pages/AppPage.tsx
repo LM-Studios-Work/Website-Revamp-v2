@@ -172,7 +172,7 @@ export const AppPage = () => {
             <div className="md:w-1/2 order-1 md:order-2">
               <div className="mb-6">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                  <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+                  <span className="italic text-outline-2">
                     Business App
                   </span>
                   <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#67e8f9] text-[#67e8f9] px-4 py-2 rounded-full">
@@ -224,7 +224,7 @@ export const AppPage = () => {
               <div className="md:w-1/2">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                   Enterprise{" "}
-                  <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+                  <span className="italic text-outline-2">
                     Solution
                   </span>
                 </h2>
@@ -290,12 +290,12 @@ export const AppPage = () => {
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
             <div className="md:w-5/12 shrink-0">
-              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                 Our{" "}
-                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+                <span className="italic text-outline-15">
                   process
                 </span>
-              </h2>
+                </h2>
               <p className="text-lg text-white/70 leading-relaxed">
                 A proven development workflow that delivers quality apps on time
                 and within budget.
@@ -367,7 +367,7 @@ export const AppPage = () => {
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
               Your app is in
               <br />
-              <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+              <span className="italic text-outline-2">
                 good hands
               </span>
             </h2>

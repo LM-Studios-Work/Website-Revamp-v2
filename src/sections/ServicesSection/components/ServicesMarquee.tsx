@@ -16,7 +16,7 @@ export const ServicesMarquee = (props: ServicesMarqueeProps) => {
             <span className="text-[60px] md:text-[120px] font-bold text-white uppercase leading-none px-4">
               {props.primaryText}
             </span>
-            <span className="text-[60px] md:text-[120px] font-bold uppercase leading-none px-4 text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">
+            <span className="text-[60px] md:text-[120px] font-bold uppercase leading-none px-4 text-outline-weak">
               {props.secondaryText}
             </span>
           </div>

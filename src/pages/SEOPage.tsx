@@ -31,7 +31,7 @@ export const SEOPage = () => {
             Get found by
             <br />
             customers who{" "}
-            <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+            <span className="italic text-outline-2">
               matter.
             </span>
           </h1>
@@ -67,7 +67,7 @@ export const SEOPage = () => {
               </p>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                 On-Page &{" "}
-                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+                <span className="italic text-outline-15">
                   Off-Page
                 </span>
                 <br />
@@ -113,7 +113,7 @@ export const SEOPage = () => {
               </p>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
                 Our{" "}
-                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+                <span className="italic text-outline-15">
                   process
                 </span>
               </h2>
@@ -162,7 +162,7 @@ export const SEOPage = () => {
             <div className="md:w-1/2">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                 Link{" "}
-                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+                <span className="italic text-outline-15">
                   Building
                 </span>
               </h2>
@@ -214,7 +214,7 @@ export const SEOPage = () => {
             </p>
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
               Transparent{" "}
-              <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+              <span className="italic text-outline-15">
                 pricing
               </span>
             </h2>
@@ -613,7 +613,7 @@ export const SEOPage = () => {
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                   Let's scale your
                   <br />
-                  <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+                  <span className="italic text-outline-15">
                     business.
                   </span>
                 </h2>

@@ -121,4 +121,24 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(0,0,0,1);
   }
+  .text-outline-15 {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgba(255,255,255,1);
+  }
+
+  .text-outline-2 {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(255,255,255,1);
+  }
+
+  .text-outline-weak {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255,255,255,0.3);
+  }
 }

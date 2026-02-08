@@ -44,7 +44,7 @@ export const HomePage = () => {
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
                 Your website is
                 <br />
-                <span className="italic text-transparent [-webkit-text-stroke:1.5px_white]">
+                <span className="italic text-outline-15">
                   in good hands
                 </span>
               </h2>

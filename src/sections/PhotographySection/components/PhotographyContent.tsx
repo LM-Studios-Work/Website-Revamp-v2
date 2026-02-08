@@ -6,7 +6,7 @@ export const PhotographyContent = () => {
     <div>
       <div className="mb-6">
         <h2 className="text-[44.4px] md:text-[64px] font-semibold leading-[53.28px] md:leading-[76.8px] font-obviously mb-4">
-          <span className="italic text-transparent [-webkit-text-stroke:2px_white]">
+          <span className="italic text-outline-2">
             Photography
           </span>
           <span className="text-[12.8px] md:text-[16px] font-thin inline-block leading-[12.8px] md:leading-[16px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid text-white" style={{ verticalAlign: 'middle' }}>
