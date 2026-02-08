@@ -54,7 +54,7 @@ export const ScrollableCardRow = ({
           <button
             onClick={() => scroll("left")}
             aria-label="Scroll left"
-            className={`w-10 h-10 rounded-full bg-[#d4ff00] flex items-center justify-center transition-opacity ${
+            className={`w-10 h-10 rounded-full bg-[#c0ff00] flex items-center justify-center transition-opacity ${
               canScrollLeft ? "opacity-100" : "opacity-30"
             }`}
           >
@@ -65,7 +65,7 @@ export const ScrollableCardRow = ({
           <button
             onClick={() => scroll("right")}
             aria-label="Scroll right"
-            className={`w-10 h-10 rounded-full bg-[#d4ff00] flex items-center justify-center transition-opacity ${
+            className={`w-10 h-10 rounded-full bg-[#c0ff00] flex items-center justify-center transition-opacity ${
               canScrollRight ? "opacity-100" : "opacity-30"
             }`}
           >
@@ -82,7 +82,7 @@ export const ScrollableCardRow = ({
         className={`-mx-6 px-6 flex gap-4 overflow-x-auto ${plainScroll ? "" : "snap-x snap-mandatory"} scrollbar-hide pb-2 md:mx-0 md:px-0 md:overflow-visible md:pb-0 md:grid ${desktopGridCols} md:gap-6`}
       >
         {React.Children.map(children, (child) => (
-          <div className={`${plainScroll ? "min-w-[45vw]" : "w-[65vw] max-w-[65vw] snap-start"} shrink-0 md:min-w-0 md:w-auto md:max-w-none md:shrink`}>
+          <div className={`${plainScroll ? "min-w-[45vw]" : "w-[72vw] max-w-[72vw] snap-start"} shrink-0 md:min-w-0 md:w-auto md:max-w-none md:shrink`}>
             {child}
           </div>
         ))}
