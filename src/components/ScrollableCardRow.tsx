@@ -82,7 +82,7 @@ export const ScrollableCardRow = ({
         className={`-mx-6 px-6 flex gap-4 overflow-x-auto ${plainScroll ? "" : "snap-x snap-mandatory"} scrollbar-hide pb-2 md:mx-0 md:px-0 md:overflow-visible md:pb-0 md:grid ${desktopGridCols} md:gap-6`}
       >
         {React.Children.map(children, (child) => (
-          <div className={`${plainScroll ? "min-w-[45vw]" : "min-w-[80vw] snap-start"} shrink-0 md:min-w-0 md:shrink`}>
+          <div className={`${plainScroll ? "min-w-[45vw]" : "min-w-[70vw] snap-start"} shrink-0 md:min-w-0 md:shrink`}>
             {child}
           </div>
         ))}
