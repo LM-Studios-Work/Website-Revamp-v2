@@ -25,6 +25,13 @@ export const ServicesSection = () => {
             title="App Development"
           />
         </div>
+        <div className="border-t border-b border-neutral-800">
+          <ServiceItem
+            href="/services/web-design#photography"
+            number="04"
+            title="Photography"
+          />
+        </div>
       </div>
     </section>
   );

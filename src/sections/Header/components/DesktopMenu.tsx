@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const DesktopMenu = () => {
   const location = useLocation();
@@ -56,12 +56,8 @@ export const DesktopMenu = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/services/web-design#photography"
-                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
-                >
-                  Photography
-                </Link>
+                {/* Use navigate/scroll logic so clicking Photography scrolls to the section */}
+                <DesktopPhotographyLink />
               </li>
               <li>
                 <Link
@@ -84,5 +80,43 @@ export const DesktopMenu = () => {
         </li>
       ))}
     </ul>
+  );
+};
+
+const DesktopPhotographyLink = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const href = "/services/web-design#photography";
+
+  const onClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const [path, hash] = href.split("#");
+    if (location.pathname === path) {
+      // same page: scroll to element if present, otherwise just set hash
+      const el = document.getElementById(hash || "");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.replaceState(null, "", href);
+      } else {
+        window.location.hash = hash || "";
+      }
+    } else {
+      // navigate then attempt to scroll after a short delay
+      navigate(href);
+      setTimeout(() => {
+        const el = document.getElementById("photography");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 120);
+    }
+  };
+
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
+    >
+      Photography
+    </a>
   );
 };
