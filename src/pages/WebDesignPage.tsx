@@ -164,7 +164,7 @@ export const WebDesignPage = () => {
           >
             <path
               d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-              stroke="#C3FF00"
+              stroke="#d4ff00"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -295,7 +295,7 @@ export const WebDesignPage = () => {
               return (
                 <div
                   key={pkg.title}
-                  className="relative flex flex-col h-full rounded-3xl p-8 border border-white/5 bg-[#121212] transition-all duration-300 group hover:border-[#C3FF00]/30 hover:bg-[#151515] hover:ring-1 hover:ring-[#C3FF00]/20"
+                  className="relative flex flex-col h-full rounded-3xl p-8 border border-white/5 bg-[#121212] transition-all duration-300 group hover:border-[#d4ff00]/30 hover:bg-[#151515] hover:ring-1 hover:ring-[#d4ff00]/20"
                 >
                   {pkg.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#8b5cf6] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-[#8b5cf6]/20">
@@ -304,11 +304,11 @@ export const WebDesignPage = () => {
                   )}
 
                   <div className="flex items-start justify-between mb-8">
-                    <div className="p-3 rounded-2xl bg-white/5 text-white transition-colors duration-300 group-hover:bg-[#C3FF00] group-hover:text-black">
+                    <div className="p-3 rounded-2xl bg-white/5 text-white transition-colors duration-300 group-hover:bg-[#d4ff00] group-hover:text-black">
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#C3FF00]">
+                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#d4ff00]">
                         {pkg.price}
                       </div>
                       <div className="text-xs text-white/40 uppercase tracking-wider">
@@ -331,7 +331,7 @@ export const WebDesignPage = () => {
                   <div className="flex-1 space-y-4 mb-10">
                     {pkg.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-3">
-                        <Check className="w-4 h-4 mt-0.5 shrink-0 text-white/40 transition-colors duration-300 group-hover:text-[#C3FF00]" />
+                        <Check className="w-4 h-4 mt-0.5 shrink-0 text-white/40 transition-colors duration-300 group-hover:text-[#d4ff00]" />
                         <span className="text-sm text-white/70 leading-relaxed">
                           {feature}
                         </span>
@@ -348,7 +348,7 @@ export const WebDesignPage = () => {
                       </span>
                     </div>
 
-                    <button className="w-full py-4 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-white/5 text-white hover:bg-white/10 group-hover:bg-[#C3FF00] group-hover:text-black group-hover:hover:bg-[#d4ff3d]">
+                    <button className="w-full py-4 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-white/5 text-white hover:bg-white/10 group-hover:bg-[#d4ff00] group-hover:text-black group-hover:hover:bg-[#d4ff3d]">
                       Select Package
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -415,10 +415,10 @@ export const WebDesignPage = () => {
             <div className="mt-6 md:mt-0">
               <a
                 href="/projects"
-                className="text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#C3FF00] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#C3FF00] hover:text-black transition-colors"
+                className="text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#d4ff00] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#d4ff00] hover:text-black transition-colors"
               >
                 See all projects
-                <span className="relative text-sm font-normal bg-[#C3FF00] text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
+                <span className="relative text-sm font-normal bg-[#d4ff00] text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
                   <svg
                     className="w-4 h-4"
                     fill="none"

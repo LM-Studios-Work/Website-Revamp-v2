@@ -65,7 +65,7 @@ export const HomePage = () => {
                     designs matching your brand style.
                   </p>
                 </div>
-                <div className="bg-[#C3FF00] text-black p-7 rounded-2xl relative h-full">
+                <div className="bg-[#d4ff00] text-black p-7 rounded-2xl relative h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     2
                   </div>
