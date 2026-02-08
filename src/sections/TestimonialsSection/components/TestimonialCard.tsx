@@ -3,11 +3,12 @@ export type TestimonialCardProps = {
   name: string;
   title: string;
   testimonial: string;
+  className?: string;
 };
 
 export const TestimonialCard = (props: TestimonialCardProps) => {
   return (
-    <div className="w-full px-3 py-2 md:w-1/2 md:py-3">
+    <div className={`w-full px-3 py-2 md:w-1/2 lg:w-1/4 md:py-3 ${props.className ?? ""}`}>
       <div className="bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5">
         <div className="flex items-center pt-6 px-6">
           <img

@@ -18,7 +18,7 @@ export const ContactPage = () => {
           )}
           <div className="absolute inset-0 bg-black/50 pointer-events-none" />
         </div>
-        <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
+        <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
             Contact Us
           </h1>
@@ -34,7 +34,7 @@ export const ContactPage = () => {
 
       {/* Contact Form Section */}
       <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
+        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
             {/* Contact Form */}
             <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-7/12 md:pr-8 md:py-0">
@@ -203,7 +203,7 @@ export const ContactPage = () => {
 
       {/* Map Section */}
       <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
+        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent p-4 rounded-[20px] overflow-hidden">
             <div className="box-border caret-transparent h-[400px] bg-white/5 rounded-[16px] flex items-center justify-center">
               <p className="box-border caret-transparent opacity-50">

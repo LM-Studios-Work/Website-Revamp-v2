@@ -44,7 +44,7 @@ export const App = () => {
           <footer className="relative shrink-0">
             <div className="px-0 md:px-10">
               <section className="relative bg-white/5 backdrop-blur-sm z-[5] pt-12 px-8 rounded-t-[60px] md:pt-24 md:px-24">
-                <div className="relative max-w-[1200px] w-full mx-auto">
+                <div className="relative max-w-[1400px] w-full mx-auto">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between pb-12 md:pb-20">
                     <h2 className="text-3xl md:text-[50px] font-bold leading-tight text-white text-center md:text-left mb-8 md:mb-0 md:max-w-[60%] text-balance">
                       Ready to make your website with LM Studios?

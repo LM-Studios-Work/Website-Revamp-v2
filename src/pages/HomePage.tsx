@@ -1,8 +1,10 @@
 import { Hero } from "@/sections/Hero";
 import { LatestProjectsHeader } from "@/sections/ProjectsSection/components/LatestProjectsHeader";
-import { ProjectsGrid } from "@/sections/ProjectsSection/components/ProjectsGrid";
+import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
+import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ServicesSection } from "@/sections/ServicesSection";
+import { ScrollableCardRow } from "@/components/ScrollableCardRow";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 import { FAQ } from "@/sections/FAQ";
@@ -12,7 +14,15 @@ export const HomePage = () => {
     <>
       <Hero />
       <LatestProjectsHeader />
-      <ProjectsGrid />
+      <section className="relative pt-6 pb-8 px-6 md:pt-10 md:pb-16">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-wrap -mx-3">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+        </div>
+      </section>
       <ServicesMarquee
         variant="pt-16 md:pt-28"
         primaryText="Our services"
@@ -28,7 +38,7 @@ export const HomePage = () => {
 
       {/* Your website is in good hands */}
       <section className="relative py-16 md:py-28 px-6">
-        <div className="max-w-[1200px] w-full mx-auto">
+        <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
             <div className="md:w-5/12 shrink-0">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
@@ -40,8 +50,8 @@ export const HomePage = () => {
               </h2>
             </div>
             <div className="md:w-7/12">
-              <div className="flex gap-4 overflow-x-auto pb-4 md:overflow-visible">
-                <div className="bg-[#e9d5ff] text-black min-w-[260px] md:min-w-0 md:flex-1 p-7 rounded-2xl shrink-0">
+              <ScrollableCardRow desktopGridCols="md:grid-cols-3">
+                <div className="bg-[#e9d5ff] text-black p-7 rounded-2xl h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     1
                   </div>
@@ -55,7 +65,7 @@ export const HomePage = () => {
                     designs matching your brand style.
                   </p>
                 </div>
-                <div className="bg-[#d4ff00] text-black min-w-[260px] md:min-w-0 md:flex-1 p-7 rounded-2xl shrink-0 relative">
+                <div className="bg-[#d4ff00] text-black p-7 rounded-2xl relative h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     2
                   </div>
@@ -80,7 +90,7 @@ export const HomePage = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="bg-[#67e8f9] text-black min-w-[260px] md:min-w-0 md:flex-1 p-7 rounded-2xl shrink-0">
+                <div className="bg-[#67e8f9] text-black p-7 rounded-2xl h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     3
                   </div>
@@ -94,7 +104,7 @@ export const HomePage = () => {
                     take your website to the next level.
                   </p>
                 </div>
-              </div>
+              </ScrollableCardRow>
             </div>
           </div>
         </div>

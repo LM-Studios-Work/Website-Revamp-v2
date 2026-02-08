@@ -11,7 +11,7 @@ export const ServicesMarquee = (props: ServicesMarqueeProps) => {
       className={`relative w-full overflow-hidden ${props.variant}`}
     >
       <div className={`flex whitespace-nowrap ${props.reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
-        {[...Array(4)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <div key={i} className="flex items-center shrink-0">
             <span className="text-[60px] md:text-[120px] font-bold text-white uppercase leading-none px-4">
               {props.primaryText}

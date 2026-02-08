@@ -3,7 +3,7 @@ import { ServiceItem } from "@/sections/ServicesSection/components/ServiceItem";
 export const ServicesSection = () => {
   return (
     <section className="relative pb-10 md:pb-20">
-      <div className="max-w-[1200px] w-full mx-auto">
+      <div className="max-w-[1400px] w-full mx-auto">
         <div className="border-t border-neutral-800">
           <ServiceItem
             href="/services/web-design"

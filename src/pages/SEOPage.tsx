@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { ProcessCard } from "../components/ProcessCard";
+import { ScrollableCardRow } from "../components/ScrollableCardRow";
+import { FAQ } from "@/sections/FAQ";
+import { seoFAQ } from "@/sections/FAQ/constants";
 
 export const SEOPage = () => {
   const [videoError, setVideoError] = useState(false);
@@ -115,61 +119,39 @@ export const SEOPage = () => {
               </h2>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                1
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Analyse your website
-              </h3>
-              <p className="text-sm leading-relaxed text-black/80">
-                We first analyse your website, followed by a step-by-step plan
-                to have the website communicate keywords more effectively to
-                search engines.
-              </p>
-            </div>
-            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                2
-              </div>
-              <h3 className="text-xl font-bold leading-tight mb-2">
-                <span className="text-xs font-normal uppercase tracking-widest block mb-2 text-black/50">
-                  Priority
-                </span>
-                Research
-              </h3>
-              <p className="text-sm leading-relaxed text-black/80">
-                Keyword density tells you how often a search term appears in a
-                text in relation to the total number of words it contains.
-              </p>
-            </div>
-            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                3
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Onsite Optimisation
-              </h3>
-              <p className="text-sm leading-relaxed text-black/80">
-                Optimisation refers to all measures that can be taken directly
-                within the website in order to improve its position in search
-                rankings.
-              </p>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 text-white p-8 rounded-2xl">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-base font-semibold mb-6">
-                4
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Reporting & Analysis
-              </h3>
-              <p className="text-sm leading-relaxed text-white/70">
-                Our SEO review consists of several factors like content, linking
-                structure, social media efforts, and trust on the internet.
-              </p>
-            </div>
-          </div>
+          <ScrollableCardRow desktopGridCols="md:grid-cols-4">
+            <ProcessCard
+              step={1}
+              variant="purple"
+              title="Analyse your website"
+              description="We first analyse your website, followed by a step-by-step plan to have the website communicate keywords more effectively to search engines."
+            />
+            <ProcessCard
+              step={2}
+              variant="yellow"
+              title={
+                <>
+                  <span className="text-xs font-normal uppercase tracking-widest block mb-2 text-black/50">
+                    Priority
+                  </span>
+                  Research
+                </>
+              }
+              description="Keyword density tells you how often a search term appears in a text in relation to the total number of words it contains."
+            />
+            <ProcessCard
+              step={3}
+              variant="cyan"
+              title="Onsite Optimisation"
+              description="Optimisation refers to all measures that can be taken directly within the website in order to improve its position in search rankings."
+            />
+            <ProcessCard
+              step={4}
+              variant="glass"
+              title="Reporting & Analysis"
+              description="Our SEO review consists of several factors like content, linking structure, social media efforts, and trust on the internet."
+            />
+          </ScrollableCardRow>
         </div>
       </section>
 
@@ -617,11 +599,12 @@ export const SEOPage = () => {
           </div>
         </div>
       </section>
-
+    <FAQ items={seoFAQ} title="SEO — FAQ" />
       {/* CTA Section */}
       <section className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16">
+        
             <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
               <div className="md:w-7/12">
                 <p className="text-[#d4ff00] text-sm uppercase tracking-widest mb-4">

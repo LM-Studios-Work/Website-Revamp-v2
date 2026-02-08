@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { ScrollableCardRow } from "../components/ScrollableCardRow";
+import { FAQ } from "@/sections/FAQ";
+import { appDevelopmentFAQ } from "@/sections/FAQ/constants";
 
 export const AppPage = () => {
   const [videoError, setVideoError] = useState(false);
@@ -51,42 +54,51 @@ export const AppPage = () => {
           <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white text-center mb-16">
             App Development
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#d4ff00] mb-3">
-                <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">React Native</h3>
-              <p className="text-sm text-white/50">Cross-platform mobile</p>
-            </div>
-            <div className="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#e9d5ff] mb-3">
-                <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Swift / Kotlin</h3>
-              <p className="text-sm text-white/50">Native development</p>
-            </div>
-            <div className="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#67e8f9] mb-3">
-                <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Next.js</h3>
-              <p className="text-sm text-white/50">Web applications</p>
-            </div>
-            <div className="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#d4ff00] mb-3">
-                <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Node.js</h3>
-              <p className="text-sm text-white/50">Backend services</p>
+          <div className="overflow-hidden">
+            <div className="flex whitespace-nowrap gap-6 animate-marquee">
+              {[...Array(2)].map((_, setIdx) => (
+                <div key={setIdx} className="flex gap-6">
+                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-[#d4ff00] mb-3">
+                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">React Native</h3>
+                    <p className="text-sm text-white/50">Cross-platform mobile</p>
+                  </div>
+
+                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-[#e9d5ff] mb-3">
+                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">Swift / Kotlin</h3>
+                    <p className="text-sm text-white/50">Native development</p>
+                  </div>
+
+                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-[#67e8f9] mb-3">
+                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">Next.js</h3>
+                    <p className="text-sm text-white/50">Web applications</p>
+                  </div>
+
+                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-[#d4ff00] mb-3">
+                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">Node.js</h3>
+                    <p className="text-sm text-white/50">Backend services</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -94,7 +106,7 @@ export const AppPage = () => {
 
       {/* Starter App Pack */}
       <section className="relative py-10 md:py-20">
-        <div className="max-w-[1140px] w-full mx-auto px-4">
+        <div className="max-w-[1400px] w-full mx-auto px-4">
           <div className="flex flex-col md:flex-row items-stretch gap-0">
             <div className="w-full md:w-6/12 px-4 py-10 md:pr-8 md:py-20">
               <h2 className="text-[44px] md:text-[64px] font-semibold leading-tight mb-10">
@@ -290,8 +302,8 @@ export const AppPage = () => {
               </p>
             </div>
             <div className="md:w-7/12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
+              <ScrollableCardRow desktopGridCols="md:grid-cols-2">
+                <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl h-full">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     1
                   </div>
@@ -303,7 +315,7 @@ export const AppPage = () => {
                     app's core features and user flows.
                   </p>
                 </div>
-                <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
+                <div className="bg-[#d4ff00] text-black p-8 rounded-2xl h-full">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     2
                   </div>
@@ -318,7 +330,7 @@ export const AppPage = () => {
                     prioritise user experience and brand consistency.
                   </p>
                 </div>
-                <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
+                <div className="bg-[#67e8f9] text-black p-8 rounded-2xl h-full">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     3
                   </div>
@@ -330,7 +342,7 @@ export const AppPage = () => {
                     ensuring clean code and optimal performance.
                   </p>
                 </div>
-                <div className="backdrop-blur-sm bg-white/5 border border-white/10 text-white p-8 rounded-2xl">
+                <div className="backdrop-blur-sm bg-white/5 border border-white/10 text-white p-8 rounded-2xl h-full">
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm font-semibold mb-5">
                     4
                   </div>
@@ -342,7 +354,7 @@ export const AppPage = () => {
                     submission and launch support.
                   </p>
                 </div>
-              </div>
+              </ScrollableCardRow>
             </div>
           </div>
         </div>
@@ -360,8 +372,8 @@ export const AppPage = () => {
               </span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
+          <ScrollableCardRow desktopGridCols="md:grid-cols-3">
+            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl h-full">
               <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
                 1
               </div>
@@ -373,7 +385,7 @@ export const AppPage = () => {
                 Kotlin ready to build your app.
               </p>
             </div>
-            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
+            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl h-full">
               <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
                 2
               </div>
@@ -385,7 +397,7 @@ export const AppPage = () => {
                 stack to deliver a seamless product.
               </p>
             </div>
-            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
+            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl h-full">
               <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
                 3
               </div>
@@ -397,13 +409,14 @@ export const AppPage = () => {
                 your app running smoothly.
               </p>
             </div>
-          </div>
+          </ScrollableCardRow>
         </div>
       </section>
 
       {/* CTA Section */}
+      <FAQ items={appDevelopmentFAQ} title="App Development — FAQ" />
       <section className="relative py-10 md:py-20">
-        <div className="max-w-[1140px] w-full mx-auto px-4">
+        <div className="max-w-[1400px] w-full mx-auto px-4">
           <div className="relative flex flex-col break-words overflow-hidden rounded-2xl">
             <div className="backdrop-blur-sm bg-white/10 grow break-words p-10 rounded-2xl">
               <div className="flex flex-col md:flex-row items-center justify-between gap-8">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -9,6 +9,7 @@ interface MobileMenuProps {
 export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const location = useLocation();
   const [servicesOpen, setServicesOpen] = useState(false);
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -22,6 +23,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
   const serviceItems = [
     { to: "/services/web-design", label: "Web Design" },
+    { to: "/services/web-design#photography", label: "Photography" },
     { to: "/services/seo", label: "SEO" },
     { to: "/services/app-development", label: "App Development" },
   ];
@@ -131,17 +133,48 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     <ul className="flex flex-col items-center gap-3 list-none">
                       {serviceItems.map((service) => (
                         <li key={service.to}>
-                          <Link
-                            to={service.to}
-                            onClick={onClose}
-                            className={`text-sm transition-colors duration-200 ${
-                              isActive(service.to)
-                                ? "text-[#d4ff00]"
-                                : "text-white/40 hover:text-white/70"
-                            }`}
-                          >
-                            {service.label}
-                          </Link>
+                          {service.to.includes("#") ? (
+                            <a
+                              href={service.to}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                onClose();
+                                const [path, hash] = service.to.split("#");
+                                // Give the menu close animation a moment, then navigate/scroll
+                                setTimeout(() => {
+                                  if (path === location.pathname) {
+                                    // same page: scroll smoothly to element and update URL
+                                    const el = document.getElementById(hash);
+                                    if (el) {
+                                      el.scrollIntoView({ behavior: "smooth", block: "start" });
+                                      window.history.replaceState(null, "", service.to);
+                                    } else {
+                                      // fallback: set hash (WebDesignPage effect will handle scroll)
+                                      window.location.hash = hash || "";
+                                    }
+                                  } else {
+                                    // navigate to the route (react-router) including hash
+                                    navigate(service.to);
+                                  }
+                                }, 220);
+                              }}
+                              className={`text-sm transition-colors duration-200 ${
+                                isActive(service.to) ? "text-[#d4ff00]" : "text-white/40 hover:text-white/70"
+                              }`}
+                            >
+                              {service.label}
+                            </a>
+                          ) : (
+                            <Link
+                              to={service.to}
+                              onClick={onClose}
+                              className={`text-sm transition-colors duration-200 ${
+                                isActive(service.to) ? "text-[#d4ff00]" : "text-white/40 hover:text-white/70"
+                              }`}
+                            >
+                              {service.label}
+                            </Link>
+                          )}
                         </li>
                       ))}
                     </ul>

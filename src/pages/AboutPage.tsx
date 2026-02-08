@@ -1,5 +1,7 @@
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { useState } from "react";
+import { ProcessCard } from "../components/ProcessCard";
+import { ScrollableCardRow } from "../components/ScrollableCardRow";
 
 export const AboutPage = () => {
   const [videoError, setVideoError] = useState(false);
@@ -43,7 +45,7 @@ export const AboutPage = () => {
         </div>
 
         {/* Two Column Text */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px] mx-auto text-white/80 leading-relaxed">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed">
           <p className="text-base md:text-lg">
             Founded in 2021, our Web Design Service has become the cornerstone of
             LM Studios' web agency, delivering exceptional digital solutions tailored to our
@@ -74,45 +76,35 @@ export const AboutPage = () => {
         reverse
       />
 
-      {/* Values Cards */}
+      {/* Values Cards (stacked) */}
       <section className="relative py-16 px-6">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Creativity Card */}
-            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
-              <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-6">
-                1
-              </div>
-              <h3 className="text-3xl font-bold mb-4">Creativity</h3>
-              <p className="text-base leading-relaxed text-black/90">
-                We believe in crafting unique, visually striking designs that capture your brand's essence. Our
-                team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision
-                to life.
-              </p>
+          <div className="flex flex-col gap-6">
+            <div className="w-full">
+              <ProcessCard
+                step={1}
+                variant="purple"
+                title="Creativity"
+                description="We believe in crafting unique, visually striking designs that capture your brand's essence. Our team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision to life."
+              />
             </div>
 
-            {/* Simplicity Card */}
-            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
-              <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-6">
-                2
-              </div>
-              <h3 className="text-3xl font-bold mb-4">Simplicity</h3>
-              <p className="text-base leading-relaxed text-black/90">
-                Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on
-                clean, user-friendly experiences that make navigation seamless and content impactful.
-              </p>
+            <div className="w-full">
+              <ProcessCard
+                step={2}
+                variant="yellow"
+                title="Simplicity"
+                description="Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on clean, user-friendly experiences that make navigation seamless and content impactful."
+              />
             </div>
 
-            {/* Reliability Card */}
-            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
-              <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-6">
-                3
-              </div>
-              <h3 className="text-3xl font-bold mb-4">Reliability</h3>
-              <p className="text-base leading-relaxed text-black/90">
-                We're committed to delivering high-quality work on time, every time. From concept to launch, you
-                can count on us for clear communication, transparency, and a smooth collaboration.
-              </p>
+            <div className="w-full">
+              <ProcessCard
+                step={3}
+                variant="cyan"
+                title="Reliability"
+                description="We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration."
+              />
             </div>
           </div>
         </div>

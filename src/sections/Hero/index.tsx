@@ -39,7 +39,7 @@ export const Hero = () => {
       </div>
 
       <SocialSidebar />
-      <div className="relative z-20 w-full max-w-[1200px] mx-auto px-6">
+      <div className="relative z-20 w-full max-w-[1400px] mx-auto px-6">
         <HeroHeading />
         <HeroDescription />
       </div>

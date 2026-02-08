@@ -1,52 +1,26 @@
 import { useState } from "react";
+import type { FAQItem } from "./constants";
+import { generalFAQ } from "./constants";
 
-const faqItems = [
-  {
-    question: "What are the prices?",
-    answer:
-      "Our pricing varies depending on the scope and complexity of your project. We offer tailored quotes after understanding your specific needs and requirements. Contact us for a detailed estimate.",
-  },
-  {
-    question: "What if I need more hours?",
-    answer:
-      "We offer flexible hour packages that can be adjusted as your project evolves. Additional hours can be purchased at any time to ensure your project stays on track.",
-  },
-  {
-    question: "Are there maintenance fees?",
-    answer:
-      "We offer optional maintenance packages to keep your website running smoothly, including updates, security patches, and performance monitoring.",
-  },
-  {
-    question: "Do you provide training?",
-    answer:
-      "Yes, we provide comprehensive training sessions to help you and your team manage your website independently. Training can be done remotely or on-site.",
-  },
-  {
-    question: "Can I request additional features later?",
-    answer:
-      "Absolutely. Our development process is flexible, and we can add new features or functionality at any stage after launch.",
-  },
-  {
-    question: "Do you write content?",
-    answer:
-      "We can assist with content creation including copywriting, SEO-optimized text, and multimedia content to enhance your website's impact.",
-  },
-];
+export type FAQProps = {
+  items?: FAQItem[];
+  title?: string;
+};
 
-export const FAQ = () => {
+export const FAQ = ({ items = generalFAQ, title = "FAQ" }: FAQProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
     <section className="relative py-16 md:py-28 px-6">
-      <div className="max-w-[1200px] w-full mx-auto">
+      <div className="max-w-[1400px] w-full mx-auto">
         <div className="flex flex-col md:flex-row gap-10 md:gap-20">
           <div className="md:w-5/12 shrink-0">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
-              FAQ
+              {title}
             </h2>
             <p className="text-white/60 text-base leading-relaxed">
               <span className="text-white font-semibold">
@@ -57,7 +31,7 @@ export const FAQ = () => {
           </div>
           <div className="md:w-7/12">
             <div className="border-t border-white/10">
-              {faqItems.map((item, index) => (
+              {items.map((item, index) => (
                 <div key={index} className="border-b border-white/10 border-dashed">
                   <button
                     onClick={() => toggle(index)}

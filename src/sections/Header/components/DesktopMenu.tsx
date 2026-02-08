@@ -57,6 +57,14 @@ export const DesktopMenu = () => {
               </li>
               <li>
                 <Link
+                  to="/services/web-design#photography"
+                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
+                >
+                  Photography
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/services/seo"
                   className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
                 >

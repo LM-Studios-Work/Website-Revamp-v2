@@ -8,6 +8,15 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { PhotographySection } from "../sections/PhotographySection";
+import { ProcessCard } from "../components/ProcessCard";
+import { ScrollableCardRow } from "../components/ScrollableCardRow";
+import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
+import { featuredProjects } from "@/sections/ProjectsSection/constants";
+import { FAQ } from "@/sections/FAQ";
+import { webDesignFAQ } from "@/sections/FAQ/constants";
 
 const packages = [
   {
@@ -110,6 +119,27 @@ const iconMap = {
 };
 
 export const WebDesignPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace("#", "");
+    // try immediate scroll, fallback to a short timeout if element isn't yet in DOM
+    const scrollToId = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return true;
+      }
+      return false;
+    };
+
+    if (!scrollToId()) {
+      const t = setTimeout(scrollToId, 80);
+      return () => clearTimeout(t);
+    }
+  }, [location.pathname, location.hash]);
+
   return (
     <>
       {/* Hero Section */}
@@ -153,7 +183,7 @@ export const WebDesignPage = () => {
 
       {/* Behind the scenes section */}
       <section className="relative z-10 box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1140px]">
+        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
             <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4">
               <div className="absolute items-center box-border caret-transparent hidden flex-col transform-none z-[5] left-0 top-0 md:flex md:translate-y-[-80.0%]">
@@ -236,7 +266,7 @@ export const WebDesignPage = () => {
                 .
               </p>
             </div>
-            <div className="md:w-1/2">
+            <div className="hidden md:block md:w-1/2">
               <div className="relative rounded-2xl overflow-hidden">
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
@@ -345,47 +375,31 @@ export const WebDesignPage = () => {
               striking websites tailored to your brand.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
-                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
-                    1
-                  </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-4">
-                    Kick off meeting
-                  </h3>
-                  <p className="text-sm leading-relaxed text-black/80">
-                    Let's start your project by aligning on your website
-                    objectives with your dedicated designer.
-                  </p>
-                </div>
-                <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
-                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
-                    2
-                  </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-4">
-                    Sitemap
-                  </h3>
-                  <p className="text-sm leading-relaxed text-black/80">
-                    We create a structured blueprint that maps your website's
-                    pages and their relationships.
-                  </p>
-                </div>
-                <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
-                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
-                    3
-                  </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-4">
-                    Wireframes
-                    <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
-                      Custom Pack only
-                    </span>
-                  </h3>
-                  <p className="text-sm leading-relaxed text-black/80">
-                    Wireframes outline layout and functionality, providing a
-                    clear, ready page structure.
-                  </p>
-                </div>
-          </div>
+          <ScrollableCardRow desktopGridCols="md:grid-cols-3">
+            <ProcessCard
+              step={1}
+              variant="purple"
+              title="Kick off meeting"
+              description="Let's start your project by aligning on your website objectives with your dedicated designer."
+            />
+            <ProcessCard
+              step={2}
+              variant="yellow"
+              title="Sitemap"
+              description="We create a structured blueprint that maps your website's pages and their relationships."
+            />
+            <ProcessCard
+              step={3}
+              variant="cyan"
+              title="Wireframes"
+              description="Wireframes outline layout and functionality, providing a clear, ready page structure."
+              customBadge={
+                <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
+                  Custom Pack only
+                </span>
+              }
+            />
+          </ScrollableCardRow>
         </div>
       </section>
 
@@ -423,127 +437,16 @@ export const WebDesignPage = () => {
             </div>
           </div>
           {/* Project Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
-                  <img
-                    src="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024.jpg"
-                    alt="Penguin"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-                <div className="grow p-6">
-                  <div className="flex items-center text-teal-300 text-sm mb-2">
-                    <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
-                      <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
-                    </svg>
-                    50:00
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">Penguin</h3>
-                  <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#d4ff00] px-3 py-1.5 rounded-full border border-solid text-[#d4ff00]">Apparel</li>
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-purple-300 px-3 py-1.5 rounded-full border border-solid text-purple-300">Standard</li>
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-teal-300 px-3 py-1.5 rounded-full border border-solid text-teal-300">Website</li>
-                  </ul>
-                  <p className="text-white/60 text-sm leading-relaxed line-clamp-3">
-                    Founded over 20 years ago from a passion for freeriding, Penguin creates technically advanced, functional apparel designed for uncompromising performance in the powder.
-                  </p>
-                </div>
-                <div className="px-6 pb-6">
-                  <a href="/projects/21" className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors">
-                    <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
-                      <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                    Discover more
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
-                  <img
-                    src="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-1.jpg"
-                    alt="Plugin Company"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-                <div className="grow p-6">
-                  <div className="flex items-center text-teal-300 text-sm mb-2">
-                    <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
-                      <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
-                    </svg>
-                    50:00
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">Plugin Company</h3>
-                  <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#d4ff00] px-3 py-1.5 rounded-full border border-solid text-[#d4ff00]">Energy</li>
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-purple-300 px-3 py-1.5 rounded-full border border-solid text-purple-300">Standard</li>
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-teal-300 px-3 py-1.5 rounded-full border border-solid text-teal-300">Website</li>
-                  </ul>
-                  <p className="text-white/60 text-sm leading-relaxed line-clamp-3">
-                    Pioneers in car charging in Belgium, Plugin company has been offering since 2009 personalised and reliable solutions to support businesses striving for sustainability.
-                  </p>
-                </div>
-                <div className="px-6 pb-6">
-                  <a href="/projects/18" className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors">
-                    <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
-                      <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                    Discover more
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="relative bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
-                  <img
-                    src="https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-2.jpg"
-                    alt="Laboratoires PRED"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-                <div className="grow p-6">
-                  <div className="flex items-center text-teal-300 text-sm mb-2">
-                    <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
-                      <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
-                    </svg>
-                    250:00
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">Laboratoires PRED</h3>
-                  <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-[#d4ff00] px-3 py-1.5 rounded-full border border-solid text-[#d4ff00]">Health & Medical</li>
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-purple-300 px-3 py-1.5 rounded-full border border-solid text-purple-300">Custom</li>
-                    <li className="text-xs font-semibold inline-block text-center uppercase text-nowrap border-teal-300 px-3 py-1.5 rounded-full border border-solid text-teal-300">Website</li>
-                  </ul>
-                  <p className="text-white/60 text-sm leading-relaxed line-clamp-3">
-                    Laboratoires PRED mission is to improve oral health and help practitioners offer patients their best smile by promoting minimally invasive, evidence-based dentistry.
-                  </p>
-                </div>
-                <div className="px-6 pb-6">
-                  <a href="/projects/17" className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors">
-                    <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5">
-                      <svg className="w-3.5 h-3.5 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                    Discover more
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-wrap -mx-3">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Photography Section */}
+      <PhotographySection />
 
       {/* SEO & Marketing Section */}
       <section className="relative z-10 py-16 md:py-28 px-6">
@@ -657,60 +560,66 @@ export const WebDesignPage = () => {
                 good hands
               </span>
             </h2>
-            <div className="absolute hidden md:flex flex-col items-center -top-14 right-6 z-10">
-              <p className="text-xl text-white font-caveat -rotate-12 leading-tight text-center mb-0.5">
-                We do SEO
-                <br />
-                as well
-              </p>
-              <svg className="w-4 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 16 32" strokeWidth={1.2}>
-                <path d="M8 2C6 8 10 14 8 20C7 23 9 26 8 30" strokeLinecap="round" />
-                <path d="M5 25C7 28 8 30 8 30C8 30 9 28 11 25" strokeLinecap="round" />
-              </svg>
-            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                1
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Experienced designers
-              </h3>
-              <p className="text-base leading-relaxed text-black/80">
-                We have high-end designers ready to conceive stunning designs
-                matching your brand style.
-              </p>
-            </div>
-            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                2
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                eCommerce experts
-              </h3>
-              <p className="text-base leading-relaxed text-black/80">
-                Our functional consultants can help you setting-up all your
-                products in your eCommerce.
-              </p>
-            </div>
-            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                3
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Front-end developers
-              </h3>
-              <p className="text-base leading-relaxed text-black/80">
-                Our front-end developers implement tailor-made features to take
-                your website to the next level.
-              </p>
-            </div>
-          </div>
+          <ScrollableCardRow desktopGridCols="md:grid-cols-3">
+            <ProcessCard
+              step={1}
+              variant="purple"
+              title="Experienced designers"
+              description="We have high-end designers ready to conceive stunning designs matching your brand style."
+            />
+            <ProcessCard
+              step={2}
+              variant="yellow"
+              title="eCommerce experts"
+              description="Our functional consultants can help you setting-up all your products in your eCommerce."
+              note={
+                <div className="absolute -top-20 right-4 hidden md:block w-[140px]">
+                  <p className="text-lg text-white font-caveat -rotate-12 leading-tight text-center mb-1">
+                    We do SEO
+                    <br />
+                    as well
+                  </p>
+                  <svg
+                    className="w-10 h-14 text-[#e9d5ff] mx-auto rotate-12"
+                    viewBox="0 0 54 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21.7371 8.87569C25.4674 5.92211 31.7925 3.32185 36.9406 5.86596C42.0238 8.37798 42.1648 15.6881 39.5109 19.9576C35.9863 25.626 26.6853 27.535 20.3061 28.2575C16.8906 28.6443 12.394 28.8797 9.87327 30.7169C6.80598 32.9525 5.80211 36.7262 6.70014 40.2858C7.94273 45.2127 15.4671 47.9715 19.897 44.9782C24.085 42.148 23.3664 36.0079 20.1755 33.2796C17.4764 30.9715 13.5658 31.7601 11.2359 34.3323C6.67151 39.3712 9.09884 49.3496 11.974 54.0084"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M12 54L15 48.5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M12 54L7.5 50.5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+              }
+            />
+            <ProcessCard
+              step={3}
+              variant="cyan"
+              title="Front-end developers"
+              description="Our front-end developers implement tailor-made features to take your website to the next level."
+            />
+          </ScrollableCardRow>
         </div>
       </section>
 
       {/* CTA Section */}
+      <FAQ items={webDesignFAQ} title="Web Design — FAQ" />
       <section className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="relative box-border caret-transparent flex flex-col break-words overflow-hidden rounded-[20px]">
