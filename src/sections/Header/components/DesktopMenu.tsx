@@ -37,7 +37,7 @@ export const DesktopMenu = () => {
                 >
                   <path
                     d="M0 3C5 0.5 10 5.5 15 3C20 0.5 25 5.5 30 3C35 0.5 40 5.5 45 3C50 0.5 55 5.5 60 3C65 0.5 70 5.5 75 3C80 0.5 85 5.5 90 3C95 0.5 100 5.5 105 3C110 0.5 115 5.5 120 3"
-                    stroke="#d4ff00"
+                    stroke="#e7fe56"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                   />
@@ -50,7 +50,7 @@ export const DesktopMenu = () => {
               <li>
                 <Link
                   to="/services/web-design"
-                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
                 >
                   Web Design
                 </Link>
@@ -62,7 +62,7 @@ export const DesktopMenu = () => {
               <li>
                 <Link
                   to="/services/seo"
-                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
                 >
                   SEO
                 </Link>
@@ -70,7 +70,7 @@ export const DesktopMenu = () => {
               <li>
                 <Link
                   to="/services/app-development"
-                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
                 >
                   App Development
                 </Link>
@@ -114,7 +114,7 @@ const DesktopPhotographyLink = () => {
     <a
       href={href}
       onClick={onClick}
-      className="block px-4 py-2 text-sm text-white/70 hover:text-[#d4ff00] hover:bg-white/5 rounded-lg transition-colors"
+      className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
     >
       Photography
     </a>

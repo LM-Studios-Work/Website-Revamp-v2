@@ -51,7 +51,7 @@ export const HomePage = () => {
             </div>
             <div className="md:w-7/12">
               <ScrollableCardRow desktopGridCols="md:grid-cols-3">
-                <div className="bg-[#e9d5ff] text-black p-7 rounded-2xl h-full">
+                <div className="bg-[#d5bff0] text-black p-7 rounded-2xl h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     1
                   </div>
@@ -65,7 +65,7 @@ export const HomePage = () => {
                     designs matching your brand style.
                   </p>
                 </div>
-                <div className="bg-[#d4ff00] text-black p-7 rounded-2xl relative h-full">
+                <div className="bg-[#e7fe56] text-black p-7 rounded-2xl relative h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     2
                   </div>
@@ -90,7 +90,7 @@ export const HomePage = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="bg-[#67e8f9] text-black p-7 rounded-2xl h-full">
+                <div className="bg-[#72f5e3] text-black p-7 rounded-2xl h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     3
                   </div>

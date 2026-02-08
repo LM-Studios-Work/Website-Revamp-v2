@@ -44,7 +44,7 @@ export const SEOPage = () => {
           >
             <path
               d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-              stroke="#d4ff00"
+              stroke="#e7fe56"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -62,7 +62,7 @@ export const SEOPage = () => {
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
             <div className="md:w-1/2">
-              <p className="text-[#d4ff00] text-sm uppercase tracking-widest mb-4">
+              <p className="text-[#e7fe56] text-sm uppercase tracking-widest mb-4">
                 SEO Strategy
               </p>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
@@ -85,7 +85,7 @@ export const SEOPage = () => {
             <div className="md:w-1/2">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
                 <div className="flex items-baseline gap-4 mb-4">
-                  <span className="text-[80px] md:text-[100px] font-bold leading-none text-[#d4ff00]">
+                  <span className="text-[80px] md:text-[100px] font-bold leading-none text-[#e7fe56]">
                     100%
                   </span>
                 </div>
@@ -176,19 +176,19 @@ export const SEOPage = () => {
             <div className="md:w-1/2">
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="text-[#d4ff00] text-4xl font-bold mb-2">
+                  <div className="text-[#e7fe56] text-4xl font-bold mb-2">
                     50+
                   </div>
                   <p className="text-white/60 text-sm">Quality Backlinks</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="text-[#e9d5ff] text-4xl font-bold mb-2">
+                  <div className="text-[#d5bff0] text-4xl font-bold mb-2">
                     90%
                   </div>
                   <p className="text-white/60 text-sm">Domain Authority Growth</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="text-[#67e8f9] text-4xl font-bold mb-2">
+                  <div className="text-[#72f5e3] text-4xl font-bold mb-2">
                     3x
                   </div>
                   <p className="text-white/60 text-sm">Organic Traffic Boost</p>
@@ -345,8 +345,8 @@ export const SEOPage = () => {
             </div>
 
             {/* Growth Engine - Most Popular */}
-            <div className="relative bg-white/5 backdrop-blur-sm border-2 border-[#d4ff00] rounded-2xl p-8 flex flex-col">
-              <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#d4ff00] text-black text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+            <div className="relative bg-white/5 backdrop-blur-sm border-2 border-[#e7fe56] rounded-2xl p-8 flex flex-col">
+              <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#e7fe56] text-black text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
                 Most Popular
               </span>
               <p className="text-white/50 text-sm uppercase tracking-wider mb-2">
@@ -356,7 +356,7 @@ export const SEOPage = () => {
                 Growth Engine
               </h3>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl font-bold text-[#d4ff00]">
+                <span className="text-4xl font-bold text-[#e7fe56]">
                   R4,500
                 </span>
                 <span className="text-white/50 text-sm">/ per month</span>
@@ -452,7 +452,7 @@ export const SEOPage = () => {
               </ul>
               <Link
                 to="/contact"
-                className="mt-auto inline-flex items-center justify-center text-sm font-semibold bg-[#d4ff00] text-black pl-6 pr-2 py-3 rounded-full hover:bg-[#c4ef00] transition-colors"
+                className="mt-auto inline-flex items-center justify-center text-sm font-semibold bg-[#e7fe56] text-black pl-6 pr-2 py-3 rounded-full hover:bg-[#e7fe56]/80 transition-colors"
               >
                 Get started
                 <span className="ml-3 w-8 h-8 bg-black/20 rounded-full flex items-center justify-center">
@@ -646,7 +646,7 @@ export const SEOPage = () => {
               <div className="md:w-5/12">
                 <div className="grid grid-cols-1 gap-4">
                   <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#d4ff00] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#e7fe56] flex items-center justify-center shrink-0">
                       <svg
                         className="w-5 h-5 text-black"
                         fill="none"
@@ -666,7 +666,7 @@ export const SEOPage = () => {
                     </span>
                   </div>
                   <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#e9d5ff] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#d5bff0] flex items-center justify-center shrink-0">
                       <svg
                         className="w-5 h-5 text-black"
                         fill="none"
@@ -686,7 +686,7 @@ export const SEOPage = () => {
                     </span>
                   </div>
                   <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#67e8f9] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#72f5e3] flex items-center justify-center shrink-0">
                       <svg
                         className="w-5 h-5 text-black"
                         fill="none"
@@ -706,7 +706,7 @@ export const SEOPage = () => {
                     </span>
                   </div>
                   <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#d4ff00] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#e7fe56] flex items-center justify-center shrink-0">
                       <svg
                         className="w-5 h-5 text-black"
                         fill="none"

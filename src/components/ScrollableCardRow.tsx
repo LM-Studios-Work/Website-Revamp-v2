@@ -54,7 +54,7 @@ export const ScrollableCardRow = ({
           <button
             onClick={() => scroll("left")}
             aria-label="Scroll left"
-            className={`w-10 h-10 rounded-full bg-[#d4ff00] flex items-center justify-center transition-opacity ${
+              className={`w-10 h-10 rounded-full bg-[#e7fe56] flex items-center justify-center transition-opacity ${
               canScrollLeft ? "opacity-100" : "opacity-30"
             }`}
           >
@@ -66,7 +66,7 @@ export const ScrollableCardRow = ({
             onClick={() => scroll("right")}
             aria-label="Scroll right"
             className={`w-10 h-10 rounded-full bg-[#d4ff00] flex items-center justify-center transition-opacity ${
-              canScrollRight ? "opacity-100" : "opacity-30"
+                canScrollRight ? "opacity-100" : "opacity-30"
             }`}
           >
             <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">

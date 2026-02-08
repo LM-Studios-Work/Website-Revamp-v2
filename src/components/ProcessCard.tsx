@@ -11,22 +11,22 @@ export interface ProcessCardProps {
 
 const VARIANT_STYLES = {
   purple: {
-    container: "bg-[#d4b5f7] text-black",
+    container: "bg-[#d5bff0] text-black",
     circle: "bg-black/10 text-black",
     text: "text-black/70",
-    descBg: "bg-[#d4b5f7]",
+    descBg: "bg-[#d5bff0]",
   },
   yellow: {
-    container: "bg-[#d4ff00] text-black",
+    container: "bg-[#e7fe56] text-black",
     circle: "bg-black/10 text-black",
     text: "text-black/70",
-    descBg: "bg-[#d4ff00]",
+    descBg: "bg-[#e7fe56]",
   },
   cyan: {
-    container: "bg-[#4dd4e8] text-black",
+    container: "bg-[#72f5e3] text-black",
     circle: "bg-black/10 text-black",
     text: "text-black/70",
-    descBg: "bg-[#4dd4e8]",
+    descBg: "bg-[#72f5e3]",
   },
   glass: {
     container:

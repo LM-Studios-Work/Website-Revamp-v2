@@ -54,7 +54,7 @@ export const App = () => {
                       className="inline-flex items-center self-center md:self-auto text-sm md:text-base font-semibold text-white bg-white/10 backdrop-blur-sm pl-6 pr-2 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
                     >
                       Ask for a quote
-                      <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#d4ff00] rounded-full flex items-center justify-center">
+                      <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#e7fe56] rounded-full flex items-center justify-center">
                         <svg className="w-4 h-4 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -65,10 +65,10 @@ export const App = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Navigation</h3>
                       <ul className="flex flex-col list-none pl-0 gap-1">
-                        <li><Link to="/" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Home</Link></li>
-                        <li><Link to="/about-us" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">About us</Link></li>
-                        <li><Link to="/projects" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Projects</Link></li>
-                        <li><Link to="/contact" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Contact us</Link></li>
+                        <li><Link to="/" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Home</Link></li>
+                        <li><Link to="/about-us" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">About us</Link></li>
+                        <li><Link to="/projects" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Projects</Link></li>
+                        <li><Link to="/contact" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Contact us</Link></li>
                       </ul>
                     </div>
                     <div>

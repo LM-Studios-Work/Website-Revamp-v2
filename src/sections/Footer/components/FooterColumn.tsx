@@ -25,7 +25,7 @@ export const FooterColumn = (props: FooterColumnProps) => {
               <Link
                 to={link.href}
                 title={link.title}
-                className="box-border caret-transparent block py-2 hover:text-[#a1ff0a] hover:border-[#a1ff0a]"
+                className="box-border caret-transparent block py-2 hover:text-[#e7fe56] hover:border-[#e7fe56]"
               >
                 {link.text}
               </Link>
@@ -33,7 +33,7 @@ export const FooterColumn = (props: FooterColumnProps) => {
               <a
                 href={link.href}
                 title={link.title}
-                className="box-border caret-transparent block py-2 hover:text-[#a1ff0a] hover:border-[#a1ff0a]"
+                className="box-border caret-transparent block py-2 hover:text-[#e7fe56] hover:border-[#e7fe56]"
               >
                 {link.text}
               </a>

@@ -30,7 +30,7 @@ export const PhotographyContent = () => {
       <div className="space-y-5 mb-10">
         {PHOTOGRAPHY_FEATURES.map((feature, index) => (
           <div key={index} className="flex items-center gap-4 group">
-            <div className="w-8 h-8 rounded-full bg-[#67E8F9] flex items-center justify-center text-black shrink-0 group-hover:scale-110 transition-transform">
+            <div className="w-8 h-8 rounded-full bg-[#72f5e3] flex items-center justify-center text-black shrink-0 group-hover:scale-110 transition-transform">
               <Check className="w-5 h-5" />
             </div>
             <span className="text-base md:text-lg text-white/80">
@@ -42,7 +42,7 @@ export const PhotographyContent = () => {
 
       <a
         href="/contact"
-        className="text-sm font-normal bg-[#8b5cf6] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#8b5cf6] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-colors"
+        className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064] hover:border-[#654064] transition-colors"
       >
         Book a photoshoot
         <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">

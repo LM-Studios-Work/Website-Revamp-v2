@@ -54,7 +54,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             type="button"
             onClick={onClose}
             aria-label="Close navigation menu"
-            className="text-white/60 hover:text-[#d4ff00] transition-colors"
+            className="text-white/60 hover:text-[#e7fe56] transition-colors"
           >
             <svg
               className="w-7 h-7"
@@ -115,7 +115,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         >
                           <path
                             d="M0 3C5 0.5 10 5.5 15 3C20 0.5 25 5.5 30 3C35 0.5 40 5.5 45 3C50 0.5 55 5.5 60 3C65 0.5 70 5.5 75 3C80 0.5 85 5.5 90 3C95 0.5 100 5.5 105 3C110 0.5 115 5.5 120 3"
-                            stroke="#d4ff00"
+                            stroke="#e7fe56"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                           />
@@ -159,7 +159,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                                 }, 220);
                               }}
                               className={`text-sm transition-colors duration-200 ${
-                                isActive(service.to) ? "text-[#d4ff00]" : "text-white/40 hover:text-white/70"
+                                isActive(service.to) ? "text-[#e7fe56]" : "text-white/40 hover:text-white/70"
                               }`}
                             >
                               {service.label}
@@ -169,7 +169,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                               to={service.to}
                               onClick={onClose}
                               className={`text-sm transition-colors duration-200 ${
-                                isActive(service.to) ? "text-[#d4ff00]" : "text-white/40 hover:text-white/70"
+                                isActive(service.to) ? "text-[#e7fe56]" : "text-white/40 hover:text-white/70"
                               }`}
                             >
                               {service.label}
@@ -203,7 +203,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       >
                         <path
                           d="M0 3C5 0.5 10 5.5 15 3C20 0.5 25 5.5 30 3C35 0.5 40 5.5 45 3C50 0.5 55 5.5 60 3C65 0.5 70 5.5 75 3C80 0.5 85 5.5 90 3C95 0.5 100 5.5 105 3C110 0.5 115 5.5 120 3"
-                          stroke="#d4ff00"
+                          stroke="#e7fe56"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                         />

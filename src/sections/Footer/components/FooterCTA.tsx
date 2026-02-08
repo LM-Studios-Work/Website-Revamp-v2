@@ -9,7 +9,7 @@ export const FooterCTA = () => {
                 role="menuitem"
                 href=""
                 title="English"
-                className="box-border caret-transparent inline-block mr-2 py-[3px] hover:text-[#a1ff0a] hover:border-[#a1ff0a]"
+                className="box-border caret-transparent inline-block mr-2 py-[3px] hover:text-[#e7fe56] hover:border-[#e7fe56]"
               >
                 <span className="box-border caret-transparent">
                   English
@@ -36,7 +36,7 @@ export const FooterCTA = () => {
                 role="menuitem"
                 href="/zu"
                 title=" isiZulu"
-                className="box-border caret-transparent inline-block py-[3px] hover:text-[#a1ff0a] hover:border-[#a1ff0a]"
+                className="box-border caret-transparent inline-block py-[3px] hover:text-[#e7fe56] hover:border-[#e7fe56]"
               >
                 <span className="box-border caret-transparent"> isiZulu</span>
               </a>

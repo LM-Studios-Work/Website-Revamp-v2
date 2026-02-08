@@ -35,7 +35,7 @@ export const AppPage = () => {
           >
             <path
               d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-              stroke="#d4ff00"
+              stroke="#e7fe56"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -59,7 +59,7 @@ export const AppPage = () => {
               {[...Array(2)].map((_, setIdx) => (
                 <div key={setIdx} className="flex gap-6">
                   <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#d4ff00] mb-3">
+                    <div className="text-3xl md:text-4xl font-bold text-[#e7fe56] mb-3">
                       <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                       </svg>
@@ -69,7 +69,7 @@ export const AppPage = () => {
                   </div>
 
                   <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#e9d5ff] mb-3">
+                    <div className="text-3xl md:text-4xl font-bold text-[#d5bff0] mb-3">
                       <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                       </svg>
@@ -79,7 +79,7 @@ export const AppPage = () => {
                   </div>
 
                   <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#67e8f9] mb-3">
+                    <div className="text-3xl md:text-4xl font-bold text-[#72f5e3] mb-3">
                       <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                       </svg>
@@ -89,7 +89,7 @@ export const AppPage = () => {
                   </div>
 
                   <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#d4ff00] mb-3">
+                    <div className="text-3xl md:text-4xl font-bold text-[#e7fe56] mb-3">
                       <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
                       </svg>
@@ -128,12 +128,12 @@ export const AppPage = () => {
                 and app store submission.
               </p>
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl md:text-5xl font-bold text-[#d4ff00]">R15,000</span>
+                <span className="text-4xl md:text-5xl font-bold text-[#e7fe56]">R15,000</span>
                 <span className="text-white/50">/ once-off</span>
               </div>
               <Link
                 to="/contact"
-                className="text-sm md:text-base font-semibold bg-[#8b5cf6] inline-flex items-center text-center border-2 border-[#8b5cf6] pl-6 pr-2 py-2 rounded-full hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-colors"
+                className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center text-center border-2 border-[#654064] pl-6 pr-2 py-2 rounded-full hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
               >
                 Get started
                 <span className="relative bg-white/10 h-[30px] w-[30px] md:h-[50px] md:w-[50px] -rotate-45 ml-2.5 p-2 md:p-4 rounded-full flex items-center justify-center">
@@ -175,7 +175,7 @@ export const AppPage = () => {
                   <span className="italic text-outline-2">
                     Business App
                   </span>
-                  <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#67e8f9] text-[#67e8f9] px-4 py-2 rounded-full">
+                  <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#72f5e3] text-[#72f5e3] px-4 py-2 rounded-full">
                     8-12 weeks
                   </span>
                 </h2>
@@ -192,16 +192,16 @@ export const AppPage = () => {
                 integration, an admin panel, and API integrations.
               </p>
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl md:text-5xl font-bold text-[#d4ff00]">R35,000</span>
+                <span className="text-4xl md:text-5xl font-bold text-[#e7fe56]">R35,000</span>
                 <span className="text-white/50">/ once-off</span>
               </div>
-              <span className="inline-block bg-[#d4ff00] text-black text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+              <span className="inline-block bg-[#e7fe56] text-black text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
                 Most Popular
               </span>
               <div>
                 <Link
                   to="/contact"
-                  className="text-sm md:text-base font-semibold bg-[#8b5cf6] inline-flex items-center text-center border-2 border-[#8b5cf6] pl-6 pr-2 py-2 rounded-full hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-colors"
+                  className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center text-center border-2 border-[#654064] pl-6 pr-2 py-2 rounded-full hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
                 >
                   Get started
                   <span className="relative bg-white/10 h-[30px] w-[30px] md:h-[50px] md:w-[50px] -rotate-45 ml-2.5 p-2 md:p-4 rounded-full flex items-center justify-center">
@@ -240,16 +240,16 @@ export const AppPage = () => {
                   months of support &amp; maintenance.
                 </p>
                 <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-4xl md:text-5xl font-bold text-[#d4ff00]">Custom</span>
+                  <span className="text-4xl md:text-5xl font-bold text-[#e7fe56]">Custom</span>
                   <span className="text-white/50">/ once-off</span>
                 </div>
                 <Link
                   to="/contact"
-                  className="text-sm md:text-base font-semibold text-white bg-white/10 backdrop-blur-sm inline-flex items-center pl-6 pr-2 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+                  className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center pl-6 pr-2 py-2 rounded-full border border-[#654064] hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-all duration-300"
                 >
                   Request a quote
-                  <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#d4ff00] rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-white/10 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </span>
@@ -270,8 +270,8 @@ export const AppPage = () => {
                     "Delivery: 12+ weeks",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-white/80">
-                      <span className="w-5 h-5 rounded-full bg-[#d4ff00]/20 flex items-center justify-center shrink-0">
-                        <svg className="w-3 h-3 text-[#d4ff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="w-5 h-5 rounded-full bg-[#e7fe56]/20 flex items-center justify-center shrink-0">
+                        <svg className="w-3 h-3 text-[#e7fe56]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                       </span>
@@ -303,7 +303,7 @@ export const AppPage = () => {
             </div>
             <div className="md:w-7/12">
               <ScrollableCardRow desktopGridCols="md:grid-cols-2">
-                <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl h-full">
+                <div className="bg-[#d5bff0] text-black p-8 rounded-2xl h-full">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     1
                   </div>
@@ -315,7 +315,7 @@ export const AppPage = () => {
                     app's core features and user flows.
                   </p>
                 </div>
-                <div className="bg-[#d4ff00] text-black p-8 rounded-2xl h-full">
+                <div className="bg-[#e7fe56] text-black p-8 rounded-2xl h-full">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     2
                   </div>
@@ -330,7 +330,7 @@ export const AppPage = () => {
                     prioritise user experience and brand consistency.
                   </p>
                 </div>
-                <div className="bg-[#67e8f9] text-black p-8 rounded-2xl h-full">
+                <div className="bg-[#72f5e3] text-black p-8 rounded-2xl h-full">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
                     3
                   </div>
@@ -432,7 +432,7 @@ export const AppPage = () => {
                 <div className="flex justify-center md:justify-end">
                   <Link
                     to="/contact"
-                    className="text-sm md:text-base font-semibold bg-zinc-600 inline-flex items-center text-center border-2 border-zinc-600 pl-4 md:pl-6 pr-2 py-2 rounded-full hover:bg-neutral-600 hover:border-zinc-700 transition-colors"
+                    className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center text-center border-2 border-[#654064] pl-4 md:pl-6 pr-2 py-2 rounded-full hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
                   >
                     Contact us
                     <span className="relative bg-white/10 h-[30px] w-[30px] md:h-[50px] md:w-[50px] -rotate-45 ml-2.5 p-2 md:p-4 rounded-full flex items-center justify-center">
