@@ -76,10 +76,10 @@ export const AboutPage = () => {
         reverse
       />
 
-      {/* Values Cards (horizontal on mobile, grid on desktop) */}
+      {/* Values Cards (vertical stack on mobile, grid on desktop) */}
       <section className="relative py-16 px-6">
         <div className="max-w-[1400px] mx-auto">
-          <ScrollableCardRow desktopGridCols="md:grid-cols-3" plainScroll={false}>
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
             <ProcessCard
               step={1}
               variant="purple"
@@ -100,7 +100,7 @@ export const AboutPage = () => {
               title="Reliability"
               description="We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration."
             />
-          </ScrollableCardRow>
+          </div>
         </div>
       </section>
     </>

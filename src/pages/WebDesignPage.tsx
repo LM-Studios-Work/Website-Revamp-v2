@@ -295,7 +295,7 @@ export const WebDesignPage = () => {
               return (
                 <div
                   key={pkg.title}
-                  className="relative flex flex-col h-full rounded-3xl p-8 border border-white/5 bg-[#121212] transition-all duration-300 group hover:border-[#C3FF00]/30 hover:bg-[#151515] hover:ring-1 hover:ring-[#C3FF00]/20"
+                  className="relative flex flex-col h-full rounded-3xl p-8 border border-white/5 bg-[#121212] transition-all duration-300 group hover:border-[#d4ff00]/30 hover:bg-[#151515] hover:ring-1 hover:ring-[#d4ff00]/20"
                 >
                   {pkg.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#8b5cf6] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-[#8b5cf6]/20">
@@ -304,11 +304,11 @@ export const WebDesignPage = () => {
                   )}
 
                   <div className="flex items-start justify-between mb-8">
-                    <div className="p-3 rounded-2xl bg-white/5 text-white transition-colors duration-300 group-hover:bg-[#C3FF00] group-hover:text-black">
+                    <div className="p-3 rounded-2xl bg-white/5 text-white transition-colors duration-300 group-hover:bg-[#d4ff00] group-hover:text-black">
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#C3FF00]">
+                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#d4ff00]">
                         {pkg.price}
                       </div>
                       <div className="text-xs text-white/40 uppercase tracking-wider">
@@ -331,7 +331,7 @@ export const WebDesignPage = () => {
                   <div className="flex-1 space-y-4 mb-10">
                     {pkg.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-3">
-                        <Check className="w-4 h-4 mt-0.5 shrink-0 text-white/40 transition-colors duration-300 group-hover:text-[#C3FF00]" />
+                        <Check className="w-4 h-4 mt-0.5 shrink-0 text-white/40 transition-colors duration-300 group-hover:text-[#d4ff00]" />
                         <span className="text-sm text-white/70 leading-relaxed">
                           {feature}
                         </span>
@@ -348,7 +348,7 @@ export const WebDesignPage = () => {
                       </span>
                     </div>
 
-                    <button className="w-full py-4 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-white/5 text-white hover:bg-white/10 group-hover:bg-[#C3FF00] group-hover:text-black group-hover:hover:bg-[#d4ff3d]">
+                    <button className="w-full py-4 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-white/5 text-white hover:bg-white/10 group-hover:bg-[#d4ff00] group-hover:text-black group-hover:hover:bg-[#d4ff3d]">
                       Select Package
                       <ArrowRight className="w-4 h-4" />
                     </button>
