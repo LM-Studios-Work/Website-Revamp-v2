@@ -50,7 +50,7 @@ export const HomePage = () => {
               </h2>
             </div>
             <div className="md:w-7/12">
-              <ScrollableCardRow desktopGridCols="md:grid-cols-3">
+              <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
                 <div className="bg-[#d5bff0] text-black p-7 rounded-2xl h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     1
@@ -104,7 +104,7 @@ export const HomePage = () => {
                     take your website to the next level.
                   </p>
                 </div>
-              </ScrollableCardRow>
+              </div>
             </div>
           </div>
         </div>
