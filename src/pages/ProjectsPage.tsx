@@ -13,16 +13,7 @@ export const ProjectsPage = () => {
       <section className="relative min-h-screen px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          {!videoError ? (
-            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          )}
-          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-        </div>
-        <div className="relative z-10 max-w-[1400px] w-full mx-auto">
+          {/* Background overlays removed for clean look */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left column: Heading + primary button */}
             <div>

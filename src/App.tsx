@@ -15,8 +15,8 @@ export const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-        <div className="relative text-white text-base font-light h-full w-full overflow-hidden font-sans">
-          <div className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full z-0">
+      <div className="relative text-white text-base font-light h-full w-full overflow-hidden font-sans">
+        <div className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full z-0">
           <Header />
           <main className="grow shrink-0">
             <div>
@@ -25,18 +25,9 @@ export const App = () => {
                 <Route path="/about-us" element={<AboutPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/services" element={<ServicesPage />} />
-                <Route
-                  path="/services/web-design"
-                  element={<WebDesignPage />}
-                />
-                <Route
-                  path="/services/seo"
-                  element={<SEOPage />}
-                />
-                <Route
-                  path="/services/app-development"
-                  element={<AppPage />}
-                />
+                <Route path="/services/web-design" element={<WebDesignPage />} />
+                <Route path="/services/seo" element={<SEOPage />} />
+                <Route path="/services/app-development" element={<AppPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </div>
@@ -108,17 +99,9 @@ export const App = () => {
             </div>
           </footer>
         </div>
-        {/* Background for sections below the hero */}
-        <div className="fixed box-border caret-transparent shrink-0 w-screen h-screen z-[-1] inset-0">
-          <img
-            src="/fallback.webp"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/70" />
-        </div>
-        <ParticleBackground />
       </div>
     </BrowserRouter>
   );
-};
+}
+
+export default App;

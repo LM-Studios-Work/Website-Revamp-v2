@@ -11,17 +11,7 @@ export const AppPage = () => {
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          {!videoError ? (
-            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          )}
-          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-        </div>
+        {/* Clean background, video removed */}
         <div className="relative z-10 max-w-[900px] w-full text-center">
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
             Mobile &amp; Web Applications
@@ -79,7 +69,7 @@ export const AppPage = () => {
                   </div>
 
                   <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#72f5e3] mb-3">
+                    <div className="text-3xl md:text-4xl font-bold mb-3">
                       <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                       </svg>

@@ -91,7 +91,7 @@ export const HomePage = () => {
                   </div>
                 </div>
                 <div className="bg-[#72f5e3] text-black p-7 rounded-2xl h-full">
-                  <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold mb-5">
                     3
                   </div>
                   <h3 className="text-2xl font-bold leading-tight mb-3">

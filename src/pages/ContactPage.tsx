@@ -7,17 +7,7 @@ export const ContactPage = () => {
     <>
       {/* Hero Section */}
       <section className="relative box-border caret-transparent min-h-screen pt-64 pb-10 md:pb-20 overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          {!videoError ? (
-            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          )}
-          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-        </div>
+        {/* Clean background, video removed */}
         <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
             Contact Us

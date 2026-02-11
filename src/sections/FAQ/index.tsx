@@ -41,7 +41,7 @@ export const FAQ = ({ items = generalFAQ, title = "FAQ" }: FAQProps) => {
                       {item.question}
                     </span>
                     <span
-                      className={`w-10 h-10 rounded-full bg-[#d5bff0] flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                      className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
                         openIndex === index ? "rotate-45" : ""
                       }`}
                     >

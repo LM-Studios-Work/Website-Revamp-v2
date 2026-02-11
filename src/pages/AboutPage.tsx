@@ -10,17 +10,7 @@ export const AboutPage = () => {
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          {!videoError ? (
-            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" onError={() => setVideoError(true)}>
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <img src="/newhero.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          )}
-          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-        </div>
+        {/* Background removed for empty background */}
         <div className="relative z-10 text-center max-w-[900px] mx-auto mb-16">
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             <span className="relative inline-block">
