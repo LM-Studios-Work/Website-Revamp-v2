@@ -9,6 +9,21 @@ export const tagStyle = {
 
 export const projects: ProjectCardProps[] = [
   // ... (Your existing 4 projects: Penguin, Plugin Company, Laboratoires PRED, Torvisco)
+  {
+    imageUrl: "/preview/nyp.webp", // Assuming your naming convention
+    imageAlt: "Ndila Ya Vhupo Travels",
+    timeText: "50:00",
+    title: "Ndila Ya Vhupo Travels",
+    tags: [
+      { text: "Tourism", className: tagStyle.lime },
+      { text: "Event Management", className: tagStyle.purple },
+      { text: "Travel Agency", className: tagStyle.teal },
+      { text: "Group Tours", className: tagStyle.teal },
+    ],
+    description:
+      "A Thohoyandou-based travel agency specializing in shared adventures and authentic Limpopo journeys, handling logistics for group tours to South Africa’s hidden gems.",
+    discoverMoreUrl: "https://ndilayavhupo.co.za", // Replace with actual URL if different
+  },
 
   {
     imageUrl: "/preview/rokunda-mboyi.png",
@@ -25,7 +40,7 @@ export const projects: ProjectCardProps[] = [
       "A passionate architect shaping the future of design with innovative and sustainable solutions.",
     discoverMoreUrl: "https://rokundamboyi.com",
   }, {
-    imageUrl: "/preview/FloatTest.png",
+    imageUrl: "/preview/Float.png",
     imageAlt: "MR FLOAT - Transport Service",
     timeText: "50:00",
     title: "MR FLOAT - Transport Service",
