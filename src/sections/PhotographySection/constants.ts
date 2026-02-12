@@ -6,14 +6,14 @@ export const PHOTOGRAPHY_FEATURES = [
 ] as const;
 
 export const PHOTOGRAPHY_IMAGES = [
+  {
 
+    src: "/photography/gq.webp",
+    alt: "Portrait photography",
+  },
   {
     src: "/photography/Oz.webp",
     alt: "Hands on wheel detail shot",
-  }, {
-    // Ensure the filename matches exactly what is in public/photography/
-    src: "/photography/gq.webp",
-    alt: "Portrait photography",
   },
 
   {
