@@ -10,6 +10,12 @@ export interface ProcessCardProps {
 }
 
 const VARIANT_STYLES = {
+    lime: {
+      container: "bg-[#e7fe56] text-black",
+      circle: "bg-black/10",
+      text: "text-black/80",
+      descBg: "",
+    },
   purple: {
     container: "bg-[#d5bff0] text-black",
     circle: "bg-black/10",

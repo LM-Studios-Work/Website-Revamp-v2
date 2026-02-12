@@ -286,12 +286,6 @@ export const WebDesignPage = () => {
                   key={pkg.title}
                   className="relative flex flex-col h-full rounded-3xl p-8 border border-white/5 bg-[#121212] transition-all duration-300 group hover:border-[#e7fe56]/30 hover:bg-[#151515] hover:ring-1 hover:ring-[#e7fe56]/20"
                 >
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#654064] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-[#654064]/20">
-                      Most Popular
-                    </div>
-                  )}
-
                   <div className="flex items-start justify-between mb-8">
                     <div className="p-3 rounded-2xl bg-white/5 text-white transition-colors duration-300 group-hover:bg-[#e7fe56] group-hover:text-black">
                       <IconComponent className="w-5 h-5" />
@@ -367,19 +361,19 @@ export const WebDesignPage = () => {
           <ScrollableCardRow desktopGridCols="md:grid-cols-3">
             <ProcessCard
               step={1}
-              variant="purple"
+              variant="lime"
               title="Kick off meeting"
               description="Let's start your project by aligning on your website objectives with your dedicated designer."
             />
             <ProcessCard
               step={2}
-              variant="yellow"
+              variant="purple"
               title="Sitemap"
               description="We create a structured blueprint that maps your website's pages and their relationships."
             />
             <ProcessCard
               step={3}
-              variant="cyan"
+              variant="yellow"
               title="Wireframes"
               description="Wireframes outline layout and functionality, providing a clear, ready page structure."
               customBadge={
@@ -552,13 +546,13 @@ export const WebDesignPage = () => {
           <ScrollableCardRow desktopGridCols="md:grid-cols-3">
             <ProcessCard
               step={1}
-              variant="purple"
+              variant="lime"
               title="Experienced designers"
               description="We have high-end designers ready to conceive stunning designs matching your brand style."
             />
             <ProcessCard
               step={2}
-              variant="yellow"
+              variant="purple"
               title="eCommerce experts"
               description="Our functional consultants can help you setting-up all your products in your eCommerce."
               note={
