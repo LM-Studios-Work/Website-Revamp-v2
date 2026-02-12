@@ -12,7 +12,7 @@ interface Particle {
   maxLife: number;
 }
 
-const PARTICLE_COUNT = 60;
+const PARTICLE_COUNT = 64;
 const MAX_SIZE = 1.8;
 const MIN_SIZE = 0.4;
 const MIN_SPEED = 0.15;
