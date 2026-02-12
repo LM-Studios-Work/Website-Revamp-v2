@@ -30,7 +30,7 @@ export const ProjectsPage = () => {
                     setFilterApp("All");
                     setFilterIndustry("All");
                   }}
-                  className="bg-white text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-white/90 transition-colors"
+                  className="bg-white text-black px-8 py-3 rounded-full font-semibold text-base border-2 border-black hover:bg-white/90 transition-colors"
                 >
                   All projects
                 </button>
