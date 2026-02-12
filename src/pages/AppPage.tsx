@@ -1,20 +1,96 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { ProcessCard } from "../components/ProcessCard";
 import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { FAQ } from "@/sections/FAQ";
 import { appDevelopmentFAQ } from "@/sections/FAQ/constants";
 
-export const AppPage = () => {
-  const [videoError, setVideoError] = useState(false);
+const pricingFeatures = [
+  {
+    label: "Platforms",
+    starter: "Single (iOS or Android)",
+    business: "iOS & Android (React Native)",
+    enterprise: "Native iOS & Android",
+  },
+  {
+    label: "Screens",
+    starter: "Up to 5",
+    business: "Up to 15",
+    enterprise: "Unlimited",
+  },
+  {
+    label: "Authentication",
+    starter: "Basic",
+    business: "Social + Email",
+    enterprise: "Enterprise SSO / OAuth2",
+  },
+  {
+    label: "Push Notifications",
+    starter: true,
+    business: true,
+    enterprise: true,
+  },
+  {
+    label: "Payment Integration",
+    starter: false,
+    business: true,
+    enterprise: true,
+  },
+  {
+    label: "Admin Panel",
+    starter: false,
+    business: true,
+    enterprise: "Custom Dashboard",
+  },
+  {
+    label: "API Integrations",
+    starter: false,
+    business: "Standard",
+    enterprise: "Custom + Third-Party",
+  },
+  {
+    label: "Backend Development",
+    starter: false,
+    business: false,
+    enterprise: true,
+  },
+  {
+    label: "Dedicated Project Manager",
+    starter: false,
+    business: false,
+    enterprise: true,
+  },
+  {
+    label: "Post-Launch Support",
+    starter: "1 month",
+    business: "3 months",
+    enterprise: "12 months",
+  },
+  {
+    label: "App Store Submission",
+    starter: true,
+    business: true,
+    enterprise: true,
+  },
+];
 
+export const AppPage = () => {
   return (
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
-        {/* Clean background, video removed */}
         <div className="relative z-10 max-w-[900px] w-full text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="text-white/50 text-sm uppercase tracking-widest">
+              APP DEVELOPMENT
+            </span>
+            <span className="text-xs font-thin inline-block text-center whitespace-nowrap align-middle border-white/30 px-4 py-1.5 rounded-full border border-solid text-white/50">
+              4 weeks min.
+            </span>
+          </div>
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
-            Mobile &amp; Web Applications
+            Mobile &amp; Web
+            <br />
+            Applications
           </h1>
           <svg
             className="mx-auto mb-12 w-[200px] h-[18px]"
@@ -31,244 +107,60 @@ export const AppPage = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[750px] mx-auto">
             From concept to launch, we build high-performance mobile and web
-            applications that engage users and drive business growth.
+            applications that engage users and drive business growth. Whether
+            you need a simple startup app or a complex enterprise platform, we
+            bring your vision to life.
           </p>
         </div>
       </section>
 
-      {/* Tech Stack Section */}
+      {/* Ready to transform section */}
       <section className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white text-center mb-16">
-            App Development
-          </h2>
-          <div className="overflow-hidden">
-            <div className="flex whitespace-nowrap gap-6 animate-marquee">
-              {[...Array(2)].map((_, setIdx) => (
-                <div key={setIdx} className="flex gap-6">
-                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#e7fe56] mb-3">
-                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-1">React Native</h3>
-                    <p className="text-sm text-white/50">Cross-platform mobile</p>
-                  </div>
-
-                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#d5bff0] mb-3">
-                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-1">Swift / Kotlin</h3>
-                    <p className="text-sm text-white/50">Native development</p>
-                  </div>
-
-                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold mb-3">
-                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-1">Next.js</h3>
-                    <p className="text-sm text-white/50">Web applications</p>
-                  </div>
-
-                  <div className="shrink-0 w-[46%] md:w-1/4 backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#e7fe56] mb-3">
-                      <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-1">Node.js</h3>
-                    <p className="text-sm text-white/50">Backend services</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Starter App Pack */}
-      <section className="relative py-10 md:py-20">
-        <div className="max-w-[1400px] w-full mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-stretch gap-0">
-            <div className="w-full md:w-6/12 px-4 py-10 md:pr-8 md:py-20">
-              <h2 className="text-[44px] md:text-[64px] font-semibold leading-tight mb-10">
-                Starter App
-                <span className="text-xs md:text-base font-thin inline-block text-center whitespace-nowrap align-middle border-2 border-purple-300 ml-4 px-4 py-2 rounded-full">
-                  4-6 weeks
-                </span>
-                <br />
-                <span className="text-3xl md:text-[40px]">
-                  Essential mobile presence for your business
-                </span>
+          <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
+            <div className="md:w-1/2">
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
+                Your app is in{" "}
+                <span className="italic text-outline-15">good hands</span>
               </h2>
-              <p className="mb-8 text-white/80 leading-relaxed">
-                A simple mobile app with essential features for startups and
-                small businesses. Our <strong className="font-semibold text-white">Starter App</strong> package
-                delivers a clean, functional app on a{" "}
-                <strong className="font-semibold text-white">single platform (iOS or Android)</strong> with
-                up to 5 core screens, basic authentication, push notifications,
-                and app store submission.
+              <p className="text-lg text-white/70 leading-relaxed mb-8">
+                Your app is the direct connection between your business and your
+                users. We understand the importance of a well-built application
+                that complements your website and represents your brand. Our
+                senior developers have years of experience in React Native,
+                Swift, Kotlin, and Node.js.
               </p>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl md:text-5xl font-bold text-[#e7fe56]">R15,000</span>
-                <span className="text-white/50">/ once-off</span>
-              </div>
-              <Link
-                to="/contact"
-                className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center text-center border-2 border-[#654064] pl-6 pr-2 py-2 rounded-full hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
-              >
-                Get started
-                <span className="relative bg-white/10 h-[30px] w-[30px] md:h-[50px] md:w-[50px] -rotate-45 ml-2.5 p-2 md:p-4 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </Link>
-            </div>
-            <div className="w-full md:w-6/12 px-4 py-2 md:py-4">
-              <div className="relative h-full min-h-[400px] w-full overflow-hidden rounded-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
-                  alt="Mobile app on smartphone"
-                  className="absolute h-full max-w-full object-cover w-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-8 rounded-[32px] bg-[#d5bff0] text-black">
+                  <div className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center mb-6 font-bold text-xs">
+                    01
+                  </div>
+                  <h4 className="text-xl font-bold mb-2">Expert Engineers</h4>
+                  <p className="text-black/60 text-sm">
+                    Our senior developers average 8+ years experience in React
+                    Native and Node.js.
+                  </p>
+                </div>
+                <div className="p-8 rounded-[32px] bg-[#e7fe56] text-black">
+                  <div className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center mb-6 font-bold text-xs">
+                    02
+                  </div>
+                  <h4 className="text-xl font-bold mb-2">Product Minds</h4>
+                  <p className="text-black/60 text-sm">
+                    {"We don't just code; we help you refine your product features for maximum market impact."}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Business App Pack */}
-      <section className="relative py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-            <div className="md:w-1/2 order-2 md:order-1">
-              <div className="relative rounded-2xl overflow-hidden min-h-[400px]">
+            <div className="md:w-1/2">
+              <div className="rounded-[32px] overflow-hidden border border-white/10 aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
-                  alt="Business app development"
-                  className="absolute h-full w-full object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  alt="App development workspace"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
-              </div>
-            </div>
-            <div className="md:w-1/2 order-1 md:order-2">
-              <div className="mb-6">
-                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                  <span className="italic text-outline-2">
-                    Business App
-                  </span>
-                  <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#72f5e3] text-[#72f5e3] px-4 py-2 rounded-full">
-                    8-12 weeks
-                  </span>
-                </h2>
-              </div>
-              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-                Cross-platform app for growing businesses
-              </h3>
-              <p className="text-lg text-white/80 leading-relaxed mb-6">
-                Our{" "}
-                <strong className="font-semibold text-white">most popular package</strong>{" "}
-                delivers a cross-platform app built with React Native for{" "}
-                <strong className="font-semibold text-white">iOS &amp; Android</strong>,
-                featuring up to 15 screens, user profiles, dashboards, payment
-                integration, an admin panel, and API integrations.
-              </p>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl md:text-5xl font-bold text-[#e7fe56]">R35,000</span>
-                <span className="text-white/50">/ once-off</span>
-              </div>
-              <span className="inline-block bg-[#e7fe56] text-black text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
-                Most Popular
-              </span>
-              <div>
-                <Link
-                  to="/contact"
-                  className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center text-center border-2 border-[#654064] pl-6 pr-2 py-2 rounded-full hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
-                >
-                  Get started
-                  <span className="relative bg-white/10 h-[30px] w-[30px] md:h-[50px] md:w-[50px] -rotate-45 ml-2.5 p-2 md:p-4 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Enterprise Solution */}
-      <section className="relative py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-10 md:p-16">
-            <div className="flex flex-col md:flex-row items-start gap-10 md:gap-16">
-              <div className="md:w-1/2">
-                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                  Enterprise{" "}
-                  <span className="italic text-outline-2">
-                    Solution
-                  </span>
-                </h2>
-                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-6">
-                  Fully custom development for complex requirements
-                </h3>
-                <p className="text-lg text-white/80 leading-relaxed mb-8">
-                  Native iOS &amp; Android apps with unlimited screens and features,{" "}
-                  <strong className="font-semibold text-white">
-                    custom backend development
-                  </strong>
-                  , third-party integrations, a dedicated project manager, and 12
-                  months of support &amp; maintenance.
-                </p>
-                <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-4xl md:text-5xl font-bold text-[#e7fe56]">Custom</span>
-                  <span className="text-white/50">/ once-off</span>
-                </div>
-                <Link
-                  to="/contact"
-                  className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center pl-6 pr-2 py-2 rounded-full border border-[#654064] hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-all duration-300"
-                >
-                  Request a quote
-                  <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-white/10 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
-              <div className="md:w-1/2">
-                <h4 className="text-sm uppercase tracking-wider text-white/40 mb-6">
-                  Everything included
-                </h4>
-                <ul className="flex flex-col gap-4">
-                  {[
-                    "Native iOS & Android",
-                    "Unlimited screens & features",
-                    "Custom backend development",
-                    "Third-party integrations",
-                    "Dedicated project manager",
-                    "12 months support & maintenance",
-                    "Delivery: 12+ weeks",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-white/80">
-                      <span className="w-5 h-5 rounded-full bg-[#e7fe56]/20 flex items-center justify-center shrink-0">
-                        <svg className="w-3 h-3 text-[#e7fe56]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>
@@ -278,160 +170,337 @@ export const AppPage = () => {
       {/* Our Process Section */}
       <section className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
+          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
             <div className="md:w-5/12 shrink-0">
-                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                 Our{" "}
-                <span className="italic text-outline-15">
-                  process
-                </span>
-                </h2>
-              <p className="text-lg text-white/70 leading-relaxed">
+                <span className="italic text-outline-15">process</span>
+              </h2>
+              <p className="text-base text-white/60 leading-relaxed">
                 A proven development workflow that delivers quality apps on time
                 and within budget.
               </p>
             </div>
-            <div className="md:w-7/12">
-              <ScrollableCardRow desktopGridCols="md:grid-cols-2">
-                <div className="bg-[#d5bff0] text-black p-8 rounded-2xl h-full">
-                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
-                    1
-                  </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-4">
-                    Discovery
-                  </h3>
-                  <p className="text-sm leading-relaxed text-black/80">
-                    We analyse your requirements, target audience, and define the
-                    app's core features and user flows.
-                  </p>
-                </div>
-                <div className="bg-[#e7fe56] text-black p-8 rounded-2xl h-full">
-                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
-                    2
-                  </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-4">
-                    UI/UX Design
-                    <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
-                      Critical
-                    </span>
-                  </h3>
-                  <p className="text-sm leading-relaxed text-black/80">
-                    We create wireframes and high-fidelity designs that
-                    prioritise user experience and brand consistency.
-                  </p>
-                </div>
-                <div className="bg-[#72f5e3] text-black p-8 rounded-2xl h-full">
-                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center text-sm font-semibold mb-5">
-                    3
-                  </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-4">
-                    Development
-                  </h3>
-                  <p className="text-sm leading-relaxed text-black/80">
-                    Our developers build your app using modern frameworks,
-                    ensuring clean code and optimal performance.
-                  </p>
-                </div>
-                <div className="backdrop-blur-sm bg-white/5 border border-white/10 text-white p-8 rounded-2xl h-full">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm font-semibold mb-5">
-                    4
-                  </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-4">
-                    Testing &amp; Launch
-                  </h3>
-                  <p className="text-sm leading-relaxed text-white/70">
-                    Rigorous QA testing across devices, followed by app store
-                    submission and launch support.
-                  </p>
-                </div>
-              </ScrollableCardRow>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Your app is in good hands */}
-      <section className="relative py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="relative mb-12 md:mb-20">
-            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
-              Your app is in
-              <br />
-              <span className="italic text-outline-2">
-                good hands
-              </span>
-            </h2>
           </div>
           <ScrollableCardRow desktopGridCols="md:grid-cols-3">
-            <div className="bg-[#e9d5ff] text-black p-8 rounded-2xl h-full">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                1
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Experienced developers
-              </h3>
-              <p className="text-base leading-relaxed text-black/80">
-                We have senior developers skilled in React Native, Swift, and
-                Kotlin ready to build your app.
-              </p>
-            </div>
-            <div className="bg-[#d4ff00] text-black p-8 rounded-2xl h-full">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                2
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Full-stack capability
-              </h3>
-              <p className="text-base leading-relaxed text-black/80">
-                From frontend interfaces to backend APIs, we handle the entire
-                stack to deliver a seamless product.
-              </p>
-            </div>
-            <div className="bg-[#67e8f9] text-black p-8 rounded-2xl h-full">
-              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-base font-semibold mb-6">
-                3
-              </div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">
-                Ongoing support
-              </h3>
-              <p className="text-base leading-relaxed text-black/80">
-                Every package includes months of post-launch support to keep
-                your app running smoothly.
-              </p>
-            </div>
+            <ProcessCard
+              step={1}
+              variant="purple"
+              title="Discovery"
+              description="We analyse your requirements, target audience, and define the app's core features and user flows."
+            />
+            <ProcessCard
+              step={2}
+              variant="yellow"
+              title="Design & Build"
+              description="We create wireframes, high-fidelity designs, and develop your app using modern frameworks with clean, performant code."
+            />
+            <ProcessCard
+              step={3}
+              variant="cyan"
+              title="Test & Launch"
+              description="Rigorous QA testing across devices, followed by app store submission and launch support with ongoing maintenance."
+            />
           </ScrollableCardRow>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <FAQ items={appDevelopmentFAQ} title="App Development — FAQ" />
-      <section className="relative py-10 md:py-20">
-        <div className="max-w-[1400px] w-full mx-auto px-4">
-          <div className="relative flex flex-col break-words overflow-hidden rounded-2xl">
-            <div className="backdrop-blur-sm bg-white/10 grow break-words p-10 rounded-2xl">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="text-center md:text-left md:max-w-[60%]">
-                  <h2 className="text-3xl md:text-[50px] font-bold leading-tight mb-6">
-                    {"Let's build your next app."}
-                  </h2>
-                  <p className="text-white/80 mb-0">
-                    Ready to bring your app idea to life? Contact us for a free
-                    consultation and project estimate.
-                  </p>
+      {/* Custom Apps That Drive Growth */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
+            <div className="md:w-1/2">
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
+                Custom Apps That
+                <br />
+                Drive{" "}
+                <span className="italic text-outline-15">Growth</span>
+              </h2>
+            </div>
+            <div className="md:w-1/2 flex flex-col gap-6">
+              <p className="text-lg text-white/70 leading-relaxed">
+                Our team of talented developers specializes in creating custom
+                applications that are{" "}
+                <strong className="text-white font-semibold">
+                  performant, scalable, and perfectly aligned
+                </strong>{" "}
+                with your business goals. Whether you are starting from scratch
+                or looking to upgrade your current app, we are here to bring
+                your vision to life.
+              </p>
+              <p className="text-lg text-white/70 leading-relaxed">
+                Let us help you create an app that not only looks amazing but
+                also delivers measurable results for your business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Table Section */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
+              What you will get
+            </h2>
+          </div>
+
+          {/* Table Header - Desktop */}
+          <div className="hidden md:grid grid-cols-4 gap-0 mb-0">
+            <div />
+            <div className="text-center pb-6">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#e7fe56] border border-[#e7fe56] px-4 py-1 rounded-full mb-4">
+                starter
+              </span>
+              <div className="text-5xl font-bold text-white mb-1">R15k</div>
+              <p className="text-white/40 text-sm">4-6 weeks</p>
+            </div>
+            <div className="text-center pb-6">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#72f5e3] border border-[#72f5e3] px-4 py-1 rounded-full mb-4">
+                business
+              </span>
+              <div className="text-5xl font-bold text-white mb-1">R35k</div>
+              <p className="text-white/40 text-sm">8-12 weeks</p>
+            </div>
+            <div className="text-center pb-6">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#d5bff0] border border-[#d5bff0] px-4 py-1 rounded-full mb-4">
+                enterprise
+              </span>
+              <div className="text-5xl font-bold text-white mb-1">Custom</div>
+              <p className="text-white/40 text-sm">12+ weeks</p>
+            </div>
+          </div>
+
+          {/* Table Rows - Desktop */}
+          <div className="hidden md:block border-t border-white/10">
+            {pricingFeatures.map((feature, idx) => (
+              <div
+                key={idx}
+                className="grid grid-cols-4 gap-0 border-b border-white/10"
+              >
+                <div className="flex items-center py-5 px-4 text-sm text-white/80 font-medium">
+                  {feature.label}
                 </div>
-                <div className="flex justify-center md:justify-end">
-                  <Link
-                    to="/contact"
-                    className="text-sm md:text-base font-semibold bg-[#654064] text-white inline-flex items-center text-center border-2 border-[#654064] pl-4 md:pl-6 pr-2 py-2 rounded-full hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
+                {(["starter", "business", "enterprise"] as const).map(
+                  (tier) => {
+                    const value = feature[tier];
+                    return (
+                      <div
+                        key={tier}
+                        className="flex items-center justify-center py-5 px-4 text-sm text-center border-l border-white/10"
+                      >
+                        {value === true ? (
+                          <svg
+                            className="w-5 h-5 text-[#e7fe56]"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        ) : value === false ? (
+                          <span className="text-white/20">-</span>
+                        ) : (
+                          <span className="text-white/70">{value}</span>
+                        )}
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="flex flex-col gap-8 md:hidden">
+            {(
+              [
+                {
+                  tier: "starter" as const,
+                  label: "Starter",
+                  price: "R15k",
+                  subtitle: "4-6 weeks",
+                  color: "#e7fe56",
+                },
+                {
+                  tier: "business" as const,
+                  label: "Business",
+                  price: "R35k",
+                  subtitle: "8-12 weeks",
+                  color: "#72f5e3",
+                },
+                {
+                  tier: "enterprise" as const,
+                  label: "Enterprise",
+                  price: "Custom",
+                  subtitle: "12+ weeks",
+                  color: "#d5bff0",
+                },
+              ] as const
+            ).map((plan) => (
+              <div
+                key={plan.tier}
+                className="bg-white/5 border border-white/10 rounded-2xl p-6"
+              >
+                <div className="text-center mb-6">
+                  <span
+                    className="inline-block text-xs font-semibold uppercase tracking-wider px-4 py-1 rounded-full mb-3 border"
+                    style={{ color: plan.color, borderColor: plan.color }}
                   >
-                    Contact us
-                    <span className="relative bg-white/10 h-[30px] w-[30px] md:h-[50px] md:w-[50px] -rotate-45 ml-2.5 p-2 md:p-4 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </Link>
+                    {plan.label}
+                  </span>
+                  <div className="text-4xl font-bold text-white mb-1">
+                    {plan.price}
+                  </div>
+                  <p className="text-white/40 text-sm">{plan.subtitle}</p>
                 </div>
+                <div className="border-t border-white/10">
+                  {pricingFeatures.map((feature, idx) => {
+                    const value = feature[plan.tier];
+                    if (value === false) return null;
+                    return (
+                      <div
+                        key={idx}
+                        className="flex items-center justify-between py-3 border-b border-white/5 last:border-0"
+                      >
+                        <span className="text-sm text-white/60">
+                          {feature.label}
+                        </span>
+                        <span className="text-sm text-white/80 font-medium">
+                          {value === true ? (
+                            <svg
+                              className="w-4 h-4 text-[#e7fe56]"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          ) : (
+                            value
+                          )}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mini CTA Cards */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-10 md:p-12 rounded-[32px] bg-white/[0.02] border border-white/5 flex flex-col justify-between group cursor-pointer hover:bg-white/[0.04] transition-colors">
+            <div>
+              <span className="px-3 py-1 rounded-full border border-white/10 text-[10px] font-bold text-white/40 uppercase tracking-widest mb-6 inline-block">
+                SECURITY
+              </span>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#72f5e3] transition-colors">
+                Enterprise Grade Security
+              </h3>
+              <p className="text-white/40 mb-8">
+                We implement OAuth2, JWT, and SOC2 compliant architectures for
+                your peace of mind.
+              </p>
+            </div>
+            <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#72f5e3] group-hover:text-black transition-all">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </div>
+          <div className="p-10 md:p-12 rounded-[32px] bg-white/[0.02] border border-white/5 flex flex-col justify-between group cursor-pointer hover:bg-white/[0.04] transition-colors">
+            <div>
+              <span className="px-3 py-1 rounded-full border border-white/10 text-[10px] font-bold text-white/40 uppercase tracking-widest mb-6 inline-block">
+                PERFORMANCE
+              </span>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#e7fe56] transition-colors">
+                Edge-First Architecture
+              </h3>
+              <p className="text-white/40 mb-8">
+                Optimized for global performance with edge functions and
+                distributed database clusters.
+              </p>
+            </div>
+            <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#e7fe56] group-hover:text-black transition-all">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <FAQ items={appDevelopmentFAQ} title="App Development — FAQ" />
+
+      {/* CTA Section */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+              <div>
+                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                  {"Let's build your"}
+                  <br />
+                  next{" "}
+                  <span className="italic text-outline-15">app.</span>
+                </h2>
+              </div>
+              <div>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center text-sm md:text-base font-semibold text-black bg-[#e7fe56] pl-6 pr-2 py-3 rounded-full hover:bg-[#e7fe56]/80 transition-colors"
+                >
+                  Get a free consultation
+                  <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-black/20 rounded-full flex items-center justify-center">
+                    <svg
+                      className="w-4 h-4 text-black -rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
