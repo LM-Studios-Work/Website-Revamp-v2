@@ -14,25 +14,25 @@ const VARIANT_STYLES = {
     container: "bg-[#d5bff0] text-black",
     circle: "bg-black/10",
     text: "text-black/80",
-    descBg: "bg-black/5",
+    descBg: "",
   },
   yellow: {
     container: "bg-[#e7fe56] text-black",
     circle: "bg-black/10",
     text: "text-black/80",
-    descBg: "bg-black/5",
+    descBg: "",
   },
   cyan: {
     container: "bg-[#72f5e3] text-black",
     circle: "bg-black/10",
     text: "text-black/80",
-    descBg: "bg-black/5",
+    descBg: "",
   },
   glass: {
     container: "bg-white/5 text-white border border-white/10",
     circle: "bg-white/10",
     text: "text-white/70",
-    descBg: "bg-white/5",
+    descBg: "",
   },
 };
 
