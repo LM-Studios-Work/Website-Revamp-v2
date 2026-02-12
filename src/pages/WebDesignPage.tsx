@@ -223,26 +223,23 @@ export const WebDesignPage = () => {
               <div className="mb-6">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                   <span className="italic text-outline-2">
-                    Standard Pack
-                  </span>
-                  <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#72f5e3] text-[#72f5e3] px-4 py-2 rounded-full">
-                    25h min.
+                    Streamlined Essentials
                   </span>
                 </h2>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-                No-fuss web design for your business
+                Efficiency and simplicity for your business
               </h3>
               <p className="text-lg text-white/80 leading-relaxed">
-                Our Standard Pack is designed for{" "}
+                Perfect for businesses that need a{" "}
                 <strong className="font-semibold text-white">
-                  small projects that prioritize simplicity and efficiency
+                  clean, professional web presence without the wait
                 </strong>
-                . Built exclusively with LM Studios' Website Builder, standard
-                options, and Bootstrap variables, it's perfect for clients who
-                need a clean, functional website{" "}
+                . Built exclusively with LM Studios' Website Builder and standard
+                options, this approach focuses on delivering a functional,
+                user-friendly website{" "}
                 <strong className="font-semibold text-white">
-                  without customizations
+                  with speed and precision
                 </strong>
                 .
               </p>
