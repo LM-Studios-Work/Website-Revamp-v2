@@ -25,7 +25,7 @@ export const PhotographyImages = () => {
           {/* Handwritten note */}
           <div className="absolute -top-16 -right-8 hidden md:block z-10 pointer-events-none">
             <span className="block -rotate-12 text-white font-caveat text-2xl font-bold whitespace-nowrap leading-tight">
-              In Belgium
+              In Johannesburg and Gqeberha
               <br />
               only
             </span>
