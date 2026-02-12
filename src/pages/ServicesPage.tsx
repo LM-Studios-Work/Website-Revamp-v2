@@ -6,7 +6,7 @@ export const ServicesPage = () => {
   return (
     <div className="relative min-h-screen pt-32 overflow-hidden">
       <HeroVideoOverlay />
-      <div className="relative z-10">
+      <div className="relative z-30">
       <ServicesMarquee
         variant="pt-[60px] md:pt-[120px]"
         primaryText="Our services"

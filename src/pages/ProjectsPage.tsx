@@ -12,7 +12,7 @@ export const ProjectsPage = () => {
       {/* Hero Section */}
       <section className="relative px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="max-w-[1400px] w-full mx-auto">
+        <div className="relative z-30 max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left column: Heading + primary button */}
             <div>

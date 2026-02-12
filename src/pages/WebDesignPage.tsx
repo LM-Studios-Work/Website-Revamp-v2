@@ -146,7 +146,7 @@ export const WebDesignPage = () => {
       {/* Hero Section */}
       <section className="relative z-10 flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-10 max-w-[900px] w-full text-center">
+        <div className="relative z-30 max-w-[900px] w-full text-center">
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
             Web Design
           </h1>

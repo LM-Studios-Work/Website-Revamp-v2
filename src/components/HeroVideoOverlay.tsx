@@ -1,87 +1,91 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 
 /**
- * Renders the hero video at the top of the viewport with:
- *  - A gradient mask that fades the video out ~30% down the hero
- *  - A subtle animated sunlight / warm glow that drifts slowly
+ * Layered hero background used on EVERY page hero section.
  *
- * This component is absolutely positioned inside the hero section of every page.
+ * Layer stack (inside the hero <section>):
+ *  1. Video (or fallback image on error)
+ *  2. Lime glow — floating animated blob with screen blend
+ *  3. Master gradient mask — fades from clear at top to solid black at bottom
+ *  4. Light-ray booster — subtle mix-blend-overlay to enhance glow
  */
+
+const floatKeyframes = `
+  @keyframes heroFloat {
+    0%   { transform: translate(-50%, -50%) translate(0px, 0px); }
+    33%  { transform: translate(-50%, -50%) translate(30px, -50px); }
+    66%  { transform: translate(-50%, -50%) translate(-20px, 20px); }
+    100% { transform: translate(-50%, -50%) translate(0px, 0px); }
+  }
+`;
+
 export const HeroVideoOverlay = () => {
-  const glowRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let animationId: number;
-    let t = Math.random() * 1000; // random start so it feels organic
-
-    const animateGlow = () => {
-      t += 0.003;
-      if (glowRef.current) {
-        // Slow figure-8 drift
-        const x = 50 + Math.sin(t * 0.7) * 12 + Math.cos(t * 0.4) * 6;
-        const y = 25 + Math.sin(t * 0.5) * 8 + Math.cos(t * 0.3) * 4;
-        const scale = 1 + Math.sin(t * 0.6) * 0.15;
-        glowRef.current.style.transform = `translate(-50%, -50%) translate(${x - 50}%, ${y - 25}%) scale(${scale})`;
-      }
-      animationId = requestAnimationFrame(animateGlow);
-    };
-
-    animateGlow();
-    return () => cancelAnimationFrame(animationId);
-  }, []);
+  const [videoError, setVideoError] = useState(false);
 
   return (
-    <div
-      className="absolute inset-x-0 top-0 h-[75vh] overflow-hidden pointer-events-none"
-      style={{ zIndex: 2 }}
-      aria-hidden="true"
-    >
-      {/* Video layer with gradient mask — fades out toward bottom */}
-      <div
-        className="absolute inset-0"
-        style={{
-          maskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 75%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 75%)",
-        }}
-      >
+    <div className="absolute inset-0 z-0" aria-hidden="true">
+      {/* Inject float keyframes */}
+      <style>{floatKeyframes}</style>
+
+      {/* VIDEO / FALLBACK */}
+      {!videoError ? (
         <video
           autoPlay
-          muted
           loop
+          muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => setVideoError(true)}
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-      </div>
+      ) : (
+        <img
+          src="/background/fallback.webp"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
 
-      {/* Animated sunlight glow — subtle warm/lime tint that drifts */}
+      {/* LIME GLOW (responsive) */}
       <div
-        ref={glowRef}
-        className="absolute"
+        className="
+          absolute left-1/2
+          top-[60%] w-[300px] h-[300px]
+          md:top-1/2 md:w-[600px] md:h-[600px]
+          bg-[#e7fe56] rounded-full opacity-20
+          pointer-events-none z-10
+        "
         style={{
-          top: "25%",
-          left: "50%",
-          width: "clamp(400px, 50vw, 800px)",
-          height: "clamp(300px, 35vw, 500px)",
-          background:
-            "radial-gradient(ellipse at center, rgba(200,210,80,0.12) 0%, rgba(180,200,60,0.06) 40%, transparent 70%)",
-          borderRadius: "50%",
-          filter: "blur(60px)",
-          transform: "translate(-50%, -50%)",
-          willChange: "transform",
+          animation: "heroFloat 12s ease-in-out infinite",
+          mixBlendMode: "screen",
+          filter: "blur(100px)",
         }}
       />
 
-      {/* Very subtle top-edge highlight to blend with header */}
+      {/* MASTER MASK — fades video from clear at top to solid black at bottom */}
       <div
-        className="absolute inset-x-0 top-0 h-32"
+        className="absolute inset-0 pointer-events-none z-20"
+        style={{
+          background: `linear-gradient(
+            to bottom,
+            rgba(0,0,0,0) 0%,
+            rgba(0,0,0,0) 25%,
+            rgba(0,0,0,0.6) 60%,
+            #000000 90%,
+            #000000 100%
+          )`,
+        }}
+      />
+
+      {/* LIGHT BOOSTER — enhances glow in the middle zone */}
+      <div
+        className="absolute inset-0 pointer-events-none z-20"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(255,255,255,0.02) 0%, transparent 100%)",
+            "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.05) 40%, transparent 60%, rgba(0,0,0,0.9) 100%)",
+          mixBlendMode: "overlay",
         }}
       />
     </div>

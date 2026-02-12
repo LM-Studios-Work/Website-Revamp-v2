@@ -9,7 +9,7 @@ export const AboutPage = () => {
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-10 text-center max-w-[900px] mx-auto mb-16">
+        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16">
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             <span className="relative inline-block">
               About us
