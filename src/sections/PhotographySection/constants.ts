@@ -7,15 +7,16 @@ export const PHOTOGRAPHY_FEATURES = [
 
 export const PHOTOGRAPHY_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1768695205624-101b2893644a?q=80&w=800",
+    // Ensure the filename matches exactly what is in public/photography/
+    src: "/photography/gq.webp",
     alt: "Portrait photography",
   },
   {
-    src: "https://images.unsplash.com/photo-1767476106330-4e5a0b4dcf94?q=80&w=800",
+    src: "/photography/Oz.webp",
     alt: "Hands on wheel detail shot",
   },
   {
-    src: "https://images.unsplash.com/photo-1761210719325-283557e92487?q=80&w=800",
+    src: "/photography/ssk.webp",
     alt: "Detail photography",
   },
 ] as const;
