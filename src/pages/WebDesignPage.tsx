@@ -152,7 +152,7 @@ export const WebDesignPage = () => {
             className="mx-auto mb-12 w-[200px] h-[18px]"
             viewBox="0 0 400 18"
             fill="none"
-            /*...existing code...*/
+          /*...existing code...*/
           ></svg>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
             We design and develop user-friendly websites using modern
@@ -508,7 +508,7 @@ export const WebDesignPage = () => {
               </p>
               <a
                 href="/services/marketing"
-                className="text-sm font-normal bg-[#8b5cf6] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#8b5cf6] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-colors"
+                className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
               >
                 More about marketing
                 <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
