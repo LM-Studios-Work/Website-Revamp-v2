@@ -10,11 +10,11 @@ export const ProjectsPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Hero Section */}
-      <section className="relative min-h-screen px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
+      <section className="relative px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
         {/* Video Background */}
-        <div className="absolute inset-0 z-0">
+        <div className="relative z-10">
           {/* Background overlays removed for clean look */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-[1400px] mx-auto">
             {/* Left column: Heading + primary button */}
             <div>
               <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-tight text-white mb-6">
