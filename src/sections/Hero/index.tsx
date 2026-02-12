@@ -1,23 +1,20 @@
-// Removed unused imports
-
-// 1. Define the floating animation for the lime light
-const animationStyles = `
-  @keyframes float {
-    0% { transform: translate(-50%, -50%) translate(0px, 0px); }
-    33% { transform: translate(-50%, -50%) translate(30px, -50px); }
-    66% { transform: translate(-50%, -50%) translate(-20px, 20px); }
-    100% { transform: translate(-50%, -50%) translate(0px, 0px); }
-  }
-`;
+import { HeroHeading } from "@/sections/Hero/components/HeroHeading";
+import { HeroDescription } from "@/sections/Hero/components/HeroDescription";
+import { SocialSidebar } from "@/components/SocialSidebar";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const Hero = () => {
-
   return (
     <section className="relative flex flex-col justify-end min-h-screen pt-40 pb-16 md:pb-28 overflow-hidden">
-      {/* Inject styles for the animation */}
-      <style>{animationStyles}</style>
-      {/* Background Layer removed for empty background */}
-      {/* ...rest of the Hero section... */}
+      {/* Background: video + glow + gradient mask */}
+      <HeroVideoOverlay />
+
+      <SocialSidebar />
+
+      <div className="relative z-30 w-full max-w-[1400px] mx-auto px-6">
+        <HeroHeading />
+        <HeroDescription />
+      </div>
     </section>
   );
-}
+};

@@ -32,7 +32,7 @@ export const FAQ = ({ items = generalFAQ, title = "FAQ" }: FAQProps) => {
           <div className="md:w-7/12">
             <div className="border-t border-white/10">
               {items.map((item, index) => (
-                <div key={index} className="border-b border-white/10 border-dashed">
+                <div key={index} className="border-b border-white/10">
                   <button
                     onClick={() => toggle(index)}
                     className="flex items-center justify-between w-full py-6 text-left group"
@@ -41,7 +41,7 @@ export const FAQ = ({ items = generalFAQ, title = "FAQ" }: FAQProps) => {
                       {item.question}
                     </span>
                     <span
-                      className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                      className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#d5bff0] flex items-center justify-center shrink-0 transition-transform duration-300 ${
                         openIndex === index ? "rotate-45" : ""
                       }`}
                     >

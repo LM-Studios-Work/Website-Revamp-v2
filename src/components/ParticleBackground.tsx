@@ -12,14 +12,18 @@ interface Particle {
   maxLife: number;
 }
 
-const PARTICLE_COUNT = 60;
+const PARTICLE_COUNT = 64;
 const MAX_SIZE = 1.8;
 const MIN_SIZE = 0.4;
 const MIN_SPEED = 0.15;
 const MAX_SPEED = 0.6;
 const MAX_OPACITY = 0.25;
 
-function createParticle(width: number, height: number, scatter = false): Particle {
+function createParticle(
+  width: number,
+  height: number,
+  scatter = false
+): Particle {
   const maxLife = 600 + Math.random() * 800;
   return {
     x: Math.random() * width,
@@ -122,7 +126,7 @@ export const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 10 }}
+      style={{ zIndex: 1 }}
       aria-hidden="true"
     />
   );

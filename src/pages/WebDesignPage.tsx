@@ -17,6 +17,7 @@ import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 const packages = [
   {
@@ -142,9 +143,10 @@ export const WebDesignPage = () => {
 
   return (
     <>
-      {/* Hero Section with empty background */}
+      {/* Hero Section */}
       <section className="relative z-10 flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
-        <div className="relative z-10 max-w-[900px] w-full text-center">
+        <HeroVideoOverlay />
+        <div className="relative z-30 max-w-[900px] w-full text-center">
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
             Web Design
           </h1>
@@ -152,7 +154,7 @@ export const WebDesignPage = () => {
             className="mx-auto mb-12 w-[200px] h-[18px]"
             viewBox="0 0 400 18"
             fill="none"
-            /*...existing code...*/
+
           ></svg>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
             We design and develop user-friendly websites using modern
@@ -192,7 +194,7 @@ export const WebDesignPage = () => {
             </div>
             <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pl-8 md:py-20">
               <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-10 font-obviously md:text-[50px] md:leading-[60px]">
-                Custom Pack
+                Bespoke Development
                 <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-purple-300 mx-4 px-4 py-[9.6px] rounded-[800px] border-2 border-solid md:text-[19.2px] md:leading-[19.2px]">
                   100h min.
                 </span>
@@ -200,10 +202,7 @@ export const WebDesignPage = () => {
                 Tailored web design development
               </h2>
               <p className="box-border caret-transparent mb-8">
-                Our <strong className="font-semibold">Custom Pack</strong> is
-                perfect for businesses seeking a fully tailored website with a
-                unique design and specialized functionalities. This package
-                includes a comprehensive process:{" "}
+                Our <strong className="font-semibold">Custom Pack</strong> We believe unique businesses deserve unique websites. We don't rely on pre-made themes; instead, we build from the ground up. This comprehensive process includes:{" "}
                 <strong className="font-semibold">
                   sitemap creation, wireframing, mockups
                 </strong>
@@ -226,26 +225,23 @@ export const WebDesignPage = () => {
               <div className="mb-6">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                   <span className="italic text-outline-2">
-                    Standard Pack
-                  </span>
-                  <span className="inline-block ml-4 text-base md:text-lg font-normal border-2 border-[#72f5e3] text-[#72f5e3] px-4 py-2 rounded-full">
-                    25h min.
+                    Streamlined Essentials
                   </span>
                 </h2>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-                No-fuss web design for your business
+                Efficiency and simplicity for your business
               </h3>
               <p className="text-lg text-white/80 leading-relaxed">
-                Our Standard Pack is designed for{" "}
+                Perfect for businesses that need a{" "}
                 <strong className="font-semibold text-white">
-                  small projects that prioritize simplicity and efficiency
+                  clean, professional web presence without the wait
                 </strong>
-                . Built exclusively with LM Studios' Website Builder, standard
-                options, and Bootstrap variables, it's perfect for clients who
-                need a clean, functional website{" "}
+                . Built exclusively with LM Studios' Website Builder and standard
+                options, this approach focuses on delivering a functional,
+                user-friendly website{" "}
                 <strong className="font-semibold text-white">
-                  without customizations
+                  with speed and precision
                 </strong>
                 .
               </p>
@@ -482,35 +478,34 @@ export const WebDesignPage = () => {
               </a>
             </div>
 
-            {/* Marketing */}
+            {/* App Development */}
             <div>
               <div className="box-border caret-transparent mb-6">
                 <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
-                  Marketing
+                  App Development
                   <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
-                    25h min.
+                    From R15k
                   </span>
                 </h2>
                 <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
-                  Drive traffic and engagement
+                  Custom apps built for your business
                 </h3>
               </div>
               <p className="box-border caret-transparent mb-8">
-                By optimizing your website's structure, content, and overall
-                digital strategy, you can attract the right audience, enhance
-                engagement, and{" "}
+                Transform your ideas into powerful mobile and web applications.
+                Our expert developers create{" "}
                 <strong className="font-semibold">
-                  stay ahead of the competition
+                  custom solutions tailored to your business needs
                 </strong>
-                . With a data-driven approach, in-depth analysis, and tailored
-                recommendations, we help you create a powerful online presence
-                that delivers measurable results.
+                , from simple starter apps to complex enterprise systems. With
+                modern frameworks and best practices, we deliver secure,
+                scalable applications that drive business growth.
               </p>
               <a
-                href="/services/marketing"
-                className="text-sm font-normal bg-[#8b5cf6] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#8b5cf6] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-colors"
+                href="/services/app-development"
+                className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
               >
-                More about marketing
+                More about App Development
                 <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
                   <svg
                     className="w-4 h-4"

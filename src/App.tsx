@@ -16,9 +16,30 @@ export const App = () => {
     <BrowserRouter>
       <ScrollToTop />
       <div className="relative text-white text-base font-light h-full w-full overflow-hidden font-sans">
-        <div className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full z-0">
+        <div
+          className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full"
+          data-scroll-container
+        >
+          {/* Layer 0: Fallback background image — loads first, always visible */}
+          <div
+            className="fixed inset-0 pointer-events-none"
+            style={{ zIndex: 0 }}
+            aria-hidden="true"
+          >
+            <img
+              src="/background/fallback.webp"
+              alt=""
+              className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </div>
+
+          {/* Layer 1: Interactive particles — spans full page */}
+          <ParticleBackground />
+
           <Header />
-          <main className="grow shrink-0">
+          <main className="relative z-[2] grow shrink-0">
             <div>
               <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -73,21 +94,19 @@ export const App = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Offices</h3>
                       <ul className="flex flex-col list-none pl-0 gap-1">
-                        <li><a href="https://www.google.com/maps/dir//Rue du Laid Burniat 5" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Belgium</a></li>
-                        <li><a href="https://maps.app.goo.gl/rz4znQDZNZfxDLQt8" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Buffalo</a></li>
-                        <li><a href="#" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Dubai</a></li>
-                        <li><a href="#" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Gujarat</a></li>
-                        <li><a href="#" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Hong Kong</a></li>
-                        <li><a href="#" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Mexico</a></li>
+                        <li><a href="https://www.google.com/maps/dir//Johannesburg, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Johannesburg</a></li>
+                        <li><a href="https://www.google.com/maps/dir//Cape Town, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Cape Town</a></li>
+                        <li><a href="https://www.google.com/maps/dir//Durban, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Durban</a></li>
+                        <li><a href="https://www.google.com/maps/dir//Pretoria, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Pretoria</a></li>
                       </ul>
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Follow us</h3>
                       <ul className="flex flex-col list-none pl-0 gap-1">
-                        <li><a href="https://www.behance.net" title="Behance" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Behance</a></li>
-                        <li><a href="https://dribbble.com" title="Dribbble" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Dribbble</a></li>
-                        <li><a href="https://www.instagram.com" title="Instagram" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Instagram</a></li>
-                        <li><a href="https://www.youtube.com" title="Youtube" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Youtube</a></li>
+                        <li><a href="https://www.behance.net/lm-studios" title="Behance" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Behance</a></li>
+                        <li><a href="https://dribbble.com/LMStudios" title="Dribbble" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Dribbble</a></li>
+                        <li><a href="https://www.instagram.com/lmstudios.official/" title="Instagram" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Instagram</a></li>
+                        <li><a href="https://www.youtube.com/playlist?list=PL1-aSABtP6ADgnXqXDdpxU7-8ixNGUsrz" title="Youtube" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Youtube</a></li>
                       </ul>
                     </div>
                   </div>

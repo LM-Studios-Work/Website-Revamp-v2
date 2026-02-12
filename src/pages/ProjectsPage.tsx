@@ -1,37 +1,43 @@
 import { ProjectsGrid } from "@/sections/ProjectsSection/components/ProjectsGrid";
 import { useState } from "react";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const ProjectsPage = () => {
   const [filterType, setFilterType] = useState("All");
   const [filterApp, setFilterApp] = useState("All");
   const [filterIndustry, setFilterIndustry] = useState("All");
-  const [videoError, setVideoError] = useState(false);
 
   return (
     <div className="min-h-screen pb-20">
       {/* Hero Section */}
-      <section className="relative min-h-screen px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          {/* Background overlays removed for clean look */}
+      <section className="relative px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
+        <HeroVideoOverlay />
+        <div className="relative z-30 max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left column: Heading + primary button */}
             <div>
               <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-tight text-white mb-6">
-                Dive into our
-                <span className="relative inline-block block md:inline-block">
+                Dive into our{" "}
+                <span className="relative inline-block">
                   projects
                 </span>
               </h1>
 
               <div className="md:mt-6">
-                <button className="bg-white text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-white/90 transition-colors">
+                <button
+                  onClick={() => {
+                    setFilterType("All");
+                    setFilterApp("All");
+                    setFilterIndustry("All");
+                  }}
+                  className="bg-white text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-white/90 transition-colors"
+                >
                   All projects
                 </button>
               </div>
             </div>
 
-            {/* Right column: stacked filter controls (mobile: full width stacked) */}
+            {/* Right column: stacked filter controls */}
             <div className="flex flex-col gap-6">
               {/* Type of project dropdown */}
               <div>
@@ -56,7 +62,7 @@ export const ProjectsPage = () => {
                   <select
                     value={filterApp}
                     onChange={(e) => setFilterApp(e.target.value)}
-                    className="w-full bg-transparent text-white border border-teal-400/40 rounded-full px-6 py-3 appearance-none cursor-pointer"
+                    className="w-full bg-transparent text-white border border-white/20 rounded-full px-6 py-3 appearance-none cursor-pointer"
                   >
                     <option value="All">All</option>
                     <option value="Website">Website</option>
@@ -79,10 +85,10 @@ export const ProjectsPage = () => {
                     <option value="All">All</option>
                     <option value="Apparel">Apparel</option>
                     <option value="Energy">Energy</option>
-                    <option value="Health & Medical">Health & Medical</option>
+                    <option value="Health & Medical">{"Health & Medical"}</option>
                     <option value="Manufacturing">Manufacturing</option>
                     <option value="Education">Education</option>
-                    <option value="Food & Restaurant">Food & Restaurant</option>
+                    <option value="Food & Restaurant">{"Food & Restaurant"}</option>
                   </select>
                 </div>
               </div>

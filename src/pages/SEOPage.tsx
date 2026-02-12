@@ -1,29 +1,80 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { ProcessCard } from "../components/ProcessCard";
 import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { FAQ } from "@/sections/FAQ";
 import { seoFAQ } from "@/sections/FAQ/constants";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+
+const pricingFeatures = [
+  {
+    label: "Technical Site Audit",
+    essential: true,
+    growth: true,
+    dominance: true,
+  },
+  {
+    label: "Keyword Research",
+    essential: "Top 20",
+    growth: "Advanced Strategy",
+    dominance: "High-Volume",
+  },
+  {
+    label: "Google Business Profile Setup",
+    essential: true,
+    growth: true,
+    dominance: true,
+  },
+  {
+    label: "Meta Tag Optimization",
+    essential: true,
+    growth: true,
+    dominance: true,
+  },
+  {
+    label: "Content Creation",
+    essential: "Basic Recommendations",
+    growth: "2 articles/mo",
+    dominance: "High-Volume Production",
+  },
+  {
+    label: "Backlink Management",
+    essential: false,
+    growth: true,
+    dominance: "Digital PR & Link Building",
+  },
+  {
+    label: "Reporting",
+    essential: "Monthly",
+    growth: "Bi-Weekly",
+    dominance: "Real-time Dashboard",
+  },
+  {
+    label: "Strategy Consultations",
+    essential: "Quarterly Review",
+    growth: "Conversion Rate Suggestions",
+    dominance: "Unlimited",
+  },
+];
 
 export const SEOPage = () => {
-  const [videoError, setVideoError] = useState(false);
-
   return (
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
-        {/* Clean background, video removed */}
-        <div className="relative z-10 max-w-[900px] w-full text-center">
-          <p className="text-white/50 text-sm md:text-base uppercase tracking-widest mb-4">
-            Data-Driven SEO Strategy
-          </p>
-          <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
-            Get found by
-            <br />
-            customers who{" "}
-            <span className="italic text-outline-2">
-              matter.
+        <HeroVideoOverlay />
+        <div className="relative z-30 max-w-[900px] w-full text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="text-white/50 text-sm uppercase tracking-widest">
+              SEO
             </span>
+            <span className="text-xs font-thin inline-block text-center whitespace-nowrap align-middle border-white/30 px-4 py-1.5 rounded-full border border-solid text-white/50">
+              25h min.
+            </span>
+          </div>
+          <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
+            Search Engine
+            <br />
+            Optimization
           </h1>
           <svg
             className="mx-auto mb-12 w-[200px] h-[18px]"
@@ -41,153 +92,60 @@ export const SEOPage = () => {
             />
           </svg>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[750px] mx-auto">
-            We use data-driven strategies to increase your visibility, drive
-            organic traffic, and convert clicks into clients.
+            Being online is irrelevant if you can't be found. We engineer
+            data-driven SEO strategies that push your website to the top of
+            search results. Whether you need local visibility or global
+            dominance, we turn your organic traffic into your most valuable
+            revenue stream.
           </p>
         </div>
       </section>
 
-      {/* SEO Strategy Section */}
+      {/* Ready to dominate section */}
       <section className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
             <div className="md:w-1/2">
-              <p className="text-[#e7fe56] text-sm uppercase tracking-widest mb-4">
-                SEO Strategy
-              </p>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
-                On-Page &{" "}
-                <span className="italic text-outline-15">
-                  Off-Page
-                </span>
+                Ready to{" "}
+                <span className="italic text-outline-15">dominate</span>
                 <br />
-                Optimisation
+                the search results?
               </h2>
               <p className="text-lg text-white/70 leading-relaxed">
-                The goal of on-page and off-page optimisation is to generate a
-                theme consistent with your targeted keywords. The search engine
-                is a robot, not a human... and therefore, you must follow our
-                proven process to educate the robot so that it brings your
-                website up when your potential customers are searching for
-                specific business-related keywords.
-              </p>
-            </div>
-            <div className="md:w-1/2">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
-                <div className="flex items-baseline gap-4 mb-4">
-                  <span className="text-[80px] md:text-[100px] font-bold leading-none text-[#e7fe56]">
-                    100%
-                  </span>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Results Driven Approach
-                </h3>
-                <p className="text-white/60 text-lg leading-relaxed">
-                  Before beginning search engine optimisation (SEO), it is
-                  important to understand the process involved in an effective
-                  SEO campaign.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How we go to work - Process Steps */}
-      <section className="relative py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
-            <div className="md:w-5/12 shrink-0">
-              <p className="text-[#d4ff00] text-sm uppercase tracking-widest mb-4">
-                How we go to work
-              </p>
-              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
-                Our{" "}
-                <span className="italic text-outline-15">
-                  process
-                </span>
-              </h2>
-            </div>
-          </div>
-          <ScrollableCardRow desktopGridCols="md:grid-cols-4">
-            <ProcessCard
-              step={1}
-              variant="purple"
-              title="Analyse your website"
-              description="We first analyse your website, followed by a step-by-step plan to have the website communicate keywords more effectively to search engines."
-            />
-            <ProcessCard
-              step={2}
-              variant="yellow"
-              title={
-                <>
-                  <span className="text-xs font-normal uppercase tracking-widest block mb-2 text-black/50">
-                    Priority
-                  </span>
-                  Research
-                </>
-              }
-              description="Keyword density tells you how often a search term appears in a text in relation to the total number of words it contains."
-            />
-            <ProcessCard
-              step={3}
-              variant="cyan"
-              title="Onsite Optimisation"
-              description="Optimisation refers to all measures that can be taken directly within the website in order to improve its position in search rankings."
-            />
-            <ProcessCard
-              step={4}
-              variant="glass"
-              title="Reporting & Analysis"
-              description="Our SEO review consists of several factors like content, linking structure, social media efforts, and trust on the internet."
-            />
-          </ScrollableCardRow>
-        </div>
-      </section>
-
-      {/* Link Building */}
-      <section className="relative py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
-            <div className="md:w-1/2">
-              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
-                Link{" "}
-                <span className="italic text-outline-15">
-                  Building
-                </span>
-              </h2>
-              <p className="text-lg text-white/70 leading-relaxed">
-                In the field of SEO, link building describes actions aimed at
-                increasing the number and quality of inbound links to a webpage
-                with the goal of increasing the search engine rankings of that
-                page or website.
+                Your position on Google determines your digital success, acting
+                as the filter for how customers discover your business. We
+                understand the algorithms so you don't have to. A
+                high-performing SEO strategy complements your beautiful website
+                by ensuring it gets seen by the right people at the exact moment
+                they are ready to buy.
               </p>
             </div>
             <div className="md:w-1/2">
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
                   <div className="text-[#e7fe56] text-4xl font-bold mb-2">
-                    50+
+                    #1
                   </div>
-                  <p className="text-white/60 text-sm">Quality Backlinks</p>
+                  <p className="text-white/60 text-sm">Page Rankings</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
                   <div className="text-[#d5bff0] text-4xl font-bold mb-2">
-                    90%
+                    300%
                   </div>
-                  <p className="text-white/60 text-sm">Domain Authority Growth</p>
+                  <p className="text-white/60 text-sm">Traffic Growth</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
                   <div className="text-[#72f5e3] text-4xl font-bold mb-2">
-                    3x
+                    90%
                   </div>
-                  <p className="text-white/60 text-sm">Organic Traffic Boost</p>
+                  <p className="text-white/60 text-sm">Client Retention</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
                   <div className="text-white text-4xl font-bold mb-2">
                     24/7
                   </div>
-                  <p className="text-white/60 text-sm">Monitoring & Support</p>
+                  <p className="text-white/60 text-sm">Monitoring</p>
                 </div>
               </div>
             </div>
@@ -195,425 +153,273 @@ export const SEOPage = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Our Process Section */}
       <section className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[#d4ff00] text-sm uppercase tracking-widest mb-4">
-              Choose your SEO Pack
-            </p>
-            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
-              Transparent{" "}
-              <span className="italic text-outline-15">
-                pricing
-              </span>
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
+            <div className="md:w-5/12 shrink-0">
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                Our{" "}
+                <span className="italic text-outline-15">process</span>
+              </h2>
+              <p className="text-base text-white/60 leading-relaxed">
+                From audit to execution, we build roadmaps that capture traffic
+                and authority.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Local Kickstart */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col">
-              <p className="text-white/50 text-sm uppercase tracking-wider mb-2">
-                25h min.
-              </p>
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Local Kickstart
-              </h3>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl font-bold text-white">R3,499</span>
-                <span className="text-white/50 text-sm">/ once-off</span>
-              </div>
-              <p className="text-white/60 text-sm mb-8">
-                Essential setup for local businesses to get found on Google Maps
-                and local search.
-              </p>
-              <p className="text-xs text-white/40 uppercase tracking-wider mb-4">
-                Best for: Small local shops, plumbers, salons
-              </p>
-              <ul className="flex flex-col gap-3 mb-8 list-none pl-0">
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Google Business Profile Optimization
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Technical Site Audit & Fixes
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Local Keyword Research
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Meta Title & Description Setup
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Google Analytics & Console Setup
-                </li>
-              </ul>
-              <Link
-                to="/contact"
-                className="mt-auto inline-flex items-center justify-center text-sm font-semibold bg-white/10 text-white pl-6 pr-2 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors"
-              >
-                Get started
-                <span className="ml-3 w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-black -rotate-45"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            </div>
+          <ScrollableCardRow desktopGridCols="md:grid-cols-3">
+            <ProcessCard
+              step={1}
+              variant="purple"
+              title="Audit"
+              description="We dive deep into your current site health. We analyze technical errors, competitor rankings, and missed opportunities to establish a baseline."
+            />
+            <ProcessCard
+              step={2}
+              variant="yellow"
+              title="Strategy"
+              description="We build a custom roadmap. This involves identifying high-value keywords and planning content that aligns with your specific user intent."
+            />
+            <ProcessCard
+              step={3}
+              variant="cyan"
+              title="Growth"
+              description="Execution begins. We optimize on-page elements, fix technical issues, and build authority through off-page signals to drive ranking improvements."
+            />
+          </ScrollableCardRow>
+        </div>
+      </section>
 
-            {/* Growth Engine - Most Popular */}
-            <div className="relative bg-white/5 backdrop-blur-sm border-2 border-[#e7fe56] rounded-2xl p-8 flex flex-col">
-              <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#e7fe56] text-black text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
-                Most Popular
-              </span>
-              <p className="text-white/50 text-sm uppercase tracking-wider mb-2">
-                60h min.
-              </p>
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Growth Engine
-              </h3>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl font-bold text-[#e7fe56]">
-                  R4,500
-                </span>
-                <span className="text-white/50 text-sm">/ per month</span>
-              </div>
-              <p className="text-white/60 text-sm mb-8">
-                A monthly campaign designed to increase rankings and organic
-                traffic consistently.
-              </p>
-              <p className="text-xs text-white/40 uppercase tracking-wider mb-4">
-                Best for: Growing businesses, service providers
-              </p>
-              <ul className="flex flex-col gap-3 mb-8 list-none pl-0">
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Everything in Kickstart
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  2x High-Quality Blog Posts/mo
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  On-Page Content Optimization
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Monthly Backlink Strategy
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Keyword Tracking Dashboard
-                </li>
-              </ul>
-              <Link
-                to="/contact"
-                className="mt-auto inline-flex items-center justify-center text-sm font-semibold bg-[#e7fe56] text-black pl-6 pr-2 py-3 rounded-full hover:bg-[#e7fe56]/80 transition-colors"
-              >
-                Get started
-                <span className="ml-3 w-8 h-8 bg-black/20 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-black -rotate-45"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </span>
-              </Link>
+      {/* Data-Driven SEO Section */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
+            <div className="md:w-1/2">
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
+                Data-Driven SEO
+                <br />
+                That Drives{" "}
+                <span className="italic text-outline-15">Revenue</span>
+              </h2>
             </div>
-
-            {/* Market Leader */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col">
-              <p className="text-white/50 text-sm uppercase tracking-wider mb-2">
-                100h min.
+            <div className="md:w-1/2 flex flex-col gap-6">
+              <p className="text-lg text-white/70 leading-relaxed">
+                Our team of SEO specialists is dedicated to ethical, white-hat
+                tactics that ensure long-term stability. We avoid quick hacks
+                that risk penalties. Instead, we focus on the three pillars of
+                search:{" "}
+                <strong className="text-white font-semibold">
+                  Technical Excellence
+                </strong>
+                ,{" "}
+                <strong className="text-white font-semibold">
+                  Content Relevance
+                </strong>
+                , and{" "}
+                <strong className="text-white font-semibold">
+                  Authority Building
+                </strong>
+                .
               </p>
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Market Leader
-              </h3>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl font-bold text-white">R8,500</span>
-                <span className="text-white/50 text-sm">/ per month</span>
-              </div>
-              <p className="text-white/60 text-sm mb-8">
-                Aggressive SEO strategy to dominate high-competition keywords
-                and industry leaders.
+              <p className="text-lg text-white/70 leading-relaxed">
+                We don't just chase traffic; we chase qualified leads. By
+                aligning your site structure with how your customers actually
+                search, we ensure that every click has the potential to convert.
+                Let us help you build a digital footprint that dominates your
+                industry.
               </p>
-              <p className="text-xs text-white/40 uppercase tracking-wider mb-4">
-                Best for: E-commerce, National brands
-              </p>
-              <ul className="flex flex-col gap-3 mb-8 list-none pl-0">
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  4x High-Quality Blog Posts/mo
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Advanced Content Strategy
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  High-Authority Link Building
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Dedicated SEO Manager
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white/80">
-                  <svg
-                    className="w-5 h-5 text-[#d4ff00] shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Quarterly Strategy Review
-                </li>
-              </ul>
-              <Link
-                to="/contact"
-                className="mt-auto inline-flex items-center justify-center text-sm font-semibold bg-white/10 text-white pl-6 pr-2 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors"
-              >
-                Get started
-                <span className="ml-3 w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-black -rotate-45"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </span>
-              </Link>
             </div>
           </div>
         </div>
       </section>
-    <FAQ items={seoFAQ} title="SEO — FAQ" />
+
+      {/* Pricing Table Section */}
+      <section className="relative py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
+              What you will get
+            </h2>
+          </div>
+
+          {/* Table Header */}
+          <div className="hidden md:grid grid-cols-4 gap-0 mb-0">
+            <div />
+            <div className="text-center pb-6">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#e7fe56] border border-[#e7fe56] px-4 py-1 rounded-full mb-4">
+                essential
+              </span>
+              <div className="text-5xl font-bold text-white mb-1">25h</div>
+              <p className="text-white/40 text-sm">Local / Startup</p>
+            </div>
+            <div className="text-center pb-6">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#72f5e3] border border-[#72f5e3] px-4 py-1 rounded-full mb-4">
+                growth
+              </span>
+              <div className="text-5xl font-bold text-white mb-1">50h</div>
+              <p className="text-white/40 text-sm">Regional / SME</p>
+            </div>
+            <div className="text-center pb-6">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#d5bff0] border border-[#d5bff0] px-4 py-1 rounded-full mb-4">
+                dominance
+              </span>
+              <div className="text-5xl font-bold text-white mb-1">100h</div>
+              <p className="text-white/40 text-sm">National / Enterprise</p>
+            </div>
+          </div>
+
+          {/* Table Rows - Desktop */}
+          <div className="hidden md:block border-t border-white/10">
+            {pricingFeatures.map((feature, idx) => (
+              <div
+                key={idx}
+                className="grid grid-cols-4 gap-0 border-b border-white/10"
+              >
+                <div className="flex items-center py-5 px-4 text-sm text-white/80 font-medium">
+                  {feature.label}
+                </div>
+                {(["essential", "growth", "dominance"] as const).map((tier) => {
+                  const value = feature[tier];
+                  return (
+                    <div
+                      key={tier}
+                      className="flex items-center justify-center py-5 px-4 text-sm text-center border-l border-white/10"
+                    >
+                      {value === true ? (
+                        <svg
+                          className="w-5 h-5 text-[#e7fe56]"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      ) : value === false ? (
+                        <span className="text-white/20">-</span>
+                      ) : (
+                        <span className="text-white/70">{value}</span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="flex flex-col gap-8 md:hidden">
+            {(
+              [
+                {
+                  tier: "essential" as const,
+                  label: "Essential",
+                  hours: "25h",
+                  subtitle: "Local / Startup",
+                  color: "#e7fe56",
+                },
+                {
+                  tier: "growth" as const,
+                  label: "Growth",
+                  hours: "50h",
+                  subtitle: "Regional / SME",
+                  color: "#72f5e3",
+                },
+                {
+                  tier: "dominance" as const,
+                  label: "Dominance",
+                  hours: "100h",
+                  subtitle: "National / Enterprise",
+                  color: "#d5bff0",
+                },
+              ] as const
+            ).map((plan) => (
+              <div
+                key={plan.tier}
+                className="bg-white/5 border border-white/10 rounded-2xl p-6"
+              >
+                <div className="text-center mb-6">
+                  <span
+                    className="inline-block text-xs font-semibold uppercase tracking-wider px-4 py-1 rounded-full mb-3 border"
+                    style={{ color: plan.color, borderColor: plan.color }}
+                  >
+                    {plan.label}
+                  </span>
+                  <div className="text-4xl font-bold text-white mb-1">
+                    {plan.hours}
+                  </div>
+                  <p className="text-white/40 text-sm">{plan.subtitle}</p>
+                </div>
+                <div className="border-t border-white/10">
+                  {pricingFeatures.map((feature, idx) => {
+                    const value = feature[plan.tier];
+                    if (value === false) return null;
+                    return (
+                      <div
+                        key={idx}
+                        className="flex items-center justify-between py-3 border-b border-white/5 last:border-0"
+                      >
+                        <span className="text-sm text-white/60">
+                          {feature.label}
+                        </span>
+                        <span className="text-sm text-white/80 font-medium">
+                          {value === true ? (
+                            <svg
+                              className="w-4 h-4 text-[#e7fe56]"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          ) : (
+                            value
+                          )}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-white/30 text-xs text-center mt-6">
+            * This pack is only available with a web design project.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <FAQ items={seoFAQ} title="SEO — FAQ" />
+
       {/* CTA Section */}
       <section className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16">
-        
-            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
-              <div className="md:w-7/12">
-                <p className="text-[#d4ff00] text-sm uppercase tracking-widest mb-4">
-                  Available for new projects
-                </p>
-                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
-                  Let's scale your
+            <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+              <div>
+                <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                  Ready to scale
                   <br />
-                  <span className="italic text-outline-15">
-                    business.
-                  </span>
+                  your{" "}
+                  <span className="italic text-outline-15">traffic?</span>
                 </h2>
-                <p className="text-lg text-white/70 leading-relaxed mb-8">
-                  Contact us for a FREE quote! Our expert team is ready to help
-                  you reach the first page of search results.
-                </p>
+              </div>
+              <div>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center text-sm md:text-base font-semibold text-black bg-[#d4ff00] pl-6 pr-2 py-3 rounded-full hover:bg-[#c4ef00] transition-colors"
+                  className="inline-flex items-center text-sm md:text-base font-semibold text-black bg-[#e7fe56] pl-6 pr-2 py-3 rounded-full hover:bg-[#e7fe56]/80 transition-colors"
                 >
                   Get a free audit
                   <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-black/20 rounded-full flex items-center justify-center">
@@ -632,90 +438,6 @@ export const SEOPage = () => {
                     </svg>
                   </span>
                 </Link>
-              </div>
-              <div className="md:w-5/12">
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#e7fe56] flex items-center justify-center shrink-0">
-                      <svg
-                        className="w-5 h-5 text-black"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-white/80 text-sm">
-                      Free Website SEO Audit
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#d5bff0] flex items-center justify-center shrink-0">
-                      <svg
-                        className="w-5 h-5 text-black"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-white/80 text-sm">
-                      Keyword Research Strategy
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#72f5e3] flex items-center justify-center shrink-0">
-                      <svg
-                        className="w-5 h-5 text-black"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-white/80 text-sm">
-                      Performance Monitoring
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
-                    <div className="w-10 h-10 rounded-full bg-[#e7fe56] flex items-center justify-center shrink-0">
-                      <svg
-                        className="w-5 h-5 text-black"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-white/80 text-sm">
-                      Monthly SEO Reporting
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

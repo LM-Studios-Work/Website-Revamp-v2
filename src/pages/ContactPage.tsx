@@ -1,19 +1,17 @@
-import { useState } from "react";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const ContactPage = () => {
-  const [videoError, setVideoError] = useState(false);
-
   return (
     <>
       {/* Hero Section */}
       <section className="relative box-border caret-transparent min-h-screen pt-64 pb-10 md:pb-20 overflow-hidden">
-        {/* Clean background, video removed */}
-        <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
+        <HeroVideoOverlay />
+        <div className="relative z-30 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
             Contact Us
           </h1>
         </div>
-        <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
+        <div className="relative z-30 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
           <p className="box-border caret-transparent text-center mt-6 mb-8">
             Ready to bring your vision to life? Get in touch with our team and
             let's discuss how we can help you create an exceptional web

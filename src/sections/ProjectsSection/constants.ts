@@ -8,75 +8,124 @@ export const tagStyle = {
 };
 
 export const projects: ProjectCardProps[] = [
+  // ... (Your existing 4 projects: Penguin, Plugin Company, Laboratoires PRED, Torvisco)
   {
-    imageUrl:
-      "https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024.jpg",
-    imageAlt: "Penguin",
+    imageUrl: "/preview/nyp.webp", // Assuming your naming convention
+    imageAlt: "Ndila Ya Vhupo Travels",
     timeText: "50:00",
-    title: "Penguin",
+    title: "Ndila Ya Vhupo Travels",
     tags: [
-      { text: "Apparel", className: tagStyle.lime },
-      { text: "Standard", className: tagStyle.purple },
-      { text: "Website", className: tagStyle.teal },
-      { text: "Ecommerce", className: tagStyle.teal },
-      { text: "Events", className: tagStyle.teal },
-      { text: "Blog", className: tagStyle.teal },
+      { text: "Tourism", className: tagStyle.lime },
+      { text: "Event Management", className: tagStyle.purple },
+      { text: "Travel Agency", className: tagStyle.teal },
+      { text: "Group Tours", className: tagStyle.teal },
     ],
     description:
-      "Founded over 20 years ago from a passion for freeriding, Penguin creates technically advanced, functional apparel designed for uncompromising performance in the powder.",
-    discoverMoreUrl: "/projects/21",
+      "A Thohoyandou-based travel agency specializing in shared adventures and authentic Limpopo journeys, handling logistics for group tours to South Africa’s hidden gems.",
+    discoverMoreUrl: "https://ndilayavhupo.co.za", // Replace with actual URL if different
+  },
+
+  {
+    imageUrl: "/preview/rokunda-mboyi.png",
+    imageAlt: "Rokunda Mboyi",
+    timeText: "50:00",
+    title: "Rokunda Mboyi",
+    tags: [
+      { text: "Architecture", className: tagStyle.lime },
+      { text: "Portfolio", className: tagStyle.purple },
+      { text: "Design", className: tagStyle.teal },
+      { text: "Sustainable", className: tagStyle.teal },
+    ],
+    description:
+      "A passionate architect shaping the future of design with innovative and sustainable solutions.",
+    discoverMoreUrl: "https://rokundamboyi.com",
+  }, {
+    imageUrl: "/preview/Float.png",
+    imageAlt: "MR FLOAT - Transport Service",
+    timeText: "50:00",
+    title: "MR FLOAT - Transport Service",
+    tags: [
+      { text: "Logistics", className: tagStyle.lime },
+      { text: "Essential Business", className: tagStyle.purple },
+      { text: "Transportation", className: tagStyle.teal },
+      { text: "Booking", className: tagStyle.teal },
+    ],
+    description:
+      "A transport company in Zimbabwe that offers a wide array of services, including taxi rides, long-distance travel, car hire, airport shuttles, and package deliveries.",
+    discoverMoreUrl: "https://mrfloatlogistics.com",
   },
   {
-    imageUrl:
-      "https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-1.jpg",
-    imageAlt: "Plugin Company",
+    imageUrl: "/preview/vuza-trading.png",
+    imageAlt: "Vuza Trading",
     timeText: "50:00",
-    title: "Plugin Company",
+    title: "Vuza Trading",
     tags: [
-      { text: "Energy", className: tagStyle.lime },
-      { text: "Standard", className: tagStyle.purple },
-      { text: "Website", className: tagStyle.teal },
+      { text: "Security", className: tagStyle.lime },
+      { text: "Essential Business", className: tagStyle.purple },
+      { text: "Automated Security", className: tagStyle.teal },
+      { text: "Aluminum Solutions", className: tagStyle.teal },
     ],
     description:
-      "Pioneers in car charging in Belgium, Plugin company has been offering since 2009 personalised and reliable solutions to support businesses striving for sustainability.",
-    discoverMoreUrl: "/projects/18",
+      "A professional trading platform with real-time analytics and user-friendly interface.",
+    discoverMoreUrl: "https://aluminiumweb.vercel.app/",
   },
   {
-    imageUrl:
-      "https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-2.jpg",
-    imageAlt: "Laboratoires PRED",
-    timeText: "250:00",
-    title: "Laboratoires PRED",
+    imageUrl: "/preview/mothupi-and-lesego.png",
+    imageAlt: "Mothupi & Lesego - Wedding",
+    timeText: "50:00",
+    title: "Mothupi & Lesego - Wedding",
     tags: [
-      { text: "Health & Medical", className: tagStyle.lime },
-      { text: "Custom", className: tagStyle.purple },
-      { text: "Website", className: tagStyle.teal },
-      { text: "Ecommerce", className: tagStyle.teal },
-      { text: "Events", className: tagStyle.teal },
-      { text: "Blog", className: tagStyle.teal },
+      { text: "Personal", className: tagStyle.lime },
+      { text: "Event Management", className: tagStyle.purple },
+      { text: "Wedding", className: tagStyle.teal },
+      { text: "Event", className: tagStyle.teal },
     ],
     description:
-      "Laboratoires PRED mission is to improve oral health and help practitioners offer patients their best smile by promoting minimally invasive, evidence-based dentistry.",
-    discoverMoreUrl: "/projects/17",
+      "A wedding invitation with an interactive map and a gift registry.",
+    discoverMoreUrl: "https://mothupi-and-lesego.co.za",
+  },
+
+  {
+    imageUrl: "/preview/monare-selahle.png",
+    imageAlt: "Monare Selahle",
+    timeText: "50:00",
+    title: "Monare Selahle",
+    tags: [
+      { text: "Tech", className: tagStyle.lime },
+      { text: "Portfolio", className: tagStyle.purple },
+      { text: "Software Engineer", className: tagStyle.teal },
+    ],
+    description: "Modern portfolio for a Computer Science student.",
+    discoverMoreUrl: "https://monareselahle.co.za",
   },
   {
-    imageUrl:
-      "https://c.animaapp.com/mlaz3dsraozDAl/assets/image_1024-3.jpg",
-    imageAlt: "Torvisco",
+    imageUrl: "/preview/shots-by-ozee.png",
+    imageAlt: "Shots By Ozee",
     timeText: "50:00",
-    title: "Torvisco",
+    title: "Shots By Ozee",
     tags: [
-      { text: "Manufacturing", className: tagStyle.lime },
-      { text: "Standard", className: tagStyle.purple },
-      { text: "Website", className: tagStyle.teal },
-      { text: "Ecommerce", className: tagStyle.teal },
-      { text: "Blog", className: tagStyle.teal },
+      { text: "Creative", className: tagStyle.lime },
+      { text: "Portfolio", className: tagStyle.purple },
+      { text: "Photography", className: tagStyle.teal },
     ],
     description:
-      "TORVISCO GROUP has been a leading name in the bathroom and sanitary sector since 1979. With over 40 years of expertise, the company employs more than 300 professionals.",
-    discoverMoreUrl: "/projects/20",
+      "A photographer and visionary creative currently studying Chemical Engineering.",
+    discoverMoreUrl: "https://shotsbyozee.co.za",
+  },
+  {
+    imageUrl: "/preview/gordian-malaka.png",
+    imageAlt: "Gordian Malaka",
+    timeText: "50:00",
+    title: "Gordian Malaka",
+    tags: [
+      { text: "Film", className: tagStyle.lime },
+      { text: "Portfolio", className: tagStyle.purple },
+      { text: "Photography", className: tagStyle.teal },
+      { text: "Videography", className: tagStyle.teal },
+    ],
+    description: "A film student who has a passion for photography.",
+    discoverMoreUrl: "https://uvhu-portfolio-9rw1.vercel.app/",
   },
 ];
 
-/** The first 3 projects — used on the HomePage and WebDesignPage previews. */
 export const featuredProjects = projects.slice(0, 3);
