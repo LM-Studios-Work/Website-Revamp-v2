@@ -9,7 +9,22 @@ export const tagStyle = {
 
 export const projects: ProjectCardProps[] = [
   // ... (Your existing 4 projects: Penguin, Plugin Company, Laboratoires PRED, Torvisco)
+
   {
+    imageUrl: "/preview/rokunda-mboyi.png",
+    imageAlt: "Rokunda Mboyi",
+    timeText: "50:00",
+    title: "Rokunda Mboyi",
+    tags: [
+      { text: "Architecture", className: tagStyle.lime },
+      { text: "Portfolio", className: tagStyle.purple },
+      { text: "Design", className: tagStyle.teal },
+      { text: "Sustainable", className: tagStyle.teal },
+    ],
+    description:
+      "A passionate architect shaping the future of design with innovative and sustainable solutions.",
+    discoverMoreUrl: "https://rokundamboyi.com",
+  }, {
     imageUrl: "/preview/FloatTest.png",
     imageAlt: "MR FLOAT - Transport Service",
     timeText: "50:00",
@@ -54,21 +69,7 @@ export const projects: ProjectCardProps[] = [
       "A wedding invitation with an interactive map and a gift registry.",
     discoverMoreUrl: "https://mothupi-and-lesego.co.za",
   },
-  {
-    imageUrl: "/preview/rokunda-mboyi.png",
-    imageAlt: "Rokunda Mboyi",
-    timeText: "50:00",
-    title: "Rokunda Mboyi",
-    tags: [
-      { text: "Architecture", className: tagStyle.lime },
-      { text: "Portfolio", className: tagStyle.purple },
-      { text: "Design", className: tagStyle.teal },
-      { text: "Sustainable", className: tagStyle.teal },
-    ],
-    description:
-      "A passionate architect shaping the future of design with innovative and sustainable solutions.",
-    discoverMoreUrl: "https://rokundamboyi.com",
-  },
+
   {
     imageUrl: "/preview/monare-selahle.png",
     imageAlt: "Monare Selahle",
