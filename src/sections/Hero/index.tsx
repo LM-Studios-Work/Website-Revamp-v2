@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const Hero = () => {
   return (
     <section className="relative flex flex-col justify-end min-h-screen pt-40 pb-16 md:pb-28 overflow-hidden">
+      <HeroVideoOverlay />
       <div className="relative z-10 px-6 max-w-[1400px] w-full mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           {/* Left: main heading */}

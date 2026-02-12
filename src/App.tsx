@@ -16,9 +16,30 @@ export const App = () => {
     <BrowserRouter>
       <ScrollToTop />
       <div className="relative text-white text-base font-light h-full w-full overflow-hidden font-sans">
-        <div className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full z-0">
+        <div
+          className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full"
+          data-scroll-container
+        >
+          {/* Layer 0: Fallback background image — loads first, always visible */}
+          <div
+            className="fixed inset-0 pointer-events-none"
+            style={{ zIndex: 0 }}
+            aria-hidden="true"
+          >
+            <img
+              src="/background/fallback.webp"
+              alt=""
+              className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </div>
+
+          {/* Layer 1: Interactive particles — spans full page */}
+          <ParticleBackground />
+
           <Header />
-          <main className="grow shrink-0">
+          <main className="relative z-[2] grow shrink-0">
             <div>
               <Routes>
                 <Route path="/" element={<HomePage />} />

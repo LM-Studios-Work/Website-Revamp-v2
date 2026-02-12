@@ -1,16 +1,14 @@
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
-import { useState } from "react";
 import { ProcessCard } from "../components/ProcessCard";
 import { ScrollableCardRow } from "../components/ScrollableCardRow";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const AboutPage = () => {
-  const [videoError, setVideoError] = useState(false);
-
   return (
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
-        {/* Background removed for empty background */}
+        <HeroVideoOverlay />
         <div className="relative z-10 text-center max-w-[900px] mx-auto mb-16">
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             <span className="relative inline-block">

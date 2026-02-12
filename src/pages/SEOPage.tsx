@@ -3,6 +3,7 @@ import { ProcessCard } from "../components/ProcessCard";
 import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { FAQ } from "@/sections/FAQ";
 import { seoFAQ } from "@/sections/FAQ/constants";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 const pricingFeatures = [
   {
@@ -60,6 +61,7 @@ export const SEOPage = () => {
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+        <HeroVideoOverlay />
         <div className="relative z-10 max-w-[900px] w-full text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="text-white/50 text-sm uppercase tracking-widest">

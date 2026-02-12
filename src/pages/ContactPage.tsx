@@ -1,13 +1,11 @@
-import { useState } from "react";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const ContactPage = () => {
-  const [videoError, setVideoError] = useState(false);
-
   return (
     <>
       {/* Hero Section */}
       <section className="relative box-border caret-transparent min-h-screen pt-64 pb-10 md:pb-20 overflow-hidden">
-        {/* Clean background, video removed */}
+        <HeroVideoOverlay />
         <div className="relative z-10 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
             Contact Us

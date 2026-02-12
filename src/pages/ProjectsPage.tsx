@@ -1,16 +1,17 @@
 import { ProjectsGrid } from "@/sections/ProjectsSection/components/ProjectsGrid";
 import { useState } from "react";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const ProjectsPage = () => {
   const [filterType, setFilterType] = useState("All");
   const [filterApp, setFilterApp] = useState("All");
   const [filterIndustry, setFilterIndustry] = useState("All");
-  const [videoError, setVideoError] = useState(false);
 
   return (
     <div className="min-h-screen pb-20">
       {/* Hero Section */}
       <section className="relative px-6 pb-16 md:pb-24 pt-32 overflow-hidden">
+        <HeroVideoOverlay />
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left column: Heading + primary button */}

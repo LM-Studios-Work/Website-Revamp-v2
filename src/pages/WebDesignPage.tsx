@@ -17,6 +17,7 @@ import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
+import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 const packages = [
   {
@@ -142,8 +143,9 @@ export const WebDesignPage = () => {
 
   return (
     <>
-      {/* Hero Section with empty background */}
+      {/* Hero Section */}
       <section className="relative z-10 flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+        <HeroVideoOverlay />
         <div className="relative z-10 max-w-[900px] w-full text-center">
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
             Web Design
