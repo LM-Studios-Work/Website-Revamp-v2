@@ -152,7 +152,7 @@ export const WebDesignPage = () => {
             className="mx-auto mb-12 w-[200px] h-[18px]"
             viewBox="0 0 400 18"
             fill="none"
-          /*...existing code...*/
+
           ></svg>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
             We design and develop user-friendly websites using modern
@@ -192,7 +192,7 @@ export const WebDesignPage = () => {
             </div>
             <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pl-8 md:py-20">
               <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-10 font-obviously md:text-[50px] md:leading-[60px]">
-                Custom Pack
+                Bespoke Development
                 <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-purple-300 mx-4 px-4 py-[9.6px] rounded-[800px] border-2 border-solid md:text-[19.2px] md:leading-[19.2px]">
                   100h min.
                 </span>
@@ -200,10 +200,7 @@ export const WebDesignPage = () => {
                 Tailored web design development
               </h2>
               <p className="box-border caret-transparent mb-8">
-                Our <strong className="font-semibold">Custom Pack</strong> is
-                perfect for businesses seeking a fully tailored website with a
-                unique design and specialized functionalities. This package
-                includes a comprehensive process:{" "}
+                Our <strong className="font-semibold">Custom Pack</strong> We believe unique businesses deserve unique websites. We don't rely on pre-made themes; instead, we build from the ground up. This comprehensive process includes:{" "}
                 <strong className="font-semibold">
                   sitemap creation, wireframing, mockups
                 </strong>
