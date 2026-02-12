@@ -476,35 +476,34 @@ export const WebDesignPage = () => {
               </a>
             </div>
 
-            {/* Marketing */}
+            {/* App Development */}
             <div>
               <div className="box-border caret-transparent mb-6">
                 <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
-                  Marketing
+                  App Development
                   <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
-                    25h min.
+                    From R15k
                   </span>
                 </h2>
                 <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
-                  Drive traffic and engagement
+                  Custom apps built for your business
                 </h3>
               </div>
               <p className="box-border caret-transparent mb-8">
-                By optimizing your website's structure, content, and overall
-                digital strategy, you can attract the right audience, enhance
-                engagement, and{" "}
+                Transform your ideas into powerful mobile and web applications.
+                Our expert developers create{" "}
                 <strong className="font-semibold">
-                  stay ahead of the competition
+                  custom solutions tailored to your business needs
                 </strong>
-                . With a data-driven approach, in-depth analysis, and tailored
-                recommendations, we help you create a powerful online presence
-                that delivers measurable results.
+                , from simple starter apps to complex enterprise systems. With
+                modern frameworks and best practices, we deliver secure,
+                scalable applications that drive business growth.
               </p>
               <a
-                href="/services/marketing"
+                href="/services/app-development"
                 className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
               >
-                More about marketing
+                More about App Development
                 <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
                   <svg
                     className="w-4 h-4"
