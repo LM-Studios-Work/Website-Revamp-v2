@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TestimonialCard } from "@/sections/TestimonialsSection/components/TestimonialCard";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
@@ -34,9 +35,10 @@ const testimonials = [
 
 export const TestimonialsGrid = () => {
   const [expanded, setExpanded] = useState(false);
+  const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section className="relative px-6 py-8 md:py-16">
+    <section ref={ref} className="relative px-6 py-8 md:py-16">
       <div className="max-w-[1400px] w-full mx-auto">
         <div className="flex flex-wrap -mx-3">
           {testimonials.map((t, idx) => {
@@ -47,6 +49,8 @@ export const TestimonialsGrid = () => {
                 key={t.name}
                 {...t}
                 className={extraClass}
+                index={idx}
+                isVisible={isVisible}
               />
             );
           })}

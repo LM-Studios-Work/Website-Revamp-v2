@@ -4,13 +4,22 @@ export type ServiceItemProps = {
   href: string;
   number: string;
   title: string;
+  index?: number;
+  isVisible?: boolean;
 };
 
 export const ServiceItem = (props: ServiceItemProps) => {
+  const animationDelay = `${(props.index || 0) * 0.1}s`;
+  
   return (
     <Link
       to={props.href}
-      className="group block w-full py-8 md:py-12 px-6 hover:bg-white/5 hover:translate-x-2 transition-all duration-300"
+      className={`group block w-full py-8 md:py-12 px-6 hover:bg-white/5 hover:translate-x-2 transition-all duration-600 ${
+        props.isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+      style={{ transitionDelay: props.isVisible ? animationDelay : '0s' }}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6 md:gap-12">
