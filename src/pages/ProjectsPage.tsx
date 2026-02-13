@@ -12,16 +12,16 @@ export const ProjectsPage = () => {
       {/* Hero Section */}
       <section className="relative px-6 md:px-10 lg:px-16 pb-16 md:pb-24 pt-32 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 w-full">
+        <div className="relative z-30 w-full max-w-[1200px] mx-auto">
           {/* Heading */}
-          <div className="mb-12 md:mb-16">
+          <div className="mb-12 md:mb-16 text-center">
             <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[1.1] text-white mb-0">
               Dive into our projects
             </h1>
           </div>
 
           {/* Filters Row */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-center">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-center justify-center">
             {/* All projects button */}
             <button
               onClick={() => {
