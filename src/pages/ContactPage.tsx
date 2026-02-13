@@ -1,203 +1,294 @@
+import { useState } from "react";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    country: "",
+    company: "",
+    subject: "",
+    question: "",
+    hasSubscription: false,
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value, type } = e.target;
+    if (type === "checkbox") {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: (e.target as HTMLInputElement).checked,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Prepare the message body
+      const messageBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Country: ${formData.country}
+Company: ${formData.company}
+Subject: ${formData.subject}
+Message: ${formData.question}
+Has Subscription: ${formData.hasSubscription ? "Yes" : "No"}
+      `.trim();
+
+      // Send email using FormSubmit
+      const formElement = document.createElement("form");
+      formElement.method = "POST";
+      formElement.action = "https://formsubmit.co/lm.studios.web@gmail.com";
+
+      // Add form fields
+      Object.entries(formData).forEach(([key, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = String(value);
+        formElement.appendChild(input);
+      });
+
+      // Add redirect
+      const redirectInput = document.createElement("input");
+      redirectInput.type = "hidden";
+      redirectInput.name = "_next";
+      redirectInput.value = window.location.href;
+      formElement.appendChild(redirectInput);
+
+      // Disable captcha
+      const captchaInput = document.createElement("input");
+      captchaInput.type = "hidden";
+      captchaInput.name = "_captcha";
+      captchaInput.value = "false";
+      formElement.appendChild(captchaInput);
+
+      // Add custom phone notification (using a separate endpoint if available)
+      // For now, we'll just send the email with all details
+      
+      document.body.appendChild(formElement);
+      formElement.submit();
+      document.body.removeChild(formElement);
+
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        country: "",
+        company: "",
+        subject: "",
+        question: "",
+        hasSubscription: false,
+      });
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative box-border caret-transparent min-h-screen pt-64 pb-10 md:pb-20 overflow-hidden">
+      <section className="relative box-border caret-transparent min-h-screen pt-40 pb-10 md:pb-20 overflow-hidden">
         <HeroVideoOverlay />
         <div className="relative z-30 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
-          <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
-            Contact Us
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact us</h1>
+          <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-transparent" style={{ backgroundImage: "repeating-linear-gradient(90deg, #fbbf24 0px, #fbbf24 10px, transparent 10px, transparent 20px)" }}></div>
         </div>
         <div className="relative z-30 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
-          <p className="box-border caret-transparent text-center mt-6 mb-8">
-            Ready to bring your vision to life? Get in touch with our team and
-            let's discuss how we can help you create an exceptional web
-            experience.
+          <p className="box-border caret-transparent mt-8 mb-8 max-w-2xl text-white/70 leading-relaxed">
+            Use the form below to get in touch with us about your project or inquiry. Whether you have questions, need a quote, or want to discuss your ideas, we're here to help. The information you provide will help us understand your needs and serve as a starting point for our conversation. Please note that any details shared here are for initial contact purposes only and do not represent a binding agreement or formal proposal.
           </p>
         </div>
       </section>
 
       {/* Contact Form Section */}
       <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
-          <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
-            {/* Contact Form */}
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-7/12 md:pr-8 md:py-0">
-              <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent p-8 rounded-[20px] md:p-12">
-                <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-8 font-obviously md:text-[40px] md:leading-[48px]">
-                  Send us a message
-                </h2>
-                <form className="box-border caret-transparent">
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                      placeholder="Your company name"
-                    />
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Service *
-                    </label>
-                    <select
-                      required
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="web-design">Web Design</option>
-                      <option value="logo-design">Logo Design</option>
-                      <option value="photography">Photography</option>
-                      <option value="seo">SEO</option>
-                      <option value="marketing">Marketing</option>
-                    </select>
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Message *
-                    </label>
-                    <textarea
-                      required
-                      rows={6}
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors resize-none"
-                      placeholder="Tell us about your project..."
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="text-sm font-normal bg-zinc-600 box-border caret-transparent block leading-[21px] text-center align-middle border-zinc-600 pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-neutral-600 hover:border-zinc-700 transition-colors"
-                  >
-                    Send Message
-                    <img
-                      src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/icon-4.svg"
-                      alt="Icon"
-                      className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] leading-[21px] -rotate-45 w-[30px] ml-2.5 p-[9.6px] rounded-[50%] top-0 md:text-base md:font-semibold md:h-[50px] md:leading-6 md:w-[50px] md:p-[18.4px]"
-                    />
-                  </button>
-                </form>
+        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1000px]">
+          <form onSubmit={handleSubmit} className="box-border caret-transparent space-y-6">
+            {/* Row 1: Name and Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Your Name *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400 transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Your Email *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400 transition-colors"
+                />
               </div>
             </div>
 
-            {/* Contact Info */}
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-5/12 md:pl-8 md:py-0">
-              <div className="box-border caret-transparent mb-12">
-                <h3 className="text-[23.05px] font-medium box-border caret-transparent leading-[27.66px] mb-6 font-obviously md:text-[28px] md:leading-[33.6px]">
-                  Get in touch
-                </h3>
-                <p className="box-border caret-transparent mb-6">
-                  Have a question or want to work together? We'd love to hear
-                  from you.
-                </p>
-                <div className="box-border caret-transparent space-y-4">
-                  <div className="box-border caret-transparent">
-                    <p className="box-border caret-transparent font-medium mb-1">
-                      Email
-                    </p>
-                    <a
-                      href="mailto:hello@lmstudios.co.za"
-                      className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    >
-                      hello@lmstudios.co.za
-                    </a>
-                  </div>
-                  <div className="box-border caret-transparent">
-                    <p className="box-border caret-transparent font-medium mb-1">
-                      Phone
-                    </p>
-                    <a
-                      href="tel:+27100001234"
-                      className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    >
-                      +27 10 000 1234
-                    </a>
-                  </div>
-                </div>
+            {/* Row 2: Phone and Country */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Your Phone Number
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+27"
+                  className="w-full px-4 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400 transition-colors"
+                />
               </div>
-
-              <div className="box-border caret-transparent mb-12">
-                <h3 className="text-[23.05px] font-medium box-border caret-transparent leading-[27.66px] mb-6 font-obviously md:text-[28px] md:leading-[33.6px]">
-                  Main Office
-                </h3>
-                <p className="box-border caret-transparent opacity-75">
-                  Johannesburg<br />
-                  Gauteng
-                  <br />
-                  South Africa
-                </p>
-              </div>
-
-              <div className="box-border caret-transparent">
-                <h3 className="text-[23.05px] font-medium box-border caret-transparent leading-[27.66px] mb-6 font-obviously md:text-[28px] md:leading-[33.6px]">
-                  Follow us
-                </h3>
-                <div className="box-border caret-transparent flex gap-4">
-                  <a
-                    href="https://www.behance.net/lm-studios"
-                    className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Behance
-                  </a>
-                  <a
-                    href="https://dribbble.com/LMStudios"
-                    className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Dribbble
-                  </a>
-                  <a
-                    href="https://www.instagram.com/lmstudios.official/"
-                    className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Instagram
-                  </a>
-                </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Your Country *
+                </label>
+                <input
+                  type="text"
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400 transition-colors"
+                />
               </div>
             </div>
-          </div>
+
+            {/* Row 3: Company */}
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Your Company
+              </label>
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400 transition-colors"
+              />
+            </div>
+
+            {/* Row 4: Subject */}
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Subject *
+              </label>
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400 transition-colors"
+              />
+            </div>
+
+            {/* Row 5: Question/Message */}
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Your Question *
+              </label>
+              <textarea
+                name="question"
+                value={formData.question}
+                onChange={handleChange}
+                required
+                placeholder="Please describe your website project or inquiry."
+                rows={6}
+                className="w-full px-4 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400 transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            {/* Checkbox */}
+            <div className="flex items-center gap-3">
+              <input
+                type="checkbox"
+                name="hasSubscription"
+                checked={formData.hasSubscription}
+                onChange={handleChange}
+                id="subscription"
+                className="w-5 h-5 bg-transparent border border-white/30 rounded cursor-pointer accent-yellow-400"
+              />
+              <label htmlFor="subscription" className="text-sm text-white/70 cursor-pointer">
+                Check this box if you have an active subscription with LM Studios.
+              </label>
+            </div>
+
+            {/* Submit Button */}
+            <div className="flex items-center gap-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-8 py-3 bg-transparent border-2 border-yellow-400 rounded-full font-semibold text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 disabled:opacity-50"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+              {submitStatus === "success" && (
+                <span className="text-green-400 text-sm font-medium">
+                  Message sent successfully!
+                </span>
+              )}
+              {submitStatus === "error" && (
+                <span className="text-red-400 text-sm font-medium">
+                  Error sending message. Please try again.
+                </span>
+              )}
+            </div>
+          </form>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
+      {/* CTA Section */}
+      <section className="relative box-border caret-transparent py-20 md:py-32">
         <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
-          <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent p-4 rounded-[20px] overflow-hidden">
-            <div className="box-border caret-transparent h-[400px] bg-white/5 rounded-[16px] flex items-center justify-center">
-              <p className="box-border caret-transparent opacity-50">
-                Map placeholder
-              </p>
+          <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Ready to make your website using LM Studios?
+              </h2>
             </div>
+            <button className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full font-semibold text-sm flex items-center gap-2 transition-all whitespace-nowrap">
+              Ask for a quote
+              <span className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
           </div>
         </div>
       </section>
