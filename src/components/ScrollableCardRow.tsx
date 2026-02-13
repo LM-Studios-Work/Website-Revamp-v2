@@ -6,12 +6,15 @@ interface ScrollableCardRowProps {
   desktopGridCols?: string;
   /** If true, render a plain horizontal scroll (no arrows, no snap) on mobile */
   plainScroll?: boolean;
+  /** Color for scroll button backgrounds (hex or Tailwind class) */
+  buttonColor?: string;
 }
 
 export const ScrollableCardRow = ({
   children,
   desktopGridCols = "md:grid-cols-3",
   plainScroll = false,
+  buttonColor = "#e7fe56", // default lime
 }: ScrollableCardRowProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -39,7 +42,9 @@ export const ScrollableCardRow = ({
   const scroll = (direction: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const cardWidth = el.querySelector<HTMLElement>(":scope > *")?.offsetWidth ?? el.clientWidth * 0.8;
+    const cardWidth =
+      el.querySelector<HTMLElement>(":scope > *")?.offsetWidth ??
+      el.clientWidth * 0.8;
     el.scrollBy({
       left: direction === "left" ? -cardWidth - 16 : cardWidth + 16,
       behavior: "smooth",
@@ -54,23 +59,45 @@ export const ScrollableCardRow = ({
           <button
             onClick={() => scroll("left")}
             aria-label="Scroll left"
-              className={`w-10 h-10 rounded-full bg-[#e7fe56] flex items-center justify-center transition-opacity ${
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-opacity ${
               canScrollLeft ? "opacity-100" : "opacity-30"
             }`}
+            style={{ backgroundColor: buttonColor }}
           >
-            <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-4 h-4 text-black"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
           <button
             onClick={() => scroll("right")}
             aria-label="Scroll right"
-            className={`w-10 h-10 rounded-full bg-[#d4ff00] flex items-center justify-center transition-opacity ${
-                canScrollRight ? "opacity-100" : "opacity-30"
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-opacity ${
+              canScrollRight ? "opacity-100" : "opacity-30"
             }`}
+            style={{ backgroundColor: buttonColor }}
           >
-            <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-4 h-4 text-black"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
         </div>
@@ -79,10 +106,16 @@ export const ScrollableCardRow = ({
       {/* Scrollable on mobile — bleeds past parent padding; grid on desktop */}
       <div
         ref={scrollRef}
-        className={`-mx-6 px-6 flex gap-4 overflow-x-auto ${plainScroll ? "" : "snap-x snap-mandatory"} scrollbar-hide pb-2 md:mx-0 md:px-0 md:overflow-visible md:pb-0 md:grid ${desktopGridCols} md:gap-6`}
+        className={`-mx-6 px-6 flex gap-4 overflow-x-auto ${
+          plainScroll ? "" : "snap-x snap-mandatory"
+        } scrollbar-hide pb-2 md:mx-0 md:px-0 md:overflow-visible md:pb-0 md:grid ${desktopGridCols} md:gap-6`}
       >
         {React.Children.map(children, (child) => (
-          <div className={`${plainScroll ? "min-w-[45vw]" : "w-[72vw] max-w-[72vw] snap-start"} shrink-0 md:min-w-0 md:w-auto md:max-w-none md:shrink`}>
+          <div
+            className={`${
+              plainScroll ? "min-w-[45vw]" : "w-[72vw] max-w-[72vw] snap-start"
+            } shrink-0 md:min-w-0 md:w-auto md:max-w-none md:shrink`}
+          >
             {child}
           </div>
         ))}

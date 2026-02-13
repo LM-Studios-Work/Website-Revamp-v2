@@ -358,7 +358,10 @@ export const WebDesignPage = () => {
               websites tailored to your brand.
             </p>
           </div>
-          <ScrollableCardRow desktopGridCols="md:grid-cols-3">
+          <ScrollableCardRow
+            desktopGridCols="md:grid-cols-3"
+            buttonColor="#e7fe56"
+          >
             <ProcessCard
               step={1}
               variant="lime"
