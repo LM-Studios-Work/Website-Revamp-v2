@@ -46,17 +46,7 @@ export const FooterColumns = () => {
         title="Follow us"
         links={[
           {
-            href: "https://www.behance.net/lm-studios",
-            text: "Behance",
-            title: "Behance",
-          },
-          {
-            href: "https://dribbble.com/LMStudios",
-            text: "Dribbble",
-            title: "Dribbble",
-          },
-          {
-            href: "https://www.instagram.com/lmstudios.official/",
+            href: "https://www.instagram.com/lmstudiosweb/",
             text: "Instagram",
             title: "Instagram",
           },

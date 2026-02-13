@@ -46,7 +46,10 @@ export const App = () => {
                 <Route path="/about-us" element={<AboutPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/services" element={<ServicesPage />} />
-                <Route path="/services/web-design" element={<WebDesignPage />} />
+                <Route
+                  path="/services/web-design"
+                  element={<WebDesignPage />}
+                />
                 <Route path="/services/seo" element={<SEOPage />} />
                 <Route path="/services/app-development" element={<AppPage />} />
                 <Route path="/contact" element={<ContactPage />} />
@@ -67,8 +70,18 @@ export const App = () => {
                     >
                       Ask for a quote
                       <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#e7fe56] rounded-full flex items-center justify-center">
-                        <svg className="w-4 h-4 text-black -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        <svg
+                          className="w-4 h-4 text-black -rotate-45"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
                         </svg>
                       </span>
                     </Link>
@@ -77,36 +90,127 @@ export const App = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Navigation</h3>
                       <ul className="flex flex-col list-none pl-0 gap-1">
-                        <li><Link to="/" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Home</Link></li>
-                        <li><Link to="/about-us" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">About us</Link></li>
-                        <li><Link to="/projects" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Projects</Link></li>
-                        <li><Link to="/contact" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Contact us</Link></li>
+                        <li>
+                          <Link
+                            to="/"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Home
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/about-us"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            About us
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/projects"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Projects
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/contact"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Contact us
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Services</h3>
                       <ul className="flex flex-col list-none pl-0 gap-1">
-                        <li><Link to="/services/web-design" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">Web Design</Link></li>
-                        <li><Link to="/services/seo" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">SEO</Link></li>
-                        <li><Link to="/services/app-development" className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors">App Development</Link></li>
+                        <li>
+                          <Link
+                            to="/services/web-design"
+                            className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors"
+                          >
+                            Web Design
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/services/seo"
+                            className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors"
+                          >
+                            SEO
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/services/app-development"
+                            className="text-white/60 block py-1.5 hover:text-[#d4ff00] transition-colors"
+                          >
+                            App Development
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Offices</h3>
                       <ul className="flex flex-col list-none pl-0 gap-1">
-                        <li><a href="https://www.google.com/maps/dir//Johannesburg, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Johannesburg</a></li>
-                        <li><a href="https://www.google.com/maps/dir//Cape Town, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Cape Town</a></li>
-                        <li><a href="https://www.google.com/maps/dir//Durban, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Durban</a></li>
-                        <li><a href="https://www.google.com/maps/dir//Pretoria, South Africa" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Pretoria</a></li>
+                        <li>
+                          <a
+                            href="https://www.google.com/maps/dir//Johannesburg, South Africa"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Johannesburg
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.google.com/maps/dir//Cape Town, South Africa"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Cape Town
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.google.com/maps/dir//Durban, South Africa"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Durban
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.google.com/maps/dir//Pretoria, South Africa"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Pretoria
+                          </a>
+                        </li>
                       </ul>
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Follow us</h3>
                       <ul className="flex flex-col list-none pl-0 gap-1">
-                        <li><a href="https://www.behance.net/lm-studios" title="Behance" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Behance</a></li>
-                        <li><a href="https://dribbble.com/LMStudios" title="Dribbble" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Dribbble</a></li>
-                        <li><a href="https://www.instagram.com/lmstudios.official/" title="Instagram" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Instagram</a></li>
-                        <li><a href="https://www.youtube.com/playlist?list=PL1-aSABtP6ADgnXqXDdpxU7-8ixNGUsrz" title="Youtube" className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors">Youtube</a></li>
+                        <li>
+                          <a
+                            href="https://www.instagram.com/lmstudiosweb/"
+                            title="Instagram"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Instagram
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.youtube.com/playlist?list=PL1-aSABtP6ADgnXqXDdpxU7-8ixNGUsrz"
+                            title="Youtube"
+                            className="text-white/60 block py-1.5 hover:text-[#e7fe56] transition-colors"
+                          >
+                            Youtube
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -121,6 +225,6 @@ export const App = () => {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

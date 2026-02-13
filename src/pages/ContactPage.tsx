@@ -165,68 +165,7 @@ export const ContactPage = () => {
         </div>
       </section>
 
-      {/* --- FOOTER CTA SECTION (Matching Screenshot) --- */}
-      <footer className="relative z-10 max-w-[1400px] mx-auto px-6 pb-20">
-        <div className="bg-[#111] rounded-[40px] p-12 md:p-20 relative overflow-hidden">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold max-w-md">
-              Ready to make your website using Odoo?
-            </h2>
-            <button className="mt-8 md:mt-0 bg-[#3a2a4d] text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-[#4a3a5d] transition-colors">
-              Ask for a quote
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M7 17L17 7M17 7H7M17 7V17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-16">
-            <div>
-              <h4 className="font-bold mb-6 text-lg">Navigation</h4>
-              <ul className="space-y-3 text-white/60 text-sm">
-                <li>Home</li>
-                <li>About us</li>
-                <li>Projects</li>
-                <li>Contact us</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-lg">Services</h4>
-              <ul className="space-y-3 text-white/60 text-sm">
-                <li>Web design</li>
-                <li>Logo design</li>
-                <li>Photography</li>
-                <li>SEO</li>
-                <li>Marketing</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-lg">Offices</h4>
-              <ul className="space-y-3 text-white/60 text-sm">
-                <li>Belgium</li>
-                <li>Buffalo</li>
-                <li>Dubai</li>
-                <li>Gujarat</li>
-                <li>Hong-Kong</li>
-                <li>Mexico</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-lg">Follow us</h4>
-              <ul className="space-y-3 text-white/60 text-sm">
-                <li>Behance</li>
-                <li>Dribbble</li>
-                <li>Instagram</li>
-                <li>Youtube</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="mt-20 text-center text-xs text-white/40 space-x-4">
-            <span>English (US)</span> | <span>Français (BE)</span> | <span>Italiano</span> | <span>Español</span>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };
