@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export type ServiceItemProps = {
   href: string;
   number: string;
@@ -6,8 +8,8 @@ export type ServiceItemProps = {
 
 export const ServiceItem = (props: ServiceItemProps) => {
   return (
-    <a
-      href={props.href}
+    <Link
+      to={props.href}
       className="group block w-full py-8 md:py-12 px-6 hover:bg-white/5 transition-colors"
     >
       <div className="flex items-center justify-between">
@@ -25,6 +27,6 @@ export const ServiceItem = (props: ServiceItemProps) => {
           </svg>
         </span>
       </div>
-    </a>
+    </Link>
   );
 };
