@@ -211,7 +211,10 @@ export const WebDesignPage = () => {
                 Tailored web design development
               </h2>
               <p className="box-border caret-transparent mb-8">
-                Our <strong className="font-semibold">Custom Pack</strong> We believe unique businesses deserve unique websites. We don't rely on pre-made themes; instead, we build from the ground up. This comprehensive process includes:{" "}
+                Our <strong className="font-semibold">Custom Pack</strong> We
+                believe unique businesses deserve unique websites. We don't rely
+                on pre-made themes; instead, we build from the ground up. This
+                comprehensive process includes:{" "}
                 <strong className="font-semibold">
                   sitemap creation, wireframing, mockups
                 </strong>
@@ -246,9 +249,9 @@ export const WebDesignPage = () => {
                 <strong className="font-semibold text-white">
                   clean, professional web presence without the wait
                 </strong>
-                . Built exclusively with LM Studios' Website Builder and standard
-                options, this approach focuses on delivering a functional,
-                user-friendly website{" "}
+                . Built exclusively with LM Studios' Website Builder and
+                standard options, this approach focuses on delivering a
+                functional, user-friendly website{" "}
                 <strong className="font-semibold text-white">
                   with speed and precision
                 </strong>
@@ -348,14 +351,11 @@ export const WebDesignPage = () => {
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="mb-12">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-              Our{" "}
-              <span className="italic text-outline-15">
-                process
-              </span>
+              Our <span className="italic text-outline-15">process</span>
             </h2>
             <p className="text-lg text-white/70 leading-relaxed max-w-[600px]">
-              From concept to launch, we craft user-friendly, visually
-              striking websites tailored to your brand.
+              From concept to launch, we craft user-friendly, visually striking
+              websites tailored to your brand.
             </p>
           </div>
           <ScrollableCardRow desktopGridCols="md:grid-cols-3">
@@ -373,7 +373,7 @@ export const WebDesignPage = () => {
             />
             <ProcessCard
               step={3}
-              variant="yellow"
+              variant="cyan"
               title="Wireframes"
               description="Wireframes outline layout and functionality, providing a clear, ready page structure."
               customBadge={
@@ -449,9 +449,9 @@ export const WebDesignPage = () => {
                 </h3>
               </div>
               <p className="box-border caret-transparent mb-8">
-                LM Studios' web platform is growing in popularity, and many customers
-                seek to improve their SEO, whether starting fresh or migrating
-                to our platform. Our team of experts provides{" "}
+                LM Studios' web platform is growing in popularity, and many
+                customers seek to improve their SEO, whether starting fresh or
+                migrating to our platform. Our team of experts provides{" "}
                 <strong className="font-semibold">
                   a tailored 25-hour SEO service
                 </strong>{" "}
@@ -537,10 +537,7 @@ export const WebDesignPage = () => {
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
               Your website is
               <br />
-              in {" "}
-              <span className="italic text-outline-2">
-                good hands
-              </span>
+              in <span className="italic text-outline-2">good hands</span>
             </h2>
           </div>
           <ScrollableCardRow desktopGridCols="md:grid-cols-3">
