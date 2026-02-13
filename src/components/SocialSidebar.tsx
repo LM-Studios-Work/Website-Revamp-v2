@@ -1,6 +1,6 @@
 export const SocialSidebar = () => {
   return (
-    <aside className="absolute right-6 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center">
+    <aside className="absolute right-6 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center animate-[fadeInUp_0.8s_ease-out_1s_both]">
       <p className="text-sm text-white/60 tracking-widest uppercase mb-6 [writing-mode:vertical-lr] rotate-180">
         Follow us
       </p>
@@ -9,7 +9,7 @@ export const SocialSidebar = () => {
           <a
             href="https://www.instagram.com/lmstudiosweb/"
             title="Instagram"
-            className="w-10 h-10 rounded-full border border-[#e7fe56]/40 flex items-center justify-center text-[#e7fe56] hover:bg-[#e7fe56]/10 transition-colors"
+            className="w-10 h-10 rounded-full border border-[#e7fe56]/40 flex items-center justify-center text-[#e7fe56] hover:bg-[#e7fe56]/10 hover:scale-110 transition-all duration-300"
           >
             <svg
               className="w-4 h-4"

@@ -1,11 +1,11 @@
 export const HeroHeading = () => {
   return (
-    <div className="mb-8">
+    <div className="mb-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
       <h1 className="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-tight text-white">
         <span className="relative inline-block">
           LM Studios
           <svg
-            className="absolute -bottom-2 left-0 w-full h-[18px]"
+            className="absolute -bottom-2 left-0 w-full h-[18px] animate-[drawLine_1.2s_ease-out_0.8s_both]"
             viewBox="0 0 400 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +17,7 @@ export const HeroHeading = () => {
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
+              className="[stroke-dasharray:1000] [stroke-dashoffset:1000] animate-[dash_1.2s_ease-out_0.8s_forwards]"
             />
           </svg>
         </span>

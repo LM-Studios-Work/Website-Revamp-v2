@@ -7,8 +7,10 @@ export const ProjectsGrid = () => {
     <section className="relative pt-6 pb-8 px-6 md:px-10 lg:px-16 md:pt-10 md:pb-16">
       <div className="w-full">
         <div className="flex flex-wrap -mx-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          {projects.map((project, index) => (
+            <div key={project.title} style={{ '--card-index': index } as React.CSSProperties}>
+              <ProjectCard {...project} />
+            </div>
           ))}
         </div>
       </div>
