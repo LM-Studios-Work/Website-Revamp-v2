@@ -3,177 +3,230 @@ import { ParticleBackground } from "@/components/ParticleBackground";
 
 export const ContactPage = () => {
   return (
-    <>
+    <div className="relative min-h-screen bg-black text-white selection:bg-[#b4eb2c] selection:text-black">
       <ParticleBackground />
-      {/* Hero Section */}
-      <section className="relative z-10 min-h-[60vh] flex flex-col justify-center items-center pt-40 pb-8 px-6 overflow-hidden">
+
+      {/* --- HERO SECTION: Full Screen Background --- */}
+      <section className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
+        {/* The video now spans the full section width correctly */}
         <HeroVideoOverlay />
-        <div className="relative z-30 max-w-[900px] w-full text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
-            Contact us
-          </h1>
-          {/* Wavy underline */}
-          <svg
-            className="mx-auto mb-8"
-            width="160"
-            height="10"
-            viewBox="0 0 160 10"
-            fill="none"
-          >
-            <path
-              d="M0 5 Q 5 0, 10 5 T 20 5 T 30 5 T 40 5 T 50 5 T 60 5 T 70 5 T 80 5 T 90 5 T 100 5 T 110 5 T 120 5 T 130 5 T 140 5 T 150 5 L 160 5"
-              stroke="#b4eb2c"
-              strokeWidth="2"
+        
+        {/* Content Container (Matches your project's max-width) */}
+        <div className="relative z-30 max-w-[1200px] w-full mx-auto">
+          <div className="max-w-[800px]">
+            <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8 text-left">
+              Contact us
+            </h1>
+            
+            {/* Wavy underline: Using the exact SVG/Color from your WebDesignPage */}
+            <svg
+              className="mb-12 w-[200px] h-[18px]"
+              viewBox="0 0 400 18"
               fill="none"
-            />
-          </svg>
-          <p className="mt-4 mb-8 text-white/70 leading-relaxed max-w-3xl mx-auto">
-            Use the form below to get in touch with us about your project or
-            inquiry. Whether you have questions, need a quote, or want to
-            discuss your ideas, we're here to help. The information you provide
-            will help us understand your needs and serve as a starting point for
-            our conversation. Please note that any details shared here are for
-            initial contact purposes only and do not represent a binding
-            agreement or formal proposal.
-          </p>
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
+                stroke="#b4eb2c"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed text-left">
+              Use the form below to get in touch with us about your project or
+              inquiry. Whether you have questions, need a quote, or want to
+              discuss your ideas, we're here to help. The information you provide
+              will help us understand your needs and serve as a starting point for
+              our conversation. Please note that any details shared here are for
+              initial contact purposes only and do not represent a binding
+              agreement or formal proposal.
+            </p>
+          </div>
         </div>
       </section>
-{/* Contact Form Section */}
-      <section className="relative z-10 py-8 md:py-14">
-        <div className="relative max-w-none w-full mx-auto px-6 md:max-w-[900px]">
+
+      {/* --- FORM SECTION --- */}
+      <section className="relative z-20 pb-32 px-6">
+        <div className="max-w-[1200px] mx-auto">
           <form
             action="https://formsubmit.co/lm.studios.web@gmail.com"
             method="POST"
-            target="_blank"
-            className="space-y-6 w-full"
+            className="space-y-8"
           >
-            {/* Row 1: Name and Email */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-normal mb-2 text-white">
-                  Your Name *
-                </label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+              {/* Field: Name */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Your Name *</label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="w-full px-4 py-2.5 bg-white/5 border border-white/60 rounded-md text-white shadow-inner placeholder-white/40 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-normal mb-2 text-white">
-                  Your Email *
-                </label>
+
+              {/* Field: Email */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Your Email *</label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full px-4 py-2.5 bg-white/5 border border-white/60 rounded-md text-white shadow-inner placeholder-white/40 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
                 />
               </div>
-            </div>
 
-            {/* Row 2: Phone and Country */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-normal mb-2 text-white">
-                  Your Phone Number
-                </label>
+              {/* Field: Phone */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Your Phone Number</label>
                 <input
                   type="tel"
                   name="phone"
                   placeholder="+27"
-                  className="w-full px-4 py-2.5 bg-white/5 border border-white/60 rounded-md text-white shadow-inner placeholder-white/40 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-normal mb-2 text-white">
-                  Your Country *
-                </label>
+
+              {/* Field: Country */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Your Country *</label>
                 <input
                   type="text"
                   name="country"
                   required
-                  className="w-full px-4 py-2.5 bg-white/5 border border-white/60 rounded-md text-white shadow-inner placeholder-white/40 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
                 />
               </div>
-            </div>
 
-            {/* Row 3: Company AND Checkbox */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-normal mb-2 text-white">
-                  Your Company
-                </label>
+              {/* Field: Company */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Your Company</label>
                 <input
                   type="text"
                   name="company"
-                  className="w-full px-4 py-2.5 bg-white/5 border border-white/60 rounded-md text-white shadow-inner placeholder-white/40 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
                 />
               </div>
-              
-              {/* Checkbox Container */}
-              <div className="flex items-center gap-3 pt-2 md:pt-7">
+
+              {/* Field: Checkbox (Vertical Alignment fix) */}
+              <div className="flex items-start gap-3 pt-8">
                 <input
                   type="checkbox"
-                  name="has_subscription"
-                  value="yes"
                   id="subscription"
-                  className="w-4 h-4 bg-white/5 border border-white/60 rounded-sm cursor-pointer accent-[#b4eb2c]"
+                  className="mt-1 w-4 h-4 bg-transparent border border-white/40 rounded cursor-pointer accent-[#b4eb2c]"
                 />
-                <label
-                  htmlFor="subscription"
-                  className="text-sm text-white/60 cursor-pointer hover:text-white transition-colors leading-tight"
-                >
+                <label htmlFor="subscription" className="text-xs text-white/50 leading-tight">
                   Check this box if you have an active subscription with Odoo.
                 </label>
               </div>
             </div>
 
-            {/* Row 4: Subject */}
-            <div>
-              <label className="block text-sm font-normal mb-2 text-white">
-                Subject *
-              </label>
+            {/* Field: Subject */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Subject *</label>
               <input
                 type="text"
                 name="subject"
                 required
-                className="w-full px-4 py-2.5 bg-white/5 border border-white/60 rounded-md text-white shadow-inner placeholder-white/40 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
               />
             </div>
 
-            {/* Row 5: Question/Message */}
-            <div>
-              <label className="block text-sm font-normal mb-2 text-white">
-                Your Question *
-              </label>
+            {/* Field: Question (12 Rows) */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Your Question *</label>
               <textarea
                 name="message"
                 required
                 placeholder="Please describe your website project or inquiry."
-                rows={6}
-                className="w-full px-4 py-2.5 bg-white/5 border border-white/60 rounded-md text-white shadow-inner placeholder-white/40 focus:outline-none focus:border-[#b4eb2c] transition-colors resize-none"
-              ></textarea>
+                rows={12}
+                className="w-full px-4 py-4 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner resize-none text-white"
+              />
             </div>
 
-            {/* Submit Button */}
-            <div className="flex items-center justify-start pt-4">
+            {/* Submit Button (Aligned Bottom-Right) */}
+            <div className="flex justify-end pt-4">
               <button
                 type="submit"
-                className="inline-flex items-center gap-4 px-8 py-3 bg-transparent border-2 border-[#b4eb2c] rounded-full font-medium text-white hover:bg-[#b4eb2c] hover:text-black transition-all duration-300"
+                className="group flex items-center gap-3 bg-black border border-white/60 hover:border-[#b4eb2c] py-2 pl-6 pr-2 rounded-full transition-all"
               >
-                Submit
-                <span className="w-8 h-8 bg-[#b4eb2c] rounded-full flex items-center justify-center transition-colors">
+                <span className="font-medium">Submit</span>
+                <div className="bg-[#b4eb2c] p-2 rounded-full group-hover:scale-110 transition-transform">
                   <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </span>
+                </div>
               </button>
             </div>
           </form>
         </div>
       </section>
-    </>
+
+      {/* --- FOOTER CTA SECTION (Matching Screenshot) --- */}
+      <footer className="relative z-10 max-w-[1400px] mx-auto px-6 pb-20">
+        <div className="bg-[#111] rounded-[40px] p-12 md:p-20 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold max-w-md">
+              Ready to make your website using Odoo?
+            </h2>
+            <button className="mt-8 md:mt-0 bg-[#3a2a4d] text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-[#4a3a5d] transition-colors">
+              Ask for a quote
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M7 17L17 7M17 7H7M17 7V17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-16">
+            <div>
+              <h4 className="font-bold mb-6 text-lg">Navigation</h4>
+              <ul className="space-y-3 text-white/60 text-sm">
+                <li>Home</li>
+                <li>About us</li>
+                <li>Projects</li>
+                <li>Contact us</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-6 text-lg">Services</h4>
+              <ul className="space-y-3 text-white/60 text-sm">
+                <li>Web design</li>
+                <li>Logo design</li>
+                <li>Photography</li>
+                <li>SEO</li>
+                <li>Marketing</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-6 text-lg">Offices</h4>
+              <ul className="space-y-3 text-white/60 text-sm">
+                <li>Belgium</li>
+                <li>Buffalo</li>
+                <li>Dubai</li>
+                <li>Gujarat</li>
+                <li>Hong-Kong</li>
+                <li>Mexico</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-6 text-lg">Follow us</h4>
+              <ul className="space-y-3 text-white/60 text-sm">
+                <li>Behance</li>
+                <li>Dribbble</li>
+                <li>Instagram</li>
+                <li>Youtube</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-20 text-center text-xs text-white/40 space-x-4">
+            <span>English (US)</span> | <span>Français (BE)</span> | <span>Italiano</span> | <span>Español</span>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 };

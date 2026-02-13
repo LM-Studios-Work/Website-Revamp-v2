@@ -18,13 +18,33 @@ export const DesktopMenu = () => {
         <li key={item.to} className={item.hasDropdown ? "relative group" : ""}>
           <Link
             to={item.to}
-            className={`text-base transition-colors duration-200 relative pb-2 inline-block ${
+            className={`text-lg transition-colors duration-200 relative pb-2 flex items-center gap-1 ${
               isActive(item.to)
                 ? "text-white font-normal"
                 : "text-white/70 hover:text-white font-normal"
             }`}
           >
             {item.label}
+
+            {/* Lime Dropdown Arrow */}
+            {item.hasDropdown && (
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="14" 
+                height="14" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#e7fe56" 
+                strokeWidth="2.5" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="ml-0.5 group-hover:rotate-180 transition-transform duration-200"
+              >
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            )}
+
+            {/* Active State Wave Animation */}
             {isActive(item.to) && (
               <span className="absolute -bottom-0.5 left-0 w-full h-[6px] overflow-hidden block">
                 <svg
@@ -45,24 +65,24 @@ export const DesktopMenu = () => {
               </span>
             )}
           </Link>
+
           {item.hasDropdown && (
-            <ul className="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-neutral-900/95 backdrop-blur-md border border-white/10 rounded-xl py-2 px-1 min-w-[180px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 list-none z-50">
+            <ul className="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-neutral-900/95 backdrop-blur-md border border-white/10 rounded-xl py-2 px-1 min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 list-none z-50">
               <li>
                 <Link
                   to="/services/web-design"
-                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
                 >
                   Web Design
                 </Link>
               </li>
               <li>
-                {/* Use navigate/scroll logic so clicking Photography scrolls to the section */}
                 <DesktopPhotographyLink />
               </li>
               <li>
                 <Link
                   to="/services/seo"
-                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
                 >
                   SEO
                 </Link>
@@ -70,7 +90,7 @@ export const DesktopMenu = () => {
               <li>
                 <Link
                   to="/services/app-development"
-                  className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
                 >
                   App Development
                 </Link>
@@ -92,7 +112,6 @@ const DesktopPhotographyLink = () => {
     e.preventDefault();
     const [path, hash] = href.split("#");
     if (location.pathname === path) {
-      // same page: scroll to element if present, otherwise just set hash
       const el = document.getElementById(hash || "");
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -101,7 +120,6 @@ const DesktopPhotographyLink = () => {
         window.location.hash = hash || "";
       }
     } else {
-      // navigate then attempt to scroll after a short delay
       navigate(href);
       setTimeout(() => {
         const el = document.getElementById("photography");
@@ -114,7 +132,7 @@ const DesktopPhotographyLink = () => {
     <a
       href={href}
       onClick={onClick}
-      className="block px-4 py-2 text-sm text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
+      className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
     >
       Photography
     </a>

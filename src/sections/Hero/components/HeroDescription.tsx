@@ -2,11 +2,19 @@ import { Link } from "react-router-dom";
 
 export const HeroDescription = () => {
   return (
-    <div className="max-w-2xl mt-8">
+    <div className="max-w-2xl mt-8 text-left">
+      {/* Your requested tagline */}
+      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
+        Innovative Web Design for Businesses.
+      </h2>
+      
+      {/* Your requested description text */}
       <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10">
-        We craft aesthetic, functional, and user-centric websites that help
-        businesses thrive in the digital world.
+        Crafting modern, mobile-responsive websites with a single focus: 
+        turning site visitors into paying customers. We combine aesthetics 
+        with clean code to drive results.
       </p>
+
       <Link
         to="/contact"
         className="inline-flex items-center text-sm md:text-base font-semibold bg-white/10 backdrop-blur-sm text-white pl-6 pr-2 py-2 rounded-full border-2 border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"

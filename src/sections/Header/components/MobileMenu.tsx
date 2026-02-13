@@ -48,8 +48,8 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Close button */}
-        <div className="flex justify-end px-6 py-8">
+        {/* Close button - Made absolute so it doesn't push the links down */}
+        <div className="absolute top-0 right-0 px-6 py-8 z-10">
           <button
             type="button"
             onClick={onClose}
@@ -57,7 +57,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             className="text-white/60 hover:text-[#e7fe56] transition-colors"
           >
             <svg
-              className="w-7 h-7"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -72,8 +72,8 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </button>
         </div>
 
-        {/* Nav links */}
-        <ul className="flex flex-col items-center gap-8 mt-12 list-none px-6">
+        {/* Nav links - h-full and justify-center centers everything perfectly */}
+        <ul className="h-full flex flex-col items-center justify-center gap-10 list-none px-6">
           {navItems.map((item) => (
             <li key={item.to} className="w-full text-center">
               {item.hasDropdown ? (
@@ -81,25 +81,26 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   <button
                     type="button"
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className={`text-xl transition-colors duration-200 relative inline-flex items-center gap-1.5 pb-2 ${
+                    className={`text-3xl transition-colors duration-200 relative inline-flex items-center gap-2 pb-2 ${
                       isActive(item.to)
                         ? "text-white font-normal"
                         : "text-white/70 font-normal"
                     }`}
                   >
                     {item.label}
+                    {/* Lime Dropdown Arrow */}
                     <svg
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      className={`w-5 h-5 transition-transform duration-200 ${
                         servicesOpen ? "rotate-180" : ""
                       }`}
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#e7fe56"
                       viewBox="0 0 24 24"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={2.5}
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
@@ -124,13 +125,13 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     )}
                   </button>
 
-                  {/* Services dropdown */}
+                  {/* Services dropdown items */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-out ${
-                      servicesOpen ? "max-h-48 mt-3" : "max-h-0"
+                      servicesOpen ? "max-h-64 mt-4" : "max-h-0"
                     }`}
                   >
-                    <ul className="flex flex-col items-center gap-3 list-none">
+                    <ul className="flex flex-col items-center gap-4 list-none">
                       {serviceItems.map((service) => (
                         <li key={service.to}>
                           {service.to.includes("#") ? (
@@ -140,26 +141,31 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                                 e.preventDefault();
                                 onClose();
                                 const [path, hash] = service.to.split("#");
-                                // Give the menu close animation a moment, then navigate/scroll
                                 setTimeout(() => {
                                   if (path === location.pathname) {
-                                    // same page: scroll smoothly to element and update URL
                                     const el = document.getElementById(hash);
                                     if (el) {
-                                      el.scrollIntoView({ behavior: "smooth", block: "start" });
-                                      window.history.replaceState(null, "", service.to);
+                                      el.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start",
+                                      });
+                                      window.history.replaceState(
+                                        null,
+                                        "",
+                                        service.to
+                                      );
                                     } else {
-                                      // fallback: set hash (WebDesignPage effect will handle scroll)
                                       window.location.hash = hash || "";
                                     }
                                   } else {
-                                    // navigate to the route (react-router) including hash
                                     navigate(service.to);
                                   }
                                 }, 220);
                               }}
-                              className={`text-sm transition-colors duration-200 ${
-                                isActive(service.to) ? "text-[#e7fe56]" : "text-white/40 hover:text-white/70"
+                              className={`text-xl transition-colors duration-200 ${
+                                isActive(service.to)
+                                  ? "text-[#e7fe56]"
+                                  : "text-white/40 hover:text-white/70"
                               }`}
                             >
                               {service.label}
@@ -168,8 +174,10 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                             <Link
                               to={service.to}
                               onClick={onClose}
-                              className={`text-sm transition-colors duration-200 ${
-                                isActive(service.to) ? "text-[#e7fe56]" : "text-white/40 hover:text-white/70"
+                              className={`text-xl transition-colors duration-200 ${
+                                isActive(service.to)
+                                  ? "text-[#e7fe56]"
+                                  : "text-white/40 hover:text-white/70"
                               }`}
                             >
                               {service.label}
@@ -184,7 +192,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <Link
                   to={item.to}
                   onClick={onClose}
-                  className={`text-xl transition-colors duration-200 relative inline-block pb-2 ${
+                  className={`text-3xl transition-colors duration-200 relative inline-block pb-2 ${
                     isActive(item.to)
                       ? "text-white font-normal"
                       : "text-white/70 hover:text-white font-normal"
