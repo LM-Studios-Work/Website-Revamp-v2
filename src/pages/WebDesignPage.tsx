@@ -287,17 +287,17 @@ export const WebDesignPage = () => {
               return (
                 <div
                   key={pkg.title}
-                  className="relative flex flex-col h-full rounded-3xl p-8 border border-white/5 bg-[#121212] transition-all duration-300 group hover:border-[#e7fe56]/30 hover:bg-[#151515] hover:ring-1 hover:ring-[#e7fe56]/20"
+                  className="relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10"
                 >
                   <div className="flex items-start justify-between mb-8">
-                    <div className="p-3 rounded-2xl bg-white/5 text-white transition-colors duration-300 group-hover:bg-[#e7fe56] group-hover:text-black">
+                    <div className="p-3 rounded-2xl bg-[#b4eb2c]/10 text-[#b4eb2c] border border-[#b4eb2c]/30 transition-all duration-300 group-hover:bg-[#b4eb2c] group-hover:text-black group-hover:border-[#b4eb2c]">
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#e7fe56]">
+                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#b4eb2c]">
                         {pkg.price}
                       </div>
-                      <div className="text-xs text-white/40 uppercase tracking-wider">
+                      <div className="text-xs text-white/60 uppercase tracking-wider">
                         {pkg.type}
                       </div>
                     </div>
@@ -317,8 +317,8 @@ export const WebDesignPage = () => {
                   <div className="flex-1 space-y-4 mb-10">
                     {pkg.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-3">
-                        <Check className="w-4 h-4 mt-0.5 shrink-0 text-white/40 transition-colors duration-300 group-hover:text-[#e7fe56]" />
-                        <span className="text-sm text-white/70 leading-relaxed">
+                        <Check className="w-4 h-4 mt-0.5 shrink-0 text-[#b4eb2c]/70 transition-colors duration-300 group-hover:text-[#b4eb2c]" />
+                        <span className="text-sm text-white/80 leading-relaxed">
                           {feature}
                         </span>
                       </div>
@@ -326,15 +326,15 @@ export const WebDesignPage = () => {
                   </div>
 
                   <div className="mt-auto space-y-6">
-                    <div className="flex items-center gap-3 py-4 border-t border-white/5">
-                      <Clock className="w-4 h-4 text-white/30" />
-                      <span className="text-xs text-white/40 font-medium tracking-wide">
+                    <div className="flex items-center gap-3 py-4 border-t border-[#b4eb2c]/20">
+                      <Clock className="w-4 h-4 text-[#b4eb2c]/60" />
+                      <span className="text-xs text-white/60 font-medium tracking-wide">
                         DELIVERY:{" "}
-                        <span className="text-white/80">{pkg.delivery}</span>
+                        <span className="text-white/90">{pkg.delivery}</span>
                       </span>
                     </div>
 
-                    <button className="w-full py-4 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-[#e7fe56] text-black hover:bg-[#e7fe56]/80 group-hover:bg-[#e7fe56] group-hover:text-black group-hover:hover:bg-[#e7fe56]/80">
+                    <button className="w-full py-4 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-[#b4eb2c] text-black hover:bg-[#b4eb2c]/90 border-2 border-[#b4eb2c] hover:shadow-lg hover:shadow-[#b4eb2c]/30">
                       Select Package
                       <ArrowRight className="w-4 h-4" />
                     </button>
