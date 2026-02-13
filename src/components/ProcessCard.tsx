@@ -4,18 +4,24 @@ export interface ProcessCardProps {
   step: number;
   title: React.ReactNode;
   description: string;
-  variant: "purple" | "yellow" | "cyan" | "glass";
+  variant: "blue" | "purple" | "yellow" | "cyan" | "glass" | "lime";
   customBadge?: React.ReactNode;
   note?: React.ReactNode;
 }
 
 const VARIANT_STYLES = {
-    lime: {
-      container: "bg-[#e7fe56] text-black",
-      circle: "bg-black/10",
-      text: "text-black/80",
-      descBg: "",
-    },
+  blue: {
+    container: "bg-[#4f8cff] text-white",
+    circle: "bg-white/10",
+    text: "text-white/90",
+    descBg: "",
+  },
+  lime: {
+    container: "bg-[#e7fe56] text-black",
+    circle: "bg-black/10",
+    text: "text-black/80",
+    descBg: "",
+  },
   purple: {
     container: "bg-[#d5bff0] text-black",
     circle: "bg-black/10",
@@ -74,7 +80,9 @@ export const ProcessCard = ({
 
       {/* Bottom section: description on distinct background */}
       <div className={`${styles.descBg} px-6 md:px-8 py-4 md:py-5`}>
-        <p className={`text-sm md:text-base leading-relaxed font-medium ${styles.text}`}>
+        <p
+          className={`text-sm md:text-base leading-relaxed font-medium ${styles.text}`}
+        >
           {description}
         </p>
       </div>

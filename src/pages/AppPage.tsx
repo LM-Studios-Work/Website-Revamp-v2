@@ -103,7 +103,7 @@ export const AppPage = () => {
           >
             <path
               d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-              stroke="#e7fe56"
+              stroke="#72f5e3"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -135,7 +135,7 @@ export const AppPage = () => {
                 Swift, Kotlin, and Node.js.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-8 rounded-[32px] bg-[#d5bff0] text-black">
+                <div className="p-8 rounded-[32px] bg-[#72f5e3] text-black">
                   <div className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center mb-6 font-bold text-xs">
                     01
                   </div>
@@ -151,7 +151,9 @@ export const AppPage = () => {
                   </div>
                   <h4 className="text-xl font-bold mb-2">Product Minds</h4>
                   <p className="text-black/60 text-sm">
-                    {"We don't just code; we help you refine your product features for maximum market impact."}
+                    {
+                      "We don't just code; we help you refine your product features for maximum market impact."
+                    }
                   </p>
                 </div>
               </div>
@@ -175,8 +177,7 @@ export const AppPage = () => {
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
             <div className="md:w-5/12 shrink-0">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                Our{" "}
-                <span className="italic text-outline-15">process</span>
+                Our <span className="italic text-outline-15">process</span>
               </h2>
               <p className="text-base text-white/60 leading-relaxed">
                 A proven development workflow that delivers quality apps on time
@@ -187,19 +188,19 @@ export const AppPage = () => {
           <ScrollableCardRow desktopGridCols="md:grid-cols-3">
             <ProcessCard
               step={1}
-              variant="purple"
+              variant="cyan"
               title="Discovery"
               description="We analyse your requirements, target audience, and define the app's core features and user flows."
             />
             <ProcessCard
               step={2}
-              variant="yellow"
+              variant="purple"
               title="Design & Build"
               description="We create wireframes, high-fidelity designs, and develop your app using modern frameworks with clean, performant code."
             />
             <ProcessCard
               step={3}
-              variant="cyan"
+              variant="lime"
               title="Test & Launch"
               description="Rigorous QA testing across devices, followed by app store submission and launch support with ongoing maintenance."
             />
@@ -215,8 +216,7 @@ export const AppPage = () => {
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                 Custom Apps That
                 <br />
-                Drive{" "}
-                <span className="italic text-outline-15">Growth</span>
+                Drive <span className="italic text-outline-15">Growth</span>
               </h2>
             </div>
             <div className="md:w-1/2 flex flex-col gap-6">
@@ -477,8 +477,7 @@ export const AppPage = () => {
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                   {"Let's build your"}
                   <br />
-                  next{" "}
-                  <span className="italic text-outline-15">app.</span>
+                  next <span className="italic text-outline-15">app.</span>
                 </h2>
               </div>
               <div>

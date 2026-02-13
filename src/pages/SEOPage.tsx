@@ -85,7 +85,7 @@ export const SEOPage = () => {
           >
             <path
               d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-              stroke="#e7fe56"
+              stroke="#d5bff0"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -124,7 +124,7 @@ export const SEOPage = () => {
             <div className="md:w-1/2">
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="text-[#e7fe56] text-4xl font-bold mb-2">
+                  <div className="text-[#d5bff0] text-4xl font-bold mb-2">
                     #1
                   </div>
                   <p className="text-white/60 text-sm">Page Rankings</p>
@@ -142,9 +142,7 @@ export const SEOPage = () => {
                   <p className="text-white/60 text-sm">Client Retention</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="text-white text-4xl font-bold mb-2">
-                    24/7
-                  </div>
+                  <div className="text-white text-4xl font-bold mb-2">24/7</div>
                   <p className="text-white/60 text-sm">Monitoring</p>
                 </div>
               </div>
@@ -159,8 +157,7 @@ export const SEOPage = () => {
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
             <div className="md:w-5/12 shrink-0">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                Our{" "}
-                <span className="italic text-outline-15">process</span>
+                Our <span className="italic text-outline-15">process</span>
               </h2>
               <p className="text-base text-white/60 leading-relaxed">
                 From audit to execution, we build roadmaps that capture traffic
@@ -177,13 +174,13 @@ export const SEOPage = () => {
             />
             <ProcessCard
               step={2}
-              variant="yellow"
+              variant="cyan"
               title="Strategy"
               description="We build a custom roadmap. This involves identifying high-value keywords and planning content that aligns with your specific user intent."
             />
             <ProcessCard
               step={3}
-              variant="cyan"
+              variant="lime"
               title="Growth"
               description="Execution begins. We optimize on-page elements, fix technical issues, and build authority through off-page signals to drive ranking improvements."
             />
@@ -412,8 +409,7 @@ export const SEOPage = () => {
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                   Ready to scale
                   <br />
-                  your{" "}
-                  <span className="italic text-outline-15">traffic?</span>
+                  your <span className="italic text-outline-15">traffic?</span>
                 </h2>
               </div>
               <div>
