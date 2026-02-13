@@ -73,7 +73,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         </div>
 
         {/* Nav links */}
-        <ul className="flex flex-col items-center gap-6 mt-4 list-none px-6">
+        <ul className="flex flex-col items-center gap-8 mt-12 list-none px-6">
           {navItems.map((item) => (
             <li key={item.to} className="w-full text-center">
               {item.hasDropdown ? (
@@ -81,10 +81,10 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   <button
                     type="button"
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className={`text-lg transition-colors duration-200 relative inline-flex items-center gap-1.5 pb-2 ${
+                    className={`text-xl transition-colors duration-200 relative inline-flex items-center gap-1.5 pb-2 ${
                       isActive(item.to)
-                        ? "text-white font-medium"
-                        : "text-white/60 font-normal"
+                        ? "text-white font-normal"
+                        : "text-white/70 font-normal"
                     }`}
                   >
                     {item.label}
@@ -184,10 +184,10 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <Link
                   to={item.to}
                   onClick={onClose}
-                  className={`text-lg transition-colors duration-200 relative inline-block pb-2 ${
+                  className={`text-xl transition-colors duration-200 relative inline-block pb-2 ${
                     isActive(item.to)
-                      ? "text-white font-medium"
-                      : "text-white/60 hover:text-white font-normal"
+                      ? "text-white font-normal"
+                      : "text-white/70 hover:text-white font-normal"
                   }`}
                 >
                   {item.label}

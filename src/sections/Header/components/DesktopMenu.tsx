@@ -18,10 +18,10 @@ export const DesktopMenu = () => {
         <li key={item.to} className={item.hasDropdown ? "relative group" : ""}>
           <Link
             to={item.to}
-            className={`text-base transition-colors duration-200 relative pb-3 ${
+            className={`text-base transition-colors duration-200 relative pb-2 inline-block ${
               isActive(item.to)
-                ? "text-white font-medium"
-                : "text-white/60 hover:text-white font-normal"
+                ? "text-white font-normal"
+                : "text-white/70 hover:text-white font-normal"
             }`}
           >
             {item.label}
