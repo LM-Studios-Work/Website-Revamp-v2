@@ -1,5 +1,37 @@
 import { useEffect, useRef } from "react";
 
+// ==========================================
+// 💻 DESKTOP SETTINGS (Screens wider than 768px)
+// ==========================================
+const DESKTOP = {
+  particleCount: 235, 
+  minSize: 0.2,
+  maxSize: 0.9,
+  minSpeed: 0.1,
+  maxSpeed: 0.4,
+  baseMaxOpacity: 1.4,
+};
+
+// ==========================================
+// 📱 MOBILE SETTINGS (Screens smaller than 768px)
+// ==========================================
+const MOBILE = {
+  particleCount: 82, 
+  minSize: 0.18,
+  maxSize: 0.9,
+  minSpeed: 0.1,
+  maxSpeed: 0.4,
+  baseMaxOpacity: 0.9,
+};
+
+// ==========================================
+// 🖱️ INTERACTION SETTINGS (Mouse Hover)
+// ==========================================
+const INTERACTION = {
+  hoverRadius: 120, // How big the "push" circle around your mouse is
+  pushStrength: 3,  // How hard the particles get pushed away
+};
+
 interface Particle {
   x: number;
   y: number;
@@ -7,34 +39,28 @@ interface Particle {
   speedY: number;
   speedX: number;
   opacity: number;
+  maxOpacity: number;
   fadeSpeed: number;
   life: number;
   maxLife: number;
+  driftOffset: number;
 }
 
-const PARTICLE_COUNT = 64;
-const MAX_SIZE = 1.8;
-const MIN_SIZE = 0.4;
-const MIN_SPEED = 0.15;
-const MAX_SPEED = 0.6;
-const MAX_OPACITY = 0.25;
-
-function createParticle(
-  width: number,
-  height: number,
-  scatter = false
-): Particle {
-  const maxLife = 600 + Math.random() * 800;
+function createParticle(width: number, height: number, config: typeof DESKTOP, scatter = false): Particle {
+  const maxLife = 2500 + Math.random() * 2000; 
+  
   return {
     x: Math.random() * width,
     y: scatter ? Math.random() * height : height + Math.random() * 40,
-    size: MIN_SIZE + Math.random() * (MAX_SIZE - MIN_SIZE),
-    speedY: -(MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED)),
-    speedX: (Math.random() - 0.5) * 0.15,
+    size: config.minSize + Math.random() * (config.maxSize - config.minSize),
+    speedY: -(config.minSpeed + Math.random() * (config.maxSpeed - config.minSpeed)),
+    speedX: (Math.random() - 0.5) * 0.1,
     opacity: 0,
-    fadeSpeed: MAX_OPACITY / (80 + Math.random() * 60),
+    maxOpacity: (Math.random() * 0.5 + 0.5) * config.baseMaxOpacity,
+    fadeSpeed: config.baseMaxOpacity / (80 + Math.random() * 60),
     life: scatter ? Math.random() * maxLife : 0,
     maxLife,
+    driftOffset: Math.random() * Math.PI * 2,
   };
 }
 
@@ -45,11 +71,33 @@ export const ParticleBackground = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
     let animationId: number;
     let particles: Particle[] = [];
+    let currentConfig = window.innerWidth < 768 ? MOBILE : DESKTOP;
+
+    // 1. Setup the mouse tracker
+    const mouse = {
+      x: -1000,
+      y: -1000,
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+
+    // When the mouse leaves the browser window, remove the hover effect
+    const handleMouseOut = () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    };
+
+    // Listen to the window, not the canvas, because the canvas has pointer-events-none
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseout", handleMouseOut);
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -62,8 +110,9 @@ export const ParticleBackground = () => {
 
     const init = () => {
       resize();
-      particles = Array.from({ length: PARTICLE_COUNT }, () =>
-        createParticle(window.innerWidth, window.innerHeight, true)
+      currentConfig = window.innerWidth < 768 ? MOBILE : DESKTOP;
+      particles = Array.from({ length: currentConfig.particleCount }, () =>
+        createParticle(window.innerWidth, window.innerHeight, currentConfig, true)
       );
     };
 
@@ -77,34 +126,54 @@ export const ParticleBackground = () => {
         const p = particles[i];
 
         p.life++;
-        p.x += p.speedX;
+        
+        // Normal floating movement
+        p.x += p.speedX + Math.sin(p.life * 0.005 + p.driftOffset) * 0.06;
         p.y += p.speedY;
 
-        // Fade in during first phase, fade out near end of life
-        const fadeInEnd = p.maxLife * 0.15;
-        const fadeOutStart = p.maxLife * 0.75;
+        // 2. MOUSE HOVER PHYSICS
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (p.life < fadeInEnd) {
-          p.opacity = (p.life / fadeInEnd) * MAX_OPACITY * (p.size / MAX_SIZE);
-        } else if (p.life > fadeOutStart) {
-          const remaining = (p.maxLife - p.life) / (p.maxLife - fadeOutStart);
-          p.opacity = remaining * MAX_OPACITY * (p.size / MAX_SIZE);
-        } else {
-          p.opacity = MAX_OPACITY * (p.size / MAX_SIZE);
+        // If the particle is inside the hover radius...
+        if (distance < INTERACTION.hoverRadius) {
+          const forceDirectionX = dx / distance;
+          const forceDirectionY = dy / distance;
+          // Closer to the mouse = stronger push
+          const force = (INTERACTION.hoverRadius - distance) / INTERACTION.hoverRadius;
+
+          // Push the particle away from the mouse
+          p.x -= forceDirectionX * force * INTERACTION.pushStrength;
+          p.y -= forceDirectionY * force * INTERACTION.pushStrength;
         }
 
-        // Gentle sine drift
-        p.x += Math.sin(p.life * 0.008) * 0.08;
+        // Fading logic
+        const fadeInEnd = p.maxLife * 0.2;
+        const fadeOutStart = p.maxLife * 0.8;
 
-        // Draw particle
+        if (p.life < fadeInEnd) {
+          p.opacity = (p.life / fadeInEnd) * p.maxOpacity;
+        } else if (p.life > fadeOutStart) {
+          const remaining = (p.maxLife - p.life) / (p.maxLife - fadeOutStart);
+          p.opacity = Math.max(0, remaining * p.maxOpacity);
+        } else {
+          p.opacity = p.maxOpacity;
+        }
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+        
+        ctx.shadowBlur = p.size * 2.5; 
+        ctx.shadowColor = `rgba(255, 255, 255, ${p.opacity * 0.8})`; 
+        
         ctx.fill();
+        ctx.shadowBlur = 0;
 
-        // Reset particle when it dies or goes off-screen
+        // Reset particle if it dies OR if it goes off the top
         if (p.life >= p.maxLife || p.y < -10) {
-          particles[i] = createParticle(w, h, false);
+          particles[i] = createParticle(w, h, currentConfig, false);
         }
       }
 
@@ -114,11 +183,14 @@ export const ParticleBackground = () => {
     init();
     animate();
 
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", init);
 
+    // Clean up event listeners on unmount
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", init);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseout", handleMouseOut);
     };
   }, []);
 
