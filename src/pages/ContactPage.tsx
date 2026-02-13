@@ -4,200 +4,173 @@ export const ContactPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative box-border caret-transparent min-h-screen pt-64 pb-10 md:pb-20 overflow-hidden">
+      <section className="relative box-border caret-transparent min-h-screen pt-40 pb-10 md:pb-20 overflow-hidden bg-[#1a1a1a]">
         <HeroVideoOverlay />
-        <div className="relative z-30 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
-          <h1 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] text-center mb-10 font-obviously md:text-[84px] md:leading-[100.8px]">
-            Contact Us
-          </h1>
-        </div>
-        <div className="relative z-30 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[850px]">
-          <p className="box-border caret-transparent text-center mt-6 mb-8">
-            Ready to bring your vision to life? Get in touch with our team and
-            let's discuss how we can help you create an exceptional web
-            experience.
+        <div className="relative z-30 box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[900px]">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">Contact us</h1>
+          {/* Wavy underline */}
+          <svg className="mb-8" width="160" height="10" viewBox="0 0 160 10" fill="none">
+            <path d="M0 5 Q 5 0, 10 5 T 20 5 T 30 5 T 40 5 T 50 5 T 60 5 T 70 5 T 80 5 T 90 5 T 100 5 T 110 5 T 120 5 T 130 5 T 140 5 T 150 5 L 160 5" stroke="#b4eb2c" strokeWidth="2" fill="none"/>
+          </svg>
+          <p className="box-border caret-transparent mt-6 mb-8 text-white/70 leading-relaxed max-w-3xl">
+            Use the form below to get in touch with us about your project or inquiry. Whether you have questions, need a quote, or want to discuss your ideas, we're here to help. The information you provide will help us understand your needs and serve as a starting point for our conversation. Please note that any details shared here are for initial contact purposes only and do not represent a binding agreement or formal proposal.
           </p>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
-        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
-          <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
-            {/* Contact Form */}
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-7/12 md:pr-8 md:py-0">
-              <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent p-8 rounded-[20px] md:p-12">
-                <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-8 font-obviously md:text-[40px] md:leading-[48px]">
-                  Send us a message
-                </h2>
-                <form className="box-border caret-transparent">
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                      placeholder="Your company name"
-                    />
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Service *
-                    </label>
-                    <select
-                      required
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="web-design">Web Design</option>
-                      <option value="logo-design">Logo Design</option>
-                      <option value="photography">Photography</option>
-                      <option value="seo">SEO</option>
-                      <option value="marketing">Marketing</option>
-                    </select>
-                  </div>
-                  <div className="box-border caret-transparent mb-6">
-                    <label className="box-border caret-transparent block mb-2 font-medium">
-                      Message *
-                    </label>
-                    <textarea
-                      required
-                      rows={6}
-                      className="bg-white/5 border-white/20 box-border caret-transparent w-full px-4 py-3 rounded-lg border focus:outline-none focus:border-yellow-300 transition-colors resize-none"
-                      placeholder="Tell us about your project..."
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="text-sm font-normal bg-zinc-600 box-border caret-transparent block leading-[21px] text-center align-middle border-zinc-600 pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-neutral-600 hover:border-zinc-700 transition-colors"
-                  >
-                    Send Message
-                    <img
-                      src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/icon-4.svg"
-                      alt="Icon"
-                      className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] leading-[21px] -rotate-45 w-[30px] ml-2.5 p-[9.6px] rounded-[50%] top-0 md:text-base md:font-semibold md:h-[50px] md:leading-6 md:w-[50px] md:p-[18.4px]"
-                    />
-                  </button>
-                </form>
+      <section className="relative box-border caret-transparent py-10 md:py-20 bg-[#1a1a1a]">
+        <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[900px]">
+          <form
+            action="https://formsubmit.co/lm.studios.web@gmail.com"
+            method="POST"
+            className="box-border caret-transparent space-y-5"
+          >
+            {/* Hidden fields for FormSubmit configuration */}
+            <input type="hidden" name="_subject" value="New Contact Form Submission from LM Studios Website" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            
+            {/* Row 1: Name and Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-normal mb-2 text-white">
+                  Your Name *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="w-full px-4 py-3.5 bg-[#2a2a2a] border border-[#3a3a3a] rounded text-white placeholder-white/30 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-normal mb-2 text-white">
+                  Your Email *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-3.5 bg-[#2a2a2a] border border-[#3a3a3a] rounded text-white placeholder-white/30 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                />
               </div>
             </div>
 
-            {/* Contact Info */}
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-5/12 md:pl-8 md:py-0">
-              <div className="box-border caret-transparent mb-12">
-                <h3 className="text-[23.05px] font-medium box-border caret-transparent leading-[27.66px] mb-6 font-obviously md:text-[28px] md:leading-[33.6px]">
-                  Get in touch
-                </h3>
-                <p className="box-border caret-transparent mb-6">
-                  Have a question or want to work together? We'd love to hear
-                  from you.
-                </p>
-                <div className="box-border caret-transparent space-y-4">
-                  <div className="box-border caret-transparent">
-                    <p className="box-border caret-transparent font-medium mb-1">
-                      Email
-                    </p>
-                    <a
-                      href="mailto:hello@lmstudios.co.za"
-                      className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    >
-                      hello@lmstudios.co.za
-                    </a>
-                  </div>
-                  <div className="box-border caret-transparent">
-                    <p className="box-border caret-transparent font-medium mb-1">
-                      Phone
-                    </p>
-                    <a
-                      href="tel:+27100001234"
-                      className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    >
-                      +27 10 000 1234
-                    </a>
-                  </div>
-                </div>
+            {/* Row 2: Phone and Country */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-normal mb-2 text-white">
+                  Your Phone Number
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+27"
+                  className="w-full px-4 py-3.5 bg-[#2a2a2a] border border-[#3a3a3a] rounded text-white placeholder-white/30 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                />
               </div>
-
-              <div className="box-border caret-transparent mb-12">
-                <h3 className="text-[23.05px] font-medium box-border caret-transparent leading-[27.66px] mb-6 font-obviously md:text-[28px] md:leading-[33.6px]">
-                  Main Office
-                </h3>
-                <p className="box-border caret-transparent opacity-75">
-                  Johannesburg<br />
-                  Gauteng
-                  <br />
-                  South Africa
-                </p>
-              </div>
-
-              <div className="box-border caret-transparent">
-                <h3 className="text-[23.05px] font-medium box-border caret-transparent leading-[27.66px] mb-6 font-obviously md:text-[28px] md:leading-[33.6px]">
-                  Follow us
-                </h3>
-                <div className="box-border caret-transparent flex gap-4">
-                  <a
-                    href="https://www.behance.net/lm-studios"
-                    className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Behance
-                  </a>
-                  <a
-                    href="https://dribbble.com/LMStudios"
-                    className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Dribbble
-                  </a>
-                  <a
-                    href="https://www.instagram.com/lmstudios.official/"
-                    className="box-border caret-transparent opacity-75 hover:text-yellow-300 hover:opacity-100 transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Instagram
-                  </a>
-                </div>
+              <div>
+                <label className="block text-sm font-normal mb-2 text-white">
+                  Your Country *
+                </label>
+                <input
+                  type="text"
+                  name="country"
+                  required
+                  className="w-full px-4 py-3.5 bg-[#2a2a2a] border border-[#3a3a3a] rounded text-white placeholder-white/30 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+                />
               </div>
             </div>
-          </div>
+
+            {/* Row 3: Company */}
+            <div>
+              <label className="block text-sm font-normal mb-2 text-white">
+                Your Company
+              </label>
+              <input
+                type="text"
+                name="company"
+                className="w-full px-4 py-3.5 bg-[#2a2a2a] border border-[#3a3a3a] rounded text-white placeholder-white/30 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+              />
+            </div>
+
+            {/* Row 4: Subject */}
+            <div>
+              <label className="block text-sm font-normal mb-2 text-white">
+                Subject *
+              </label>
+              <input
+                type="text"
+                name="subject"
+                required
+                className="w-full px-4 py-3.5 bg-[#2a2a2a] border border-[#3a3a3a] rounded text-white placeholder-white/30 focus:outline-none focus:border-[#b4eb2c] transition-colors"
+              />
+            </div>
+
+            {/* Row 5: Question/Message */}
+            <div>
+              <label className="block text-sm font-normal mb-2 text-white">
+                Your Question *
+              </label>
+              <textarea
+                name="message"
+                required
+                placeholder="Please describe your website project or inquiry."
+                rows={7}
+                className="w-full px-4 py-3.5 bg-[#2a2a2a] border border-[#3a3a3a] rounded text-white placeholder-white/30 focus:outline-none focus:border-[#b4eb2c] transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            {/* Checkbox */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                name="has_subscription"
+                value="yes"
+                id="subscription"
+                className="mt-0.5 w-4 h-4 bg-transparent border border-[#3a3a3a] rounded cursor-pointer accent-[#b4eb2c]"
+              />
+              <label htmlFor="subscription" className="text-sm text-white/60 cursor-pointer">
+                Check this box if you have an active subscription with Odoo.
+              </label>
+            </div>
+
+            {/* Submit Button */}
+            <div className="flex items-center justify-end pt-4">
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-[#b4eb2c] rounded-full font-medium text-white hover:bg-[#b4eb2c] hover:text-black transition-all duration-300"
+              >
+                Submit
+                <span className="w-10 h-10 bg-[#b4eb2c] rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="relative box-border caret-transparent py-10 md:py-20">
+      {/* CTA Section */}
+      <section className="relative box-border caret-transparent py-20 md:py-32 bg-[#1a1a1a]">
         <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
-          <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent p-4 rounded-[20px] overflow-hidden">
-            <div className="box-border caret-transparent h-[400px] bg-white/5 rounded-[16px] flex items-center justify-center">
-              <p className="box-border caret-transparent opacity-50">
-                Map placeholder
-              </p>
+          <div className="bg-[#2a2a2a] rounded-3xl p-12 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white">
+                Ready to make your<br />website using Odoo?
+              </h2>
             </div>
+            <button className="px-6 py-3 bg-[#714B67] hover:bg-[#8a5c7f] border border-[#714B67] rounded-full font-semibold text-sm flex items-center gap-2 transition-all whitespace-nowrap self-start md:self-center">
+              Ask for a quote
+              <span className="w-8 h-8 bg-[#b4eb2c] rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
           </div>
         </div>
       </section>
