@@ -41,23 +41,29 @@ const LimeDot = () => (
 );
 
 export const ServicesMarquee = (props: ServicesMarqueeProps) => {
+  // Duplicate content for seamless infinite loop
+  const marqueeContent = (
+    <div className="flex items-center shrink-0">
+      <span className="text-[60px] md:text-[120px] font-bold text-white uppercase leading-none px-4">
+        {props.primaryText}
+      </span>
+      <PurpleSquiggle />
+      <span className="text-[60px] md:text-[120px] font-bold uppercase leading-none px-4 text-outline-weak">
+        {props.secondaryText}
+      </span>
+      <LimeDot />
+    </div>
+  );
   return (
-    <section
-      className={`relative w-full overflow-hidden ${props.variant}`}
-    >
-      <div className={`flex whitespace-nowrap ${props.reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
-        {[...Array(2)].map((_, i) => (
-          <div key={i} className="flex items-center shrink-0">
-            <span className="text-[60px] md:text-[120px] font-bold text-white uppercase leading-none px-4">
-              {props.primaryText}
-            </span>
-            <PurpleSquiggle />
-            <span className="text-[60px] md:text-[120px] font-bold uppercase leading-none px-4 text-outline-weak">
-              {props.secondaryText}
-            </span>
-            <LimeDot />
-          </div>
-        ))}
+    <section className={`relative w-full overflow-hidden ${props.variant}`}>
+      <div
+        className={`flex whitespace-nowrap ${
+          props.reverse ? "animate-marquee-reverse" : "animate-marquee"
+        }`}
+        style={{ minWidth: "200%", width: "max-content" }}
+      >
+        {marqueeContent}
+        {marqueeContent}
       </div>
     </section>
   );
