@@ -14,10 +14,12 @@ export const ServiceItem = (props: ServiceItemProps) => {
   return (
     <Link
       to={props.href}
-      className={`group block w-full py-8 md:py-12 px-6 hover:bg-white/5 hover:translate-x-2 transition-all duration-600 ${
-        props.isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-8'
+      className={`group block w-full py-8 md:py-12 px-6 hover:bg-white/5 hover:translate-x-2 transition-all duration-700 ease-out ${
+        props.isVisible !== undefined
+          ? props.isVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+          : 'opacity-100 translate-y-0'
       }`}
       style={{ transitionDelay: props.isVisible ? animationDelay : '0s' }}
     >

@@ -13,10 +13,12 @@ export const TestimonialCard = (props: TestimonialCardProps) => {
   
   return (
     <div 
-      className={`w-full px-3 py-2 md:w-1/2 lg:w-1/4 md:py-3 transition-all duration-600 ${props.className ?? ""} ${
-        props.isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-8'
+      className={`w-full px-3 py-2 md:w-1/2 lg:w-1/4 md:py-3 transition-all duration-700 ease-out ${props.className ?? ""} ${
+        props.isVisible !== undefined
+          ? props.isVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+          : 'opacity-100 translate-y-0'
       }`}
       style={{ transitionDelay: props.isVisible ? animationDelay : '0s' }}
     >
