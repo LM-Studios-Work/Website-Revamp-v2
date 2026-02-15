@@ -4,6 +4,7 @@ import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { FAQ } from "@/sections/FAQ";
 import { appDevelopmentFAQ } from "@/sections/FAQ/constants";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const solutionExamples = [
   {
@@ -45,12 +46,19 @@ const solutionExamples = [
 ];
 
 export const AppPage = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
+  const { ref: goodHandsRef, isVisible: goodHandsVisible } = useScrollAnimation(0.15);
+  const { ref: processRef, isVisible: processVisible } = useScrollAnimation(0.15);
+  const { ref: solutionsRef, isVisible: solutionsVisible } = useScrollAnimation(0.15);
+  const { ref: ctaCardsRef, isVisible: ctaCardsVisible } = useScrollAnimation(0.15);
+  const { ref: finalCtaRef, isVisible: finalCtaVisible } = useScrollAnimation(0.15);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+      <section ref={heroRef} className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 max-w-[900px] w-full text-center">
+        <div className="relative z-30 max-w-[900px] w-full text-center animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="text-white/50 text-sm uppercase tracking-widest">
               CUSTOM WEB APPLICATIONS
@@ -89,10 +97,10 @@ export const AppPage = () => {
       </section>
 
       {/* Ready to transform section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={goodHandsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                 Your system is in{" "}
                 <span className="italic text-outline-15">good hands</span>
@@ -104,7 +112,8 @@ export const AppPage = () => {
                 in React, Node.js, PostgreSQL, and modern cloud infrastructure.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-8 rounded-[32px] bg-[#72f5e3] text-black">
+                <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+                  <div className="p-8 rounded-[32px] bg-[#72f5e3] text-black">
                   <div className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center mb-6 font-bold text-xs">
                     01
                   </div>
@@ -113,8 +122,10 @@ export const AppPage = () => {
                     Our senior developers average 8+ years experience building 
                     scalable web platforms and business systems.
                   </p>
+                  </div>
                 </div>
-                <div className="p-8 rounded-[32px] bg-[#e7fe56] text-black">
+                <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+                  <div className="p-8 rounded-[32px] bg-[#e7fe56] text-black">
                   <div className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center mb-6 font-bold text-xs">
                     02
                   </div>
