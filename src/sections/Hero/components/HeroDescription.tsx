@@ -3,29 +3,37 @@ import { Link } from "react-router-dom";
 export const HeroDescription = () => {
   return (
     <div className="max-w-2xl text-left">
-      <p className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed mb-8 md:mb-12 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
-        We craft aesthetic, functional, and user-centric websites that help
-        businesses thrive in the digital world.
+      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
+        Custom Web Applications for Modern Businesses.
+      </h2>
+
+      <p className="text-base md:text-lg lg:text-xl text-white/70 leading-relaxed mb-8 md:mb-10 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
+        We build secure, scalable web-based systems tailored to your
+        organization from booking platforms and inventory management to admin
+        dashboards and workflow automation. Professional solutions that digitize
+        and streamline your operations.
       </p>
 
       <Link
         to="/contact"
-        className="inline-flex items-center gap-2 text-sm md:text-base font-semibold bg-[#8b5cf6] hover:bg-[#7c3aed] text-white px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 animate-[fadeInUp_0.8s_ease-out_0.8s_both] hover:scale-105"
+        className="inline-flex items-center text-sm md:text-base font-semibold bg-[#d5bff0] hover:bg-[#d5bff0]/90 text-black pl-6 pr-2 py-2 rounded-full transition-all duration-300 animate-[fadeInUp_0.8s_ease-out_0.8s_both] hover:scale-105"
       >
         Ask for a quote
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
+        <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-[#e7fe56] rounded-full flex items-center justify-center transition-transform group-hover:rotate-45">
+          <svg
+            className="w-4 h-4 text-black -rotate-45"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </span>
       </Link>
     </div>
   );

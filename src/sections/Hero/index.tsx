@@ -5,7 +5,7 @@ import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 
 export const Hero = () => {
   return (
-    <section className="relative flex flex-col justify-center items-start min-h-screen pt-32 pb-16 md:pb-28 overflow-hidden">
+    <section className="relative flex flex-col justify-end items-start min-h-screen pt-20 md:pt-40 pb-16 md:pb-28 overflow-hidden">
       <HeroVideoOverlay />
       <SocialSidebar />
 
