@@ -14,7 +14,8 @@ const isInternal = (href: string) =>
 
 export const FooterColumn = (props: FooterColumnProps) => {
   return (
-    <div className="box-border caret-transparent flex flex-col shrink-0 max-w-full min-h-6 w-full px-[15px] py-8 md:w-auto md:px-0 md:py-24 md:text-left">
+   
+    <div className="box-border caret-transparent flex flex-col shrink-0 max-w-full w-full px-[15px] py-0 md:w-auto md:px-0 md:text-left">
       <h3 className="text-[23.05px] font-semibold box-border caret-transparent leading-[27.66px] mb-2 md:text-[28px] md:leading-[33.6px]">
         {props.title}
       </h3>
