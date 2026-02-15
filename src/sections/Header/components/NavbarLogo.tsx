@@ -8,9 +8,9 @@ export const NavbarLogo = () => {
         <img
           src="/lmstudioslogo.png"
           alt="LM Studios Logo"
-          className="h-14 max-w-[180px] sm:h-16 sm:max-w-[200px] md:h-[4.8rem] md:max-w-[250px] w-auto inline-block align-middle drop-shadow"
+          className="h-[2.8rem] max-w-[171px] sm:h-[3.04rem] sm:max-w-[190px] md:h-[4.56rem] md:max-w-[238px] w-auto inline-block align-middle drop-shadow"
         />
-        <span className="text-white text-2xl md:text-3xl font-bold font-sans tracking-tight">
+        <span className="text-white text-xl sm:text-2xl md:text-3xl font-bold font-sans tracking-tight">
           LM Studios
         </span>
       </span>
