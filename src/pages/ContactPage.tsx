@@ -1,19 +1,23 @@
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const ContactPage = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
+  const { ref: formRef, isVisible: formVisible } = useScrollAnimation(0.15);
+
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-[#b4eb2c] selection:text-black">
       <ParticleBackground />
 
       {/* --- HERO SECTION: Full Screen Background --- */}
-      <section className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
+      <section ref={heroRef} className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
         {/* The video now spans the full section width correctly */}
         <HeroVideoOverlay />
         
         {/* Content Container (Matches your project's max-width) */}
         <div className="relative z-30 max-w-[1200px] w-full mx-auto">
-          <div className="max-w-[800px]">
+          <div className="max-w-[800px] animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
             <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8 text-left">
               Contact us
             </h1>
@@ -49,12 +53,15 @@ export const ContactPage = () => {
       </section>
 
       {/* --- FORM SECTION --- */}
-      <section className="relative z-20 pb-32 px-6">
+      <section ref={formRef} className="relative z-20 pb-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <form
             action="https://formsubmit.co/lm.studios.web@gmail.com"
             method="POST"
-            className="space-y-8"
+            className="space-y-8 opacity-0"
+            style={{
+              animation: formVisible ? "fadeInUp 0.8s ease-out 0.2s both" : "none"
+            }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
               {/* Field: Name */}
