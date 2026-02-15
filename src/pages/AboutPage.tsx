@@ -2,14 +2,16 @@ import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesM
 import { ProcessCard } from "../components/ProcessCard";
 import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const AboutPage = () => {
+  const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation(0.15);
   return (
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16">
+        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             <span className="relative inline-block">
               About us
@@ -33,7 +35,7 @@ export const AboutPage = () => {
         </div>
 
         {/* Two Column Text */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
           <p className="text-base md:text-lg">
             Founded in 2021, LM Studios has evolved from web design into building 
             custom web applications and business systems for organizations and institutions. 
@@ -65,7 +67,7 @@ export const AboutPage = () => {
       />
 
       {/* Values Cards (vertical stack on mobile, grid on desktop) */}
-      <section className="relative py-16 px-6">
+      <section ref={valuesRef} className="relative py-16 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
             <ProcessCard
@@ -73,6 +75,9 @@ export const AboutPage = () => {
               variant="purple"
               title="Creativity"
               description="We believe in crafting unique, visually striking designs that capture your brand's essence. Our team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision to life."
+              customBadge={
+                <div className={`inline-block opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`} />
+              }
             />
 
             <ProcessCard
@@ -80,6 +85,9 @@ export const AboutPage = () => {
               variant="yellow"
               title="Simplicity"
               description="Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on clean, user-friendly experiences that make navigation seamless and content impactful."
+              customBadge={
+                <div className={`inline-block opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`} />
+              }
             />
 
             <ProcessCard
@@ -87,6 +95,9 @@ export const AboutPage = () => {
               variant="cyan"
               title="Reliability"
               description="We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration."
+              customBadge={
+                <div className={`inline-block opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`} />
+              }
             />
           </div>
         </div>
