@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useScrollAnimation = (threshold = 0.1) => {
+export const useScrollAnimation = (threshold = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -9,9 +9,14 @@ export const useScrollAnimation = (threshold = 0.1) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Once visible, keep it visible to prevent animation replay
+          observer.unobserve(entry.target);
         }
       },
-      { threshold }
+      { 
+        threshold,
+        rootMargin: "0px 0px -50px 0px" // Trigger when 50px from bottom edge enters viewport
+      }
     );
 
     const currentRef = ref.current;
@@ -23,6 +28,7 @@ export const useScrollAnimation = (threshold = 0.1) => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
+      observer.disconnect();
     };
   }, [threshold]);
 

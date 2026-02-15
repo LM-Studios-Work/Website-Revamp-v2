@@ -4,6 +4,7 @@ import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { FAQ } from "@/sections/FAQ";
 import { seoFAQ } from "@/sections/FAQ/constants";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const pricingFeatures = [
   {
@@ -13,62 +14,67 @@ const pricingFeatures = [
     dominance: true,
   },
   {
-    label: "Keyword Research",
-    essential: "Top 20",
-    growth: "Advanced Strategy",
-    dominance: "High-Volume",
+    label: "Keyword Research & Strategy",
+    essential: "5-10 Local Keywords",
+    growth: "15-25 Keywords",
+    dominance: "50+ High-Volume Keywords",
   },
   {
-    label: "Google Business Profile Setup",
-    essential: true,
-    growth: true,
-    dominance: true,
+    label: "Google Business Profile",
+    essential: "Setup & Optimization",
+    growth: "Management & Posts",
+    dominance: "Full Management + Review Strategy",
   },
   {
-    label: "Meta Tag Optimization",
-    essential: true,
-    growth: true,
-    dominance: true,
+    label: "On-Page Optimization",
+    essential: "Meta Tags & Headers",
+    growth: "Full Content Optimization",
+    dominance: "Enterprise-Level Optimization",
   },
   {
     label: "Content Creation",
-    essential: "Basic Recommendations",
-    growth: "2 articles/mo",
-    dominance: "High-Volume Production",
-  },
-  {
-    label: "Backlink Management",
     essential: false,
-    growth: true,
-    dominance: "Digital PR & Link Building",
+    growth: "2 articles/month",
+    dominance: "4+ articles/month",
   },
   {
-    label: "Reporting",
-    essential: "Monthly",
-    growth: "Bi-Weekly",
+    label: "Link Building",
+    essential: false,
+    growth: "Local Citations",
+    dominance: "Digital PR & Authority Links",
+  },
+  {
+    label: "Monthly Reporting",
+    essential: true,
+    growth: true,
     dominance: "Real-time Dashboard",
   },
   {
     label: "Strategy Consultations",
-    essential: "Quarterly Review",
-    growth: "Conversion Rate Suggestions",
-    dominance: "Unlimited",
+    essential: "Quarterly",
+    growth: "Monthly",
+    dominance: "Bi-weekly",
   },
 ];
 
 export const SEOPage = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.15);
+  const { ref: processRef, isVisible: processVisible } = useScrollAnimation(0.15);
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation(0.15);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+      <section ref={heroRef} className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 max-w-[900px] w-full text-center">
+        <div className="relative z-30 max-w-[900px] w-full text-center animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="text-white/50 text-sm uppercase tracking-widest">
-              SEO
+              SEO SERVICES
             </span>
             <span className="text-xs font-thin inline-block text-center whitespace-nowrap align-middle border-white/30 px-4 py-1.5 rounded-full border border-solid text-white/50">
-              25h min.
+              Tailored Strategies
             </span>
           </div>
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
@@ -92,20 +98,20 @@ export const SEOPage = () => {
             />
           </svg>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[750px] mx-auto">
-            Being online is irrelevant if you can't be found. We engineer
-            data-driven SEO strategies that push your website to the top of
-            search results. Whether you need local visibility or global
-            dominance, we turn your organic traffic into your most valuable
-            revenue stream.
+            Being online is irrelevant if you can't be found. We turn South African 
+            search traffic into revenue with data-driven SEO strategies designed for 
+            your business. Whether you're a local service provider or growing SME, 
+            we build the digital foundation that makes you visible exactly when customers 
+            are ready to buy.
           </p>
         </div>
       </section>
 
       {/* Ready to dominate section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={statsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${statsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                 Ready to{" "}
                 <span className="italic text-outline-15">dominate</span>
@@ -113,15 +119,15 @@ export const SEOPage = () => {
                 the search results?
               </h2>
               <p className="text-lg text-white/70 leading-relaxed">
-                Your position on Google determines your digital success, acting
-                as the filter for how customers discover your business. We
-                understand the algorithms so you don't have to. A
-                high-performing SEO strategy complements your beautiful website
-                by ensuring it gets seen by the right people at the exact moment
-                they are ready to buy.
+                Your position on Google acts as the filter for your business's success. 
+                At LM Studios, we don't just chase vanity metrics—we engineer data-driven 
+                SEO strategies that put your brand in front of customers exactly when they 
+                are ready to buy. Whether you're a local business in Pretoria needing more 
+                foot traffic or a startup in Cape Town looking for your first leads, we 
+                build the digital foundation that makes you visible.
               </p>
             </div>
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${statsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
                   <div className="text-[#d5bff0] text-4xl font-bold mb-2">
@@ -152,42 +158,47 @@ export const SEOPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={processRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
+          <div className={`flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12 opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div className="md:w-5/12 shrink-0">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                 Our <span className="italic text-outline-15">process</span>
               </h2>
               <p className="text-base text-white/60 leading-relaxed">
-                From audit to execution, we build roadmaps that capture traffic
-                and authority.
+                A proven methodology that drives sustainable ranking improvements 
+                and qualified traffic.
               </p>
             </div>
           </div>
-          <ScrollableCardRow
-            desktopGridCols="md:grid-cols-3"
-            buttonColor="#d5bff0"
-          >
-            <ProcessCard
-              step={1}
-              variant="purple"
-              title="Audit"
-              description="We dive deep into your current site health. We analyze technical errors, competitor rankings, and missed opportunities to establish a baseline."
-            />
-            <ProcessCard
-              step={2}
-              variant="cyan"
-              title="Strategy"
-              description="We build a custom roadmap. This involves identifying high-value keywords and planning content that aligns with your specific user intent."
-            />
-            <ProcessCard
-              step={3}
-              variant="lime"
-              title="Growth"
-              description="Execution begins. We optimize on-page elements, fix technical issues, and build authority through off-page signals to drive ranking improvements."
-            />
-          </ScrollableCardRow>
+          <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+              <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+                <ProcessCard
+                  step={1}
+                  variant="purple"
+                  title="The Audit"
+                  description="We dive deep into your current site health, analyzing technical errors, competitor rankings, and missed local opportunities to establish a baseline."
+                />
+              </div>
+              <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+                <ProcessCard
+                  step={2}
+                  variant="cyan"
+                  title="The Fix"
+                  description="Before we build, we repair. We fix technical issues holding your site back—improving speed, mobile responsiveness, and site structure."
+                />
+              </div>
+              <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+                <ProcessCard
+                  step={3}
+                  variant="lime"
+                  title="The Climb"
+                  description="Execution begins. We optimize your content for local search terms and build the citations needed to prove your authority to Google."
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -239,8 +250,12 @@ export const SEOPage = () => {
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
-              What you will get
+              SEO <span className="italic text-outline-15">Packages</span>
             </h2>
+            <p className="text-lg text-white/60 mt-6 max-w-3xl mx-auto">
+              From local visibility to national reach. Choose a package that fits your goals, 
+              or contact us for a custom strategy tailored to your business.
+            </p>
           </div>
 
           {/* Table Header */}
@@ -250,22 +265,22 @@ export const SEOPage = () => {
               <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#e7fe56] border border-[#e7fe56] px-4 py-1 rounded-full mb-4">
                 essential
               </span>
-              <div className="text-5xl font-bold text-white mb-1">25h</div>
-              <p className="text-white/40 text-sm">Local / Startup</p>
+              <div className="text-3xl font-bold text-white mb-1">Local Focus</div>
+              <p className="text-white/40 text-sm">Perfect for startups & local businesses</p>
             </div>
             <div className="text-center pb-6">
               <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#72f5e3] border border-[#72f5e3] px-4 py-1 rounded-full mb-4">
                 growth
               </span>
-              <div className="text-5xl font-bold text-white mb-1">50h</div>
-              <p className="text-white/40 text-sm">Regional / SME</p>
+              <div className="text-3xl font-bold text-white mb-1">Regional Reach</div>
+              <p className="text-white/40 text-sm">Ideal for growing SMEs</p>
             </div>
             <div className="text-center pb-6">
               <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#d5bff0] border border-[#d5bff0] px-4 py-1 rounded-full mb-4">
                 dominance
               </span>
-              <div className="text-5xl font-bold text-white mb-1">100h</div>
-              <p className="text-white/40 text-sm">National / Enterprise</p>
+              <div className="text-3xl font-bold text-white mb-1">National Scale</div>
+              <p className="text-white/40 text-sm">Enterprise-level SEO campaigns</p>
             </div>
           </div>
 
@@ -319,22 +334,22 @@ export const SEOPage = () => {
                 {
                   tier: "essential" as const,
                   label: "Essential",
-                  hours: "25h",
-                  subtitle: "Local / Startup",
+                  title: "Local Focus",
+                  subtitle: "Perfect for startups & local businesses",
                   color: "#e7fe56",
                 },
                 {
                   tier: "growth" as const,
                   label: "Growth",
-                  hours: "50h",
-                  subtitle: "Regional / SME",
+                  title: "Regional Reach",
+                  subtitle: "Ideal for growing SMEs",
                   color: "#72f5e3",
                 },
                 {
                   tier: "dominance" as const,
                   label: "Dominance",
-                  hours: "100h",
-                  subtitle: "National / Enterprise",
+                  title: "National Scale",
+                  subtitle: "Enterprise-level SEO campaigns",
                   color: "#d5bff0",
                 },
               ] as const
@@ -350,8 +365,8 @@ export const SEOPage = () => {
                   >
                     {plan.label}
                   </span>
-                  <div className="text-4xl font-bold text-white mb-1">
-                    {plan.hours}
+                  <div className="text-2xl font-bold text-white mb-1">
+                    {plan.title}
                   </div>
                   <p className="text-white/40 text-sm">{plan.subtitle}</p>
                 </div>
@@ -394,9 +409,23 @@ export const SEOPage = () => {
             ))}
           </div>
 
-          <p className="text-white/30 text-xs text-center mt-6">
-            * This pack is only available with a web design project.
-          </p>
+          <div className="mt-12 text-center">
+            <p className="text-lg text-white/70 mb-6 max-w-2xl mx-auto">
+              Not sure which package fits your needs? Contact us for a free consultation 
+              and custom proposal tailored to your business goals.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center text-base font-semibold bg-[#d5bff0] text-black pl-8 pr-3 py-3 rounded-full hover:bg-[#d5bff0]/90 hover:scale-105 transition-all duration-300"
+            >
+              Get a Custom Quote
+              <span className="ml-3 w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                <svg className="w-5 h-5 text-[#d5bff0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -404,9 +433,9 @@ export const SEOPage = () => {
       <FAQ items={seoFAQ} title="SEO — FAQ" />
 
       {/* CTA Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={ctaRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16">
+          <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16 opacity-0 ${ctaVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-10">
               <div>
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
@@ -420,7 +449,7 @@ export const SEOPage = () => {
                   to="/contact"
                   className="inline-flex items-center text-sm md:text-base font-semibold text-black bg-[#e7fe56] pl-6 pr-2 py-3 rounded-full hover:bg-[#e7fe56]/80 transition-colors"
                 >
-                  Get a free audit
+                  Start ranking today
                   <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-black/20 rounded-full flex items-center justify-center">
                     <svg
                       className="w-4 h-4 text-black -rotate-45"

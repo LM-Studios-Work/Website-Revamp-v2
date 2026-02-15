@@ -18,6 +18,7 @@ import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const packages = [
   {
@@ -120,6 +121,14 @@ const iconMap = {
 };
 
 export const WebDesignPage = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
+  const { ref: bespokeRef, isVisible: bespokeVisible } = useScrollAnimation(0.15);
+  const { ref: standardRef, isVisible: standardVisible } = useScrollAnimation(0.15);
+  const { ref: packagesRef, isVisible: packagesVisible } = useScrollAnimation(0.15);
+  const { ref: processRef, isVisible: processVisible } = useScrollAnimation(0.15);
+  const { ref: goodHandsRef, isVisible: goodHandsVisible } = useScrollAnimation(0.15);
+  const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.15);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -165,7 +174,7 @@ export const WebDesignPage = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
             We design and develop user-friendly websites using modern
             frameworks, offering both standard features or custom solutions to
             meet your needs. Whether you opt for a simple setup with built-in
@@ -177,10 +186,10 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Behind the scenes section */}
-      <section className="relative z-10 box-border caret-transparent py-10 md:py-20">
+      <section ref={bespokeRef} className="relative z-10 box-border caret-transparent py-10 md:py-20">
         <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4">
+            <div className={`box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4 opacity-0 ${bespokeVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <div className="absolute items-center box-border caret-transparent hidden flex-col transform-none z-[5] left-0 top-0 md:flex md:translate-y-[-80.0%]">
                 <p className="text-[23.05px] font-normal box-border caret-transparent inline leading-[27.66px] min-h-0 min-w-0 text-center transform-none mb-2 font-caveat md:text-[28px] md:block md:leading-[33.6px] md:min-h-[auto] md:min-w-[auto] md:rotate-[-19.99998485209311deg]">
                   Behind
@@ -201,11 +210,11 @@ export const WebDesignPage = () => {
                 />
               </div>
             </div>
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pl-8 md:py-20">
+            <div className={`box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pl-8 md:py-20 opacity-0 ${bespokeVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-10 font-obviously md:text-[50px] md:leading-[60px]">
                 Bespoke Development
                 <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-purple-300 mx-4 px-4 py-[9.6px] rounded-[800px] border-2 border-solid md:text-[19.2px] md:leading-[19.2px]">
-                  100h min.
+                  Custom Solutions
                 </span>
                 <br />
                 Tailored web design development
@@ -230,10 +239,10 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Standard Pack Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={standardRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${standardVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <div className="mb-6">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                   <span className="italic text-outline-2">
@@ -258,7 +267,7 @@ export const WebDesignPage = () => {
                 .
               </p>
             </div>
-            <div className="hidden md:block md:w-1/2">
+            <div className={`hidden md:block md:w-1/2 opacity-0 ${standardVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <div className="relative rounded-2xl overflow-hidden">
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
@@ -272,9 +281,9 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Service Packages Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={packagesRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="mb-16">
+          <div className={`mb-16 opacity-0 ${packagesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
               Service Packages
               <span className="h-px flex-1 bg-white/10 ml-4"></span>
@@ -282,13 +291,12 @@ export const WebDesignPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg) => {
+            {packages.map((pkg, idx) => {
               const IconComponent = iconMap[pkg.iconName];
               return (
                 <div
                   key={pkg.title}
-                  className="relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10"
-                >
+                  className="relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10">
                   <div className="flex items-start justify-between mb-8">
                     <div className="p-3 rounded-2xl bg-[#b4eb2c]/10 text-[#b4eb2c] border border-[#b4eb2c]/30 transition-all duration-300 group-hover:bg-[#b4eb2c] group-hover:text-black group-hover:border-[#b4eb2c]">
                       <IconComponent className="w-5 h-5" />
@@ -347,9 +355,9 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={processRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="mb-12">
+          <div className={`mb-12 opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
               Our <span className="italic text-outline-15">process</span>
             </h2>
@@ -358,41 +366,44 @@ export const WebDesignPage = () => {
               websites tailored to your brand.
             </p>
           </div>
-          <ScrollableCardRow
-            desktopGridCols="md:grid-cols-3"
-            buttonColor="#e7fe56"
-          >
-            <ProcessCard
-              step={1}
-              variant="lime"
-              title="Kick off meeting"
-              description="Let's start your project by aligning on your website objectives with your dedicated designer."
-            />
-            <ProcessCard
-              step={2}
-              variant="purple"
-              title="Sitemap"
-              description="We create a structured blueprint that maps your website's pages and their relationships."
-            />
-            <ProcessCard
-              step={3}
-              variant="cyan"
-              title="Wireframes"
-              description="Wireframes outline layout and functionality, providing a clear, ready page structure."
-              customBadge={
-                <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
-                  Custom Pack only
-                </span>
-              }
-            />
-          </ScrollableCardRow>
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+              <ProcessCard
+                step={1}
+                variant="lime"
+                title="Kick off meeting"
+                description="Let's start your project by aligning on your website objectives with your dedicated designer."
+              />
+            </div>
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+              <ProcessCard
+                step={2}
+                variant="purple"
+                title="Sitemap"
+                description="We create a structured blueprint that maps your website's pages and their relationships."
+              />
+            </div>
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+              <ProcessCard
+                step={3}
+                variant="cyan"
+                title="Wireframes"
+                description="Wireframes outline layout and functionality, providing a clear, ready page structure."
+                customBadge={
+                  <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
+                    Custom Pack only
+                  </span>
+                }
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Our Projects Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={projectsRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-wrap items-center justify-between mb-12">
+          <div className={`flex flex-wrap items-center justify-between mb-12 opacity-0 ${projectsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
                 Our projects
@@ -424,8 +435,8 @@ export const WebDesignPage = () => {
           </div>
           {/* Project Cards */}
           <div className="flex flex-wrap -mx-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+            {featuredProjects.map((project, index) => (
+              <ProjectCard key={project.title} {...project} index={index} isVisible={projectsVisible} />
             ))}
           </div>
         </div>
@@ -444,7 +455,7 @@ export const WebDesignPage = () => {
                 <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
                   SEO
                   <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
-                    25h min.
+                    Tailored Strategy
                   </span>
                 </h2>
                 <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
@@ -452,14 +463,14 @@ export const WebDesignPage = () => {
                 </h3>
               </div>
               <p className="box-border caret-transparent mb-8">
-                LM Studios' web platform is growing in popularity, and many
-                customers seek to improve their SEO, whether starting fresh or
-                migrating to our platform. Our team of experts provides{" "}
+                Being online is irrelevant if you can't be found. Our team of experts 
+                provides{" "}
                 <strong className="font-semibold">
-                  a tailored 25-hour SEO service
+                  tailored SEO strategies
                 </strong>{" "}
-                to help optimize your site and develop a strong strategy for
-                better search engine rankings and maximum visibility.
+                designed to improve your search rankings and drive qualified traffic. 
+                From local visibility to national reach, we build data-driven campaigns 
+                that put your business in front of customers exactly when they're ready to buy.
               </p>
               <a
                 href="/services/seo"
@@ -534,7 +545,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Your website is in good hands */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={goodHandsRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="relative mb-12 md:mb-20">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
@@ -543,19 +554,22 @@ export const WebDesignPage = () => {
               in <span className="italic text-outline-2">good hands</span>
             </h2>
           </div>
-          <ScrollableCardRow desktopGridCols="md:grid-cols-3">
-            <ProcessCard
-              step={1}
-              variant="lime"
-              title="Experienced designers"
-              description="We have high-end designers ready to conceive stunning designs matching your brand style."
-            />
-            <ProcessCard
-              step={2}
-              variant="purple"
-              title="eCommerce experts"
-              description="Our functional consultants can help you setting-up all your products in your eCommerce."
-              note={
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+            <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+              <ProcessCard
+                step={1}
+                variant="lime"
+                title="Experienced designers"
+                description="We have high-end designers ready to conceive stunning designs matching your brand style."
+              />
+            </div>
+            <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+              <ProcessCard
+                step={2}
+                variant="purple"
+                title="eCommerce experts"
+                description="Our functional consultants can help you setting-up all your products in your eCommerce."
+                note={
                 <div className="absolute -top-20 right-4 hidden md:block w-[140px]">
                   <p className="text-lg text-white font-caveat -rotate-12 leading-tight text-center mb-1">
                     We do SEO
@@ -590,13 +604,16 @@ export const WebDesignPage = () => {
                 </div>
               }
             />
-            <ProcessCard
-              step={3}
-              variant="cyan"
-              title="Front-end developers"
-              description="Our front-end developers implement tailor-made features to take your website to the next level."
-            />
-          </ScrollableCardRow>
+            </div>
+            <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+              <ProcessCard
+                step={3}
+                variant="cyan"
+                title="Front-end developers"
+                description="Our front-end developers implement tailor-made features to take your website to the next level."
+              />
+            </div>
+          </div>
         </div>
       </section>
 

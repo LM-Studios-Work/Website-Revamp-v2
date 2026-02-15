@@ -62,7 +62,7 @@ export const App = () => {
                 <div className="relative max-w-[1400px] w-full mx-auto">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between pb-12 md:pb-20">
                     <h2 className="text-3xl md:text-[50px] font-bold leading-tight text-white text-center md:text-left mb-8 md:mb-0 md:max-w-[60%] text-balance">
-                      Ready to make your website with LM Studios?
+                      Ready to build your custom solution with LM Studios?
                     </h2>
                     <Link
                       to="/contact"

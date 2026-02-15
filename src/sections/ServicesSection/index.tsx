@@ -29,7 +29,7 @@ export const ServicesSection = () => {
           <ServiceItem
             href="/services/app-development"
             number="03"
-            title="App Development"
+            title="Custom Web Applications"
             index={2}
             isVisible={isVisible}
           />
