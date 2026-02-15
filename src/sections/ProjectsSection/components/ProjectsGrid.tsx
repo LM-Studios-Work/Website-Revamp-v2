@@ -1,17 +1,14 @@
 
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { projects } from "@/sections/ProjectsSection/constants";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const ProjectsGrid = () => {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
   return (
-    <section ref={ref} className="relative pt-6 pb-8 px-6 md:px-10 lg:px-16 md:pt-10 md:pb-16">
+    <section className="relative pt-6 pb-8 px-6 md:px-10 lg:px-16 md:pt-10 md:pb-16">
       <div className="w-full">
         <div className="flex flex-wrap -mx-3">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} {...project} index={index} isVisible={isVisible} />
+            <ProjectCard key={project.title} {...project} index={index} isVisible={true} />
           ))}
         </div>
       </div>

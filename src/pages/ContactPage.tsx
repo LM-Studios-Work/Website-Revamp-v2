@@ -1,17 +1,13 @@
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { ParticleBackground } from "@/components/ParticleBackground";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const ContactPage = () => {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
-  const { ref: formRef, isVisible: formVisible } = useScrollAnimation(0.15);
-
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-[#b4eb2c] selection:text-black">
       <ParticleBackground />
 
       {/* --- HERO SECTION: Full Screen Background --- */}
-      <section ref={heroRef} className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
+      <section className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
         {/* The video now spans the full section width correctly */}
         <HeroVideoOverlay />
         
@@ -53,15 +49,12 @@ export const ContactPage = () => {
       </section>
 
       {/* --- FORM SECTION --- */}
-      <section ref={formRef} className="relative z-20 pb-32 px-6">
+      <section className="relative z-20 pb-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <form
             action="https://formsubmit.co/lm.studios.web@gmail.com"
             method="POST"
-            className="space-y-8 opacity-0"
-            style={{
-              animation: formVisible ? "fadeInUp 0.8s ease-out 0.2s both" : "none"
-            }}
+            className="space-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
               {/* Field: Name */}
