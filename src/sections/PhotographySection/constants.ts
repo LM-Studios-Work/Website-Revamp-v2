@@ -1,5 +1,5 @@
 export const PHOTOGRAPHY_FEATURES = [
-  "Travels included (in Belgium)",
+  "Travels included (Johannesburg & Port Elizabeth)",
   "On-site shooting for 1-2 hours",
   "Editing of all pictures",
   "Delivery of high definition pictures",

@@ -2,7 +2,7 @@ import { FooterColumn } from "@/sections/Footer/components/FooterColumn";
 
 export const FooterColumns = () => {
   return (
-    <div className="box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px] border-t-[color(srgb_1_1_1_/_0.15)] border-t-2 border-b-white border-x-white">
+    <div className="box-border caret-transparent flex flex-col md:flex-row md:space-x-16 md:justify-center md:items-start max-w-[1200px] w-full mx-auto">
       <FooterColumn
         title="Navigation"
         links={[

@@ -85,17 +85,6 @@ export const HomePage = () => {
                     We build tailored web applications—from booking systems to 
                     admin dashboards—designed for your operations.
                   </p>
-                  <div className="absolute hidden md:flex flex-col items-center -top-14 right-6 z-10">
-                    <p className="text-xl text-white font-caveat -rotate-12 leading-tight text-center mb-0.5">
-                      We do SEO
-                      <br />
-                      as well
-                    </p>
-                    <svg className="w-4 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 16 32" strokeWidth={1.2}>
-                      <path d="M8 2C6 8 10 14 8 20C7 23 9 26 8 30" strokeLinecap="round" />
-                      <path d="M5 25C7 28 8 30 8 30C8 30 9 28 11 25" strokeLinecap="round" />
-                    </svg>
-                  </div>
                   </div>
                 </div>
                 <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
