@@ -137,6 +137,7 @@ export const AppPage = () => {
                 </div>
               </div>
             </div>
+            </div>
             <div className={`md:w-1/2 opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <div className="rounded-[32px] overflow-hidden border border-white/10 aspect-square">
                 <img
