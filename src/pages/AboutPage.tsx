@@ -35,18 +35,18 @@ export const AboutPage = () => {
         {/* Two Column Text */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed">
           <p className="text-base md:text-lg">
-            Founded in 2021, our Web Design Service has become the cornerstone of
-            LM Studios' web agency, delivering exceptional digital solutions tailored to our
-            clients' needs. Our team is composed of seasoned professionals with
-            expertise spanning digital agencies, SaaS providers, and freelance design,
-            bringing a wealth of knowledge and creativity to every project. Before any
+            Founded in 2021, LM Studios has evolved from web design into building 
+            custom web applications and business systems for organizations and institutions. 
+            Our team is composed of seasoned professionals with expertise spanning software 
+            development, system architecture, and operational design, bringing a wealth of 
+            technical knowledge to every project. Before any development begins, you'll be 
           </p>
           <p className="text-base md:text-lg">
-            design work begins, you'll be paired with a dedicated designer who will act
-            as your main point of contact. They will work closely with you throughout
-            the process, ensuring every design choice aligns with your vision. With our
-            personalized approach and attention to detail, we transform your ideas into
-            a stunning, professional website crafted with precision and care.
+            paired with a dedicated project lead who will act as your main point of contact. 
+            They will work closely with you throughout the process, ensuring every technical 
+            decision and feature aligns with your operational needs. With our systematic 
+            approach and attention to detail, we transform your workflows into secure, 
+            scalable web-based systems crafted with precision and care.
           </p>
         </div>
       </section>

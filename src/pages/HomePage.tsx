@@ -42,7 +42,7 @@ export const HomePage = () => {
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
             <div className="md:w-5/12 shrink-0">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
-                Your website is
+                Your project is
                 <br />
                 <span className="italic text-outline-15">
                   in good hands
@@ -58,11 +58,11 @@ export const HomePage = () => {
                   <h3 className="text-2xl font-bold leading-tight mb-3">
                     Experienced
                     <br />
-                    designers
+                    developers
                   </h3>
                   <p className="text-sm leading-relaxed text-black/80">
-                    We have high-end designers ready to conceive stunning
-                    designs matching your brand style.
+                    We have skilled developers ready to build secure, scalable 
+                    systems tailored to your business needs.
                   </p>
                 </div>
                 <div className="bg-[#e7fe56] text-black p-7 rounded-2xl relative h-full">
@@ -70,13 +70,13 @@ export const HomePage = () => {
                     2
                   </div>
                   <h3 className="text-2xl font-bold leading-tight mb-3">
-                    eCommerce
+                    Custom
                     <br />
-                    experts
+                    solutions
                   </h3>
                   <p className="text-sm leading-relaxed text-black/80">
-                    Our functional consultants can help you setting-up all your
-                    products in your eCommerce.
+                    We build tailored web applications—from booking systems to 
+                    admin dashboards—designed for your operations.
                   </p>
                   <div className="absolute hidden md:flex flex-col items-center -top-14 right-6 z-10">
                     <p className="text-xl text-white font-caveat -rotate-12 leading-tight text-center mb-0.5">
@@ -95,13 +95,13 @@ export const HomePage = () => {
                     3
                   </div>
                   <h3 className="text-2xl font-bold leading-tight mb-3">
-                    Front-end
+                    Full-stack
                     <br />
-                    developers
+                    expertise
                   </h3>
                   <p className="text-sm leading-relaxed text-black/80">
-                    Our front-end developers implement tailor-made features to
-                    take your website to the next level.
+                    Our team builds complete systems with secure backends, 
+                    intuitive interfaces, and scalable architecture.
                   </p>
                 </div>
               </div>

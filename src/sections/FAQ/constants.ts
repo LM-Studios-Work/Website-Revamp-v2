@@ -2,19 +2,19 @@ export type FAQItem = { question: string; answer: string };
 
 export const generalFAQ: FAQItem[] = [
   {
-    question: "What are the prices?",
+    question: "How do you price your projects?",
     answer:
-      "Our pricing varies depending on the scope and complexity of your project. We offer tailored quotes after understanding your specific needs and requirements. Contact us for a detailed estimate.",
+      "Every project is unique. We provide tailored quotes based on the scope, complexity, and specific requirements of your system. Contact us to discuss your needs and receive a detailed proposal.",
   },
   {
-    question: "What if I need more hours?",
+    question: "What if the project scope changes?",
     answer:
-      "We offer flexible hour packages that can be adjusted as your project evolves. Additional hours can be purchased at any time to ensure your project stays on track.",
+      "We understand that requirements evolve. We work with you to adjust timelines and budgets as needed, ensuring your project stays aligned with your goals.",
   },
   {
-    question: "Are there maintenance fees?",
+    question: "Do you offer ongoing support?",
     answer:
-      "We offer optional maintenance packages to keep your website running smoothly, including updates, security patches, and performance monitoring.",
+      "Yes, we offer maintenance and support packages to keep your system running smoothly, including updates, security patches, feature enhancements, and technical support.",
   },
 ];
 
@@ -67,16 +67,16 @@ export const marketingFAQ: FAQItem[] = [
 
 export const appDevelopmentFAQ: FAQItem[] = [
   {
-    question: "What platforms do you target?",
-    answer: "We build for native (iOS/Android) and cross-platform (React Native) depending on your needs.",
+    question: "How do you determine project scope and pricing?",
+    answer: "Every project is unique. We start with a discovery call to understand your requirements, then provide a detailed proposal with timeline and cost estimates tailored to your specific needs.",
   },
   {
-    question: "Do you publish to app stores?",
-    answer: "Yes — we handle app store submission and listing, including required assets and metadata.",
+    question: "What types of web applications do you build?",
+    answer: "We build booking systems, inventory management, admin dashboards, workflow automation, CRMs, and other custom business tools. Each solution is designed around your operational requirements.",
   },
   {
-    question: "Can you integrate backend services?",
-    answer: "We develop or integrate APIs, authentication, push notifications, and other backend services as required.",
+    question: "How do you ensure security and scalability?",
+    answer: "We implement role-based authentication, encrypted data storage, secure APIs, and cloud infrastructure that scales with your organization. Security and reliability are built into every system we create.",
   },
 ];
 

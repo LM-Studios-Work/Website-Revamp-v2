@@ -5,14 +5,14 @@ export const HeroDescription = () => {
     <div className="max-w-2xl mt-8 text-left">
       {/* Your requested tagline */}
       <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
-        Innovative Web Design for Businesses.
+        Custom Web Applications for Modern Businesses.
       </h2>
       
       {/* Your requested description text */}
       <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
-        Crafting modern, mobile-responsive websites with a single focus: 
-        turning site visitors into paying customers. We combine aesthetics 
-        with clean code to drive results.
+        We build secure, scalable web-based systems tailored to your organization—from 
+        booking platforms and inventory management to admin dashboards and workflow automation. 
+        Professional solutions that digitize and streamline your operations.
       </p>
 
       <Link
