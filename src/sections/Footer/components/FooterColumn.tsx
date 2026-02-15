@@ -14,19 +14,18 @@ const isInternal = (href: string) =>
 
 export const FooterColumn = (props: FooterColumnProps) => {
   return (
-   
-    <div className="box-border caret-transparent flex flex-col shrink-0 max-w-full w-full px-[15px] py-0 md:w-auto md:px-0 md:text-left">
-      <h3 className="text-[23.05px] font-semibold box-border caret-transparent leading-[27.66px] mb-2 md:text-[28px] md:leading-[33.6px]">
+    <div className="flex flex-col">
+      <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">
         {props.title}
       </h3>
-      <ul className="box-border caret-transparent flex flex-col list-none pl-0 pt-3 md:pt-6">
+      <ul className="flex flex-col gap-3 md:gap-4">
         {props.links.map((link, index) => (
-          <li key={index} className="box-border caret-transparent">
+          <li key={index}>
             {isInternal(link.href) ? (
               <Link
                 to={link.href}
                 title={link.title}
-                className="box-border caret-transparent block py-2 hover:text-[#e7fe56] hover:border-[#e7fe56]"
+                className="text-white/70 hover:text-white text-base md:text-lg transition-colors"
               >
                 {link.text}
               </Link>
@@ -34,7 +33,9 @@ export const FooterColumn = (props: FooterColumnProps) => {
               <a
                 href={link.href}
                 title={link.title}
-                className="box-border caret-transparent block py-2 hover:text-[#e7fe56] hover:border-[#e7fe56]"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white text-base md:text-lg transition-colors"
               >
                 {link.text}
               </a>
