@@ -2,7 +2,7 @@ import { FooterColumn } from "@/sections/Footer/components/FooterColumn";
 
 export const FooterColumns = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
       <FooterColumn
         title="Navigation"
         links={[
@@ -22,24 +22,12 @@ export const FooterColumns = () => {
         ]}
       />
       <FooterColumn
-        title="Offices"
-        links={[
-          { href: "/contact", text: "Belgium" },
-          { href: "/contact", text: "United States" },
-        ]}
-      />
-      <FooterColumn
         title="Follow us"
         links={[
           {
             href: "https://www.instagram.com/lmstudiosweb/",
             text: "Instagram",
             title: "Instagram",
-          },
-          {
-            href: "https://www.behance.net/lmstudios",
-            text: "Behance",
-            title: "Behance",
           },
         ]}
       />

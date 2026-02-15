@@ -10,7 +10,7 @@ export const FooterCTA = () => {
         </h2>
         <Link
           to="/contact"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-full transition-colors shrink-0"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#d5bff0] hover:bg-[#d5bff0]/90 text-black text-lg font-semibold rounded-full transition-colors shrink-0"
         >
           Ask for a quote
           <ArrowUpRight className="w-5 h-5" />
