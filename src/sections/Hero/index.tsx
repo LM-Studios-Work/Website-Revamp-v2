@@ -9,7 +9,7 @@ export const Hero = () => {
       <HeroVideoOverlay />
       <SocialSidebar />
 
-      <div className="relative z-30 w-full max-w-[1400px] mx-auto px-6 md:mx-auto text-left flex flex-col items-center md:items-start md:pl-0 pl-8">
+      <div className="relative z-30 w-full max-w-[1400px] mx-auto px-6 md:mx-auto text-left flex flex-col items-start pl-8 md:pl-0">
         <HeroHeading />
         <HeroDescription />
       </div>
