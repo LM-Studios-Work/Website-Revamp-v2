@@ -1,6 +1,6 @@
 export const HeroHeading = () => {
   return (
-    <div className="mb-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+    <div className="mb-4 md:mt-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
       <h1 className="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-tight text-white">
         <span className="relative inline-block pb-[clamp(0.25rem,2vw,0.5rem)]">
           LM Studios
