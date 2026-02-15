@@ -23,20 +23,13 @@ export const TestimonialCard = (props: TestimonialCardProps) => {
       style={{ transitionDelay: props.isVisible ? animationDelay : '0s' }}
     >
       <div className="bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 hover:border-white/10 hover:bg-white/[0.07] hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 group">
-        <div className="flex items-center pt-6 px-6">
-          <img
-            src={props.imageUrl}
-            alt={props.name}
-            className="w-12 h-12 rounded-full object-cover mr-4 transition-transform group-hover:scale-110"
-          />
-          <div className="flex flex-col">
-            <span className="text-lg font-semibold text-white">
-              {props.name}
-            </span>
-            <span className="text-sm text-white/60">
-              {props.title}
-            </span>
-          </div>
+        <div className="flex flex-col pt-6 px-6">
+          <span className="text-lg font-semibold text-white">
+            {props.name}
+          </span>
+          <span className="text-sm text-white/60">
+            {props.title}
+          </span>
         </div>
         <div className="grow p-6">
           <p className="text-white/70 text-sm leading-relaxed">

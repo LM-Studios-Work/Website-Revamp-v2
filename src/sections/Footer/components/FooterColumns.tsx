@@ -22,38 +22,12 @@ export const FooterColumns = () => {
         ]}
       />
       <FooterColumn
-        title="Offices"
-        links={[
-          {
-            href: "https://www.google.com/maps/dir//Johannesburg, South Africa",
-            text: "Johannesburg",
-          },
-          {
-            href: "https://www.google.com/maps/dir//Cape Town, South Africa",
-            text: "Cape Town",
-          },
-          {
-            href: "https://www.google.com/maps/dir//Durban, South Africa",
-            text: "Durban",
-          },
-          {
-            href: "https://www.google.com/maps/dir//Pretoria, South Africa",
-            text: "Pretoria",
-          },
-        ]}
-      />
-      <FooterColumn
         title="Follow us"
         links={[
           {
             href: "https://www.instagram.com/lmstudiosweb/",
             text: "Instagram",
             title: "Instagram",
-          },
-          {
-            href: "https://www.youtube.com/playlist?list=PL1-aSABtP6ADgnXqXDdpxU7-8ixNGUsrz",
-            text: "Youtube",
-            title: "Youtube",
           },
         ]}
       />
