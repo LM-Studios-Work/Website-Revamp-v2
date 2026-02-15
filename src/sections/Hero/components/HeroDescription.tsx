@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 export const HeroDescription = () => {
   return (
     <div className="max-w-2xl text-left">
-      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
+      <h2 className="text-xl md:text-3xl font-semibold text-white mb-3 md:mb-4 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
         Custom Web Applications for Modern Businesses.
       </h2>
 
-      <p className="text-base md:text-lg lg:text-xl text-white/70 leading-relaxed mb-8 md:mb-10 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
+      <p className="text-sm md:text-lg lg:text-xl text-white/70 leading-relaxed mb-6 md:mb-10 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
         We build secure, scalable web-based systems tailored to your
         organization from booking platforms and inventory management to admin
         dashboards and workflow automation. Professional solutions that digitize
