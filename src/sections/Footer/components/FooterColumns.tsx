@@ -2,7 +2,7 @@ import { FooterColumn } from "@/sections/Footer/components/FooterColumn";
 
 export const FooterColumns = () => {
   return (
-    <div className="box-border caret-transparent flex flex-col md:flex-row md:space-x-16 md:justify-center md:items-start max-w-[1200px] w-full mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
       <FooterColumn
         title="Navigation"
         links={[
@@ -15,10 +15,10 @@ export const FooterColumns = () => {
       <FooterColumn
         title="Services"
         links={[
-          { href: "/services/web-design", text: "Web Design" },
+          { href: "/services/web-design", text: "Web design" },
+          { href: "/services/app-development", text: "App development" },
           { href: "/services/web-design#photography", text: "Photography" },
           { href: "/services/seo", text: "SEO" },
-          { href: "/services/app-development", text: "App Development" },
         ]}
       />
       <FooterColumn
