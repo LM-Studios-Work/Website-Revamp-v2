@@ -4,6 +4,7 @@ import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { FAQ } from "@/sections/FAQ";
 import { seoFAQ } from "@/sections/FAQ/constants";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const pricingFeatures = [
   {
@@ -57,12 +58,17 @@ const pricingFeatures = [
 ];
 
 export const SEOPage = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.15);
+  const { ref: processRef, isVisible: processVisible } = useScrollAnimation(0.15);
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation(0.15);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+      <section ref={heroRef} className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 max-w-[900px] w-full text-center">
+        <div className="relative z-30 max-w-[900px] w-full text-center animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="text-white/50 text-sm uppercase tracking-widest">
               SEO SERVICES
@@ -102,10 +108,10 @@ export const SEOPage = () => {
       </section>
 
       {/* Ready to dominate section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={statsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${statsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                 Ready to{" "}
                 <span className="italic text-outline-15">dominate</span>
@@ -121,7 +127,7 @@ export const SEOPage = () => {
                 build the digital foundation that makes you visible.
               </p>
             </div>
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${statsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
                   <div className="text-[#d5bff0] text-4xl font-bold mb-2">
@@ -152,9 +158,9 @@ export const SEOPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={processRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
+          <div className={`flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12 opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div className="md:w-5/12 shrink-0">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                 Our <span className="italic text-outline-15">process</span>
@@ -165,29 +171,34 @@ export const SEOPage = () => {
               </p>
             </div>
           </div>
-          <ScrollableCardRow
-            desktopGridCols="md:grid-cols-3"
-            buttonColor="#d5bff0"
-          >
-            <ProcessCard
-              step={1}
-              variant="purple"
-              title="The Audit"
-              description="We dive deep into your current site health, analyzing technical errors, competitor rankings, and missed local opportunities to establish a baseline."
-            />
-            <ProcessCard
-              step={2}
-              variant="cyan"
-              title="The Fix"
-              description="Before we build, we repair. We fix technical issues holding your site back—improving speed, mobile responsiveness, and site structure."
-            />
-            <ProcessCard
-              step={3}
-              variant="lime"
-              title="The Climb"
-              description="Execution begins. We optimize your content for local search terms and build the citations needed to prove your authority to Google."
-            />
-          </ScrollableCardRow>
+          <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+              <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+                <ProcessCard
+                  step={1}
+                  variant="purple"
+                  title="The Audit"
+                  description="We dive deep into your current site health, analyzing technical errors, competitor rankings, and missed local opportunities to establish a baseline."
+                />
+              </div>
+              <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+                <ProcessCard
+                  step={2}
+                  variant="cyan"
+                  title="The Fix"
+                  description="Before we build, we repair. We fix technical issues holding your site back—improving speed, mobile responsiveness, and site structure."
+                />
+              </div>
+              <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+                <ProcessCard
+                  step={3}
+                  variant="lime"
+                  title="The Climb"
+                  description="Execution begins. We optimize your content for local search terms and build the citations needed to prove your authority to Google."
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -422,9 +433,9 @@ export const SEOPage = () => {
       <FAQ items={seoFAQ} title="SEO — FAQ" />
 
       {/* CTA Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={ctaRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16">
+          <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16 opacity-0 ${ctaVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-10">
               <div>
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
