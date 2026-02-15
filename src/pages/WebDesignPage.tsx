@@ -18,6 +18,7 @@ import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const packages = [
   {
@@ -120,6 +121,10 @@ const iconMap = {
 };
 
 export const WebDesignPage = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
+  const { ref: packagesRef, isVisible: packagesVisible } = useScrollAnimation(0.15);
+  const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.15);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -165,7 +170,7 @@ export const WebDesignPage = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
             We design and develop user-friendly websites using modern
             frameworks, offering both standard features or custom solutions to
             meet your needs. Whether you opt for a simple setup with built-in
@@ -177,7 +182,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Behind the scenes section */}
-      <section className="relative z-10 box-border caret-transparent py-10 md:py-20">
+      <section className="relative z-10 box-border caret-transparent py-10 md:py-20 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
         <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
             <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4">
@@ -230,7 +235,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Standard Pack Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section className="relative z-10 py-16 md:py-28 px-6 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <div className="md:w-1/2">
@@ -272,22 +277,22 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Service Packages Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={packagesRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="mb-16">
-            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
               Service Packages
               <span className="h-px flex-1 bg-white/10 ml-4"></span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg) => {
+            {packages.map((pkg, idx) => {
               const IconComponent = iconMap[pkg.iconName];
               return (
                 <div
                   key={pkg.title}
-                  className="relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10"
+                  className={`relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10 opacity-0 ${packagesVisible ? `animate-[fadeInUp_0.8s_ease-out_${0.2 + idx * 0.2}s_both]` : ""}`}
                 >
                   <div className="flex items-start justify-between mb-8">
                     <div className="p-3 rounded-2xl bg-[#b4eb2c]/10 text-[#b4eb2c] border border-[#b4eb2c]/30 transition-all duration-300 group-hover:bg-[#b4eb2c] group-hover:text-black group-hover:border-[#b4eb2c]">
@@ -349,7 +354,7 @@ export const WebDesignPage = () => {
       {/* Our Process Section */}
       <section className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="mb-12">
+          <div className="mb-12 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
               Our <span className="italic text-outline-15">process</span>
             </h2>
@@ -390,9 +395,9 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Our Projects Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={projectsRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-wrap items-center justify-between mb-12">
+          <div className="flex flex-wrap items-center justify-between mb-12 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
             <div>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
                 Our projects
@@ -424,8 +429,8 @@ export const WebDesignPage = () => {
           </div>
           {/* Project Cards */}
           <div className="flex flex-wrap -mx-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+            {featuredProjects.map((project, index) => (
+              <ProjectCard key={project.title} {...project} index={index} isVisible={projectsVisible} />
             ))}
           </div>
         </div>
