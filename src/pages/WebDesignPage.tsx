@@ -289,14 +289,15 @@ export const WebDesignPage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {packages.map((pkg, idx) => {
               const IconComponent = iconMap[pkg.iconName];
               return (
                 <div
                   key={pkg.title}
-                  className={`relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10 opacity-0 ${packagesVisible ? `animate-[fadeInUp_0.8s_ease-out_${0.2 + idx * 0.2}s_both]` : ""}`}
+                  className={`opacity-0 ${packagesVisible ? `animate-[fadeInUp_0.8s_ease-out_${0.2 + idx * 0.15}s_both]` : ""}`}
                 >
+                  <div className="relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10">
                   <div className="flex items-start justify-between mb-8">
                     <div className="p-3 rounded-2xl bg-[#b4eb2c]/10 text-[#b4eb2c] border border-[#b4eb2c]/30 transition-all duration-300 group-hover:bg-[#b4eb2c] group-hover:text-black group-hover:border-[#b4eb2c]">
                       <IconComponent className="w-5 h-5" />
@@ -346,6 +347,7 @@ export const WebDesignPage = () => {
                       Select Package
                       <ArrowRight className="w-4 h-4" />
                     </button>
+                  </div>
                   </div>
                 </div>
               );
