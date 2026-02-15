@@ -70,35 +70,32 @@ export const AboutPage = () => {
       <section ref={valuesRef} className="relative py-16 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-            <ProcessCard
-              step={1}
-              variant="purple"
-              title="Creativity"
-              description="We believe in crafting unique, visually striking designs that capture your brand's essence. Our team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision to life."
-              customBadge={
-                <div className={`inline-block opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`} />
-              }
-            />
+            <div className={`opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+              <ProcessCard
+                step={1}
+                variant="purple"
+                title="Creativity"
+                description="We believe in crafting unique, visually striking designs that capture your brand's essence. Our team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision to life."
+              />
+            </div>
 
-            <ProcessCard
-              step={2}
-              variant="yellow"
-              title="Simplicity"
-              description="Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on clean, user-friendly experiences that make navigation seamless and content impactful."
-              customBadge={
-                <div className={`inline-block opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`} />
-              }
-            />
+            <div className={`opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+              <ProcessCard
+                step={2}
+                variant="yellow"
+                title="Simplicity"
+                description="Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on clean, user-friendly experiences that make navigation seamless and content impactful."
+              />
+            </div>
 
-            <ProcessCard
-              step={3}
-              variant="cyan"
-              title="Reliability"
-              description="We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration."
-              customBadge={
-                <div className={`inline-block opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`} />
-              }
-            />
+            <div className={`opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+              <ProcessCard
+                step={3}
+                variant="cyan"
+                title="Reliability"
+                description="We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration."
+              />
+            </div>
           </div>
         </div>
       </section>
