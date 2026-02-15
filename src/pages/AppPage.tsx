@@ -122,10 +122,10 @@ export const AppPage = () => {
                     Our senior developers average 8+ years experience building 
                     scalable web platforms and business systems.
                   </p>
-                  </div>
                 </div>
-                <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
-                  <div className="p-8 rounded-[32px] bg-[#e7fe56] text-black">
+              </div>
+              <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+                <div className="p-8 rounded-[32px] bg-[#e7fe56] text-black">
                   <div className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center mb-6 font-bold text-xs">
                     02
                   </div>
@@ -137,7 +137,7 @@ export const AppPage = () => {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <div className="rounded-[32px] overflow-hidden border border-white/10 aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
@@ -151,9 +151,9 @@ export const AppPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={processRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12">
+          <div className={`flex flex-col md:flex-row md:items-start gap-10 md:gap-16 mb-12 opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div className="md:w-5/12 shrink-0">
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                 Our <span className="italic text-outline-15">process</span>
@@ -164,29 +164,32 @@ export const AppPage = () => {
               </p>
             </div>
           </div>
-          <ScrollableCardRow
-            desktopGridCols="md:grid-cols-3"
-            buttonColor="#72f5e3"
-          >
-            <ProcessCard
-              step={1}
-              variant="cyan"
-              title="Discovery"
-              description="We analyze your workflows, user roles, and operational requirements to define the system architecture and key features."
-            />
-            <ProcessCard
-              step={2}
-              variant="purple"
-              title="Design & Build"
-              description="We design intuitive interfaces and develop secure, role-based systems using modern frameworks and best practices."
-            />
-            <ProcessCard
-              step={3}
-              variant="lime"
-              title="Test & Deploy"
-              description="Comprehensive security testing, user acceptance testing, and cloud deployment with documentation and training."
-            />
-          </ScrollableCardRow>
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+              <ProcessCard
+                step={1}
+                variant="cyan"
+                title="Discovery"
+                description="We analyze your workflows, user roles, and operational requirements to define the system architecture and key features."
+              />
+            </div>
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+              <ProcessCard
+                step={2}
+                variant="purple"
+                title="Design & Build"
+                description="We design intuitive interfaces and develop secure, role-based systems using modern frameworks and best practices."
+              />
+            </div>
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+              <ProcessCard
+                step={3}
+                variant="lime"
+                title="Test & Deploy"
+                description="Comprehensive security testing, user acceptance testing, and cloud deployment with documentation and training."
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -201,7 +204,7 @@ export const AppPage = () => {
                 Drive <span className="italic text-outline-15">Efficiency</span>
               </h2>
             </div>
-            <div className="md:w-1/2 flex flex-col gap-6">
+            <div className={`md:w-1/2 flex flex-col gap-6 opacity-0 ${ctaCardsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <p className="text-lg text-white/70 leading-relaxed">
                 Our team specializes in building custom web platforms that are{" "}
                 <strong className="text-white font-semibold">
@@ -221,9 +224,9 @@ export const AppPage = () => {
       </section>
 
       {/* Solutions We Build Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={solutionsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 opacity-0 ${solutionsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
               Solutions We <span className="italic text-outline-15">Build</span>
             </h2>
@@ -238,8 +241,9 @@ export const AppPage = () => {
             {solutionExamples.map((solution, idx) => (
               <div
                 key={idx}
-                className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
+                className={`opacity-0 ${solutionsVisible ? `animate-[fadeInUp_0.8s_ease-out_${0.3 + idx * 0.1}s_both]` : ""}`}
               >
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
                 <div 
                   className="w-12 h-12 rounded-full mb-6 flex items-center justify-center"
                   style={{ backgroundColor: `${solution.color}20`, border: `2px solid ${solution.color}` }}
@@ -263,6 +267,7 @@ export const AppPage = () => {
                       {feature}
                     </div>
                   ))}
+                </div>
                 </div>
               </div>
             ))}
@@ -355,9 +360,9 @@ export const AppPage = () => {
       <FAQ items={appDevelopmentFAQ} title="Custom Web Applications — FAQ" />
 
       {/* CTA Section */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={finalCtaRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16">
+          <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 md:p-16 opacity-0 ${finalCtaVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-10">
               <div>
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
