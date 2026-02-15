@@ -126,6 +126,7 @@ export const WebDesignPage = () => {
   const { ref: standardRef, isVisible: standardVisible } = useScrollAnimation(0.15);
   const { ref: packagesRef, isVisible: packagesVisible } = useScrollAnimation(0.15);
   const { ref: processRef, isVisible: processVisible } = useScrollAnimation(0.15);
+  const { ref: goodHandsRef, isVisible: goodHandsVisible } = useScrollAnimation(0.15);
   const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.15);
 
   const location = useLocation();
@@ -289,15 +290,13 @@ export const WebDesignPage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {packages.map((pkg, idx) => {
               const IconComponent = iconMap[pkg.iconName];
               return (
                 <div
                   key={pkg.title}
-                  className={`opacity-0 ${packagesVisible ? `animate-[fadeInUp_0.8s_ease-out_${0.2 + idx * 0.15}s_both]` : ""}`}
-                >
-                  <div className="relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10">
+                  className="relative flex flex-col h-full rounded-3xl p-8 border-2 border-[#b4eb2c]/60 bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10">
                   <div className="flex items-start justify-between mb-8">
                     <div className="p-3 rounded-2xl bg-[#b4eb2c]/10 text-[#b4eb2c] border border-[#b4eb2c]/30 transition-all duration-300 group-hover:bg-[#b4eb2c] group-hover:text-black group-hover:border-[#b4eb2c]">
                       <IconComponent className="w-5 h-5" />
@@ -348,7 +347,6 @@ export const WebDesignPage = () => {
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
-                  </div>
                 </div>
               );
             })}
@@ -368,23 +366,24 @@ export const WebDesignPage = () => {
               websites tailored to your brand.
             </p>
           </div>
-          <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
-            <ScrollableCardRow
-              desktopGridCols="md:grid-cols-3"
-              buttonColor="#e7fe56"
-            >
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <ProcessCard
                 step={1}
                 variant="lime"
                 title="Kick off meeting"
                 description="Let's start your project by aligning on your website objectives with your dedicated designer."
               />
+            </div>
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <ProcessCard
                 step={2}
                 variant="purple"
                 title="Sitemap"
                 description="We create a structured blueprint that maps your website's pages and their relationships."
               />
+            </div>
+            <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
               <ProcessCard
                 step={3}
                 variant="cyan"
@@ -396,7 +395,7 @@ export const WebDesignPage = () => {
                   </span>
                 }
               />
-            </ScrollableCardRow>
+            </div>
           </div>
         </div>
       </section>
@@ -546,7 +545,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Your website is in good hands */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={goodHandsRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="relative mb-12 md:mb-20">
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-3">
@@ -555,19 +554,22 @@ export const WebDesignPage = () => {
               in <span className="italic text-outline-2">good hands</span>
             </h2>
           </div>
-          <ScrollableCardRow desktopGridCols="md:grid-cols-3">
-            <ProcessCard
-              step={1}
-              variant="lime"
-              title="Experienced designers"
-              description="We have high-end designers ready to conceive stunning designs matching your brand style."
-            />
-            <ProcessCard
-              step={2}
-              variant="purple"
-              title="eCommerce experts"
-              description="Our functional consultants can help you setting-up all your products in your eCommerce."
-              note={
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+            <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+              <ProcessCard
+                step={1}
+                variant="lime"
+                title="Experienced designers"
+                description="We have high-end designers ready to conceive stunning designs matching your brand style."
+              />
+            </div>
+            <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+              <ProcessCard
+                step={2}
+                variant="purple"
+                title="eCommerce experts"
+                description="Our functional consultants can help you setting-up all your products in your eCommerce."
+                note={
                 <div className="absolute -top-20 right-4 hidden md:block w-[140px]">
                   <p className="text-lg text-white font-caveat -rotate-12 leading-tight text-center mb-1">
                     We do SEO
@@ -602,13 +604,16 @@ export const WebDesignPage = () => {
                 </div>
               }
             />
-            <ProcessCard
-              step={3}
-              variant="cyan"
-              title="Front-end developers"
-              description="Our front-end developers implement tailor-made features to take your website to the next level."
-            />
-          </ScrollableCardRow>
+            </div>
+            <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+              <ProcessCard
+                step={3}
+                variant="cyan"
+                title="Front-end developers"
+                description="Our front-end developers implement tailor-made features to take your website to the next level."
+              />
+            </div>
+          </div>
         </div>
       </section>
 

@@ -12,6 +12,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const HomePage = () => {
   const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.1);
+  const { ref: goodHandsRef, isVisible: goodHandsVisible } = useScrollAnimation(0.15);
 
   return (
     <>
@@ -40,7 +41,7 @@ export const HomePage = () => {
       <ServicesSection />
 
       {/* Your website is in good hands */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={goodHandsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
             <div className="md:w-5/12 shrink-0">
@@ -54,7 +55,8 @@ export const HomePage = () => {
             </div>
             <div className="md:w-7/12">
               <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-                <div className="bg-[#d5bff0] text-black p-7 rounded-2xl h-full">
+                <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+                  <div className="bg-[#d5bff0] text-black p-7 rounded-2xl h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     1
                   </div>
@@ -67,8 +69,10 @@ export const HomePage = () => {
                     We have skilled developers ready to build secure, scalable 
                     systems tailored to your business needs.
                   </p>
+                  </div>
                 </div>
-                <div className="bg-[#e7fe56] text-black p-7 rounded-2xl relative h-full">
+                <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+                  <div className="bg-[#e7fe56] text-black p-7 rounded-2xl relative h-full">
                   <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                     2
                   </div>
@@ -92,8 +96,10 @@ export const HomePage = () => {
                       <path d="M5 25C7 28 8 30 8 30C8 30 9 28 11 25" strokeLinecap="round" />
                     </svg>
                   </div>
+                  </div>
                 </div>
-                <div className="bg-[#72f5e3] text-black p-7 rounded-2xl h-full">
+                <div className={`opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+                  <div className="bg-[#72f5e3] text-black p-7 rounded-2xl h-full">
                   <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold mb-5">
                     3
                   </div>
@@ -106,6 +112,7 @@ export const HomePage = () => {
                     Our team builds complete systems with secure backends, 
                     intuitive interfaces, and scalable architecture.
                   </p>
+                  </div>
                 </div>
               </div>
             </div>
