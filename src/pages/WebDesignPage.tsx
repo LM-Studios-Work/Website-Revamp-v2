@@ -122,7 +122,10 @@ const iconMap = {
 
 export const WebDesignPage = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
+  const { ref: bespokeRef, isVisible: bespokeVisible } = useScrollAnimation(0.15);
+  const { ref: standardRef, isVisible: standardVisible } = useScrollAnimation(0.15);
   const { ref: packagesRef, isVisible: packagesVisible } = useScrollAnimation(0.15);
+  const { ref: processRef, isVisible: processVisible } = useScrollAnimation(0.15);
   const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.15);
 
   const location = useLocation();
@@ -182,10 +185,10 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Behind the scenes section */}
-      <section className="relative z-10 box-border caret-transparent py-10 md:py-20 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+      <section ref={bespokeRef} className="relative z-10 box-border caret-transparent py-10 md:py-20">
         <div className="relative box-border caret-transparent max-w-none w-full mx-auto px-[15px] md:max-w-[1400px]">
           <div className="items-stretch box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px]">
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4">
+            <div className={`box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-2 md:w-6/12 md:py-4 opacity-0 ${bespokeVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <div className="absolute items-center box-border caret-transparent hidden flex-col transform-none z-[5] left-0 top-0 md:flex md:translate-y-[-80.0%]">
                 <p className="text-[23.05px] font-normal box-border caret-transparent inline leading-[27.66px] min-h-0 min-w-0 text-center transform-none mb-2 font-caveat md:text-[28px] md:block md:leading-[33.6px] md:min-h-[auto] md:min-w-[auto] md:rotate-[-19.99998485209311deg]">
                   Behind
@@ -206,7 +209,7 @@ export const WebDesignPage = () => {
                 />
               </div>
             </div>
-            <div className="box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pl-8 md:py-20">
+            <div className={`box-border caret-transparent shrink-0 max-w-full w-full px-[15px] py-10 md:w-6/12 md:pl-8 md:py-20 opacity-0 ${bespokeVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-10 font-obviously md:text-[50px] md:leading-[60px]">
                 Bespoke Development
                 <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-purple-300 mx-4 px-4 py-[9.6px] rounded-[800px] border-2 border-solid md:text-[19.2px] md:leading-[19.2px]">
@@ -235,10 +238,10 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Standard Pack Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+      <section ref={standardRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${standardVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <div className="mb-6">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
                   <span className="italic text-outline-2">
@@ -263,7 +266,7 @@ export const WebDesignPage = () => {
                 .
               </p>
             </div>
-            <div className="hidden md:block md:w-1/2">
+            <div className={`hidden md:block md:w-1/2 opacity-0 ${standardVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <div className="relative rounded-2xl overflow-hidden">
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
@@ -279,8 +282,8 @@ export const WebDesignPage = () => {
       {/* Service Packages Section */}
       <section ref={packagesRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="mb-16">
-            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+          <div className={`mb-16 opacity-0 ${packagesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
               Service Packages
               <span className="h-px flex-1 bg-white/10 ml-4"></span>
             </h2>
@@ -352,9 +355,9 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={processRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="mb-12 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+          <div className={`mb-12 opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
               Our <span className="italic text-outline-15">process</span>
             </h2>
@@ -363,41 +366,43 @@ export const WebDesignPage = () => {
               websites tailored to your brand.
             </p>
           </div>
-          <ScrollableCardRow
-            desktopGridCols="md:grid-cols-3"
-            buttonColor="#e7fe56"
-          >
-            <ProcessCard
-              step={1}
-              variant="lime"
-              title="Kick off meeting"
-              description="Let's start your project by aligning on your website objectives with your dedicated designer."
-            />
-            <ProcessCard
-              step={2}
-              variant="purple"
-              title="Sitemap"
-              description="We create a structured blueprint that maps your website's pages and their relationships."
-            />
-            <ProcessCard
-              step={3}
-              variant="cyan"
-              title="Wireframes"
-              description="Wireframes outline layout and functionality, providing a clear, ready page structure."
-              customBadge={
-                <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
-                  Custom Pack only
-                </span>
-              }
-            />
-          </ScrollableCardRow>
+          <div className={`opacity-0 ${processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+            <ScrollableCardRow
+              desktopGridCols="md:grid-cols-3"
+              buttonColor="#e7fe56"
+            >
+              <ProcessCard
+                step={1}
+                variant="lime"
+                title="Kick off meeting"
+                description="Let's start your project by aligning on your website objectives with your dedicated designer."
+              />
+              <ProcessCard
+                step={2}
+                variant="purple"
+                title="Sitemap"
+                description="We create a structured blueprint that maps your website's pages and their relationships."
+              />
+              <ProcessCard
+                step={3}
+                variant="cyan"
+                title="Wireframes"
+                description="Wireframes outline layout and functionality, providing a clear, ready page structure."
+                customBadge={
+                  <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
+                    Custom Pack only
+                  </span>
+                }
+              />
+            </ScrollableCardRow>
+          </div>
         </div>
       </section>
 
       {/* Our Projects Section */}
       <section ref={projectsRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-wrap items-center justify-between mb-12 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+          <div className={`flex flex-wrap items-center justify-between mb-12 opacity-0 ${projectsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
             <div>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
                 Our projects
