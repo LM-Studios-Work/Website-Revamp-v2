@@ -194,10 +194,10 @@ export const AppPage = () => {
       </section>
 
       {/* Custom Apps That Drive Growth */}
-      <section className="relative py-16 md:py-28 px-6">
+      <section ref={ctaCardsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20">
-            <div className="md:w-1/2">
+            <div className={`md:w-1/2 opacity-0 ${ctaCardsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
                 Custom Systems That
                 <br />
