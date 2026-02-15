@@ -205,7 +205,7 @@ export const WebDesignPage = () => {
               <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-10 font-obviously md:text-[50px] md:leading-[60px]">
                 Bespoke Development
                 <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-purple-300 mx-4 px-4 py-[9.6px] rounded-[800px] border-2 border-solid md:text-[19.2px] md:leading-[19.2px]">
-                  100h min.
+                  Custom Solutions
                 </span>
                 <br />
                 Tailored web design development
@@ -444,7 +444,7 @@ export const WebDesignPage = () => {
                 <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
                   SEO
                   <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
-                    25h min.
+                    Tailored Strategy
                   </span>
                 </h2>
                 <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
@@ -452,14 +452,14 @@ export const WebDesignPage = () => {
                 </h3>
               </div>
               <p className="box-border caret-transparent mb-8">
-                LM Studios' web platform is growing in popularity, and many
-                customers seek to improve their SEO, whether starting fresh or
-                migrating to our platform. Our team of experts provides{" "}
+                Being online is irrelevant if you can't be found. Our team of experts 
+                provides{" "}
                 <strong className="font-semibold">
-                  a tailored 25-hour SEO service
+                  tailored SEO strategies
                 </strong>{" "}
-                to help optimize your site and develop a strong strategy for
-                better search engine rankings and maximum visibility.
+                designed to improve your search rankings and drive qualified traffic. 
+                From local visibility to national reach, we build data-driven campaigns 
+                that put your business in front of customers exactly when they're ready to buy.
               </p>
               <a
                 href="/services/seo"

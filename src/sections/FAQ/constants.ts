@@ -35,18 +35,18 @@ export const webDesignFAQ: FAQItem[] = [
 
 export const seoFAQ: FAQItem[] = [
   {
-    question: "Do you do keyword research?",
-    answer: "Yes — keyword research is included in our SEO packages to align content and technical optimizations.",
+  question: "Do you do keyword research?",
+  answer: "Absolutely. We don't guess what your customers are searching for; we use advanced data tools to find the exact terms they use. For our Essential package, we focus on high-intent local keywords—terms that indicate a user is ready to hire someone nearby.",
   },
   {
-    question: "How soon can I see SEO results?",
-    answer: "SEO is ongoing; you can expect noticeable improvements in 2–6 months depending on competition and the work required.",
+  question: "How soon can I see SEO results?",
+  answer: "SEO is a marathon, not a sprint. While some technical fixes can yield quick wins in the first month, substantial ranking improvements typically take 3 to 6 months. We build for long-term stability, avoiding quick hacks that risk penalties later.",
   },
   {
-    question: "Will you optimize existing content?",
-    answer: "We can audit and optimize existing pages, or create new SEO-optimized content as required.",
+  question: "Will you optimize existing content?",
+  answer: "Yes. Often, you don't need new pages; you just need your existing pages to work harder. We review your current text to ensure it is readable, keyword-rich, and structured in a way that Google's bots can easily understand.",
   },
-];
+  ];
 
 export const marketingFAQ: FAQItem[] = [
   {
