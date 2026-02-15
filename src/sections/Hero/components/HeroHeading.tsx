@@ -2,10 +2,10 @@ export const HeroHeading = () => {
   return (
     <div className="mb-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
       <h1 className="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-tight text-white">
-        <span className="relative inline-block">
+        <span className="relative inline-block pb-[clamp(0.25rem,2vw,0.5rem)]">
           LM Studios
           <svg
-            className="absolute -bottom-2 left-0 w-full h-[18px] animate-[drawLine_1.2s_ease-out_0.8s_both]"
+            className="absolute bottom-0 left-0 w-full h-[clamp(12px,2.5vw,18px)] animate-[drawLine_1.2s_ease-out_0.8s_both]"
             viewBox="0 0 400 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
