@@ -8,17 +8,20 @@ import { ScrollableCardRow } from "@/components/ScrollableCardRow";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 import { FAQ } from "@/sections/FAQ";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const HomePage = () => {
+  const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.1);
+
   return (
     <>
       <Hero />
       <LatestProjectsHeader />
-      <section className="relative pt-6 pb-8 px-6 md:pt-10 md:pb-16">
+      <section ref={projectsRef} className="relative pt-6 pb-8 px-6 md:pt-10 md:pb-16">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-wrap -mx-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+            {featuredProjects.map((project, index) => (
+              <ProjectCard key={project.title} {...project} index={index} isVisible={projectsVisible} />
             ))}
           </div>
         </div>
