@@ -110,18 +110,6 @@ export const ContactPage = () => {
                   className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
                 />
               </div>
-
-              {/* Field: Checkbox (Vertical Alignment fix) */}
-              <div className="flex items-start gap-3 pt-8">
-                <input
-                  type="checkbox"
-                  id="subscription"
-                  className="mt-1 w-4 h-4 bg-transparent border border-white/40 rounded cursor-pointer accent-[#b4eb2c]"
-                />
-                <label htmlFor="subscription" className="text-xs text-white/50 leading-tight">
-                  Check this box if you have an active subscription with Odoo.
-                </label>
-              </div>
             </div>
 
             {/* Field: Subject */}
