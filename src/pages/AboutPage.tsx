@@ -37,7 +37,7 @@ export const AboutPage = () => {
         {/* Two Column Text */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
           <p className="text-base md:text-lg">
-            Founded in 2021, LM Studios has evolved from web design into building 
+            Founded in 2025, LM Studios has evolved from web design into building 
             custom web applications and business systems for organizations and institutions. 
             Our team is composed of seasoned professionals with expertise spanning software 
             development, system architecture, and operational design, bringing a wealth of 
