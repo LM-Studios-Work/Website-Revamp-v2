@@ -10,17 +10,16 @@ export const ProjectsPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Hero Section */}
-      <section className="relative px-6 md:px-10 lg:px-16 pb-16 md:pb-24 pt-32 overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 w-full max-w-[1200px] mx-auto">
-          {/* Heading */}
-          <div className="mb-12 md:mb-16 text-center">
-            <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[1.1] text-white mb-0">
-              Dive into our projects
-            </h1>
-          </div>
+        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-10 anim-fade-in">
+          <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
+            Dive into our projects
+          </h1>
+        </div>
 
-          {/* Filters Row */}
+        {/* Filters Row */}
+        <div className="relative z-30 w-full max-w-[1200px] mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center w-full">
             {/* All projects button with invisible label for alignment */}
             <div className="w-full md:w-auto md:min-w-[220px] flex flex-col">
