@@ -16,7 +16,7 @@ export const ProjectsPage = () => {
   });
 
   return (
-    <div className="min-h-screen pb-20">
+    <>
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
@@ -161,6 +161,6 @@ export const ProjectsPage = () => {
           )}
         </div>
       </section>
-    </div>
+    </>
   );
 };
