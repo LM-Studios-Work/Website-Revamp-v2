@@ -12,7 +12,6 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/nyp.webp", // Assuming your naming convention
     imageAlt: "Ndila Ya Vhupo Travels",
-    timeText: "50:00",
     title: "Ndila Ya Vhupo Travels",
     tags: [
       { text: "Tourism", className: tagStyle.lime },
@@ -26,23 +25,8 @@ export const projects: ProjectCardProps[] = [
   },
 
   {
-    imageUrl: "/preview/rokunda-mboyi.png",
-    imageAlt: "Rokunda Mboyi",
-    timeText: "50:00",
-    title: "Rokunda Mboyi",
-    tags: [
-      { text: "Architecture", className: tagStyle.lime },
-      { text: "Portfolio", className: tagStyle.purple },
-      { text: "Design", className: tagStyle.teal },
-      { text: "Sustainable", className: tagStyle.teal },
-    ],
-    description:
-      "A passionate architect shaping the future of design with innovative and sustainable solutions.",
-    discoverMoreUrl: "https://rokundamboyi.com",
-  }, {
     imageUrl: "/preview/Float.png",
     imageAlt: "MR FLOAT - Transport Service",
-    timeText: "50:00",
     title: "MR FLOAT - Transport Service",
     tags: [
       { text: "Logistics", className: tagStyle.lime },
@@ -57,7 +41,6 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/vuza-trading.png",
     imageAlt: "Vuza Trading",
-    timeText: "50:00",
     title: "Vuza Trading",
     tags: [
       { text: "Security", className: tagStyle.lime },
@@ -72,7 +55,6 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/mothupi-and-lesego.png",
     imageAlt: "Mothupi & Lesego - Wedding",
-    timeText: "50:00",
     title: "Mothupi & Lesego - Wedding",
     tags: [
       { text: "Personal", className: tagStyle.lime },
@@ -88,7 +70,6 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/monare-selahle.png",
     imageAlt: "Monare Selahle",
-    timeText: "50:00",
     title: "Monare Selahle",
     tags: [
       { text: "Tech", className: tagStyle.lime },
@@ -101,7 +82,6 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/shots-by-ozee.png",
     imageAlt: "Shots By Ozee",
-    timeText: "50:00",
     title: "Shots By Ozee",
     tags: [
       { text: "Creative", className: tagStyle.lime },
@@ -115,7 +95,6 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/gordian-malaka.png",
     imageAlt: "Gordian Malaka",
-    timeText: "50:00",
     title: "Gordian Malaka",
     tags: [
       { text: "Film", className: tagStyle.lime },
