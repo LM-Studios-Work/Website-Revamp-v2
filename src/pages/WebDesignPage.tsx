@@ -11,14 +11,15 @@ import {
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PhotographySection } from "../sections/PhotographySection";
-import { ProcessCard } from "../components/ProcessCard";
-import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
-import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { ServiceHero } from "@/components/ServiceHero";
+import { ProcessCardGrid } from "@/components/ProcessCardGrid";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { COLORS } from "@/constants/colors";
 
 const packages = [
   {
@@ -112,23 +113,16 @@ const packages = [
   },
 ];
 
-const iconMap = {
-  Briefcase,
-  Globe,
-  Layers,
-  Calendar,
-  ShoppingCart,
-};
+const iconMap = { Briefcase, Globe, Layers, Calendar, ShoppingCart };
+
+const ACCENT = COLORS.limeButton;
 
 export const WebDesignPage = () => {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.15);
   const { ref: bespokeRef, isVisible: bespokeVisible } =
     useScrollAnimation(0.15);
   const { ref: standardRef, isVisible: standardVisible } =
     useScrollAnimation(0.15);
   const { ref: packagesRef, isVisible: packagesVisible } =
-    useScrollAnimation(0.15);
-  const { ref: processRef, isVisible: processVisible } =
     useScrollAnimation(0.15);
   const { ref: goodHandsRef, isVisible: goodHandsVisible } =
     useScrollAnimation(0.15);
@@ -140,7 +134,6 @@ export const WebDesignPage = () => {
   useEffect(() => {
     if (!location.hash) return;
     const id = location.hash.replace("#", "");
-    // try immediate scroll, fallback to a short timeout if element isn't yet in DOM
     const scrollToId = () => {
       const el = document.getElementById(id);
       if (el) {
@@ -158,38 +151,11 @@ export const WebDesignPage = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative z-10 flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
-        <HeroVideoOverlay />
-        <div className="relative z-30 max-w-[900px] w-full text-center">
-          <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8">
-            Web Design
-          </h1>
-          <svg
-            className="mx-auto mb-12 w-[200px] h-[18px]"
-            viewBox="0 0 400 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-              stroke="#e7fe56"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <p className="text-lg md:text-xl text-white/70 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
-            We design and develop user-friendly websites using modern
-            frameworks, offering both standard features or custom solutions to
-            meet your needs. Whether you opt for a simple setup with built-in
-            functionalities or a fully tailored design with unique features, our
-            approach ensures an efficient solution that aligns perfectly with
-            your business requirements.
-          </p>
-        </div>
-      </section>
+      <ServiceHero
+        title="Web Design"
+        underlineColor="lime"
+        description="We design and develop user-friendly websites using modern frameworks, offering both standard features or custom solutions to meet your needs. Whether you opt for a simple setup with built-in functionalities or a fully tailored design with unique features, our approach ensures an efficient solution that aligns perfectly with your business requirements."
+      />
 
       {/* Behind the scenes section */}
       <section
@@ -330,7 +296,7 @@ export const WebDesignPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg, idx) => {
+            {packages.map((pkg) => {
               const IconComponent = iconMap[pkg.iconName];
               return (
                 <div
@@ -395,72 +361,42 @@ export const WebDesignPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section ref={processRef} className="relative z-10 py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div
-            className={`mb-12 opacity-0 ${
-              processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
-            }`}
-          >
-            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-              Our <span className="italic text-outline-15">process</span>
-            </h2>
-            <p className="text-lg text-white/70 leading-relaxed max-w-[600px]">
-              From concept to launch, we craft user-friendly, visually striking
-              websites tailored to your brand.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-            <div
-              className={`opacity-0 ${
-                processVisible
-                  ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
-                  : ""
-              }`}
-            >
-              <ProcessCard
-                step={1}
-                variant="lime"
-                title="Kick off meeting"
-                description="Let's start your project by aligning on your website objectives with your dedicated designer."
-              />
-            </div>
-            <div
-              className={`opacity-0 ${
-                processVisible
-                  ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
-                  : ""
-              }`}
-            >
-              <ProcessCard
-                step={2}
-                variant="purple"
-                title="Sitemap"
-                description="We create a structured blueprint that maps your website's pages and their relationships."
-              />
-            </div>
-            <div
-              className={`opacity-0 ${
-                processVisible
-                  ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]"
-                  : ""
-              }`}
-            >
-              <ProcessCard
-                step={3}
-                variant="cyan"
-                title="Wireframes"
-                description="Wireframes outline layout and functionality, providing a clear, ready page structure."
-                customBadge={
-                  <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
-                    Custom Pack only
-                  </span>
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProcessCardGrid
+        heading={
+          <>
+            Our <span className="italic text-outline-15">process</span>
+          </>
+        }
+        description="From concept to launch, we craft user-friendly, visually striking websites tailored to your brand."
+        cards={[
+          {
+            step: 1,
+            variant: "lime",
+            title: "Kick off meeting",
+            description:
+              "Let's start your project by aligning on your website objectives with your dedicated designer.",
+          },
+          {
+            step: 2,
+            variant: "purple",
+            title: "Sitemap",
+            description:
+              "We create a structured blueprint that maps your website's pages and their relationships.",
+          },
+          {
+            step: 3,
+            variant: "cyan",
+            title: "Wireframes",
+            description:
+              "Wireframes outline layout and functionality, providing a clear, ready page structure.",
+            customBadge: (
+              <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
+                Custom Pack only
+              </span>
+            ),
+          },
+        ]}
+      />
 
       {/* Our Projects Section */}
       <section ref={projectsRef} className="relative z-10 py-16 md:py-28 px-6">
@@ -501,7 +437,6 @@ export const WebDesignPage = () => {
               </a>
             </div>
           </div>
-          {/* Project Cards */}
           <div className="flex flex-wrap -mx-3">
             {featuredProjects.map((project, index) => (
               <ProjectCard
@@ -519,104 +454,102 @@ export const WebDesignPage = () => {
       <PhotographySection />
 
       {/* SEO & Marketing Section */}
-      <section className="relative z-10 py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-            {/* SEO */}
-            <div>
-              <div className="box-border caret-transparent mb-6">
-                <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
-                  SEO
-                  <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
-                    Tailored Strategy
-                  </span>
-                </h2>
-                <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
-                  Boost your visibility with our expertise
-                </h3>
-              </div>
-              <p className="box-border caret-transparent mb-8">
-                Being online is irrelevant if you can't be found. Our team of
-                experts provides{" "}
-                <strong className="font-semibold">
-                  tailored SEO strategies
-                </strong>{" "}
-                designed to improve your search rankings and drive qualified
-                traffic. From local visibility to national reach, we build
-                data-driven campaigns that put your business in front of
-                customers exactly when they're ready to buy.
-              </p>
-              <a
-                href="/services/seo"
-                className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
-              >
-                More about SEO
-                <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+      <SectionWrapper className="z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+          {/* SEO */}
+          <div>
+            <div className="box-border caret-transparent mb-6">
+              <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
+                SEO
+                <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
+                  Tailored Strategy
                 </span>
-              </a>
+              </h2>
+              <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
+                Boost your visibility with our expertise
+              </h3>
             </div>
+            <p className="box-border caret-transparent mb-8">
+              Being online is irrelevant if you can't be found. Our team of
+              experts provides{" "}
+              <strong className="font-semibold">
+                tailored SEO strategies
+              </strong>{" "}
+              designed to improve your search rankings and drive qualified
+              traffic. From local visibility to national reach, we build
+              data-driven campaigns that put your business in front of
+              customers exactly when they're ready to buy.
+            </p>
+            <a
+              href="/services/seo"
+              className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
+            >
+              More about SEO
+              <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
 
-            {/* App Development */}
-            <div>
-              <div className="box-border caret-transparent mb-6">
-                <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
-                  App Development
-                  <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
-                    From R15k
-                  </span>
-                </h2>
-                <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
-                  Custom apps built for your business
-                </h3>
-              </div>
-              <p className="box-border caret-transparent mb-8">
-                Transform your ideas into powerful mobile and web applications.
-                Our expert developers create{" "}
-                <strong className="font-semibold">
-                  custom solutions tailored to your business needs
-                </strong>
-                , from simple starter apps to complex enterprise systems. With
-                modern frameworks and best practices, we deliver secure,
-                scalable applications that drive business growth.
-              </p>
-              <a
-                href="/services/app-development"
-                className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
-              >
-                More about App Development
-                <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+          {/* App Development */}
+          <div>
+            <div className="box-border caret-transparent mb-6">
+              <h2 className="text-[44.4px] font-semibold box-border caret-transparent leading-[53.28px] mb-4 font-obviously md:text-[64px] md:leading-[76.8px]">
+                App Development
+                <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-white/30 ml-4 px-4 py-2 rounded-[800px] border-2 border-solid md:text-[16px] md:leading-[16px]">
+                  From R15k
                 </span>
-              </a>
+              </h2>
+              <h3 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[40px] md:leading-[48px]">
+                Custom apps built for your business
+              </h3>
             </div>
+            <p className="box-border caret-transparent mb-8">
+              Transform your ideas into powerful mobile and web applications.
+              Our expert developers create{" "}
+              <strong className="font-semibold">
+                custom solutions tailored to your business needs
+              </strong>
+              , from simple starter apps to complex enterprise systems. With
+              modern frameworks and best practices, we deliver secure,
+              scalable applications that drive business growth.
+            </p>
+            <a
+              href="/services/app-development"
+              className="text-sm font-normal bg-[#654064] box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#654064] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#654064]/80 hover:border-[#654064]/80 transition-colors"
+            >
+              More about App Development
+              <span className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+            </a>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Your website is in good hands */}
       <section ref={goodHandsRef} className="relative z-10 py-16 md:py-28 px-6">
@@ -629,114 +562,98 @@ export const WebDesignPage = () => {
             </h2>
           </div>
           <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-            <div
-              className={`opacity-0 ${
-                goodHandsVisible
-                  ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
-                  : ""
-              }`}
-            >
-              <ProcessCard
-                step={1}
-                variant="lime"
-                title="Experienced designers"
-                description="We have high-end designers ready to conceive stunning designs matching your brand style."
-              />
-            </div>
-            <div
-              className={`opacity-0 ${
-                goodHandsVisible
-                  ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
-                  : ""
-              }`}
-            >
-              <ProcessCard
-                step={2}
-                variant="purple"
-                title="eCommerce experts"
-                description="Our functional consultants can help you setting-up all your products in your eCommerce."
-                note={
-                  <div className="absolute -top-20 right-4 hidden md:block w-[140px]">
-                    <svg
-                      className="w-10 h-14 text-[#d5bff0] mx-auto rotate-12"
-                      viewBox="0 0 54 60"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21.7371 8.87569C25.4674 5.92211 31.7925 3.32185 36.9406 5.86596C42.0238 8.37798 42.1648 15.6881 39.5109 19.9576C35.9863 25.626 26.6853 27.535 20.3061 28.2575C16.8906 28.6443 12.394 28.8797 9.87327 30.7169C6.80598 32.9525 5.80211 36.7262 6.70014 40.2858C7.94273 45.2127 15.4671 47.9715 19.897 44.9782C24.085 42.148 23.3664 36.0079 20.1755 33.2796C17.4764 30.9715 13.5658 31.7601 11.2359 34.3323C6.67151 39.3712 9.09884 49.3496 11.974 54.0084"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M12 54L15 48.5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M12 54L7.5 50.5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                }
-              />
-            </div>
-            <div
-              className={`opacity-0 ${
-                goodHandsVisible
-                  ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]"
-                  : ""
-              }`}
-            >
-              <ProcessCard
-                step={3}
-                variant="cyan"
-                title="Front-end developers"
-                description="Our front-end developers implement tailor-made features to take your website to the next level."
-              />
-            </div>
+            {[
+              {
+                step: 1, variant: "lime" as const,
+                title: "Experienced designers",
+                description: "We have high-end designers ready to conceive stunning designs matching your brand style.",
+              },
+              {
+                step: 2, variant: "purple" as const,
+                title: "eCommerce experts",
+                description: "Our functional consultants can help you setting-up all your products in your eCommerce.",
+                hasNote: true,
+              },
+              {
+                step: 3, variant: "cyan" as const,
+                title: "Front-end developers",
+                description: "Our front-end developers implement tailor-made features to take your website to the next level.",
+              },
+            ].map((card, idx) => (
+              <div
+                key={card.step}
+                className={`opacity-0 ${
+                  goodHandsVisible
+                    ? `animate-[fadeInUp_0.8s_ease-out_${["0.2s", "0.4s", "0.6s"][idx]}_both]`
+                    : ""
+                }`}
+              >
+                <ProcessCard
+                  step={card.step}
+                  variant={card.variant}
+                  title={card.title}
+                  description={card.description}
+                  note={
+                    card.hasNote ? (
+                      <div className="absolute -top-20 right-4 hidden md:block w-[140px]">
+                        <svg
+                          className="w-10 h-14 text-[#d5bff0] mx-auto rotate-12"
+                          viewBox="0 0 54 60"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21.7371 8.87569C25.4674 5.92211 31.7925 3.32185 36.9406 5.86596C42.0238 8.37798 42.1648 15.6881 39.5109 19.9576C35.9863 25.626 26.6853 27.535 20.3061 28.2575C16.8906 28.6443 12.394 28.8797 9.87327 30.7169C6.80598 32.9525 5.80211 36.7262 6.70014 40.2858C7.94273 45.2127 15.4671 47.9715 19.897 44.9782C24.085 42.148 23.3664 36.0079 20.1755 33.2796C17.4764 30.9715 13.5658 31.7601 11.2359 34.3323C6.67151 39.3712 9.09884 49.3496 11.974 54.0084"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          />
+                          <path d="M12 54L15 48.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                          <path d="M12 54L7.5 50.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </div>
+                    ) : undefined
+                  }
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* FAQ */}
       <FAQ items={webDesignFAQ} title="Web Design — FAQ" />
-      <section className="relative z-10 py-16 md:py-28 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="relative box-border caret-transparent flex flex-col break-words overflow-hidden rounded-[20px]">
-            <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent grow break-words p-10 rounded-[20px]">
-              <div className="items-center box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px] break-words">
-                <div className="box-border caret-transparent shrink-0 max-w-full break-words w-full px-[15px] text-center md:w-6/12 md:px-6 md:text-left">
-                  <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[50px] md:leading-[60px]">
-                    Ready to start your project?
-                  </h2>
-                  <p className="box-border caret-transparent mb-8">
-                    Get in touch with our team to discuss your web design needs.
-                  </p>
-                </div>
-                <div className="box-border caret-transparent flex shrink-0 justify-center max-w-full w-full px-[15px] md:justify-end md:w-6/12">
-                  <a
-                    href="/contact"
-                    className="text-sm font-normal bg-zinc-600 box-border caret-transparent block leading-[21px] text-center align-middle border-zinc-600 pl-4 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 md:pl-6 hover:bg-neutral-600 hover:border-zinc-700"
-                  >
-                    Contact us
-                    <img
-                      src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/icon-4.svg"
-                      alt="Icon"
-                      className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] leading-[21px] -rotate-45 w-[30px] ml-2.5 p-[9.6px] rounded-[50%] top-0 md:text-base md:font-semibold md:h-[50px] md:leading-6 md:w-[50px] md:p-[18.4px]"
-                    />
-                  </a>
-                </div>
+
+      {/* CTA Section */}
+      <SectionWrapper className="z-10">
+        <div className="relative box-border caret-transparent flex flex-col break-words overflow-hidden rounded-[20px]">
+          <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent grow break-words p-10 rounded-[20px]">
+            <div className="items-center box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px] break-words">
+              <div className="box-border caret-transparent shrink-0 max-w-full break-words w-full px-[15px] text-center md:w-6/12 md:px-6 md:text-left">
+                <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[50px] md:leading-[60px]">
+                  Ready to start your project?
+                </h2>
+                <p className="box-border caret-transparent mb-8">
+                  Get in touch with our team to discuss your web design needs.
+                </p>
+              </div>
+              <div className="box-border caret-transparent flex shrink-0 justify-center max-w-full w-full px-[15px] md:justify-end md:w-6/12">
+                <a
+                  href="/contact"
+                  className="text-sm font-normal bg-zinc-600 box-border caret-transparent block leading-[21px] text-center align-middle border-zinc-600 pl-4 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 md:pl-6 hover:bg-neutral-600 hover:border-zinc-700"
+                >
+                  Contact us
+                  <img
+                    src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/icon-4.svg"
+                    alt="Icon"
+                    className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] leading-[21px] -rotate-45 w-[30px] ml-2.5 p-[9.6px] rounded-[50%] top-0 md:text-base md:font-semibold md:h-[50px] md:leading-6 md:w-[50px] md:p-[18.4px]"
+                  />
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
     </>
   );
 };

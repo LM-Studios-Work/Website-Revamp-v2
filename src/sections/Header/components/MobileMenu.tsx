@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { NAV_ITEMS, SERVICE_NAV_ITEMS } from "@/constants/navigation";
+import { COLORS } from "@/constants/colors";
+import { NavWave } from "@/components/NavWave";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -13,20 +16,23 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const navItems = [
-    { to: "/", label: "home" },
-    { to: "/about-us", label: "about us" },
-    { to: "/projects", label: "projects" },
-    { to: "/services", label: "services", hasDropdown: true },
-    { to: "/contact", label: "contact" },
-  ];
-
-  const serviceItems = [
-    { to: "/services/web-design", label: "Web Design" },
-    { to: "/services/web-design#photography", label: "Photography" },
-    { to: "/services/seo", label: "SEO" },
-    { to: "/services/app-development", label: "App Development" },
-  ];
+  const handleHashNavigation = (to: string) => {
+    onClose();
+    const [path, hash] = to.split("#");
+    setTimeout(() => {
+      if (path === location.pathname) {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.history.replaceState(null, "", to);
+        } else {
+          window.location.hash = hash || "";
+        }
+      } else {
+        navigate(to);
+      }
+    }, 220);
+  };
 
   return (
     <div
@@ -48,7 +54,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Close button - Made absolute so it doesn't push the links down */}
+        {/* Close button */}
         <div className="absolute top-0 right-0 px-6 py-8 z-10">
           <button
             type="button"
@@ -72,9 +78,9 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </button>
         </div>
 
-        {/* Nav links - h-full and justify-center centers everything perfectly */}
+        {/* Nav links */}
         <ul className="h-full flex flex-col items-center justify-center gap-10 list-none px-6">
-          {navItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <li key={item.to} className="w-full text-center">
               {item.hasDropdown ? (
                 <>
@@ -88,13 +94,12 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     }`}
                   >
                     {item.label}
-                    {/* Lime Dropdown Arrow */}
                     <svg
                       className={`w-5 h-5 transition-transform duration-200 ${
                         servicesOpen ? "rotate-180" : ""
                       }`}
                       fill="none"
-                      stroke="#e7fe56"
+                      stroke={COLORS.lime}
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -104,25 +109,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                    {isActive(item.to) && (
-                      <span className="absolute -bottom-0.5 left-0 w-full h-[6px] overflow-hidden block">
-                        <svg
-                          className="h-full animate-nav-wave"
-                          style={{ width: "200%" }}
-                          viewBox="0 0 120 6"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          preserveAspectRatio="none"
-                        >
-                          <path
-                            d="M0 3C5 0.5 10 5.5 15 3C20 0.5 25 5.5 30 3C35 0.5 40 5.5 45 3C50 0.5 55 5.5 60 3C65 0.5 70 5.5 75 3C80 0.5 85 5.5 90 3C95 0.5 100 5.5 105 3C110 0.5 115 5.5 120 3"
-                            stroke="#e7fe56"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                          />
-                        </svg>
-                      </span>
-                    )}
+                    {isActive(item.to) && <NavWave />}
                   </button>
 
                   {/* Services dropdown items */}
@@ -132,35 +119,14 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     }`}
                   >
                     <ul className="flex flex-col items-center gap-4 list-none">
-                      {serviceItems.map((service) => (
+                      {SERVICE_NAV_ITEMS.map((service) => (
                         <li key={service.to}>
                           {service.to.includes("#") ? (
                             <a
                               href={service.to}
                               onClick={(e) => {
                                 e.preventDefault();
-                                onClose();
-                                const [path, hash] = service.to.split("#");
-                                setTimeout(() => {
-                                  if (path === location.pathname) {
-                                    const el = document.getElementById(hash);
-                                    if (el) {
-                                      el.scrollIntoView({
-                                        behavior: "smooth",
-                                        block: "start",
-                                      });
-                                      window.history.replaceState(
-                                        null,
-                                        "",
-                                        service.to
-                                      );
-                                    } else {
-                                      window.location.hash = hash || "";
-                                    }
-                                  } else {
-                                    navigate(service.to);
-                                  }
-                                }, 220);
+                                handleHashNavigation(service.to);
                               }}
                               className={`text-xl transition-colors duration-200 ${
                                 isActive(service.to)
@@ -199,25 +165,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   }`}
                 >
                   {item.label}
-                  {isActive(item.to) && (
-                    <span className="absolute -bottom-0.5 left-0 w-full h-[6px] overflow-hidden block">
-                      <svg
-                        className="h-full animate-nav-wave"
-                        style={{ width: "200%" }}
-                        viewBox="0 0 120 6"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="none"
-                      >
-                        <path
-                          d="M0 3C5 0.5 10 5.5 15 3C20 0.5 25 5.5 30 3C35 0.5 40 5.5 45 3C50 0.5 55 5.5 60 3C65 0.5 70 5.5 75 3C80 0.5 85 5.5 90 3C95 0.5 100 5.5 105 3C110 0.5 115 5.5 120 3"
-                          stroke="#e7fe56"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </span>
-                  )}
+                  {isActive(item.to) && <NavWave />}
                 </Link>
               )}
             </li>

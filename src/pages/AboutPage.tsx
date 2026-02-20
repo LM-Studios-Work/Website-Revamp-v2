@@ -1,7 +1,32 @@
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ProcessCard } from "../components/ProcessCard";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { WavyUnderline } from "@/components/WavyUnderline";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const VALUES_CARDS = [
+  {
+    step: 1,
+    variant: "purple" as const,
+    title: "Creativity",
+    description:
+      "We believe in crafting unique, visually striking designs that capture your brand's essence. Our team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision to life.",
+  },
+  {
+    step: 2,
+    variant: "yellow" as const,
+    title: "Simplicity",
+    description:
+      "Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on clean, user-friendly experiences that make navigation seamless and content impactful.",
+  },
+  {
+    step: 3,
+    variant: "cyan" as const,
+    title: "Reliability",
+    description:
+      "We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration.",
+  },
+];
 
 export const AboutPage = () => {
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation(0.15);
@@ -15,26 +40,15 @@ export const AboutPage = () => {
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             <span className="relative inline-block">
               About us
-              <svg
-                className="absolute -bottom-2 left-0 w-full h-[18px]"
-                viewBox="0 0 400 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-                  stroke="#d4ff00"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <WavyUnderline
+                color="limeAlt"
+                className="absolute -bottom-2 left-0 w-full"
+              />
             </span>
           </h1>
         </div>
 
-        {/* Two Column Text - animate as one block on mobile */}
+        {/* Two Column Text */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed anim-fade-in anim-stagger-1">
           <p className="text-base md:text-lg">
             Founded in 2025, LM Studios has evolved from web design into
@@ -68,12 +82,11 @@ export const AboutPage = () => {
         reverse
       />
 
-      {/* Values Cards - simplified animation on mobile */}
+      {/* Values Cards */}
       <section ref={valuesRef} className="relative py-16 px-6">
         <div className="max-w-[1400px] mx-auto">
-          {/* On mobile: animate all cards together. On desktop: stagger */}
           <div
-            className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6 
+            className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6
               transition-all ease-out duration-300 md:duration-500
               ${
                 valuesVisible
@@ -81,32 +94,17 @@ export const AboutPage = () => {
                   : "opacity-0 translate-y-4"
               }`}
           >
-            <div className="md:transition-all md:duration-500 md:delay-[0.1s]">
-              <ProcessCard
-                step={1}
-                variant="purple"
-                title="Creativity"
-                description="We believe in crafting unique, visually striking designs that capture your brand's essence. Our team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision to life."
-              />
-            </div>
-
-            <div className="md:transition-all md:duration-500 md:delay-[0.2s]">
-              <ProcessCard
-                step={2}
-                variant="yellow"
-                title="Simplicity"
-                description="Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on clean, user-friendly experiences that make navigation seamless and content impactful."
-              />
-            </div>
-
-            <div className="md:transition-all md:duration-500 md:delay-[0.3s]">
-              <ProcessCard
-                step={3}
-                variant="cyan"
-                title="Reliability"
-                description="We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration."
-              />
-            </div>
+            {VALUES_CARDS.map((card, idx) => (
+              <div
+                key={card.title}
+                className="md:transition-all md:duration-500"
+                style={{
+                  transitionDelay: `${(idx + 1) * 0.1}s`,
+                }}
+              >
+                <ProcessCard {...card} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
