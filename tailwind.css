@@ -92,10 +92,17 @@
     /* Keep background change, it's subtle and works on touch */
   }
 
-  /* Speed up the marquee for smoother mobile scrolling */
+  /* Set marquee speed to match desktop */
   .animate-marquee,
   .animate-marquee-reverse {
-    animation-duration: 15s !important;
+    animation-duration: 30s !important;
+  }
+  /* ===== DESKTOP ANIMATIONS (>= 768px) ===== */
+  @media (min-width: 768px) {
+    .animate-marquee,
+    .animate-marquee-reverse {
+      animation-duration: 30s !important;
+    }
   }
 
   /* Reduce the nav wave animation speed */

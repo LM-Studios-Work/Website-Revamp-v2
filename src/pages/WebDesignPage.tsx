@@ -8,6 +8,7 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
+import { ProcessCard } from "@/components/ProcessCard";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PhotographySection } from "../sections/PhotographySection";
