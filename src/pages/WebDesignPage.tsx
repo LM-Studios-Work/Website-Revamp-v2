@@ -42,7 +42,7 @@ const packages = [
   },
   {
     title: "ESSENTIAL BUSINESS WEBSITE",
-    price: "R2,999",
+    price: "R2,499",
     type: "once-off",
     delivery: "5–7 working days",
     iconName: "Globe" as const,
@@ -59,7 +59,7 @@ const packages = [
   },
   {
     title: "PROFESSIONAL BUSINESS WEBSITE",
-    price: "R5,499",
+    price: "R4,999",
     type: "once-off",
     delivery: "7–12 working days",
     popular: true,
@@ -79,7 +79,7 @@ const packages = [
   {
     title: "EVENT WEBSITE",
     subtitle: "(Birthdays, Weddings, etc.)",
-    price: "R3,999",
+    price: "R2,999",
     type: "once-off",
     delivery: "5–8 working days",
     iconName: "Calendar" as const,
@@ -96,7 +96,7 @@ const packages = [
   },
   {
     title: "E-COMMERCE WEBSITE",
-    price: "R7,999",
+    price: "R5,999",
     type: "once-off",
     delivery: "10–15 working days",
     iconName: "ShoppingCart" as const,
@@ -473,13 +473,11 @@ export const WebDesignPage = () => {
             <p className="box-border caret-transparent mb-8">
               Being online is irrelevant if you can't be found. Our team of
               experts provides{" "}
-              <strong className="font-semibold">
-                tailored SEO strategies
-              </strong>{" "}
+              <strong className="font-semibold">tailored SEO strategies</strong>{" "}
               designed to improve your search rankings and drive qualified
               traffic. From local visibility to national reach, we build
-              data-driven campaigns that put your business in front of
-              customers exactly when they're ready to buy.
+              data-driven campaigns that put your business in front of customers
+              exactly when they're ready to buy.
             </p>
             <a
               href="/services/seo"
@@ -524,8 +522,8 @@ export const WebDesignPage = () => {
                 custom solutions tailored to your business needs
               </strong>
               , from simple starter apps to complex enterprise systems. With
-              modern frameworks and best practices, we deliver secure,
-              scalable applications that drive business growth.
+              modern frameworks and best practices, we deliver secure, scalable
+              applications that drive business growth.
             </p>
             <a
               href="/services/app-development"
@@ -565,27 +563,35 @@ export const WebDesignPage = () => {
           <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
             {[
               {
-                step: 1, variant: "lime" as const,
+                step: 1,
+                variant: "lime" as const,
                 title: "Experienced designers",
-                description: "We have high-end designers ready to conceive stunning designs matching your brand style.",
+                description:
+                  "We have high-end designers ready to conceive stunning designs matching your brand style.",
               },
               {
-                step: 2, variant: "purple" as const,
+                step: 2,
+                variant: "purple" as const,
                 title: "eCommerce experts",
-                description: "Our functional consultants can help you setting-up all your products in your eCommerce.",
+                description:
+                  "Our functional consultants can help you setting-up all your products in your eCommerce.",
                 hasNote: true,
               },
               {
-                step: 3, variant: "cyan" as const,
+                step: 3,
+                variant: "cyan" as const,
                 title: "Front-end developers",
-                description: "Our front-end developers implement tailor-made features to take your website to the next level.",
+                description:
+                  "Our front-end developers implement tailor-made features to take your website to the next level.",
               },
             ].map((card, idx) => (
               <div
                 key={card.step}
                 className={`opacity-0 ${
                   goodHandsVisible
-                    ? `animate-[fadeInUp_0.8s_ease-out_${["0.2s", "0.4s", "0.6s"][idx]}_both]`
+                    ? `animate-[fadeInUp_0.8s_ease-out_${
+                        ["0.2s", "0.4s", "0.6s"][idx]
+                      }_both]`
                     : ""
                 }`}
               >
@@ -609,8 +615,18 @@ export const WebDesignPage = () => {
                             strokeWidth="2"
                             strokeLinecap="round"
                           />
-                          <path d="M12 54L15 48.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                          <path d="M12 54L7.5 50.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                          <path
+                            d="M12 54L15 48.5"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          />
+                          <path
+                            d="M12 54L7.5 50.5"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          />
                         </svg>
                       </div>
                     ) : undefined
