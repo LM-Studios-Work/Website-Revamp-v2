@@ -11,6 +11,7 @@ export const ServicesPage = () => {
         variant="pt-[60px] md:pt-[120px]"
         primaryText="Our services"
         secondaryText="What we do"
+        reverse
       />
       <ServicesMarquee
         variant="pb-[60px] md:pb-[120px]"

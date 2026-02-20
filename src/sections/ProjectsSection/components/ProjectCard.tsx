@@ -1,7 +1,6 @@
 export type ProjectCardProps = {
   imageUrl: string;
   imageAlt: string;
-  timeText: string;
   title: string;
   tags: Array<{
     text: string;
@@ -47,18 +46,6 @@ export const ProjectCard = (props: ProjectCardProps) => {
           />
         </div>
         <div className="grow p-6">
-          <div className="flex items-center text-teal-300 text-sm mb-2">
-            <svg
-              className="w-4 h-4 mr-1.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
-              <path strokeLinecap="round" strokeWidth={1.5} d="M12 6v6l4 2" />
-            </svg>
-            {props.timeText}
-          </div>
           <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
             {props.title}
           </h3>
