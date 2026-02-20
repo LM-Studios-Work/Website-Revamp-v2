@@ -1,7 +1,215 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ===========================================
+   MOBILE-OPTIMIZED ANIMATIONS
+   
+   Add this to your tailwind.css file or import it.
+   
+   KEY CHANGES FOR MOBILE:
+   1. Faster animation durations (0.4s vs 0.8s)
+   2. Minimal/no staggered delays 
+   3. Disabled hover transforms (janky on touch)
+   4. Reduced motion distance (16px vs 24px)
+   =========================================== */
 
+/* ===== KEYFRAMES ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpDesktop {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE OVERRIDES (< 768px) ===== */
+@media (max-width: 767px) {
+  /* Speed up ALL fadeInUp animations */
+  [class*="animate-[fadeInUp"] {
+    animation-name: fadeInUp !important;
+    animation-duration: 0.4s !important;
+    animation-timing-function: ease-out !important;
+    animation-fill-mode: both !important;
+  }
+
+  /* Remove staggered delays on mobile - everything appears together */
+  [class*="animate-[fadeInUp_0.8s_ease-out_0.2s"] {
+    animation-delay: 0s !important;
+  }
+  [class*="animate-[fadeInUp_0.8s_ease-out_0.4s"] {
+    animation-delay: 0.05s !important;
+  }
+  [class*="animate-[fadeInUp_0.8s_ease-out_0.6s"] {
+    animation-delay: 0.08s !important;
+  }
+  [class*="animate-[fadeInUp_0.8s_ease-out_0.8s"] {
+    animation-delay: 0.1s !important;
+  }
+
+  /* Speed up transition-based animations */
+  .transition-all {
+    transition-duration: 250ms !important;
+  }
+
+  .duration-500,
+  .duration-600,
+  .duration-700 {
+    transition-duration: 250ms !important;
+  }
+
+  /* Disable hover scale transforms on mobile (feel janky with touch) */
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover,
+  .hover\:scale-\[1\.02\]:hover,
+  .group-hover\:scale-110,
+  .group:hover .group-hover\:scale-110 {
+    transform: none !important;
+  }
+
+  /* Disable translate hover effects */
+  .hover\:-translate-y-1:hover,
+  .group:hover .group-hover\:-translate-y-1 {
+    transform: none !important;
+  }
+
+  /* Simpler card hover - just subtle background change */
+  .hover\:bg-white\/\[0\.07\]:hover,
+  .hover\:bg-white\/\[0\.04\]:hover {
+    /* Keep background change, it's subtle and works on touch */
+  }
+
+  /* Speed up the marquee for smoother mobile scrolling */
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-duration: 15s !important;
+  }
+
+  /* Reduce the nav wave animation speed */
+  .animate-nav-wave {
+    animation-duration: 2s !important;
+  }
+}
+
+/* ===== DESKTOP ANIMATIONS (>= 768px) ===== */
+@media (min-width: 768px) {
+  [class*="animate-[fadeInUp"] {
+    animation-name: fadeInUpDesktop;
+  }
+}
+
+/* ===== UTILITY CLASSES FOR RESPONSIVE DELAYS ===== */
+/* Use these instead of inline animate-[] with delays */
+
+.anim-fade-in {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+@media (min-width: 768px) {
+  .anim-fade-in {
+    animation: fadeInUpDesktop 0.6s ease-out both;
+  }
+}
+
+/* Stagger classes - minimal on mobile, full on desktop */
+.anim-stagger-1 {
+  animation-delay: 0.03s;
+}
+.anim-stagger-2 {
+  animation-delay: 0.06s;
+}
+.anim-stagger-3 {
+  animation-delay: 0.09s;
+}
+
+@media (min-width: 768px) {
+  .anim-stagger-1 {
+    animation-delay: 0.2s;
+  }
+  .anim-stagger-2 {
+    animation-delay: 0.4s;
+  }
+  .anim-stagger-3 {
+    animation-delay: 0.6s;
+  }
+}
+
+/* ===== INTERSECTION OBSERVER TRANSITION CLASSES ===== */
+/* For elements using useScrollAnimation hook */
+
+.scroll-animate {
+  transition-property: opacity, transform;
+  transition-timing-function: ease-out;
+  /* Mobile: faster */
+  transition-duration: 300ms;
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+@media (min-width: 768px) {
+  .scroll-animate {
+    transition-duration: 500ms;
+  }
+
+  .scroll-animate:not(.is-visible) {
+    transform: translateY(24px);
+  }
+}
+
+/* Stagger delays for scroll animations - desktop only */
+@media (min-width: 768px) {
+  .scroll-animate[data-delay="1"] {
+    transition-delay: 0.1s;
+  }
+  .scroll-animate[data-delay="2"] {
+    transition-delay: 0.2s;
+  }
+  .scroll-animate[data-delay="3"] {
+    transition-delay: 0.3s;
+  }
+}
+
+/* ===== REDUCED MOTION PREFERENCE ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+
+/* ===== PARTICLE BACKGROUND OPTIMIZATION ===== */
+/* Reduce particle effects on mobile for performance */
+@media (max-width: 767px) {
+  canvas[aria-hidden="true"] {
+    /* Hint to browser this is decorative */
+    will-change: auto;
+  }
+}
 @font-face {
   font-family: "Inter";
   src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")

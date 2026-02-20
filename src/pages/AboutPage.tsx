@@ -1,17 +1,17 @@
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ProcessCard } from "../components/ProcessCard";
-import { ScrollableCardRow } from "../components/ScrollableCardRow";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const AboutPage = () => {
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation(0.15);
+
   return (
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16 anim-fade-in">
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             <span className="relative inline-block">
               About us
@@ -34,21 +34,23 @@ export const AboutPage = () => {
           </h1>
         </div>
 
-        {/* Two Column Text */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
+        {/* Two Column Text - animate as one block on mobile */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed anim-fade-in anim-stagger-1">
           <p className="text-base md:text-lg">
-            Founded in 2025, LM Studios has evolved from web design into building 
-            custom web applications and business systems for organizations and institutions. 
-            Our team is composed of seasoned professionals with expertise spanning software 
-            development, system architecture, and operational design, bringing a wealth of 
-            technical knowledge to every project. Before any development begins, you'll be 
+            Founded in 2025, LM Studios has evolved from web design into
+            building custom web applications and business systems for
+            organizations and institutions. Our team is composed of seasoned
+            professionals with expertise spanning software development, system
+            architecture, and operational design, bringing a wealth of technical
+            knowledge to every project. Before any development begins, you'll be
           </p>
           <p className="text-base md:text-lg">
-            paired with a dedicated project lead who will act as your main point of contact. 
-            They will work closely with you throughout the process, ensuring every technical 
-            decision and feature aligns with your operational needs. With our systematic 
-            approach and attention to detail, we transform your workflows into secure, 
-            scalable web-based systems crafted with precision and care.
+            paired with a dedicated project lead who will act as your main point
+            of contact. They will work closely with you throughout the process,
+            ensuring every technical decision and feature aligns with your
+            operational needs. With our systematic approach and attention to
+            detail, we transform your workflows into secure, scalable web-based
+            systems crafted with precision and care.
           </p>
         </div>
       </section>
@@ -66,11 +68,20 @@ export const AboutPage = () => {
         reverse
       />
 
-      {/* Values Cards (vertical stack on mobile, grid on desktop) */}
+      {/* Values Cards - simplified animation on mobile */}
       <section ref={valuesRef} className="relative py-16 px-6">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-            <div className={`opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""}`}>
+          {/* On mobile: animate all cards together. On desktop: stagger */}
+          <div
+            className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6 
+              transition-all ease-out duration-300 md:duration-500
+              ${
+                valuesVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+          >
+            <div className="md:transition-all md:duration-500 md:delay-[0.1s]">
               <ProcessCard
                 step={1}
                 variant="purple"
@@ -79,7 +90,7 @@ export const AboutPage = () => {
               />
             </div>
 
-            <div className={`opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
+            <div className="md:transition-all md:duration-500 md:delay-[0.2s]">
               <ProcessCard
                 step={2}
                 variant="yellow"
@@ -88,7 +99,7 @@ export const AboutPage = () => {
               />
             </div>
 
-            <div className={`opacity-0 ${valuesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""}`}>
+            <div className="md:transition-all md:duration-500 md:delay-[0.3s]">
               <ProcessCard
                 step={3}
                 variant="cyan"

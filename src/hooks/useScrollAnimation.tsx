@@ -1,21 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 
+// Check if we're on mobile (under 768px)
+const isMobile = () => typeof window !== 'undefined' && window.innerWidth < 768;
+
 export const useScrollAnimation = (threshold = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // On mobile, trigger visibility faster with a lower threshold
+    const mobileThreshold = isMobile() ? 0.05 : threshold;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Once visible, keep it visible to prevent animation replay
           observer.unobserve(entry.target);
         }
       },
       { 
-        threshold,
-        rootMargin: "0px 0px -50px 0px" // Trigger when 50px from bottom edge enters viewport
+        threshold: mobileThreshold,
+        // Smaller margin on mobile for snappier response
+        rootMargin: isMobile() ? "0px" : "0px 0px -50px 0px"
       }
     );
 

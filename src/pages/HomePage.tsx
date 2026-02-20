@@ -5,7 +5,6 @@ import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ServicesSection } from "@/sections/ServicesSection";
-import { ScrollableCardRow } from "@/components/ScrollableCardRow";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 import { FAQ } from "@/sections/FAQ";
@@ -17,9 +16,29 @@ export const HomePage = () => {
   const { ref: goodHandsRef, isVisible: goodHandsVisible } =
     useScrollAnimation(0.15);
 
+  const cards = [
+    {
+      num: 1,
+      bg: "bg-[#d5bff0]",
+      title: ["Experienced", "developers"],
+      desc: "We have skilled developers ready to build secure, scalable systems tailored to your business needs.",
+    },
+    {
+      num: 2,
+      bg: "bg-[#e7fe56]",
+      title: ["Custom", "solutions"],
+      desc: "We build tailored web applications—from booking systems to admin dashboards—designed for your operations.",
+    },
+    {
+      num: 3,
+      bg: "bg-[#72f5e3]",
+      title: ["Full-stack", "expertise"],
+      desc: "Our team builds complete systems with secure backends, intuitive interfaces, and scalable architecture.",
+    },
+  ];
+
   return (
     <>
-      {/* ...existing code... */}
       <Hero />
       <LatestProjectsHeader />
       <section
@@ -52,7 +71,7 @@ export const HomePage = () => {
       />
       <ServicesSection />
 
-      {/* Your website is in good hands */}
+      {/* Your project is in good hands - MOBILE OPTIMIZED */}
       <section ref={goodHandsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
@@ -64,73 +83,41 @@ export const HomePage = () => {
               </h2>
             </div>
             <div className="md:w-7/12">
-              <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-                <div
-                  className={`opacity-0 ${
+              {/* Mobile: animate all together. Desktop: stagger via CSS */}
+              <div
+                className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6 
+                  transition-all ease-out duration-300 md:duration-500
+                  ${
                     goodHandsVisible
-                      ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
-                      : ""
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
                   }`}
-                >
-                  <div className="bg-[#d5bff0] text-black p-7 rounded-2xl h-full">
-                    <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
-                      1
+              >
+                {cards.map((card, idx) => (
+                  <div
+                    key={card.num}
+                    className="md:transition-all md:duration-500"
+                    style={{
+                      transitionDelay: idx > 0 ? `${idx * 0.12}s` : "0s",
+                    }}
+                  >
+                    <div
+                      className={`${card.bg} text-black p-7 rounded-2xl h-full`}
+                    >
+                      <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
+                        {card.num}
+                      </div>
+                      <h3 className="text-2xl font-bold leading-tight mb-3">
+                        {card.title[0]}
+                        <br />
+                        {card.title[1]}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-black/80">
+                        {card.desc}
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold leading-tight mb-3">
-                      Experienced
-                      <br />
-                      developers
-                    </h3>
-                    <p className="text-sm leading-relaxed text-black/80">
-                      We have skilled developers ready to build secure, scalable
-                      systems tailored to your business needs.
-                    </p>
                   </div>
-                </div>
-                <div
-                  className={`opacity-0 ${
-                    goodHandsVisible
-                      ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
-                      : ""
-                  }`}
-                >
-                  <div className="bg-[#e7fe56] text-black p-7 rounded-2xl relative h-full">
-                    <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
-                      2
-                    </div>
-                    <h3 className="text-2xl font-bold leading-tight mb-3">
-                      Custom
-                      <br />
-                      solutions
-                    </h3>
-                    <p className="text-sm leading-relaxed text-black/80">
-                      We build tailored web applications—from booking systems to
-                      admin dashboards—designed for your operations.
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className={`opacity-0 ${
-                    goodHandsVisible
-                      ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]"
-                      : ""
-                  }`}
-                >
-                  <div className="bg-[#72f5e3] text-black p-7 rounded-2xl h-full">
-                    <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold mb-5">
-                      3
-                    </div>
-                    <h3 className="text-2xl font-bold leading-tight mb-3">
-                      Full-stack
-                      <br />
-                      expertise
-                    </h3>
-                    <p className="text-sm leading-relaxed text-black/80">
-                      Our team builds complete systems with secure backends,
-                      intuitive interfaces, and scalable architecture.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
