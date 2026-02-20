@@ -48,7 +48,7 @@ export const ProjectsPage = () => {
                 <select
                   value={filterType}
                   onChange={(e) => setFilterType(e.target.value)}
-                  className="w-full bg-transparent text-white border-2 border-cyan-400/60 rounded-full px-6 py-3.5 appearance-none cursor-pointer hover:border-cyan-400 transition-colors"
+                  className="w-full bg-black/40 text-white border-2 border-cyan-400/60 rounded-full px-6 py-3.5 appearance-none cursor-pointer hover:border-cyan-400 transition-colors [&>option]:bg-black [&>option]:text-white"
                 >
                   <option value="All">All</option>
                   <option value="Professional Portfolios">Professional Portfolios</option>
@@ -80,7 +80,7 @@ export const ProjectsPage = () => {
                 <select
                   value={filterApp}
                   onChange={(e) => setFilterApp(e.target.value)}
-                  className="w-full bg-transparent text-white border-2 border-[#a259ff]/70 rounded-full px-6 py-3.5 appearance-none cursor-pointer hover:border-[#a259ff] focus:border-[#a259ff] transition-colors"
+                  className="w-full bg-black/40 text-white border-2 border-[#a259ff]/70 rounded-full px-6 py-3.5 appearance-none cursor-pointer hover:border-[#a259ff] focus:border-[#a259ff] transition-colors [&>option]:bg-black [&>option]:text-white"
                 >
                   <option value="All">All</option>
                   <option value="Showcase">Showcase</option>
@@ -112,7 +112,7 @@ export const ProjectsPage = () => {
                 <select
                   value={filterIndustry}
                   onChange={(e) => setFilterIndustry(e.target.value)}
-                  className="w-full bg-transparent text-white border-2 border-[#d4ff00]/70 rounded-full px-6 py-3.5 appearance-none cursor-pointer hover:border-[#d4ff00] transition-colors"
+                  className="w-full bg-black/40 text-white border-2 border-[#d4ff00]/70 rounded-full px-6 py-3.5 appearance-none cursor-pointer hover:border-[#d4ff00] transition-colors [&>option]:bg-black [&>option]:text-white"
                 >
                   <option value="All">All</option>
                   <option value="Creative & Design">Creative & Design</option>
@@ -138,10 +138,12 @@ export const ProjectsPage = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Projects Grid */}
-      <ProjectsGrid />
+        {/* Projects Grid */}
+        <div className="relative z-30 w-full max-w-[1400px] mx-auto mt-16">
+          <ProjectsGrid />
+        </div>
+      </section>
     </div>
   );
 };
