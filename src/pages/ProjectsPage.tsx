@@ -28,7 +28,7 @@ export const ProjectsPage = () => {
       </section>
 
       {/* Filters Section */}
-      <section className="relative py-8 px-6">
+      <section className="relative -mt-[35vh] py-8 px-6 z-30">
         <div className="w-full max-w-[1200px] mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center w-full">
             {/* All projects button with invisible label for alignment */}
@@ -151,7 +151,7 @@ export const ProjectsPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="relative py-8 px-6">
+      <section className="relative py-8 px-6 z-30">
         <div className="w-full max-w-[1400px] mx-auto">
           <div className="flex flex-wrap -mx-3">
             {filteredProjects.map((project, index) => (
