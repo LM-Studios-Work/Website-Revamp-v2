@@ -1,40 +1,26 @@
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import { WavyUnderline } from "@/components/WavyUnderline";
+import { FormInput, FormTextarea } from "@/components/FormInput";
+import { COLORS } from "@/constants/colors";
 
 export const ContactPage = () => {
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-[#b4eb2c] selection:text-black">
       <ParticleBackground />
 
-      {/* --- HERO SECTION: Full Screen Background --- */}
+      {/* Hero Section */}
       <section className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
-        {/* The video now spans the full section width correctly */}
         <HeroVideoOverlay />
-        
-        {/* Content Container (Matches your project's max-width) */}
+
         <div className="relative z-30 max-w-[1200px] w-full mx-auto">
           <div className="max-w-[800px] animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
             <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8 text-left">
               Contact us
             </h1>
-            
-            {/* Wavy underline: Using the exact SVG/Color from your WebDesignPage */}
-            <svg
-              className="mb-12 w-[200px] h-[18px]"
-              viewBox="0 0 400 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0 9C0 9 10 2 25 2C40 2 45 16 60 16C75 16 80 2 95 2C110 2 115 16 130 16C145 16 150 2 165 2C180 2 185 16 200 16C215 16 220 2 235 2C250 2 255 16 270 16C285 16 290 2 305 2C320 2 325 16 340 16C355 16 360 2 375 2C390 2 400 9 400 9"
-                stroke="#b4eb2c"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            
+
+            <WavyUnderline color="limeButton" className="mb-12" />
+
             <p className="text-lg md:text-xl text-white/70 leading-relaxed text-left">
               Use the form below to get in touch with us about your project or
               inquiry. Whether you have questions, need a quote, or want to
@@ -48,7 +34,7 @@ export const ContactPage = () => {
         </div>
       </section>
 
-      {/* --- FORM SECTION --- */}
+      {/* Form Section */}
       <section className="relative z-20 pb-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <form
@@ -57,85 +43,24 @@ export const ContactPage = () => {
             className="space-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-              {/* Field: Name */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Your Name *</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
-                />
-              </div>
-
-              {/* Field: Email */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Your Email *</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
-                />
-              </div>
-
-              {/* Field: Phone */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Your Phone Number</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="+27"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
-                />
-              </div>
-
-              {/* Field: Country */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Your Country *</label>
-                <input
-                  type="text"
-                  name="country"
-                  required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
-                />
-              </div>
-
-              {/* Field: Company */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Your Company</label>
-                <input
-                  type="text"
-                  name="company"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
-                />
-              </div>
+              <FormInput label="Your Name" name="name" required />
+              <FormInput label="Your Email" name="email" type="email" required />
+              <FormInput label="Your Phone Number" name="phone" type="tel" placeholder="+27" />
+              <FormInput label="Your Country" name="country" required />
+              <FormInput label="Your Company" name="company" />
             </div>
 
-            {/* Field: Subject */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Subject *</label>
-              <input
-                type="text"
-                name="subject"
-                required
-                className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white"
-              />
-            </div>
+            <FormInput label="Subject" name="subject" required />
 
-            {/* Field: Question (12 Rows) */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Your Question *</label>
-              <textarea
-                name="message"
-                required
-                placeholder="Please describe your website project or inquiry."
-                rows={12}
-                className="w-full px-4 py-4 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner resize-none text-white"
-              />
-            </div>
+            <FormTextarea
+              label="Your Question"
+              name="message"
+              required
+              placeholder="Please describe your website project or inquiry."
+              rows={12}
+            />
 
-            {/* Submit Button (Aligned Bottom-Right) */}
+            {/* Submit Button */}
             <div className="flex justify-end pt-4">
               <button
                 type="submit"
@@ -152,8 +77,6 @@ export const ContactPage = () => {
           </form>
         </div>
       </section>
-
-      
     </div>
   );
 };

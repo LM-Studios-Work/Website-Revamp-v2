@@ -1,5 +1,4 @@
 import { Hero } from "@/sections/Hero";
-import React from "react";
 import { LatestProjectsHeader } from "@/sections/ProjectsSection/components/LatestProjectsHeader";
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
@@ -9,33 +8,37 @@ import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsH
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 import { FAQ } from "@/sections/FAQ";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { COLORS } from "@/constants/colors";
+
+const GOOD_HANDS_CARDS = [
+  {
+    num: 1,
+    bg: `bg-[${COLORS.purple}]`,
+    bgClass: "bg-[#d5bff0]",
+    title: ["Experienced", "developers"],
+    desc: "We have skilled developers ready to build secure, scalable systems tailored to your business needs.",
+  },
+  {
+    num: 2,
+    bg: `bg-[${COLORS.lime}]`,
+    bgClass: "bg-[#e7fe56]",
+    title: ["Custom", "solutions"],
+    desc: "We build tailored web applications—from booking systems to admin dashboards—designed for your operations.",
+  },
+  {
+    num: 3,
+    bg: `bg-[${COLORS.cyan}]`,
+    bgClass: "bg-[#72f5e3]",
+    title: ["Full-stack", "expertise"],
+    desc: "Our team builds complete systems with secure backends, intuitive interfaces, and scalable architecture.",
+  },
+];
 
 export const HomePage = () => {
   const { ref: projectsRef, isVisible: projectsVisible } =
     useScrollAnimation(0.1);
   const { ref: goodHandsRef, isVisible: goodHandsVisible } =
     useScrollAnimation(0.15);
-
-  const cards = [
-    {
-      num: 1,
-      bg: "bg-[#d5bff0]",
-      title: ["Experienced", "developers"],
-      desc: "We have skilled developers ready to build secure, scalable systems tailored to your business needs.",
-    },
-    {
-      num: 2,
-      bg: "bg-[#e7fe56]",
-      title: ["Custom", "solutions"],
-      desc: "We build tailored web applications—from booking systems to admin dashboards—designed for your operations.",
-    },
-    {
-      num: 3,
-      bg: "bg-[#72f5e3]",
-      title: ["Full-stack", "expertise"],
-      desc: "Our team builds complete systems with secure backends, intuitive interfaces, and scalable architecture.",
-    },
-  ];
 
   return (
     <>
@@ -71,7 +74,7 @@ export const HomePage = () => {
       />
       <ServicesSection />
 
-      {/* Your project is in good hands - MOBILE OPTIMIZED */}
+      {/* Your project is in good hands */}
       <section ref={goodHandsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
@@ -83,9 +86,8 @@ export const HomePage = () => {
               </h2>
             </div>
             <div className="md:w-7/12">
-              {/* Mobile: animate all together. Desktop: stagger via CSS */}
               <div
-                className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6 
+                className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6
                   transition-all ease-out duration-300 md:duration-500
                   ${
                     goodHandsVisible
@@ -93,7 +95,7 @@ export const HomePage = () => {
                       : "opacity-0 translate-y-4"
                   }`}
               >
-                {cards.map((card, idx) => (
+                {GOOD_HANDS_CARDS.map((card, idx) => (
                   <div
                     key={card.num}
                     className="md:transition-all md:duration-500"
@@ -102,7 +104,7 @@ export const HomePage = () => {
                     }}
                   >
                     <div
-                      className={`${card.bg} text-black p-7 rounded-2xl h-full`}
+                      className={`${card.bgClass} text-black p-7 rounded-2xl h-full`}
                     >
                       <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
                         {card.num}
