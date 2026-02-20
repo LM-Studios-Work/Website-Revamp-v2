@@ -8,9 +8,8 @@ export const tagStyle = {
 };
 
 export const projects: ProjectCardProps[] = [
-  // ... (Your existing 4 projects: Penguin, Plugin Company, Laboratoires PRED, Torvisco)
   {
-    imageUrl: "/preview/nyp.webp", // Assuming your naming convention
+    imageUrl: "/preview/nyp.webp",
     imageAlt: "Ndila Ya Vhupo Travels",
     title: "Ndila Ya Vhupo Travels",
     tags: [
@@ -74,6 +73,19 @@ export const projects: ProjectCardProps[] = [
     ],
     description: "Modern portfolio for a Computer Science student.",
     discoverMoreUrl: "https://monareselahle.co.za",
+  },
+  {
+    imageUrl: "/preview/rokunda-mboyi.png",
+    imageAlt: "Rokunda Mboyi",
+    title: "Rokunda Mboyi",
+    tags: [
+      { text: "Creative & Design", className: tagStyle.lime },
+      { text: "Professional Portfolios", className: tagStyle.purple },
+      { text: "Showcase", className: tagStyle.teal },
+    ],
+    description:
+      "A graduate in Architecture, focused on creating spaces that inspire and elevate the human experience.",
+    discoverMoreUrl: "https://rokundamboyi.co.za/",
   },
   {
     imageUrl: "/preview/shots-by-ozee.png",

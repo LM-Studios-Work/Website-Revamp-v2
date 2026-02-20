@@ -1,11 +1,19 @@
-import { ProjectsGrid } from "@/sections/ProjectsSection/components/ProjectsGrid";
 import { useState } from "react";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
+import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
+import { projects } from "@/sections/ProjectsSection/constants";
 
 export const ProjectsPage = () => {
   const [filterType, setFilterType] = useState("All");
   const [filterApp, setFilterApp] = useState("All");
   const [filterIndustry, setFilterIndustry] = useState("All");
+
+  const filteredProjects = projects.filter((project) => {
+    const matchesType = filterType === "All" || project.tags.some(tag => tag.text === filterType);
+    const matchesApp = filterApp === "All" || project.tags.some(tag => tag.text === filterApp);
+    const matchesIndustry = filterIndustry === "All" || project.tags.some(tag => tag.text === filterIndustry);
+    return matchesType && matchesApp && matchesIndustry;
+  });
 
   return (
     <div className="min-h-screen pb-20">
@@ -140,8 +148,17 @@ export const ProjectsPage = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="relative z-30 w-full max-w-[1400px] mx-auto mt-16">
-          <ProjectsGrid />
+        <div className="relative z-30 w-full max-w-[1400px] mx-auto mt-16 px-6 md:px-10 lg:px-16">
+          <div className="flex flex-wrap -mx-3">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={project.title} {...project} index={index} isVisible={true} />
+            ))}
+          </div>
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-16">
+              <p className="text-white/60 text-lg">No projects match your filters. Try adjusting your selection.</p>
+            </div>
+          )}
         </div>
       </section>
     </div>
