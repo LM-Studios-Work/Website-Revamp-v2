@@ -17,7 +17,7 @@ export const ProjectsPage = () => {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section with Filters and Projects Grid */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
         <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16 anim-fade-in">
@@ -25,11 +25,9 @@ export const ProjectsPage = () => {
             Dive into our projects
           </h1>
         </div>
-      </section>
 
-      {/* Filters Section */}
-      <section className="relative py-8 px-6">
-        <div className="w-full max-w-[1200px] mx-auto">
+        {/* Filters Section - moved inside hero */}
+        <div className="relative z-30 w-full max-w-[1200px] mx-auto mb-12">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center w-full">
             {/* All projects button with invisible label for alignment */}
             <div className="w-full md:w-auto md:min-w-[220px] flex flex-col">
@@ -148,11 +146,9 @@ export const ProjectsPage = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Projects Grid */}
-      <section className="relative py-8 px-6">
-        <div className="w-full max-w-[1400px] mx-auto">
+        {/* Projects Grid - moved inside hero */}
+        <div className="relative z-30 w-full max-w-[1400px] mx-auto">
           <div className="flex flex-wrap -mx-3">
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.title} {...project} index={index} isVisible={true} />
