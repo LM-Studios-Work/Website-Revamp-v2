@@ -20,14 +20,16 @@ export const ProjectsPage = () => {
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
-        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-10 anim-fade-in">
+        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16 anim-fade-in">
           <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
             Dive into our projects
           </h1>
         </div>
+      </section>
 
-        {/* Filters Row */}
-        <div className="relative z-30 w-full max-w-[1200px] mx-auto">
+      {/* Filters Section */}
+      <section className="relative py-8 px-6">
+        <div className="w-full max-w-[1200px] mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center w-full">
             {/* All projects button with invisible label for alignment */}
             <div className="w-full md:w-auto md:min-w-[220px] flex flex-col">
@@ -146,9 +148,11 @@ export const ProjectsPage = () => {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Projects Grid */}
-        <div className="relative z-30 w-full max-w-[1400px] mx-auto mt-16 px-6 md:px-10 lg:px-16">
+      {/* Projects Grid */}
+      <section className="relative py-8 px-6">
+        <div className="w-full max-w-[1400px] mx-auto">
           <div className="flex flex-wrap -mx-3">
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.title} {...project} index={index} isVisible={true} />
