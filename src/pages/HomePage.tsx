@@ -79,7 +79,8 @@ export const HomePage = () => {
         />
       </div>
 
-      <section id="services" aria-label="Our services">
+      <section id="services" aria-labelledby="services-heading">
+        <h2 id="services-heading" className="sr-only">Our Services</h2>
         <ServicesSection />
       </section>
 

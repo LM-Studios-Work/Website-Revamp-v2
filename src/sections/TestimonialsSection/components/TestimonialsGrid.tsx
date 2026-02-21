@@ -4,28 +4,24 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
-    imageUrl: "https://via.placeholder.com/150",
     name: "Omhle Zuma",
     title: "Business Owner",
     testimonial:
       '"We brought in LM Studios\' Web Design Team to deploy and implement our predefined mock-up pages. Throughout the project, the team applied its combined expertise to refine and enhance these designs before efficiently bringing them to life. Communication with the team was straightforward and seamless, allowing us to launch our site swiftly."',
   },
   {
-    imageUrl: "https://via.placeholder.com/150",
     name: "Nkoka Logan",
     title: "Business Owner",
     testimonial:
       '"Do you want a confusing and ugly website? Stay away from LM Studios web designers. Before you know, they\'ll start showing their understanding of design and technicalities (who likes a know-it-all, right?), might create beautiful components, answer your stupidly detailed questions or even suggest UI/UX solutions you never asked for. Consider yourself warned!"',
   },
   {
-    imageUrl: "https://via.placeholder.com/150",
     name: "Neo Leeuw",
     title: "Business Owner",
     testimonial:
       '"A huge thanks to the Web design team of LM Studios for their expert advice, incredible patience, and quick responses. Their dedication made the entire experience smooth and enjoyable. I truly appreciated how attentive and responsive they were throughout the process. I highly recommend their services!"',
   },
   {
-    imageUrl: "https://via.placeholder.com/150",
     name: "Rokunda Mboyi",
     title: "Business Owner",
     testimonial:
