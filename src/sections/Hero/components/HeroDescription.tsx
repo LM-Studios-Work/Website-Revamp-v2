@@ -5,10 +5,9 @@ export const HeroDescription = () => {
     <div className="max-w-2xl text-left">
      
       <p className="text-lg md:text-lg lg:text-xl text-white/70 leading-relaxed mb-6 md:mb-10 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
-        We combine professional web design with powerful development to solve
-        your organization's unique challenges. Whether it’s an automated
-        inventory system or a sleek customer-facing platform, we build secure
-        tools that simplify your operations.
+        We build affordable, SEO-optimized websites and automated booking
+        systems for South African businesses. Based in Midrand, we help you
+        stop chasing leads and start closing them.
       </p>
 
       <Link
