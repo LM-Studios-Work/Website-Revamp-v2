@@ -4,6 +4,8 @@ import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ServicesSection } from "@/sections/ServicesSection";
+import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
+import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 import { FAQ } from "@/sections/FAQ";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { COLORS } from "@/constants/colors";
@@ -143,6 +145,11 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="testimonials" aria-labelledby="testimonials-heading">
+        <TestimonialsHeader />
+        <TestimonialsGrid />
       </section>
 
       <section id="faq" aria-label="Frequently asked questions">

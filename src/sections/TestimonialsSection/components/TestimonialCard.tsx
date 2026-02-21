@@ -1,5 +1,4 @@
 export type TestimonialCardProps = {
-  imageUrl: string;
   name: string;
   title: string;
   testimonial: string;
