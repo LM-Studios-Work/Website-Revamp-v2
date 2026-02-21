@@ -15,22 +15,22 @@ const GOOD_HANDS_CARDS = [
     num: 1,
     bg: `bg-[${COLORS.purple}]`,
     bgClass: "bg-[#d5bff0]",
-    title: ["Experienced", "developers"],
-    desc: "We have skilled developers ready to build secure, scalable systems tailored to your business needs.",
+    title: ["Reliable", "& Local"],
+    desc: "Based in Midrand, we work 100% online to keep our services fast and affordable. You get professional South African expertise without the agency overhead.",
   },
   {
     num: 2,
     bg: `bg-[${COLORS.lime}]`,
     bgClass: "bg-[#e7fe56]",
-    title: ["Custom", "solutions"],
-    desc: "We build tailored web applications—from booking systems to admin dashboards—designed for your operations.",
+    title: ["Scalable", "Solutions"],
+    desc: "From simple static sites to automated booking systems, we build tailored tools that fit your current needs and can grow with your business.",
   },
   {
     num: 3,
     bg: `bg-[${COLORS.cyan}]`,
     bgClass: "bg-[#72f5e3]",
-    title: ["Full-stack", "expertise"],
-    desc: "Our team builds complete systems with secure backends, intuitive interfaces, and scalable architecture.",
+    title: ["Built to", "be Found"],
+    desc: "We don't just design; we optimize. Every project is built for speed and SEO to ensure your business ranks on Google and reaches your customers.",
   },
 ];
 
@@ -43,43 +43,60 @@ export const HomePage = () => {
   return (
     <>
       <Hero />
-      <LatestProjectsHeader />
-      <section
-        ref={projectsRef}
-        className="relative pt-6 pb-8 px-6 md:pt-10 md:pb-16"
-      >
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-wrap -mx-3">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                {...project}
-                index={index}
-                isVisible={projectsVisible}
-              />
-            ))}
+
+      <section id="projects" aria-labelledby="projects-heading">
+        <LatestProjectsHeader />
+        <div
+          ref={projectsRef}
+          className="relative pt-6 pb-8 px-6 md:pt-10 md:pb-16"
+        >
+          <div className="max-w-[1400px] w-full mx-auto">
+            <div className="flex flex-wrap -mx-3">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.title}
+                  {...project}
+                  index={index}
+                  isVisible={projectsVisible}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
-      <ServicesMarquee
-        variant="pt-16 md:pt-28"
-        primaryText="Our services"
-        secondaryText="What we do"
-      />
-      <ServicesMarquee
-        variant="pb-16 md:pb-28"
-        primaryText="Our services"
-        secondaryText="What we do"
-        reverse
-      />
-      <ServicesSection />
+
+      <div aria-hidden="true">
+        <ServicesMarquee
+          variant="pt-16 md:pt-28"
+          primaryText="Our services"
+          secondaryText="What we do"
+        />
+        <ServicesMarquee
+          variant="pb-16 md:pb-28"
+          primaryText="Our services"
+          secondaryText="What we do"
+          reverse
+        />
+      </div>
+
+      <section id="services" aria-label="Our services">
+        <ServicesSection />
+      </section>
 
       {/* Your project is in good hands */}
-      <section ref={goodHandsRef} className="relative py-16 md:py-28 px-6">
+      <section
+        id="why-us"
+        aria-labelledby="good-hands-heading"
+        ref={goodHandsRef}
+        className="relative py-16 md:py-28 px-6"
+      >
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
             <div className="md:w-5/12 shrink-0">
-              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
+              <h2
+                id="good-hands-heading"
+                className="text-4xl md:text-[56px] font-bold leading-tight text-white"
+              >
                 Your project is
                 <br />
                 <span className="italic text-outline-15">in good hands</span>
@@ -106,7 +123,10 @@ export const HomePage = () => {
                     <div
                       className={`${card.bgClass} text-black p-7 rounded-2xl h-full`}
                     >
-                      <div className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5">
+                      <div
+                        className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5"
+                        aria-hidden="true"
+                      >
                         {card.num}
                       </div>
                       <h3 className="text-2xl font-bold leading-tight mb-3">
@@ -126,10 +146,14 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <TestimonialsHeader />
-      <TestimonialsGrid />
+      <section id="testimonials" aria-labelledby="testimonials-heading">
+        <TestimonialsHeader />
+        <TestimonialsGrid />
+      </section>
 
-      <FAQ />
+      <section id="faq" aria-label="Frequently asked questions">
+        <FAQ />
+      </section>
     </>
   );
 };
