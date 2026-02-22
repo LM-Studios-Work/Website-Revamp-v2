@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import {
   Briefcase,
   Globe,
@@ -13,7 +16,6 @@ import {
 } from "lucide-react";
 import { ProcessCard } from "@/components/ProcessCard";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { PhotographySection } from "../sections/PhotographySection";
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
@@ -23,7 +25,6 @@ import { ServiceHero } from "@/components/ServiceHero";
 import { ProcessCardGrid } from "@/components/ProcessCardGrid";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { usePageMeta } from "@/hooks/usePageMeta";
 import { COLORS } from "@/constants/colors";
 
 const packages = [
@@ -150,14 +151,6 @@ const supportTiers = [
 ];
 
 export const WebDesignPage = () => {
-  usePageMeta({
-    title:
-      "Professional Web Design South Africa | From R1,999 | LM Studios Johannesburg",
-    description:
-      "Affordable, mobile-responsive web design in Johannesburg, Pretoria & across South Africa. Once-off packages from R1,999 with free hosting, on-page SEO & a 6-month warranty. No retainers. Get your free quote from LM Studios.",
-    canonicalUrl: "https://lmstudios.co.za/services/web-design",
-  });
-
   const { ref: bespokeRef, isVisible: bespokeVisible } =
     useScrollAnimation(0.15);
   const { ref: standardRef, isVisible: standardVisible } =
@@ -173,50 +166,29 @@ export const WebDesignPage = () => {
   const { ref: supportRef, isVisible: supportVisible } =
     useScrollAnimation(0.15);
 
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (!location.hash) return;
-    const id = location.hash.replace("#", "");
-    const scrollToId = () => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-        return true;
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const id = hash.replace("#", "");
+      const scrollToId = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return true;
+        }
+        return false;
+      };
+      if (!scrollToId()) {
+        setTimeout(scrollToId, 80);
       }
-      return false;
     };
-
-    if (!scrollToId()) {
-      const t = setTimeout(scrollToId, 80);
-      return () => clearTimeout(t);
-    }
-  }, [location.pathname, location.hash]);
-
-  // Inject JSON-LD FAQ Schema for Google rich results
-  useEffect(() => {
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: webDesignFAQ.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.answer,
-        },
-      })),
-    };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(faqSchema);
-    script.id = "faq-schema-web-design";
-    document.head.appendChild(script);
-    return () => {
-      const el = document.getElementById("faq-schema-web-design");
-      if (el) el.remove();
-    };
-  }, []);
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [pathname]);
 
   return (
     <>

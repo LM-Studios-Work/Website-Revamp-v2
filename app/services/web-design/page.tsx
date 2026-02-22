@@ -1,0 +1,45 @@
+import type { Metadata } from "next";
+import { WebDesignPage } from "@/views/WebDesignPage";
+import { webDesignFAQ } from "@/sections/FAQ/constants";
+
+export const metadata: Metadata = {
+  title:
+    "Professional Web Design South Africa | From R1,999 | LM Studios Johannesburg",
+  description:
+    "Affordable, mobile-responsive web design in Johannesburg, Pretoria & across South Africa. Once-off packages from R1,999 with free hosting, on-page SEO & a 6-month warranty. No retainers. Get your free quote from LM Studios.",
+  alternates: {
+    canonical: "https://www.lmwebstudios.co.za/services/web-design",
+  },
+  openGraph: {
+    title:
+      "Professional Web Design South Africa | From R1,999 | LM Studios Johannesburg",
+    description:
+      "Affordable, mobile-responsive web design in Johannesburg, Pretoria & across South Africa. Once-off packages from R1,999.",
+    url: "https://www.lmwebstudios.co.za/services/web-design",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: webDesignFAQ.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <WebDesignPage />
+    </>
+  );
+}

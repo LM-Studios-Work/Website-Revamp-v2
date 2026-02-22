@@ -1,18 +1,21 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { NAV_ITEMS, SERVICE_NAV_ITEMS } from "@/constants/navigation";
 import { COLORS } from "@/constants/colors";
 import { NavWave } from "@/components/NavWave";
 
 export const DesktopMenu = () => {
-  const location = useLocation();
-  const isActive = (path: string) => location.pathname === path;
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname === path;
 
   return (
     <ul className="hidden md:flex md:items-center md:gap-10 list-none pl-0">
       {NAV_ITEMS.map((item) => (
         <li key={item.to} className={item.hasDropdown ? "relative group" : ""}>
           <Link
-            to={item.to}
+            href={item.to}
             className={`text-lg transition-colors duration-200 relative pb-2 flex items-center gap-1 ${
               isActive(item.to)
                 ? "text-white font-normal"
@@ -49,7 +52,7 @@ export const DesktopMenu = () => {
                     <DesktopPhotographyLink />
                   ) : (
                     <Link
-                      to={service.to}
+                      href={service.to}
                       className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
                     >
                       {service.label}
@@ -66,14 +69,14 @@ export const DesktopMenu = () => {
 };
 
 const DesktopPhotographyLink = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const href = "/services/web-design#photography";
 
   const onClick = (e: React.MouseEvent) => {
     e.preventDefault();
     const [path, hash] = href.split("#");
-    if (location.pathname === path) {
+    if (pathname === path) {
       const el = document.getElementById(hash || "");
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -82,7 +85,7 @@ const DesktopPhotographyLink = () => {
         window.location.hash = hash || "";
       }
     } else {
-      navigate(href);
+      router.push(href);
       setTimeout(() => {
         const el = document.getElementById("photography");
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });

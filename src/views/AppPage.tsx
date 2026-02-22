@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { FAQ } from "@/sections/FAQ";
 import { appDevelopmentFAQ } from "@/sections/FAQ/constants";
 import { ServiceHero } from "@/components/ServiceHero";
@@ -228,8 +229,7 @@ export const AppPage = () => {
               These are just examples. We build custom solutions based on your specific needs.
               Contact us to discuss your project and receive a tailored proposal.
             </p>
-            <Link
-              to="/contact"
+            <Link href="/contact"
               className="inline-flex items-center text-base font-semibold bg-[#72f5e3] text-black pl-8 pr-3 py-3 rounded-full hover:bg-[#72f5e3]/90 hover:scale-105 transition-all duration-300"
             >
               Get a Custom Quote

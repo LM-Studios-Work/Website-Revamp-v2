@@ -1,17 +1,9 @@
-import { useEffect } from "react";
+"use client";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ProcessCard } from "../components/ProcessCard";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { WavyUnderline } from "@/components/WavyUnderline";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-const PAGE_TITLE = "About Us | LM Studios – Web Design & Custom Web Apps";
-const PAGE_DESCRIPTION =
-  "Learn about LM Studios, a South African web design and custom web application studio based in Midrand, Gauteng. We craft unique, high-performance digital experiences built to grow your business and get you found on Google.";
-const HOME_TITLE =
-  "LM Studios | Affordable Websites for South African Businesses";
-const HOME_DESCRIPTION =
-  "LM Studios builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.";
 
 const VALUES_CARDS = [
   {
@@ -39,27 +31,6 @@ const VALUES_CARDS = [
 
 export const AboutPage = () => {
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation(0.15);
-
-  useEffect(() => {
-    document.title = PAGE_TITLE;
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    const ogDescription = document.querySelector(
-      'meta[property="og:description"]'
-    );
-
-    if (metaDescription) metaDescription.setAttribute("content", PAGE_DESCRIPTION);
-    if (ogTitle) ogTitle.setAttribute("content", PAGE_TITLE);
-    if (ogDescription) ogDescription.setAttribute("content", PAGE_DESCRIPTION);
-
-    return () => {
-      document.title = HOME_TITLE;
-      if (metaDescription) metaDescription.setAttribute("content", HOME_DESCRIPTION);
-      if (ogTitle) ogTitle.setAttribute("content", HOME_TITLE);
-      if (ogDescription) ogDescription.setAttribute("content", HOME_DESCRIPTION);
-    };
-  }, []);
 
   return (
     <>

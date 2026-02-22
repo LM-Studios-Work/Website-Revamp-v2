@@ -1,3 +1,4 @@
+"use client";
 import { Hero } from "@/sections/Hero";
 import { LatestProjectsHeader } from "@/sections/ProjectsSection/components/LatestProjectsHeader";
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";

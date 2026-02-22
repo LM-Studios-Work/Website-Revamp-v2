@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 import { NavbarLogo } from "./NavbarLogo";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenuButton } from "./MobileMenuButton";
@@ -7,12 +9,12 @@ import { MobileMenu } from "./MobileMenu";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   // Close menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {

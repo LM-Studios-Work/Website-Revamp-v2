@@ -1,5 +1,5 @@
+"use client";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
-import { ParticleBackground } from "@/components/ParticleBackground";
 import { WavyUnderline } from "@/components/WavyUnderline";
 import { FormInput, FormTextarea } from "@/components/FormInput";
 import { COLORS } from "@/constants/colors";
@@ -7,8 +7,6 @@ import { COLORS } from "@/constants/colors";
 export const ContactPage = () => {
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-[#b4eb2c] selection:text-black">
-      <ParticleBackground />
-
       {/* Hero Section */}
       <section className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
         <HeroVideoOverlay />

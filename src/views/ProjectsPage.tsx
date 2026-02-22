@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { FilterDropdown } from "@/components/FilterDropdown";

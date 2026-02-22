@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export const FooterCTA = () => {
@@ -8,8 +9,7 @@ export const FooterCTA = () => {
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
           Ready to make your website using LM Studios?
         </h2>
-        <Link
-          to="/contact"
+        <Link href="/contact"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#d5bff0] hover:bg-[#d5bff0]/90 text-black text-lg font-semibold rounded-full transition-colors shrink-0"
         >
           Ask for a quote

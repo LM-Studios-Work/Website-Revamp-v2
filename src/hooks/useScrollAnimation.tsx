@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 
 // Check if we're on mobile (under 768px)

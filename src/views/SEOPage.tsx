@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { FAQ } from "@/sections/FAQ";
 import { seoFAQ } from "@/sections/FAQ/constants";
 import { ServiceHero } from "@/components/ServiceHero";
@@ -237,8 +238,7 @@ export const SEOPage = () => {
             Not sure which package fits your needs? Contact us for a free consultation
             and custom proposal tailored to your business goals.
           </p>
-          <Link
-            to="/contact"
+          <Link href="/contact"
             className="inline-flex items-center text-base font-semibold bg-[#d5bff0] text-black pl-8 pr-3 py-3 rounded-full hover:bg-[#d5bff0]/90 hover:scale-105 transition-all duration-300"
           >
             Get a Custom Quote

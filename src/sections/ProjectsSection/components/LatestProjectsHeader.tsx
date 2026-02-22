@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const LatestProjectsHeader = () => {
@@ -16,8 +17,7 @@ export const LatestProjectsHeader = () => {
           >
             Latest projects
           </h2>
-          <Link
-            to="/projects"
+          <Link href="/projects"
             className={`text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#e7fe56] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#e7fe56] hover:text-black hover:scale-105 transition-all duration-600 mt-2 md:mt-0 group ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}

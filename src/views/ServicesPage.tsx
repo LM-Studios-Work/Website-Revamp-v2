@@ -1,3 +1,4 @@
+"use client";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ServicesSection } from "@/sections/ServicesSection";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";

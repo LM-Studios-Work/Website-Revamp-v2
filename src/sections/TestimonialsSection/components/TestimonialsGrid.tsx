@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { TestimonialCard } from "@/sections/TestimonialsSection/components/TestimonialCard";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
