@@ -15,7 +15,28 @@ export const Footer = () => {
               <FooterColumns />
             </div>
 
-            {/* FIX: Reduced py-8 to py-6 for a tighter bottom */}
+            {/* SEO Footer — Geo-targeted service keywords */}
+            <div className="border-t border-white/10 py-5">
+              <p className="text-xs text-white/30 leading-relaxed text-center flex flex-wrap justify-center gap-x-2 gap-y-1">
+                <a href="/services/web-design" className="hover:text-white/60 transition-colors">Web Design Johannesburg</a>
+                <span aria-hidden="true">|</span>
+                <a href="/services/web-design" className="hover:text-white/60 transition-colors">Web Designers in Pretoria</a>
+                <span aria-hidden="true">|</span>
+                <a href="/services/web-design" className="hover:text-white/60 transition-colors">Professional Website Design South Africa</a>
+                <span aria-hidden="true">|</span>
+                <a href="/services/web-design" className="hover:text-white/60 transition-colors">Corporate Web Design Gauteng</a>
+                <span aria-hidden="true">|</span>
+                <a href="/services/web-design" className="hover:text-white/60 transition-colors">Event Website Builders</a>
+                <span aria-hidden="true">|</span>
+                <a href="/services/seo" className="hover:text-white/60 transition-colors">SEO Services South Africa</a>
+                <span aria-hidden="true">|</span>
+                <a href="/services/app-development" className="hover:text-white/60 transition-colors">Custom App Development</a>
+                <span aria-hidden="true">|</span>
+                <a href="/" className="hover:text-white/60 transition-colors">LM Studios Web Agency</a>
+              </p>
+            </div>
+
+            {/* Copyright */}
             <div className="text-center border-t border-white/10 py-6">
               <p className="text-sm text-white/40">LM Studios</p>
             </div>

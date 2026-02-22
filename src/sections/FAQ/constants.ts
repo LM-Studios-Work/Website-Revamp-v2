@@ -20,28 +20,24 @@ export const generalFAQ: FAQItem[] = [
 
 export const webDesignFAQ: FAQItem[] = [
   {
-    question: "How long does a Web Design project take?",
-    answer: "Typical timelines depend on scope — small sites: 2–4 weeks; larger builds: 6–12 weeks.",
+    question: "How much does a professional website cost in South Africa?",
+    answer: "At LM Studios, professional website design starts at a transparent, once-off fee of R1,999 for a sleek portfolio site, and goes up to R4,999 for a comprehensive, 6-page professional business website. We do not believe in hidden costs or mandatory retainers. Your first year of hosting is completely free, ensuring maximum return on your investment.",
   },
   {
-    question: "Can you work from our brand guidelines?",
-    answer: "Yes — we adapt to your existing brand and provide recommendations to make the site consistent and accessible.",
+    question: "How long does it take to design and launch a website?",
+    answer: "We pride ourselves on industry-leading turnaround times. Depending on your chosen package, your brand-new, fully functional website will be designed, built, and launched in just 4 to 12 working days. We deliver speed without ever compromising on quality, security, or design.",
   },
   {
-    question: "Do you provide responsive designs?",
-    answer: "All our designs are mobile-first and responsive across common breakpoints.",
+    question: "How do I choose the best web design company in Gauteng?",
+    answer: "The best web design agencies offer complete transparency, fast delivery, and robust post-launch support. Look for a team that guarantees mobile responsiveness, includes on-page SEO, and doesn't hide behind confusing jargon. LM Studios is highly rated because we back every single build with a comprehensive 6-month post-launch warranty, giving you absolute peace of mind.",
   },
   {
-    question: "What does the 6-month warranty cover?",
-    answer: "The warranty covers bug fixes, broken links, browser compatibility across Chrome, Safari and Edge, and minor content adjustments (small text or image swaps under 15 minutes). Structural changes, new features, or issues caused by third-party services are not included.",
+    question: "Will I have to pay expensive monthly retainers after my site goes live?",
+    answer: "No. We do not lock our clients into expensive, rigid contracts. Every website we build includes a 6-month warranty covering bug fixes and browser compatibility at no extra charge. After that, you operate on a pay-for-what-you-use model with clear, flat-fee pricing for any future updates or new pages.",
   },
   {
-    question: "What happens after the warranty expires?",
-    answer: "Your account moves to our pay-as-you-go support model — no retainers, no lock-in. Standard updates start at R250 per request. All work is quoted upfront, built in a staging environment, tested, and deployed to production.",
-  },
-  {
-    question: "How does hosting work?",
-    answer: "Hosting is free for the first year. After that, annual renewal is R400 for a .com domain or R150 for a .co.za domain. We manage the hosting environment and SSL certificates on your behalf.",
+    question: "Will my website be mobile-friendly and optimized for Google?",
+    answer: "Absolutely. Over 60% of web traffic comes from mobile devices, so every site we deploy is 100% mobile-responsive and rigorously tested across Chrome, Safari, and Edge. Furthermore, basic and local SEO optimization is baked into our development process, ensuring your business is structured to rank well on search engines from day one.",
   },
 ];
 
