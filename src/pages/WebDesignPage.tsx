@@ -25,8 +25,6 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { COLORS } from "@/constants/colors";
-import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
-import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 
 const packages = [
   {
@@ -660,10 +658,6 @@ export const WebDesignPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <TestimonialsHeader />
-      <TestimonialsGrid />
-
       {/* Our Projects Section */}
       <section ref={projectsRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
@@ -825,117 +819,88 @@ export const WebDesignPage = () => {
               in <span className="italic text-outline-2">good hands</span>
             </h2>
           </div>
-          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-            {[
-              {
-                step: 1,
-                variant: "lime" as const,
-                title: "Experienced designers",
-                description:
-                  "We have high-end designers ready to conceive stunning designs matching your brand style.",
-              },
-              {
-                step: 2,
-                variant: "purple" as const,
-                title: "eCommerce experts",
-                description:
-                  "Our functional consultants can help you setting-up all your products in your eCommerce.",
-                hasNote: true,
-              },
-              {
-                step: 3,
-                variant: "cyan" as const,
-                title: "Front-end developers",
-                description:
-                  "Our front-end developers implement tailor-made features to take your website to the next level.",
-              },
-            ].map((card, idx) => (
-              <div
-                key={card.step}
-                className={`opacity-0 ${
-                  goodHandsVisible
-                    ? `animate-[fadeInUp_0.8s_ease-out_${
-                        ["0.2s", "0.4s", "0.6s"][idx]
-                      }_both]`
-                    : ""
-                }`}
-              >
-                <ProcessCard
-                  step={card.step}
-                  variant={card.variant}
-                  title={card.title}
-                  description={card.description}
-                  note={
-                    card.hasNote ? (
-                      <div className="absolute -top-20 right-4 hidden md:block w-[140px]">
-                        <svg
-                          className="w-10 h-14 text-[#d5bff0] mx-auto rotate-12"
-                          viewBox="0 0 54 60"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M21.7371 8.87569C25.4674 5.92211 31.7925 3.32185 36.9406 5.86596C42.0238 8.37798 42.1648 15.6881 39.5109 19.9576C35.9863 25.626 26.6853 27.535 20.3061 28.2575C16.8906 28.6443 12.394 28.8797 9.87327 30.7169C6.80598 32.9525 5.80211 36.7262 6.70014 40.2858C7.94273 45.2127 15.4671 47.9715 19.897 44.9782C24.085 42.148 23.3664 36.0079 20.1755 33.2796C17.4764 30.9715 13.5658 31.7601 11.2359 34.3323C6.67151 39.3712 9.09884 49.3496 11.974 54.0084"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                          />
-                          <path
-                            d="M12 54L15 48.5"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                          />
-                          <path
-                            d="M12 54L7.5 50.5"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                          />
-                        </svg>
-                      </div>
-                    ) : undefined
-                  }
-                />
-              </div>
-            ))}
+          <div className="overflow-x-auto scrollbar-hide -mx-6 md:mx-0 md:overflow-visible">
+            <div className="flex gap-4 px-6 md:grid md:grid-cols-3 md:gap-6 md:px-0">
+              {[
+                {
+                  step: 1,
+                  variant: "lime" as const,
+                  title: "Experienced designers",
+                  description:
+                    "We have high-end designers ready to conceive stunning designs matching your brand style.",
+                },
+                {
+                  step: 2,
+                  variant: "purple" as const,
+                  title: "eCommerce experts",
+                  description:
+                    "Our functional consultants can help you setting-up all your products in your eCommerce.",
+                  hasNote: true,
+                },
+                {
+                  step: 3,
+                  variant: "cyan" as const,
+                  title: "Front-end developers",
+                  description:
+                    "Our front-end developers implement tailor-made features to take your website to the next level.",
+                },
+              ].map((card, idx) => (
+                <div
+                  key={card.step}
+                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto opacity-0 ${
+                    goodHandsVisible
+                      ? `animate-[fadeInUp_0.8s_ease-out_${
+                          ["0.2s", "0.4s", "0.6s"][idx]
+                        }_both]`
+                      : ""
+                  }`}
+                >
+                  <ProcessCard
+                    step={card.step}
+                    variant={card.variant}
+                    title={card.title}
+                    description={card.description}
+                    note={
+                      card.hasNote ? (
+                        <div className="absolute -top-20 right-4 hidden md:block w-[140px]">
+                          <svg
+                            className="w-10 h-14 text-[#d5bff0] mx-auto rotate-12"
+                            viewBox="0 0 54 60"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M21.7371 8.87569C25.4674 5.92211 31.7925 3.32185 36.9406 5.86596C42.0238 8.37798 42.1648 15.6881 39.5109 19.9576C35.9863 25.626 26.6853 27.535 20.3061 28.2575C16.8906 28.6443 12.394 28.8797 9.87327 30.7169C6.80598 32.9525 5.80211 36.7262 6.70014 40.2858C7.94273 45.2127 15.4671 47.9715 19.897 44.9782C24.085 42.148 23.3664 36.0079 20.1755 33.2796C17.4764 30.9715 13.5658 31.7601 11.2359 34.3323C6.67151 39.3712 9.09884 49.3496 11.974 54.0084"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M12 54L15 48.5"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M12 54L7.5 50.5"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        </div>
+                      ) : undefined
+                    }
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
       <FAQ items={webDesignFAQ} title="Web Design FAQ" />
-
-      {/* CTA Section */}
-      <SectionWrapper className="z-10">
-        <div className="relative box-border caret-transparent flex flex-col break-words overflow-hidden rounded-[20px]">
-          <div className="backdrop-blur-[3px] bg-white/10 box-border caret-transparent grow break-words p-10 rounded-[20px]">
-            <div className="items-center box-border caret-transparent flex flex-wrap ml-[-15px] mr-[-15px] break-words">
-              <div className="box-border caret-transparent shrink-0 max-w-full break-words w-full px-[15px] text-center md:w-6/12 md:px-6 md:text-left">
-                <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-6 font-obviously md:text-[50px] md:leading-[60px]">
-                  Ready to start your project?
-                </h2>
-                <p className="box-border caret-transparent mb-8">
-                  Get in touch with our team to discuss your web design needs.
-                </p>
-              </div>
-              <div className="box-border caret-transparent flex shrink-0 justify-center max-w-full w-full px-[15px] md:justify-end md:w-6/12">
-                <a
-                  href="/contact"
-                  className="text-sm font-normal bg-zinc-600 box-border caret-transparent block leading-[21px] text-center align-middle border-zinc-600 pl-4 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 md:pl-6 hover:bg-neutral-600 hover:border-zinc-700"
-                >
-                  Contact us
-                  <img
-                    src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/icon-4.svg"
-                    alt="Icon"
-                    className="relative text-sm font-normal bg-white/10 box-border caret-transparent h-[30px] leading-[21px] -rotate-45 w-[30px] ml-2.5 p-[9.6px] rounded-[50%] top-0 md:text-base md:font-semibold md:h-[50px] md:leading-6 md:w-[50px] md:p-[18.4px]"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
     </>
   );
 };
