@@ -1,43 +1,79 @@
+import { useEffect } from "react";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
 import { ProcessCard } from "../components/ProcessCard";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { WavyUnderline } from "@/components/WavyUnderline";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
+const PAGE_TITLE = "About Us | LM Studios – Web Design & Custom Web Apps";
+const PAGE_DESCRIPTION =
+  "Learn about LM Studios, a South African web design and custom web application studio based in Midrand, Gauteng. We craft unique, high-performance digital experiences built to grow your business and get you found on Google.";
+const HOME_TITLE =
+  "LM Studios | Affordable Websites for South African Businesses";
+const HOME_DESCRIPTION =
+  "LM Studios builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.";
+
 const VALUES_CARDS = [
   {
     step: 1,
     variant: "purple" as const,
-    title: "Creativity",
+    title: "Distinct Identity",
     description:
-      "We believe in crafting unique, visually striking designs that capture your brand's essence. Our team thrives on fresh ideas, innovative solutions, and out-of-the-box thinking to bring your vision to life.",
+      "We don't do cookie-cutter templates. Whether it's a professional showcase or a custom app, we craft unique designs that capture your brand's essence and ensure you stand out in a crowded digital market.",
   },
   {
     step: 2,
     variant: "yellow" as const,
-    title: "Simplicity",
+    title: "Performance-Driven",
     description:
-      "Great design isn't just about aesthetics, it's about clarity and ease of use. We focus on clean, user-friendly experiences that make navigation seamless and content impactful.",
+      "Great design is about clarity and speed. We focus on clean, high-performance experiences that make navigation seamless for your users and optimization easy for search engines. If it doesn't help you get found, it doesn't belong on the page.",
   },
   {
     step: 3,
     variant: "cyan" as const,
-    title: "Reliability",
+    title: "Proven Partnership",
     description:
-      "We're committed to delivering high-quality work on time, every time. From concept to launch, you can count on us for clear communication, transparency, and a smooth collaboration.",
+      "We treat your project as our own. From initial strategy to final launch, you can count on clear timelines, absolute transparency, and a system that is built to scale as your business grows. No disappearing acts—just results.",
   },
 ];
 
 export const AboutPage = () => {
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation(0.15);
 
+  useEffect(() => {
+    document.title = PAGE_TITLE;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector(
+      'meta[property="og:description"]'
+    );
+
+    if (metaDescription) metaDescription.setAttribute("content", PAGE_DESCRIPTION);
+    if (ogTitle) ogTitle.setAttribute("content", PAGE_TITLE);
+    if (ogDescription) ogDescription.setAttribute("content", PAGE_DESCRIPTION);
+
+    return () => {
+      document.title = HOME_TITLE;
+      if (metaDescription) metaDescription.setAttribute("content", HOME_DESCRIPTION);
+      if (ogTitle) ogTitle.setAttribute("content", HOME_TITLE);
+      if (ogDescription) ogDescription.setAttribute("content", HOME_DESCRIPTION);
+    };
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
+      <section
+        aria-labelledby="about-heading"
+        className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden"
+      >
         <HeroVideoOverlay />
         <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16 anim-fade-in">
-          <h1 className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6">
+          <h1
+            id="about-heading"
+            className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6"
+          >
             <span className="relative inline-block">
               About us
               <WavyUnderline
@@ -49,7 +85,11 @@ export const AboutPage = () => {
         </div>
 
         {/* Two Column Text */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed anim-fade-in anim-stagger-1">
+        <div
+          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed anim-fade-in anim-stagger-1"
+          role="region"
+          aria-label="About LM Studios"
+        >
           <p className="text-base md:text-lg">
             Founded in 2025, LM Studios has evolved from web design into
             building custom web applications and business systems for
@@ -83,8 +123,13 @@ export const AboutPage = () => {
       />
 
       {/* Values Cards */}
-      <section ref={valuesRef} className="relative py-16 px-6">
+      <section
+        ref={valuesRef}
+        aria-label="Our core values"
+        className="relative py-16 px-6"
+      >
         <div className="max-w-[1400px] mx-auto">
+          <h2 className="sr-only">Our Core Values</h2>
           <div
             className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6
               transition-all ease-out duration-300 md:duration-500
