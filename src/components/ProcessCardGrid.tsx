@@ -45,7 +45,7 @@ export const ProcessCardGrid = ({
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className={`min-w-[calc(100vw-80px)] flex-shrink-0 md:min-w-0 opacity-0 ${
+                className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto opacity-0 ${
                   isVisible
                     ? `animate-[fadeInUp_0.8s_ease-out_${DELAYS[idx] || DELAYS[DELAYS.length - 1]}_both]`
                     : ""
