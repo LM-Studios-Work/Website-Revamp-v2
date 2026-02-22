@@ -88,9 +88,33 @@ export const appDevelopmentFAQ: FAQItem[] = [
   },
 ];
 
+export const photographyFAQ: FAQItem[] = [
+  {
+    question: "Where do you offer photography services?",
+    answer:
+      "We currently offer on-site photography in Johannesburg and Gqeberha (Port Elizabeth). Travel costs are included in the package for both cities.",
+  },
+  {
+    question: "How long does a photoshoot take?",
+    answer:
+      "Our standard package includes 1–2 hours of on-site shooting. This is usually sufficient to capture a full range of high-quality images for your brand or business.",
+  },
+  {
+    question: "What is included in the photography package?",
+    answer:
+      "The package includes on-site shooting (1–2 hours), professional editing of all photos, and delivery of high-definition images ready for web and print use. Travel within Johannesburg and Gqeberha is also included.",
+  },
+  {
+    question: "How will I receive my edited photos?",
+    answer:
+      "Edited photos are delivered digitally in high resolution. You will receive a download link once editing is complete, typically within a few business days after the shoot.",
+  },
+];
+
 export const serviceFAQs: Record<string, FAQItem[]> = {
   webDesign: webDesignFAQ,
   seo: seoFAQ,
   marketing: marketingFAQ,
   appDevelopment: appDevelopmentFAQ,
+  photography: photographyFAQ,
 };
