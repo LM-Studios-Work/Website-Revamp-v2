@@ -19,7 +19,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const SERVICE_NAV_ITEMS: ServiceNavItem[] = [
   { to: "/services/web-design", label: "Web Design" },
-  { to: "/services/web-design#photography", label: "Photography" },
+  { to: "/services/photography", label: "Photography" },
   { to: "/services/seo", label: "SEO" },
   { to: "/services/app-development", label: "App Development" },
 ];

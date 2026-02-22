@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { NAV_ITEMS, SERVICE_NAV_ITEMS } from "@/constants/navigation";
 import { COLORS } from "@/constants/colors";
 import { NavWave } from "@/components/NavWave";
@@ -15,27 +15,8 @@ interface MobileMenuProps {
 export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
-  const router = useRouter();
 
   const isActive = (path: string) => pathname === path;
-
-  const handleHashNavigation = (to: string) => {
-    onClose();
-    const [path, hash] = to.split("#");
-    setTimeout(() => {
-      if (path === pathname) {
-        const el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-          window.history.replaceState(null, "", to);
-        } else {
-          window.location.hash = hash || "";
-        }
-      } else {
-        router.push(to);
-      }
-    }, 220);
-  };
 
   return (
     <div
@@ -124,34 +105,17 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     <ul className="flex flex-col items-center gap-4 list-none">
                       {SERVICE_NAV_ITEMS.map((service) => (
                         <li key={service.to}>
-                          {service.to.includes("#") ? (
-                            <a
-                              href={service.to}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleHashNavigation(service.to);
-                              }}
-                              className={`text-xl transition-colors duration-200 ${
-                                isActive(service.to)
-                                  ? "text-[#e7fe56]"
-                                  : "text-white/40 hover:text-white/70"
-                              }`}
-                            >
-                              {service.label}
-                            </a>
-                          ) : (
-                            <Link
-                              href={service.to}
-                              onClick={onClose}
-                              className={`text-xl transition-colors duration-200 ${
-                                isActive(service.to)
-                                  ? "text-[#e7fe56]"
-                                  : "text-white/40 hover:text-white/70"
-                              }`}
-                            >
-                              {service.label}
-                            </Link>
-                          )}
+                          <Link
+                            href={service.to}
+                            onClick={onClose}
+                            className={`text-xl transition-colors duration-200 ${
+                              isActive(service.to)
+                                ? "text-[#e7fe56]"
+                                : "text-white/40 hover:text-white/70"
+                            }`}
+                          >
+                            {service.label}
+                          </Link>
                         </li>
                       ))}
                     </ul>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { NAV_ITEMS, SERVICE_NAV_ITEMS } from "@/constants/navigation";
 import { COLORS } from "@/constants/colors";
 import { NavWave } from "@/components/NavWave";
@@ -48,16 +48,12 @@ export const DesktopMenu = () => {
             <ul className="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-neutral-900/95 backdrop-blur-md border border-white/10 rounded-xl py-2 px-1 min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 list-none z-50">
               {SERVICE_NAV_ITEMS.map((service) => (
                 <li key={service.to}>
-                  {service.to.includes("#") ? (
-                    <DesktopPhotographyLink />
-                  ) : (
-                    <Link
-                      href={service.to}
-                      className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
-                    >
-                      {service.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={service.to}
+                    className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
+                  >
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -65,41 +61,5 @@ export const DesktopMenu = () => {
         </li>
       ))}
     </ul>
-  );
-};
-
-const DesktopPhotographyLink = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const href = "/services/web-design#photography";
-
-  const onClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const [path, hash] = href.split("#");
-    if (pathname === path) {
-      const el = document.getElementById(hash || "");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-        window.history.replaceState(null, "", href);
-      } else {
-        window.location.hash = hash || "";
-      }
-    } else {
-      router.push(href);
-      setTimeout(() => {
-        const el = document.getElementById("photography");
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 120);
-    }
-  };
-
-  return (
-    <a
-      href={href}
-      onClick={onClick}
-      className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
-    >
-      Photography
-    </a>
   );
 };
