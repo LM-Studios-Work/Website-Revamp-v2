@@ -1,5 +1,8 @@
+"use client";
+
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { NAV_ITEMS, SERVICE_NAV_ITEMS } from "@/constants/navigation";
 import { COLORS } from "@/constants/colors";
 import { NavWave } from "@/components/NavWave";
@@ -10,17 +13,17 @@ interface MobileMenuProps {
 }
 
 export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   const handleHashNavigation = (to: string) => {
     onClose();
     const [path, hash] = to.split("#");
     setTimeout(() => {
-      if (path === location.pathname) {
+      if (path === pathname) {
         const el = document.getElementById(hash);
         if (el) {
           el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -29,7 +32,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           window.location.hash = hash || "";
         }
       } else {
-        navigate(to);
+        router.push(to);
       }
     }, 220);
   };
@@ -138,7 +141,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                             </a>
                           ) : (
                             <Link
-                              to={service.to}
+                              href={service.to}
                               onClick={onClose}
                               className={`text-xl transition-colors duration-200 ${
                                 isActive(service.to)
@@ -156,7 +159,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 </>
               ) : (
                 <Link
-                  to={item.to}
+                  href={item.to}
                   onClick={onClose}
                   className={`text-3xl transition-colors duration-200 relative inline-block pb-2 ${
                     isActive(item.to)

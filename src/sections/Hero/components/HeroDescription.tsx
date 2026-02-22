@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 
 export const HeroDescription = () => {
   return (
@@ -10,8 +11,7 @@ export const HeroDescription = () => {
         stop chasing leads and start closing them.
       </p>
 
-      <Link
-        to="/contact"
+      <Link href="/contact"
         className="inline-flex items-center text-sm md:text-base font-semibold bg-[#d5bff0] hover:bg-[#d5bff0]/90 text-black pl-6 pr-2 py-2 rounded-full transition-all duration-300 animate-[fadeInUp_0.8s_ease-out_0.8s_both] hover:scale-105"
       >
         Ask for a quote

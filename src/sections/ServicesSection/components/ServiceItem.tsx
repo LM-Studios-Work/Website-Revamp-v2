@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 
 export type ServiceItemProps = {
   href: string;
@@ -16,8 +17,7 @@ export const ServiceItem = (props: ServiceItemProps) => {
       : "";
 
   return (
-    <Link
-      to={props.href}
+    <Link href={props.href}
       className={`group block w-full py-8 md:py-12 px-6 
         md:hover:bg-white/5 md:hover:translate-x-2 
         transition-all ease-out

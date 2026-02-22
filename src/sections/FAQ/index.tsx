@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import type { FAQItem } from "./constants";
 import { generalFAQ } from "./constants";

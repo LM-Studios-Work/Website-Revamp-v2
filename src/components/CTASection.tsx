@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { COLORS, type BrandColor } from "@/constants/colors";
 
@@ -39,8 +40,7 @@ export const CTASection = ({
               </h2>
             </div>
             <div>
-              <Link
-                to={linkTo}
+              <Link href={linkTo}
                 className="inline-flex items-center text-sm md:text-base font-semibold text-black pl-6 pr-2 py-3 rounded-full hover:opacity-80 transition-colors"
                 style={{ backgroundColor: bgColor }}
               >

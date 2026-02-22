@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 
 export type FooterColumnProps = {
   title: string;
@@ -22,8 +23,7 @@ export const FooterColumn = (props: FooterColumnProps) => {
         {props.links.map((link, index) => (
           <li key={index}>
             {isInternal(link.href) ? (
-              <Link
-                to={link.href}
+              <Link href={link.href}
                 title={link.title}
                 className="text-white/70 hover:text-white text-base md:text-lg transition-colors"
               >
