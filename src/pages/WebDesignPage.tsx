@@ -23,6 +23,7 @@ import { ServiceHero } from "@/components/ServiceHero";
 import { ProcessCardGrid } from "@/components/ProcessCardGrid";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { COLORS } from "@/constants/colors";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
@@ -151,6 +152,13 @@ const supportTiers = [
 ];
 
 export const WebDesignPage = () => {
+  usePageMeta({
+    title: "Web Design That Converts | Custom Code & UX | LM Studios",
+    description:
+      "Conversion-driven web design built on custom code & expert UX/UI. Johannesburg businesses trust us to turn visitors into qualified leads. Get your free quote.",
+    canonicalUrl: "https://lmstudios.co.za/services/web-design",
+  });
+
   const { ref: bespokeRef, isVisible: bespokeVisible } =
     useScrollAnimation(0.15);
   const { ref: standardRef, isVisible: standardVisible } =
