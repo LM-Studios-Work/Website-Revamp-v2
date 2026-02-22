@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { ProcessCard } from "@/components/ProcessCard";
 import { useEffect } from "react";
-import { PhotographySection } from "../sections/PhotographySection";
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { FAQ } from "@/sections/FAQ";
@@ -681,9 +680,6 @@ export const WebDesignPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Photography Section */}
-      <PhotographySection />
 
       {/* SEO & Marketing Section */}
       <SectionWrapper className="z-10">
