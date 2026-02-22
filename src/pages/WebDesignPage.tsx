@@ -153,9 +153,10 @@ const supportTiers = [
 
 export const WebDesignPage = () => {
   usePageMeta({
-    title: "Web Design That Converts | Custom Code & UX | LM Studios",
+    title:
+      "Professional Web Design South Africa | From R1,999 | LM Studios Johannesburg",
     description:
-      "Conversion-driven web design built on custom code & expert UX/UI. Johannesburg businesses trust us to turn visitors into qualified leads. Get your free quote.",
+      "Affordable, mobile-responsive web design in Johannesburg, Pretoria & across South Africa. Once-off packages from R1,999 with free hosting, on-page SEO & a 6-month warranty. No retainers. Get your free quote from LM Studios.",
     canonicalUrl: "https://lmstudios.co.za/services/web-design",
   });
 
@@ -194,12 +195,37 @@ export const WebDesignPage = () => {
     }
   }, [location.pathname, location.hash]);
 
+  // Inject JSON-LD FAQ Schema for Google rich results
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: webDesignFAQ.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(faqSchema);
+    script.id = "faq-schema-web-design";
+    document.head.appendChild(script);
+    return () => {
+      const el = document.getElementById("faq-schema-web-design");
+      if (el) el.remove();
+    };
+  }, []);
+
   return (
     <>
       <ServiceHero
         title="Web Design"
         underlineColor="lime"
-        description="We design and develop user-friendly websites using modern frameworks, offering both standard features or custom solutions to meet your needs. Whether you opt for a simple setup with built-in functionalities or a fully tailored design with unique features, our approach ensures an efficient solution that aligns perfectly with your business requirements."
+        description="South Africa's trusted web design agency. From sleek portfolio sites starting at R1,999 to full business websites, e-commerce stores, and event pages — LM Studios delivers mobile-responsive, SEO-optimized websites with transparent once-off pricing, free first-year hosting, and a 6-month post-launch warranty. Based in Midrand, serving Johannesburg, Pretoria, and businesses across Gauteng."
       />
 
       {/* Behind the scenes section */}
@@ -252,18 +278,20 @@ export const WebDesignPage = () => {
                 Tailored web design development
               </h2>
               <p className="box-border caret-transparent mb-8">
-                Our <strong className="font-semibold">Custom Pack</strong> We
-                believe unique businesses deserve unique websites. We don't rely
-                on pre-made themes; instead, we build from the ground up. This
-                comprehensive process includes:{" "}
+                Need a{" "}
                 <strong className="font-semibold">
-                  sitemap creation, wireframing, mockups
+                  high-converting website that stands out in Johannesburg's
+                  competitive market
                 </strong>
-                , and integration using{" "}
+                ? Our Custom Pack is built for businesses that refuse to blend
+                in. We skip generic templates entirely — every pixel is designed
+                from scratch through a structured process:{" "}
                 <strong className="font-semibold">
-                  XML, SCSS, and JavaScript
+                  sitemap planning, wireframing, UI mockups
                 </strong>
-                , ensuring a website that meets your exact specifications.
+                , and hand-coded integration. The result is a fast, secure,
+                fully responsive website engineered to rank on Google and turn
+                visitors into paying clients.
               </p>
             </div>
           </div>
@@ -292,17 +320,25 @@ export const WebDesignPage = () => {
                 Efficiency and simplicity for your business
               </h3>
               <p className="text-lg text-white/80 leading-relaxed">
-                Perfect for businesses that need a{" "}
+                Looking for{" "}
                 <strong className="font-semibold text-white">
-                  clean, professional web presence without the wait
-                </strong>
-                . Built exclusively with LM Studios' Website Builder and
-                standard options, this approach focuses on delivering a
-                functional, user-friendly website{" "}
+                  affordable web design in South Africa
+                </strong>{" "}
+                without sacrificing quality? Our standard packages — from a{" "}
                 <strong className="font-semibold text-white">
-                  with speed and precision
-                </strong>
-                .
+                  R1,999 portfolio site
+                </strong>{" "}
+                to a{" "}
+                <strong className="font-semibold text-white">
+                  R4,999 professional business website
+                </strong>{" "}
+                — deliver mobile-responsive, Google-optimized pages in as few as
+                4 working days. No hidden fees, no monthly retainers — just
+                transparent once-off pricing with{" "}
+                <strong className="font-semibold text-white">
+                  free first-year hosting
+                </strong>{" "}
+                included.
               </p>
             </div>
             <div
