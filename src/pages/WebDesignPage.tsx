@@ -225,7 +225,7 @@ export const WebDesignPage = () => {
       <ServiceHero
         title="Web Design"
         underlineColor="lime"
-        description="South Africa's trusted web design agency. From sleek portfolio sites starting at R1,999 to full business websites, e-commerce stores, and event pages — LM Studios delivers mobile-responsive, SEO-optimized websites with transparent once-off pricing, free first-year hosting, and a 6-month post-launch warranty. Based in Midrand, serving Johannesburg, Pretoria, and businesses across Gauteng."
+        description="South Africa's trusted web design agency. From portfolio sites starting at R1,999 to full business websites, e-commerce stores, and event pages. LM Studios delivers mobile-responsive, SEO-optimized websites with transparent once-off pricing, free first-year hosting, and a 6-month post-launch warranty. Based in Midrand, serving Johannesburg, Pretoria, and businesses across Gauteng."
       />
 
       {/* Behind the scenes section */}
@@ -270,28 +270,18 @@ export const WebDesignPage = () => {
               }`}
             >
               <h2 className="text-[31.4375px] font-semibold box-border caret-transparent leading-[37.725px] mb-10 font-obviously md:text-[50px] md:leading-[60px]">
-                Bespoke Development
-                <span className="text-[12.8px] font-thin box-border caret-transparent inline-block leading-[12.8px] text-center text-nowrap align-middle border-purple-300 mx-4 px-4 py-[9.6px] rounded-[800px] border-2 border-solid md:text-[19.2px] md:leading-[19.2px]">
-                  Custom Solutions
-                </span>
+                Custom Web Design
                 <br />
-                Tailored web design development
+                Built for South African Businesses
               </h2>
               <p className="box-border caret-transparent mb-8">
-                Need a{" "}
-                <strong className="font-semibold">
-                  high-converting website that stands out in Johannesburg's
-                  competitive market
-                </strong>
-                ? Our Custom Pack is built for businesses that refuse to blend
-                in. We skip generic templates entirely — every pixel is designed
-                from scratch through a structured process:{" "}
-                <strong className="font-semibold">
-                  sitemap planning, wireframing, UI mockups
-                </strong>
-                , and hand-coded integration. The result is a fast, secure,
-                fully responsive website engineered to rank on Google and turn
-                visitors into paying clients.
+                Need a high-converting website that stands out in Johannesburg's
+                competitive market? We skip generic templates entirely. Every
+                page is designed from scratch through a structured process:
+                sitemap planning, wireframing, UI mockups, and hand-coded
+                integration. The result is a fast, secure, fully responsive
+                website engineered to rank on Google and turn visitors into
+                paying clients.
               </p>
             </div>
           </div>
@@ -311,33 +301,23 @@ export const WebDesignPage = () => {
             >
               <div className="mb-6">
                 <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                  Affordable Web Design
+                  <br />
                   <span className="italic text-outline-2">
-                    Streamlined Essentials
+                    Packages in South Africa
                   </span>
                 </h2>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-                Efficiency and simplicity for your business
+                Professional websites starting from R1,999
               </h3>
               <p className="text-lg text-white/80 leading-relaxed">
-                Looking for{" "}
-                <strong className="font-semibold text-white">
-                  affordable web design in South Africa
-                </strong>{" "}
-                without sacrificing quality? Our standard packages — from a{" "}
-                <strong className="font-semibold text-white">
-                  R1,999 portfolio site
-                </strong>{" "}
-                to a{" "}
-                <strong className="font-semibold text-white">
-                  R4,999 professional business website
-                </strong>{" "}
-                — deliver mobile-responsive, Google-optimized pages in as few as
-                4 working days. No hidden fees, no monthly retainers — just
-                transparent once-off pricing with{" "}
-                <strong className="font-semibold text-white">
-                  free first-year hosting
-                </strong>{" "}
+                Looking for affordable web design in South Africa without
+                sacrificing quality? Our packages range from a R1,999 portfolio
+                site to a R4,999 professional business website. All packages
+                deliver mobile-responsive, Google-optimized pages in as few as
+                4 working days. No hidden fees, no monthly retainers. Just
+                transparent once-off pricing with free first-year hosting
                 included.
               </p>
             </div>
@@ -470,11 +450,6 @@ export const WebDesignPage = () => {
             title: "Wireframes",
             description:
               "Wireframes outline layout and functionality, providing a clear, ready page structure.",
-            customBadge: (
-              <span className="text-xs font-normal inline-block text-center whitespace-nowrap align-middle border border-black/30 ml-2 px-2.5 py-1 rounded-full">
-                Custom Pack only
-              </span>
-            ),
           },
         ]}
       />
@@ -929,7 +904,7 @@ export const WebDesignPage = () => {
       </section>
 
       {/* FAQ */}
-      <FAQ items={webDesignFAQ} title="Web Design — FAQ" />
+      <FAQ items={webDesignFAQ} title="Web Design FAQ" />
 
       {/* CTA Section */}
       <SectionWrapper className="z-10">
