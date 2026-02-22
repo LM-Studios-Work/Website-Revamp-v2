@@ -65,9 +65,8 @@ export const SEOPage = () => {
               </h2>
               <p className="text-lg text-white/70 leading-relaxed">
                 Your position on Google acts as the filter for your business's success.
-                At LM Studios, we don't just chase vanity metrics—we engineer data-driven
-                SEO strategies that put your brand in front of customers exactly when they
-                are ready to buy. Whether you're a local business in Pretoria needing more
+                At LM Studios, we build data-driven SEO strategies that put your
+                brand in front of customers exactly when they are ready to buy. Whether you're a local business in Pretoria needing more
                 foot traffic or a startup in Cape Town looking for your first leads, we
                 build the digital foundation that makes you visible.
               </p>
@@ -253,7 +252,7 @@ export const SEOPage = () => {
       </SectionWrapper>
 
       {/* FAQ */}
-      <FAQ items={seoFAQ} title="SEO — FAQ" />
+      <FAQ items={seoFAQ} title="SEO FAQ" />
 
       {/* CTA Section */}
       <CTASection

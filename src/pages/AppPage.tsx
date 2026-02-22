@@ -168,13 +168,11 @@ export const AppPage = () => {
             </div>
             <div className={`md:w-1/2 flex flex-col gap-6 opacity-0 ${ctaCardsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
               <p className="text-lg text-white/70 leading-relaxed">
-                Our team specializes in building custom web platforms that are{" "}
-                <strong className="text-white font-semibold">
-                  secure, scalable, and perfectly aligned
-                </strong>{" "}
-                with your operational needs. From booking systems to inventory tracking,
-                admin dashboards to workflow automation—we build solutions that grow with
-                your organization.
+                Our team specializes in building custom web platforms that are
+                secure, scalable, and perfectly aligned with your operational
+                needs. From booking systems to inventory tracking, admin
+                dashboards to workflow automation, we build solutions that grow
+                with your organization.
               </p>
               <p className="text-lg text-white/70 leading-relaxed">
                 Every project is unique. Contact us to discuss your specific requirements
@@ -284,7 +282,7 @@ export const AppPage = () => {
       </SectionWrapper>
 
       {/* FAQ */}
-      <FAQ items={appDevelopmentFAQ} title="Custom Web Applications — FAQ" />
+      <FAQ items={appDevelopmentFAQ} title="Custom Web Applications FAQ" />
 
       {/* CTA Section */}
       <CTASection
