@@ -40,19 +40,21 @@ export const ProcessCardGrid = ({
             )}
           </div>
         )}
-        <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-          {cards.map((card, idx) => (
-            <div
-              key={idx}
-              className={`opacity-0 ${
-                isVisible
-                  ? `animate-[fadeInUp_0.8s_ease-out_${DELAYS[idx] || DELAYS[DELAYS.length - 1]}_both]`
-                  : ""
-              }`}
-            >
-              <ProcessCard {...card} />
-            </div>
-          ))}
+        <div className="overflow-x-auto scrollbar-hide -mx-6 md:mx-0 md:overflow-visible">
+          <div className="flex gap-4 px-6 md:grid md:grid-cols-3 md:gap-6 md:px-0">
+            {cards.map((card, idx) => (
+              <div
+                key={idx}
+                className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto opacity-0 ${
+                  isVisible
+                    ? `animate-[fadeInUp_0.8s_ease-out_${DELAYS[idx] || DELAYS[DELAYS.length - 1]}_both]`
+                    : ""
+                }`}
+              >
+                <ProcessCard {...card} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
