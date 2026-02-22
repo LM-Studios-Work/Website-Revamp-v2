@@ -7,6 +7,9 @@ import {
   Check,
   Clock,
   ArrowRight,
+  Shield,
+  Wrench,
+  Server,
 } from "lucide-react";
 import { ProcessCard } from "@/components/ProcessCard";
 import { useEffect } from "react";
@@ -21,6 +24,8 @@ import { ProcessCardGrid } from "@/components/ProcessCardGrid";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { COLORS } from "@/constants/colors";
+import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
+import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 
 const packages = [
   {
@@ -118,6 +123,33 @@ const iconMap = { Briefcase, Globe, Layers, Calendar, ShoppingCart };
 
 const ACCENT = COLORS.limeButton;
 
+const supportTiers = [
+  {
+    task: "Standard Update",
+    description: "Minor text edits, image swaps, or contact detail updates",
+    fee: "R250",
+    unit: "per request",
+  },
+  {
+    task: "New Section",
+    description: "Adding a new UI block (e.g., gallery or FAQ) to an existing page",
+    fee: "R450 – R650",
+    unit: "",
+  },
+  {
+    task: "New Page",
+    description: "Building and deploying a brand new page within the existing design",
+    fee: "R850 – R1,250",
+    unit: "",
+  },
+  {
+    task: "Technical Consulting",
+    description: "Investigating external API issues or technical SEO audits",
+    fee: "R550",
+    unit: "/ hour",
+  },
+];
+
 export const WebDesignPage = () => {
   const { ref: bespokeRef, isVisible: bespokeVisible } =
     useScrollAnimation(0.15);
@@ -128,6 +160,10 @@ export const WebDesignPage = () => {
   const { ref: goodHandsRef, isVisible: goodHandsVisible } =
     useScrollAnimation(0.15);
   const { ref: projectsRef, isVisible: projectsVisible } =
+    useScrollAnimation(0.15);
+  const { ref: warrantyRef, isVisible: warrantyVisible } =
+    useScrollAnimation(0.15);
+  const { ref: supportRef, isVisible: supportVisible } =
     useScrollAnimation(0.15);
 
   const location = useLocation();
@@ -398,6 +434,216 @@ export const WebDesignPage = () => {
           },
         ]}
       />
+
+      {/* What's Included — Warranty & Hosting */}
+      <section ref={warrantyRef} className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div
+            className={`mb-12 md:mb-16 opacity-0 ${
+              warrantyVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                : ""
+            }`}
+          >
+            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+              What's{" "}
+              <span className="italic text-outline-2">included</span>
+            </h2>
+            <p className="text-lg text-white/70 leading-relaxed max-w-[650px]">
+              Every project ships with built-in peace of mind — no hidden costs,
+              no surprises.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Warranty Card */}
+            <div
+              className={`rounded-3xl p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                <Shield className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl font-semibold font-obviously mb-3">
+                6-Month Warranty
+              </h3>
+              <p className="text-black/80 text-sm leading-relaxed mb-6 flex-1">
+                Every build includes a 6-month post-launch warranty covering bug
+                fixes, browser compatibility across Chrome, Safari and Edge, and
+                minor content adjustments at no extra charge.
+              </p>
+              <div className="border-t border-black/10 pt-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">Code bug fixes &amp; broken links</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">Browser compatibility patches</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">Minor text &amp; image swaps</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Hosting Card */}
+            <div
+              className={`rounded-3xl p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                <Server className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl font-semibold font-obviously mb-3">
+                Hosting &amp; Domain
+              </h3>
+              <p className="text-black/80 text-sm leading-relaxed mb-6 flex-1">
+                Your first year of hosting is on us. After that, we keep things
+                simple and affordable so your site stays live without the
+                headache.
+              </p>
+              <div className="border-t border-black/10 pt-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">First year hosting — free</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">.com renewal — R400 / year</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">.co.za renewal — R150 / year</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Maintenance Card */}
+            <div
+              className={`rounded-3xl p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                <Wrench className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl font-semibold font-obviously mb-3">
+                Technical Health
+              </h3>
+              <p className="text-black/80 text-sm leading-relaxed mb-6 flex-1">
+                We take responsibility for keeping your site fast, secure, and
+                up to date — so you can focus on running your business.
+              </p>
+              <div className="border-t border-black/10 pt-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">Security &amp; dependency patches</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">Hosting &amp; SSL management</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span className="text-sm">Core Web Vitals monitoring</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ongoing Support — Post-Warranty */}
+      <section ref={supportRef} className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div
+              className={`opacity-0 ${
+                supportVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                  : ""
+              }`}
+            >
+              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
+                Ongoing{" "}
+                <span className="italic text-outline-2">support</span>
+              </h2>
+              <p className="text-lg text-white/70 leading-relaxed max-w-[550px]">
+                After your warranty period, you only pay for what you use.
+                No retainers, no lock-in contracts.
+              </p>
+            </div>
+          </div>
+
+          {/* Support Tiers Table */}
+          <div
+            className={`rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden opacity-0 ${
+              supportVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
+                : ""
+            }`}
+          >
+            {/* Desktop header */}
+            <div className="hidden md:grid md:grid-cols-[1fr_2fr_auto] gap-6 px-8 py-5 border-b border-white/10 text-xs uppercase tracking-widest text-white/40 font-semibold">
+              <span>Service</span>
+              <span>Description</span>
+              <span className="text-right">Fee</span>
+            </div>
+            {supportTiers.map((tier, idx) => (
+              <div
+                key={tier.task}
+                className={`grid grid-cols-1 md:grid-cols-[1fr_2fr_auto] gap-3 md:gap-6 px-8 py-6 ${
+                  idx < supportTiers.length - 1
+                    ? "border-b border-white/5"
+                    : ""
+                } transition-colors hover:bg-white/[0.03]`}
+              >
+                <span className="text-white font-semibold text-base">
+                  {tier.task}
+                </span>
+                <span className="text-white/60 text-sm leading-relaxed">
+                  {tier.description}
+                </span>
+                <span className="text-[#b4eb2c] font-semibold text-base md:text-right whitespace-nowrap">
+                  {tier.fee}
+                  {tier.unit && (
+                    <span className="text-white/40 text-xs ml-1">
+                      {tier.unit}
+                    </span>
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Process note */}
+          <p
+            className={`mt-8 text-sm text-white/40 leading-relaxed max-w-[700px] opacity-0 ${
+              supportVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]"
+                : ""
+            }`}
+          >
+            All requests follow a formal workflow: submit via email → receive a
+            quote → we build and test on a staging branch → deploy to production
+            → invoice within 7 days.
+          </p>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <TestimonialsHeader />
+      <TestimonialsGrid />
 
       {/* Our Projects Section */}
       <section ref={projectsRef} className="relative z-10 py-16 md:py-28 px-6">

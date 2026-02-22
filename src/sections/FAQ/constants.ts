@@ -31,6 +31,18 @@ export const webDesignFAQ: FAQItem[] = [
     question: "Do you provide responsive designs?",
     answer: "All our designs are mobile-first and responsive across common breakpoints.",
   },
+  {
+    question: "What does the 6-month warranty cover?",
+    answer: "The warranty covers bug fixes, broken links, browser compatibility across Chrome, Safari and Edge, and minor content adjustments (small text or image swaps under 15 minutes). Structural changes, new features, or issues caused by third-party services are not included.",
+  },
+  {
+    question: "What happens after the warranty expires?",
+    answer: "Your account moves to our pay-as-you-go support model — no retainers, no lock-in. Standard updates start at R250 per request. All work is quoted upfront, built in a staging environment, tested, and deployed to production.",
+  },
+  {
+    question: "How does hosting work?",
+    answer: "Hosting is free for the first year. After that, annual renewal is R400 for a .com domain or R150 for a .co.za domain. We manage the hosting environment and SSL certificates on your behalf.",
+  },
 ];
 
 export const seoFAQ: FAQItem[] = [
