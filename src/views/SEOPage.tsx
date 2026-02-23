@@ -36,7 +36,38 @@ export const SEOPage = () => {
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.15);
 
   return (
-    <>
+    <div className="relative">
+      {/* Coming Soon Overlay */}
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <div className="inline-block text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6 border border-[#d5bff0] text-[#d5bff0]">
+            Coming Soon
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            SEO Services
+            <br />
+            <span className="italic text-outline-15">Launching Soon</span>
+          </h1>
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10">
+            We're putting the finishing touches on our comprehensive SEO service offerings.
+            Get in touch to be notified when we launch or to discuss your SEO needs now.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center text-base font-semibold bg-[#d5bff0] text-black pl-8 pr-3 py-3 rounded-full hover:bg-[#d5bff0]/90 hover:scale-105 transition-all duration-300"
+          >
+            Get Notified
+            <span className="ml-3 w-10 h-10 bg-black rounded-full flex items-center justify-center">
+              <svg className="w-5 h-5 text-[#d5bff0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+          </Link>
+        </div>
+      </div>
+
+      {/* SEO Content - Hidden but indexed */}
+      <div className="invisible h-0 overflow-hidden" aria-hidden="true">
       <ServiceHero
         title={<>Search Engine<br />Optimization</>}
         underlineColor="purple"
@@ -261,6 +292,7 @@ export const SEOPage = () => {
         linkText="Start ranking today"
         color="lime"
       />
-    </>
+      </div>
+    </div>
   );
 };
