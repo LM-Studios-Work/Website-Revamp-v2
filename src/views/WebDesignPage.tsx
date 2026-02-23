@@ -6,7 +6,7 @@ import {
   Buildings,
   GraduationCap,
   Cake,
-  StorefrontLight as Storefront,
+  Storefront,
   Check,
   Clock,
   ArrowRight,
