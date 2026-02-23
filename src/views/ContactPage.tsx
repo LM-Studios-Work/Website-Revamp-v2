@@ -6,9 +6,9 @@ import { COLORS } from "@/constants/colors";
 
 export const ContactPage = () => {
   return (
-    <div className="relative min-h-screen bg-black text-white selection:bg-[#b4eb2c] selection:text-black">
+    <>
       {/* Hero Section */}
-      <section className="relative z-10 flex flex-col justify-center min-h-[80vh] pt-40 pb-16 px-6 overflow-hidden">
+      <section className="relative flex flex-col justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden">
         <HeroVideoOverlay />
 
         <div className="relative z-30 max-w-[1200px] w-full mx-auto">
@@ -33,7 +33,7 @@ export const ContactPage = () => {
       </section>
 
       {/* Form Section */}
-      <section className="relative z-20 pb-32 px-6">
+      <section className="relative pb-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <form
             action="https://formsubmit.co/lm.studios.web@gmail.com"
@@ -75,6 +75,6 @@ export const ContactPage = () => {
           </form>
         </div>
       </section>
-    </div>
+    </>
   );
 };
