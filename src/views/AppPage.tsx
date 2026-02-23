@@ -100,9 +100,9 @@ export const AppPage = () => {
               </h2>
               <p className="text-lg text-white/70 leading-relaxed mb-8">
                 Your web application is the operational backbone of your organization.
-                We understand the importance of secure, reliable systems that streamline
-                workflows and scale with your business. Our senior developers specialize
-                in React, Node.js, PostgreSQL, and modern cloud infrastructure.
+                We build reliable, lightning-fast platforms that automate your daily admin,
+                so you can focus on growing your business. Our senior developers create 
+                secure systems that streamline workflows and scale with your needs.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -131,6 +131,24 @@ export const AppPage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Dedicated Booking Systems SEO Section */}
+      <section className="relative py-16 px-6 bg-white/5">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            Custom <span className="italic text-[#72f5e3]">Booking & Scheduling</span> Systems
+          </h2>
+          <p className="text-lg text-white/70 mb-8 max-w-3xl">
+            Stop losing hours to manual scheduling and missed appointments. We build custom online booking platforms tailored to your exact workflow, complete with secure South African payment integrations (like PayFast and Yoco) and automated SMS reminders.
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white/60">
+            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Automated Email & SMS Notifications</li>
+            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Secure Upfront Deposit Processing</li>
+            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Real-time Calendar Syncing</li>
+            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Staff & Resource Management Dashboards</li>
+          </ul>
         </div>
       </section>
 
@@ -247,7 +265,7 @@ export const AppPage = () => {
       <SectionWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
-            { badge: "SECURITY", title: "Enterprise Grade Security", desc: "We implement OAuth2, JWT, and SOC2 compliant architectures for your peace of mind.", hoverColor: COLORS.cyan },
+            { badge: "SECURITY", title: "Bank-Level Security", desc: "We protect your business and customer data with enterprise-grade encryption and secure logins, giving you total peace of mind.", hoverColor: COLORS.cyan },
             { badge: "PERFORMANCE", title: "Edge-First Architecture", desc: "Optimized for global performance with edge functions and distributed database clusters.", hoverColor: COLORS.lime },
           ].map((card) => (
             <div
