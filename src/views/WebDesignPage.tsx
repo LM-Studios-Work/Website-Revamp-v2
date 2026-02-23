@@ -12,7 +12,7 @@ import {
   ArrowRight,
   Shield,
   Wrench,
-  Server,
+  HardDrives,
 } from "@phosphor-icons/react";
 import { ProcessCard } from "@/components/ProcessCard";
 import { useEffect } from "react";
@@ -488,7 +488,7 @@ export const WebDesignPage = () => {
               }`}
             >
               <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-6">
-                <Server className="w-5 h-5" />
+                <HardDrives className="w-5 h-5" />
               </div>
               <h3 className="text-2xl font-semibold font-obviously mb-3">
                 Hosting &amp; Domain
