@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import {
   Briefcase,
   Globe,
-  Layers,
+  Stack,
   Calendar,
   ShoppingCart,
   Check,
@@ -13,7 +13,7 @@ import {
   Shield,
   Wrench,
   Server,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { ProcessCard } from "@/components/ProcessCard";
 import { useEffect } from "react";
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
@@ -118,7 +118,7 @@ const packages = [
   },
 ];
 
-const iconMap = { Briefcase, Globe, Layers, Calendar, ShoppingCart };
+const iconMap = { Briefcase, Globe, Layers: Stack, Calendar, ShoppingCart };
 
 const ACCENT = COLORS.limeButton;
 

@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check } from "@phosphor-icons/react";
 import { PHOTOGRAPHY_FEATURES } from "../constants";
 
 export const PhotographyContent = () => {

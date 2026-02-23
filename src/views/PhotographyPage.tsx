@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Camera, Image, Clock, MapPin } from "lucide-react";
+import { Camera, Image, Clock, MapPin } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
 import { PhotographySection } from "@/sections/PhotographySection";
 import { ProcessCardGrid } from "@/components/ProcessCardGrid";
