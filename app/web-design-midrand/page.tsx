@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Web Design Midrand | LM Studios",
+  title: "Web Design Midrand",
   description:
     "Web design company based in Midrand, Gauteng. LM Studios builds affordable, high-performance websites for Midrand and surrounding businesses. Get a quote today.",
   alternates: {
