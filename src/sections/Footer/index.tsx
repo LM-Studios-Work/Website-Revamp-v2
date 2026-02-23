@@ -20,6 +20,8 @@ export const Footer = () => {
               <p className="text-xs text-white/30 leading-relaxed text-center flex flex-wrap justify-center gap-x-2 gap-y-1">
                 <a href="/web-design-johannesburg" className="hover:text-white/60 transition-colors">Web Design Johannesburg</a>
                 <span aria-hidden="true">|</span>
+                <a href="/web-design-midrand" className="hover:text-white/60 transition-colors">Web Design Midrand</a>
+                <span aria-hidden="true">|</span>
                 <a href="/services/web-design" className="hover:text-white/60 transition-colors">Web Designers in Pretoria</a>
                 <span aria-hidden="true">|</span>
                 <a href="/services/web-design" className="hover:text-white/60 transition-colors">Professional Website Design South Africa</a>
