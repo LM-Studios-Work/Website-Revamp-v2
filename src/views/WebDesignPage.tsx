@@ -2,17 +2,17 @@
 
 import { usePathname } from "next/navigation";
 import {
-  Briefcase,
-  Globe,
-  Stack,
-  Calendar,
-  ShoppingCart,
+  UserCircle,
+  Buildings,
+  GraduationCap,
+  Cake,
+  StorefrontLight as Storefront,
   Check,
   Clock,
   ArrowRight,
-  Shield,
-  Wrench,
-  HardDrives,
+  ShieldCheck,
+  Toolbox,
+  CloudArrowUp,
 } from "@phosphor-icons/react";
 import { ProcessCard } from "@/components/ProcessCard";
 import { useEffect } from "react";
@@ -118,7 +118,13 @@ const packages = [
   },
 ];
 
-const iconMap = { Briefcase, Globe, Layers: Stack, Calendar, ShoppingCart };
+const iconMap = { 
+  Briefcase: UserCircle, 
+  Globe: Buildings, 
+  Layers: GraduationCap, 
+  Calendar: Cake, 
+  ShoppingCart: Storefront 
+};
 
 const ACCENT = COLORS.limeButton;
 
@@ -453,7 +459,7 @@ export const WebDesignPage = () => {
               }`}
             >
               <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-6">
-                <Shield className="w-5 h-5" />
+                <ShieldCheck className="w-5 h-5" />
               </div>
               <h3 className="text-2xl font-semibold font-obviously mb-3">
                 6-Month Warranty
@@ -488,7 +494,7 @@ export const WebDesignPage = () => {
               }`}
             >
               <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-6">
-                <HardDrives className="w-5 h-5" />
+                <CloudArrowUp className="w-5 h-5" />
               </div>
               <h3 className="text-2xl font-semibold font-obviously mb-3">
                 Hosting &amp; Domain
@@ -523,7 +529,7 @@ export const WebDesignPage = () => {
               }`}
             >
               <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-6">
-                <Wrench className="w-5 h-5" />
+                <Toolbox className="w-5 h-5" />
               </div>
               <h3 className="text-2xl font-semibold font-obviously mb-3">
                 Technical Health
