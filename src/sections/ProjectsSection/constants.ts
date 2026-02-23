@@ -9,6 +9,19 @@ export const tagStyle = {
 
 export const projects: ProjectCardProps[] = [
   {
+    imageUrl: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
+    imageAlt: "Xclusive Barber - Davenport",
+    title: "Xclusive Barber - Davenport",
+    tags: [
+      { text: "Barber & Grooming", className: tagStyle.lime },
+      { text: "Booking System", className: tagStyle.purple },
+      { text: "Website Design", className: tagStyle.teal },
+    ],
+    description:
+      "A modern barber shop in Davenport. We designed their website and built a custom booking system for seamless client appointments.",
+    discoverMoreUrl: "https://v0-barbershop-durban.vercel.app/",
+  },
+  {
     imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
     imageAlt: "Ndila Ya Vhupo Travels",
     title: "Ndila Ya Vhupo Travels",
