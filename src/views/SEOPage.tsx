@@ -38,7 +38,7 @@ export const SEOPage = () => {
   return (
     <div className="relative">
       {/* Coming Soon Overlay */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <div className="inline-block text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6 border border-[#d5bff0] text-[#d5bff0]">
             Coming Soon
