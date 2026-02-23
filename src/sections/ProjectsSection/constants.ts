@@ -9,7 +9,7 @@ export const tagStyle = {
 
 export const projects: ProjectCardProps[] = [
   {
-    imageUrl: "/preview/nyp.webp",
+    imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
     imageAlt: "Ndila Ya Vhupo Travels",
     title: "Ndila Ya Vhupo Travels",
     tags: [
@@ -23,7 +23,7 @@ export const projects: ProjectCardProps[] = [
   },
 
   {
-    imageUrl: "/preview/Float.png",
+    imageUrl: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
     imageAlt: "MR FLOAT - Transport Service",
     title: "MR FLOAT - Transport Service",
     tags: [
@@ -36,7 +36,7 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "https://mrfloatlogistics.com",
   },
   {
-    imageUrl: "/preview/vuza-trading.png",
+    imageUrl: "/preview/aluminiumweb.vercel.app_(laptop) (1).webp",
     imageAlt: "Vuza Trading",
     title: "Vuza Trading",
     tags: [
@@ -49,7 +49,7 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "https://aluminiumweb.vercel.app/",
   },
   {
-    imageUrl: "/preview/mothupi-and-lesego.png",
+    imageUrl: "/preview/mothupi-and-lesego (1).webp",
     imageAlt: "Mothupi & Lesego - Wedding",
     title: "Mothupi & Lesego - Wedding",
     tags: [
@@ -63,7 +63,7 @@ export const projects: ProjectCardProps[] = [
   },
 
   {
-    imageUrl: "/preview/monare-selahle.png",
+    imageUrl: "/preview/monareselahle.co.za_(laptop) (1).webp",
     imageAlt: "Monare Selahle",
     title: "Monare Selahle",
     tags: [
@@ -75,7 +75,7 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "https://monareselahle.co.za",
   },
   {
-    imageUrl: "/preview/rokunda-mboyi.png",
+    imageUrl: "/preview/www.rokundamboyi.com_(laptop) (1).webp",
     imageAlt: "Rokunda Mboyi",
     title: "Rokunda Mboyi",
     tags: [
@@ -85,10 +85,10 @@ export const projects: ProjectCardProps[] = [
     ],
     description:
       "A graduate in Architecture, focused on creating spaces that inspire and elevate the human experience.",
-    discoverMoreUrl: "https://rokundamboyi.co.za/",
+    discoverMoreUrl: "https://rokundamboyi.com/",
   },
   {
-    imageUrl: "/preview/shots-by-ozee.png",
+    imageUrl: "/preview/shotsbyozee.co.za_(laptop) (2).webp",
     imageAlt: "Shots By Ozee",
     title: "Shots By Ozee",
     tags: [
@@ -101,7 +101,7 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "https://shotsbyozee.co.za",
   },
   {
-    imageUrl: "/preview/gordian-malaka.png",
+    imageUrl: "/preview/uvhu-portfolio-9rw1.vercel.app_(laptop).webp",
     imageAlt: "Gordian Malaka",
     title: "Gordian Malaka",
     tags: [

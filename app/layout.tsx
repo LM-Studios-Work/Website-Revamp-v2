@@ -106,10 +106,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/png" href="/lmstudioslogo.png" sizes="any" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/lmstudioslogo.png"
+          sizes="any"
+        />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
         />
       </head>
       <body>
@@ -138,7 +145,7 @@ export default function RootLayout({
             <ParticleBackground />
 
             <Header />
-            <main className="relative z-[2] grow shrink-0">
+            <main className="relative z-[2] grow shrink-0 min-h-screen">
               <div>{children}</div>
             </main>
             <Footer />
