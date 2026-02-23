@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../tailwind.css";
+import "./globals.css";
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
