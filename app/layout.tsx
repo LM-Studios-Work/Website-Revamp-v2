@@ -154,9 +154,9 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
-        {/* Google Analytics 4 — replace GA_MEASUREMENT_ID with your ID from analytics.google.com */}
+        {/* Google Analytics 4 */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+          src="https://www.googletagmanager.com/gtag/js?id=G-VM1K1RLW8J"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -164,7 +164,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID');
+            gtag('config', 'G-VM1K1RLW8J');
           `}
         </Script>
       </body>
