@@ -100,7 +100,7 @@ const packages = [
   },
   {
     title: "E-COMMERCE WEBSITE",
-    price: "R5,999",
+    price: "R7,499",
     type: "once-off",
     delivery: "10–15 working days",
     iconName: "ShoppingCart" as const,
@@ -131,13 +131,15 @@ const supportTiers = [
   },
   {
     task: "New Section",
-    description: "Adding a new UI block (e.g., gallery or FAQ) to an existing page",
+    description:
+      "Adding a new UI block (e.g., gallery or FAQ) to an existing page",
     fee: "R450 – R650",
     unit: "",
   },
   {
     task: "New Page",
-    description: "Building and deploying a brand new page within the existing design",
+    description:
+      "Building and deploying a brand new page within the existing design",
     fee: "R850 – R1,250",
     unit: "",
   },
@@ -284,8 +286,8 @@ export const WebDesignPage = () => {
                 Looking for affordable web design in South Africa without
                 sacrificing quality? Our packages range from a R1,999 portfolio
                 site to a R4,999 professional business website. All packages
-                deliver mobile-responsive, Google-optimized pages in as few as
-                4 working days. No hidden fees, no monthly retainers. Just
+                deliver mobile-responsive, Google-optimized pages in as few as 4
+                working days. No hidden fees, no monthly retainers. Just
                 transparent once-off pricing with free first-year hosting
                 included.
               </p>
@@ -434,8 +436,7 @@ export const WebDesignPage = () => {
             }`}
           >
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-              What's{" "}
-              <span className="italic text-outline-2">included</span>
+              What's <span className="italic text-outline-2">included</span>
             </h2>
             <p className="text-lg text-white/70 leading-relaxed max-w-[650px]">
               Every project ships with built-in peace of mind — no hidden costs,
@@ -466,7 +467,9 @@ export const WebDesignPage = () => {
               <div className="border-t border-black/10 pt-4 space-y-2">
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 mt-0.5 shrink-0" />
-                  <span className="text-sm">Code bug fixes &amp; broken links</span>
+                  <span className="text-sm">
+                    Code bug fixes &amp; broken links
+                  </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 mt-0.5 shrink-0" />
@@ -535,7 +538,9 @@ export const WebDesignPage = () => {
               <div className="border-t border-black/10 pt-4 space-y-2">
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 mt-0.5 shrink-0" />
-                  <span className="text-sm">Security &amp; dependency patches</span>
+                  <span className="text-sm">
+                    Security &amp; dependency patches
+                  </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 mt-0.5 shrink-0" />
@@ -563,12 +568,11 @@ export const WebDesignPage = () => {
               }`}
             >
               <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-                Ongoing{" "}
-                <span className="italic text-outline-2">support</span>
+                Ongoing <span className="italic text-outline-2">support</span>
               </h2>
               <p className="text-lg text-white/70 leading-relaxed max-w-[550px]">
-                After your warranty period, you only pay for what you use.
-                No retainers, no lock-in contracts.
+                After your warranty period, you only pay for what you use. No
+                retainers, no lock-in contracts.
               </p>
             </div>
           </div>
@@ -576,9 +580,7 @@ export const WebDesignPage = () => {
           {/* Support Tiers Table */}
           <div
             className={`rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden opacity-0 ${
-              supportVisible
-                ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
-                : ""
+              supportVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""
             }`}
           >
             {/* Desktop header */}
@@ -591,9 +593,7 @@ export const WebDesignPage = () => {
               <div
                 key={tier.task}
                 className={`grid grid-cols-1 md:grid-cols-[1fr_2fr_auto] gap-3 md:gap-6 px-8 py-6 ${
-                  idx < supportTiers.length - 1
-                    ? "border-b border-white/5"
-                    : ""
+                  idx < supportTiers.length - 1 ? "border-b border-white/5" : ""
                 } transition-colors hover:bg-white/[0.03]`}
               >
                 <span className="text-white font-semibold text-base">
@@ -617,9 +617,7 @@ export const WebDesignPage = () => {
           {/* Process note */}
           <p
             className={`mt-8 text-sm text-white/40 leading-relaxed max-w-[700px] opacity-0 ${
-              supportVisible
-                ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]"
-                : ""
+              supportVisible ? "animate-[fadeInUp_0.8s_ease-out_0.6s_both]" : ""
             }`}
           >
             All requests follow a formal workflow: submit via email → receive a
