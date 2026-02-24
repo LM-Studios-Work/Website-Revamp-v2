@@ -115,6 +115,18 @@ export default function RootLayout({
           href="/lmstudioslogo.png"
           sizes="any"
         />
+        {/* Preconnect to external origins for faster resource loading */}
+        <link rel="preconnect" href="https://c.animaapp.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* LCP: preload the hero background image so it starts fetching immediately */}
+        <link
+          rel="preload"
+          as="image"
+          href="/background/fallback.webp"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -139,8 +151,11 @@ export default function RootLayout({
               <img
                 src="/background/fallback.webp"
                 alt=""
+                width={1920}
+                height={1080}
                 className="w-full h-full object-cover"
                 loading="eager"
+                fetchPriority="high"
               />
             </div>
 

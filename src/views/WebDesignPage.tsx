@@ -228,6 +228,8 @@ export const WebDesignPage = () => {
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_arrow_curved.svg"
                   alt="Arrow icon"
+                  width={13}
+                  height={17}
                   className="box-border caret-transparent inline min-h-0 min-w-0 w-[13px] ml-6 md:block md:min-h-[auto] md:min-w-[auto]"
                 />
               </div>
@@ -235,6 +237,8 @@ export const WebDesignPage = () => {
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
                   alt="LM Studios Web Design team in the office"
+                  width={800}
+                  height={533}
                   className="absolute box-border caret-transparent h-full max-w-full object-cover translate-x-[-50.0%] translate-y-[-50.0%] w-full left-2/4 top-2/4"
                 />
               </div>
@@ -309,6 +313,8 @@ export const WebDesignPage = () => {
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
                   alt="Team working on web design projects"
+                  width={800}
+                  height={533}
                   className="w-full h-auto object-cover"
                 />
               </div>
