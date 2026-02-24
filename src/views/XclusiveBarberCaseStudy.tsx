@@ -125,7 +125,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* Preview Image */}
-      <SectionWrapper className="z-10 !pt-0 !pb-0">
+      <SectionWrapper className="z-10 !pt-0 !pb-0 md:!pb-0">
         <div className="rounded-2xl overflow-hidden border border-white/10 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
           <img
             src="/preview/v0-barbershop-durban.vercel.app_(laptop).webp"
@@ -136,7 +136,7 @@ export const XclusiveBarberCaseStudy = () => {
       </SectionWrapper>
 
       {/* Overview */}
-      <section ref={overviewRef} className="relative z-10 py-16 md:py-20 px-6">
+      <section ref={overviewRef} className="relative z-10 py-16 md:py-16 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             <div
@@ -190,7 +190,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* What We Delivered */}
-      <section ref={highlightsRef} className="relative z-10 py-16 md:py-20 px-6">
+      <section ref={highlightsRef} className="relative z-10 py-16 md:py-16 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-12 md:mb-16 opacity-0 ${
@@ -236,7 +236,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* Results */}
-      <section ref={resultsRef} className="relative z-10 py-16 md:py-20 px-6">
+      <section ref={resultsRef} className="relative z-10 py-16 md:py-16 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-12 md:mb-16 opacity-0 ${
@@ -275,7 +275,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* Tech Stack */}
-      <section ref={techRef} className="relative z-10 py-16 md:py-20 px-6">
+      <section ref={techRef} className="relative z-10 py-16 md:py-16 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-10 opacity-0 ${
