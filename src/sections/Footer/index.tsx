@@ -49,9 +49,19 @@ export const Footer = () => {
               </p>
             </div>
 
-            {/* Copyright */}
-            <div className="text-center border-t border-white/10 py-6">
+            {/* Copyright + Legal Links */}
+            <div className="text-center border-t border-white/10 py-6 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
               <p className="text-sm text-white/40">LM Studios</p>
+              <span aria-hidden="true" className="hidden md:inline text-white/20">|</span>
+              <div className="flex items-center gap-4 text-xs text-white/30">
+                <a href="/privacy-policy" className="hover:text-white/60 transition-colors">
+                  Privacy Policy
+                </a>
+                <span aria-hidden="true" className="text-white/20">|</span>
+                <a href="/terms-of-service" className="hover:text-white/60 transition-colors">
+                  Terms of Service
+                </a>
+              </div>
             </div>
           </div>
         </section>

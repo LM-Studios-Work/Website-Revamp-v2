@@ -42,6 +42,8 @@ export const ProjectCard = (props: ProjectCardProps) => {
           <img
             src={props.imageUrl}
             alt={props.imageAlt}
+            width={800}
+            height={600}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105"
           />
         </div>
