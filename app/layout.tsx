@@ -115,17 +115,29 @@ export default function RootLayout({
           href="/lmstudioslogo.png"
           sizes="any"
         />
-        {/* Preconnect to external origins for faster resource loading */}
-        <link rel="preconnect" href="https://c.animaapp.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* Preconnect only to origins actually used at page load */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        {/* LCP: preload the hero background image so it starts fetching immediately */}
+        {/* Preload the Inter font used by font-display:swap so text renders immediately */}
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+          crossOrigin="anonymous"
+        />
+        {/* LCP: preload the logo (identified as LCP element by Lighthouse) */}
+        <link
+          rel="preload"
+          as="image"
+          href="/lmstudioslogo.png"
+          fetchPriority="high"
+        />
+        {/* Preload the hero background image */}
         <link
           rel="preload"
           as="image"
           href="/background/fallback.webp"
-          fetchPriority="high"
         />
         <script
           type="application/ld+json"
