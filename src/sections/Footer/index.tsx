@@ -33,7 +33,7 @@ export const Footer = () => {
                 <span aria-hidden="true">|</span>
                 <a href="/web-design-midrand" className="py-1 px-1 min-h-[44px] inline-flex items-center hover:text-white/80 transition-colors">Web Design Midrand</a>
                 <span aria-hidden="true">|</span>
-                <a href="/services/web-design" className="py-1 px-1 min-h-[44px] inline-flex items-center hover:text-white/80 transition-colors">Web Designers in Pretoria</a>
+                <a href="/services/web-design" className="py-1 px-1 min-h-[44px] inline-flex items-center hover:text-white/80 transition-colors">Web Design Pretoria</a>
                 <span aria-hidden="true">|</span>
                 <a href="/services/web-design" className="py-1 px-1 min-h-[44px] inline-flex items-center hover:text-white/80 transition-colors">Professional Website Design South Africa</a>
                 <span aria-hidden="true">|</span>
