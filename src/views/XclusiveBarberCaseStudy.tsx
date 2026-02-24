@@ -85,7 +85,7 @@ export const XclusiveBarberCaseStudy = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-screen pt-40 pb-16 px-6 overflow-hidden">
+      <section className="relative flex flex-col justify-center items-center pt-40 pb-16 px-6 overflow-hidden">
         <div className="relative z-30 max-w-[900px] w-full text-center animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="text-xs font-semibold uppercase tracking-widest text-white/50 border border-white/20 px-4 py-1.5 rounded-full">
@@ -138,7 +138,7 @@ export const XclusiveBarberCaseStudy = () => {
       {/* Overview */}
       <section ref={overviewRef} className="relative z-10 py-16 md:py-16 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
             <div
               className={`opacity-0 ${
                 overviewVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
@@ -207,7 +207,7 @@ export const XclusiveBarberCaseStudy = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             {projectHighlights.map((item, idx) => {
               const Icon = item.icon;
               return (
