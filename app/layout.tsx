@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
@@ -47,6 +48,8 @@ const localBusinessSchema = {
   logo: `${DOMAIN}/lmstudioslogo.png`,
   image: `${DOMAIN}/lmstudioslogo.png`,
   foundingDate: "2025",
+  telephone: "+27814272624",
+  email: "lm.studios.web@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Midrand",
@@ -151,6 +154,19 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VM1K1RLW8J"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VM1K1RLW8J');
+          `}
+        </Script>
       </body>
     </html>
   );
