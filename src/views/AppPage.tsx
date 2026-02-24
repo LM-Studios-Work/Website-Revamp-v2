@@ -8,6 +8,17 @@ import { CTASection } from "@/components/CTASection";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { COLORS } from "@/constants/colors";
+import { 
+  CalendarCheck, 
+  Package, 
+  ChartLineUp, 
+  ArrowsClockwise, 
+  UsersThree, 
+  IdentificationCard,
+  Check,
+  CheckCircle,
+  ArrowRight
+} from "@phosphor-icons/react";
 
 const solutionExamples = [
   {
@@ -15,56 +26,46 @@ const solutionExamples = [
     description: "Resource management, appointment scheduling, calendar integration, notifications, and user dashboards.",
     features: ["Role-based access", "Real-time availability", "Automated reminders", "Reporting dashboard"],
     color: COLORS.cyan,
+    icon: CalendarCheck,
   },
   {
     title: "Inventory & Asset Management",
     description: "Track assets, manage stock levels, generate reports, and streamline procurement workflows.",
     features: ["Barcode scanning", "Stock alerts", "Audit trails", "Multi-location support"],
     color: COLORS.lime,
+    icon: Package,
   },
   {
     title: "Admin Dashboards & Portals",
     description: "Centralized control panels for managing users, content, operations, and business metrics.",
     features: ["Custom analytics", "User management", "Data visualization", "Activity monitoring"],
     color: COLORS.purple,
+    icon: ChartLineUp,
   },
   {
     title: "Workflow Automation",
     description: "Digitize manual processes, automate approvals, and integrate with existing systems.",
     features: ["Custom workflows", "Email notifications", "Document generation", "API integrations"],
     color: COLORS.cyan,
+    icon: ArrowsClockwise,
   },
   {
     title: "Internal Business Tools",
     description: "Custom CRMs, project management systems, HR platforms, and operational tools built for your team.",
     features: ["Tailored interfaces", "Database design", "Third-party integration", "Secure authentication"],
     color: COLORS.lime,
+    icon: UsersThree,
   },
   {
     title: "Client-Facing Platforms",
     description: "Member portals, customer dashboards, service platforms, and collaborative workspaces.",
     features: ["User profiles", "Document sharing", "Communication tools", "Payment processing"],
     color: COLORS.purple,
+    icon: IdentificationCard,
   },
 ];
 
-const CheckIcon = ({ color }: { color: string }) => (
-  <svg className="w-4 h-4 shrink-0" style={{ color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-  </svg>
-);
 
-const CircleCheckIcon = ({ color }: { color: string }) => (
-  <svg className="w-6 h-6" style={{ color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-);
-
-const ArrowIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M7 17L17 7M17 7H7M17 7V17" />
-  </svg>
-);
 
 export const AppPage = () => {
   const { ref: goodHandsRef, isVisible: goodHandsVisible } = useScrollAnimation(0.15);
@@ -144,10 +145,10 @@ export const AppPage = () => {
             Stop losing hours to manual scheduling and missed appointments. We build custom online booking platforms tailored to your exact workflow, complete with secure South African payment integrations (like PayFast and Yoco) and automated SMS reminders.
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white/60">
-            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Automated Email & SMS Notifications</li>
-            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Secure Upfront Deposit Processing</li>
-            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Real-time Calendar Syncing</li>
-            <li className="flex items-center gap-3"><CheckIcon color={COLORS.cyan} /> Staff & Resource Management Dashboards</li>
+            <li className="flex items-center gap-3"><Check className="w-5 h-5" style={{ color: COLORS.cyan }} weight="bold" /> Automated Email & SMS Notifications</li>
+            <li className="flex items-center gap-3"><Check className="w-5 h-5" style={{ color: COLORS.cyan }} weight="bold" /> Secure Upfront Deposit Processing</li>
+            <li className="flex items-center gap-3"><Check className="w-5 h-5" style={{ color: COLORS.cyan }} weight="bold" /> Real-time Calendar Syncing</li>
+            <li className="flex items-center gap-3"><Check className="w-5 h-5" style={{ color: COLORS.cyan }} weight="bold" /> Staff & Resource Management Dashboards</li>
           </ul>
         </div>
       </section>
@@ -216,29 +217,32 @@ export const AppPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {solutionExamples.map((solution, idx) => (
-              <div
-                key={idx}
-                className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
-              >
+            {solutionExamples.map((solution, idx) => {
+              const IconComponent = solution.icon;
+              return (
                 <div
-                  className="w-12 h-12 rounded-full mb-6 flex items-center justify-center"
-                  style={{ backgroundColor: `${solution.color}20`, border: `2px solid ${solution.color}` }}
+                  key={idx}
+                  className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
                 >
-                  <CircleCheckIcon color={solution.color} />
+                  <div
+                    className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center"
+                    style={{ backgroundColor: `${solution.color}20`, border: `2px solid ${solution.color}` }}
+                  >
+                    <IconComponent className="w-7 h-7" style={{ color: solution.color }} weight="duotone" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{solution.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed mb-6">{solution.description}</p>
+                  <div className="space-y-2">
+                    {solution.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-center gap-2 text-sm text-white/50">
+                        <Check className="w-4 h-4" style={{ color: solution.color }} weight="bold" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{solution.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">{solution.description}</p>
-                <div className="space-y-2">
-                  {solution.features.map((feature, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-2 text-sm text-white/50">
-                      <CheckIcon color={solution.color} />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Contact CTA */}
@@ -287,12 +291,10 @@ export const AppPage = () => {
                 <p className="text-white/40 mb-8">{card.desc}</p>
               </div>
               <div
-                className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center transition-all"
+                className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center transition-all group-hover:bg-[var(--hover-bg)]"
                 style={{ '--hover-bg': card.hoverColor } as React.CSSProperties}
               >
-                <span className="group-hover:bg-[var(--hover-bg)] group-hover:text-black w-14 h-14 rounded-full flex items-center justify-center transition-all">
-                  <ArrowIcon />
-                </span>
+                <ArrowRight className="w-6 h-6 text-white group-hover:text-black transition-colors" weight="bold" />
               </div>
             </div>
           ))}

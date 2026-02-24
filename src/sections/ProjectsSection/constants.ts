@@ -19,7 +19,7 @@ export const projects: ProjectCardProps[] = [
     ],
     description:
       "A modern barber shop in Davenport. We designed their website and built a custom booking system for seamless client appointments.",
-    discoverMoreUrl: "https://v0-barbershop-durban.vercel.app/",
+    discoverMoreUrl: "/projects/xclusive-barber",
   },
   {
     imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
