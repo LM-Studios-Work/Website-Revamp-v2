@@ -64,6 +64,15 @@ const results = [
   },
 ];
 
+// Full literal class strings are required so Tailwind generates the CSS at build time.
+// Computed template literals (e.g. `${delay}s`) produce class names Tailwind never sees.
+const STAGGER_4 = [
+  "animate-[fadeInUp_0.8s_ease-out_0.2s_both]",
+  "animate-[fadeInUp_0.8s_ease-out_0.4s_both]",
+  "animate-[fadeInUp_0.8s_ease-out_0.6s_both]",
+  "animate-[fadeInUp_0.8s_ease-out_0.8s_both]",
+] as const;
+
 const techStack = [
   "Next.js",
   "React",
@@ -214,9 +223,7 @@ export const XclusiveBarberCaseStudy = () => {
                 <div
                   key={item.title}
                   className={`rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-[#e7fe56]/30 hover:bg-white/[0.07] opacity-0 ${
-                    highlightsVisible
-                      ? `animate-[fadeInUp_0.8s_ease-out_${0.2 + idx * 0.15}s_both]`
-                      : ""
+                    highlightsVisible ? STAGGER_4[idx] : ""
                   }`}
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#e7fe56]/10 border border-[#e7fe56]/20 flex items-center justify-center mb-5">
@@ -254,9 +261,7 @@ export const XclusiveBarberCaseStudy = () => {
               <div
                 key={item.label}
                 className={`rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-sm text-center opacity-0 ${
-                  resultsVisible
-                    ? `animate-[fadeInUp_0.8s_ease-out_${0.2 + idx * 0.1}s_both]`
-                    : ""
+                  resultsVisible ? STAGGER_4[idx] : ""
                 }`}
               >
                 <div className="text-2xl md:text-3xl font-bold text-[#e7fe56] mb-1">
