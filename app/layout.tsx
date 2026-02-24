@@ -5,6 +5,7 @@ import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/next";
 
 const DOMAIN = "https://www.lmwebstudios.co.za";
 
@@ -131,7 +132,7 @@ export default function RootLayout({
           rel="preload"
           as="image"
           href="/lmstudioslogo.png"
-          fetchPriority="high"
+          {...({fetchPriority: "high"} as any)}
         />
         {/* Preload the hero background image */}
         <link
@@ -167,7 +168,7 @@ export default function RootLayout({
                 height={1080}
                 className="w-full h-full object-cover"
                 loading="eager"
-                fetchPriority="high"
+                {...({fetchPriority: "high"} as any)}
               />
             </div>
 
@@ -181,6 +182,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <Analytics />
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VM1K1RLW8J"
