@@ -4,31 +4,34 @@ import { XclusiveBarberCaseStudy } from "@/views/XclusiveBarberCaseStudy";
 const DOMAIN = "https://www.lmwebstudios.co.za";
 
 export const metadata: Metadata = {
-  title: "Xclusive Barber Davenport — Website & Booking System Case Study",
+  title:
+    "Custom Web Design Durban — Barber Website & Salon Online Booking System | LM Studios",
   description:
-    "See how LM Studios designed a custom barber website with online booking for Xclusive Barber in Davenport, Durban. Mobile-first design, local SEO, and a booking system that fills chairs.",
+    "See how our small business website developers built a custom web design in Durban for Xclusive Barber — replacing mid-haircut phone calls with a 100% automated Next.js booking platform. Sub-second load times, local map pack rankings, and 40%+ more monthly bookings.",
   alternates: {
     canonical: `${DOMAIN}/projects/xclusive-barber`,
   },
   openGraph: {
-    title: "Xclusive Barber Davenport — Website & Booking System | LM Studios",
+    title:
+      "Custom Web Design Durban — Barber Booking System Case Study | LM Studios",
     description:
-      "Custom barber website and booking system for Xclusive Barber in Davenport, Durban. Built by LM Studios with local SEO, mobile-first design, and seamless online appointments.",
+      "How we built a salon online booking system setup for Xclusive Barber in Davenport, Durban. 100% automated scheduling, sub-second load times, and top 3 local map pack rankings.",
     url: `${DOMAIN}/projects/xclusive-barber`,
     images: [
       {
         url: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
         width: 1200,
         height: 630,
-        alt: "Xclusive Barber website design — barber in Davenport, Durban",
+        alt: "Custom web design Durban — Xclusive Barber salon online booking system by LM Studios small business website developers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Xclusive Barber Davenport — Website & Booking System | LM Studios",
+    title:
+      "Custom Web Design Durban — Barber Booking System | LM Studios",
     description:
-      "Custom barber website and booking system for Xclusive Barber in Davenport, Durban.",
+      "Small business website developers replaced mid-haircut phone calls with a 100% automated booking platform for a Durban barber shop.",
     images: ["/preview/v0-barbershop-durban.vercel.app_(laptop).webp"],
   },
 };
@@ -36,21 +39,23 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "Xclusive Barber — Website & Booking System",
+  name: "Custom Web Design Durban — Xclusive Barber Website & Salon Online Booking System",
   description:
-    "Custom website design and online booking system for Xclusive Barber, a barbershop in Davenport, Durban, South Africa.",
+    "Case study showing how LM Studios small business website developers built a custom web design in Durban with a salon online booking system setup for Xclusive Barber in Davenport, eliminating phone disruptions and increasing monthly bookings by 40%+.",
   url: `${DOMAIN}/projects/xclusive-barber`,
   image: `${DOMAIN}/preview/v0-barbershop-durban.vercel.app_(laptop).webp`,
   creator: {
     "@type": "Organization",
     name: "LM Studios",
     url: DOMAIN,
+    description:
+      "Small business website developers specialising in custom web design Durban, salon online booking system setup, and local SEO for service businesses across South Africa.",
   },
   about: {
     "@type": "LocalBusiness",
     name: "Xclusive Barber",
     description:
-      "Premium barbershop in Davenport, Durban offering precision haircuts, beard trims, and grooming services.",
+      "Premium barbershop in Davenport, Durban offering precision haircuts, beard trims, and grooming services with an automated online booking system.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Davenport",
@@ -85,7 +90,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Xclusive Barber",
+      name: "Xclusive Barber — Custom Web Design Durban",
       item: `${DOMAIN}/projects/xclusive-barber`,
     },
   ],
