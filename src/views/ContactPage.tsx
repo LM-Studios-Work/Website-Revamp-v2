@@ -14,7 +14,7 @@ export const ContactPage = () => {
         <div className="relative z-30 max-w-[1200px] w-full mx-auto">
           <div className="max-w-[800px] animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
             <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8 text-left">
-              Contact us
+              Get a Free Web Design Quote
             </h1>
 
             <WavyUnderline color="limeButton" className="mb-12" />

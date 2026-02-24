@@ -15,6 +15,17 @@ export const Footer = () => {
               <FooterColumns />
             </div>
 
+            {/* NAP — Name, Address, Phone for local SEO */}
+            <div className="border-t border-white/10 py-5">
+              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 text-sm text-white/40">
+                <span>LM Studios — Midrand, Gauteng, South Africa</span>
+                <span aria-hidden="true" className="hidden md:inline">|</span>
+                <a href="tel:+27814272624" className="hover:text-white/70 transition-colors">081 427 2624</a>
+                <span aria-hidden="true" className="hidden md:inline">|</span>
+                <a href="mailto:lm.studios.web@gmail.com" className="hover:text-white/70 transition-colors">lm.studios.web@gmail.com</a>
+              </div>
+            </div>
+
             {/* SEO Footer — Geo-targeted service keywords */}
             <div className="border-t border-white/10 py-5">
               <p className="text-xs text-white/30 leading-relaxed text-center flex flex-wrap justify-center gap-x-2 gap-y-1">
