@@ -5,6 +5,7 @@ import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const DOMAIN = "https://www.lmwebstudios.co.za";
 
@@ -194,6 +195,7 @@ export default function RootLayout({
             gtag('config', 'G-VM1K1RLW8J');
           `}
         </Script>
+        <SpeedInsights />
       </body>
     </html>
   );
