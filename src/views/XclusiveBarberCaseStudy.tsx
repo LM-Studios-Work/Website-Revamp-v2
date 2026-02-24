@@ -102,7 +102,7 @@ export const XclusiveBarberCaseStudy = () => {
           </h1>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[700px] mx-auto mb-8">
             How we designed a premium barber website with an integrated booking
-            system for a Davenport, Durban barbershop — helping them get found
+            system for a Davenport, Durban barbershop, helping them get found
             online and fill their chairs.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/50">
@@ -125,18 +125,18 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* Preview Image */}
-      <SectionWrapper className="z-10 !pt-0">
+      <SectionWrapper className="z-10 !pt-0 !pb-0">
         <div className="rounded-2xl overflow-hidden border border-white/10 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
           <img
             src="/preview/v0-barbershop-durban.vercel.app_(laptop).webp"
-            alt="Xclusive Barber Davenport website design by LM Studios — barber website with online booking"
+            alt="Xclusive Barber Davenport website design by LM Studios, barber website with online booking"
             className="w-full h-auto"
           />
         </div>
       </SectionWrapper>
 
       {/* Overview */}
-      <section ref={overviewRef} className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={overviewRef} className="relative z-10 py-16 md:py-20 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             <div
@@ -151,7 +151,7 @@ export const XclusiveBarberCaseStudy = () => {
                 Xclusive Barber is a popular grooming destination in Davenport,
                 Durban, known for precision cuts, beard trims, and a welcoming
                 atmosphere. Despite their strong local reputation, they had no
-                online presence — clients relied entirely on walk-ins and word of
+                online presence. Clients relied entirely on walk-ins and word of
                 mouth.
               </p>
               <p className="text-white/70 leading-relaxed">
@@ -178,7 +178,7 @@ export const XclusiveBarberCaseStudy = () => {
                 pricing, and book their next haircut in seconds.
               </p>
               <p className="text-white/70 leading-relaxed">
-                Every element was designed to convert — from the mobile-first
+                Every element was designed to convert. From the mobile-first
                 layout to clear call-to-action buttons that guide visitors
                 straight to the booking page. On-page SEO ensures the site
                 ranks for local search terms across Davenport, Chatsworth,
@@ -190,7 +190,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* What We Delivered */}
-      <section ref={highlightsRef} className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={highlightsRef} className="relative z-10 py-16 md:py-20 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-12 md:mb-16 opacity-0 ${
@@ -203,7 +203,7 @@ export const XclusiveBarberCaseStudy = () => {
             </h2>
             <p className="text-lg text-white/60 max-w-[600px]">
               A full website and booking system designed to put Xclusive Barber
-              on the map — literally.
+              on the map.
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* Results */}
-      <section ref={resultsRef} className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={resultsRef} className="relative z-10 py-16 md:py-20 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-12 md:mb-16 opacity-0 ${
@@ -275,7 +275,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* Tech Stack */}
-      <section ref={techRef} className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={techRef} className="relative z-10 py-16 md:py-20 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-10 opacity-0 ${
@@ -305,7 +305,7 @@ export const XclusiveBarberCaseStudy = () => {
       </section>
 
       {/* CTA */}
-      <section ref={ctaRef} className="relative z-10 py-16 md:py-28 px-6">
+      <section ref={ctaRef} className="relative z-10 py-16 md:py-24 px-6">
         <div className="max-w-[800px] w-full mx-auto text-center">
           <div
             className={`opacity-0 ${
@@ -318,7 +318,7 @@ export const XclusiveBarberCaseStudy = () => {
             </h2>
             <p className="text-lg text-white/60 leading-relaxed mb-10 max-w-[600px] mx-auto">
               Whether you&apos;re a barber in Durban, a salon in Johannesburg,
-              or any small business in South Africa — we build websites that
+              or any small business in South Africa, we build websites that
               get you found and booked.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
