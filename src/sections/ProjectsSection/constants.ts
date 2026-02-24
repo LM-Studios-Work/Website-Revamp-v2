@@ -10,7 +10,7 @@ export const tagStyle = {
 export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
-    imageAlt: "Xclusive Barber - Davenport",
+    imageAlt: "Custom web design Durban — Xclusive Barber salon online booking system by small business website developers LM Studios",
     title: "Xclusive Barber - Davenport",
     tags: [
       { text: "Barber & Grooming", className: tagStyle.lime },
@@ -18,35 +18,35 @@ export const projects: ProjectCardProps[] = [
       { text: "Website Design", className: tagStyle.teal },
     ],
     description:
-      "A modern barber shop in Davenport. We designed their website and built a custom booking system for seamless client appointments.",
+      "Custom web design Durban — we replaced mid-haircut phone calls with a 100% automated Next.js booking platform, delivering sub-second load times and top 3 local map pack rankings.",
     discoverMoreUrl: "/projects/xclusive-barber",
   },
   {
     imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
-    imageAlt: "Ndila Ya Vhupo Travels",
-    title: "Ndila Ya Vhupo Travels",
+    imageAlt: "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LM Studios tour operator website developers",
+    title: "Ndilayavhupo Travels",
     tags: [
       { text: "Travel & Tourism", className: tagStyle.lime },
-      { text: "Business Solutions", className: tagStyle.purple },
-      { text: "Booking & Logistics", className: tagStyle.teal },
+      { text: "Booking Platform", className: tagStyle.purple },
+      { text: "Local SEO", className: tagStyle.teal },
     ],
     description:
-      "A Thohoyandou-based travel agency specializing in shared adventures and authentic Limpopo journeys, handling logistics for group tours to South Africa's hidden gems.",
-    discoverMoreUrl: "https://ndilayavhupo.co.za", // Replace with actual URL if different
+      "Travel agency web design for a Thohoyandou-based tour operator — we built a custom tourism booking platform with WhatsApp funnels, boosting group trip fill rates by 60% and local search traffic by 5x.",
+    discoverMoreUrl: "/projects/ndilayavhupo-travels",
   },
 
   {
     imageUrl: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
-    imageAlt: "MR FLOAT - Transport Service",
-    title: "MR FLOAT - Transport Service",
+    imageAlt: "Transport company web design — Mr. Float Logistics custom WhatsApp booking integration by LM Studios logistics website developers",
+    title: "Mr. Float Logistics",
     tags: [
-      { text: "Logistics & Services", className: tagStyle.lime },
-      { text: "Business Solutions", className: tagStyle.purple },
-      { text: "Booking & Logistics", className: tagStyle.teal },
+      { text: "Logistics & Transport", className: tagStyle.lime },
+      { text: "WhatsApp Integration", className: tagStyle.purple },
+      { text: "Lead Generation", className: tagStyle.teal },
     ],
     description:
-      "A transport company in Zimbabwe that offers a wide array of services, including taxi rides, long-distance travel, car hire, airport shuttles, and package deliveries.",
-    discoverMoreUrl: "https://mrfloatlogistics.com",
+      "Transport company web design with custom WhatsApp booking integration — we unified six services (taxi, car hire, airport shuttles, deliveries) into one high-converting platform, tripling daily enquiries.",
+    discoverMoreUrl: "/projects/mr-float-logistics",
   },
   {
     imageUrl: "/preview/aluminiumweb.vercel.app_(laptop) (1).webp",

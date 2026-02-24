@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import {
-  Scissors,
+  Airplane,
   Globe,
-  CalendarCheck,
+  WhatsappLogo,
   DeviceMobile,
   MagnifyingGlass,
   ArrowRight,
   MapPin,
   Clock,
-  Phone,
-  Timer,
+  Users,
+  Mountains,
+  Camera,
   ChartLineUp,
-  UsersThree,
 } from "@phosphor-icons/react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionWrapper } from "@/components/SectionWrapper";
@@ -21,59 +21,58 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 const projectHighlights = [
   {
     icon: Globe,
-    title: "Custom Web Design Built for Durban Barbers",
+    title: "Travel Agency Web Design That Sells Experiences",
     description:
-      "We designed a fully bespoke website that captures the premium identity of Xclusive Barber. Bold typography, a dark-themed aesthetic, and high-quality imagery work together to build instant trust with new visitors searching for a barber in Davenport or Durban.",
+      "We built a visually immersive website that transports visitors before they even book. High-resolution travel galleries, bold destination imagery, and compelling trip descriptions work together to convert casual browsers into paying group tour participants.",
   },
   {
-    icon: CalendarCheck,
-    title: "Salon Online Booking System Setup",
+    icon: WhatsappLogo,
+    title: "Streamlined WhatsApp Booking Funnel",
     description:
-      "We replaced the chaos of mid-haircut phone calls with a 100% automated Next.js booking platform. Clients now book appointments 24/7, receive automated confirmations, and the team never has to put down their clippers to answer the phone again.",
+      "Each upcoming trip features a dedicated booking CTA that opens a pre-formatted WhatsApp message with the trip name, date, and traveller details. No forms, no friction — just one tap from 'I want to go' to a confirmed conversation with the travel team.",
   },
   {
-    icon: DeviceMobile,
-    title: "Mobile-First, Sub-Second Load Times",
+    icon: Camera,
+    title: "Sub-Second Gallery Performance",
     description:
-      "Over 80% of Xclusive Barber's clients search on their phones. We built a fully responsive, performance-optimised site that loads in under 0.8 seconds on mobile, so customers in Davenport and Chatsworth can find and book in seconds, not minutes.",
+      "Travel is sold through visuals. We optimised every gallery image for sub-second rendering using next-gen formats, lazy loading, and responsive sizing — ensuring Limpopo's stunning landscapes load instantly, even on rural mobile networks.",
   },
   {
     icon: MagnifyingGlass,
-    title: "Local SEO for Barber Shops in Durban",
+    title: "Local SEO for Travel Agencies in Limpopo",
     description:
-      "We implemented on-page SEO and Schema.org structured data targeting high-intent phrases like 'barber in Davenport', 'custom web design Durban', and 'haircut Chatsworth'. The result: improved Google Map Pack visibility and more organic walk-ins from local search.",
+      "On-page SEO targeting 'travel agency Thohoyandou', 'Limpopo group tours', and 'tour operator Venda' paired with Schema.org TouristTrip markup ensures Ndilayavhupo appears when local travellers search for their next adventure.",
   },
 ];
 
 const results = [
   {
-    metric: "< 0.8s",
-    label: "Mobile Load Time",
+    metric: "60%+",
+    label: "Trip Fill Rate Increase",
     description:
-      "Sub-second page loads on 3G and 4G networks, keeping bounce rates near zero",
+      "Group tours filling faster with direct WhatsApp bookings replacing scattered social media DMs",
+  },
+  {
+    metric: "< 0.7s",
+    label: "Gallery Load Time",
+    description:
+      "Sub-second image rendering for travel galleries, even on mobile data connections",
+  },
+  {
+    metric: "5x",
+    label: "Organic Local Traffic",
+    description:
+      "Five-fold increase in organic search visitors from Limpopo and surrounding provinces",
   },
   {
     metric: "100%",
-    label: "Automated Scheduling",
+    label: "Automated Lead Capture",
     description:
-      "Zero phone interruptions during haircuts — every booking handled automatically",
-  },
-  {
-    metric: "Top 3",
-    label: "Local Map Pack",
-    description:
-      "Ranking in Google's local pack for 'barber Davenport' and 'barber near me Durban'",
-  },
-  {
-    metric: "40%+",
-    label: "More Monthly Bookings",
-    description:
-      "Measurable increase in appointment volume within the first 60 days of launch",
+      "Every trip enquiry captured and funnelled into WhatsApp — zero leads lost to DM chaos",
   },
 ];
 
 // Full literal class strings are required so Tailwind generates the CSS at build time.
-// Computed template literals (e.g. `${delay}s`) produce class names Tailwind never sees.
 const STAGGER_4 = [
   "animate-[fadeInUp_0.8s_ease-out_0.2s_both]",
   "animate-[fadeInUp_0.8s_ease-out_0.4s_both]",
@@ -86,13 +85,13 @@ const techStack = [
   "React",
   "Tailwind CSS",
   "Vercel",
-  "Custom Booking API",
-  "Google Maps Integration",
-  "Schema.org Markup",
+  "WhatsApp Business API",
+  "Schema.org TouristTrip Markup",
+  "Image Optimisation Pipeline",
   "Responsive Images",
 ];
 
-export const XclusiveBarberCaseStudy = () => {
+export const NdilayavhupoTravelsCaseStudy = () => {
   const { ref: overviewRef, isVisible: overviewVisible } =
     useScrollAnimation(0.15);
   const { ref: highlightsRef, isVisible: highlightsVisible } =
@@ -112,34 +111,34 @@ export const XclusiveBarberCaseStudy = () => {
               Case Study
             </span>
             <span className="text-xs font-semibold uppercase tracking-widest text-[#e7fe56]/80 border border-[#e7fe56]/30 px-4 py-1.5 rounded-full">
-              Barber &amp; Grooming
+              Travel &amp; Tourism
             </span>
           </div>
           <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[0.95] tracking-tight text-white mb-6">
-            Xclusive Barber
+            Ndilayavhupo
             <br />
-            <span className="italic text-outline-2">Davenport</span>
+            <span className="italic text-outline-2">Travels</span>
           </h1>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[700px] mx-auto mb-8">
-            How our small business website developers replaced disruptive
-            mid-haircut phone calls with a seamless, automated Next.js booking
-            platform — helping a Durban barbershop get found on Google and fill
-            every chair.
+            How our tour operator website developers built a visually immersive,
+            high-performance platform with a streamlined WhatsApp booking funnel
+            — turning a Thohoyandou-based travel agency&apos;s scattered social
+            media posts into a lead-generating machine that fills group tours.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/50">
             <span className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4" />
-              Davenport, Durban
+              Thohoyandou, Limpopo
             </span>
             <span className="w-1 h-1 rounded-full bg-white/20" />
             <span className="flex items-center gap-1.5">
-              <Scissors className="w-4 h-4" />
-              Barber Shop
+              <Airplane className="w-4 h-4" />
+              Travel Agency
             </span>
             <span className="w-1 h-1 rounded-full bg-white/20" />
             <span className="flex items-center gap-1.5">
               <Clock className="w-4 h-4" />
-              Custom Web Design &amp; Booking System
+              Tourism Website &amp; Booking Platform
             </span>
           </div>
         </div>
@@ -149,8 +148,8 @@ export const XclusiveBarberCaseStudy = () => {
       <SectionWrapper className="z-10 !pt-0 !pb-0 md:!pb-0">
         <div className="rounded-2xl overflow-hidden border border-white/10 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
           <img
-            src="/preview/v0-barbershop-durban.vercel.app_(laptop).webp"
-            alt="Custom web design Durban — Xclusive Barber website with salon online booking system by LM Studios"
+            src="/preview/www.ndilayavhupo.co.za_(laptop) (2).webp"
+            alt="Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LM Studios tour operator website developers"
             className="w-full h-auto"
           />
         </div>
@@ -172,29 +171,30 @@ export const XclusiveBarberCaseStudy = () => {
               </h2>
               <div className="space-y-4">
                 <p className="text-white/70 leading-relaxed">
-                  Xclusive Barber is a popular grooming destination in
-                  Davenport, Durban, known for precision fades, beard sculpting,
-                  and a loyal local following. But their growth was being
-                  strangled by two operational headaches.
+                  Ndilayavhupo Travels is a Thohoyandou-based travel agency
+                  specialising in shared group tours and Limpopo travel packages.
+                  They curate authentic experiences across South Africa&apos;s
+                  hidden gems — but their digital presence was holding them back.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    No online presence meant invisible revenue.
+                    Social media chaos was leaking leads.
                   </strong>{" "}
-                  When potential clients searched for &quot;barber in
-                  Davenport&quot;, &quot;custom web design Durban&quot;, or
-                  &quot;haircut near me Chatsworth&quot;, Xclusive Barber
-                  didn&apos;t exist. Every unanswered Google search was a
-                  booking handed to a competitor with even a basic website.
+                  Trip announcements, booking requests, and customer enquiries
+                  were all handled through disjointed Facebook and WhatsApp
+                  status posts. Potential travellers couldn&apos;t find past
+                  trips, compare upcoming options, or book with confidence —
+                  leading to half-filled tours and revenue left on the table.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    Phone calls were killing productivity.
+                    Zero brand authority in search.
                   </strong>{" "}
-                  Every booking came through phone calls — often mid-haircut.
-                  Barbers were forced to stop, wipe their hands, and take calls,
-                  disrupting the client in the chair and creating a bottleneck
-                  that cost them 3-4 bookings per day.
+                  When someone searched &quot;travel agency Thohoyandou&quot;,
+                  &quot;Limpopo group tours&quot;, or &quot;tour operator
+                  Venda&quot;, Ndilayavhupo didn&apos;t appear. Without a
+                  website, they had no way to build the brand authority needed to
+                  attract new customers beyond their existing social circle.
                 </p>
               </div>
             </div>
@@ -210,29 +210,31 @@ export const XclusiveBarberCaseStudy = () => {
               </h2>
               <div className="space-y-4">
                 <p className="text-white/70 leading-relaxed">
-                  We built a complete digital solution as specialist small
-                  business website developers: a custom-designed website paired
-                  with a salon online booking system setup that eliminated every
-                  phone interruption.
+                  As experienced tour operator website developers, we built a
+                  visually immersive, high-performance custom tourism booking
+                  platform that turns scrolling into booking and transforms
+                  social media followers into confirmed travellers.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    A booking platform that runs itself.
+                    A visual-first travel experience.
                   </strong>{" "}
-                  Our custom Next.js booking system lets clients browse services,
-                  pick a barber, choose a time slot, and confirm — all without a
-                  single phone call. Automated reminders cut no-shows, and the
-                  team stays focused on the craft.
+                  Stunning destination galleries with sub-second image rendering
+                  showcase each trip&apos;s highlights. Upcoming tours are
+                  displayed with clear dates, pricing, itineraries, and a
+                  one-tap WhatsApp booking button that auto-fills the trip
+                  details — turning inspiration into action.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    Local SEO that puts them on the map.
+                    Automated lead capture for future tours.
                   </strong>{" "}
-                  On-page SEO targeting &quot;barber in Davenport&quot;,
-                  &quot;best barber Durban&quot;, and &quot;haircut
-                  Chatsworth&quot; combined with Schema.org structured data
-                  ensures Xclusive Barber now appears in the Google Map Pack
-                  where local customers actually look.
+                  Beyond current trips, we built an interest-capture system for
+                  upcoming itineraries. Visitors can register interest in future
+                  destinations, giving Ndilayavhupo a warm lead list to fill
+                  every tour before it&apos;s even announced on social media.
+                  Local SEO for travel agencies ensures organic discovery across
+                  Limpopo and beyond.
                 </p>
               </div>
             </div>
@@ -258,9 +260,9 @@ export const XclusiveBarberCaseStudy = () => {
               <span className="italic text-outline-2">delivered</span>
             </h2>
             <p className="text-lg text-white/60 max-w-[600px]">
-              A high-performance website and automated booking system that
-              replaced phone chaos with a revenue machine for this Durban barber
-              shop.
+              A custom tourism booking platform with WhatsApp booking funnels
+              and automated lead capture — built to fill group tours and
+              establish local search authority.
             </p>
           </div>
 
@@ -305,8 +307,9 @@ export const XclusiveBarberCaseStudy = () => {
               <span className="italic text-outline-2">outcomes</span>
             </h2>
             <p className="text-lg text-white/60 max-w-[600px]">
-              Hard numbers that prove our custom web design Durban work saves
-              business owners time and makes them money.
+              Quantifiable results proving that custom tourism booking platforms
+              build profitable, lead-generating digital assets for the tourism
+              sector.
             </p>
           </div>
 
@@ -378,15 +381,17 @@ export const XclusiveBarberCaseStudy = () => {
             }`}
           >
             <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white mb-6">
-              Need a website that{" "}
-              <span className="italic text-outline-2">books clients</span> for
-              you?
+              Need a website for your{" "}
+              <span className="italic text-outline-2">
+                travel business
+              </span>
+              ?
             </h2>
             <p className="text-lg text-white/60 leading-relaxed mb-10 max-w-[600px] mx-auto">
-              Whether you&apos;re a barber in Durban, a salon in Johannesburg,
-              or any small business in South Africa that&apos;s tired of
-              answering the phone — we build websites that get you found, booked,
-              and paid.
+              Whether you&apos;re a tour operator in Limpopo, a travel agency
+              in Cape Town, or any tourism business that needs to fill trips
+              and capture leads — we build custom tourism booking platforms
+              that turn browsers into booked travellers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link

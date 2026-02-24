@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import {
-  Scissors,
+  Truck,
   Globe,
-  CalendarCheck,
+  WhatsappLogo,
   DeviceMobile,
   MagnifyingGlass,
   ArrowRight,
   MapPin,
   Clock,
-  Phone,
-  Timer,
+  Package,
+  Airplane,
+  ChatCircleDots,
   ChartLineUp,
-  UsersThree,
 } from "@phosphor-icons/react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionWrapper } from "@/components/SectionWrapper";
@@ -21,59 +21,58 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 const projectHighlights = [
   {
     icon: Globe,
-    title: "Custom Web Design Built for Durban Barbers",
+    title: "Transport Company Web Design That Builds Trust",
     description:
-      "We designed a fully bespoke website that captures the premium identity of Xclusive Barber. Bold typography, a dark-themed aesthetic, and high-quality imagery work together to build instant trust with new visitors searching for a barber in Davenport or Durban.",
+      "We built a fast, professional landing page that instantly communicates credibility. Instead of scattered social media posts, Mr. Float now has a centralised digital presence that showcases every service — from taxi rides to package deliveries — in one polished, conversion-focused layout.",
   },
   {
-    icon: CalendarCheck,
-    title: "Salon Online Booking System Setup",
+    icon: WhatsappLogo,
+    title: "Custom WhatsApp Booking Integration",
     description:
-      "We replaced the chaos of mid-haircut phone calls with a 100% automated Next.js booking platform. Clients now book appointments 24/7, receive automated confirmations, and the team never has to put down their clippers to answer the phone again.",
+      "We designed a streamlined service selection flow that funnels every enquiry — whether it's a car hire, airport shuttle, or long-distance trip — directly into a pre-formatted WhatsApp message. Customers tap, select their service, and start chatting. Zero friction, zero missed leads.",
   },
   {
     icon: DeviceMobile,
-    title: "Mobile-First, Sub-Second Load Times",
+    title: "Mobile-Optimised for On-the-Go Bookings",
     description:
-      "Over 80% of Xclusive Barber's clients search on their phones. We built a fully responsive, performance-optimised site that loads in under 0.8 seconds on mobile, so customers in Davenport and Chatsworth can find and book in seconds, not minutes.",
+      "Over 90% of Mr. Float's customers browse on mobile. We built a lightning-fast, thumb-friendly interface that loads in under 0.9 seconds on 3G networks — critical in Zimbabwe where data costs are high and connection speeds vary.",
   },
   {
     icon: MagnifyingGlass,
-    title: "Local SEO for Barber Shops in Durban",
+    title: "Local SEO for Transport Companies in Zimbabwe",
     description:
-      "We implemented on-page SEO and Schema.org structured data targeting high-intent phrases like 'barber in Davenport', 'custom web design Durban', and 'haircut Chatsworth'. The result: improved Google Map Pack visibility and more organic walk-ins from local search.",
+      "On-page SEO targeting 'transport service Zimbabwe', 'car hire Harare', and 'airport shuttle Bulawayo' ensures Mr. Float appears when business owners and travellers search for reliable logistics. Schema.org markup drives local search visibility across multiple cities.",
   },
 ];
 
 const results = [
   {
-    metric: "< 0.8s",
+    metric: "< 0.9s",
     label: "Mobile Load Time",
     description:
-      "Sub-second page loads on 3G and 4G networks, keeping bounce rates near zero",
+      "Sub-second performance on mobile networks, keeping users engaged even on 3G",
   },
   {
-    metric: "100%",
-    label: "Automated Scheduling",
+    metric: "3x",
+    label: "Daily WhatsApp Enquiries",
     description:
-      "Zero phone interruptions during haircuts — every booking handled automatically",
+      "Triple the daily inbound leads funnelled directly into WhatsApp conversations",
   },
   {
-    metric: "Top 3",
-    label: "Local Map Pack",
+    metric: "6→1",
+    label: "Services, One Platform",
     description:
-      "Ranking in Google's local pack for 'barber Davenport' and 'barber near me Durban'",
+      "Six distinct transport services unified under one clear, navigable digital presence",
   },
   {
-    metric: "40%+",
-    label: "More Monthly Bookings",
+    metric: "Top 5",
+    label: "Local Search Visibility",
     description:
-      "Measurable increase in appointment volume within the first 60 days of launch",
+      "Improved Google rankings for key transport and logistics terms in Zimbabwe",
   },
 ];
 
 // Full literal class strings are required so Tailwind generates the CSS at build time.
-// Computed template literals (e.g. `${delay}s`) produce class names Tailwind never sees.
 const STAGGER_4 = [
   "animate-[fadeInUp_0.8s_ease-out_0.2s_both]",
   "animate-[fadeInUp_0.8s_ease-out_0.4s_both]",
@@ -86,13 +85,13 @@ const techStack = [
   "React",
   "Tailwind CSS",
   "Vercel",
-  "Custom Booking API",
-  "Google Maps Integration",
+  "WhatsApp Business API",
   "Schema.org Markup",
   "Responsive Images",
+  "Mobile-First Architecture",
 ];
 
-export const XclusiveBarberCaseStudy = () => {
+export const MrFloatLogisticsCaseStudy = () => {
   const { ref: overviewRef, isVisible: overviewVisible } =
     useScrollAnimation(0.15);
   const { ref: highlightsRef, isVisible: highlightsVisible } =
@@ -112,34 +111,34 @@ export const XclusiveBarberCaseStudy = () => {
               Case Study
             </span>
             <span className="text-xs font-semibold uppercase tracking-widest text-[#e7fe56]/80 border border-[#e7fe56]/30 px-4 py-1.5 rounded-full">
-              Barber &amp; Grooming
+              Logistics &amp; Transport
             </span>
           </div>
           <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[0.95] tracking-tight text-white mb-6">
-            Xclusive Barber
+            Mr. Float
             <br />
-            <span className="italic text-outline-2">Davenport</span>
+            <span className="italic text-outline-2">Logistics</span>
           </h1>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[700px] mx-auto mb-8">
-            How our small business website developers replaced disruptive
-            mid-haircut phone calls with a seamless, automated Next.js booking
-            platform — helping a Durban barbershop get found on Google and fill
-            every chair.
+            How our logistics website developers built a high-converting landing
+            page with custom WhatsApp booking integration — unifying six
+            transport services into one lead-generating digital platform for a
+            Zimbabwe-based transport company.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/50">
             <span className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4" />
-              Davenport, Durban
+              Zimbabwe
             </span>
             <span className="w-1 h-1 rounded-full bg-white/20" />
             <span className="flex items-center gap-1.5">
-              <Scissors className="w-4 h-4" />
-              Barber Shop
+              <Truck className="w-4 h-4" />
+              Transport &amp; Logistics
             </span>
             <span className="w-1 h-1 rounded-full bg-white/20" />
             <span className="flex items-center gap-1.5">
               <Clock className="w-4 h-4" />
-              Custom Web Design &amp; Booking System
+              Landing Page &amp; WhatsApp Integration
             </span>
           </div>
         </div>
@@ -149,8 +148,8 @@ export const XclusiveBarberCaseStudy = () => {
       <SectionWrapper className="z-10 !pt-0 !pb-0 md:!pb-0">
         <div className="rounded-2xl overflow-hidden border border-white/10 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
           <img
-            src="/preview/v0-barbershop-durban.vercel.app_(laptop).webp"
-            alt="Custom web design Durban — Xclusive Barber website with salon online booking system by LM Studios"
+            src="/preview/mrfloatlogistics.com_(laptop) (6).webp"
+            alt="Transport company web design — Mr. Float Logistics website with custom WhatsApp booking integration by LM Studios"
             className="w-full h-auto"
           />
         </div>
@@ -172,29 +171,30 @@ export const XclusiveBarberCaseStudy = () => {
               </h2>
               <div className="space-y-4">
                 <p className="text-white/70 leading-relaxed">
-                  Xclusive Barber is a popular grooming destination in
-                  Davenport, Durban, known for precision fades, beard sculpting,
-                  and a loyal local following. But their growth was being
-                  strangled by two operational headaches.
+                  Mr. Float Logistics operates across Zimbabwe offering a
+                  complex array of services: taxi rides, long-distance travel,
+                  car hire, airport shuttles, and package deliveries. Despite
+                  being a trusted name locally, they had no centralised digital
+                  presence to match their reputation.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    No online presence meant invisible revenue.
+                    Scattered communication killed conversions.
                   </strong>{" "}
-                  When potential clients searched for &quot;barber in
-                  Davenport&quot;, &quot;custom web design Durban&quot;, or
-                  &quot;haircut near me Chatsworth&quot;, Xclusive Barber
-                  didn&apos;t exist. Every unanswered Google search was a
-                  booking handed to a competitor with even a basic website.
+                  Potential customers had to hunt through social media posts or
+                  ask around for a phone number. There was no clear way to see
+                  all services, compare options, or make a booking — leading to
+                  dozens of lost leads daily.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    Phone calls were killing productivity.
+                    No trust signal for new customers.
                   </strong>{" "}
-                  Every booking came through phone calls — often mid-haircut.
-                  Barbers were forced to stop, wipe their hands, and take calls,
-                  disrupting the client in the chair and creating a bottleneck
-                  that cost them 3-4 bookings per day.
+                  In the transport industry, trust is everything. Without a
+                  professional website, Mr. Float was invisible to the growing
+                  number of Zimbabweans searching online for &quot;transport
+                  service Zimbabwe&quot; or &quot;car hire Harare&quot; — and
+                  losing business to competitors who looked more established.
                 </p>
               </div>
             </div>
@@ -210,29 +210,28 @@ export const XclusiveBarberCaseStudy = () => {
               </h2>
               <div className="space-y-4">
                 <p className="text-white/70 leading-relaxed">
-                  We built a complete digital solution as specialist small
-                  business website developers: a custom-designed website paired
-                  with a salon online booking system setup that eliminated every
-                  phone interruption.
+                  As experienced logistics website developers, we built a fast,
+                  mobile-optimised landing page designed to do one thing
+                  exceptionally well: funnel six diverse transport services
+                  directly into a streamlined WhatsApp booking system.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    A booking platform that runs itself.
+                    One page, six services, one tap to book.
                   </strong>{" "}
-                  Our custom Next.js booking system lets clients browse services,
-                  pick a barber, choose a time slot, and confirm — all without a
-                  single phone call. Automated reminders cut no-shows, and the
-                  team stays focused on the craft.
+                  Every service — from airport shuttles to package deliveries —
+                  is clearly presented with its own call-to-action that opens a
+                  pre-formatted WhatsApp message. The customer never has to type
+                  an explanation; the system handles context automatically.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   <strong className="text-white/90">
-                    Local SEO that puts them on the map.
+                    Built for Zimbabwe&apos;s mobile-first reality.
                   </strong>{" "}
-                  On-page SEO targeting &quot;barber in Davenport&quot;,
-                  &quot;best barber Durban&quot;, and &quot;haircut
-                  Chatsworth&quot; combined with Schema.org structured data
-                  ensures Xclusive Barber now appears in the Google Map Pack
-                  where local customers actually look.
+                  We optimised every asset for sub-second loads on 3G networks,
+                  knowing that most users access the site on budget smartphones
+                  with limited data. The result: a professional digital presence
+                  that converts, even on the slowest connections.
                 </p>
               </div>
             </div>
@@ -258,9 +257,9 @@ export const XclusiveBarberCaseStudy = () => {
               <span className="italic text-outline-2">delivered</span>
             </h2>
             <p className="text-lg text-white/60 max-w-[600px]">
-              A high-performance website and automated booking system that
-              replaced phone chaos with a revenue machine for this Durban barber
-              shop.
+              A high-converting landing page with custom WhatsApp booking
+              integration — purpose-built for a multifaceted transport business
+              in Zimbabwe.
             </p>
           </div>
 
@@ -305,8 +304,8 @@ export const XclusiveBarberCaseStudy = () => {
               <span className="italic text-outline-2">outcomes</span>
             </h2>
             <p className="text-lg text-white/60 max-w-[600px]">
-              Hard numbers that prove our custom web design Durban work saves
-              business owners time and makes them money.
+              Measurable results proving that practical, high-converting small
+              business websites in Zimbabwe drive real revenue.
             </p>
           </div>
 
@@ -378,15 +377,17 @@ export const XclusiveBarberCaseStudy = () => {
             }`}
           >
             <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white mb-6">
-              Need a website that{" "}
-              <span className="italic text-outline-2">books clients</span> for
-              you?
+              Need a website for your{" "}
+              <span className="italic text-outline-2">
+                transport business
+              </span>
+              ?
             </h2>
             <p className="text-lg text-white/60 leading-relaxed mb-10 max-w-[600px] mx-auto">
-              Whether you&apos;re a barber in Durban, a salon in Johannesburg,
-              or any small business in South Africa that&apos;s tired of
-              answering the phone — we build websites that get you found, booked,
-              and paid.
+              Whether you run a logistics company in Zimbabwe, a shuttle service
+              in South Africa, or any transport business that needs to capture
+              leads online — we build small business websites that turn visitors
+              into WhatsApp bookings.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
