@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   Truck,
@@ -146,9 +147,11 @@ export const MrFloatLogisticsCaseStudy = () => {
       {/* Preview Image */}
       <SectionWrapper className="z-10 !pt-0 !pb-0 md:!pb-0">
         <div className="rounded-2xl overflow-hidden border border-white/10 animate-[fadeInUp_0.8s_ease-out_0.4s_both] shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
-          <img
+          <Image
             src="/preview/mrfloatlogistics.com_(laptop) (6).webp"
             alt="Transport company web design — Mr. Float Logistics website with custom WhatsApp booking integration by LM Studios"
+            width={1200}
+            height={630}
             className="w-full h-auto"
           />
         </div>

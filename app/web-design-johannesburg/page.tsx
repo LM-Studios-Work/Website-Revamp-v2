@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Web Design Johannesburg",
+  title:
+    "Web Design Johannesburg — Custom Websites & SEO Services | LM Studios",
   description:
     "Professional web design services in Johannesburg. LM Studios builds fast, SEO-optimized websites for Joburg businesses. Get a quote today.",
   alternates: {
