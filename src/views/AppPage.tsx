@@ -21,10 +21,10 @@ import {
 } from "@phosphor-icons/react";
 
 const solutionExamples = [
-  {
-    title: "Booking & Scheduling Systems",
-    description: "Resource management, appointment scheduling, calendar integration, notifications, and user dashboards.",
-    features: ["Role-based access", "Real-time availability", "Automated reminders", "Reporting dashboard"],
+                [
+                  { num: "01", title: "Expert Engineers", desc: "Our senior developers have a proven track record building scalable web platforms and business systems.", color: COLORS.cyan, delay: "0.4s" },
+                  { num: "02", title: "Strategic Thinking", desc: "We analyze your workflows and design systems that truly fit your operational needs and future growth.", color: COLORS.lime, delay: "0.6s" },
+                ].map((card) => (
     color: COLORS.cyan,
     icon: CalendarCheck,
   },
