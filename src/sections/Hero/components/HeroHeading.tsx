@@ -4,7 +4,7 @@ export const HeroHeading = () => {
       <h1 className="text-[2.2rem] md:text-[3rem] lg:text-[3.8rem] xl:text-[4.5rem] font-bold leading-[1.1] tracking-tight text-white">
         High-Performance Websites
         <br />
-        for Midrand{" "}
+        for Every{" "}
         <span className="relative inline-block">
           Businesses.
           <svg

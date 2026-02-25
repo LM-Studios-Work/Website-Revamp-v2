@@ -7,7 +7,7 @@ export const HeroDescription = () => {
      
       <p className="text-lg md:text-lg lg:text-xl text-white/70 leading-relaxed mb-6 md:mb-10 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
         We build affordable, SEO-optimized websites and automated booking
-        systems for South African businesses. Based in Midrand, we help you
+        systems for businesses everywhere. We work 100% online — helping you
         stop chasing leads and start closing them.
       </p>
 
