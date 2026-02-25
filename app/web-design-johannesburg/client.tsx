@@ -4,13 +4,15 @@ import Link from "next/link";
 import { Check, ArrowRight } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ProcessCardGrid } from "@/components/ProcessCardGrid";
-import { CTASection } from "@/components/CTASection";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { LatestProjectsHeader } from "@/sections/ProjectsSection/components/LatestProjectsHeader";
+import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
+import { featuredProjects } from "@/sections/ProjectsSection/constants";
 
 const JHB_PACKAGES = [
   {
@@ -183,12 +185,12 @@ export default function WebDesignJohannesburgClient() {
                   pkg.popular
                     ? "border-[#e7fe56] bg-white/[0.03]"
                     : "border-white/10 bg-white/[0.02]"
-                } flex flex-col hover:bg-white/[0.05] transition-colors duration-300 opacity-0 ${
+                } flex flex-col hover:bg-white/[0.05] transition-all duration-300 ${
                   packagesVisible
                     ? `animate-[fadeInUp_0.8s_ease-out_${
                         0.4 + idx * 0.1
                       }s_both]`
-                    : ""
+                    : "opacity-0"
                 }`}
               >
                 {pkg.popular && (
@@ -296,6 +298,25 @@ export default function WebDesignJohannesburgClient() {
         </div>
       </SectionWrapper>
 
+      {/* Latest Projects */}
+      <section aria-labelledby="projects-heading">
+        <LatestProjectsHeader />
+        <div className="relative z-10 pb-16 md:pb-28 px-6">
+          <div className="max-w-[1400px] w-full mx-auto">
+            <div className="flex flex-wrap -mx-3 pt-8">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.title}
+                  {...project}
+                  index={index}
+                  isVisible={true}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="testimonials" aria-labelledby="testimonials-heading">
         <TestimonialsHeader />
         <TestimonialsGrid />
@@ -304,18 +325,6 @@ export default function WebDesignJohannesburgClient() {
       <section id="faq" aria-label="Frequently asked questions">
         <FAQ items={webDesignFAQ} />
       </section>
-
-      <CTASection
-        heading={
-          <>
-            Ready to dominate the <br />{" "}
-            <span className="italic text-outline-15">local market?</span>
-          </>
-        }
-        linkTo="/contact"
-        linkText="Request Your Custom Quote"
-        color="lime"
-      />
     </>
   );
 }
