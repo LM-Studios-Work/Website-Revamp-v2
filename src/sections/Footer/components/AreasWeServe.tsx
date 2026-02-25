@@ -1,32 +1,27 @@
 
-"use client";
-import React from 'react';
 import Link from 'next/link';
-import { Typography } from '@material-tailwind/react';
-import routes from '../../../constants/routes';
 
 const AreasWeServe = () => (
-    <div>
-      <Typography variant="h6" color="white" className="mb-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} onResize={undefined} onResizeCapture={undefined}>
-        Areas We Serve
-      </Typography>
-      <ul className="space-y-2">
-        <li>
-          <Link href={routes.webDesignJohannesburg}>
-            <a className="text-gray-400 hover:text-white transition-colors">
-              Web Design Johannesburg
-            </a>
+  <div className="flex flex-col">
+    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">
+      Areas We Serve
+    </h3>
+    <ul className="flex flex-col gap-3 md:gap-4">
+      {[
+        { href: "/web-design-johannesburg", text: "Web Design Johannesburg" },
+        { href: "/web-design-midrand", text: "Web Design Midrand" },
+      ].map((link, i) => (
+        <li key={i}>
+          <Link
+            href={link.href}
+            className="text-white/70 hover:text-white text-base md:text-lg transition-colors"
+          >
+            {link.text}
           </Link>
         </li>
-        <li>
-          <Link href={routes.webDesignMidrand}>
-            <a className="text-gray-400 hover:text-white transition-colors">
-              Web Design Midrand
-            </a>
-          </Link>
-        </li>
-      </ul>
-    </div>
-  );
+      ))}
+    </ul>
+  </div>
+);
 
-  export default AreasWeServe;
+export default AreasWeServe;
