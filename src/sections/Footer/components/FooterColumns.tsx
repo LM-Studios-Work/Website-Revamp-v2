@@ -3,7 +3,7 @@ import AreasWeServe from "./AreasWeServe";
 
 export const FooterColumns = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-[1fr_1fr_1.5fr_1fr] gap-10 md:gap-8">
       <FooterColumn
         title="Navigation"
         links={[
