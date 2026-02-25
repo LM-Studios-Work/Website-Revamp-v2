@@ -1,3 +1,4 @@
+"use client";
 import { Button, Typography } from "@material-tailwind/react";
 
 export const FooterCTA = () => {
