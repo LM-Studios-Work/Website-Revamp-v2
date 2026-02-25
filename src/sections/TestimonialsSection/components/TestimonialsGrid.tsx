@@ -8,25 +8,25 @@ const testimonials = [
     name: "Omhle Zuma",
     title: "Business Owner",
     testimonial:
-      '"We brought in LM Studios\' Web Design Team to deploy and implement our predefined mock-up pages. Throughout the project, the team applied its combined expertise to refine and enhance these designs before efficiently bringing them to life. Communication with the team was straightforward and seamless, allowing us to launch our site swiftly."',
+      "LM Studios turned our designs into a working website, and they even suggested some improvements that we liked. The site is fast, the communication was good, and the project was finished on schedule.",
   },
   {
     name: "Nkoka Logan",
     title: "Business Owner",
     testimonial:
-      '"Do you want a confusing and ugly website? Stay away from LM Studios web designers. Before you know, they\'ll start showing their understanding of design and technicalities (who likes a know-it-all, right?), might create beautiful components, answer your stupidly detailed questions or even suggest UI/UX solutions you never asked for. Consider yourself warned!"',
+      "The team knows their stuff. They handled our technical questions well and helped us refine the user experience. We're happy with the final product and the service was professional throughout.",
   },
   {
     name: "Neo Leeuw",
     title: "Business Owner",
     testimonial:
-      '"A huge thanks to the Web design team of LM Studios for their expert advice, incredible patience, and quick responses. Their dedication made the entire experience smooth and enjoyable. I truly appreciated how attentive and responsive they were throughout the process. I highly recommend their services!"',
+      "Working with LM Studios was a good experience. They were patient with our questions and responsive. We got the website we wanted and would recommend them.",
   },
   {
     name: "Rokunda Mboyi",
     title: "Business Owner",
     testimonial:
-      '"We have sought LM Studios\' assistance in transferring and enhancing certain features of our existing site. Their expertise has enabled us to bring our ideas to life with a high level of customization, a crucial advantage in a context where the website plays a central role in standing out."',
+      "We needed custom work done on our existing site, and LM Studios delivered. They have the technical skills for complex jobs, which was exactly what we were looking for.",
   },
 ];
 
