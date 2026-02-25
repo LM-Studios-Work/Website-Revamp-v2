@@ -6,9 +6,9 @@ export const HeroDescription = () => {
     <div className="max-w-2xl text-left">
      
       <p className="text-lg md:text-lg lg:text-xl text-white/70 leading-relaxed mb-6 md:mb-10 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
-        We build affordable, SEO-optimized websites and automated booking
-        systems for businesses everywhere. We work 100% online — helping you
-        stop chasing leads and start closing them.
+        Midrand-based, working 100% online with businesses across South Africa
+        and beyond. Affordable, SEO-optimized websites and booking systems that
+        help you stop chasing leads and start closing them.
       </p>
 
       <Link href="/contact"
