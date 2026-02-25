@@ -41,46 +41,43 @@ export default function WebDesignJohannesburgClient() {
       {/* Hero Section */}
       <section
         aria-labelledby="about-heading"
-        className="relative flex flex-col justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden"
+        className="relative flex flex-col items-center justify-center min-h-screen pt-40 pb-20 px-6 overflow-hidden"
       >
         <HeroVideoOverlay />
+        <div className="relative z-30 text-center max-w-[900px] mx-auto mb-16 anim-fade-in">
+          <h1
+            id="about-heading"
+            className="text-[clamp(3rem,8vw,5rem)] font-bold leading-tight text-white mb-6"
+          >
+            Custom Web Design in{" "}
+            <span className="relative inline-block">
+              Johannesburg
+              <WavyUnderline
+                color="limeAlt"
+                className="absolute -bottom-2 left-0 w-full"
+              />
+            </span>
+          </h1>
+        </div>
 
-        <div className="relative z-30 max-w-[1200px] w-full mx-auto">
-          <div className="max-w-[800px] anim-fade-in">
-            <h1
-              id="about-heading"
-              className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-white mb-8 text-left"
-            >
-              Custom Web Design in{" "}
-              <span className="relative inline-block">
-                Johannesburg
-                <WavyUnderline
-                  color="limeAlt"
-                  className="absolute -bottom-2 left-0 w-full"
-                />
-              </span>
-            </h1>
-
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/70 leading-relaxed anim-fade-in anim-stagger-1"
-              role="region"
-              aria-label="About LM Studios"
-            >
-              <p className="text-base md:text-lg">
-                Johannesburg is the fast-paced economic hub of South Africa. To
-                compete here, your business needs a website that loads instantly,
-                ranks on Google, and converts visitors into paying clients.
-              </p>
-              <p className="text-base md:text-lg">
-                At LM Studios, we build hand-coded, custom websites for Johannesburg
-                businesses. Operating just up the highway in Midrand, we serve the
-                entire Jozi metropolitan area. We skip the generic templates, the
-                hidden fees, and the expensive monthly retainers that typical city
-                agencies charge. Instead, we deliver transparent, once-off pricing
-                and web solutions engineered for maximum local visibility.
-              </p>
-            </div>
-          </div>
+        <div
+          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed anim-fade-in anim-stagger-1"
+          role="region"
+          aria-label="About LM Studios"
+        >
+          <p className="text-base md:text-lg">
+            Johannesburg is the fast-paced economic hub of South Africa. To
+            compete here, your business needs a website that loads instantly,
+            ranks on Google, and converts visitors into paying clients.
+          </p>
+          <p className="text-base md:text-lg">
+            At LM Studios, we build hand-coded, custom websites for Johannesburg
+            businesses. Operating just up the highway in Midrand, we serve the
+            entire Jozi metropolitan area. We skip the generic templates, the
+            hidden fees, and the expensive monthly retainers that typical city
+            agencies charge. Instead, we deliver transparent, once-off pricing
+            and web solutions engineered for maximum local visibility.
+          </p>
         </div>
       </section>
 
