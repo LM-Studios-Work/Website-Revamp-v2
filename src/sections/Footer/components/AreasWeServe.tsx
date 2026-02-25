@@ -8,6 +8,7 @@ const AreasWeServe = () => (
     </h3>
     <ul className="flex flex-col gap-3 md:gap-4">
       {[
+        // The "Web Design Midrand" link is already present here.
         { href: "/web-design-johannesburg", text: "Web Design Johannesburg" },
         { href: "/web-design-midrand", text: "Web Design Midrand" },
       ].map((link, i) => (
