@@ -131,7 +131,6 @@ export default function RootLayout({
           rel="preload"
           as="image"
           href="/lmstudioslogo.png"
-          fetchPriority="high"
         />
         {/* Preload the hero background image */}
         <link

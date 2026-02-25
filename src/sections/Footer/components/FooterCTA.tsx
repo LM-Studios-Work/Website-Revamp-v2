@@ -1,21 +1,24 @@
-"use client";
-import Link from "next/link";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { Button, Typography } from "@material-tailwind/react";
 
 export const FooterCTA = () => {
   return (
-    <section className="relative py-12 md:py-16">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
-          Ready to make your website using LM Studios?
-        </h2>
-        <Link href="/contact"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#d5bff0] hover:bg-[#d5bff0]/90 text-black text-lg font-semibold rounded-full transition-colors shrink-0"
+    <div className="relative z-[1] flex flex-col items-center gap-6 pb-12">
+      <Typography
+        variant="h3"
+        color="white"
+        className="text-center font-bold"
+      >
+        Ready to start a project?
+      </Typography>
+      <a href="/contact">
+        <Button
+          size="lg"
+          variant="filled"
+          className="bg-white text-black font-bold"
         >
-          Ask for a quote
-          <ArrowUpRight className="w-5 h-5" />
-        </Link>
-      </div>
-    </section>
+          Contact us
+        </Button>
+      </a>
+    </div>
   );
 };
