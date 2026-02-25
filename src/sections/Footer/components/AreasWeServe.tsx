@@ -1,3 +1,4 @@
+"use client";
 
 import React from 'react';
 import Link from 'next/link';
@@ -6,7 +7,7 @@ import routes from '../../../constants/routes';
 
 const AreasWeServe = () => (
     <div>
-      <Typography variant="h6" color="white" className="mb-4">
+      <Typography variant="h6" color="white" className="mb-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
         Areas We Serve
       </Typography>
       <ul className="space-y-2">

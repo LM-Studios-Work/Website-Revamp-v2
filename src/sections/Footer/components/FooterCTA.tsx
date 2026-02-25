@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, Typography } from "@material-tailwind/react";
 
 export const FooterCTA = () => {
@@ -7,6 +9,9 @@ export const FooterCTA = () => {
         variant="h3"
         color="white"
         className="text-center font-bold"
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
       >
         Ready to start a project?
       </Typography>
@@ -15,6 +20,9 @@ export const FooterCTA = () => {
           size="lg"
           variant="filled"
           className="bg-white text-black font-bold"
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
         >
           Contact us
         </Button>
