@@ -10,9 +10,6 @@ const AreasWeServe = () => (
       {[
         { href: "/web-design-johannesburg", text: "Web Design Johannesburg" },
         { href: "/web-design-midrand", text: "Web Design Midrand" },
-        { href: "/services/web-design", text: "Web Design" },
-        { href: "/services/seo", text: "SEO Services" },
-        { href: "/services/app-development", text: "App Development" },
       ].map((link, i) => (
         <li key={i}>
           <Link
