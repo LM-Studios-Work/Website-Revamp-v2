@@ -4,13 +4,15 @@ import Link from "next/link";
 import { Check, ArrowRight } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ProcessCardGrid } from "@/components/ProcessCardGrid";
-import { CTASection } from "@/components/CTASection";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { LatestProjectsHeader } from "@/sections/ProjectsSection/components/LatestProjectsHeader";
+import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
+import { featuredProjects } from "@/sections/ProjectsSection/constants";
 
 const JHB_PACKAGES = [
   {
@@ -49,6 +51,8 @@ const JHB_PACKAGES = [
 
 export default function WebDesignJohannesburgClient() {
   const { ref: introRef, isVisible: introVisible } = useScrollAnimation(0.1);
+  const { ref: whyChooseRef, isVisible: whyChooseVisible } =
+    useScrollAnimation(0.1);
   const { ref: packagesRef, isVisible: packagesVisible } =
     useScrollAnimation(0.1);
   const { ref: trackRecordRef, isVisible: trackRecordVisible } =
@@ -123,6 +127,59 @@ export default function WebDesignJohannesburgClient() {
         </div>
       </SectionWrapper>
 
+      {/* Why Johannesburg Businesses Choose Us */}
+      <SectionWrapper>
+        <div
+          ref={whyChooseRef}
+          className={`flex flex-col md:flex-row items-center gap-10 md:gap-20 opacity-0 ${
+            whyChooseVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+          }`}
+        >
+          <div className="md:w-1/2">
+            <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white mb-6">
+              Why Johannesburg Businesses{" "}
+              <span className="italic text-[#e7fe56]">
+                Choose LM Web Studios
+              </span>
+            </h2>
+            <p className="text-lg text-white/70 leading-relaxed mb-6">
+              Johannesburg is where South Africa&apos;s most ambitious businesses
+              compete. From Sandton&apos;s financial giants to the creative
+              hustle of Braamfontein and the logistics hubs of Jet Park,
+              competition is fierce. To stand out here, you need more than just a
+              generic template.
+            </p>
+            <p className="text-lg text-white/70 leading-relaxed mb-6">
+              You need a high-performance website that captures the energy of
+              your business and converts local traffic into paying clients. At LM
+              Web Studios, we understand the local market. We don&apos;t just
+              build websites; we build digital assets designed to grow your
+              revenue.
+            </p>
+            <p className="text-lg text-white/70 leading-relaxed">
+              We skip the clunky page builders and hidden fees. Instead, we
+              deliver hand-coded, SEO-optimized sites that load instantly and
+              rank higher on Google, ensuring your business gets found by
+              customers in your area.
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full">
+            <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 bg-white/5 relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                <div className="text-center">
+                  <span className="text-[#e7fe56] font-bold text-2xl block mb-2">
+                    LM Web Studios
+                  </span>
+                  <span className="text-white/40 text-sm uppercase tracking-widest">
+                    Johannesburg &bull; Sandton &bull; Braamfontein
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* Why Choose Us */}
       <ProcessCardGrid
         heading={
@@ -183,12 +240,12 @@ export default function WebDesignJohannesburgClient() {
                   pkg.popular
                     ? "border-[#e7fe56] bg-white/[0.03]"
                     : "border-white/10 bg-white/[0.02]"
-                } flex flex-col hover:bg-white/[0.05] transition-colors duration-300 opacity-0 ${
+                } flex flex-col hover:bg-white/[0.05] transition-all duration-300 ${
                   packagesVisible
                     ? `animate-[fadeInUp_0.8s_ease-out_${
                         0.4 + idx * 0.1
                       }s_both]`
-                    : ""
+                    : "opacity-0"
                 }`}
               >
                 {pkg.popular && (
@@ -296,6 +353,25 @@ export default function WebDesignJohannesburgClient() {
         </div>
       </SectionWrapper>
 
+      {/* Latest Projects */}
+      <section aria-labelledby="projects-heading">
+        <LatestProjectsHeader />
+        <div className="relative z-10 pb-16 md:pb-28 px-6">
+          <div className="max-w-[1400px] w-full mx-auto">
+            <div className="flex flex-wrap -mx-3 pt-8">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.title}
+                  {...project}
+                  index={index}
+                  isVisible={true}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="testimonials" aria-labelledby="testimonials-heading">
         <TestimonialsHeader />
         <TestimonialsGrid />
@@ -304,18 +380,6 @@ export default function WebDesignJohannesburgClient() {
       <section id="faq" aria-label="Frequently asked questions">
         <FAQ items={webDesignFAQ} />
       </section>
-
-      <CTASection
-        heading={
-          <>
-            Ready to dominate the <br />{" "}
-            <span className="italic text-outline-15">local market?</span>
-          </>
-        }
-        linkTo="/contact"
-        linkText="Request Your Custom Quote"
-        color="lime"
-      />
     </>
   );
 }
