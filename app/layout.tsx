@@ -11,7 +11,7 @@ const DOMAIN = "https://www.lmwebstudios.co.za";
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
   title: {
-    default: "Web Design Johannesburg & Midrand | LM Studios",
+    default: "Web Design Midrand & Johannesburg | LM Studios",
     template: "%s | LM Studios",
   },
   description:
@@ -23,17 +23,17 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "LM Studios",
     url: DOMAIN,
-    title: "Web Design Johannesburg & Midrand | LM Studios",
+    title: "Web Design Midrand & Johannesburg | LM Studios",
     description:
-      "LM Studios builds high-performance, SEO-optimized websites for Johannesburg and Midrand businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.",
+      "LM Studios builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
     images: [{ url: "/lmstudioslogo.png", alt: "LM Studios logo" }],
     locale: "en_ZA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Design Johannesburg & Midrand | LM Studios",
+    title: "Web Design Midrand & Johannesburg | LM Studios",
     description:
-      "LM Studios builds high-performance, SEO-optimized websites for Johannesburg and Midrand businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.",
+      "LM Studios builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
     images: ["/lmstudioslogo.png"],
   },
 };

@@ -256,8 +256,8 @@ export const WebDesignPage = () => {
                 Built for South African Businesses
               </h2>
               <p className="box-border caret-transparent mb-8">
-                Need a high-converting website that stands out in Johannesburg's
-                competitive market? We skip generic templates entirely. Every
+                Need a high-converting website that stands out in Midrand's
+                growing market? We skip generic templates entirely. Every
                 page is designed from scratch through a structured process:
                 sitemap planning, wireframing, UI mockups, and hand-coded
                 integration. The result is a fast, secure, fully responsive

@@ -9,7 +9,7 @@ interface PageMeta {
   ogUrl?: string;
 }
 
-const DEFAULT_TITLE = "Web Design Johannesburg & Midrand | LM Studios";
+const DEFAULT_TITLE = "Web Design Midrand & Johannesburg | LM Studios";
 const DEFAULT_DESCRIPTION =
   "LM Studios builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.";
 const DEFAULT_URL = "https://lmstudios.co.za/";
