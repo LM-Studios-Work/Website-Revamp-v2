@@ -9,7 +9,7 @@ export const FooterCTA = () => {
       <Link
         href="/contact"
         className="inline-flex items-center text-sm md:text-base font-semibold text-black pl-6 pr-2 py-2 rounded-full transition-all duration-300 hover:opacity-80 hover:scale-105"
-        style={{ backgroundColor: "#e7fe56" }}
+        style={{ backgroundColor: "#d5bff0" }}
       >
         Contact us
         <span className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-black/20 rounded-full flex items-center justify-center">
