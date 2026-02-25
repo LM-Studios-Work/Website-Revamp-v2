@@ -29,6 +29,7 @@ export const HeroVideoOverlay = () => {
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "center 55%" }}
           onError={() => setVideoError(true)}
         >
           <source src="/hero-video.mp4" type="video/mp4" />
