@@ -10,13 +10,9 @@ const AreasWeServe = () => (
       {[
         { href: "/web-design-johannesburg", text: "Web Design Johannesburg" },
         { href: "/web-design-midrand", text: "Web Design Midrand" },
-        { href: "/services/web-design", text: "Web Designers in Pretoria" },
-        { href: "/services/web-design", text: "Professional Website Design South Africa" },
-        { href: "/web-design-johannesburg", text: "Corporate Web Design Gauteng" },
-        { href: "/services/web-design", text: "Event Website Builders" },
-        { href: "/services/seo", text: "SEO Services South Africa" },
-        { href: "/services/app-development", text: "Custom App Development" },
-        { href: "/", text: "LM Studios Web Agency" },
+        { href: "/services/web-design", text: "Web Design" },
+        { href: "/services/seo", text: "SEO Services" },
+        { href: "/services/app-development", text: "App Development" },
       ].map((link, i) => (
         <li key={i}>
           <Link
