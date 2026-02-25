@@ -1,12 +1,15 @@
 export const HeroHeading = () => {
   return (
     <div className="mb-4 md:mb-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both] mt-[10vh] md:mt-[15vh]">
+      <p className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-white/50 mb-4 md:mb-6">
+        Web Design Midrand
+      </p>
       <h1 className="text-[2.2rem] md:text-[3rem] lg:text-[3.8rem] xl:text-[4.5rem] font-bold leading-[1.1] tracking-tight text-white">
-        High-Performance Websites
+        Websites That
         <br />
-        for Any{" "}
+        Drive{" "}
         <span className="relative inline-block">
-          Business.
+          Results.
           <svg
             className="absolute left-1/2 -translate-x-1/2 -bottom-2 md:-bottom-4 w-[105%] md:w-full h-[12px] md:h-[18px]"
             viewBox="0 0 220 12"
