@@ -1,26 +1,27 @@
+import Image from "next/image";
 import { PHOTOGRAPHY_IMAGES } from "@/sections/PhotographySection/constants";
 
 export const PhotographyImages = () => {
   return (
     <div className="grid grid-cols-2 gap-4 h-[500px] md:h-[600px]">
       {/* Left tall image */}
-      <div className="h-full overflow-hidden rounded-[30px] md:rounded-[40px]">
-        <img
+      <div className="relative h-full overflow-hidden rounded-[30px] md:rounded-[40px]">
+        <Image
           src={PHOTOGRAPHY_IMAGES[0].src}
           alt={PHOTOGRAPHY_IMAGES[0].alt}
-          className="w-full h-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
         />
       </div>
 
       {/* Right stacked images */}
       <div className="grid grid-rows-2 gap-4 h-full">
         <div className="relative overflow-hidden rounded-[20px] md:rounded-[30px]">
-          <img
+          <Image
             src={PHOTOGRAPHY_IMAGES[1].src}
             alt={PHOTOGRAPHY_IMAGES[1].alt}
-            className="w-full h-full object-cover"
-            loading="lazy"
+            fill
+            className="object-cover"
           />
           {/* Handwritten note */}
           <div className="absolute -top-16 -right-8 hidden md:block z-10 pointer-events-none">
@@ -61,12 +62,12 @@ export const PhotographyImages = () => {
             </svg>
           </div>
         </div>
-        <div className="overflow-hidden rounded-[20px] md:rounded-[30px]">
-          <img
+        <div className="relative overflow-hidden rounded-[20px] md:rounded-[30px]">
+          <Image
             src={PHOTOGRAPHY_IMAGES[2].src}
             alt={PHOTOGRAPHY_IMAGES[2].alt}
-            className="w-full h-full object-cover"
-            loading="lazy"
+            fill
+            className="object-cover"
           />
         </div>
       </div>

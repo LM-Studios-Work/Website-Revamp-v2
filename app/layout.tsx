@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 import "./globals.css";
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
@@ -159,15 +160,12 @@ export default function RootLayout({
               style={{ zIndex: 0 }}
               aria-hidden="true"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/background/fallback.webp"
                 alt=""
-                width={1920}
-                height={1080}
-                className="w-full h-full object-cover"
-                loading="eager"
-                fetchPriority="high"
+                fill
+                priority
+                className="object-cover"
               />
             </div>
 
