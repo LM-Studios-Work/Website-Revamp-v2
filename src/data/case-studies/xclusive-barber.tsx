@@ -25,7 +25,7 @@ export const xclusiveBarberData: CaseStudyData = {
   features: "Custom Web Design & Booking System",
   previewImage: {
     src: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
-    alt: "Custom web design Durban — Xclusive Barber website with salon online booking system by LM Studios",
+    alt: "Custom web design Durban — Xclusive Barber website with salon online booking system by LMWebDesign",
   },
   problem: {
     quote:

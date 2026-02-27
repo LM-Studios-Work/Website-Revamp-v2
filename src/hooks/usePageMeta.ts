@@ -9,10 +9,10 @@ interface PageMeta {
   ogUrl?: string;
 }
 
-const DEFAULT_TITLE = "Web Design Midrand & Johannesburg | LM Studios";
+const DEFAULT_TITLE = "Web Design Midrand & Johannesburg | LMWebDesign";
 const DEFAULT_DESCRIPTION =
-  "LM Studios builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.";
-const DEFAULT_URL = "https://lmstudios.co.za/";
+  "LMWebDesign builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.";
+const DEFAULT_URL = "https://lmwebdesign.co.za/";
 
 function setMetaContent(selector: string, content: string) {
   const el = document.querySelector<HTMLMetaElement>(selector);

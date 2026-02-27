@@ -25,7 +25,7 @@ export const ndilayavhupoData: CaseStudyData = {
   features: "Tourism Website & Booking Platform",
   previewImage: {
     src: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
-    alt: "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LM Studios",
+    alt: "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LMWebDesign",
   },
   problem: {
     quote:

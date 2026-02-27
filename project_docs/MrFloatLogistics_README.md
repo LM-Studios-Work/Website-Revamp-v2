@@ -7,7 +7,7 @@
 
 Despite their strong local reputation, they lacked a centralized digital presence. Customer inquiries were scattered across social media, and booking a service was a friction-filled process involving phone tag and lost messages.
 
-**LM Studios** built a fast, mobile-optimized landing page designed to do one thing exceptionally well: **funnel six diverse transport services directly into a streamlined WhatsApp booking system.**
+**LMWebDesign** built a fast, mobile-optimized landing page designed to do one thing exceptionally well: **funnel six diverse transport services directly into a streamlined WhatsApp booking system.**
 
 ---
 
@@ -55,4 +55,4 @@ This project was built with performance and scalability in mind:
 ---
 
 ## 👨‍💻 Developed By
-**LM Studios** - Midrand-based web design studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond.
+**LMWebDesign** - Midrand-based web design studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond.

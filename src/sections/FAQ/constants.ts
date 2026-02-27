@@ -22,7 +22,7 @@ export const webDesignFAQ: FAQItem[] = [
   {
     question: "How much does a professional website cost in South Africa?",
     answer:
-      "At LM Studios, professional website design starts at a transparent, once-off fee of R1,999 for a sleek portfolio site, goes up to R4,999 for a comprehensive, 6-page professional business website, and R7,499 for a full-featured e-commerce website. We do not believe in hidden costs or mandatory retainers. Your first year of hosting is completely free, ensuring maximum return on your investment.",
+      "At LMWebDesign, professional website design starts at a transparent, once-off fee of R1,999 for a sleek portfolio site, goes up to R4,999 for a comprehensive, 6-page professional business website, and R7,499 for a full-featured e-commerce website. We do not believe in hidden costs or mandatory retainers. Your first year of hosting is completely free, ensuring maximum return on your investment.",
   },
   {
     question: "How long does it take to design and launch a website?",
@@ -32,7 +32,7 @@ export const webDesignFAQ: FAQItem[] = [
   {
     question: "How do I choose the best web design company in Gauteng?",
     answer:
-      "The best web design agencies offer complete transparency, fast delivery, and robust post-launch support. Look for a team that guarantees mobile responsiveness, includes on-page SEO, and doesn't hide behind confusing jargon. LM Studios is highly rated because we back every single build with a comprehensive 6-month post-launch warranty, giving you absolute peace of mind.",
+      "The best web design agencies offer complete transparency, fast delivery, and robust post-launch support. Look for a team that guarantees mobile responsiveness, includes on-page SEO, and doesn't hide behind confusing jargon. LMWebDesign is highly rated because we back every single build with a comprehensive 6-month post-launch warranty, giving you absolute peace of mind.",
   },
   {
     question:

@@ -156,7 +156,7 @@ export const SEOPage = () => {
               </h2>
               <p className="text-lg text-white/70 leading-relaxed">
                 Your position on Google acts as the filter for your business's
-                success. At LM Studios, we build data-driven SEO strategies
+                success. At LMWebDesign, we build data-driven SEO strategies
                 that put your brand in front of customers exactly when they
                 are ready to buy. Whether you're a local business in Pretoria
                 needing more foot traffic or a startup in Cape Town looking

@@ -104,7 +104,7 @@ export default function WebDesignJohannesburgClient() {
               converts visitors into paying clients.
             </p>
             <p className="text-lg text-white/70 leading-relaxed">
-              At LM Studios, we skip the generic templates and hidden fees.
+              At LMWebDesign, we skip the generic templates and hidden fees.
               Operating just up the highway in Midrand, we deliver transparent,
               once-off pricing and web solutions engineered for maximum local
               visibility.
@@ -115,7 +115,7 @@ export default function WebDesignJohannesburgClient() {
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                 <div className="text-center">
                   <span className="text-[#e7fe56] font-bold text-2xl block mb-2">
-                    LM Studios
+                    LMWebDesign
                   </span>
                   <span className="text-white/40 text-sm uppercase tracking-widest">
                     Johannesburg &bull; Midrand

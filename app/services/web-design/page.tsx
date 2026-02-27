@@ -4,18 +4,18 @@ import { webDesignFAQ } from "@/sections/FAQ/constants";
 
 export const metadata: Metadata = {
   title:
-    "Professional Web Design Midrand | From R1,999 | LM Studios",
+    "Professional Web Design Midrand | From R1,999 | LMWebDesign",
   description:
-    "Affordable, mobile-responsive web design in Midrand, Johannesburg & across South Africa. Once-off packages from R1,999 with free hosting, on-page SEO & a 6-month warranty. No retainers. Get your free quote from LM Studios.",
+    "Affordable, mobile-responsive web design in Midrand, Johannesburg & across South Africa. Once-off packages from R1,999 with free hosting, on-page SEO & a 6-month warranty. No retainers. Get your free quote from LMWebDesign.",
   alternates: {
-    canonical: "https://www.lmwebstudios.co.za/services/web-design",
+    canonical: "https://www.lmwebdesign.co.za/services/web-design",
   },
   openGraph: {
     title:
-      "Professional Web Design Midrand | From R1,999 | LM Studios",
+      "Professional Web Design Midrand | From R1,999 | LMWebDesign",
     description:
       "Affordable, mobile-responsive web design in Midrand, Johannesburg & across South Africa. Once-off packages from R1,999.",
-    url: "https://www.lmwebstudios.co.za/services/web-design",
+    url: "https://www.lmwebdesign.co.za/services/web-design",
   },
 };
 

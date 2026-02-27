@@ -59,10 +59,10 @@ export const AboutPage = () => {
         <div
           className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px] mx-auto text-white/80 leading-relaxed anim-fade-in anim-stagger-1"
           role="region"
-          aria-label="About LM Studios"
+          aria-label="About LMWebDesign"
         >
           <p className="text-base md:text-lg">
-            Founded in 2025, LM Studios has evolved from web design into
+            Founded in 2025, LMWebDesign has evolved from web design into
             building custom web applications and business systems for
             organizations and institutions. Our team is composed of seasoned
             professionals with expertise spanning software development, system
