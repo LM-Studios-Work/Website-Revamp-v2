@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CONTACT_DETAILS } from "@/constants/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -363,23 +364,23 @@ export default function TermsOfServicePage() {
               <p>
                 <strong className="text-white">LM Studios</strong>
               </p>
-              <p>Midrand, Gauteng, South Africa</p>
+              <p>{CONTACT_DETAILS.address.display}</p>
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:lm.studios.web@gmail.com"
+                  href={`mailto:${CONTACT_DETAILS.email}`}
                   className="underline hover:text-white transition-colors"
                 >
-                  lm.studios.web@gmail.com
+                  {CONTACT_DETAILS.email}
                 </a>
               </p>
               <p>
                 Phone:{" "}
                 <a
-                  href="tel:+27814272624"
+                  href={`tel:${CONTACT_DETAILS.phone.value}`}
                   className="underline hover:text-white transition-colors"
                 >
-                  081 427 2624
+                  {CONTACT_DETAILS.phone.display}
                 </a>
               </p>
             </div>

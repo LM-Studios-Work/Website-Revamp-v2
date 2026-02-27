@@ -3,6 +3,7 @@ import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { WavyUnderline } from "@/components/WavyUnderline";
 import { FormInput, FormTextarea } from "@/components/FormInput";
 import { COLORS } from "@/constants/colors";
+import { CONTACT_DETAILS } from "@/constants/contact";
 
 export const ContactPage = () => {
   return (
@@ -36,7 +37,7 @@ export const ContactPage = () => {
       <section className="relative pb-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <form
-            action="https://formsubmit.co/lm.studios.web@gmail.com"
+            action={`https://formsubmit.co/${CONTACT_DETAILS.email}`}
             method="POST"
             className="space-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
           >

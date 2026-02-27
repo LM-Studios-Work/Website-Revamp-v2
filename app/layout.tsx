@@ -5,6 +5,7 @@ import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { CONTACT_DETAILS } from "@/constants/contact";
 
 const DOMAIN = "https://www.lmwebstudios.co.za";
 
@@ -48,13 +49,13 @@ const localBusinessSchema = {
   logo: `${DOMAIN}/lmstudioslogo.png`,
   image: `${DOMAIN}/lmstudioslogo.png`,
   foundingDate: "2025",
-  telephone: "+27814272624",
-  email: "lm.studios.web@gmail.com",
+  telephone: CONTACT_DETAILS.phone.value,
+  email: CONTACT_DETAILS.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Midrand",
-    addressRegion: "Gauteng",
-    addressCountry: "ZA",
+    addressLocality: CONTACT_DETAILS.address.locality,
+    addressRegion: CONTACT_DETAILS.address.region,
+    addressCountry: CONTACT_DETAILS.address.countryCode,
   },
   areaServed: {
     "@type": "Country",
