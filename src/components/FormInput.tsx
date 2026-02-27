@@ -1,7 +1,7 @@
 import { COLORS } from "@/constants/colors";
 
 const INPUT_BASE =
-  "w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] transition-all shadow-inner text-white";
+  "w-full px-4 py-3 bg-white/5 border border-white/40 rounded-lg focus:outline-none focus:border-[#b4eb2c] focus-visible:ring-1 focus-visible:ring-[#b4eb2c] transition-all shadow-inner text-white";
 
 interface FormInputProps {
   label: string;

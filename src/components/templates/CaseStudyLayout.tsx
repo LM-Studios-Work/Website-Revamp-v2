@@ -2,77 +2,59 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Truck,
-  Globe,
-  WhatsappLogo,
-  DeviceMobile,
-  MagnifyingGlass,
-  ArrowRight,
-  MapPin,
-  Clock,
-} from "@phosphor-icons/react";
+import { ArrowRight, IconProps } from "@phosphor-icons/react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionWrapper } from "@/components/SectionWrapper";
-import { SectionLabel } from "@/components/SectionLabel";
+import React from "react";
 
-const projectHighlights = [
-  {
-    number: "01",
-    icon: Globe,
-    title: "Transport Company Web Design That Builds Trust",
-    description:
-      "We built a fast, professional landing page that instantly communicates credibility. Instead of scattered social media posts, Mr. Float now has a centralised digital presence that showcases every service from taxi rides to package deliveries in one polished, conversion-focused layout.",
-  },
-  {
-    number: "02",
-    icon: WhatsappLogo,
-    title: "Custom WhatsApp Booking Integration",
-    description:
-      "We designed a streamlined service selection flow that funnels every enquiry, whether it's a car hire, airport shuttle, or long-distance trip, directly into a pre-formatted WhatsApp message. Customers tap, select their service, and start chatting. Zero friction, zero missed leads.",
-  },
-  {
-    number: "03",
-    icon: DeviceMobile,
-    title: "Mobile-Optimised for On-the-Go Bookings",
-    description:
-      "Over 90% of Mr. Float's customers browse on mobile. We built a lightning-fast, thumb-friendly interface that loads in under 0.9 seconds on 3G networks. Critical in Zimbabwe where data costs are high and connection speeds vary.",
-  },
-  {
-    number: "04",
-    icon: MagnifyingGlass,
-    title: "Local SEO for Transport Companies in Zimbabwe",
-    description:
-      "On-page SEO targeting 'transport service Zimbabwe', 'car hire Harare', and 'airport shuttle Bulawayo' ensures Mr. Float appears when business owners and travellers search for reliable logistics. Schema.org markup drives local search visibility across multiple cities.",
-  },
-];
+export type ProjectHighlight = {
+  number: string;
+  icon: React.ComponentType<IconProps>;
+  title: string;
+  description: string;
+};
 
-const results = [
-  {
-    metric: "< 0.9s",
-    label: "Mobile Load Time",
-    description:
-      "Sub-second performance on mobile networks, keeping users engaged even on 3G",
-  },
-  {
-    metric: "3x",
-    label: "Daily WhatsApp Enquiries",
-    description:
-      "Triple the daily inbound leads funnelled directly into WhatsApp conversations",
-  },
-  {
-    metric: "6 to 1",
-    label: "Services, One Platform",
-    description:
-      "Six distinct transport services unified under one clear, navigable digital presence",
-  },
-  {
-    metric: "Top 5",
-    label: "Local Search Visibility",
-    description:
-      "Improved Google rankings for key transport and logistics terms in Zimbabwe",
-  },
-];
+export type ResultMetric = {
+  metric: string;
+  label: string;
+  description: string;
+};
+
+export type TechStack = string[];
+
+export type CaseStudyData = {
+  category: string;
+  title: React.ReactNode;
+  description: string;
+  location: string;
+  serviceType: string;
+  features: string;
+  previewImage: {
+    src: string;
+    alt: string;
+  };
+  problem: {
+    quote: string;
+    paragraphs: string[];
+  };
+  solution: {
+    quote: string;
+    paragraphs: string[];
+  };
+  deliverables: {
+    description: string;
+    highlights: ProjectHighlight[];
+  };
+  results: {
+    description: string;
+    metrics: ResultMetric[];
+  };
+  techStack: TechStack;
+  cta: {
+    title: React.ReactNode;
+    description: string;
+  };
+};
 
 const STAGGER_4 = [
   "animate-[fadeInUp_0.8s_ease-out_0.2s_both]",
@@ -81,18 +63,7 @@ const STAGGER_4 = [
   "animate-[fadeInUp_0.8s_ease-out_0.8s_both]",
 ] as const;
 
-const techStack = [
-  "Next.js",
-  "React",
-  "Tailwind CSS",
-  "Vercel",
-  "WhatsApp Business API",
-  "Schema.org Markup",
-  "Responsive Images",
-  "Mobile-First Architecture",
-];
-
-export const MrFloatLogisticsCaseStudy = () => {
+export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: { [key: string]: React.ComponentType<IconProps> } }) => {
   const { ref: overviewRef, isVisible: overviewVisible } =
     useScrollAnimation(0.15);
   const { ref: highlightsRef, isVisible: highlightsVisible } =
@@ -101,6 +72,11 @@ export const MrFloatLogisticsCaseStudy = () => {
     useScrollAnimation(0.15);
   const { ref: techRef, isVisible: techVisible } = useScrollAnimation(0.15);
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation(0.15);
+
+  const MapPin = icons.MapPin;
+  const ServiceIcon = icons.ServiceIcon;
+  const FeatureIcon = icons.FeatureIcon;
+
 
   return (
     <>
@@ -112,34 +88,29 @@ export const MrFloatLogisticsCaseStudy = () => {
               Case Study
             </span>
             <span className="text-xs font-semibold uppercase tracking-widest text-[#e7fe56]/80 border border-[#e7fe56]/30 px-4 py-1.5 rounded-full">
-              Logistics &amp; Transport
+              {data.category}
             </span>
           </div>
           <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[0.95] tracking-tight text-white mb-6">
-            Mr. Float
-            <br />
-            <span className="italic text-outline-2">Logistics</span>
+            {data.title}
           </h1>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[680px] mx-auto mb-10">
-            How we built a high-converting landing page with custom WhatsApp
-            booking integration, unifying six transport services into one
-            lead-generating digital platform for a Zimbabwe-based transport
-            company.
+            {data.description}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-white/40">
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-[#e7fe56]/60" />
-              Zimbabwe
+              {data.location}
             </span>
             <span className="w-px h-4 bg-white/15" />
             <span className="flex items-center gap-2">
-              <Truck className="w-4 h-4 text-[#e7fe56]/60" />
-              Transport &amp; Logistics
+              <ServiceIcon className="w-4 h-4 text-[#e7fe56]/60" />
+              {data.serviceType}
             </span>
             <span className="w-px h-4 bg-white/15" />
             <span className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#e7fe56]/60" />
-              Landing Page &amp; WhatsApp Integration
+              <FeatureIcon className="w-4 h-4 text-[#e7fe56]/60" />
+              {data.features}
             </span>
           </div>
         </div>
@@ -149,8 +120,8 @@ export const MrFloatLogisticsCaseStudy = () => {
       <SectionWrapper className="z-10 !pt-0 !pb-0 md:!pb-0">
         <div className="rounded-2xl overflow-hidden border border-white/10 animate-[fadeInUp_0.8s_ease-out_0.4s_both] shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
           <Image
-            src="/preview/mrfloatlogistics.com_(laptop) (6).webp"
-            alt="Transport company web design — Mr. Float Logistics website with custom WhatsApp booking integration by LM Studios"
+            src={data.previewImage.src}
+            alt={data.previewImage.alt}
             width={1200}
             height={630}
             className="w-full h-auto"
@@ -159,7 +130,14 @@ export const MrFloatLogisticsCaseStudy = () => {
       </SectionWrapper>
 
       {/* Section Label */}
-      <SectionLabel number="01" text="Challenge" className="pt-20 pb-4" />
+      <div className="max-w-[1400px] mx-auto px-6 pt-20 pb-4">
+        <div className="flex items-center gap-4">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+            01 / Challenge
+          </span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+      </div>
 
       {/* Problem + Solution */}
       <section ref={overviewRef} className="relative z-10 pb-20 px-6">
@@ -180,35 +158,14 @@ export const MrFloatLogisticsCaseStudy = () => {
               {/* Pull quote */}
               <blockquote className="border-l-2 border-[#e7fe56]/50 pl-5 mb-8">
                 <p className="text-white/90 text-lg font-medium leading-snug">
-                  &ldquo;Scattered communication killed conversions. Potential
-                  customers had to hunt through social media posts just to find a
-                  phone number.&rdquo;
+                  &ldquo;{data.problem.quote}&rdquo;
                 </p>
               </blockquote>
 
               <div className="space-y-5">
-                <p className="text-white/60 leading-relaxed">
-                  Mr. Float Logistics operates across Zimbabwe offering a complex
-                  array of services: taxi rides, long-distance travel, car hire,
-                  airport shuttles, and package deliveries. Despite being a
-                  trusted name locally, they had no centralised digital presence
-                  to match their reputation.
-                </p>
-                <p className="text-white/60 leading-relaxed">
-                  There was no clear way to see all services, compare options, or
-                  make a booking. This was leading to dozens of lost leads every
-                  day.
-                </p>
-                <p className="text-white/60 leading-relaxed">
-                  Without a professional website, Mr. Float was invisible to the
-                  growing number of Zimbabweans searching online for{" "}
-                  <span className="text-white/80">
-                    &quot;transport service Zimbabwe&quot;
-                  </span>{" "}
-                  or{" "}
-                  <span className="text-white/80">&quot;car hire Harare&quot;</span>{" "}
-                  and losing business to competitors who looked more established.
-                </p>
+                {data.problem.paragraphs.map((p, i) => (
+                  <p key={i} className="text-white/60 leading-relaxed" dangerouslySetInnerHTML={{ __html: p }} />
+                ))}
               </div>
             </div>
 
@@ -227,30 +184,14 @@ export const MrFloatLogisticsCaseStudy = () => {
               {/* Pull quote */}
               <blockquote className="border-l-2 border-[#e7fe56]/50 pl-5 mb-8">
                 <p className="text-white/90 text-lg font-medium leading-snug">
-                  &ldquo;One page, six services, one tap to book. Every service
-                  opens a pre-formatted WhatsApp message automatically.&rdquo;
+                  &ldquo;{data.solution.quote}&rdquo;
                 </p>
               </blockquote>
 
               <div className="space-y-5">
-                <p className="text-white/60 leading-relaxed">
-                  As experienced logistics website developers, we built a fast,
-                  mobile-optimised landing page designed to do one thing
-                  exceptionally well: funnel six diverse transport services
-                  directly into a streamlined WhatsApp booking system.
-                </p>
-                <p className="text-white/60 leading-relaxed">
-                  Every service from airport shuttles to package deliveries is
-                  clearly presented with its own call-to-action that opens a
-                  pre-formatted WhatsApp message. The customer never has to type
-                  an explanation. The system handles context automatically.
-                </p>
-                <p className="text-white/60 leading-relaxed">
-                  We optimised every asset for sub-second loads on 3G networks,
-                  knowing that most users access the site on budget smartphones
-                  with limited data. The result: a professional digital presence
-                  that converts, even on the slowest connections.
-                </p>
+                 {data.solution.paragraphs.map((p, i) => (
+                  <p key={i} className="text-white/60 leading-relaxed" dangerouslySetInnerHTML={{ __html: p }} />
+                ))}
               </div>
             </div>
           </div>
@@ -258,7 +199,14 @@ export const MrFloatLogisticsCaseStudy = () => {
       </section>
 
       {/* Section Label */}
-      <SectionLabel number="02" text="Deliverables" />
+      <div className="max-w-[1400px] mx-auto px-6 pt-4 pb-4">
+        <div className="flex items-center gap-4">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+            02 / Deliverables
+          </span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+      </div>
 
       {/* What We Delivered */}
       <section
@@ -278,14 +226,12 @@ export const MrFloatLogisticsCaseStudy = () => {
               <span className="italic text-outline-2">delivered</span>
             </h2>
             <p className="text-base text-white/50 max-w-[540px]">
-              A high-converting landing page with custom WhatsApp booking
-              integration, purpose-built for a multifaceted transport business
-              in Zimbabwe.
+              {data.deliverables.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
-            {projectHighlights.map((item, idx) => {
+            {data.deliverables.highlights.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
@@ -316,7 +262,14 @@ export const MrFloatLogisticsCaseStudy = () => {
       </section>
 
       {/* Section Label */}
-      <SectionLabel number="03" text="Results" />
+      <div className="max-w-[1400px] mx-auto px-6 pt-4 pb-4">
+        <div className="flex items-center gap-4">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+            03 / Results
+          </span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+      </div>
 
       {/* Key Outcomes */}
       <section ref={resultsRef} className="relative z-10 py-16 px-6">
@@ -333,13 +286,12 @@ export const MrFloatLogisticsCaseStudy = () => {
               <span className="italic text-outline-2">outcomes</span>
             </h2>
             <p className="text-base text-white/50 max-w-[540px]">
-              Measurable results proving that practical, high-converting small
-              business websites in Zimbabwe drive real revenue.
+              {data.results.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {results.map((item, idx) => (
+            {data.results.metrics.map((item, idx) => (
               <div
                 key={item.label}
                 className={`rounded-xl p-7 border border-white/10 bg-white/[0.03] flex flex-col gap-3 opacity-0 ${
@@ -363,7 +315,14 @@ export const MrFloatLogisticsCaseStudy = () => {
       </section>
 
       {/* Section Label */}
-      <SectionLabel number="04" text="Technology" />
+      <div className="max-w-[1400px] mx-auto px-6 pt-4 pb-4">
+        <div className="flex items-center gap-4">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+            04 / Technology
+          </span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+      </div>
 
       {/* Tech Stack */}
       <section ref={techRef} className="relative z-10 py-16 px-6">
@@ -386,7 +345,7 @@ export const MrFloatLogisticsCaseStudy = () => {
                 : ""
             }`}
           >
-            {techStack.map((tech) => (
+            {data.techStack.map((tech) => (
               <span
                 key={tech}
                 className="text-sm font-medium px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.04] text-white/60 hover:border-[#e7fe56]/30 hover:text-[#e7fe56]/80 transition-colors"
@@ -412,14 +371,10 @@ export const MrFloatLogisticsCaseStudy = () => {
               Ready to start?
             </span>
             <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white mb-6">
-              Need a website for your{" "}
-              <span className="italic text-outline-2">transport business</span>?
+              {data.cta.title}
             </h2>
             <p className="text-lg text-white/50 leading-relaxed mb-10 max-w-[560px]">
-              Whether you run a logistics company in Zimbabwe, a shuttle service
-              in South Africa, or any transport business that needs to capture
-              leads online, we build small business websites that turn visitors
-              into WhatsApp bookings.
+              {data.cta.description}
             </p>
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link
@@ -446,9 +401,4 @@ export const MrFloatLogisticsCaseStudy = () => {
       </section>
     </>
   );
-import { CaseStudyLayout } from "@/components/templates/CaseStudyLayout";
-import { mrFloatData, mrFloatIcons } from "@/data/case-studies/mr-float";
-
-export const MrFloatLogisticsCaseStudy = () => {
-  return <CaseStudyLayout data={mrFloatData} icons={mrFloatIcons} />;
 };

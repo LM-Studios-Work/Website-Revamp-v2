@@ -1,5 +1,5 @@
 import { Check } from "@phosphor-icons/react";
-import { PHOTOGRAPHY_FEATURES } from "../constants";
+import { PHOTOGRAPHY_FEATURES } from "@/sections/PhotographySection/constants";
 
 export const PhotographyContent = () => {
   return (
