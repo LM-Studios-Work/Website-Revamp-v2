@@ -1,0 +1,20 @@
+
+> lm-web-studios@1.0.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 4.9s (614 modules)
+ GET / 200 in 5251ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 4s (617 modules)
+ GET /case-studies/ndilayavhupo-travels 404 in 4128ms
+ GET / 200 in 73ms
+ ○ Compiling /projects/ndilayavhupo-travels ...
+ ✓ Compiled /projects/ndilayavhupo-travels in 17.3s (9697 modules)
+ GET /projects/ndilayavhupo-travels 200 in 17542ms
