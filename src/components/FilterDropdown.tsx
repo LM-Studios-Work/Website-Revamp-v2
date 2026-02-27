@@ -39,7 +39,7 @@ export const FilterDropdown = ({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-black/40 text-white rounded-full px-6 py-3.5 appearance-none cursor-pointer transition-colors [&>option]:bg-black [&>option]:text-white"
+        className="w-full bg-black/40 text-white rounded-full px-6 py-3.5 appearance-none cursor-pointer transition-colors [&>option]:bg-black [&>option]:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b4eb2c]"
         style={{
           borderWidth: "2px",
           borderStyle: "solid",
