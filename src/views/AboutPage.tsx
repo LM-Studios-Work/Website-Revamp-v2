@@ -1,6 +1,6 @@
 "use client";
 import { ServicesMarquee } from "@/sections/ServicesSection/components/ServicesMarquee";
-import { ProcessCard } from "../components/ProcessCard";
+import { ProcessCard } from "@/components/ProcessCard";
 import { HeroVideoOverlay } from "@/components/HeroVideoOverlay";
 import { WavyUnderline } from "@/components/WavyUnderline";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
