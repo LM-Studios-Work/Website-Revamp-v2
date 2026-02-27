@@ -77,7 +77,9 @@ export const ParticleBackground = () => {
 
     let animationId: number;
     let particles: Particle[] = [];
-    let currentConfig = window.innerWidth < 768 ? MOBILE : DESKTOP;
+    let cachedWidth = window.innerWidth;
+    let cachedHeight = window.innerHeight;
+    let currentConfig = cachedWidth < 768 ? MOBILE : DESKTOP;
 
     // 1. Setup the mouse tracker
     const mouse = {
@@ -102,26 +104,25 @@ export const ParticleBackground = () => {
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
+      cachedWidth = window.innerWidth;
+      cachedHeight = window.innerHeight;
+      canvas.width = cachedWidth * dpr;
+      canvas.height = cachedHeight * dpr;
+      canvas.style.width = `${cachedWidth}px`;
+      canvas.style.height = `${cachedHeight}px`;
       ctx.scale(dpr, dpr);
     };
 
     const init = () => {
       resize();
-      currentConfig = window.innerWidth < 768 ? MOBILE : DESKTOP;
+      currentConfig = cachedWidth < 768 ? MOBILE : DESKTOP;
       particles = Array.from({ length: currentConfig.particleCount }, () =>
-        createParticle(window.innerWidth, window.innerHeight, currentConfig, true)
+        createParticle(cachedWidth, cachedHeight, currentConfig, true)
       );
     };
 
     const animate = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-
-      ctx.clearRect(0, 0, w, h);
+      ctx.clearRect(0, 0, cachedWidth, cachedHeight);
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -174,7 +175,7 @@ export const ParticleBackground = () => {
 
         // Reset particle if it dies OR if it goes off the top
         if (p.life >= p.maxLife || p.y < -10) {
-          particles[i] = createParticle(w, h, currentConfig, false);
+          particles[i] = createParticle(cachedWidth, cachedHeight, currentConfig, false);
         }
       }
 
