@@ -7,6 +7,7 @@ export type FooterColumnProps = {
     href: string;
     text: string;
     title?: string;
+    ariaLabel?: string;
   }>;
 };
 
@@ -33,6 +34,7 @@ export const FooterColumn = (props: FooterColumnProps) => {
               <a
                 href={link.href}
                 title={link.title}
+                aria-label={link.ariaLabel || link.title || link.text}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-white text-base md:text-lg transition-colors"
