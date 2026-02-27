@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export type ProjectCardProps = {
   imageUrl: string;
   imageAlt: string;
@@ -39,15 +41,12 @@ export const ProjectCard = (props: ProjectCardProps) => {
           transition-all duration-300 group"
       >
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
-          <img
+          <Image
             src={props.imageUrl}
             alt={props.imageAlt}
-            width={800}
-            height={600}
-            loading="lazy"
-            decoding="async"
+            fill
             sizes="(min-width: 768px) 33vw, 100vw"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105"
+            className="object-cover transition-transform duration-500 md:group-hover:scale-105"
           />
         </div>
         <div className="grow p-6">
