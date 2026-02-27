@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { ProjectsPage } from "@/views/ProjectsPage";
 
 export const metadata: Metadata = {
-  title: "Our Projects | LM Studios",
+  title: "Our Projects | LMWebDesign",
   description:
-    "Explore LM Studios' portfolio of web design and custom web application projects for South African businesses. See how we've helped clients get found on Google and close more leads.",
-  alternates: { canonical: "https://www.lmwebstudios.co.za/projects" },
+    "Explore LMWebDesign' portfolio of web design and custom web application projects for South African businesses. See how we've helped clients get found on Google and close more leads.",
+  alternates: { canonical: "https://www.lmwebdesign.co.za/projects" },
   openGraph: {
-    title: "Our Projects | LM Studios",
+    title: "Our Projects | LMWebDesign",
     description:
-      "Explore LM Studios' portfolio of web design and custom web application projects for South African businesses.",
-    url: "https://www.lmwebstudios.co.za/projects",
+      "Explore LMWebDesign' portfolio of web design and custom web application projects for South African businesses.",
+    url: "https://www.lmwebdesign.co.za/projects",
   },
 };
 

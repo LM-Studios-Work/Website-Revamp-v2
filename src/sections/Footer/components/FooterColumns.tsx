@@ -27,7 +27,7 @@ export const FooterColumns = () => {
         title="Follow us"
         links={[
           {
-            href: "https://www.instagram.com/lmstudiosweb/",
+            href: "https://www.instagram.com/lmwebdesign/",
             text: "Instagram",
             title: "Instagram",
           },

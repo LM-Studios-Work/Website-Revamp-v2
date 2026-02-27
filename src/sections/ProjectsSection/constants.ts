@@ -10,7 +10,7 @@ export const tagStyle = {
 export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
-    imageAlt: "Custom web design Durban — Xclusive Barber salon online booking system by small business website developers LM Studios",
+    imageAlt: "Custom web design Durban — Xclusive Barber salon online booking system by small business website developers LMWebDesign",
     title: "Xclusive Barber - Davenport",
     tags: [
       { text: "Barber & Grooming", className: tagStyle.lime },
@@ -23,7 +23,7 @@ export const projects: ProjectCardProps[] = [
   },
   {
     imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
-    imageAlt: "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LM Studios tour operator website developers",
+    imageAlt: "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LMWebDesign tour operator website developers",
     title: "Ndilayavhupo Travels",
     tags: [
       { text: "Travel & Tourism", className: tagStyle.lime },
@@ -37,7 +37,7 @@ export const projects: ProjectCardProps[] = [
 
   {
     imageUrl: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
-    imageAlt: "Transport company web design — Mr. Float Logistics custom WhatsApp booking integration by LM Studios logistics website developers",
+    imageAlt: "Transport company web design — Mr. Float Logistics custom WhatsApp booking integration by LMWebDesign logistics website developers",
     title: "Mr. Float Logistics",
     tags: [
       { text: "Logistics & Transport", className: tagStyle.lime },

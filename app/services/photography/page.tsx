@@ -4,17 +4,17 @@ import { photographyFAQ } from "@/sections/FAQ/constants";
 
 export const metadata: Metadata = {
   title:
-    "Professional Brand Photography South Africa | LM Studios Johannesburg",
+    "Professional Brand Photography South Africa | LMWebDesign Johannesburg",
   description:
-    "On-site brand photography in Johannesburg and Gqeberha (Port Elizabeth). Includes 1–2 hours of professional shooting, expert editing, and high-definition delivery. Travel included. Book your photoshoot with LM Studios today.",
+    "On-site brand photography in Johannesburg and Gqeberha (Port Elizabeth). Includes 1–2 hours of professional shooting, expert editing, and high-definition delivery. Travel included. Book your photoshoot with LMWebDesign today.",
   alternates: {
-    canonical: "https://www.lmwebstudios.co.za/services/photography",
+    canonical: "https://www.lmwebdesign.co.za/services/photography",
   },
   openGraph: {
-    title: "Professional Brand Photography South Africa | LM Studios",
+    title: "Professional Brand Photography South Africa | LMWebDesign",
     description:
       "On-site brand photography in Johannesburg and Gqeberha. Professional shooting, editing, and HD delivery — all in one package.",
-    url: "https://www.lmwebstudios.co.za/services/photography",
+    url: "https://www.lmwebdesign.co.za/services/photography",
   },
 };
 
@@ -26,8 +26,8 @@ const serviceSchema = {
     "Professional on-site brand photography including 1–2 hours of shooting, expert editing, and high-definition image delivery. Travel included for Johannesburg and Gqeberha (Port Elizabeth).",
   provider: {
     "@type": "LocalBusiness",
-    name: "LM Studios",
-    url: "https://www.lmwebstudios.co.za",
+    name: "LMWebDesign",
+    url: "https://www.lmwebdesign.co.za",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Midrand",
@@ -40,7 +40,7 @@ const serviceSchema = {
     { "@type": "City", name: "Gqeberha" },
   ],
   serviceType: "Photography",
-  url: "https://www.lmwebstudios.co.za/services/photography",
+  url: "https://www.lmwebdesign.co.za/services/photography",
 };
 
 const faqSchema = {

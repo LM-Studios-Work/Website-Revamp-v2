@@ -30,7 +30,7 @@ def verify_contact_details():
             print("✗ Footer phone link NOT found")
 
         # Check email in footer
-        footer_email = footer.locator("a[href='mailto:lm.studios.web@gmail.com']")
+        footer_email = footer.locator("a[href='mailto:info@lmwebdesign.co.za']")
         if footer_email.count() > 0:
             print("✓ Footer email link found")
             print(f"  Text: {footer_email.first.inner_text()}")
@@ -41,7 +41,7 @@ def verify_contact_details():
         footer_text = footer.inner_text()
         print(f"Footer Text Content (partial): {footer_text[:200]}...")
 
-        expected_address = "LM Studios — Midrand, Gauteng, South Africa"
+        expected_address = "LMWebDesign — Midrand, Gauteng, South Africa"
         if expected_address in footer_text:
             print("✓ Footer address found")
         else:

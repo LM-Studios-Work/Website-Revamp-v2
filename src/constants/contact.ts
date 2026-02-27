@@ -3,7 +3,7 @@ export const CONTACT_DETAILS = {
     display: "081 427 2624",
     value: "+27814272624",
   },
-  email: "lm.studios.web@gmail.com",
+  email: "info@lmwebdesign.co.za",
   address: {
     display: "Midrand, Gauteng, South Africa",
     locality: "Midrand",

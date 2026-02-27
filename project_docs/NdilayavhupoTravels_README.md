@@ -7,7 +7,7 @@
 
 Before this project, they relied entirely on disjointed social media posts (Facebook & WhatsApp status) to announce trips and manage bookings. This manual process led to lost leads, scattered communication, and revenue left on the table.
 
-**LM Studios** built a visually immersive, high-performance custom tourism booking platform that transforms social media followers into confirmed travellers.
+**LMWebDesign** built a visually immersive, high-performance custom tourism booking platform that transforms social media followers into confirmed travellers.
 
 ---
 
@@ -55,4 +55,4 @@ Built to handle high-quality visuals without sacrificing speed:
 ---
 
 ## 👨‍💻 Developed By
-**LM Studios** - Midrand-based web design studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond.
+**LMWebDesign** - Midrand-based web design studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond.

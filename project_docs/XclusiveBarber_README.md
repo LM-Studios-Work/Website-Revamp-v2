@@ -7,7 +7,7 @@
 
 Operations were bottlenecked by phone calls. Barbers had to stop mid-haircut to answer the phone and take bookings, disrupting the client experience and costing the business real revenue.
 
-**LM Studios** replaced this chaos with a seamless, **automated booking platform** that lets clients book 24/7 without a single phone call.
+**LMWebDesign** replaced this chaos with a seamless, **automated booking platform** that lets clients book 24/7 without a single phone call.
 
 ---
 
@@ -54,4 +54,4 @@ A robust stack designed for reliability and speed:
 ---
 
 ## 👨‍💻 Developed By
-**LM Studios** - Midrand-based web design studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond.
+**LMWebDesign** - Midrand-based web design studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond.

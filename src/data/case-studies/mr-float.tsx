@@ -25,7 +25,7 @@ export const mrFloatData: CaseStudyData = {
   features: "Landing Page & WhatsApp Integration",
   previewImage: {
     src: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
-    alt: "Transport company web design — Mr. Float Logistics website with custom WhatsApp booking integration by LM Studios",
+    alt: "Transport company web design — Mr. Float Logistics website with custom WhatsApp booking integration by LMWebDesign",
   },
   problem: {
     quote:

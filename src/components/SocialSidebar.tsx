@@ -7,7 +7,7 @@ export const SocialSidebar = () => {
       <ul className="flex flex-col items-center list-none pl-0 gap-3">
         <li>
           <a
-            href="https://www.instagram.com/lmstudiosweb/"
+            href="https://www.instagram.com/lmwebdesign/"
             title="Instagram"
             className="w-10 h-10 rounded-full border border-[#e7fe56]/40 flex items-center justify-center text-[#e7fe56] hover:bg-[#e7fe56]/10 hover:scale-110 transition-all duration-300"
           >

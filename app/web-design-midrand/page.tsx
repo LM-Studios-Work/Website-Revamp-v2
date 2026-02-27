@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Affordable website design in Midrand. We build custom, SEO-optimized websites for businesses in Waterfall, Kyalami, and Halfway House. Get a free quote today.",
   alternates: {
-    canonical: "https://www.lmwebstudios.co.za/web-design-midrand",
+    canonical: "https://www.lmwebdesign.co.za/web-design-midrand",
   },
   openGraph: {
     title: "Website Design Midrand | From R1,999 | LM Web Studios",
     description:
       "Professional web design services in Midrand. Custom websites for businesses in Waterfall, Kyalami, and surrounds.",
-    url: "https://www.lmwebstudios.co.za/web-design-midrand",
+    url: "https://www.lmwebdesign.co.za/web-design-midrand",
     type: "website",
   },
 };
@@ -24,8 +24,8 @@ export default function Page() {
       {
         "@type": "LocalBusiness",
         name: "LM Web Studios",
-        image: "https://www.lmwebstudios.co.za/lmstudioslogo.png",
-        url: "https://www.lmwebstudios.co.za/web-design-midrand",
+        image: "https://www.lmwebdesign.co.za/lmwebdesignlogo.png",
+        url: "https://www.lmwebdesign.co.za/web-design-midrand",
         telephone: "", // Add your phone number here if available
         address: {
           "@type": "PostalAddress",
