@@ -67,9 +67,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
         <div className="px-6 pb-6">
           <a
             href={props.discoverMoreUrl}
-            className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-lime-alt transition-colors"
           >
-            <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5 transition-transform duration-300 md:group-hover:rotate-45">
+            <span className="w-8 h-8 bg-lime-alt rounded-full flex items-center justify-center mr-2.5 transition-transform duration-300 md:group-hover:rotate-45">
               <svg
                 className="w-3.5 h-3.5 text-black -rotate-45"
                 fill="none"
