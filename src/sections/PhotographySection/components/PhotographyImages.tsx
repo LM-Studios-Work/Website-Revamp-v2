@@ -1,4 +1,4 @@
-import { PHOTOGRAPHY_IMAGES } from "../constants";
+import { PHOTOGRAPHY_IMAGES } from "@/sections/PhotographySection/constants";
 
 export const PhotographyImages = () => {
   return (
