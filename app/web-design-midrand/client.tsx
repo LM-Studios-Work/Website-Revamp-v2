@@ -133,7 +133,7 @@ export default function WebDesignMidrandClient() {
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white mb-6">
               Why Midrand Businesses{" "}
-              <span className="italic text-[#e7fe56]">
+              <span className="italic text-lime">
                 Choose LM Web Studios
               </span>
             </h2>
@@ -162,7 +162,7 @@ export default function WebDesignMidrandClient() {
             <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 bg-white/5 relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                 <div className="text-center">
-                  <span className="text-[#e7fe56] font-bold text-2xl block mb-2">
+                  <span className="text-lime font-bold text-2xl block mb-2">
                     LM Web Studios
                   </span>
                   <span className="text-white/40 text-sm uppercase tracking-widest">
@@ -201,7 +201,7 @@ export default function WebDesignMidrandClient() {
                 key={idx}
                 className={`relative p-8 rounded-3xl border ${
                   pkg.popular
-                    ? "border-[#e7fe56] bg-white/[0.03]"
+                    ? "border-lime bg-white/[0.03]"
                     : "border-white/10 bg-white/[0.02]"
                 } flex flex-col hover:bg-white/[0.05] transition-all duration-300 ${
                   packagesVisible
@@ -212,14 +212,14 @@ export default function WebDesignMidrandClient() {
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#e7fe56] text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-lime text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
                 <h3 className="text-xl font-bold text-white mb-2">
                   {pkg.title}
                 </h3>
-                <div className="text-2xl font-semibold text-[#e7fe56] mb-4">
+                <div className="text-2xl font-semibold text-lime mb-4">
                   {pkg.price}
                 </div>
                 <p className="text-white/60 text-sm mb-6 flex-grow">
@@ -231,7 +231,7 @@ export default function WebDesignMidrandClient() {
                       key={fIdx}
                       className="flex items-center gap-3 text-sm text-white/80"
                     >
-                      <Check className="w-4 h-4 text-[#e7fe56]" />
+                      <Check className="w-4 h-4 text-lime" />
                       {feature}
                     </li>
                   ))}
@@ -240,7 +240,7 @@ export default function WebDesignMidrandClient() {
                   href="/contact"
                   className={`w-full py-3 rounded-xl font-semibold text-sm text-center transition-all ${
                     pkg.popular
-                      ? "bg-[#e7fe56] text-black hover:bg-[#e7fe56]/90"
+                      ? "bg-lime text-black hover:bg-lime/90"
                       : "bg-white/10 text-white hover:bg-white/20"
                   }`}
                 >
@@ -280,7 +280,7 @@ export default function WebDesignMidrandClient() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Warranty Card */}
             <div
-              className={`rounded-3xl p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+              className={`rounded-3xl p-8 bg-lime text-black flex flex-col opacity-0 ${
                 includedVisible
                   ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                   : ""

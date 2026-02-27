@@ -87,7 +87,7 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
             <span className="text-xs font-semibold uppercase tracking-widest text-white/50 border border-white/20 px-4 py-1.5 rounded-full">
               Case Study
             </span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#e7fe56]/80 border border-[#e7fe56]/30 px-4 py-1.5 rounded-full">
+            <span className="text-xs font-semibold uppercase tracking-widest text-lime/80 border border-lime/30 px-4 py-1.5 rounded-full">
               {data.category}
             </span>
           </div>
@@ -99,17 +99,17 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-white/40">
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#e7fe56]/60" />
+              <MapPin className="w-4 h-4 text-lime/60" />
               {data.location}
             </span>
             <span className="w-px h-4 bg-white/15" />
             <span className="flex items-center gap-2">
-              <ServiceIcon className="w-4 h-4 text-[#e7fe56]/60" />
+              <ServiceIcon className="w-4 h-4 text-lime/60" />
               {data.serviceType}
             </span>
             <span className="w-px h-4 bg-white/15" />
             <span className="flex items-center gap-2">
-              <FeatureIcon className="w-4 h-4 text-[#e7fe56]/60" />
+              <FeatureIcon className="w-4 h-4 text-lime/60" />
               {data.features}
             </span>
           </div>
@@ -156,7 +156,7 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
               </h2>
 
               {/* Pull quote */}
-              <blockquote className="border-l-2 border-[#e7fe56]/50 pl-5 mb-8">
+              <blockquote className="border-l-2 border-lime/50 pl-5 mb-8">
                 <p className="text-white/90 text-lg font-medium leading-snug">
                   &ldquo;{data.problem.quote}&rdquo;
                 </p>
@@ -182,7 +182,7 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
               </h2>
 
               {/* Pull quote */}
-              <blockquote className="border-l-2 border-[#e7fe56]/50 pl-5 mb-8">
+              <blockquote className="border-l-2 border-lime/50 pl-5 mb-8">
                 <p className="text-white/90 text-lg font-medium leading-snug">
                   &ldquo;{data.solution.quote}&rdquo;
                 </p>
@@ -241,11 +241,11 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
                   }`}
                 >
                   <div className="flex items-start gap-5 mb-5">
-                    <span className="text-[11px] font-bold tracking-widest text-[#e7fe56]/50 mt-1 shrink-0">
+                    <span className="text-[11px] font-bold tracking-widest text-lime/50 mt-1 shrink-0">
                       {item.number}
                     </span>
-                    <div className="w-10 h-10 rounded-lg bg-[#e7fe56]/10 border border-[#e7fe56]/15 flex items-center justify-center shrink-0">
-                      <Icon className="w-4 h-4 text-[#e7fe56]" />
+                    <div className="w-10 h-10 rounded-lg bg-lime/10 border border-lime/15 flex items-center justify-center shrink-0">
+                      <Icon className="w-4 h-4 text-lime" />
                     </div>
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-3 leading-snug">
@@ -298,7 +298,7 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
                   resultsVisible ? STAGGER_4[idx] : ""
                 }`}
               >
-                <div className="text-[2.8rem] md:text-[3.2rem] font-bold text-[#e7fe56] leading-none tracking-tight">
+                <div className="text-[2.8rem] md:text-[3.2rem] font-bold text-lime leading-none tracking-tight">
                   {item.metric}
                 </div>
                 <div className="text-sm font-semibold text-white">
@@ -348,7 +348,7 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
             {data.techStack.map((tech) => (
               <span
                 key={tech}
-                className="text-sm font-medium px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.04] text-white/60 hover:border-[#e7fe56]/30 hover:text-[#e7fe56]/80 transition-colors"
+                className="text-sm font-medium px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.04] text-white/60 hover:border-lime/30 hover:text-lime/80 transition-colors"
               >
                 {tech}
               </span>
@@ -379,7 +379,7 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center text-base font-semibold bg-[#e7fe56] text-black pl-8 pr-3 py-3 rounded-full hover:bg-[#e7fe56]/90 hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center text-base font-semibold bg-lime text-black pl-8 pr-3 py-3 rounded-full hover:bg-lime/90 hover:scale-105 transition-all duration-300"
               >
                 Start Your Project
                 <span className="ml-3 w-10 h-10 bg-black/20 rounded-full flex items-center justify-center">

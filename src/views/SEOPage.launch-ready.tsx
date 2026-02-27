@@ -340,7 +340,7 @@ export const SEOPage = () => {
                     className="flex items-center justify-center py-5 px-4 text-sm text-center border-l border-white/10"
                   >
                     {value === true ? (
-                      <CheckIcon className="text-[#e7fe56]" />
+                      <CheckIcon className="text-lime" />
                     ) : value === false ? (
                       <span className="text-white/20">-</span>
                     ) : (
@@ -386,7 +386,7 @@ export const SEOPage = () => {
                       </span>
                       <span className="text-sm text-white/80 font-medium">
                         {value === true ? (
-                          <CheckIcon className="w-4 h-4 text-[#e7fe56]" />
+                          <CheckIcon className="w-4 h-4 text-lime" />
                         ) : (
                           value
                         )}
