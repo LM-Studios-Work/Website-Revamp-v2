@@ -20,7 +20,7 @@ export const HeroHeading = () => {
           >
             <path
               d="M0 6C0 6 6 1 14 1C22 1 25 11 34 11C43 11 46 1 54 1C62 1 65 11 74 11C83 11 86 1 94 1C102 1 105 11 114 11C123 11 126 1 134 1C142 1 145 11 154 11C163 11 166 1 174 1C182 1 185 11 194 11C203 11 206 1 214 1C218 1 220 6 220 6"
-              stroke="#e7fe56"
+              className="stroke-lime"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"

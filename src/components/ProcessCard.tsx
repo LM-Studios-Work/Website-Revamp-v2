@@ -17,7 +17,7 @@ const VARIANT_STYLES = {
     descBg: "",
   },
   lime: {
-    container: "bg-[#e7fe56] text-black",
+    container: "bg-lime text-black",
     circle: "bg-black/10",
     text: "text-black/80",
     descBg: "",
@@ -29,7 +29,7 @@ const VARIANT_STYLES = {
     descBg: "",
   },
   yellow: {
-    container: "bg-[#e7fe56] text-black",
+    container: "bg-lime text-black",
     circle: "bg-black/10",
     text: "text-black/80",
     descBg: "",

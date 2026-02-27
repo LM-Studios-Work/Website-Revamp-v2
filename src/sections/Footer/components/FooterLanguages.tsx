@@ -8,7 +8,7 @@ export const FooterLanguages = () => {
               role="menuitem"
               href=""
               title="English (US)"
-              className="box-border caret-transparent inline-block mr-2 py-[3px] hover:text-[#e7fe56] hover:border-[#e7fe56]"
+              className="box-border caret-transparent inline-block mr-2 py-[3px] hover:text-lime hover:border-lime"
             >
               <span className="box-border caret-transparent">English (US)</span>
             </a>
@@ -44,7 +44,7 @@ export const FooterLanguages = () => {
               role="menuitem"
               href="/es"
               title=" Español"
-              className="box-border caret-transparent inline-block py-[3px] hover:text-[#e7fe56] hover:border-[#e7fe56]"
+              className="box-border caret-transparent inline-block py-[3px] hover:text-lime hover:border-lime"
             >
               <span className="box-border caret-transparent"> Español</span>
             </a>

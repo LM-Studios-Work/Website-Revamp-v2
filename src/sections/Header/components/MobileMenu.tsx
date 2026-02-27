@@ -44,7 +44,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             type="button"
             onClick={onClose}
             aria-label="Close navigation menu"
-            className="text-white/60 hover:text-[#e7fe56] transition-colors"
+            className="text-white/60 hover:text-lime transition-colors"
           >
             <svg
               className="w-8 h-8"
@@ -110,7 +110,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                             onClick={onClose}
                             className={`text-xl transition-colors duration-200 ${
                               isActive(service.to)
-                                ? "text-[#e7fe56]"
+                                ? "text-lime"
                                 : "text-white/40 hover:text-white/70"
                             }`}
                           >

@@ -18,13 +18,13 @@ export const LatestProjectsHeader = () => {
             Latest projects
           </h2>
           <Link href="/projects"
-            className={`text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#e7fe56] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#e7fe56] hover:text-black hover:scale-105 transition-all duration-600 mt-2 md:mt-0 group ${
+            className={`text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-lime pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-lime hover:text-black hover:scale-105 transition-all duration-600 mt-2 md:mt-0 group ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: isVisible ? '0.2s' : '0s' }}
           >
             See all projects
-            <span className="relative text-sm font-normal bg-[#e7fe56] text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px] group-hover:rotate-0 transition-transform duration-300" aria-hidden="true">
+            <span className="relative text-sm font-normal bg-lime text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px] group-hover:rotate-0 transition-transform duration-300" aria-hidden="true">
               <svg
                 className="w-4 h-4"
                 fill="none"

@@ -459,7 +459,7 @@ export const WebDesignPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Warranty Card */}
             <div
-              className={`rounded-3xl p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+              className={`rounded-3xl p-8 bg-lime text-black flex flex-col opacity-0 ${
                 warrantyVisible
                   ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                   : ""
@@ -657,10 +657,10 @@ export const WebDesignPage = () => {
             <div className="mt-6 md:mt-0">
               <a
                 href="/projects"
-                className="text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#e7fe56] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#e7fe56] hover:text-black transition-colors"
+                className="text-sm font-normal bg-transparent box-border caret-transparent inline-flex items-center leading-[21px] text-center align-middle border-lime pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-lime hover:text-black transition-colors"
               >
                 See all projects
-                <span className="relative text-sm font-normal bg-[#e7fe56] text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
+                <span className="relative text-sm font-normal bg-lime text-black box-border caret-transparent h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:text-base md:font-semibold md:h-[50px] md:w-[50px] md:p-[18.4px]">
                   <svg
                     className="w-4 h-4"
                     fill="none"

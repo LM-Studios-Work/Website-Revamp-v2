@@ -11,11 +11,13 @@ interface ScrollableCardRowProps {
   buttonColor?: string;
 }
 
+import { COLORS } from "@/constants/colors";
+
 export const ScrollableCardRow = ({
   children,
   desktopGridCols = "md:grid-cols-3",
   plainScroll = false,
-  buttonColor = "#e7fe56", // default lime
+  buttonColor = COLORS.lime, // default lime
 }: ScrollableCardRowProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);

@@ -11,7 +11,7 @@ export const GOOD_HANDS_CARDS = [
   {
     num: 2,
     bg: `bg-[${COLORS.lime}]`,
-    bgClass: "bg-[#e7fe56]",
+    bgClass: "bg-lime",
     title: ["Scalable", "Solutions"],
     desc: "From simple static sites to automated booking systems, we build tailored tools that fit your current needs and can grow with your business.",
   },

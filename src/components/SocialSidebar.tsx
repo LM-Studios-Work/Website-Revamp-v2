@@ -9,7 +9,7 @@ export const SocialSidebar = () => {
           <a
             href="https://www.instagram.com/lmstudiosweb/"
             title="Instagram"
-            className="w-10 h-10 rounded-full border border-[#e7fe56]/40 flex items-center justify-center text-[#e7fe56] hover:bg-[#e7fe56]/10 hover:scale-110 transition-all duration-300"
+            className="w-10 h-10 rounded-full border border-lime/40 flex items-center justify-center text-lime hover:bg-lime/10 hover:scale-110 transition-all duration-300"
           >
             <svg
               className="w-4 h-4"

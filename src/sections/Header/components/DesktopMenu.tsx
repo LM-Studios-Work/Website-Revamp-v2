@@ -50,7 +50,7 @@ export const DesktopMenu = () => {
                 <li key={service.to}>
                   <Link
                     href={service.to}
-                    className="block px-4 py-2 text-base text-white/70 hover:text-[#e7fe56] hover:bg-white/5 rounded-lg transition-colors"
+                    className="block px-4 py-2 text-base text-white/70 hover:text-lime hover:bg-white/5 rounded-lg transition-colors"
                   >
                     {service.label}
                   </Link>
