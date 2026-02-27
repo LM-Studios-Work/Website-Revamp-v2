@@ -63,7 +63,7 @@ export const ContactPage = () => {
             <div className="flex justify-end pt-4">
               <button
                 type="submit"
-                className="group flex items-center gap-3 bg-black border border-white/60 hover:border-[#b4eb2c] py-2 pl-6 pr-2 rounded-full transition-all"
+                className="group flex items-center gap-3 bg-black border border-white/60 hover:border-[#b4eb2c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b4eb2c] focus-visible:ring-offset-2 focus-visible:ring-offset-black py-2 pl-6 pr-2 rounded-full transition-all"
               >
                 <span className="font-medium">Submit</span>
                 <div className="bg-[#b4eb2c] p-2 rounded-full group-hover:scale-110 transition-transform">
