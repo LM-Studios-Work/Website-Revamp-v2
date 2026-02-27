@@ -14,6 +14,7 @@ import {
 } from "@phosphor-icons/react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionWrapper } from "@/components/SectionWrapper";
+import { SectionLabel } from "@/components/SectionLabel";
 
 const projectHighlights = [
   {
@@ -158,14 +159,7 @@ export const NdilayavhupoTravelsCaseStudy = () => {
       </SectionWrapper>
 
       {/* Section Label */}
-      <div className="max-w-[1400px] mx-auto px-6 pt-20 pb-4">
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
-            01 / Challenge
-          </span>
-          <div className="flex-1 h-px bg-white/10" />
-        </div>
-      </div>
+      <SectionLabel number="01" text="Challenge" className="pt-20 pb-4" />
 
       {/* Problem + Solution */}
       <section ref={overviewRef} className="relative z-10 pb-20 px-6">
@@ -265,14 +259,7 @@ export const NdilayavhupoTravelsCaseStudy = () => {
       </section>
 
       {/* Section Label */}
-      <div className="max-w-[1400px] mx-auto px-6 pt-4 pb-4">
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
-            02 / Deliverables
-          </span>
-          <div className="flex-1 h-px bg-white/10" />
-        </div>
-      </div>
+      <SectionLabel number="02" text="Deliverables" />
 
       {/* What We Delivered */}
       <section ref={highlightsRef} className="relative z-10 py-16 px-6">
@@ -327,14 +314,7 @@ export const NdilayavhupoTravelsCaseStudy = () => {
       </section>
 
       {/* Section Label */}
-      <div className="max-w-[1400px] mx-auto px-6 pt-4 pb-4">
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
-            03 / Results
-          </span>
-          <div className="flex-1 h-px bg-white/10" />
-        </div>
-      </div>
+      <SectionLabel number="03" text="Results" />
 
       {/* Key Outcomes */}
       <section ref={resultsRef} className="relative z-10 py-16 px-6">
@@ -382,14 +362,7 @@ export const NdilayavhupoTravelsCaseStudy = () => {
       </section>
 
       {/* Section Label */}
-      <div className="max-w-[1400px] mx-auto px-6 pt-4 pb-4">
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
-            04 / Technology
-          </span>
-          <div className="flex-1 h-px bg-white/10" />
-        </div>
-      </div>
+      <SectionLabel number="04" text="Technology" />
 
       {/* Tech Stack */}
       <section ref={techRef} className="relative z-10 py-16 px-6">
