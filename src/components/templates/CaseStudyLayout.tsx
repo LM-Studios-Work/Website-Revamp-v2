@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, IconProps } from "@phosphor-icons/react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionWrapper } from "@/components/SectionWrapper";
+import { TechStackList } from "@/components/TechStackList";
 import React from "react";
 
 export type ProjectHighlight = {
@@ -338,22 +339,12 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
               Tech <span className="italic text-outline-2">stack</span>
             </h2>
           </div>
-          <div
-            className={`flex flex-wrap gap-2.5 opacity-0 ${
-              techVisible
-                ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
-                : ""
+          <TechStackList
+            items={data.techStack}
+            className={`opacity-0 ${
+              techVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""
             }`}
-          >
-            {data.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="text-sm font-medium px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.04] text-white/60 hover:border-[#e7fe56]/30 hover:text-[#e7fe56]/80 transition-colors"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+          />
         </div>
       </section>
 
