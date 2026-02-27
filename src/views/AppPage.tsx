@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { FAQ } from "@/sections/FAQ";
 import { appDevelopmentFAQ } from "@/sections/FAQ/constants";
 import { ServiceHero } from "@/components/ServiceHero";
@@ -123,10 +124,12 @@ export const AppPage = () => {
               </div>
             </div>
             <div className={`md:w-1/2 opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
-              <div className="rounded-[32px] overflow-hidden border border-white/10 aspect-square">
-                <img
+              <div className="relative rounded-[32px] overflow-hidden border border-white/10 aspect-square">
+                <Image
                   src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
                   alt="App development workspace"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
