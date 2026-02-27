@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   UserCircle,
@@ -225,7 +226,7 @@ export const WebDesignPage = () => {
                   <br />
                   the scenes
                 </p>
-                <img
+                <Image
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_arrow_curved.svg"
                   alt="Arrow icon"
                   width={13}
@@ -234,7 +235,7 @@ export const WebDesignPage = () => {
                 />
               </div>
               <div className="relative box-border caret-transparent h-full min-h-[400px] w-full overflow-hidden rounded-[20px]">
-                <img
+                <Image
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
                   alt="LM Studios Web Design team in the office"
                   width={800}
@@ -310,7 +311,7 @@ export const WebDesignPage = () => {
               }`}
             >
               <div className="relative rounded-2xl overflow-hidden">
-                <img
+                <Image
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
                   alt="Team working on web design projects"
                   width={800}

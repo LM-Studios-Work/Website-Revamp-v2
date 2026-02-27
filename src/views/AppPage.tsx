@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { FAQ } from "@/sections/FAQ";
 import { appDevelopmentFAQ } from "@/sections/FAQ/constants";
@@ -123,11 +124,12 @@ export const AppPage = () => {
               </div>
             </div>
             <div className={`md:w-1/2 opacity-0 ${goodHandsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""}`}>
-              <div className="rounded-[32px] overflow-hidden border border-white/10 aspect-square">
-                <img
+              <div className="relative rounded-[32px] overflow-hidden border border-white/10 aspect-square">
+                <Image
                   src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
                   alt="App development workspace"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
             </div>
