@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export type ProjectCardProps = {
   imageUrl: string;
@@ -70,19 +71,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors"
           >
             <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5 transition-transform duration-300 md:group-hover:rotate-45">
-              <svg
-                className="w-3.5 h-3.5 text-black -rotate-45"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
+              <ArrowRight className="w-3.5 h-3.5 text-black -rotate-45" />
             </span>
             Discover more
           </a>
