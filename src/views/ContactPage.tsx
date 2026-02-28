@@ -6,6 +6,11 @@ import { COLORS } from "@/constants/colors";
 import { CONTACT_DETAILS } from "@/constants/contact";
 
 export const ContactPage = () => {
+  const [state, formAction] = useFormState(submitContactForm, {
+    success: false,
+    message: null,
+  });
+
   return (
     <>
       {/* Hero Section */}
@@ -48,16 +53,36 @@ export const ContactPage = () => {
               <FormInput label="Your Country" name="country" required />
               <FormInput label="Your Company" name="company" />
             </div>
+          ) : (
+            <form
+              action={formAction}
+              className="space-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+            >
+               {state.message && (
+                <div className="p-4 bg-red-500/10 border border-red-500/50 rounded-lg text-red-200">
+                  {state.message}
+                </div>
+              )}
 
-            <FormInput label="Subject" name="subject" required />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <FormInput label="Your Name" name="name" required />
+                <FormInput
+                  label="Your Email"
+                  name="email"
+                  type="email"
+                  required
+                />
+                <FormInput
+                  label="Your Phone Number"
+                  name="phone"
+                  type="tel"
+                  placeholder="+27"
+                />
+                <FormInput label="Your Country" name="country" required />
+                <FormInput label="Your Company" name="company" />
+              </div>
 
-            <FormTextarea
-              label="Your Question"
-              name="message"
-              required
-              placeholder="Please describe your website project or inquiry."
-              rows={12}
-            />
+              <FormInput label="Subject" name="subject" required />
 
             {/* Submit Button */}
             <div className="flex justify-end pt-4">
