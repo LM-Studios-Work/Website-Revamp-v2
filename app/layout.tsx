@@ -5,56 +5,57 @@ import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { CONTACT_DETAILS } from "@/constants/contact";
 
-const DOMAIN = "https://www.lmwebstudios.co.za";
+const DOMAIN = "https://www.lmwebdesign.co.za";
 
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
   title: {
-    default: "Web Design Midrand & Johannesburg | LM Studios",
-    template: "%s | LM Studios",
+    default: "Web Design Midrand & Johannesburg | LMWebDesign",
+    template: "%s | LMWebDesign",
   },
   description:
-    "LM Studios builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.",
+    "LMWebDesign builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.",
   robots: { index: true, follow: true },
-  authors: [{ name: "LM Studios" }],
+  authors: [{ name: "LMWebDesign" }],
   alternates: { canonical: DOMAIN },
   openGraph: {
     type: "website",
-    siteName: "LM Studios",
+    siteName: "LMWebDesign",
     url: DOMAIN,
-    title: "Web Design Midrand & Johannesburg | LM Studios",
+    title: "Web Design Midrand & Johannesburg | LMWebDesign",
     description:
-      "LM Studios builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
-    images: [{ url: "/lmstudioslogo.png", alt: "LM Studios logo" }],
+      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
+    images: [{ url: "/lmwebdesignlogo.png", alt: "LMWebDesign logo" }],
     locale: "en_ZA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Design Midrand & Johannesburg | LM Studios",
+    title: "Web Design Midrand & Johannesburg | LMWebDesign",
     description:
-      "LM Studios builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
-    images: ["/lmstudioslogo.png"],
+      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
+    images: ["/lmwebdesignlogo.png"],
   },
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "LM Studios",
+  name: "LMWebDesign",
   description:
-    "LM Studios builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng.",
+    "LMWebDesign builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng.",
   url: DOMAIN,
-  logo: `${DOMAIN}/lmstudioslogo.png`,
-  image: `${DOMAIN}/lmstudioslogo.png`,
+  logo: `${DOMAIN}/lmwebdesignlogo.png`,
+  image: `${DOMAIN}/lmwebdesignlogo.png`,
   foundingDate: "2025",
-  telephone: "+27814272624",
-  email: "lm.studios.web@gmail.com",
+  telephone: CONTACT_DETAILS.phone.value,
+  email: CONTACT_DETAILS.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Midrand",
-    addressRegion: "Gauteng",
-    addressCountry: "ZA",
+    addressLocality: CONTACT_DETAILS.address.locality,
+    addressRegion: CONTACT_DETAILS.address.region,
+    addressCountry: CONTACT_DETAILS.address.countryCode,
   },
   areaServed: {
     "@type": "Country",
@@ -98,7 +99,7 @@ const localBusinessSchema = {
       },
     ],
   },
-  sameAs: ["https://www.instagram.com/lmstudiosweb/"],
+  sameAs: ["https://www.instagram.com/lmwebdesign/"],
 };
 
 export default function RootLayout({
@@ -112,7 +113,7 @@ export default function RootLayout({
         <link
           rel="icon"
           type="image/png"
-          href="/lmstudioslogo.png"
+          href="/lmwebdesignlogo.png"
           sizes="any"
         />
         {/* Preconnect only to origins actually used at page load */}
@@ -130,7 +131,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/lmstudioslogo.png"
+          href="/lmwebdesignlogo.png"
         />
         {/* Preload the hero background image */}
         <link

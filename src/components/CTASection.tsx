@@ -41,7 +41,7 @@ export const CTASection = ({
             </div>
             <div>
               <Link href={linkTo}
-                className="inline-flex items-center text-sm md:text-base font-semibold text-black pl-6 pr-2 py-3 rounded-full hover:opacity-80 transition-colors"
+                className="inline-flex items-center text-sm md:text-base font-semibold text-black pl-6 pr-2 py-3 rounded-full hover:opacity-80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-[#e7fe56]"
                 style={{ backgroundColor: bgColor }}
               >
                 {linkText}

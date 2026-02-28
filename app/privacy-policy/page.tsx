@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { CONTACT_DETAILS } from "@/constants/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "LM Studios Privacy Policy — how we collect, use, and protect your personal information in compliance with the Protection of Personal Information Act (POPIA).",
+    "LMWebDesign Privacy Policy — how we collect, use, and protect your personal information in compliance with the Protection of Personal Information Act (POPIA).",
   robots: { index: true, follow: true },
 };
 
@@ -28,7 +29,7 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p>
-              LM Studios (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+              LMWebDesign (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or
               &ldquo;our&rdquo;) is a web design and development agency based in
               Midrand, Gauteng, South Africa. We are committed to protecting
               your personal information in accordance with the{" "}
@@ -318,25 +319,25 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-1 text-sm">
               <p>
-                <strong className="text-white">LM Studios</strong>
+                <strong className="text-white">LMWebDesign</strong>
               </p>
-              <p>Midrand, Gauteng, South Africa</p>
+              <p>{CONTACT_DETAILS.address.display}</p>
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:lm.studios.web@gmail.com"
+                  href={`mailto:${CONTACT_DETAILS.email}`}
                   className="underline hover:text-white transition-colors"
                 >
-                  lm.studios.web@gmail.com
+                  {CONTACT_DETAILS.email}
                 </a>
               </p>
               <p>
                 Phone:{" "}
                 <a
-                  href="tel:+27814272624"
+                  href={`tel:${CONTACT_DETAILS.phone.value}`}
                   className="underline hover:text-white transition-colors"
                 >
-                  081 427 2624
+                  {CONTACT_DETAILS.phone.display}
                 </a>
               </p>
             </div>

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { CONTACT_DETAILS } from "@/constants/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "LM Studios Terms of Service — the terms and conditions governing our web design, development, SEO, and photography services.",
+    "LMWebDesign Terms of Service — the terms and conditions governing our web design, development, SEO, and photography services.",
   robots: { index: true, follow: true },
 };
 
@@ -31,13 +32,13 @@ export default function TermsOfServicePage() {
               These Terms of Service (&ldquo;Terms&rdquo;) govern your use of
               the website at{" "}
               <a
-                href="https://www.lmwebstudios.co.za"
+                href="https://www.lmwebdesign.co.za"
                 className="underline hover:text-white transition-colors"
               >
-                www.lmwebstudios.co.za
+                www.lmwebdesign.co.za
               </a>{" "}
               and the services provided by{" "}
-              <strong className="text-white">LM Studios</strong>, a web design
+              <strong className="text-white">LMWebDesign</strong>, a web design
               and development agency based in Midrand, Gauteng, South Africa.
             </p>
             <p className="mt-3">
@@ -52,7 +53,7 @@ export default function TermsOfServicePage() {
             <h2 className="text-xl font-semibold text-white mb-3">
               2. Services
             </h2>
-            <p className="mb-3">LM Studios provides:</p>
+            <p className="mb-3">LMWebDesign provides:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
                 <strong className="text-white">Web Design &amp; Development</strong> —
@@ -134,7 +135,7 @@ export default function TermsOfServicePage() {
                 may be treated as approval to proceed.
               </li>
               <li>
-                Ensure all content and materials provided to LM Studios are
+                Ensure all content and materials provided to LMWebDesign are
                 owned by the client or properly licensed. The client bears sole
                 responsibility for copyright compliance of submitted assets.
               </li>
@@ -144,7 +145,7 @@ export default function TermsOfServicePage() {
               </li>
             </ul>
             <p className="mt-3">
-              LM Studios reserves the right to pause a project if payment
+              LMWebDesign reserves the right to pause a project if payment
               milestones or content deadlines are not met.
             </p>
           </section>
@@ -217,10 +218,10 @@ export default function TermsOfServicePage() {
               </li>
               <li>
                 Clients are responsible for renewing domains not managed by LM
-                Studios. Expiry of a domain is not LM Studios&apos; liability.
+                Studios. Expiry of a domain is not LMWebDesign&apos; liability.
               </li>
               <li>
-                LM Studios may transfer website files to the client&apos;s
+                LMWebDesign may transfer website files to the client&apos;s
                 preferred hosting upon request, subject to full payment of all
                 outstanding invoices.
               </li>
@@ -239,11 +240,11 @@ export default function TermsOfServicePage() {
                 for the specific project.
               </li>
               <li>
-                LM Studios retains ownership of any proprietary frameworks,
+                LMWebDesign retains ownership of any proprietary frameworks,
                 libraries, or reusable components used to build the project.
               </li>
               <li>
-                LM Studios reserves the right to display completed work in its
+                LMWebDesign reserves the right to display completed work in its
                 portfolio and marketing materials unless the client explicitly
                 requests confidentiality in writing.
               </li>
@@ -261,13 +262,13 @@ export default function TermsOfServicePage() {
               9. Limitation of Liability
             </h2>
             <p>
-              To the fullest extent permitted by South African law, LM Studios&apos;
+              To the fullest extent permitted by South African law, LMWebDesign&apos;
               total liability to you for any claim arising out of or related to
               these Terms or our services shall not exceed the total fees paid by
               you for the specific project giving rise to the claim.
             </p>
             <p className="mt-3">
-              LM Studios is not liable for any indirect, incidental, or
+              LMWebDesign is not liable for any indirect, incidental, or
               consequential damages including loss of revenue, loss of data, or
               loss of business opportunity, even if we have been advised of the
               possibility of such damages.
@@ -295,7 +296,7 @@ export default function TermsOfServicePage() {
                 invoiced at a prorated rate based on hours worked.
               </li>
               <li>
-                In the event of LM Studios-initiated termination (e.g., due to
+                In the event of LMWebDesign-initiated termination (e.g., due to
                 non-payment or abusive conduct), all outstanding fees become
                 immediately payable.
               </li>
@@ -323,7 +324,7 @@ export default function TermsOfServicePage() {
               12. Website Use
             </h2>
             <p className="mb-3">
-              You agree not to use the LM Studios website to:
+              You agree not to use the LMWebDesign website to:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Violate any applicable law or regulation.</li>
@@ -361,25 +362,25 @@ export default function TermsOfServicePage() {
             </p>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-1 text-sm">
               <p>
-                <strong className="text-white">LM Studios</strong>
+                <strong className="text-white">LMWebDesign</strong>
               </p>
-              <p>Midrand, Gauteng, South Africa</p>
+              <p>{CONTACT_DETAILS.address.display}</p>
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:lm.studios.web@gmail.com"
+                  href={`mailto:${CONTACT_DETAILS.email}`}
                   className="underline hover:text-white transition-colors"
                 >
-                  lm.studios.web@gmail.com
+                  {CONTACT_DETAILS.email}
                 </a>
               </p>
               <p>
                 Phone:{" "}
                 <a
-                  href="tel:+27814272624"
+                  href={`tel:${CONTACT_DETAILS.phone.value}`}
                   className="underline hover:text-white transition-colors"
                 >
-                  081 427 2624
+                  {CONTACT_DETAILS.phone.display}
                 </a>
               </p>
             </div>

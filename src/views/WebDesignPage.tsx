@@ -202,7 +202,7 @@ export const WebDesignPage = () => {
       <ServiceHero
         title="Web Design"
         underlineColor="lime"
-        description="South Africa's trusted web design agency. From portfolio sites starting at R1,999 to full business websites, e-commerce stores, and event pages. LM Studios delivers mobile-responsive, SEO-optimized websites with transparent once-off pricing, free first-year hosting, and a 6-month post-launch warranty. Based in Midrand, serving Johannesburg, Pretoria, and businesses across Gauteng."
+        description="South Africa's trusted web design agency. From portfolio sites starting at R1,999 to full business websites, e-commerce stores, and event pages. LMWebDesign delivers mobile-responsive, SEO-optimized websites with transparent once-off pricing, free first-year hosting, and a 6-month post-launch warranty. Based in Midrand, serving Johannesburg, Pretoria, and businesses across Gauteng."
       />
 
       {/* Behind the scenes section */}
@@ -236,7 +236,7 @@ export const WebDesignPage = () => {
               <div className="relative box-border caret-transparent h-full min-h-[400px] w-full overflow-hidden rounded-[20px]">
                 <img
                   src="https://c.animaapp.com/mlb5r0i2dx1RnR/assets/img_team_office_1.webp"
-                  alt="LM Studios Web Design team in the office"
+                  alt="LMWebDesign Web Design team in the office"
                   width={800}
                   height={533}
                   className="absolute box-border caret-transparent h-full max-w-full object-cover translate-x-[-50.0%] translate-y-[-50.0%] w-full left-2/4 top-2/4"

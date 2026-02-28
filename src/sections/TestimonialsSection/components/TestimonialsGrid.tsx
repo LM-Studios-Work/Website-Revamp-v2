@@ -8,7 +8,7 @@ const testimonials = [
     name: "Omhle Zuma",
     title: "Business Owner",
     testimonial:
-      "LM Studios turned our designs into a working website, and they even suggested some improvements that we liked. The site is fast, the communication was good, and the project was finished on schedule.",
+      "LMWebDesign turned our designs into a working website, and they even suggested some improvements that we liked. The site is fast, the communication was good, and the project was finished on schedule.",
   },
   {
     name: "Nkoka Logan",
@@ -20,13 +20,13 @@ const testimonials = [
     name: "Neo Leeuw",
     title: "Business Owner",
     testimonial:
-      "Working with LM Studios was a good experience. They were patient with our questions and responsive. We got the website we wanted and would recommend them.",
+      "Working with LMWebDesign was a good experience. They were patient with our questions and responsive. We got the website we wanted and would recommend them.",
   },
   {
     name: "Rokunda Mboyi",
     title: "Business Owner",
     testimonial:
-      "We needed custom work done on our existing site, and LM Studios delivered. They have the technical skills for complex jobs, which was exactly what we were looking for.",
+      "We needed custom work done on our existing site, and LMWebDesign delivered. They have the technical skills for complex jobs, which was exactly what we were looking for.",
   },
 ];
 
