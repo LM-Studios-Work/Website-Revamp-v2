@@ -119,6 +119,7 @@ export const ndilayavhupoData: CaseStudyData = {
     "Image Optimisation Pipeline",
     "Responsive Images",
   ],
+  websiteUrl: "https://www.ndilayavhupo.co.za",
   cta: {
     title: (
       <>

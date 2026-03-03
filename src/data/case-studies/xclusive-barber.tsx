@@ -10,6 +10,7 @@ import {
 import { CaseStudyData } from "@/components/templates/CaseStudyLayout";
 
 export const xclusiveBarberData: CaseStudyData = {
+  websiteUrl: "https://www.xclusivebarber.co.za",
   category: "Barber & Grooming",
   title: (
     <>
