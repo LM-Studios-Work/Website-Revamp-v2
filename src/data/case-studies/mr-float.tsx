@@ -119,6 +119,7 @@ export const mrFloatData: CaseStudyData = {
     "Responsive Images",
     "Mobile-First Architecture",
   ],
+  websiteUrl: "https://www.mrfloatlogistics.co.za",
   cta: {
     title: (
       <>

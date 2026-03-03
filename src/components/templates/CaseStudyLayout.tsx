@@ -50,6 +50,7 @@ export type CaseStudyData = {
     metrics: ResultMetric[];
   };
   techStack: TechStack;
+  websiteUrl?: string;
   cta: {
     title: React.ReactNode;
     description: string;
@@ -113,6 +114,22 @@ export const CaseStudyLayout = ({ data, icons }: { data: CaseStudyData; icons: {
               {data.features}
             </span>
           </div>
+
+          {data.websiteUrl && (
+            <div className="mt-10 flex justify-center">
+              <Link
+                href={data.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm font-semibold bg-[#e7fe56] text-black pl-6 pr-2 py-2 rounded-full hover:bg-[#e7fe56]/90 hover:scale-105 transition-all duration-300"
+              >
+                Visit Website
+                <span className="ml-3 w-8 h-8 bg-black/20 rounded-full flex items-center justify-center">
+                  <ArrowRight className="w-4 h-4 -rotate-45" />
+                </span>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
