@@ -46,6 +46,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             alt={props.imageAlt}
             fill
             sizes="(min-width: 768px) 33vw, 100vw"
+            quality={90}
             className="object-cover transition-transform duration-500 md:group-hover:scale-105"
           />
         </div>
