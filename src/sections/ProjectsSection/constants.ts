@@ -10,7 +10,8 @@ export const tagStyle = {
 export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
-    imageAlt: "Custom web design Durban — Xclusive Barber salon online booking system by small business website developers LMWebDesign",
+    imageAlt:
+      "Custom web design Durban — Xclusive Barber salon online booking system by small business website developers LMWebDesign",
     title: "Xclusive Barber - Davenport",
     tags: [
       { text: "Barber & Grooming", className: tagStyle.lime },
@@ -22,8 +23,22 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "/projects/xclusive-barber",
   },
   {
+    imageUrl: "/preview/www.sssksolutions.co.za.webp",
+    imageAlt: "SSSK Environmental Services Website Preview",
+    title: "SSSK Environmental Services",
+    tags: [
+      { text: "Logistics & Services", className: tagStyle.lime },
+      { text: "Business Solutions", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "Leading the way in environmental protection and hazardous spill remediation. Emergency spill response, pollution control, and waste management. 24/7 helpline: 071 788 1312.",
+    discoverMoreUrl: "https://sssksolutions.co.za",
+  },
+  {
     imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
-    imageAlt: "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LMWebDesign tour operator website developers",
+    imageAlt:
+      "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LMWebDesign tour operator website developers",
     title: "Ndilayavhupo Travels",
     tags: [
       { text: "Travel & Tourism", className: tagStyle.lime },
@@ -37,7 +52,8 @@ export const projects: ProjectCardProps[] = [
 
   {
     imageUrl: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
-    imageAlt: "Transport company web design — Mr. Float Logistics custom WhatsApp booking integration by LMWebDesign logistics website developers",
+    imageAlt:
+      "Transport company web design — Mr. Float Logistics custom WhatsApp booking integration by LMWebDesign logistics website developers",
     title: "Mr. Float Logistics",
     tags: [
       { text: "Logistics & Transport", className: tagStyle.lime },
