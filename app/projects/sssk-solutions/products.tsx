@@ -1,4 +1,4 @@
-import CaseStudyLayout from "@/components/templates/CaseStudyLayout";
+import { CaseStudyLayout } from "@/components/templates/CaseStudyLayout";
 
 export default function SSSKProductsPage() {
   return (
