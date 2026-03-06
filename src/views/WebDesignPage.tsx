@@ -46,7 +46,7 @@ type FeatureItem = string | { text: string; tooltip: string };
 const FeatureTooltip = ({ text }: { text: string }) => (
   <span className="relative inline-flex items-center group/tooltip ml-1.5 align-middle">
     <span
-      className="w-[15px] h-[15px] rounded-full border border-white/30 text-white/50 text-[9px] font-bold inline-flex items-center justify-center cursor-help hover:border-[#b4eb2c]/70 hover:text-[#b4eb2c] transition-colors select-none"
+      className="w-[15px] h-[15px] rounded-full border border-white/30 text-white/50 text-[9px] font-bold inline-flex items-center justify-center cursor-help hover:border-[#e7fe56]/70 hover:text-[#e7fe56] transition-colors select-none"
       aria-label="More information"
     >
       ?
@@ -61,7 +61,7 @@ const FeatureTooltip = ({ text }: { text: string }) => (
 const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
   const isObj = typeof feature === "object";
   return (
-    <div className="flex items-center gap-4 py-3 border-b border-white/[0.07] last:border-b-0">
+    <div className="flex items-center gap-4 py-3 border-b-2 border-white/[0.09] last:border-b-0">
       <div className="shrink-0 w-8 h-8 rounded-full bg-[#72f5e3] flex items-center justify-center shadow-[0_0_10px_rgba(114,245,227,0.3)]">
         <Check className="w-4 h-4 text-black" weight="bold" />
       </div>
@@ -92,8 +92,8 @@ const PerformanceMetric = ({
   icon: React.ElementType;
 }) => (
   <div className="flex flex-col items-center gap-4 px-6 py-7 rounded-2xl border border-white/[0.08] bg-white/[0.03]">
-    <div className="w-12 h-12 rounded-xl bg-[#b4eb2c]/10 border border-[#b4eb2c]/20 flex items-center justify-center">
-      <Icon className="w-5 h-5 text-[#b4eb2c]" weight="bold" />
+    <div className="w-12 h-12 rounded-xl bg-[#e7fe56]/10 border border-[#e7fe56]/20 flex items-center justify-center">
+      <Icon className="w-5 h-5 text-[#e7fe56]" weight="bold" />
     </div>
     <div className="text-5xl font-bold text-white tabular-nums leading-none">
       {score}
@@ -418,7 +418,7 @@ export const WebDesignPage = () => {
 
   return (
     <>
-      {/* ════════════════════════════════════════════
+      {/* ══════════════════════════��═════════════════
             1. HERO
         ════════════════════════════════════════════ */}
       <ServiceHero
@@ -443,7 +443,7 @@ export const WebDesignPage = () => {
                 : ""
             }`}
           >
-            <p className="text-[#b4eb2c] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
               Google PageSpeed Insights
             </p>
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
@@ -516,7 +516,9 @@ export const WebDesignPage = () => {
               return (
                 <div
                   key={pkg.title}
-                  className={`relative flex flex-col h-full rounded-2xl overflow-hidden opacity-0 ${
+                  className={`relative flex flex-col h-full rounded-2xl opacity-0 ${
+                    pkg.popular ? "mt-5" : ""
+                  } ${
                     packagesVisible
                       ? `animate-[fadeInUp_0.8s_ease-out_${
                           ["0.2s", "0.3s", "0.4s", "0.5s", "0.6s"][pkgIdx]
@@ -526,24 +528,26 @@ export const WebDesignPage = () => {
                   style={
                     pkg.popular
                       ? {
-                          background: "#181818",
+                          background: "rgba(24,24,24,0.72)",
+                          backdropFilter: "blur(12px)",
                           boxShadow:
-                            "0 0 0 1.5px rgba(180,120,255,0.45), 0 0 40px rgba(140,80,255,0.12)",
+                            "0 0 0 1.5px rgba(180,120,255,0.5), 0 0 48px rgba(140,80,255,0.15)",
                         }
                       : {
-                          background: "#181818",
-                          boxShadow: "0 0 0 1px rgba(255,255,255,0.07)",
+                          background: "rgba(24,24,24,0.65)",
+                          backdropFilter: "blur(12px)",
+                          boxShadow: "0 0 0 1px rgba(255,255,255,0.08)",
                         }
                   }
                 >
                   {pkg.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#b4eb2c] text-black text-xs font-bold uppercase tracking-widest rounded-full whitespace-nowrap z-10">
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-[#e7fe56] text-black text-xs font-bold uppercase tracking-widest rounded-full whitespace-nowrap shadow-lg shadow-[#e7fe56]/20">
                       Most Popular
                     </div>
                   )}
 
                   {/* Card header */}
-                  <div className="px-7 pt-8 pb-5 border-b border-white/[0.08]">
+                  <div className="px-7 pt-8 pb-5 border-b-2 border-white/[0.1]">
                     <h3 className="text-xl font-bold text-center text-white leading-tight uppercase tracking-wide font-obviously">
                       {pkg.title}
                     </h3>
@@ -574,9 +578,9 @@ export const WebDesignPage = () => {
                   </div>
 
                   {/* Footer */}
-                  <div className="px-7 pb-7 pt-4 border-t border-white/[0.08] mt-2 space-y-3">
+                  <div className="px-7 pb-7 pt-4 border-t-2 border-white/[0.1] mt-2 space-y-3">
                     <div className="flex items-center gap-2">
-                      <Clock className="w-3.5 h-3.5 text-[#72f5e3]/60 shrink-0" />
+                      <Clock className="w-3.5 h-3.5 text-[#e7fe56]/60 shrink-0" />
                       <span className="text-xs text-white/50 font-medium tracking-wide">
                         DELIVERY:{" "}
                         <span className="text-white/80">{pkg.delivery}</span>
@@ -585,7 +589,7 @@ export const WebDesignPage = () => {
 
                     <a
                       href={`/contact?package=${encodeURIComponent(pkg.title)}`}
-                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-[#b4eb2c] text-black hover:bg-[#b4eb2c]/90 border-2 border-[#b4eb2c] hover:shadow-lg hover:shadow-[#b4eb2c]/30"
+                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-[#e7fe56] text-black hover:bg-[#e7fe56]/90 border-2 border-[#e7fe56] hover:shadow-lg hover:shadow-[#e7fe56]/30"
                     >
                       Request a Quote
                       <ArrowRight className="w-4 h-4" />
@@ -757,7 +761,7 @@ export const WebDesignPage = () => {
                 : ""
             }`}
           >
-            <p className="text-[#b4eb2c] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
               Why LMWebDesign
             </p>
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
@@ -1044,7 +1048,7 @@ export const WebDesignPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#b4eb2c] text-black font-semibold text-sm uppercase tracking-widest rounded-xl hover:bg-[#b4eb2c]/90 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#e7fe56] text-black font-semibold text-sm uppercase tracking-widest rounded-xl hover:bg-[#e7fe56]/90 transition-colors"
             >
               Request a Free Quote
               <ArrowRight className="w-5 h-5" />
