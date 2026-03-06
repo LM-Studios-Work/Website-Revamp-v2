@@ -102,14 +102,39 @@ const LighthouseDial = ({
           className="w-24 h-24 md:w-32 md:h-32"
           aria-label={`${label}: ${score}/100`}
         >
-          <circle cx="60" cy="60" r={r} fill="none" stroke="#1e1e1e" strokeWidth="10"
-            strokeDasharray={`${trackArc} ${circ * 0.25}`} strokeLinecap="round"
-            transform="rotate(-225, 60, 60)" />
-          <circle cx="60" cy="60" r={r} fill="none" stroke="#0cce6b" strokeWidth="10"
-            strokeDasharray={`${fillArc} ${circ - fillArc}`} strokeLinecap="round"
-            transform="rotate(-225, 60, 60)" />
-          <text x="60" y="60" textAnchor="middle" dominantBaseline="central"
-            fontSize="28" fontWeight="700" fill="white">{score}</text>
+          <circle
+            cx="60"
+            cy="60"
+            r={r}
+            fill="none"
+            stroke="#1e1e1e"
+            strokeWidth="10"
+            strokeDasharray={`${trackArc} ${circ * 0.25}`}
+            strokeLinecap="round"
+            transform="rotate(-225, 60, 60)"
+          />
+          <circle
+            cx="60"
+            cy="60"
+            r={r}
+            fill="none"
+            stroke="#0cce6b"
+            strokeWidth="10"
+            strokeDasharray={`${fillArc} ${circ - fillArc}`}
+            strokeLinecap="round"
+            transform="rotate(-225, 60, 60)"
+          />
+          <text
+            x="60"
+            y="60"
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize="28"
+            fontWeight="700"
+            fill="white"
+          >
+            {score}
+          </text>
         </svg>
         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#0cce6b] flex items-center justify-center shadow-lg shadow-[#0cce6b]/30">
           <Icon className="w-3.5 h-3.5 text-black" weight="bold" />
@@ -325,7 +350,7 @@ const addOns = [
     title: "Professional Copywriting",
     price: "+R1,500 / page",
     description:
-      "Our copywriters craft persuasive, SEO-optimised copy that converts browsers into buyers — written specifically for your industry.",
+      "Our copywriters craft persuasive, SEO-optimised copy that converts browsers into buyers - written specifically for your industry.",
     color: "#e7fe56",
   },
   {
@@ -333,7 +358,7 @@ const addOns = [
     title: "Automated WhatsApp Booking System",
     price: "+R3,500",
     description:
-      "An automated system that captures bookings, sends confirmations, and reminds clients via WhatsApp — works 24/7.",
+      "An automated system that captures bookings, sends confirmations, and reminds clients via WhatsApp - works 24/7.",
     color: "#d5bff0",
   },
   {
@@ -362,7 +387,7 @@ const processSteps = [
     variant: "purple" as const,
     title: "Sitemap & Strategy",
     description:
-      "We map every page and plan the conversion flow — how visitors move from landing to lead to sale.",
+      "We map every page and plan the conversion flow - how visitors move from landing to lead to sale.",
   },
   {
     step: 3,
@@ -436,17 +461,17 @@ export const WebDesignPage = () => {
   return (
     <>
       {/* ════════════════════════════════════════════
-          1. HERO
-      ════════════════════════════════════════════ */}
+            1. HERO
+        ════════════════════════════════════════════ */}
       <ServiceHero
         title="Web Design"
         underlineColor="lime"
-        description="Your competitors' faster websites are stealing your leads right now. We build lightning-fast, automated lead-generation systems — not just pretty websites — that rank on Google, capture enquiries on autopilot, and convert visitors into paying clients. Packages from R1,999 with free first-year hosting. Based in Midrand, serving all of South Africa."
+        description="Faster websites often capture leads that should be yours. We build high-performance, automated lead-generation systems that go beyond aesthetics. Our sites are engineered to rank on Google, capture enquiries automatically, and convert visitors into active clients. Packages start from R1,999 and include free hosting for the first year. Based in Midrand, we serve businesses across South Africa."
       />
 
       {/* ════════════════════════════════════════════
-          2. LIGHTHOUSE (short: badge + headline + dials)
-      ════════════════════════════════════════════ */}
+            2. LIGHTHOUSE (short: badge + headline + dials)
+        ════════════════════════════════════════════ */}
       <section
         ref={lighthouseRef}
         className="relative z-10 py-14 md:py-20 px-6 overflow-hidden"
@@ -464,13 +489,13 @@ export const WebDesignPage = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0cce6b]/30 bg-[#0cce6b]/10 text-[#0cce6b] text-xs font-semibold uppercase tracking-widest mb-5">
               <SealCheck className="w-4 h-4" weight="fill" />
-              Google PageSpeed Insights · Perfect 100 / 100
+              Google PageSpeed Insights: Perfect 100 / 100
             </div>
             <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white">
-              Every site we build scores{" "}
-              <span className="text-[#0cce6b]">100 / 100</span> on Google&apos;s
-              own tool — meaning cheaper ads, higher rankings, and more leads
-              than your competitors.
+              Every site we build achieves a perfect score on Google’s official
+              performance tool. This technical excellence results in lower ad
+              costs, higher search rankings, and a better user experience than
+              slower-loading competitors.
             </h2>
           </div>
 
@@ -483,15 +508,19 @@ export const WebDesignPage = () => {
           >
             <LighthouseDial label="Performance" score={100} icon={Gauge} />
             <LighthouseDial label="Accessibility" score={100} icon={Eye} />
-            <LighthouseDial label="Best Practices" score={100} icon={SealCheck} />
+            <LighthouseDial
+              label="Best Practices"
+              score={100}
+              icon={SealCheck}
+            />
             <LighthouseDial label="SEO" score={100} icon={MagnifyingGlass} />
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════
-          3. SERVICE PACKAGES
-      ════════════════════════════════════════════ */}
+            3. SERVICE PACKAGES
+        ════════════════════════════════════════════ */}
       <section
         ref={packagesRef}
         id="packages"
@@ -510,8 +539,9 @@ export const WebDesignPage = () => {
               <span className="h-px flex-1 bg-white/10 ml-4" />
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[650px]">
-              Once-off pricing. No monthly retainers. No hidden fees. Free
-              first-year hosting included with every package.
+              Enjoy transparent, once-off pricing with no monthly retainers and
+              no hidden fees. Your first year of hosting is included with every
+              package.
             </p>
           </div>
 
@@ -635,7 +665,9 @@ export const WebDesignPage = () => {
             {/* Accordion body */}
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                addOnsOpen ? "max-h-[600px] opacity-100 mt-4" : "max-h-0 opacity-0"
+                addOnsOpen
+                  ? "max-h-[600px] opacity-100 mt-4"
+                  : "max-h-0 opacity-0"
               }`}
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -651,7 +683,11 @@ export const WebDesignPage = () => {
                         border: `1px solid ${color}40`,
                       }}
                     >
-                      <Icon className="w-5 h-5" style={{ color }} weight="fill" />
+                      <Icon
+                        className="w-5 h-5"
+                        style={{ color }}
+                        weight="fill"
+                      />
                     </div>
                     <div className="flex items-start justify-between mb-3 gap-3">
                       <h3 className="text-base font-semibold font-obviously leading-tight flex-1">
@@ -689,10 +725,7 @@ export const WebDesignPage = () => {
       {/* ════════════════════════════════════════════
           4. PORTFOLIO / CASE STUDIES
       ════════════════════════════════════════════ */}
-      <section
-        ref={projectsRef}
-        className="relative z-10 py-16 md:py-28 px-6"
-      >
+      <section ref={projectsRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`flex flex-wrap items-center justify-between mb-12 opacity-0 ${
@@ -711,8 +744,18 @@ export const WebDesignPage = () => {
               >
                 See all projects
                 <span className="relative text-sm font-normal bg-[#e7fe56] text-black h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:h-[50px] md:w-[50px] md:p-[18.4px]">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </span>
               </a>
@@ -769,7 +812,7 @@ export const WebDesignPage = () => {
                   color: "#e7fe56" as const,
                   bgClass: "bg-[#e7fe56]",
                   title: "100% Custom. Zero Bloat.",
-                  body: "Every website is hand-coded in Next.js from scratch — no WordPress, no drag-and-drop builders, no 500 KB plugin overhead. The result: sub-second load times that Google rewards with higher rankings.",
+                  body: "Every website is hand-coded in Next.js from scratch - no WordPress, no drag-and-drop builders, no 500 KB plugin overhead. The result: sub-second load times that Google rewards with higher rankings.",
                   impact:
                     "A 1-second delay costs you 7% of your sales. Our sites eliminate that loss entirely.",
                   delay: "0.2s",
@@ -779,7 +822,7 @@ export const WebDesignPage = () => {
                   color: "#d5bff0" as const,
                   bgClass: "bg-[#d5bff0]",
                   title: "Direct Communication. Always.",
-                  body: "You deal directly with your developer — no account managers, no middlemen, no week-long response times. WhatsApp us and get a real answer the same day.",
+                  body: "You deal directly with your developer - no account managers, no middlemen, no week-long response times. WhatsApp us and get a real answer the same day.",
                   impact:
                     "Faster decisions mean faster builds. Your site goes live while competitors are still in revision round 4.",
                   delay: "0.4s",
@@ -789,9 +832,9 @@ export const WebDesignPage = () => {
                   color: "#72f5e3" as const,
                   bgClass: "bg-[#72f5e3]",
                   title: "Built to Convert. Not Just Impress.",
-                  body: "Every layout, button, and call-to-action is engineered to push users toward checkout or a WhatsApp message. We don't design for awards — we design for leads.",
+                  body: "Every layout, button, and call-to-action is engineered to push users toward checkout or a WhatsApp message. We don't design for awards - we design for leads.",
                   impact:
-                    "Higher conversion rates mean more customers from the same traffic — without spending more on ads.",
+                    "Higher conversion rates mean more customers from the same traffic - without spending more on ads.",
                   delay: "0.6s",
                 },
               ].map(({ Icon, bgClass, title, body, impact, delay }, idx) => (
@@ -836,31 +879,25 @@ export const WebDesignPage = () => {
       {/* ════════════════════════════════════════════
           6. OUR PROCESS & WHAT'S INCLUDED (combined)
       ════════════════════════════════════════════ */}
-      <section
-        ref={processRef}
-        className="relative z-10 py-16 md:py-28 px-6"
-      >
+      <section ref={processRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           {/* Process heading */}
           <div
             className={`mb-10 opacity-0 ${
-              processVisible
-                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
-                : ""
+              processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
             }`}
           >
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px]">
-              Our{" "}
-              <span className="italic text-outline-15">process</span>
+              Our <span className="italic text-outline-15">process</span>
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[600px]">
-              From first conversation to Google-indexed website — in as little
+              From first conversation to Google-indexed website - in as little
               as 4 working days.
             </p>
           </div>
 
           {/* Process steps — single horizontal scroll on all devices */}
-          <div 
+          <div
             ref={dragRef}
             {...dragEvents}
             className={`overflow-x-auto scrollbar-hide -mx-6 px-6 md:-mx-12 md:px-12 pb-8 ${
@@ -885,10 +922,7 @@ export const WebDesignPage = () => {
           </div>
 
           {/* ── What's Included ── */}
-          <div
-            ref={warrantyRef}
-            className="mt-16 md:mt-20"
-          >
+          <div ref={warrantyRef} className="mt-16 md:mt-20">
             <div
               className={`mb-10 opacity-0 ${
                 warrantyVisible
@@ -923,12 +957,16 @@ export const WebDesignPage = () => {
                     6-Month Warranty
                   </h3>
                   <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
-                    Bug fixes, browser compatibility (Chrome, Safari, Edge),
-                    and minor content adjustments — all covered for 6 months
+                    Bug fixes, browser compatibility (Chrome, Safari, Edge), and
+                    minor content adjustments - all covered for 6 months
                     post-launch at no extra charge.
                   </p>
                   <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
-                    {["Code bug fixes & broken links", "Browser compatibility patches", "Minor text & image swaps"].map((f) => (
+                    {[
+                      "Code bug fixes & broken links",
+                      "Browser compatibility patches",
+                      "Minor text & image swaps",
+                    ].map((f) => (
                       <div key={f} className="flex items-start gap-2">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" />
                         <span className="text-sm">{f}</span>
@@ -967,7 +1005,11 @@ export const WebDesignPage = () => {
                     things simple and affordable.
                   </p>
                   <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
-                    {["First year hosting — free", ".com renewal — R400 / year", ".co.za renewal — R150 / year"].map((f) => (
+                    {[
+                      "First year hosting — free",
+                      ".com renewal — R400 / year",
+                      ".co.za renewal — R150 / year",
+                    ].map((f) => (
                       <div key={f} className="flex items-start gap-2">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" />
                         <span className="text-sm">{f}</span>
@@ -995,7 +1037,11 @@ export const WebDesignPage = () => {
                     focus on running your business.
                   </p>
                   <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
-                    {["Security & dependency patches", "Hosting & SSL management", "Core Web Vitals monitoring"].map((f) => (
+                    {[
+                      "Security & dependency patches",
+                      "Hosting & SSL management",
+                      "Core Web Vitals monitoring",
+                    ].map((f) => (
                       <div key={f} className="flex items-start gap-2">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" />
                         <span className="text-sm">{f}</span>
@@ -1012,10 +1058,7 @@ export const WebDesignPage = () => {
       {/* ════════════════════════════════════════════
           7. FINAL CTA
       ════════════════════════════════════════════ */}
-      <section
-        ref={ctaRef}
-        className="relative z-10 py-16 md:py-24 px-6"
-      >
+      <section ref={ctaRef} className="relative z-10 py-16 md:py-24 px-6">
         <div
           className={`max-w-[900px] mx-auto text-center opacity-0 ${
             ctaVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
@@ -1027,8 +1070,8 @@ export const WebDesignPage = () => {
             <span className="italic text-outline-2">to a slower website?</span>
           </h2>
           <p className="text-lg text-white/70 mb-10 max-w-[580px] mx-auto">
-            Get a free quote in 24 hours. Or just send a voice note on
-            WhatsApp — we&apos;re real people, not a call centre.
+            Get a free quote in 24 hours. Or just send a voice note on WhatsApp
+            - we&apos;re real people, not a call centre.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
