@@ -80,9 +80,9 @@ const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
 };
 
 // ─────────────────────────────────────────────────
-//  Lighthouse Dial (Google PageSpeed style SVG)
+//  Performance Metric Card
 // ─────────────────────────────────────────────────
-const LighthouseDial = ({
+const PerformanceMetric = ({
   label,
   score = 100,
   icon: Icon,
@@ -90,64 +90,20 @@ const LighthouseDial = ({
   label: string;
   score?: number;
   icon: React.ElementType;
-}) => {
-  const r = 44;
-  const circ = 2 * Math.PI * r;
-  const trackArc = circ * 0.75;
-  const fillArc = (score / 100) * trackArc;
-
-  return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="relative">
-        <svg
-          viewBox="0 0 120 120"
-          className="w-24 h-24 md:w-32 md:h-32"
-          aria-label={`${label}: ${score}/100`}
-        >
-          <circle
-            cx="60"
-            cy="60"
-            r={r}
-            fill="none"
-            stroke="#1e1e1e"
-            strokeWidth="10"
-            strokeDasharray={`${trackArc} ${circ * 0.25}`}
-            strokeLinecap="round"
-            transform="rotate(-225, 60, 60)"
-          />
-          <circle
-            cx="60"
-            cy="60"
-            r={r}
-            fill="none"
-            stroke="#0cce6b"
-            strokeWidth="10"
-            strokeDasharray={`${fillArc} ${circ - fillArc}`}
-            strokeLinecap="round"
-            transform="rotate(-225, 60, 60)"
-          />
-          <text
-            x="60"
-            y="60"
-            textAnchor="middle"
-            dominantBaseline="central"
-            fontSize="28"
-            fontWeight="700"
-            fill="white"
-          >
-            {score}
-          </text>
-        </svg>
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#0cce6b] flex items-center justify-center shadow-lg shadow-[#0cce6b]/30">
-          <Icon className="w-3.5 h-3.5 text-black" weight="bold" />
-        </div>
-      </div>
-      <span className="text-white/70 text-xs md:text-sm font-medium tracking-wide text-center leading-tight">
-        {label}
-      </span>
+}) => (
+  <div className="flex flex-col items-center gap-4 px-6 py-7 rounded-2xl border border-white/[0.08] bg-white/[0.03]">
+    <div className="w-12 h-12 rounded-xl bg-[#b4eb2c]/10 border border-[#b4eb2c]/20 flex items-center justify-center">
+      <Icon className="w-5 h-5 text-[#b4eb2c]" weight="bold" />
     </div>
-  );
-};
+    <div className="text-5xl font-bold text-white tabular-nums leading-none">
+      {score}
+      <span className="text-2xl text-white/30 font-semibold">/100</span>
+    </div>
+    <span className="text-white/55 text-xs font-semibold uppercase tracking-widest text-center leading-tight">
+      {label}
+    </span>
+  </div>
+);
 
 // ─────────────────────────────────────────────────
 //  Data: Packages
@@ -472,50 +428,56 @@ export const WebDesignPage = () => {
       />
 
       {/* ════════════════════════════════════════════
-            2. LIGHTHOUSE (short: badge + headline + dials)
+            2. PERFORMANCE (PageSpeed scores)
         ════════════════════════════════════════════ */}
       <section
         ref={lighthouseRef}
-        className="relative z-10 py-14 md:py-20 px-6 overflow-hidden"
+        className="relative z-10 py-16 md:py-24 px-6"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0cce6b]/5 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[1px] bg-gradient-to-r from-transparent via-[#0cce6b]/25 to-transparent" />
-
         <div className="max-w-[1400px] w-full mx-auto">
+          {/* Heading row */}
           <div
-            className={`text-center mb-10 md:mb-14 opacity-0 ${
+            className={`mb-10 md:mb-14 opacity-0 ${
               lighthouseVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                 : ""
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0cce6b]/30 bg-[#0cce6b]/10 text-[#0cce6b] text-xs font-semibold uppercase tracking-widest mb-5">
-              <SealCheck className="w-4 h-4" weight="fill" />
-              Google PageSpeed Insights: Perfect 100 / 100
-            </div>
-            <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white">
-              Every site we build achieves a perfect score on Google’s official
-              performance tool. This technical excellence results in lower ad
-              costs, higher search rankings, and a better user experience than
-              slower-loading competitors.
+            <p className="text-[#b4eb2c] text-sm font-semibold uppercase tracking-widest mb-3">
+              Google PageSpeed Insights
+            </p>
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
+              Perfect scores.{" "}
+              <span className="italic text-outline-15">Every time.</span>
+              <span className="h-px flex-1 bg-white/10 ml-4 hidden md:block" />
             </h2>
+            <p className="mt-4 text-white/60 text-lg max-w-[620px]">
+              Every site we build scores 100/100 on Google&apos;s official
+              performance tool — meaning lower ad costs, higher rankings, and
+              faster load times than competitors.
+            </p>
           </div>
 
+          {/* Metric cards */}
           <div
-            className={`flex flex-wrap justify-center gap-8 md:gap-16 lg:gap-24 opacity-0 ${
+            className={`grid grid-cols-2 md:grid-cols-4 gap-4 opacity-0 ${
               lighthouseVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
                 : ""
             }`}
           >
-            <LighthouseDial label="Performance" score={100} icon={Gauge} />
-            <LighthouseDial label="Accessibility" score={100} icon={Eye} />
-            <LighthouseDial
+            <PerformanceMetric label="Performance" score={100} icon={Gauge} />
+            <PerformanceMetric label="Accessibility" score={100} icon={Eye} />
+            <PerformanceMetric
               label="Best Practices"
               score={100}
               icon={SealCheck}
             />
-            <LighthouseDial label="SEO" score={100} icon={MagnifyingGlass} />
+            <PerformanceMetric
+              label="SEO"
+              score={100}
+              icon={MagnifyingGlass}
+            />
           </div>
         </div>
       </section>
