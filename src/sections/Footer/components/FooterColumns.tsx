@@ -17,8 +17,8 @@ export const FooterColumns = () => {
         title="Services"
         links={[
           { href: "/services/web-design", text: "Web design" },
+          { href: "/services/e-commerce", text: "E-Commerce" },
           { href: "/services/app-development", text: "App development" },
-          { href: "/services/web-design#photography", text: "Photography" },
           { href: "/services/seo", text: "SEO" },
         ]}
       />
