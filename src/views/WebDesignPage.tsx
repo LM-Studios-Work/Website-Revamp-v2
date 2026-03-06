@@ -61,9 +61,11 @@ const FeatureTooltip = ({ text }: { text: string }) => (
 const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
   const isObj = typeof feature === "object";
   return (
-    <div className="flex items-start gap-3">
-      <Check className="w-4 h-4 mt-0.5 shrink-0 text-[#b4eb2c]/70 transition-colors duration-300 group-hover:text-[#b4eb2c]" />
-      <span className="text-sm text-white/80 leading-relaxed inline-flex flex-wrap items-center gap-x-0.5">
+    <div className="flex items-center gap-4 py-3 border-b border-white/[0.07] last:border-b-0">
+      <div className="shrink-0 w-8 h-8 rounded-full bg-[#72f5e3] flex items-center justify-center shadow-[0_0_10px_rgba(114,245,227,0.3)]">
+        <Check className="w-4 h-4 text-black" weight="bold" />
+      </div>
+      <span className="text-sm text-white/75 leading-relaxed inline-flex flex-wrap items-center gap-x-0.5">
         {isObj
           ? (feature as { text: string; tooltip: string }).text
           : (feature as string)}
@@ -552,66 +554,70 @@ export const WebDesignPage = () => {
               return (
                 <div
                   key={pkg.title}
-                  className={`relative flex flex-col h-full rounded-3xl p-8 border-2 ${
-                    pkg.popular
-                      ? "border-[#b4eb2c] bg-white/10"
-                      : "border-[#b4eb2c]/60 bg-white/5"
-                  } backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10 opacity-0 ${
+                  className={`relative flex flex-col h-full rounded-2xl overflow-hidden opacity-0 ${
                     packagesVisible
                       ? `animate-[fadeInUp_0.8s_ease-out_${
                           ["0.2s", "0.3s", "0.4s", "0.5s", "0.6s"][pkgIdx]
                         }_both]`
                       : ""
                   }`}
+                  style={
+                    pkg.popular
+                      ? {
+                          background: "#181818",
+                          boxShadow:
+                            "0 0 0 1.5px rgba(180,120,255,0.45), 0 0 40px rgba(140,80,255,0.12)",
+                        }
+                      : {
+                          background: "#181818",
+                          boxShadow: "0 0 0 1px rgba(255,255,255,0.07)",
+                        }
+                  }
                 >
                   {pkg.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#b4eb2c] text-black text-xs font-bold uppercase tracking-widest rounded-full whitespace-nowrap">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#b4eb2c] text-black text-xs font-bold uppercase tracking-widest rounded-full whitespace-nowrap z-10">
                       Most Popular
                     </div>
                   )}
 
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="p-3 rounded-2xl bg-[#b4eb2c]/10 text-[#b4eb2c] border border-[#b4eb2c]/30 transition-all duration-300 group-hover:bg-[#b4eb2c] group-hover:text-black group-hover:border-[#b4eb2c]">
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#b4eb2c]">
-                        {pkg.price}
-                      </div>
-                      <div className="text-xs text-white/60 uppercase tracking-wider">
-                        {pkg.type}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ROI tagline */}
-                  <p className="text-xs text-[#b4eb2c]/80 leading-relaxed mb-5 italic border-l-2 border-[#b4eb2c]/30 pl-3">
-                    {pkg.roi}
-                  </p>
-
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold font-obviously leading-tight uppercase tracking-wide">
+                  {/* Card header */}
+                  <div className="px-7 pt-8 pb-5 border-b border-white/[0.08]">
+                    <h3 className="text-xl font-bold text-center text-white leading-tight uppercase tracking-wide font-obviously">
                       {pkg.title}
                     </h3>
                     {pkg.subtitle && (
-                      <p className="text-xs text-white/40 mt-1">
+                      <p className="text-xs text-white/40 mt-1 text-center">
                         {pkg.subtitle}
                       </p>
                     )}
+                    <div className="mt-4 flex items-center justify-center gap-3">
+                      <span className="text-2xl font-semibold text-white">
+                        {pkg.price}
+                      </span>
+                      <span className="text-xs text-white/50 uppercase tracking-wider border border-white/15 px-2 py-0.5 rounded-full">
+                        {pkg.type}
+                      </span>
+                    </div>
+                    {/* ROI tagline */}
+                    <p className="mt-3 text-xs text-white/45 leading-relaxed text-center italic">
+                      {pkg.roi}
+                    </p>
                   </div>
 
-                  <div className="flex-1 space-y-3.5 mb-10">
+                  {/* Feature rows */}
+                  <div className="flex-1 px-7 py-2">
                     {pkg.features.map((feature, fIdx) => (
                       <FeatureListItem key={fIdx} feature={feature} />
                     ))}
                   </div>
 
-                  <div className="mt-auto space-y-3">
-                    <div className="flex items-center gap-3 py-3 border-t border-[#b4eb2c]/20">
-                      <Clock className="w-4 h-4 text-[#b4eb2c]/60 shrink-0" />
-                      <span className="text-xs text-white/60 font-medium tracking-wide">
+                  {/* Footer */}
+                  <div className="px-7 pb-7 pt-4 border-t border-white/[0.08] mt-2 space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-3.5 h-3.5 text-[#72f5e3]/60 shrink-0" />
+                      <span className="text-xs text-white/50 font-medium tracking-wide">
                         DELIVERY:{" "}
-                        <span className="text-white/90">{pkg.delivery}</span>
+                        <span className="text-white/80">{pkg.delivery}</span>
                       </span>
                     </div>
 
@@ -629,7 +635,7 @@ export const WebDesignPage = () => {
                       )}%20package`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-transparent text-white/60 border border-white/20 hover:border-[#25D366]/50 hover:text-[#25D366] hover:bg-[#25D366]/5"
+                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-transparent text-white/50 border border-white/15 hover:border-[#25D366]/50 hover:text-[#25D366] hover:bg-[#25D366]/5"
                     >
                       <WhatsappLogo className="w-4 h-4" />
                       Chat on WhatsApp
