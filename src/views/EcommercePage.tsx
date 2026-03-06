@@ -5,10 +5,10 @@ import {
   Check,
   ArrowRight,
   ShieldCheck,
-  Zap,
+  Lightning,
   CreditCard,
-  Truck,
-  MessageCircle,
+  Storefront,
+  Chat,
   WhatsappLogo,
   CaretDown,
 } from "@phosphor-icons/react";
@@ -255,7 +255,7 @@ export function EcommercePage() {
           <div className="space-y-12 md:space-y-16">
             {[
               {
-                icon: Zap,
+                icon: Lightning,
                 title: "Sub-second Load Times & Superior Google Rankings",
                 description:
                   "Google's algorithm penalizes slow websites. Because our custom builds eliminate the heavy plugin bloat of traditional agencies, your store consistently ranks higher organically. Your products are discovered more, your Google Ads cost less per click, and customers never abandon carts waiting for pages to load.",
@@ -269,14 +269,14 @@ export function EcommercePage() {
                 color: "#d5bff0",
               },
               {
-                icon: Truck,
+                icon: Storefront,
                 title: "Automated Local Logistics",
                 description:
                   "Shipping in South Africa doesn't have to be a logistical headache. We integrate your store directly with The Courier Guy and Bob Go. When a customer buys a product, shipping rates calculate accurately at checkout and courier waybills generate automatically. No more manual data entry.",
                 color: "#72f5e3",
               },
               {
-                icon: MessageCircle,
+                icon: Chat,
                 title: "WhatsApp Cart Recovery",
                 description:
                   "Email open rates are dropping. When a customer leaves an item in their cart without paying, our systems follow up directly via an automated WhatsApp message, bringing them back to complete the purchase where they're most responsive.",
@@ -510,9 +510,9 @@ export function EcommercePage() {
               <div className="space-y-4">
                 {[
                   { icon: ShieldCheck, label: "6-Month Bug Fixes & Security Patches" },
-                  { icon: Zap, label: "Payment Gateway Monitoring" },
+                  { icon: Lightning, label: "Payment Gateway Monitoring" },
                   { icon: Check, label: "Browser Compatibility Updates" },
-                  { icon: MessageCircle, label: "WhatsApp Technical Support" },
+                  { icon: Chat, label: "WhatsApp Technical Support" },
                 ].map(({ icon: Icon, label }) => (
                   <div
                     key={label}
