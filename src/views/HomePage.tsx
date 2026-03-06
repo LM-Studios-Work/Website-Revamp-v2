@@ -69,20 +69,21 @@ export const HomePage = () => {
         className="relative py-16 md:py-28 px-6"
       >
         <div className="max-w-[1400px] w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
-            <div className="md:w-5/12 shrink-0">
+          <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-8 lg:gap-16">
+            <div className="md:w-1/3 shrink-0">
               <h2
                 id="good-hands-heading"
-                className="text-4xl md:text-[56px] font-bold leading-tight text-white"
+                className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight text-white"
               >
                 Your project is
                 <br />
                 <span className="italic text-outline-15">in good hands</span>
               </h2>
             </div>
-            <div className="md:w-7/12">
+            <div className="md:w-2/3 -mx-6 px-6 md:mx-0 md:px-0">
               <div
-                className={`flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6
+                className={`flex overflow-x-auto scrollbar-hide snap-x snap-mandatory md:snap-none gap-4 md:grid md:grid-cols-3 md:gap-6
+                  [mask-image:linear-gradient(to_right,black_85%,transparent_100%)] md:[mask-image:none] pb-4 md:pb-0
                   transition-all ease-out duration-300 md:duration-500
                   ${
                     goodHandsVisible
@@ -93,16 +94,16 @@ export const HomePage = () => {
                 {GOOD_HANDS_CARDS.map((card, idx) => (
                   <div
                     key={card.num}
-                    className="md:transition-all md:duration-500"
+                    className="min-w-[280px] w-[calc(100vw-120px)] shrink-0 md:w-auto md:min-w-0 snap-start snap-always md:snap-align-none md:transition-all md:duration-500"
                     style={{
                       transitionDelay: idx > 0 ? `${idx * 0.12}s` : "0s",
                     }}
                   >
                     <div
-                      className={`${card.bgClass} text-black p-7 rounded-2xl h-full`}
+                      className={`${card.bgClass} text-black p-6 lg:p-7 rounded-2xl h-full flex flex-col aspect-square justify-center`}
                     >
                       <div
-                        className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-5"
+                        className="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold mb-3 lg:mb-5"
                         aria-hidden="true"
                       >
                         {card.num}

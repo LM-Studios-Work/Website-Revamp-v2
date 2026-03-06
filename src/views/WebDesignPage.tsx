@@ -317,7 +317,7 @@ const addOns = [
     price: "+R3,500",
     description:
       "An automated system that captures bookings, sends confirmations, and reminds clients via WhatsApp - works 24/7.",
-    color: "#d5bff0",
+    color: "#c4b5fd",
   },
   {
     Icon: Timer,
@@ -517,8 +517,6 @@ export const WebDesignPage = () => {
                 <div
                   key={pkg.title}
                   className={`relative flex flex-col h-full rounded-2xl opacity-0 ${
-                    pkg.popular ? "mt-5" : ""
-                  } ${
                     packagesVisible
                       ? `animate-[fadeInUp_0.8s_ease-out_${
                           ["0.2s", "0.3s", "0.4s", "0.5s", "0.6s"][pkgIdx]
@@ -528,15 +526,15 @@ export const WebDesignPage = () => {
                   style={
                     pkg.popular
                       ? {
-                          background: "rgba(24,24,24,0.72)",
-                          backdropFilter: "blur(12px)",
+                          background: "rgba(255,255,255,0.04)",
+                          backdropFilter: "blur(4px)",
                           boxShadow:
-                            "0 0 0 1.5px rgba(180,120,255,0.5), 0 0 48px rgba(140,80,255,0.15)",
+                            "0 0 0 2px rgba(196,181,253,0.9), 0 0 40px rgba(196,181,253,0.25)",
                         }
                       : {
-                          background: "rgba(24,24,24,0.65)",
-                          backdropFilter: "blur(12px)",
-                          boxShadow: "0 0 0 1px rgba(255,255,255,0.08)",
+                          background: "rgba(255,255,255,0.02)",
+                          backdropFilter: "blur(4px)",
+                          boxShadow: "0 0 0 1px rgba(255,255,255,0.15)",
                         }
                   }
                 >
@@ -791,8 +789,8 @@ export const WebDesignPage = () => {
                 },
                 {
                   Icon: Headset,
-                  color: "#d5bff0" as const,
-                  bgClass: "bg-[#d5bff0]",
+                  color: "#c4b5fd" as const,
+                  bgClass: "bg-[#c4b5fd]",
                   title: "Direct Communication. Always.",
                   body: "You deal directly with your developer - no account managers, no middlemen, no week-long response times. WhatsApp us and get a real answer the same day.",
                   impact:
@@ -870,26 +868,34 @@ export const WebDesignPage = () => {
 
           {/* Process steps — single horizontal scroll on all devices */}
           <div
-            ref={dragRef}
-            {...dragEvents}
-            className={`overflow-x-auto scrollbar-hide -mx-6 px-6 md:-mx-12 md:px-12 pb-8 ${
-              isDragging ? "cursor-grabbing select-none" : "cursor-grab"
-            }`}
+            className="-mx-6 md:-mx-12"
+            style={{
+              WebkitMaskImage: "linear-gradient(to right, black 80%, transparent 100%)",
+              maskImage: "linear-gradient(to right, black 80%, transparent 100%)",
+            }}
           >
-            <div className="flex gap-4 md:gap-8 w-max justify-start pr-12 md:pr-32 pointer-events-none">
-              {processSteps.map((card, idx) => (
-                <div
-                  key={card.step}
-                  className={`w-[280px] md:w-[400px] shrink-0 transition-all duration-700 pointer-events-auto ${
-                    processVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
-                  }`}
-                  style={{ transitionDelay: `${idx * 150}ms` }}
-                >
-                  <ProcessCard {...card} />
-                </div>
-              ))}
+            <div
+              ref={dragRef}
+              {...dragEvents}
+              className={`overflow-x-auto scrollbar-hide snap-x snap-mandatory md:snap-none scroll-px-6 md:scroll-px-12 px-6 md:px-12 pb-8 ${
+                isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+              }`}
+            >
+              <div className="flex gap-4 md:gap-8 w-max justify-start pr-12 md:pr-32 pointer-events-none">
+                {processSteps.map((card, idx) => (
+                  <div
+                    key={card.step}
+                    className={`snap-start snap-always md:snap-align-none w-[280px] md:w-[400px] shrink-0 transition-all duration-700 pointer-events-auto ${
+                      processVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                    }`}
+                    style={{ transitionDelay: `${idx * 150}ms` }}
+                  >
+                    <ProcessCard {...card} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

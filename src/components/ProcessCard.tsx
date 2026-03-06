@@ -23,7 +23,7 @@ const VARIANT_STYLES = {
     descBg: "",
   },
   purple: {
-    container: "bg-[#d5bff0] text-black",
+    container: "bg-[#c4b5fd] text-black",
     circle: "bg-black/10",
     text: "text-black/80",
     descBg: "",
