@@ -747,115 +747,6 @@ export const WebDesignPage = () => {
       {/* ════════════════════════════════════════════
           5. WHY LMWEBDESIGN (horizontal scroll on mobile)
       ════════════════════════════════════════════ */}
-      <section
-        ref={advantagesRef}
-        className="relative z-10 py-16 md:py-28 px-6"
-      >
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div
-            className={`mb-16 opacity-0 ${
-              advantagesVisible
-                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
-                : ""
-            }`}
-          >
-            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
-              Why LMWebDesign
-            </p>
-            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-              Your website is in
-              <br />
-              <span className="italic text-outline-2">good hands</span>
-            </h2>
-            <p className="text-lg text-white/70 leading-relaxed max-w-[600px]">
-              We don&apos;t just make things look pretty. Every decision is
-              engineered to make your business more money.
-            </p>
-          </div>
-
-          {/* Stacked advantages with left text + right visual accent */}
-          <div className="space-y-12 md:space-y-16">
-            {[
-              {
-                Icon: Lightning,
-                number: "01",
-                title: "100% Custom. Zero Bloat.",
-                body: "Every website is hand-coded in Next.js from scratch - no WordPress, no drag-and-drop builders, no 500 KB plugin overhead. The result: sub-second load times that Google rewards with higher rankings.",
-                impact:
-                  "A 1-second delay costs you 7% of your sales. Our sites eliminate that loss entirely.",
-                delay: "0.2s",
-              },
-              {
-                Icon: Headset,
-                number: "02",
-                title: "Direct Communication. Always.",
-                body: "You deal directly with your developer - no account managers, no middlemen, no week-long response times. WhatsApp us and get a real answer the same day.",
-                impact:
-                  "Faster decisions mean faster builds. Your site goes live while competitors are still in revision round 4.",
-                delay: "0.4s",
-              },
-              {
-                Icon: Funnel,
-                number: "03",
-                title: "Built to Convert. Not Just Impress.",
-                body: "Every layout, button, and call-to-action is engineered to push users toward checkout or a WhatsApp message. We don't design for awards - we design for leads.",
-                impact:
-                  "Higher conversion rates mean more customers from the same traffic - without spending more on ads.",
-                delay: "0.6s",
-              },
-            ].map(({ Icon, number, title, body, impact, delay }) => (
-              <div
-                key={number}
-                className={`opacity-0 ${
-                  advantagesVisible
-                    ? `animate-[fadeInUp_0.8s_ease-out_${delay}_both]`
-                    : ""
-                }`}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-                  {/* Left: Content */}
-                  <div className="md:col-span-7 flex flex-col">
-                    <div className="flex items-baseline gap-4 mb-3">
-                      <span className="text-5xl md:text-6xl font-bold text-white/10 font-obviously leading-none">
-                        {number}
-                      </span>
-                      <h3 className="text-2xl md:text-3xl font-semibold font-obviously leading-tight text-white">
-                        {title}
-                      </h3>
-                    </div>
-                    <p className="text-base md:text-lg text-white/70 leading-relaxed mb-6">
-                      {body}
-                    </p>
-                    <div className="pt-6 border-t border-white/10">
-                      <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-2">
-                        The business impact
-                      </p>
-                      <p className="text-sm md:text-base text-white/80 font-medium">
-                        {impact}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Right: Visual accent */}
-                  <div className="md:col-span-5 flex justify-center md:justify-end">
-                    <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
-                      {/* Animated background accent */}
-                      <div className="absolute inset-0 rounded-full bg-white/5 border border-white/10" />
-                      <div className="absolute inset-2 rounded-full bg-white/[0.02] border border-white/5" />
-                      
-                      {/* Icon */}
-                      <div className="relative z-10 flex items-center justify-center">
-                        <Icon className="w-12 h-12 md:w-16 md:h-16 text-[#e7fe56]" weight="bold" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ════════════════════════════════════════════
           6. OUR PROCESS & WHAT'S INCLUDED (combined)
       ════════════════════════════════════════════ */}
@@ -928,11 +819,11 @@ export const WebDesignPage = () => {
               </p>
             </div>
 
-            <div className="overflow-x-auto scrollbar-hide -mx-6 md:mx-0 md:overflow-visible">
-              <div className="flex gap-4 px-6 md:grid md:grid-cols-3 md:gap-6 md:px-0">
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Warranty Card */}
                 <div
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+                  className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
                     warrantyVisible
                       ? "animate-[fadeInUp_0.8s_ease-out_0.3s_both]"
                       : ""
@@ -976,7 +867,7 @@ export const WebDesignPage = () => {
 
                 {/* Hosting Card */}
                 <div
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
+                  className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
                     warrantyVisible
                       ? "animate-[fadeInUp_0.8s_ease-out_0.5s_both]"
                       : ""
@@ -1008,7 +899,7 @@ export const WebDesignPage = () => {
 
                 {/* Technical Health Card */}
                 <div
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
+                  className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
                     warrantyVisible
                       ? "animate-[fadeInUp_0.8s_ease-out_0.7s_both]"
                       : ""
