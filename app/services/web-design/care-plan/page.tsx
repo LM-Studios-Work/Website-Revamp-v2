@@ -20,45 +20,29 @@ const WA_BASE =
 const tiers = [
   {
     name: "Basic Care",
-    price: "R350",
+    price: "R199",
     period: "/month",
-    tagline: "Stay live, stay secure.",
+    tagline: "Website backups and updates.",
     color: "#e7fe56",
     features: [
-      "Premium managed hosting",
-      "SSL certificate management",
-      "Core Web Vitals monitoring",
-      "Security & uptime monitoring",
-      "Priority email support",
+      "Website backups",
+      "Security updates",
+      "Minor content updates",
+      "Technical support",
     ],
   },
   {
-    name: "Growth Care",
-    price: "R550",
+    name: "Business Care",
+    price: "R399",
     period: "/month",
-    tagline: "Keep growing after launch.",
+    tagline: "Everything you need to grow.",
     color: "#d5bff0",
     popular: true,
     features: [
       "Everything in Basic Care",
-      "2 hours of content updates / month",
-      "Monthly performance report",
-      "Google Analytics review",
-      "1 new section per quarter",
-    ],
-  },
-  {
-    name: "Premium Care",
-    price: "R750",
-    period: "/month",
-    tagline: "Maximum performance, zero effort.",
-    color: "#72f5e3",
-    features: [
-      "Everything in Growth Care",
-      "Unlimited minor content updates",
-      "Advanced analytics & conversion review",
-      "Heat mapping setup",
-      "Priority same-day support",
+      "Monthly performance check",
+      "SEO monitoring",
+      "Up to 2 content updates",
     ],
   },
 ];
@@ -110,9 +94,9 @@ export default function CarePlanPage() {
   return (
     <>
       <ServiceHero
-        title="Care & Growth Plans"
+        title="Maintenance Plans"
         underlineColor="lime"
-        description="Your website launched — now let's make sure it keeps working for you. Our monthly Care & Growth Plans keep your site fast, secure, and continuously improving long after the 6-month warranty ends. Cancel anytime. No lock-in contracts."
+        description="Keep your website running smoothly with our flexible maintenance plans. Choose the level of support that's right for your business. All plans include hosting. Cancel anytime. No lock-in contracts."
       />
 
       {/* ─── WHY YOU NEED A CARE PLAN ─── */}
@@ -193,7 +177,7 @@ export default function CarePlanPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
             {tiers.map(
               ({ name, price, period, tagline, color, features, popular }, idx) => (
                 <div
@@ -254,8 +238,7 @@ export default function CarePlanPage() {
                     )}%20plan`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm uppercase tracking-widest transition-all duration-300 border-2 text-black hover:opacity-90 mb-3"
-                    style={{ backgroundColor: color, borderColor: color }}
+                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm uppercase tracking-widest transition-all duration-300 border-2 bg-[#e7fe56] border-[#e7fe56] text-black hover:bg-[#e7fe56]/90 mb-3"
                   >
                     <WhatsappLogo className="w-4 h-4" />
                     Get Started on WhatsApp
@@ -274,19 +257,13 @@ export default function CarePlanPage() {
             )}
           </div>
 
-          {/* Compare note */}
-          <p className="mt-10 text-center text-sm text-white/40">
-            Not sure which plan is right for you?{" "}
-            <a
-              href="https://wa.me/27814272624?text=Hi%2C%20I%27m%20not%20sure%20which%20care%20plan%20suits%20my%20business"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#25D366] hover:underline"
-            >
-              Chat with us on WhatsApp
-            </a>{" "}
-            and we&apos;ll recommend the best fit for your business size.
-          </p>
+          {/* Notes */}
+          <div className="mt-10 p-6 rounded-2xl bg-white/5 border border-white/10 max-w-2xl">
+            <p className="text-sm text-white/60 leading-relaxed">
+              <span className="font-semibold text-white">Note:</span> The maintenance plans are optional. Your website is fully functional without them.
+            </p>
+          </div>
+        
         </div>
       </section>
 

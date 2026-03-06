@@ -91,17 +91,18 @@ const PerformanceMetric = ({
   score?: number;
   icon: React.ElementType;
 }) => (
-  <div className="flex flex-col items-center gap-4 px-6 py-7 rounded-2xl border border-white/[0.08] bg-white/[0.03]">
-    <div className="w-12 h-12 rounded-xl bg-[#e7fe56]/10 border border-[#e7fe56]/20 flex items-center justify-center">
+  <div className="flex flex-col items-center justify-center gap-3 px-4 py-8 md:px-6 md:py-10 rounded-2xl border border-white/[0.08] bg-white/[0.03] min-h-[140px]">
+    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#e7fe56]/10 border border-[#e7fe56]/30 flex items-center justify-center">
       <Icon className="w-5 h-5 text-[#e7fe56]" weight="bold" />
     </div>
-    <div className="text-5xl font-bold text-white tabular-nums leading-none">
-      {score}
-      <span className="text-2xl text-white/30 font-semibold">/100</span>
+    <div className="text-center">
+      <div className="text-xl md:text-2xl font-bold text-white">
+        {score}
+      </div>
+      <span className="text-white/50 text-xs font-semibold uppercase tracking-widest leading-tight block mt-2">
+        {label}
+      </span>
     </div>
-    <span className="text-white/55 text-xs font-semibold uppercase tracking-widest text-center leading-tight">
-      {label}
-    </span>
   </div>
 );
 
@@ -418,7 +419,7 @@ export const WebDesignPage = () => {
 
   return (
     <>
-      {/* ══════════════════════════��═════════════════
+      {/* ══════════════════���═══════��═════════════════
             1. HERO
         ════════════════════════════════════════════ */}
       <ServiceHero
@@ -555,9 +556,12 @@ export const WebDesignPage = () => {
                       </p>
                     )}
                     <div className="mt-4 flex items-center justify-center gap-3">
-                      <span className="text-2xl font-semibold text-white">
-                        {pkg.price}
-                      </span>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-xs text-white/50 font-semibold">from</span>
+                        <span className="text-2xl font-semibold text-white">
+                          {pkg.price}
+                        </span>
+                      </div>
                       <span className="text-xs text-white/50 uppercase tracking-wider border border-white/15 px-2 py-0.5 rounded-full">
                         {pkg.type}
                       </span>
@@ -747,105 +751,6 @@ export const WebDesignPage = () => {
       {/* ════════════════════════════════════════════
           5. WHY LMWEBDESIGN (horizontal scroll on mobile)
       ════════════════════════════════════════════ */}
-      <section
-        ref={advantagesRef}
-        className="relative z-10 py-16 md:py-28 px-6"
-      >
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div
-            className={`mb-12 opacity-0 ${
-              advantagesVisible
-                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
-                : ""
-            }`}
-          >
-            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
-              Why LMWebDesign
-            </p>
-            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
-              Your website is in
-              <br />
-              <span className="italic text-outline-2">good hands</span>
-            </h2>
-            <p className="text-lg text-white/70 leading-relaxed max-w-[600px]">
-              We don&apos;t just make things look pretty. Every decision is
-              engineered to make your business more money.
-            </p>
-          </div>
-
-          {/* Horizontal scroll on mobile, 3-col grid on desktop */}
-          <div className="overflow-x-auto scrollbar-hide -mx-6 md:mx-0 md:overflow-visible">
-            <div className="flex gap-4 px-6 md:grid md:grid-cols-3 md:gap-6 md:px-0">
-              {[
-                {
-                  Icon: Lightning,
-                  color: "#e7fe56" as const,
-                  bgClass: "bg-[#e7fe56]",
-                  title: "100% Custom. Zero Bloat.",
-                  body: "Every website is hand-coded in Next.js from scratch - no WordPress, no drag-and-drop builders, no 500 KB plugin overhead. The result: sub-second load times that Google rewards with higher rankings.",
-                  impact:
-                    "A 1-second delay costs you 7% of your sales. Our sites eliminate that loss entirely.",
-                  delay: "0.2s",
-                },
-                {
-                  Icon: Headset,
-                  color: "#c4b5fd" as const,
-                  bgClass: "bg-[#c4b5fd]",
-                  title: "Direct Communication. Always.",
-                  body: "You deal directly with your developer - no account managers, no middlemen, no week-long response times. WhatsApp us and get a real answer the same day.",
-                  impact:
-                    "Faster decisions mean faster builds. Your site goes live while competitors are still in revision round 4.",
-                  delay: "0.4s",
-                },
-                {
-                  Icon: Funnel,
-                  color: "#72f5e3" as const,
-                  bgClass: "bg-[#72f5e3]",
-                  title: "Built to Convert. Not Just Impress.",
-                  body: "Every layout, button, and call-to-action is engineered to push users toward checkout or a WhatsApp message. We don't design for awards - we design for leads.",
-                  impact:
-                    "Higher conversion rates mean more customers from the same traffic - without spending more on ads.",
-                  delay: "0.6s",
-                },
-              ].map(({ Icon, bgClass, title, body, impact, delay }, idx) => (
-                <div
-                  key={title}
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto opacity-0 ${
-                    advantagesVisible
-                      ? `animate-[fadeInUp_0.8s_ease-out_${delay}_both]`
-                      : ""
-                  }`}
-                >
-                  <div
-                    className={`${bgClass} text-black rounded-[24px] md:rounded-[32px] flex flex-col h-full min-h-[320px] overflow-hidden`}
-                  >
-                    <div className="flex-1 p-6 md:p-8 pb-4 md:pb-5">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
-                        <Icon className="w-5 h-5" weight="fill" />
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-semibold font-obviously leading-tight">
-                        {title}
-                      </h3>
-                    </div>
-                    <div className="px-6 md:px-8 py-4 md:py-5">
-                      <p className="text-sm md:text-base leading-relaxed font-medium text-black/80">
-                        {body}
-                      </p>
-                      <div className="mt-4 pt-4 border-t border-black/10">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-black/50 mb-1">
-                          The business impact
-                        </p>
-                        <p className="text-sm font-medium">{impact}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ════════════════════════════════════════════
           6. OUR PROCESS & WHAT'S INCLUDED (combined)
       ════════════════════════════════════════════ */}
@@ -918,11 +823,11 @@ export const WebDesignPage = () => {
               </p>
             </div>
 
-            <div className="overflow-x-auto scrollbar-hide -mx-6 md:mx-0 md:overflow-visible">
-              <div className="flex gap-4 px-6 md:grid md:grid-cols-3 md:gap-6 md:px-0">
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Warranty Card */}
                 <div
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+                  className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
                     warrantyVisible
                       ? "animate-[fadeInUp_0.8s_ease-out_0.3s_both]"
                       : ""
@@ -954,7 +859,7 @@ export const WebDesignPage = () => {
                   {/* Care plan note */}
                   <p className="mt-4 text-xs text-black/60">
                     After your 6-month warranty, optional Care Plans start at
-                    R350/mo.{" "}
+                    R199/mo.{" "}
                     <a
                       href="/services/web-design/care-plan"
                       className="underline font-semibold hover:text-black/90"
@@ -966,7 +871,7 @@ export const WebDesignPage = () => {
 
                 {/* Hosting Card */}
                 <div
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
+                  className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
                     warrantyVisible
                       ? "animate-[fadeInUp_0.8s_ease-out_0.5s_both]"
                       : ""
@@ -986,7 +891,7 @@ export const WebDesignPage = () => {
                     {[
                       "First year hosting — free",
                       ".com renewal — R400 / year",
-                      ".co.za renewal — R150 / year",
+                      ".co.za renewal — R200 / year",
                     ].map((f) => (
                       <div key={f} className="flex items-start gap-2">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" />
@@ -998,7 +903,7 @@ export const WebDesignPage = () => {
 
                 {/* Technical Health Card */}
                 <div
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
+                  className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
                     warrantyVisible
                       ? "animate-[fadeInUp_0.8s_ease-out_0.7s_both]"
                       : ""

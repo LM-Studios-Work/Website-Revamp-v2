@@ -18,27 +18,27 @@ export const ServicesSection = () => {
         </div>
         <div className="border-t border-neutral-800">
           <ServiceItem
-            href="/services/seo"
+            href="/services/e-commerce"
             number="02"
-            title="SEO"
+            title="E-Commerce"
             index={1}
             isVisible={isVisible}
           />
         </div>
-        <div className="border-t border-b border-neutral-800">
+        <div className="border-t border-neutral-800">
           <ServiceItem
-            href="/services/app-development"
+            href="/services/seo"
             number="03"
-            title="Custom Web Applications"
+            title="SEO"
             index={2}
             isVisible={isVisible}
           />
         </div>
         <div className="border-t border-b border-neutral-800">
           <ServiceItem
-            href="/services/web-design#photography"
+            href="/services/app-development"
             number="04"
-            title="Photography"
+            title="Custom Web Applications"
             index={3}
             isVisible={isVisible}
           />

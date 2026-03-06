@@ -6,8 +6,7 @@ export const HeroDescription = () => {
     <div className="max-w-2xl text-left">
      
       <p className="text-lg md:text-lg lg:text-xl text-white/70 leading-relaxed mb-4 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
-        The right website attracts the right audience — increasing your traffic
-        and converting visitors into paying clients.
+        Stop losing clients to slower competitors. We build Next.js lead-generation engines that rank on Google, automate your WhatsApp enquiries, and load in under a second.
       </p>
       <p className="text-sm md:text-base text-white/40 italic mb-6 md:mb-10 animate-[fadeInUp_0.8s_ease-out_0.7s_both]">
         "The Very Best Web Design Midrand has to Offer."
