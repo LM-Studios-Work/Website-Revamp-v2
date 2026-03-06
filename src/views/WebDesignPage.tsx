@@ -33,6 +33,7 @@ import { FAQ } from "@/sections/FAQ";
 import { webDesignFAQ } from "@/sections/FAQ/constants";
 import { ServiceHero } from "@/components/ServiceHero";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useDraggableScroll } from "@/hooks/useDraggableScroll";
 
 // ─────────────────────────────────────────────────
 //  Types
@@ -375,7 +376,7 @@ const processSteps = [
     variant: "glass" as const,
     title: "Development & Automation",
     description:
-      "Hand-coded in Next.js. WhatsApp funnels, analytics, Maps, and tracking pixels are all integrated and tested.",
+      "Custom Next.js build. Analytics, Maps, and tracking systems fully integrated.",
   },
   {
     step: 5,
@@ -394,6 +395,7 @@ const WA_BASE =
 // ─────────────────────────────────────────────────
 export const WebDesignPage = () => {
   const [addOnsOpen, setAddOnsOpen] = useState(false);
+  const { ref: dragRef, events: dragEvents, isDragging } = useDraggableScroll();
 
   const { ref: lighthouseRef, isVisible: lighthouseVisible } =
     useScrollAnimation(0.1);
@@ -857,37 +859,24 @@ export const WebDesignPage = () => {
             </p>
           </div>
 
-          {/* Process steps — horizontal scroll on mobile, grid on desktop */}
-          <div className="overflow-x-auto scrollbar-hide -mx-6 md:mx-0 md:overflow-visible mb-4">
-            <div className="flex gap-4 px-6 md:grid md:grid-cols-3 md:gap-6 md:px-0">
-              {processSteps.slice(0, 3).map((card, idx) => (
+          {/* Process steps — single horizontal scroll on all devices */}
+          <div 
+            ref={dragRef}
+            {...dragEvents}
+            className={`overflow-x-auto scrollbar-hide -mx-6 px-6 md:-mx-12 md:px-12 pb-8 ${
+              isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+            }`}
+          >
+            <div className="flex gap-4 md:gap-8 w-max justify-start pr-12 md:pr-32 pointer-events-none">
+              {processSteps.map((card, idx) => (
                 <div
                   key={card.step}
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto opacity-0 ${
+                  className={`w-[280px] md:w-[400px] shrink-0 transition-all duration-700 pointer-events-auto ${
                     processVisible
-                      ? `animate-[fadeInUp_0.8s_ease-out_${
-                          ["0.2s", "0.4s", "0.6s"][idx]
-                        }_both]`
-                      : ""
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
                   }`}
-                >
-                  <ProcessCard {...card} />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="overflow-x-auto scrollbar-hide -mx-6 md:mx-0 md:overflow-visible">
-            <div className="flex gap-4 px-6 md:grid md:grid-cols-2 md:gap-6 md:px-0">
-              {processSteps.slice(3).map((card, idx) => (
-                <div
-                  key={card.step}
-                  className={`min-w-[280px] w-[calc(100vw-120px)] flex-shrink-0 md:min-w-0 md:w-auto opacity-0 ${
-                    processVisible
-                      ? `animate-[fadeInUp_0.8s_ease-out_${
-                          ["0.7s", "0.9s"][idx]
-                        }_both]`
-                      : ""
-                  }`}
+                  style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   <ProcessCard {...card} />
                 </div>
