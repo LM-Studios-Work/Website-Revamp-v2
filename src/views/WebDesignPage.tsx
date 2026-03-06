@@ -95,9 +95,9 @@ const PerformanceMetric = ({
     <div className="w-12 h-12 rounded-xl bg-[#e7fe56]/10 border border-[#e7fe56]/20 flex items-center justify-center">
       <Icon className="w-5 h-5 text-[#e7fe56]" weight="bold" />
     </div>
-    <div className="text-5xl font-bold text-white tabular-nums leading-none">
+    <div className="text-3xl md:text-5xl font-bold text-white tabular-nums leading-none">
       {score}
-      <span className="text-2xl text-white/30 font-semibold">/100</span>
+      <span className="text-lg md:text-2xl text-white/30 font-semibold">/100</span>
     </div>
     <span className="text-white/55 text-xs font-semibold uppercase tracking-widest text-center leading-tight">
       {label}
