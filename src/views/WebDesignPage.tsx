@@ -46,7 +46,7 @@ type FeatureItem = string | { text: string; tooltip: string };
 const FeatureTooltip = ({ text }: { text: string }) => (
   <span className="relative inline-flex items-center group/tooltip ml-1.5 align-middle">
     <span
-      className="w-[15px] h-[15px] rounded-full border border-white/30 text-white/50 text-[9px] font-bold inline-flex items-center justify-center cursor-help hover:border-[#b4eb2c]/70 hover:text-[#b4eb2c] transition-colors select-none"
+      className="w-[15px] h-[15px] rounded-full border border-white/30 text-white/50 text-[9px] font-bold inline-flex items-center justify-center cursor-help hover:border-[#e7fe56]/70 hover:text-[#e7fe56] transition-colors select-none"
       aria-label="More information"
     >
       ?
@@ -61,9 +61,11 @@ const FeatureTooltip = ({ text }: { text: string }) => (
 const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
   const isObj = typeof feature === "object";
   return (
-    <div className="flex items-start gap-3">
-      <Check className="w-4 h-4 mt-0.5 shrink-0 text-[#b4eb2c]/70 transition-colors duration-300 group-hover:text-[#b4eb2c]" />
-      <span className="text-sm text-white/80 leading-relaxed inline-flex flex-wrap items-center gap-x-0.5">
+    <div className="flex items-center gap-4 py-3 border-b-2 border-white/[0.09] last:border-b-0">
+      <div className="shrink-0 w-8 h-8 rounded-full bg-[#72f5e3] flex items-center justify-center shadow-[0_0_10px_rgba(114,245,227,0.3)]">
+        <Check className="w-4 h-4 text-black" weight="bold" />
+      </div>
+      <span className="text-sm text-white/75 leading-relaxed inline-flex flex-wrap items-center gap-x-0.5">
         {isObj
           ? (feature as { text: string; tooltip: string }).text
           : (feature as string)}
@@ -78,9 +80,9 @@ const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
 };
 
 // ─────────────────────────────────────────────────
-//  Lighthouse Dial (Google PageSpeed style SVG)
+//  Performance Metric Card
 // ─────────────────────────────────────────────────
-const LighthouseDial = ({
+const PerformanceMetric = ({
   label,
   score = 100,
   icon: Icon,
@@ -88,64 +90,20 @@ const LighthouseDial = ({
   label: string;
   score?: number;
   icon: React.ElementType;
-}) => {
-  const r = 44;
-  const circ = 2 * Math.PI * r;
-  const trackArc = circ * 0.75;
-  const fillArc = (score / 100) * trackArc;
-
-  return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="relative">
-        <svg
-          viewBox="0 0 120 120"
-          className="w-24 h-24 md:w-32 md:h-32"
-          aria-label={`${label}: ${score}/100`}
-        >
-          <circle
-            cx="60"
-            cy="60"
-            r={r}
-            fill="none"
-            stroke="#1e1e1e"
-            strokeWidth="10"
-            strokeDasharray={`${trackArc} ${circ * 0.25}`}
-            strokeLinecap="round"
-            transform="rotate(-225, 60, 60)"
-          />
-          <circle
-            cx="60"
-            cy="60"
-            r={r}
-            fill="none"
-            stroke="#0cce6b"
-            strokeWidth="10"
-            strokeDasharray={`${fillArc} ${circ - fillArc}`}
-            strokeLinecap="round"
-            transform="rotate(-225, 60, 60)"
-          />
-          <text
-            x="60"
-            y="60"
-            textAnchor="middle"
-            dominantBaseline="central"
-            fontSize="28"
-            fontWeight="700"
-            fill="white"
-          >
-            {score}
-          </text>
-        </svg>
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#0cce6b] flex items-center justify-center shadow-lg shadow-[#0cce6b]/30">
-          <Icon className="w-3.5 h-3.5 text-black" weight="bold" />
-        </div>
-      </div>
-      <span className="text-white/70 text-xs md:text-sm font-medium tracking-wide text-center leading-tight">
-        {label}
-      </span>
+}) => (
+  <div className="flex flex-col items-center gap-4 px-6 py-7 rounded-2xl border border-white/[0.08] bg-white/[0.03]">
+    <div className="w-12 h-12 rounded-xl bg-[#e7fe56]/10 border border-[#e7fe56]/20 flex items-center justify-center">
+      <Icon className="w-5 h-5 text-[#e7fe56]" weight="bold" />
     </div>
-  );
-};
+    <div className="text-5xl font-bold text-white tabular-nums leading-none">
+      {score}
+      <span className="text-2xl text-white/30 font-semibold">/100</span>
+    </div>
+    <span className="text-white/55 text-xs font-semibold uppercase tracking-widest text-center leading-tight">
+      {label}
+    </span>
+  </div>
+);
 
 // ─────────────────────────────────────────────────
 //  Data: Packages
@@ -460,7 +418,7 @@ export const WebDesignPage = () => {
 
   return (
     <>
-      {/* ════════════════════════════════════════════
+      {/* ══════════════════════════��═════════════════
             1. HERO
         ════════════════════════════════════════════ */}
       <ServiceHero
@@ -470,50 +428,56 @@ export const WebDesignPage = () => {
       />
 
       {/* ════════════════════════════════════════════
-            2. LIGHTHOUSE (short: badge + headline + dials)
+            2. PERFORMANCE (PageSpeed scores)
         ════════════════════════════════════════════ */}
       <section
         ref={lighthouseRef}
-        className="relative z-10 py-14 md:py-20 px-6 overflow-hidden"
+        className="relative z-10 py-16 md:py-24 px-6"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0cce6b]/5 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[1px] bg-gradient-to-r from-transparent via-[#0cce6b]/25 to-transparent" />
-
         <div className="max-w-[1400px] w-full mx-auto">
+          {/* Heading row */}
           <div
-            className={`text-center mb-10 md:mb-14 opacity-0 ${
+            className={`mb-10 md:mb-14 opacity-0 ${
               lighthouseVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                 : ""
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0cce6b]/30 bg-[#0cce6b]/10 text-[#0cce6b] text-xs font-semibold uppercase tracking-widest mb-5">
-              <SealCheck className="w-4 h-4" weight="fill" />
-              Google PageSpeed Insights: Perfect 100 / 100
-            </div>
-            <h2 className="text-3xl md:text-[48px] font-bold leading-tight text-white">
-              Every site we build achieves a perfect score on Google’s official
-              performance tool. This technical excellence results in lower ad
-              costs, higher search rankings, and a better user experience than
-              slower-loading competitors.
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
+              Google PageSpeed Insights
+            </p>
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
+              Perfect scores.{" "}
+              <span className="italic text-outline-15">Every time.</span>
+              <span className="h-px flex-1 bg-white/10 ml-4 hidden md:block" />
             </h2>
+            <p className="mt-4 text-white/60 text-lg max-w-[620px]">
+              Every site we build scores 100/100 on Google&apos;s official
+              performance tool — meaning lower ad costs, higher rankings, and
+              faster load times than competitors.
+            </p>
           </div>
 
+          {/* Metric cards */}
           <div
-            className={`flex flex-wrap justify-center gap-8 md:gap-16 lg:gap-24 opacity-0 ${
+            className={`grid grid-cols-2 md:grid-cols-4 gap-4 opacity-0 ${
               lighthouseVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
                 : ""
             }`}
           >
-            <LighthouseDial label="Performance" score={100} icon={Gauge} />
-            <LighthouseDial label="Accessibility" score={100} icon={Eye} />
-            <LighthouseDial
+            <PerformanceMetric label="Performance" score={100} icon={Gauge} />
+            <PerformanceMetric label="Accessibility" score={100} icon={Eye} />
+            <PerformanceMetric
               label="Best Practices"
               score={100}
               icon={SealCheck}
             />
-            <LighthouseDial label="SEO" score={100} icon={MagnifyingGlass} />
+            <PerformanceMetric
+              label="SEO"
+              score={100}
+              icon={MagnifyingGlass}
+            />
           </div>
         </div>
       </section>
@@ -552,72 +516,80 @@ export const WebDesignPage = () => {
               return (
                 <div
                   key={pkg.title}
-                  className={`relative flex flex-col h-full rounded-3xl p-8 border-2 ${
-                    pkg.popular
-                      ? "border-[#b4eb2c] bg-white/10"
-                      : "border-[#b4eb2c]/60 bg-white/5"
-                  } backdrop-blur-sm transition-all duration-300 group hover:border-[#b4eb2c] hover:bg-white/10 hover:shadow-lg hover:shadow-[#b4eb2c]/10 opacity-0 ${
+                  className={`relative flex flex-col h-full rounded-2xl opacity-0 ${
+                    pkg.popular ? "mt-5" : ""
+                  } ${
                     packagesVisible
                       ? `animate-[fadeInUp_0.8s_ease-out_${
                           ["0.2s", "0.3s", "0.4s", "0.5s", "0.6s"][pkgIdx]
                         }_both]`
                       : ""
                   }`}
+                  style={
+                    pkg.popular
+                      ? {
+                          background: "rgba(24,24,24,0.72)",
+                          backdropFilter: "blur(12px)",
+                          boxShadow:
+                            "0 0 0 1.5px rgba(180,120,255,0.5), 0 0 48px rgba(140,80,255,0.15)",
+                        }
+                      : {
+                          background: "rgba(24,24,24,0.65)",
+                          backdropFilter: "blur(12px)",
+                          boxShadow: "0 0 0 1px rgba(255,255,255,0.08)",
+                        }
+                  }
                 >
                   {pkg.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#b4eb2c] text-black text-xs font-bold uppercase tracking-widest rounded-full whitespace-nowrap">
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-[#e7fe56] text-black text-xs font-bold uppercase tracking-widest rounded-full whitespace-nowrap shadow-lg shadow-[#e7fe56]/20">
                       Most Popular
                     </div>
                   )}
 
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="p-3 rounded-2xl bg-[#b4eb2c]/10 text-[#b4eb2c] border border-[#b4eb2c]/30 transition-all duration-300 group-hover:bg-[#b4eb2c] group-hover:text-black group-hover:border-[#b4eb2c]">
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#b4eb2c]">
-                        {pkg.price}
-                      </div>
-                      <div className="text-xs text-white/60 uppercase tracking-wider">
-                        {pkg.type}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ROI tagline */}
-                  <p className="text-xs text-[#b4eb2c]/80 leading-relaxed mb-5 italic border-l-2 border-[#b4eb2c]/30 pl-3">
-                    {pkg.roi}
-                  </p>
-
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold font-obviously leading-tight uppercase tracking-wide">
+                  {/* Card header */}
+                  <div className="px-7 pt-8 pb-5 border-b-2 border-white/[0.1]">
+                    <h3 className="text-xl font-bold text-center text-white leading-tight uppercase tracking-wide font-obviously">
                       {pkg.title}
                     </h3>
                     {pkg.subtitle && (
-                      <p className="text-xs text-white/40 mt-1">
+                      <p className="text-xs text-white/40 mt-1 text-center">
                         {pkg.subtitle}
                       </p>
                     )}
+                    <div className="mt-4 flex items-center justify-center gap-3">
+                      <span className="text-2xl font-semibold text-white">
+                        {pkg.price}
+                      </span>
+                      <span className="text-xs text-white/50 uppercase tracking-wider border border-white/15 px-2 py-0.5 rounded-full">
+                        {pkg.type}
+                      </span>
+                    </div>
+                    {/* ROI tagline */}
+                    <p className="mt-3 text-xs text-white/45 leading-relaxed text-center italic">
+                      {pkg.roi}
+                    </p>
                   </div>
 
-                  <div className="flex-1 space-y-3.5 mb-10">
+                  {/* Feature rows */}
+                  <div className="flex-1 px-7 py-2">
                     {pkg.features.map((feature, fIdx) => (
                       <FeatureListItem key={fIdx} feature={feature} />
                     ))}
                   </div>
 
-                  <div className="mt-auto space-y-3">
-                    <div className="flex items-center gap-3 py-3 border-t border-[#b4eb2c]/20">
-                      <Clock className="w-4 h-4 text-[#b4eb2c]/60 shrink-0" />
-                      <span className="text-xs text-white/60 font-medium tracking-wide">
+                  {/* Footer */}
+                  <div className="px-7 pb-7 pt-4 border-t-2 border-white/[0.1] mt-2 space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-3.5 h-3.5 text-[#e7fe56]/60 shrink-0" />
+                      <span className="text-xs text-white/50 font-medium tracking-wide">
                         DELIVERY:{" "}
-                        <span className="text-white/90">{pkg.delivery}</span>
+                        <span className="text-white/80">{pkg.delivery}</span>
                       </span>
                     </div>
 
                     <a
                       href={`/contact?package=${encodeURIComponent(pkg.title)}`}
-                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-[#b4eb2c] text-black hover:bg-[#b4eb2c]/90 border-2 border-[#b4eb2c] hover:shadow-lg hover:shadow-[#b4eb2c]/30"
+                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-[#e7fe56] text-black hover:bg-[#e7fe56]/90 border-2 border-[#e7fe56] hover:shadow-lg hover:shadow-[#e7fe56]/30"
                     >
                       Request a Quote
                       <ArrowRight className="w-4 h-4" />
@@ -629,7 +601,7 @@ export const WebDesignPage = () => {
                       )}%20package`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-transparent text-white/60 border border-white/20 hover:border-[#25D366]/50 hover:text-[#25D366] hover:bg-[#25D366]/5"
+                      className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-transparent text-white/50 border border-white/15 hover:border-[#25D366]/50 hover:text-[#25D366] hover:bg-[#25D366]/5"
                     >
                       <WhatsappLogo className="w-4 h-4" />
                       Chat on WhatsApp
@@ -789,7 +761,7 @@ export const WebDesignPage = () => {
                 : ""
             }`}
           >
-            <p className="text-[#b4eb2c] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
               Why LMWebDesign
             </p>
             <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4">
@@ -1076,7 +1048,7 @@ export const WebDesignPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#b4eb2c] text-black font-semibold text-sm uppercase tracking-widest rounded-xl hover:bg-[#b4eb2c]/90 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#e7fe56] text-black font-semibold text-sm uppercase tracking-widest rounded-xl hover:bg-[#e7fe56]/90 transition-colors"
             >
               Request a Free Quote
               <ArrowRight className="w-5 h-5" />
