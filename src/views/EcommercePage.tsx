@@ -99,10 +99,10 @@ const CollapsibleFAQ = ({
 };
 
 export function EcommercePage() {
-  const problemRef = useScrollAnimation();
-  const advantagesRef = useScrollAnimation();
-  const packagesRef = useScrollAnimation();
-  const warrantyRef = useScrollAnimation();
+  const { ref: problemRef, isVisible: problemVisible } = useScrollAnimation(0.15);
+  const { ref: advantagesRef, isVisible: advantagesVisible } = useScrollAnimation(0.15);
+  const { ref: packagesRef, isVisible: packagesVisible } = useScrollAnimation(0.15);
+  const { ref: warrantyRef, isVisible: warrantyVisible } = useScrollAnimation(0.15);
 
   const ecommerceFAQ = [
     {
@@ -141,8 +141,6 @@ export function EcommercePage() {
         title="E-commerce engineered for performance, not just appearance."
         underlineColor="lime"
         description="We build high-performance online stores that load instantly, rank on Google, and automate your South African logistics. Move beyond slow, bloated templates and run a store designed to convert."
-        primaryCTA="View Store Packages"
-        primaryCTALink={`${WA_BASE}I%20want%20to%20discuss%20an%20e-commerce%20store`}
       />
 
       {/* ════════════════════════════════════════════
@@ -155,7 +153,7 @@ export function EcommercePage() {
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-12 opacity-0 ${
-              problemRef.isVisible
+              problemVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                 : ""
             }`}
@@ -176,7 +174,7 @@ export function EcommercePage() {
 
           <div
             className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 opacity-0 ${
-              problemRef.isVisible
+              problemVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
                 : ""
             }`}
@@ -236,7 +234,7 @@ export function EcommercePage() {
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-16 opacity-0 ${
-              advantagesRef.isVisible
+              advantagesVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                 : ""
             }`}
@@ -286,7 +284,7 @@ export function EcommercePage() {
               <div
                 key={title}
                 className={`opacity-0 ${
-                  advantagesRef.isVisible
+                  advantagesVisible
                     ? `animate-[fadeInUp_0.8s_ease-out_${
                         0.2 + idx * 0.15
                       }s_both]`
@@ -322,7 +320,7 @@ export function EcommercePage() {
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-12 opacity-0 ${
-              packagesRef.isVisible
+              packagesVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                 : ""
             }`}
@@ -342,7 +340,7 @@ export function EcommercePage() {
           {/* Packages Grid */}
           <div
             className={`grid grid-cols-1 md:grid-cols-3 gap-6 opacity-0 ${
-              packagesRef.isVisible
+              packagesVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
                 : ""
             }`}
@@ -481,7 +479,7 @@ export function EcommercePage() {
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`opacity-0 ${
-              warrantyRef.isVisible
+              warrantyVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                 : ""
             }`}

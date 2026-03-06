@@ -71,12 +71,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${DOMAIN}/services/photography`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${DOMAIN}/web-design-johannesburg`,
       lastModified: new Date(),
       changeFrequency: "monthly",
