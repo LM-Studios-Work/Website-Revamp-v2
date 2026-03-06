@@ -4,7 +4,7 @@ import { CONTACT_DETAILS } from "@/constants/contact";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "LMWebDesign Terms of Service — the terms and conditions governing our web design, development, SEO, and photography services.",
+    "LMWebDesign Terms of Service — the terms and conditions governing our web design, development, SEO, and app development services.",
   robots: { index: true, follow: true },
 };
 
@@ -66,10 +66,6 @@ export default function TermsOfServicePage() {
               <li>
                 <strong className="text-white">SEO Services</strong> — search
                 engine optimisation strategy and implementation.
-              </li>
-              <li>
-                <strong className="text-white">Photography</strong> — product,
-                event, and brand photography services.
               </li>
               <li>
                 <strong className="text-white">Ongoing Support &amp; Maintenance</strong>{" "}

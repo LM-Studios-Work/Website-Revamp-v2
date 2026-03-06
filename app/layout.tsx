@@ -89,14 +89,6 @@ const localBusinessSchema = {
           url: `${DOMAIN}/services/app-development`,
         },
       },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Photography",
-          url: `${DOMAIN}/services/web-design#photography`,
-        },
-      },
     ],
   },
   sameAs: ["https://www.instagram.com/lmwebdesign/"],

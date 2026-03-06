@@ -93,8 +93,8 @@ export default function PrivacyPolicyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>Respond to enquiries and project requests.</li>
               <li>
-                Deliver, manage, and improve the web design, development, SEO,
-                and photography services you commission.
+                Deliver, manage, and improve the web design, development, and SEO
+                services you commission.
               </li>
               <li>
                 Send project updates, invoices, and support communications.
