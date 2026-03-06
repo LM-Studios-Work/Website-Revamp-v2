@@ -238,8 +238,7 @@ export default function CarePlanPage() {
                     )}%20plan`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm uppercase tracking-widest transition-all duration-300 border-2 text-black hover:opacity-90 mb-3"
-                    style={{ backgroundColor: color, borderColor: color }}
+                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm uppercase tracking-widest transition-all duration-300 border-2 bg-[#e7fe56] border-[#e7fe56] text-black hover:bg-[#e7fe56]/90 mb-3"
                   >
                     <WhatsappLogo className="w-4 h-4" />
                     Get Started on WhatsApp

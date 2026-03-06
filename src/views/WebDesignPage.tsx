@@ -91,17 +91,18 @@ const PerformanceMetric = ({
   score?: number;
   icon: React.ElementType;
 }) => (
-  <div className="flex flex-col items-center gap-4 px-6 py-7 rounded-2xl border border-white/[0.08] bg-white/[0.03]">
-    <div className="w-12 h-12 rounded-xl bg-[#e7fe56]/10 border border-[#e7fe56]/20 flex items-center justify-center">
+  <div className="flex flex-col items-center justify-center gap-3 px-4 py-8 md:px-6 md:py-10 rounded-2xl border border-white/[0.08] bg-white/[0.03] min-h-[140px]">
+    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#e7fe56]/10 border border-[#e7fe56]/30 flex items-center justify-center">
       <Icon className="w-5 h-5 text-[#e7fe56]" weight="bold" />
     </div>
-    <div className="text-3xl md:text-5xl font-bold text-white tabular-nums leading-none">
-      {score}
-      <span className="text-lg md:text-2xl text-white/30 font-semibold">/100</span>
+    <div className="text-center">
+      <div className="text-xl md:text-2xl font-bold text-white">
+        {score}
+      </div>
+      <span className="text-white/50 text-xs font-semibold uppercase tracking-widest leading-tight block mt-2">
+        {label}
+      </span>
     </div>
-    <span className="text-white/55 text-xs font-semibold uppercase tracking-widest text-center leading-tight">
-      {label}
-    </span>
   </div>
 );
 
@@ -418,7 +419,7 @@ export const WebDesignPage = () => {
 
   return (
     <>
-      {/* ══════════════════════════��═════════════════
+      {/* ══════════════════���═══════��═════════════════
             1. HERO
         ════════════════════════════════════════════ */}
       <ServiceHero
@@ -555,9 +556,12 @@ export const WebDesignPage = () => {
                       </p>
                     )}
                     <div className="mt-4 flex items-center justify-center gap-3">
-                      <span className="text-2xl font-semibold text-white">
-                        {pkg.price}
-                      </span>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-xs text-white/50 font-semibold">from</span>
+                        <span className="text-2xl font-semibold text-white">
+                          {pkg.price}
+                        </span>
+                      </div>
                       <span className="text-xs text-white/50 uppercase tracking-wider border border-white/15 px-2 py-0.5 rounded-full">
                         {pkg.type}
                       </span>
@@ -855,7 +859,7 @@ export const WebDesignPage = () => {
                   {/* Care plan note */}
                   <p className="mt-4 text-xs text-black/60">
                     After your 6-month warranty, optional Care Plans start at
-                    R350/mo.{" "}
+                    R199/mo.{" "}
                     <a
                       href="/services/web-design/care-plan"
                       className="underline font-semibold hover:text-black/90"
@@ -887,7 +891,7 @@ export const WebDesignPage = () => {
                     {[
                       "First year hosting — free",
                       ".com renewal — R400 / year",
-                      ".co.za renewal — R150 / year",
+                      ".co.za renewal — R200 / year",
                     ].map((f) => (
                       <div key={f} className="flex items-start gap-2">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" />
