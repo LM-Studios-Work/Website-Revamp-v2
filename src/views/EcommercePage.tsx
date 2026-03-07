@@ -13,25 +13,27 @@ import {
   ChartLineUp,
   UsersThree,
   X,
-  CreditCard,
   Rocket,
   Globe,
   Envelope,
   LockKey,
   TrendUp,
+  CloudArrowUp,
+  Toolbox,
 } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ProcessCardGrid } from "@/components/ProcessCardGrid";
+import { ProcessCard } from "@/components/ProcessCard";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/sections/FAQ";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { COLORS } from "@/constants/colors";
+import { useDraggableScroll } from "@/hooks/useDraggableScroll";
 import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { featuredProjects } from "@/sections/ProjectsSection/constants";
 import { TestimonialsHeader } from "@/sections/TestimonialsSection/TestimonialsHeader";
 import { TestimonialsGrid } from "@/sections/TestimonialsSection/components/TestimonialsGrid";
 
-const WA_BASE = "https://wa.me/27814272624?text=";
+const WA_BASE = "https://wa.me/27814272624?text=Hi%2C%20I'm%20interested%20in%20";
 
 // ─────────────────────────────────────────────────
 //  Shared: Tooltip bubble on [?] marker
@@ -51,59 +53,163 @@ const FeatureTooltip = ({ text }: { text: string }) => (
   </span>
 );
 
-// Dark card feature row
-const FeatureRow = ({
-  feature,
-  accent = "#72f5e3",
-}: {
-  feature: string | { text: string; tooltip: string };
-  accent?: string;
-}) => {
+type FeatureItem = string | { text: string; tooltip: string };
+
+const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
   const isObj = typeof feature === "object";
   return (
-    <div className="flex items-start gap-3 py-2.5 border-b border-white/[0.05] last:border-b-0">
-      <div
-        className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
-        style={{ background: `${accent}18`, border: `1px solid ${accent}40` }}
-      >
-        <Check className="w-3 h-3" weight="bold" style={{ color: accent }} />
+    <div className="flex items-center gap-4 py-3 border-b-2 border-white/[0.09] last:border-b-0">
+      <div className="shrink-0 w-8 h-8 rounded-full bg-[#72f5e3] flex items-center justify-center shadow-[0_0_10px_rgba(114,245,227,0.3)]">
+        <Check className="w-4 h-4 text-black" weight="bold" />
       </div>
-      <span className="text-sm text-white/65 leading-relaxed">
-        {isObj ? feature.text : feature}
-        {isObj && <FeatureTooltip text={feature.tooltip} />}
+      <span className="text-sm text-white/75 leading-relaxed inline-flex flex-wrap items-center gap-x-0.5">
+        {isObj
+          ? (feature as { text: string; tooltip: string }).text
+          : (feature as string)}
+        {isObj && (
+          <FeatureTooltip
+            text={(feature as { text: string; tooltip: string }).tooltip}
+          />
+        )}
       </span>
     </div>
   );
 };
 
-// Lime card feature row (dark text on lime bg)
-const LimeFeatureRow = ({
-  feature,
-}: {
-  feature: string | { text: string; tooltip: string };
-}) => {
-  const isObj = typeof feature === "object";
-  return (
-    <div className="flex items-start gap-3 py-2.5 border-b border-black/[0.07] last:border-b-0">
-      <div className="shrink-0 w-5 h-5 rounded-full bg-black/10 flex items-center justify-center mt-0.5">
-        <Check className="w-3 h-3 text-black" weight="bold" />
-      </div>
-      <span className="text-sm text-black/70 leading-relaxed">
-        {isObj ? feature.text : feature}
-      </span>
-    </div>
-  );
-};
+// ─────────────────────────────────────────────────
+//  Data: Packages
+// ─────────────────────────────────────────────────
+const packages: {
+  title: string;
+  price: string;
+  roi: string;
+  type: string;
+  delivery: string;
+  features: FeatureItem[];
+  popular?: boolean;
+  waText: string;
+}[] = [
+  {
+    title: "ESSENTIAL STORE",
+    price: "R8,999",
+    roi: "The complete foundation for emerging brands entering online retail for the first time.",
+    type: "once-off",
+    delivery: "7–10 working days",
+    waText: "the%20Essential%20Store%20package",
+    features: [
+      "50 products uploaded for you (add unlimited yourself)",
+      "Custom, mobile-first storefront",
+      "Standard flat-rate shipping",
+      {
+        text: "Secure payment integration",
+        tooltip:
+          "PayFast, Yoco, or Ozow — your choice. All PCI-DSS compliant and configured for SA from day one.",
+      },
+      "Inventory management dashboard",
+    ],
+  },
+  {
+    title: "GROWTH STORE",
+    price: "R14,999",
+    roi: "Advanced tools and cart recovery for brands serious about scaling their online revenue.",
+    type: "once-off",
+    delivery: "12–15 working days",
+    popular: true,
+    waText: "the%20Growth%20Store%20package",
+    features: [
+      "100 products uploaded for you (add unlimited yourself)",
+      "Product filtering & search",
+      {
+        text: "WhatsApp cart recovery",
+        tooltip:
+          "Automatically follow up with abandoned checkouts via WhatsApp to recover lost sales.",
+      },
+      "Google Shopping SEO",
+      {
+        text: "Advanced analytics dashboard",
+        tooltip:
+          "Track revenue, best-sellers, conversion rates, and customer behaviour in real-time.",
+      },
+    ],
+  },
+  {
+    title: "CUSTOM ENGINE",
+    price: "R25k+",
+    roi: "Enterprise-grade infrastructure for complex, high-volume operations built to your exact spec.",
+    type: "project-based",
+    delivery: "Scoped per project",
+    waText: "a%20Custom%20Engine%20store",
+    features: [
+      "Full headless architecture",
+      "ERP & POS system syncing",
+      "Wholesale / B2B price portals",
+      "Custom customer loyalty programs",
+      "Dedicated hosting configuration",
+    ],
+  },
+];
+
+// ─────────────────────────────────────────────────
+//  Data: Process Steps
+// ─────────────────────────────────────────────────
+const processSteps = [
+  {
+    step: 1,
+    variant: "lime" as const,
+    title: "Discovery & Scope",
+    description:
+      "We map your products, target customers, and revenue goals. Your store strategy is planned before a single design is created.",
+  },
+  {
+    step: 2,
+    variant: "purple" as const,
+    title: "Design & UX",
+    description:
+      "High-fidelity storefront mockup designed for conversion. You approve the look and feel before development begins.",
+  },
+  {
+    step: 3,
+    variant: "cyan" as const,
+    title: "Development",
+    description:
+      "Custom Next.js build with payment gateways, analytics, and your management dashboard fully integrated.",
+  },
+  {
+    step: 4,
+    variant: "glass" as const,
+    title: "Stock & Setup",
+    description:
+      "We upload your first product batch, configure shipping, and connect your payment gateway — ready to sell from day one.",
+  },
+  {
+    step: 5,
+    variant: "lime" as const,
+    title: "Launch & Training",
+    description:
+      "Go live with a personal handover session. Walk away knowing exactly how to run and grow your own store.",
+  },
+];
 
 export function EcommercePage() {
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.1);
-  const { ref: realityRef, isVisible: realityVisible } = useScrollAnimation(0.15);
-  const { ref: packagesRef, isVisible: packagesVisible } = useScrollAnimation(0.1);
-  const { ref: includedRef, isVisible: includedVisible } = useScrollAnimation(0.15);
-  const { ref: gatewayRef, isVisible: gatewayVisible } = useScrollAnimation(0.15);
-  const { ref: dashboardRef, isVisible: dashboardVisible } = useScrollAnimation(0.15);
-  const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.15);
-  const { ref: comparisonRef, isVisible: comparisonVisible } = useScrollAnimation(0.1);
+  const { ref: realityRef, isVisible: realityVisible } =
+    useScrollAnimation(0.15);
+  const { ref: packagesRef, isVisible: packagesVisible } =
+    useScrollAnimation(0.1);
+  const { ref: processRef, isVisible: processVisible } =
+    useScrollAnimation(0.1);
+  const { ref: warrantyRef, isVisible: warrantyVisible } =
+    useScrollAnimation(0.15);
+  const { ref: gatewayRef, isVisible: gatewayVisible } =
+    useScrollAnimation(0.15);
+  const { ref: dashboardRef, isVisible: dashboardVisible } =
+    useScrollAnimation(0.15);
+  const { ref: projectsRef, isVisible: projectsVisible } =
+    useScrollAnimation(0.15);
+  const { ref: comparisonRef, isVisible: comparisonVisible } =
+    useScrollAnimation(0.1);
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation(0.15);
+  const { ref: dragRef, events: dragEvents, isDragging } = useDraggableScroll();
 
   const ecommerceFAQ = [
     {
@@ -173,29 +279,76 @@ export function EcommercePage() {
   ];
 
   const comparisonRows = [
-    { feature: "Page Load Speed", custom: "Sub-second (100/100 PageSpeed)", wordpress: "3–7 seconds average" },
-    { feature: "Monthly Platform Cost", custom: "R0 — you own it outright", wordpress: "R500–R2,000+/month (Shopify, WooCommerce plugins)" },
-    { feature: "Security", custom: "Enterprise-grade, zero plugin surface", wordpress: "Plugin vulnerabilities updated weekly" },
-    { feature: "SEO Performance", custom: "Structured for ranking from day one", wordpress: "Requires paid SEO plugins" },
-    { feature: "SA Payment Gateways", custom: "PayFast, Yoco, Ozow — native", wordpress: "Complex third-party setups" },
-    { feature: "Customisation", custom: "Fully bespoke — your brand, your rules", wordpress: "Limited by theme constraints" },
-    { feature: "Sales Commission", custom: "0% — keep every rand", wordpress: "Up to 2% per transaction (Shopify)" },
-    { feature: "Store Training Included", custom: "Yes — Zoom or video tutorials", wordpress: "No — you figure it out" },
-    { feature: "SSL & Domain Included", custom: "Yes — free with every package", wordpress: "Paid add-ons" },
-    { feature: "Business Email Included", custom: "Yes — professional emails included", wordpress: "Paid add-on" },
+    {
+      feature: "Page Load Speed",
+      custom: "Sub-second (100/100 PageSpeed)",
+      wordpress: "3–7 seconds average",
+    },
+    {
+      feature: "Monthly Platform Cost",
+      custom: "R0 — you own it outright",
+      wordpress: "R500–R2,000+/month (Shopify, WooCommerce plugins)",
+    },
+    {
+      feature: "Security",
+      custom: "Enterprise-grade, zero plugin surface",
+      wordpress: "Plugin vulnerabilities updated weekly",
+    },
+    {
+      feature: "SEO Performance",
+      custom: "Structured for ranking from day one",
+      wordpress: "Requires paid SEO plugins",
+    },
+    {
+      feature: "SA Payment Gateways",
+      custom: "PayFast, Yoco, Ozow — native",
+      wordpress: "Complex third-party setups",
+    },
+    {
+      feature: "Customisation",
+      custom: "Fully bespoke — your brand, your rules",
+      wordpress: "Limited by theme constraints",
+    },
+    {
+      feature: "Sales Commission",
+      custom: "0% — keep every rand",
+      wordpress: "Up to 2% per transaction (Shopify)",
+    },
+    {
+      feature: "Store Training Included",
+      custom: "Yes — Zoom or video tutorials",
+      wordpress: "No — you figure it out",
+    },
+    {
+      feature: "SSL & Domain Included",
+      custom: "Yes — free with every package",
+      wordpress: "Paid add-ons",
+    },
+    {
+      feature: "Business Email Included",
+      custom: "Yes — professional emails included",
+      wordpress: "Paid add-on",
+    },
   ];
 
   return (
     <>
-      {/* ─── 1. Hero ────────────────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            1. HERO
+        ════════════════════════════════════════════ */}
       <ServiceHero
         title="E-commerce engineered for performance, not just appearance."
         underlineColor="lime"
         description="We build high-performance online stores that load instantly, rank on Google, and are built to grow with your South African business. Every package includes free hosting, a free .co.za domain, SSL, business email, and personal training."
       />
 
-      {/* ─── 2. Trust Stats Strip ───────────────────────────────────── */}
-      <section ref={statsRef} className="border-y border-white/[0.06] py-10 md:py-12 px-6">
+      {/* ════════════════════════════════════════════
+            2. TRUST STATS STRIP
+        ════════════════════════════════════════════ */}
+      <section
+        ref={statsRef}
+        className="border-y border-white/[0.06] py-10 md:py-12 px-6"
+      >
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 opacity-0 ${
@@ -203,14 +356,32 @@ export function EcommercePage() {
             }`}
           >
             {[
-              { value: "R0", label: "Monthly platform fees — ever", color: COLORS.lime },
-              { value: "< 0.5s", label: "Target page load on every build", color: COLORS.cyan },
-              { value: "6 mo", label: "Warranty included, no asterisk", color: COLORS.purple },
-              { value: "100%", label: "SA-built and SA-configured", color: COLORS.lime },
+              {
+                value: "R0",
+                label: "Monthly platform fees — ever",
+                color: "#e7fe56",
+              },
+              {
+                value: "< 0.5s",
+                label: "Target page load on every build",
+                color: "#72f5e3",
+              },
+              {
+                value: "6 mo",
+                label: "Warranty included, no asterisk",
+                color: "#d5bff0",
+              },
+              {
+                value: "100%",
+                label: "SA-built and SA-configured",
+                color: "#e7fe56",
+              },
             ].map((stat, idx) => (
               <div
                 key={idx}
-                className={`${idx < 3 ? "md:border-r md:border-white/[0.06]" : ""} md:px-10 first:md:pl-0 last:md:pr-0`}
+                className={`${
+                  idx < 3 ? "md:border-r md:border-white/[0.06]" : ""
+                } md:px-10 first:md:pl-0 last:md:pr-0`}
               >
                 <p
                   className="text-4xl md:text-5xl font-bold tracking-tight mb-1.5 font-obviously"
@@ -218,33 +389,43 @@ export function EcommercePage() {
                 >
                   {stat.value}
                 </p>
-                <p className="text-white/40 text-sm leading-snug">{stat.label}</p>
+                <p className="text-white/40 text-sm leading-snug">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── 3. Reality Section ─────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            3. REALITY SECTION
+        ════════════════════════════════════════════ */}
       <section ref={realityRef} className="relative py-20 md:py-32 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-12 md:gap-24">
-
             {/* Left: Problem copy */}
             <div
               className={`md:w-1/2 opacity-0 ${
-                realityVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+                realityVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                  : ""
               }`}
             >
-              <p className="text-white/35 text-[11px] font-bold uppercase tracking-widest mb-5">
-                The Problem With "Easy" Store Builders
+              <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-5">
+                The Problem With &ldquo;Easy&rdquo; Store Builders
               </p>
-              <h2 className="text-4xl md:text-[52px] font-bold leading-[1.05] text-white mb-7 font-obviously">
+              <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-white mb-7">
                 You don&apos;t own it.{" "}
-                <span className="italic text-outline-15">You&apos;re renting it.</span>
+                <span className="italic text-outline-15">
+                  You&apos;re renting it.
+                </span>
               </h2>
               <p className="text-base text-white/55 leading-relaxed mb-8 max-w-[480px]">
-                Shopify, WooCommerce, Wix — they all charge a monthly platform fee, forever. Miss a payment and your store goes dark. We build a custom store you own outright. No subscriptions. No middlemen. No compromise.
+                Shopify, WooCommerce, Wix — they all charge a monthly platform
+                fee, forever. Miss a payment and your store goes dark. We build
+                a custom store you own outright. No subscriptions. No
+                middlemen. No compromise.
               </p>
               <div className="space-y-3.5">
                 {[
@@ -253,7 +434,10 @@ export function EcommercePage() {
                   "Clunky checkout causes cart abandonment — every rand left behind",
                   "You're locked into their ecosystem, not your own brand",
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-white/50 text-sm">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-white/50 text-sm"
+                  >
                     <div className="w-1.5 h-1.5 rounded-full bg-red-400/60 shrink-0" />
                     {item}
                   </div>
@@ -264,7 +448,9 @@ export function EcommercePage() {
             {/* Right: Shopify cost accumulation visual */}
             <div
               className={`md:w-1/2 opacity-0 ${
-                realityVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""
+                realityVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
+                  : ""
               }`}
             >
               <div className="rounded-[28px] border border-white/[0.08] bg-white/[0.02] p-7 md:p-9">
@@ -277,14 +463,36 @@ export function EcommercePage() {
 
                 <div className="space-y-0 mb-7">
                   {[
-                    { label: "After Year 1", amount: "R18,600", width: "33%", note: "And you still don't own the store" },
-                    { label: "After Year 2", amount: "R37,200", width: "66%", note: "Fees stack. Your margin shrinks." },
-                    { label: "After Year 3", amount: "R55,800", width: "100%", note: "A new car. On a platform you don't own." },
+                    {
+                      label: "After Year 1",
+                      amount: "R18,600",
+                      width: "33%",
+                      note: "And you still don't own the store",
+                    },
+                    {
+                      label: "After Year 2",
+                      amount: "R37,200",
+                      width: "66%",
+                      note: "Fees stack. Your margin shrinks.",
+                    },
+                    {
+                      label: "After Year 3",
+                      amount: "R55,800",
+                      width: "100%",
+                      note: "A new car. On a platform you don't own.",
+                    },
                   ].map((row) => (
-                    <div key={row.label} className="py-4 border-b border-white/[0.06] last:border-b-0">
+                    <div
+                      key={row.label}
+                      className="py-4 border-b border-white/[0.06] last:border-b-0"
+                    >
                       <div className="flex items-baseline justify-between mb-2.5">
-                        <span className="text-white/40 text-xs font-medium">{row.label}</span>
-                        <span className="text-xl font-bold text-red-400">{row.amount}</span>
+                        <span className="text-white/40 text-xs font-medium">
+                          {row.label}
+                        </span>
+                        <span className="text-xl font-bold text-red-400">
+                          {row.amount}
+                        </span>
                       </div>
                       <div className="h-1 bg-white/[0.05] rounded-full overflow-hidden">
                         <div
@@ -292,7 +500,9 @@ export function EcommercePage() {
                           style={{ width: row.width }}
                         />
                       </div>
-                      <p className="text-white/25 text-[11px] mt-1.5 italic">{row.note}</p>
+                      <p className="text-white/25 text-[11px] mt-1.5 italic">
+                        {row.note}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -308,258 +518,370 @@ export function EcommercePage() {
                     </p>
                   </div>
                   <div className="text-right shrink-0">
-                    <span className="text-3xl font-bold text-[#e7fe56] font-obviously">R8,999</span>
-                    <p className="text-[#e7fe56]/40 text-[11px]">Starting from</p>
+                    <span className="text-3xl font-bold text-[#e7fe56] font-obviously">
+                      R8,999
+                    </span>
+                    <p className="text-[#e7fe56]/40 text-[11px]">
+                      Starting from
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ─── 4. Architecture / Advantages ──────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            4. ARCHITECTURE / ADVANTAGES
+        ════════════════════════════════════════════ */}
       <ProcessCardGrid
         heading={
-          <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white font-obviously">
-            Architecture that <span className="italic text-outline-15">matters</span>
+          <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-white">
+            Architecture that{" "}
+            <span className="italic text-outline-15">matters</span>
           </h2>
         }
         description="Every technical decision we make is engineered to impact your bottom line and operational efficiency."
         cards={advantageCards}
       />
 
-      {/* ─── 5. Packages ────────────────────────────────────────────── */}
-      <section ref={packagesRef} className="relative py-16 md:py-28 px-6">
+      {/* ════════════════════════════════════════════
+            5. SERVICE PACKAGES
+        ════════════════════════════════════════════ */}
+      <section
+        ref={packagesRef}
+        id="packages"
+        className="relative z-10 py-16 md:py-28 px-6"
+      >
         <div className="max-w-[1400px] w-full mx-auto">
-
-          {/* Header */}
           <div
-            className={`mb-14 opacity-0 ${
-              packagesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+            className={`mb-12 md:mb-16 opacity-0 ${
+              packagesVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                : ""
             }`}
           >
-            <p className="text-[#e7fe56] text-[11px] font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
               Transparent Pricing
             </p>
-            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4 font-obviously">
-              Pick your <span className="italic text-outline-15">engine.</span>
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
+              E-commerce Packages
+              <span className="h-px flex-1 bg-white/10 ml-4 hidden md:block" />
             </h2>
-            <p className="text-white/50 text-lg max-w-xl">
+            <p className="mt-4 text-white/70 text-lg max-w-[650px]">
               No monthly retainers. No cuts from your sales. No hidden limits.
               What you see is what you pay — once.
             </p>
           </div>
 
-          {/* Cards grid */}
-          <div
-            className={`grid grid-cols-1 md:grid-cols-3 gap-5 opacity-0 ${
-              packagesVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""
-            }`}
-          >
-            {/* ── Essential ── */}
-            <div className="relative flex flex-col rounded-[28px] border border-white/[0.09] bg-white/[0.02] overflow-hidden">
-              {/* Top accent line */}
-              <div className="h-[3px] bg-gradient-to-r from-white/20 to-white/5" />
-
-              <div className="p-7 md:p-8 pb-0 flex-1">
-                <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-6">
-                  Essential Store
-                </p>
-                <div className="mb-5">
-                  <p className="text-[44px] font-bold text-white leading-none font-obviously">
-                    R8,999
-                  </p>
-                  <p className="text-white/30 text-xs mt-1.5">Once-off · 7–10 working days</p>
-                </div>
-                <p className="text-white/45 text-sm mb-7 leading-relaxed border-b border-white/[0.06] pb-7">
-                  The complete foundation for emerging brands entering online retail.
-                </p>
-
-                <div className="space-y-0">
-                  {[
-                    "50 products uploaded for you (add unlimited yourself)",
-                    "Custom, mobile-first storefront",
-                    "Standard flat-rate shipping",
-                    { text: "Secure payment integration", tooltip: "PayFast, Yoco, or Ozow — your choice." },
-                    "Inventory management dashboard",
-                  ].map((f, i) => (
-                    <FeatureRow key={i} feature={f} accent="rgba(255,255,255,0.6)" />
-                  ))}
-                </div>
-              </div>
-
-              <div className="p-7 md:p-8 pt-6">
-                <div className="flex items-center gap-2 mb-5 text-white/25">
-                  <Clock className="w-3.5 h-3.5" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">
-                    Ready in 7–10 working days
-                  </span>
-                </div>
-                <a
-                  href={`${WA_BASE}Hi%2C%20I%27d%20like%20to%20get%20started%20with%20the%20Essential%20Store`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3.5 rounded-xl border border-white/15 flex items-center justify-center gap-2.5 text-white text-[11px] font-bold uppercase tracking-widest hover:bg-white/[0.05] transition-colors"
-                >
-                  <WhatsappLogo className="w-4 h-4 text-green-400" weight="fill" />
-                  Get started on WhatsApp
-                </a>
-              </div>
-            </div>
-
-            {/* ── Growth (Popular) — lime fill ── */}
-            <div className="relative flex flex-col rounded-[28px] bg-[#e7fe56] overflow-hidden md:-mt-5 md:-mb-5">
-              <div className="p-7 md:p-8 pb-0 flex-1">
-                <div className="flex items-center justify-between mb-6">
-                  <p className="text-black/40 text-[10px] font-bold uppercase tracking-widest">
-                    Growth Store
-                  </p>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-black text-[#e7fe56] px-3 py-1 rounded-full">
+          {/* Package Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {packages.map((pkg, pkgIdx) => (
+              <div
+                key={pkg.title}
+                className={`relative flex flex-col h-full rounded-2xl opacity-0 ${
+                  packagesVisible
+                    ? `animate-[fadeInUp_0.8s_ease-out_${
+                        ["0.2s", "0.3s", "0.4s"][pkgIdx]
+                      }_both]`
+                    : ""
+                }`}
+                style={
+                  pkg.popular
+                    ? {
+                        background: "rgba(255,255,255,0.04)",
+                        backdropFilter: "blur(4px)",
+                        boxShadow:
+                          "0 0 0 2px rgba(196,181,253,0.9), 0 0 40px rgba(196,181,253,0.25)",
+                      }
+                    : {
+                        background: "rgba(255,255,255,0.02)",
+                        backdropFilter: "blur(4px)",
+                        boxShadow: "0 0 0 1px rgba(255,255,255,0.15)",
+                      }
+                }
+              >
+                {pkg.popular && (
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-[#e7fe56] text-black text-xs font-bold uppercase tracking-widest rounded-full whitespace-nowrap shadow-lg shadow-[#e7fe56]/20">
                     Most Popular
-                  </span>
-                </div>
+                  </div>
+                )}
 
-                <div className="mb-5">
-                  <p className="text-[44px] font-bold text-black leading-none font-obviously">
-                    R14,999
+                {/* Card header */}
+                <div className="px-7 pt-8 pb-5 border-b-2 border-white/[0.1]">
+                  <h3 className="text-xl font-bold text-center text-white leading-tight uppercase tracking-wide font-obviously">
+                    {pkg.title}
+                  </h3>
+                  <div className="mt-4 flex items-center justify-center gap-3">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-xs text-white/50 font-semibold">
+                        from
+                      </span>
+                      <span className="text-2xl font-semibold text-white">
+                        {pkg.price}
+                      </span>
+                    </div>
+                    <span className="text-xs text-white/50 uppercase tracking-wider border border-white/15 px-2 py-0.5 rounded-full">
+                      {pkg.type}
+                    </span>
+                  </div>
+                  {/* ROI tagline */}
+                  <p className="mt-3 text-xs text-white/45 leading-relaxed text-center italic">
+                    {pkg.roi}
                   </p>
-                  <p className="text-black/35 text-xs mt-1.5">Once-off · 12–15 working days</p>
                 </div>
-                <p className="text-black/55 text-sm mb-7 leading-relaxed border-b border-black/[0.09] pb-7">
-                  Advanced tools and cart recovery for brands serious about scaling online.
-                </p>
 
-                <div className="space-y-0">
-                  {[
-                    "100 products uploaded for you (add unlimited yourself)",
-                    "Product filtering & search",
-                    { text: "WhatsApp cart recovery", tooltip: "Automatically follow up with abandoned checkouts via WhatsApp to recover lost sales." },
-                    "Google Shopping SEO",
-                    { text: "Advanced analytics dashboard", tooltip: "Track revenue, best-sellers, conversion rates, and customer behaviour in real-time." },
-                  ].map((f, i) => (
-                    <LimeFeatureRow key={i} feature={f} />
+                {/* Feature rows */}
+                <div className="flex-1 px-7 py-2">
+                  {pkg.features.map((feature, fIdx) => (
+                    <FeatureListItem key={fIdx} feature={feature} />
                   ))}
                 </div>
-              </div>
 
-              <div className="p-7 md:p-8 pt-6">
-                <div className="flex items-center gap-2 mb-5 text-black/30">
-                  <Clock className="w-3.5 h-3.5" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">
-                    Ready in 12–15 working days
-                  </span>
-                </div>
-                <a
-                  href={`${WA_BASE}Hi%2C%20I%27d%20like%20to%20get%20started%20with%20the%20Growth%20Store`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3.5 rounded-xl bg-black flex items-center justify-center gap-2.5 text-[#e7fe56] text-[11px] font-bold uppercase tracking-widest hover:bg-black/80 transition-colors"
-                >
-                  <WhatsappLogo className="w-4 h-4" weight="fill" />
-                  Get started on WhatsApp
-                </a>
-              </div>
-            </div>
+                {/* Footer */}
+                <div className="px-7 pb-7 pt-4 border-t-2 border-white/[0.1] mt-2 space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-3.5 h-3.5 text-[#e7fe56]/60 shrink-0" />
+                    <span className="text-xs text-white/50 font-medium tracking-wide">
+                      DELIVERY:{" "}
+                      <span className="text-white/80">{pkg.delivery}</span>
+                    </span>
+                  </div>
 
-            {/* ── Custom Engine — cyan accent ── */}
-            <div className="relative flex flex-col rounded-[28px] border border-[#72f5e3]/20 bg-[#72f5e3]/[0.03] overflow-hidden">
-              {/* Top accent line */}
-              <div className="h-[3px] bg-gradient-to-r from-[#72f5e3]/50 to-[#72f5e3]/10" />
+                  <a
+                    href={`/contact?package=${encodeURIComponent(pkg.title)}`}
+                    className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-[#e7fe56] text-black hover:bg-[#e7fe56]/90 border-2 border-[#e7fe56] hover:shadow-lg hover:shadow-[#e7fe56]/30"
+                  >
+                    Request a Quote
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
 
-              <div className="p-7 md:p-8 pb-0 flex-1">
-                <p className="text-[#72f5e3]/50 text-[10px] font-bold uppercase tracking-widest mb-6">
-                  Custom Engine
-                </p>
-                <div className="mb-5">
-                  <p className="text-[44px] font-bold text-white leading-none font-obviously">
-                    R25k+
-                  </p>
-                  <p className="text-white/30 text-xs mt-1.5">Project-based · Scoped per build</p>
-                </div>
-                <p className="text-white/45 text-sm mb-7 leading-relaxed border-b border-white/[0.06] pb-7">
-                  Enterprise-grade infrastructure for complex, high-volume operations.
-                </p>
-
-                <div className="space-y-0">
-                  {[
-                    "Full headless architecture",
-                    "ERP & POS system syncing",
-                    "Wholesale / B2B price portals",
-                    "Custom customer loyalty programs",
-                    "Dedicated hosting configuration",
-                  ].map((f, i) => (
-                    <FeatureRow key={i} feature={f} accent="#72f5e3" />
-                  ))}
+                  <a
+                    href={`${WA_BASE}${pkg.waText}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-transparent text-white/50 border border-white/15 hover:border-[#25D366]/50 hover:text-[#25D366] hover:bg-[#25D366]/5"
+                  >
+                    <WhatsappLogo className="w-4 h-4" />
+                    Chat on WhatsApp
+                  </a>
                 </div>
               </div>
-
-              <div className="p-7 md:p-8 pt-6">
-                <div className="flex items-center gap-2 mb-5 text-white/25">
-                  <Clock className="w-3.5 h-3.5" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">
-                    Timeline scoped to your project
-                  </span>
-                </div>
-                <a
-                  href={`${WA_BASE}Hi%2C%20I%27m%20interested%20in%20a%20Custom%20Engine%20store`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3.5 rounded-xl border border-[#72f5e3]/25 flex items-center justify-center gap-2.5 text-[#72f5e3] text-[11px] font-bold uppercase tracking-widest hover:bg-[#72f5e3]/[0.08] transition-colors"
-                >
-                  <WhatsappLogo className="w-4 h-4" weight="fill" />
-                  Discuss your project
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
-
         </div>
       </section>
 
-      {/* ─── 6. "Every Package Includes" Strip ─────────────────────── */}
-      <section ref={includedRef} className="border-y border-white/[0.06] py-10 md:py-12 px-6">
+      {/* ════════════════════════════════════════════
+            6. WHAT'S INCLUDED
+        ════════════════════════════════════════════ */}
+      <section ref={warrantyRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
-            className={`opacity-0 ${
-              includedVisible ? "animate-[fadeInUp_0.6s_ease-out_0.1s_both]" : ""
+            className={`mb-10 opacity-0 ${
+              warrantyVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                : ""
             }`}
           >
-            <p className="text-center text-white/30 text-[10px] font-bold uppercase tracking-widest mb-8">
-              Every package includes — no exceptions
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-white mb-3">
+              What&apos;s{" "}
+              <span className="italic text-outline-2">included</span>
+            </h2>
+            <p className="text-lg text-white/70 max-w-[600px]">
+              Every store ships with built-in peace of mind — no hidden costs,
+              no surprises.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5 md:gap-x-14">
-              {[
-                { Icon: Globe, label: "Free .co.za Domain" },
-                { Icon: Rocket, label: "Premium Hosting" },
-                { Icon: LockKey, label: "Free SSL Certificate" },
-                { Icon: Envelope, label: "Business Email" },
-                { Icon: GraduationCap, label: "Store Training" },
-              ].map(({ Icon, label }) => (
-                <div key={label} className="flex items-center gap-2.5 text-white/50 group">
-                  <Icon className="w-4 h-4 text-[#e7fe56]/60 group-hover:text-[#e7fe56] transition-colors" />
-                  <span className="text-sm font-medium group-hover:text-white/70 transition-colors">
-                    {label}
-                  </span>
-                </div>
-              ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Warranty Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.3s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                6-Month Warranty
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                Bug fixes, browser compatibility (Chrome, Safari, Edge), and
+                minor content adjustments — all covered for 6 months post-launch
+                at no extra charge.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Code bug fixes & broken links",
+                  "Browser compatibility patches",
+                  "Minor text & image swaps",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs text-black/60">
+                After your 6-month warranty, optional Care Plans start at
+                R199/mo.{" "}
+                <a
+                  href="/services/web-design/care-plan"
+                  className="underline font-semibold hover:text-black/90"
+                >
+                  Learn More →
+                </a>
+              </p>
+            </div>
+
+            {/* Hosting Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.5s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <CloudArrowUp className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                Hosting &amp; Domain
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                Your first year of hosting is on us. After that, we keep things
+                simple and affordable — no hidden infrastructure costs.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "First year hosting — free",
+                  ".co.za domain — included",
+                  "Free SSL certificate",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technical Health Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.7s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <Toolbox className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                Technical Health
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                We keep your store fast, secure, and up to date so you can focus
+                on selling — not maintaining servers.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Security & dependency patches",
+                  "Hosting & SSL management",
+                  "Core Web Vitals monitoring",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── 7. Payment Gateways ────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            7. OUR PROCESS
+        ════════════════════════════════════════════ */}
+      <section ref={processRef} className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          {/* Process heading */}
+          <div
+            className={`mb-10 opacity-0 ${
+              processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+            }`}
+          >
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px]">
+              Our <span className="italic text-outline-15">process</span>
+            </h2>
+            <p className="mt-4 text-white/70 text-lg max-w-[600px]">
+              From first conversation to live online store — a clear, structured
+              build every time.
+            </p>
+          </div>
+
+          {/* Process steps — horizontal scroll */}
+          <div
+            className="-mx-6 md:-mx-12"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, black 80%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to right, black 80%, transparent 100%)",
+            }}
+          >
+            <div
+              ref={dragRef}
+              {...dragEvents}
+              className={`overflow-x-auto scrollbar-hide snap-x snap-mandatory md:snap-none scroll-px-6 md:scroll-px-12 px-6 md:px-12 pb-8 ${
+                isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+              }`}
+            >
+              <div className="flex gap-4 md:gap-8 w-max justify-start pr-12 md:pr-32 pointer-events-none">
+                {processSteps.map((card, idx) => (
+                  <div
+                    key={card.step}
+                    className={`snap-start snap-always md:snap-align-none w-[280px] md:w-[400px] shrink-0 transition-all duration-700 pointer-events-auto ${
+                      processVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                    }`}
+                    style={{ transitionDelay: `${idx * 150}ms` }}
+                  >
+                    <ProcessCard {...card} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+            8. PAYMENT GATEWAYS
+        ════════════════════════════════════════════ */}
       <section ref={gatewayRef} className="relative py-16 md:py-20 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`opacity-0 ${
-              gatewayVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+              gatewayVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                : ""
             }`}
           >
-            <p className="text-center text-white/30 text-[10px] font-bold uppercase tracking-widest mb-10">
-              Trusted SA payment gateways — integrated into every store
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
+              Trusted SA Payment Gateways
             </p>
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-10">
+              Integrated into{" "}
+              <span className="italic text-outline-15">every store</span>
+            </h2>
 
             <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 max-w-3xl mx-auto">
               {[
@@ -568,7 +890,12 @@ export function EcommercePage() {
                   color: "#00b0f0",
                   border: "rgba(0,176,240,0.2)",
                   bg: "rgba(0,176,240,0.05)",
-                  methods: ["Credit & Debit Cards", "Instant EFT", "Apple Pay", "Google Pay"],
+                  methods: [
+                    "Credit & Debit Cards",
+                    "Instant EFT",
+                    "Apple Pay",
+                    "Google Pay",
+                  ],
                 },
                 {
                   name: "Yoco",
@@ -612,47 +939,73 @@ export function EcommercePage() {
             </div>
 
             <p className="text-center text-white/25 text-xs mt-7 max-w-md mx-auto leading-relaxed">
-              All gateways are PCI-DSS compliant and configured for the South African market from day one.
+              All gateways are PCI-DSS compliant and configured for the South
+              African market from day one.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── 8. Dashboard Showcase ──────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            9. DASHBOARD SHOWCASE
+        ════════════════════════════════════════════ */}
       <section ref={dashboardRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-16">
-
             {/* Left: Copy */}
             <div
               className={`md:w-5/12 shrink-0 opacity-0 ${
-                dashboardVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+                dashboardVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                  : ""
               }`}
             >
-              <p className="text-[#72f5e3] text-[11px] font-semibold uppercase tracking-widest mb-4">
+              <p className="text-[#72f5e3] text-sm font-semibold uppercase tracking-widest mb-4">
                 Easy-to-Use Dashboard
               </p>
-              <h2 className="text-4xl md:text-[50px] font-bold leading-tight text-white mb-6 font-obviously">
+              <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-white mb-6">
                 Run your store without{" "}
                 <span className="italic text-outline-15">a developer</span>
               </h2>
               <p className="text-white/55 text-base leading-relaxed mb-9">
-                Your store comes with a clean management dashboard. Add products, fulfil orders, track revenue, and manage customers — all from one place, on any device.
+                Your store comes with a clean management dashboard. Add
+                products, fulfil orders, track revenue, and manage customers —
+                all from one place, on any device.
               </p>
               <div className="space-y-5">
                 {[
-                  { Icon: Package, label: "Product Management", desc: "Add, edit, or remove products in seconds. Bulk uploads supported." },
-                  { Icon: ChartLineUp, label: "Sales Analytics", desc: "Real-time revenue, top products, and conversion data at a glance." },
-                  { Icon: UsersThree, label: "Order & Customer Management", desc: "View, process, and fulfil orders. Track customers and order history." },
-                  { Icon: ShieldCheck, label: "Secure & Backed Up", desc: "Daily backups and SSL protection built-in. Your data is always safe." },
+                  {
+                    Icon: Package,
+                    label: "Product Management",
+                    desc: "Add, edit, or remove products in seconds. Bulk uploads supported.",
+                  },
+                  {
+                    Icon: ChartLineUp,
+                    label: "Sales Analytics",
+                    desc: "Real-time revenue, top products, and conversion data at a glance.",
+                  },
+                  {
+                    Icon: UsersThree,
+                    label: "Order & Customer Management",
+                    desc: "View, process, and fulfil orders. Track customers and order history.",
+                  },
+                  {
+                    Icon: ShieldCheck,
+                    label: "Secure & Backed Up",
+                    desc: "Daily backups and SSL protection built-in. Your data is always safe.",
+                  },
                 ].map(({ Icon, label, desc }) => (
                   <div key={label} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-[#72f5e3]/10 border border-[#72f5e3]/20 flex items-center justify-center shrink-0 mt-0.5">
                       <Icon className="w-5 h-5 text-[#72f5e3]" />
                     </div>
                     <div>
-                      <p className="text-white font-semibold text-sm mb-0.5">{label}</p>
-                      <p className="text-white/45 text-xs leading-relaxed">{desc}</p>
+                      <p className="text-white font-semibold text-sm mb-0.5">
+                        {label}
+                      </p>
+                      <p className="text-white/45 text-xs leading-relaxed">
+                        {desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -662,7 +1015,9 @@ export function EcommercePage() {
             {/* Right: Mock Dashboard UI */}
             <div
               className={`md:w-7/12 opacity-0 ${
-                dashboardVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""
+                dashboardVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
+                  : ""
               }`}
             >
               <div className="rounded-[24px] border border-white/10 bg-white/[0.03] overflow-hidden">
@@ -670,7 +1025,9 @@ export function EcommercePage() {
                 <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.07] bg-white/[0.02]">
                   <div className="flex items-center gap-2">
                     <Storefront className="w-4 h-4 text-[#72f5e3]" />
-                    <span className="text-white text-xs font-semibold">My Store Dashboard</span>
+                    <span className="text-white text-xs font-semibold">
+                      My Store Dashboard
+                    </span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#e7fe56]/80" />
@@ -687,11 +1044,17 @@ export function EcommercePage() {
                     { label: "Products", value: "Unlimited", trend: null },
                   ].map((stat) => (
                     <div key={stat.label} className="px-4 py-4 bg-white/[0.02]">
-                      <p className="text-white/35 text-[10px] uppercase tracking-wider mb-1">{stat.label}</p>
+                      <p className="text-white/35 text-[10px] uppercase tracking-wider mb-1">
+                        {stat.label}
+                      </p>
                       <div className="flex items-baseline gap-2">
-                        <p className="text-white font-bold text-lg leading-none">{stat.value}</p>
+                        <p className="text-white font-bold text-lg leading-none">
+                          {stat.value}
+                        </p>
                         {stat.trend && (
-                          <span className="text-[#72f5e3] text-[10px] font-semibold">{stat.trend}</span>
+                          <span className="text-[#72f5e3] text-[10px] font-semibold">
+                            {stat.trend}
+                          </span>
                         )}
                       </div>
                     </div>
@@ -705,9 +1068,24 @@ export function EcommercePage() {
                   </p>
                   <div className="space-y-2">
                     {[
-                      { name: "Classic Cotton Tee — White", price: "R299", stock: "In Stock", stockOk: true },
-                      { name: "Premium Hoodie — Black", price: "R599", stock: "In Stock", stockOk: true },
-                      { name: "Snapback Cap — Logo", price: "R199", stock: "Low Stock", stockOk: false },
+                      {
+                        name: "Classic Cotton Tee — White",
+                        price: "R299",
+                        stock: "In Stock",
+                        stockOk: true,
+                      },
+                      {
+                        name: "Premium Hoodie — Black",
+                        price: "R599",
+                        stock: "In Stock",
+                        stockOk: true,
+                      },
+                      {
+                        name: "Snapback Cap — Logo",
+                        price: "R199",
+                        stock: "Low Stock",
+                        stockOk: false,
+                      },
                     ].map((product) => (
                       <div
                         key={product.name}
@@ -717,10 +1095,14 @@ export function EcommercePage() {
                           <div className="w-7 h-7 rounded-lg bg-white/[0.08] flex items-center justify-center">
                             <Package className="w-3.5 h-3.5 text-white/35" />
                           </div>
-                          <span className="text-white/65 text-xs">{product.name}</span>
+                          <span className="text-white/65 text-xs">
+                            {product.name}
+                          </span>
                         </div>
                         <div className="flex items-center gap-3">
-                          <span className="text-white/45 text-xs">{product.price}</span>
+                          <span className="text-white/45 text-xs">
+                            {product.price}
+                          </span>
                           <span
                             className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
                               product.stockOk
@@ -739,8 +1121,11 @@ export function EcommercePage() {
                   <div className="mt-4 flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-[#72f5e3]/[0.05] border border-[#72f5e3]/15">
                     <GraduationCap className="w-4 h-4 text-[#72f5e3] shrink-0" />
                     <p className="text-white/45 text-xs leading-relaxed">
-                      <span className="text-white/75 font-semibold">Store Training Included</span>{" "}
-                      — Zoom walkthrough or video tutorials. You&apos;re never left to figure it out alone.
+                      <span className="text-white/75 font-semibold">
+                        Store Training Included
+                      </span>{" "}
+                      — Zoom walkthrough or video tutorials. You&apos;re never
+                      left to figure it out alone.
                     </p>
                   </div>
                 </div>
@@ -750,35 +1135,45 @@ export function EcommercePage() {
         </div>
       </section>
 
-      {/* ─── 9. Portfolio ───────────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            10. PORTFOLIO
+        ════════════════════════════════════════════ */}
       <section ref={projectsRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
-            className={`flex flex-wrap items-end justify-between mb-12 gap-6 opacity-0 ${
-              projectsVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+            className={`flex flex-wrap items-center justify-between mb-12 opacity-0 ${
+              projectsVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                : ""
             }`}
           >
-            <div>
-              <p className="text-[#e7fe56] text-[11px] font-semibold uppercase tracking-widest mb-3">
-                Our Portfolio
-              </p>
-              <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white font-obviously">
-                Stores we&apos;ve <span className="italic text-outline-15">built</span>
-              </h2>
+            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white">
+              Our projects
+            </h2>
+            <div className="mt-6 md:mt-0">
+              <a
+                href="/projects"
+                className="text-sm font-normal bg-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#e7fe56] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#e7fe56] hover:text-black transition-colors"
+              >
+                See all projects
+                <span className="relative text-sm font-normal bg-[#e7fe56] text-black h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:h-[50px] md:w-[50px] md:p-[18.4px]">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </span>
+              </a>
             </div>
-            <a
-              href="/projects"
-              className="text-sm font-normal bg-transparent inline-flex items-center leading-[21px] text-center align-middle border-[#e7fe56] pl-6 pr-2 py-2 rounded-[50px] border-2 border-solid font-obviously md:text-base md:font-semibold md:leading-6 hover:bg-[#e7fe56] hover:text-black transition-colors"
-            >
-              See all projects
-              <span className="relative text-sm font-normal bg-[#e7fe56] text-black h-[30px] w-[30px] leading-[21px] -rotate-45 ml-2.5 p-[9.6px] rounded-[50%] flex items-center justify-center md:h-[50px] md:w-[50px] md:p-[18.4px]">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </a>
           </div>
-
           <div className="flex flex-wrap -mx-3">
             {featuredProjects.map((project, index) => (
               <ProjectCard
@@ -792,34 +1187,46 @@ export function EcommercePage() {
         </div>
       </section>
 
-      {/* ─── 10. Testimonials ───────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            11. TESTIMONIALS
+        ════════════════════════════════════════════ */}
       <section id="testimonials" aria-labelledby="ecom-testimonials-heading">
         <TestimonialsHeader />
         <TestimonialsGrid />
       </section>
 
-      {/* ─── 11. Comparison Table ───────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            12. COMPARISON TABLE
+        ════════════════════════════════════════════ */}
       <section ref={comparisonRef} className="relative py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`mb-12 opacity-0 ${
-              comparisonVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+              comparisonVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                : ""
             }`}
           >
-            <p className="text-[#e7fe56] text-[11px] font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
               Why Custom?
             </p>
-            <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-4 font-obviously">
-              Custom Next.js <span className="italic text-outline-15">vs.</span> WordPress
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
+              Custom Next.js{" "}
+              <span className="italic text-outline-15">vs.</span> WordPress
+              <span className="h-px flex-1 bg-white/10 ml-4 hidden md:block" />
             </h2>
-            <p className="text-white/55 text-lg max-w-2xl">
-              Not all stores are created equal. Here&apos;s what you&apos;re actually getting — and what you&apos;re giving up — when you choose a cheap template over a custom build.
+            <p className="text-white/55 text-lg max-w-2xl mt-4">
+              Not all stores are created equal. Here&apos;s what you&apos;re
+              actually getting — and what you&apos;re giving up — when you
+              choose a cheap template over a custom build.
             </p>
           </div>
 
           <div
             className={`overflow-x-auto opacity-0 ${
-              comparisonVisible ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]" : ""
+              comparisonVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
+                : ""
             }`}
           >
             <table className="w-full min-w-[640px] border-collapse">
@@ -845,13 +1252,20 @@ export function EcommercePage() {
                 {comparisonRows.map((row, idx) => (
                   <tr
                     key={row.feature}
-                    className={`border-t border-white/[0.06] ${idx % 2 === 0 ? "bg-white/[0.01]" : ""}`}
+                    className={`border-t border-white/[0.06] ${
+                      idx % 2 === 0 ? "bg-white/[0.01]" : ""
+                    }`}
                   >
-                    <td className="py-4 px-5 text-white/65 text-sm font-medium">{row.feature}</td>
+                    <td className="py-4 px-5 text-white/65 text-sm font-medium">
+                      {row.feature}
+                    </td>
                     <td className="py-4 px-5 text-center">
                       <div className="flex items-center justify-center gap-2">
                         <div className="w-5 h-5 rounded-full bg-[#72f5e3]/15 border border-[#72f5e3]/30 flex items-center justify-center shrink-0">
-                          <Check className="w-2.5 h-2.5 text-[#72f5e3]" weight="bold" />
+                          <Check
+                            className="w-2.5 h-2.5 text-[#72f5e3]"
+                            weight="bold"
+                          />
                         </div>
                         <span className="text-white/75 text-xs leading-tight text-left">
                           {row.custom}
@@ -861,7 +1275,10 @@ export function EcommercePage() {
                     <td className="py-4 px-5 text-center">
                       <div className="flex items-center justify-center gap-2">
                         <div className="w-5 h-5 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0">
-                          <X className="w-2.5 h-2.5 text-red-400" weight="bold" />
+                          <X
+                            className="w-2.5 h-2.5 text-red-400"
+                            weight="bold"
+                          />
                         </div>
                         <span className="text-white/35 text-xs leading-tight text-left">
                           {row.wordpress}
@@ -876,26 +1293,53 @@ export function EcommercePage() {
         </div>
       </section>
 
-      {/* ─── 12. FAQ ────────────────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════
+            13. FAQ
+        ════════════════════════════════════════════ */}
       <FAQ
         items={ecommerceFAQ}
         title="Common Questions"
         description="Everything you need to know about our e-commerce packages, what's included, and how we work."
       />
 
-      {/* ─── 13. CTA ────────────────────────────────────────────────── */}
-      <CTASection
-        heading={
-          <>
+      {/* ════════════════════════════════════════════
+            14. FINAL CTA
+        ════════════════════════════════════════════ */}
+      <section ref={ctaRef} className="relative z-10 py-16 md:py-24 px-6">
+        <div
+          className={`max-w-[900px] mx-auto text-center opacity-0 ${
+            ctaVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+          }`}
+        >
+          <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
             Ready to build a store that
             <br />
-            <span className="italic text-outline-15">actually scales?</span>
-          </>
-        }
-        linkTo="/contact"
-        linkText="Get a Custom Quote"
-        color="lime"
-      />
+            <span className="italic text-outline-2">actually scales?</span>
+          </h2>
+          <p className="text-lg text-white/70 mb-10 max-w-[580px] mx-auto">
+            Get a free quote in 24 hours. Or just send a voice note on WhatsApp
+            — we&apos;re real people, not a call centre.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#e7fe56] text-black font-semibold text-sm uppercase tracking-widest rounded-xl hover:bg-[#e7fe56]/90 transition-colors"
+            >
+              Request a Free Quote
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <a
+              href="https://wa.me/27814272624?text=Hi%2C%20I%27m%20interested%20in%20an%20e-commerce%20store"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/20 text-white font-semibold text-sm uppercase tracking-widest rounded-xl hover:border-[#25D366]/50 hover:text-[#25D366] hover:bg-[#25D366]/5 transition-colors"
+            >
+              <WhatsappLogo className="w-5 h-5" />
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
