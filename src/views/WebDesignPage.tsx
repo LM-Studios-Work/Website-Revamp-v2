@@ -255,41 +255,6 @@ const packages: {
       },
     ],
   },
-  {
-    title: "E-COMMERCE WEBSITE",
-    price: "R7,499",
-    roi: "Turn your website into a 24/7 revenue engine. Sell to customers across South Africa while you sleep.",
-    type: "once-off",
-    delivery: "10–15 working days",
-    iconName: "ShoppingCart",
-    features: [
-      "Up to 20 products",
-      "Shopping cart and checkout",
-      {
-        text: "Secure payment gateway integration",
-        tooltip:
-          "Customers pay via card, EFT, or instant payment — reducing cart abandonment and boosting completed sales.",
-      },
-      "Product categories & inventory setup",
-      "Order management system",
-      {
-        text: "Mobile-optimised storefront",
-        tooltip:
-          "Over 60% of online shopping in SA happens on mobile. A flawless mobile experience directly increases your sales.",
-      },
-      {
-        text: "Product SEO",
-        tooltip:
-          "Your products appear in Google Shopping searches — free, qualified traffic that's already ready to buy.",
-      },
-      "Custom domain",
-      {
-        text: "Google Maps Integration",
-        tooltip:
-          "Drive foot traffic to your physical store while capturing online sales simultaneously.",
-      },
-    ],
-  },
 ];
 
 const iconMap = {

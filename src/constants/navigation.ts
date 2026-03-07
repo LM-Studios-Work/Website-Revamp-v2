@@ -21,5 +21,5 @@ export const SERVICE_NAV_ITEMS: ServiceNavItem[] = [
   { to: "/services/web-design", label: "Web Design" },
   { to: "/services/e-commerce", label: "E-Commerce" },
   { to: "/services/seo", label: "SEO" },
-  { to: "/services/app-development", label: "E-Commerce & Custom Web Apps" },
+  { to: "/services/app-development", label: "Booking Systems" },
 ];
