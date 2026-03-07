@@ -133,7 +133,7 @@ export function EcommercePage() {
   ];
 
   return (
-    <main className="relative bg-black text-white overflow-hidden">
+    <>
       {/* ════════════════════════════════════════════
           HERO SECTION
       ════════════════════════════════════════════ */}
@@ -148,7 +148,7 @@ export function EcommercePage() {
       ════════════════════════════════════════════ */}
       <section
         ref={problemRef}
-        className="relative z-10 py-16 md:py-28 px-6 border-t border-white/5"
+        className="relative z-10 py-16 md:py-28 px-6"
       >
         <div className="max-w-[1400px] w-full mx-auto">
           <div
@@ -229,7 +229,7 @@ export function EcommercePage() {
       ════════════════════════════════════════════ */}
       <section
         ref={advantagesRef}
-        className="relative z-10 py-16 md:py-28 px-6 border-t border-white/5"
+        className="relative z-10 py-16 md:py-28 px-6"
       >
         <div className="max-w-[1400px] w-full mx-auto">
           <div
@@ -315,7 +315,7 @@ export function EcommercePage() {
       ════════════════════════════════════════════ */}
       <section
         ref={packagesRef}
-        className="relative z-10 py-16 md:py-28 px-6 border-t border-white/5"
+        className="relative z-10 py-16 md:py-28 px-6"
       >
         <div className="max-w-[1400px] w-full mx-auto">
           <div
@@ -474,7 +474,7 @@ export function EcommercePage() {
       ════════════════════════════════════════════ */}
       <section
         ref={warrantyRef}
-        className="relative z-10 py-16 md:py-28 px-6 border-t border-white/5"
+        className="relative z-10 py-16 md:py-28 px-6"
       >
         <div className="max-w-[1400px] w-full mx-auto">
           <div
@@ -529,7 +529,7 @@ export function EcommercePage() {
       {/* ════════════════════════════════════════════
           FAQ SECTION
       ════════════════════════════════════════════ */}
-      <section className="relative z-10 py-16 md:py-28 px-6 border-t border-white/5">
+      <section className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[900px] w-full mx-auto">
           <div className="mb-12">
             <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3">
@@ -562,7 +562,7 @@ export function EcommercePage() {
       {/* ════════════════════════════════════════════
           FINAL CTA SECTION
       ════════════════════════════════════════════ */}
-      <section className="relative z-10 py-16 md:py-28 px-6 border-t border-white/5">
+      <section className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1000px] w-full mx-auto text-center">
           <h2 className="text-4xl md:text-[56px] font-bold leading-tight text-white mb-6">
             Ready to upgrade your digital retail operations?
@@ -592,6 +592,6 @@ export function EcommercePage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }
