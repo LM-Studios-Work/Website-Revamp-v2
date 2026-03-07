@@ -1,14 +1,19 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import type { FAQItem } from "./constants";
 import { generalFAQ } from "./constants";
 
 export type FAQProps = {
   items?: FAQItem[];
   title?: string;
+  description?: React.ReactNode;
 };
 
-export const FAQ = ({ items = generalFAQ, title = "FAQ" }: FAQProps) => {
+export const FAQ = ({ 
+  items = generalFAQ, 
+  title = "FAQ",
+  description = <><span className="text-white font-semibold">Got questions?</span> {"We've got answers! Explore our FAQ to learn more about our web design process, services, and how we can bring your vision to life."}</>
+}: FAQProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -24,10 +29,7 @@ export const FAQ = ({ items = generalFAQ, title = "FAQ" }: FAQProps) => {
               {title}
             </h2>
             <p className="text-white/60 text-base leading-relaxed">
-              <span className="text-white font-semibold">
-                Got questions?
-              </span>{" "}
-              {"We've got answers! Explore our FAQ to learn more about our web design process, services, and how we can bring your vision to life."}
+              {description}
             </p>
           </div>
           <div className="md:w-7/12">
