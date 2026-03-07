@@ -13,7 +13,10 @@ export const TestimonialsGrid = () => {
   useEffect(() => {
     fetch("/api/reviews")
       .then((r) => r.json())
-      .then((data) => setReviews(data.reviews ?? []))
+      .then((data) => {
+        console.log(`[Reviews] source: ${data.source ?? "unknown"}, count: ${data.reviews?.length ?? 0}`);
+        setReviews(data.reviews ?? []);
+      })
       .catch(() => setReviews([]))
       .finally(() => setLoading(false));
   }, []);
