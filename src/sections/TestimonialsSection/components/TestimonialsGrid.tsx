@@ -21,6 +21,8 @@ export const TestimonialsGrid = () => {
       .finally(() => setLoading(false));
   }, []);
 
+  const displayedReviews = expanded ? reviews : reviews.slice(0, 4);
+
   return (
     <section ref={ref} className="relative px-6 py-8 md:py-16">
       <div className="max-w-[1400px] w-full mx-auto">
@@ -36,33 +38,29 @@ export const TestimonialsGrid = () => {
         ) : (
           <>
             <div className="flex flex-wrap -mx-3">
-              {reviews.map((review, idx) => {
-                const extraClass =
-                  idx >= 2 ? (expanded ? "block" : "hidden md:block") : "block";
-                return (
-                  <TestimonialCard
-                    key={`${review.name}-${idx}`}
-                    name={review.name}
-                    title={review.title}
-                    testimonial={review.testimonial}
-                    rating={review.rating}
-                    url={review.url}
-                    className={extraClass}
-                    index={idx}
-                    isVisible={isVisible}
-                  />
-                );
-              })}
+              {displayedReviews.map((review, idx) => (
+                <TestimonialCard
+                  key={`${review.name}-${idx}`}
+                  name={review.name}
+                  title={review.title}
+                  testimonial={review.testimonial}
+                  rating={review.rating}
+                  url={review.url}
+                  className="block"
+                  index={idx}
+                  isVisible={isVisible}
+                />
+              ))}
             </div>
 
-            {/* Mobile-only show more / show less button */}
-            {reviews.length > 2 && (
-              <div className="mt-6 md:hidden text-center">
+            {/* Show more / show less button */}
+            {reviews.length > 4 && (
+              <div className="mt-8 text-center">
                 <button
                   onClick={() => setExpanded((s) => !s)}
-                  className="text-sm font-semibold px-5 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"
+                  className="text-sm font-semibold px-6 py-2.5 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition-colors"
                 >
-                  {expanded ? "Show less" : "Show more"}
+                  {expanded ? "Show less" : "Show more testimonials"}
                 </button>
               </div>
             )}
