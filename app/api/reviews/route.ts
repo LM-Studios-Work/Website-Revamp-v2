@@ -5,6 +5,22 @@ import type { Review } from "@/types/reviews";
 // These are real clients — kept as a safety net, not as fabricated content.
 const FALLBACK_REVIEWS: Review[] = [
   {
+    name: "Rocky",
+    title: "Google Review",
+    rating: 5,
+    testimonial:
+      "During my recent experience, I was thoroughly impressed with the level of customer service provided by LM Web Design. Lupry’s patience throughout the entire process truly stood out, as he managed each step with care and professionalism. Despite challenges with my existing hosting company, which was unable to assist, Lupry took initiative and seamlessly managed the situation. His proactive approach ensured that our website was launched on time, demonstrating both competence and dedication. Based on this outstanding support and his professional approach and patience, I highly recommend Lupry for anyone wanting to have a website done. Thank you!!!",
+    url: "https://share.google/cqfu2fOfTjcbzSMRq",
+  },
+  {
+    name: "Ash",
+    title: "Google Review",
+    rating: 5,
+    testimonial:
+      "We had a great experience with LMWebDesign. What stood out was how much time they spent researching our specific niche and looking at what our competitors were doing to see how we could outperform them. As someone who isn’t a 'tech person,' I really appreciated how they explained the SEO and web design process in a way that actually made sense for our business. They go above and beyond to make sure you’re never lost in the process. Professional, thorough, and very highly recommended.",
+    url: "https://share.google/a4ryCEhQJVqJicclM",
+  },
+  {
     name: "Rokunda",
     title: "Google Review",
     rating: 5,
@@ -21,7 +37,7 @@ const FALLBACK_REVIEWS: Review[] = [
     url: "https://share.google/V5AAbktr157gvI4rs",
   },
   {
-    name: "A Happy Client",
+    name: "Makabongwe",
     title: "Google Review",
     rating: 5,
     testimonial:
