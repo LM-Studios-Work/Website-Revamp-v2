@@ -59,8 +59,6 @@ export async function GET() {
     }
 
     const reviews: Review[] = (data.result.reviews as GoogleReview[])
-      .filter((r) => r.rating >= 4 && r.text?.trim().length > 20)
-      .slice(0, 6)
       .map((r) => ({
         name: r.author_name,
         title: "Google Review",
