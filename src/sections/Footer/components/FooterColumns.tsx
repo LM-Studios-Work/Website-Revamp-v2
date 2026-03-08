@@ -26,6 +26,8 @@ export const FooterColumns = () => {
         title="Industries We Serve"
         links={[
           { href: "/services/barbershop", text: "Barbershop Web Design" },
+          { href: "/services/custom-wedding-websites", text: "Wedding Websites" },
+          { href: "/services/private-event-websites", text: "Private Event Websites" },
         ]}
       />
       <AreasWeServe />
