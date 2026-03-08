@@ -34,16 +34,17 @@ const FALLBACK_REVIEWS: Review[] = [
   },
 ];
 
+const PLACE_ID = "ChIJmcxwIrFvlR4RqDIGR7rhppY";
+
 export async function GET() {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  const placeId = process.env.GOOGLE_PLACE_ID;
 
-  if (!apiKey || !placeId) {
+  if (!apiKey) {
     return NextResponse.json({ reviews: FALLBACK_REVIEWS, source: "fallback" });
   }
 
   try {
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}&reviews_sort=newest`;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${apiKey}&reviews_sort=newest`;
 
     const res = await fetch(url, { next: { revalidate: 3600 } }); // cache for 1 hour
 
