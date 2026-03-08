@@ -3,7 +3,7 @@ import AreasWeServe from "./AreasWeServe";
 
 export const FooterColumns = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-[1fr_1fr_1.5fr_1fr] gap-10 md:gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-[1fr_1fr_1fr_1.5fr_1fr] gap-10 md:gap-8">
       <FooterColumn
         title="Navigation"
         links={[
@@ -20,6 +20,12 @@ export const FooterColumns = () => {
           { href: "/services/e-commerce", text: "E-Commerce" },
           { href: "/services/app-development", text: "App development" },
           { href: "/services/seo", text: "SEO" },
+        ]}
+      />
+      <FooterColumn
+        title="Industries We Serve"
+        links={[
+          { href: "/services/barbershop", text: "Barbershop Web Design" },
         ]}
       />
       <AreasWeServe />
