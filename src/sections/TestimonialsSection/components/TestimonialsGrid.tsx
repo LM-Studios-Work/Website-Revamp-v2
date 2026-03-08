@@ -46,6 +46,7 @@ export const TestimonialsGrid = () => {
                     title={review.title}
                     testimonial={review.testimonial}
                     rating={review.rating}
+                    url={review.url}
                     className={extraClass}
                     index={idx}
                     isVisible={isVisible}

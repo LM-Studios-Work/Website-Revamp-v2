@@ -3,4 +3,5 @@ export type Review = {
   title: string;
   testimonial: string;
   rating: number;
+  url?: string;
 };
