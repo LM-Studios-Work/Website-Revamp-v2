@@ -5,21 +5,22 @@ import {
   Check,
   ArrowRight,
   Clock,
-  ShieldCheck,
-  LockKey,
-  Toolbox,
   WhatsappLogo,
-  Calendar,
-  CreditCard,
-  ShoppingCart,
+  Users,
+  CurrencyDollar,
+  Timer,
+  ListChecks,
   Lightning,
+  Smartphone,
+  Star,
 } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/sections/FAQ";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const WA_BASE = "https://wa.me/27814272624?text=Hi%2C%20I'm%20interested%20in%20";
+const WA_BASE =
+  "https://wa.me/27814272624?text=Hi%2C%20I'm%20interested%20in%20a%20private%20event%20website";
 
 type FeatureItem = string | { text: string; tooltip: string };
 
@@ -27,7 +28,7 @@ const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
   const text = typeof feature === "object" ? feature.text : feature;
   return (
     <div className="flex items-center gap-4 py-3 border-b-2 border-white/[0.09] last:border-b-0">
-      <div className="shrink-0 w-8 h-8 rounded-full bg-[#72f5e3] flex items-center justify-center shadow-[0_0_10px_rgba(114,245,227,0.3)]">
+      <div className="shrink-0 w-8 h-8 rounded-full bg-[#e7fe56] flex items-center justify-center shadow-[0_0_10px_rgba(231,254,86,0.3)]">
         <Check className="w-4 h-4 text-black" weight="bold" />
       </div>
       <span className="text-sm text-white/75 leading-relaxed">{text}</span>
@@ -37,77 +38,74 @@ const FeatureListItem = ({ feature }: { feature: FeatureItem }) => {
 
 const packages = [
   {
-    title: "Professional Booking System",
-    subtitle: "Complete online presence + automated scheduling",
-    price: "R9,999",
-    roi: "Eliminate no-shows and manual scheduling from day one.",
+    title: "Event Landing Page",
+    subtitle: "High-impact page to build hype and collect RSVPs",
+    price: "R2,999",
+    roi: "Eliminate WhatsApp group chaos before it starts.",
     type: "once-off",
-    delivery: "10–14 working days",
-    waText: "the%20Professional%20Booking%20System%20package",
+    delivery: "3–5 working days",
+    waText: "an%20Event%20Landing%20Page%20package",
     features: [
-      "Custom, mobile-optimised website design",
-      "Integrated Online Booking System (staff & service selection)",
-      "Automated client scheduling calendar",
-      "Secure Payment Gateway Integration (Yoco, PayFast, Ozow)",
-      "1 Year Premium Web Hosting included",
-      "Free .co.za Domain Registration",
-      "Free SSL Certificate",
-      "Business Email Accounts",
-      "System Handover and Management Training",
+      "Custom-designed event landing page",
+      "Event details, dress code, and itinerary",
+      "Venue section with integrated Google Maps",
+      "Live countdown timer to the event",
+      "Secure private RSVP form with dietary requirements",
+      "Mobile-optimised (loads instantly on phones)",
+      "Custom event link or domain",
     ] as FeatureItem[],
   },
   {
-    title: "Barbershop & Retail Store",
-    subtitle: "Bookings + E-Commerce for grooming products",
-    price: "R14,999",
-    roi: "Revenue that isn't limited to cutting hours.",
+    title: "Premium Event Management",
+    subtitle: "RSVPs + ticketing + fund collection + full theming",
+    price: "R5,999",
+    roi: "Hard numbers, collected contributions, and zero chasing.",
     type: "once-off",
-    delivery: "14–18 working days",
-    waText: "the%20Barbershop%20and%20Retail%20Store%20package",
+    delivery: "5–7 working days",
+    waText: "a%20Premium%20Event%20Management%20package",
     popular: true,
     features: [
-      "Everything in the Professional Booking System, plus:",
-      "Integrated E-Commerce Store",
-      "Up to 50 retail products uploaded for you",
-      "Add unlimited products yourself later",
-      "Inventory management tracking",
-      "System Handover and Management Training",
+      "Everything in Event Landing Page, plus:",
+      "Built-in ticketing & cover charge collection",
+      "Collective gift fund / contribution portal (PayFast, Yoco, Ozow)",
+      "Video background hero for maximum impact",
+      "Mood board visual sections for theme and dress code",
+      "Parking instructions and multi-venue mapping",
+      "Guest list dashboard export for your caterers",
     ] as FeatureItem[],
   },
 ];
 
 const faqItems = [
   {
-    question: "Will I lose my walk-in customers?",
+    question: "What kind of events is this suited for?",
     answer:
-      "No. You maintain full control over your calendar. You can allocate specific chairs or hours strictly for walk-ins while keeping the rest reserved for guaranteed, prepaid online bookings.",
+      "Milestone birthdays (21st, 30th, 50th), baby showers, bridal showers, exclusive dinner parties, VIP gatherings, and any private event where you want a premium, controlled guest experience.",
   },
   {
-    question: "How do the payment integrations work?",
+    question: "How does the ticketing and fund collection work?",
     answer:
-      "We connect the website to your existing Yoco, PayFast, or Ozow merchant account. When a client pays for a booking or product, the money goes directly to your account. We do not touch your funds.",
+      "We integrate PayFast, Yoco, or Ozow directly into your event page. Guests can purchase tickets or contribute to a collective gift fund via card payment or Instant EFT. All funds go directly to your merchant account.",
   },
   {
-    question: "Is the system easy for my staff to use?",
+    question: "Can I keep the guest list private?",
     answer:
-      "Yes. The dashboard is designed to be straightforward. During handover training, we show you and your staff how to check the daily schedule, adjust working hours, and manage availability from any device.",
+      "Yes. The RSVP system is fully private. Only guests with your link can access the page, and only you can see the submitted guest list in your private dashboard.",
   },
   {
-    question: "What if I need to change my service prices later?",
+    question: "What happens to the website after the event?",
     answer:
-      "You have full access to a simple dashboard where you can update haircut prices, add new services, or change the grooming products you're selling at any time.",
+      "The site can be taken down after the event, or we can update it to serve as a post-event gallery page. The choice is entirely yours.",
   },
 ];
 
-export const BarbershopPage = () => {
+export const PrivateEventPage = () => {
   const { ref: problemsRef, isVisible: problemsVisible } =
     useScrollAnimation(0.1);
   const { ref: solutionRef, isVisible: solutionVisible } =
     useScrollAnimation(0.1);
   const { ref: whyRef, isVisible: whyVisible } = useScrollAnimation(0.1);
   const { ref: packagesRef, isVisible: packagesVisible } =
-    useScrollAnimation(0.1);
-  const { ref: galleryRef, isVisible: galleryVisible } =
     useScrollAnimation(0.1);
 
   return (
@@ -116,15 +114,15 @@ export const BarbershopPage = () => {
       <ServiceHero
         title={
           <>
-            Custom Websites and Booking Systems for{" "}
-            <span className="italic text-outline-15">Barbershops</span>
+            Digital Invitations for Milestone Birthdays &{" "}
+            <span className="italic text-outline-15">Private VIP Events</span>
           </>
         }
-        underlineColor="cyan"
-        description="Professional digital storefronts built to manage your schedule, process payments, and eliminate the frustration of long waiting times for your clients."
+        underlineColor="lime"
+        description="Elevate your next major event. Replace messy WhatsApp groups with a sleek, custom event landing page that handles RSVPs, ticketing, and event details automatically."
         badge={
-          <span className="text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#72f5e3] text-[#72f5e3]">
-            Barbershop Solutions
+          <span className="text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#e7fe56] text-[#e7fe56]">
+            Private Event Solutions
           </span>
         }
       />
@@ -139,35 +137,35 @@ export const BarbershopPage = () => {
                 : ""
             }`}
           >
-            <p className="text-[#72f5e3] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
-              The Reality of Managing a Barbershop
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
+              The Reality of Organising a Major Event
             </p>
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-12">
-              Operational bottlenecks that cost you{" "}
-              <span className="italic text-outline-15">money</span>
+              Managing the guest list usually turns into a{" "}
+              <span className="italic text-outline-15">full-time job</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 {
-                  Icon: Clock,
-                  title: "The Queue Walk-Outs",
-                  desc: "A full waiting area might look like success, but it's often a loss of revenue. When a client arrives and sees six people waiting, they leave. Your clients value their time.",
+                  Icon: Users,
+                  title: "The WhatsApp Group Nightmare",
+                  desc: "Creating a group chat leads to endless spam, muted notifications, and important details getting buried under a hundred messages.",
                 },
                 {
-                  Icon: Calendar,
-                  title: "The No-Show Cost",
-                  desc: "When a client books through WhatsApp and fails to show up, you lose that 45-minute revenue window. Without upfront commitment, an empty chair is a permanent loss.",
+                  Icon: ListChecks,
+                  title: "Unclear Numbers",
+                  desc: "When you're paying for catering, a venue, or a bar tab per head, \"I think I'm coming\" isn't good enough. You need hard numbers, but people are notoriously bad at committing.",
                 },
                 {
-                  Icon: ShieldCheck,
-                  title: "Constant Interruptions",
-                  desc: "Your phone is constantly ringing with clients checking availability. Managing your schedule manually takes you away from the actual work.",
+                  Icon: CurrencyDollar,
+                  title: "Collecting Contributions",
+                  desc: "If friends are pitching in for a large gift, or the event requires a cover charge, chasing people for EFTs is exhausting and awkward.",
                 },
                 {
-                  Icon: CreditCard,
-                  title: "Renting Your Booking System",
-                  desc: "Third-party booking apps often take a monthly fee or percentage cut. You don't own the platform and you're paying them for your own recurring clients.",
+                  Icon: Star,
+                  title: "Communicating the Vibe",
+                  desc: "Is there a strict dress code? Is it a surprise party? Is it B.O.B? Getting everyone on the same page is incredibly difficult without a central point of information.",
                 },
               ].map(({ Icon, title, desc }) => (
                 <div
@@ -203,36 +201,51 @@ export const BarbershopPage = () => {
             <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
               The Solution
             </p>
-            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-12">
-              A Custom Booking and E-Commerce Engine Built for{" "}
-              <span className="italic text-outline-15">Your Shop</span>
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-4">
+              A Premium Event Landing Page
             </h2>
+            <p className="text-white/55 text-base leading-relaxed text-center max-w-2xl mx-auto mb-14">
+              We build high-impact, temporary event websites designed to build hype and automate your event management.
+            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 {
-                  Icon: Calendar,
-                  title: "Seamless Online Bookings",
-                  desc: "Clients select their service, choose their preferred barber, and lock in a specific time. They arrive exactly when you're ready for them, and your shop runs efficiently.",
+                  number: "01",
+                  title: "Secure & Private RSVPs",
+                  desc: "Keep your guest list tightly controlled. Guests visit your custom link, fill in their details (including dietary requirements), and the data is sent directly to your private dashboard.",
                 },
                 {
-                  Icon: CreditCard,
-                  title: "Upfront Payments & Deposits",
-                  desc: "Integrate PayFast, Yoco, and Ozow directly into your site. Require deposits or full payment upfront to secure bookings. When people pay, no-shows virtually disappear.",
+                  number: "02",
+                  title: "Built-in Ticketing & Fund Collection",
+                  desc: "If your event requires a ticket purchase, or you're running a collective fund for a milestone gift, we integrate PayFast, Yoco, or Ozow. Guests can pay instantly via Card or Instant EFT.",
                 },
                 {
-                  Icon: ShoppingCart,
-                  title: "Optional E-Commerce Store",
-                  desc: "Sell branded beard oils, styling powders, and hair care products online. Your revenue isn't limited to cutting hours — your clients can shop anytime.",
+                  number: "03",
+                  title: "Set the Tone & Build Hype",
+                  desc: "We use high-quality imagery, video backgrounds, and custom typography to match your event's theme. We can even include a live countdown timer to build anticipation.",
                 },
-              ].map(({ Icon, title, desc }) => (
+                {
+                  number: "04",
+                  title: "The \"Need to Know\" Section",
+                  desc: "Eliminate repetitive questions. Clear, stylish sections outlining the itinerary, dress code with visual mood boards, parking instructions, and integrated Google Maps for the venue.",
+                },
+              ].map(({ number, title, desc }) => (
                 <div
                   key={title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex flex-col gap-4"
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex gap-6"
                 >
-                  <Icon className="w-8 h-8 text-[#72f5e3]" />
-                  <h3 className="text-white font-semibold text-lg">{title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                  <span className="text-4xl font-bold text-white/10 font-obviously shrink-0 leading-none">
+                    {number}
+                  </span>
+                  <div>
+                    <h3 className="text-white font-semibold text-lg mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-white/50 text-sm leading-relaxed">
+                      {desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -240,38 +253,42 @@ export const BarbershopPage = () => {
         </div>
       </section>
 
-      {/* ── WHY DIFFERENT ── */}
-      <section ref={whyRef} className="relative py-16 md:py-28 px-6">
+      {/* ── WHY CUSTOM ── */}
+      <section ref={whyRef} className="relative py-16 md:py-20 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
             className={`opacity-0 ${
               whyVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
             }`}
           >
-            <p className="text-[#72f5e3] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
-              Why Our Platform is Different
+            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
+              Why Choose a Custom Event Site?
             </p>
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-12">
-              We don't build slow, bloated{" "}
-              <span className="italic text-outline-15">WordPress templates</span>
+              Unlike Facebook Events or digital flyers
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {[
                 {
+                  Icon: Star,
+                  title: "Premium First Impression",
+                  desc: "A custom webpage shows your guests this is a must-attend occasion. The quality of your invitation sets the tone for the entire event.",
+                },
+                {
+                  Icon: Smartphone,
+                  title: "No App Downloads",
+                  desc: "Our sites load instantly on mobile and require zero app downloads from your guests. Just share a link and they're in.",
+                },
+                {
+                  Icon: Timer,
+                  title: "Temporary by Design",
+                  desc: "Your event site disappears when you no longer need it. Clean, purposeful, and built for a specific moment in time.",
+                },
+                {
                   Icon: Lightning,
-                  title: "Speed",
-                  desc: "We engineer custom web applications using Next.js. Your clients will be booking on their phones. Our sites load instantly, creating a frictionless experience.",
-                },
-                {
-                  Icon: LockKey,
-                  title: "No Commission Fees",
-                  desc: "You own the website. You will never pay a percentage of bookings or sales. You only pay standard transaction fees to your payment gateway.",
-                },
-                {
-                  Icon: Toolbox,
-                  title: "Easy Management Dashboard",
-                  desc: "A simple, clear backend calendar to manage your staff, block out lunch hours, and track daily revenue.",
+                  title: "Lightning Fast",
+                  desc: "Built on Next.js, your event page loads in under a second — even on slow mobile connections at the venue.",
                 },
               ].map(({ Icon, title, desc }) => (
                 <div
@@ -299,11 +316,11 @@ export const BarbershopPage = () => {
             }`}
           >
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] flex items-center gap-3">
-              Barbershop Packages
+              Event Packages
               <span className="h-px flex-1 bg-white/10 ml-4 hidden md:block" />
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[650px]">
-              Once-off pricing. No monthly retainers, no commission cuts, no hidden fees. Your first year of hosting is included.
+              Once-off pricing. No subscriptions. Just a premium digital experience for one unforgettable event.
             </p>
           </div>
 
@@ -337,7 +354,6 @@ export const BarbershopPage = () => {
                   </div>
                 )}
 
-                {/* Card header */}
                 <div className="px-7 pt-8 pb-5 border-b-2 border-white/[0.1]">
                   <h3 className="text-xl font-bold text-center text-white leading-tight uppercase tracking-wide font-obviously">
                     {pkg.title}
@@ -363,14 +379,12 @@ export const BarbershopPage = () => {
                   </p>
                 </div>
 
-                {/* Features */}
                 <div className="flex-1 px-7 py-2">
                   {pkg.features.map((feature, fIdx) => (
                     <FeatureListItem key={fIdx} feature={feature} />
                   ))}
                 </div>
 
-                {/* Footer */}
                 <div className="px-7 pb-7 pt-4 border-t-2 border-white/[0.1] mt-2 space-y-3">
                   <div className="flex items-center gap-2">
                     <Clock className="w-3.5 h-3.5 text-[#e7fe56]/60 shrink-0" />
@@ -387,7 +401,7 @@ export const BarbershopPage = () => {
                     <ArrowRight className="w-4 h-4" />
                   </a>
                   <a
-                    href={`${WA_BASE}${pkg.waText}`}
+                    href={WA_BASE}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 bg-transparent text-white/50 border border-white/15 hover:border-[#25D366]/50 hover:text-[#25D366] hover:bg-[#25D366]/5"
@@ -402,36 +416,6 @@ export const BarbershopPage = () => {
         </div>
       </section>
 
-      {/* ── SEE OUR WORK ── */}
-      <section ref={galleryRef} className="relative py-16 md:py-20 px-6">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div
-            className={`opacity-0 ${
-              galleryVisible
-                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
-                : ""
-            }`}
-          >
-            <p className="text-[#72f5e3] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
-              See Our Work
-            </p>
-            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-10">
-              Check out our latest{" "}
-              <span className="italic text-outline-15">barbershop project</span>
-            </h2>
-            <div className="flex justify-center">
-              <a
-                href="/projects/xclusive-barber"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-[#72f5e3] text-[#72f5e3] font-semibold hover:bg-[#72f5e3]/10 transition-all duration-300"
-              >
-                View Xclusive Barber Case Study
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
       <FAQ
         title="FAQ"
@@ -439,17 +423,17 @@ export const BarbershopPage = () => {
         description={
           <>
             <span className="text-white font-semibold">Got questions?</span>{" "}
-            Everything you need to know about our barbershop booking and website solutions.
+            Everything you need to know about our private event and milestone birthday website packages.
           </>
         }
       />
 
       {/* ── CTA ── */}
       <CTASection
-        heading="Ready to modernize your barbershop?"
+        heading="Ready to plan your event?"
         linkTo="/contact"
-        linkText="Get in Touch"
-        color="#72f5e3"
+        linkText="Get a Quote"
+        color="#e7fe56"
       />
     </>
   );
