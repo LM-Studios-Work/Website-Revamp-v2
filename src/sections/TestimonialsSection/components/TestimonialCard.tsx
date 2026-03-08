@@ -31,7 +31,9 @@ export const TestimonialCard = (props: TestimonialCardProps) => {
   const truncatedText = isLong && !isExpanded ? displayedText + "..." : displayedText;
 
   const cardContent = (
-    <div className="bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 md:hover:border-white/10 md:hover:bg-white/[0.07] transition-all duration-300 group aspect-square">
+    <div className={`bg-white/5 backdrop-blur-sm flex flex-col rounded-2xl border border-white/5 md:hover:border-white/10 md:hover:bg-white/[0.07] transition-all duration-300 group ${
+      !isExpanded ? 'aspect-square' : 'h-full'
+    } overflow-hidden`}>
       <div className="flex flex-col pt-6 px-6 gap-1">
         <span className="text-lg font-semibold text-white">{props.name}</span>
         <div className="flex items-center gap-1">
@@ -49,7 +51,7 @@ export const TestimonialCard = (props: TestimonialCardProps) => {
         <span className="text-sm text-white/50">{props.title}</span>
       </div>
       <div className="grow flex flex-col p-6">
-        <p className="text-white/70 text-sm leading-relaxed flex-1">
+        <p className="text-white/70 text-sm leading-relaxed">
           {truncatedText}
         </p>
         {isLong && (
