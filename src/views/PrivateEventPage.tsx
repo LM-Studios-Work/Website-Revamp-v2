@@ -11,8 +11,8 @@ import {
   Timer,
   ListChecks,
   Lightning,
-  Smartphone,
-  Star,
+  DeviceMobile,
+  Sparkle,
 } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
@@ -163,7 +163,7 @@ export const PrivateEventPage = () => {
                   desc: "If friends are pitching in for a large gift, or the event requires a cover charge, chasing people for EFTs is exhausting and awkward.",
                 },
                 {
-                  Icon: Star,
+                  Icon: Sparkle,
                   title: "Communicating the Vibe",
                   desc: "Is there a strict dress code? Is it a surprise party? Is it B.O.B? Getting everyone on the same page is incredibly difficult without a central point of information.",
                 },
@@ -271,12 +271,12 @@ export const PrivateEventPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {[
                 {
-                  Icon: Star,
+                  Icon: Sparkle,
                   title: "Premium First Impression",
                   desc: "A custom webpage shows your guests this is a must-attend occasion. The quality of your invitation sets the tone for the entire event.",
                 },
                 {
-                  Icon: Smartphone,
+                  Icon: DeviceMobile,
                   title: "No App Downloads",
                   desc: "Our sites load instantly on mobile and require zero app downloads from your guests. Just share a link and they're in.",
                 },

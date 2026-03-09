@@ -11,7 +11,7 @@ import {
   ChatCircle,
   Image,
   Lightning,
-  Smartphone,
+  DeviceMobile,
   Globe,
 } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
@@ -284,7 +284,7 @@ export const WeddingPage = () => {
                   desc: "Tailored to your wedding theme and colours. No generic templates — every site is built from scratch to match your aesthetic.",
                 },
                 {
-                  Icon: Smartphone,
+                  Icon: DeviceMobile,
                   title: "Mobile-First Performance",
                   desc: "99% of your guests will view this on their phones. Our Next.js builds ensure the site loads instantly, every time.",
                 },
