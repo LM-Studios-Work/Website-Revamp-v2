@@ -71,6 +71,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${DOMAIN}/services/barbershop`,
+      lastModified: new Date("2025-01-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${DOMAIN}/services/custom-wedding-websites`,
+      lastModified: new Date("2025-01-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${DOMAIN}/services/e-commerce`,
+      lastModified: new Date("2025-01-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${DOMAIN}/services/private-event-websites`,
+      lastModified: new Date("2025-01-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${DOMAIN}/services/web-design/care-plan`,
+      lastModified: new Date("2025-01-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${DOMAIN}/web-design-johannesburg`,
       lastModified: new Date("2025-01-01"),
       changeFrequency: "monthly",
