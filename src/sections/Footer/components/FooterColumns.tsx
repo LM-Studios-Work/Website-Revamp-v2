@@ -38,6 +38,7 @@ export const FooterColumns = () => {
             href: "https://www.instagram.com/lmwebdesign/",
             text: "Instagram",
             title: "Instagram",
+            ariaLabel: "Follow us on Instagram (opens in a new tab)",
           },
         ]}
       />
