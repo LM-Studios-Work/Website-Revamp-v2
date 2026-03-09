@@ -1,4 +1,7 @@
-import { Star } from "@phosphor-icons/react";
+"use client";
+
+import { Star, ArrowUpRight } from "@phosphor-icons/react";
+import { useState } from "react";
 
 export type TestimonialCardProps = {
   name: string;
@@ -12,15 +15,25 @@ export type TestimonialCardProps = {
 };
 
 export const TestimonialCard = (props: TestimonialCardProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
   const staggerClass =
     props.index !== undefined
       ? `anim-stagger-${Math.min(props.index + 1, 3)}`
       : "";
 
   const stars = props.rating ?? 5;
+  
+  // Limit testimonial text to ~100 characters for collapsed view
+  const maxLength = 100;
+  const isLong = props.testimonial.length > maxLength;
+  const displayedText = isExpanded ? props.testimonial : props.testimonial.substring(0, maxLength);
+  const truncatedText = isLong && !isExpanded ? displayedText + "..." : displayedText;
 
   const cardContent = (
-    <div className="bg-white/5 backdrop-blur-sm flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 md:hover:border-white/10 md:hover:bg-white/[0.07] transition-all duration-300 group">
+    <div className={`bg-white/5 backdrop-blur-sm flex flex-col rounded-2xl border border-white/5 md:hover:border-white/10 md:hover:bg-white/[0.07] transition-all duration-300 group ${
+      !isExpanded ? 'aspect-square' : 'h-full'
+    } overflow-hidden`}>
       <div className="flex flex-col pt-6 px-6 gap-1">
         <span className="text-lg font-semibold text-white">{props.name}</span>
         <div className="flex items-center gap-1">
@@ -37,10 +50,35 @@ export const TestimonialCard = (props: TestimonialCardProps) => {
         </div>
         <span className="text-sm text-white/50">{props.title}</span>
       </div>
-      <div className="grow p-6">
+      <div className="grow flex flex-col p-6">
         <p className="text-white/70 text-sm leading-relaxed">
-          {props.testimonial}
+          {truncatedText}
         </p>
+        {isLong && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsExpanded(!isExpanded);
+            }}
+            className="mt-3 text-[#e7fe56] text-xs font-semibold hover:text-[#e7fe56]/80 transition-colors flex items-center gap-1"
+          >
+            {isExpanded ? "Show less" : "Read more"}
+            {!isExpanded && <ArrowUpRight size={12} className="rotate-45" />}
+          </button>
+        )}
+        {props.url && (
+          <a
+            href={props.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="mt-3 text-[#72f5e3] text-xs font-semibold hover:text-[#72f5e3]/80 transition-colors flex items-center gap-1"
+          >
+            View on Google
+            <ArrowUpRight size={12} />
+          </a>
+        )}
       </div>
     </div>
   );
@@ -60,14 +98,16 @@ export const TestimonialCard = (props: TestimonialCardProps) => {
 
   if (props.url) {
     return (
-      <a
-        href={props.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={containerClasses}
+      <div
+        onClick={() => {
+          if (isLong) {
+            setIsExpanded(!isExpanded);
+          }
+        }}
+        className={`${containerClasses} cursor-pointer`}
       >
         {cardContent}
-      </a>
+      </div>
     );
   }
 
