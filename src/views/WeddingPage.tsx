@@ -13,13 +13,19 @@ import {
   Lightning,
   DeviceMobile,
   Globe,
+  ShieldCheck,
+  CloudArrowUp,
+  Toolbox,
 } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
+import { ProcessCard } from "@/components/ProcessCard";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/sections/FAQ";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useDraggableScroll } from "@/hooks/useDraggableScroll";
 
-const WA_BASE = "https://wa.me/27814272624?text=Hi%2C%20I'm%20interested%20in%20a%20custom%20wedding%20website";
+const WA_BASE =
+  "https://wa.me/27814272624?text=Hi%2C%20I'm%20interested%20in%20a%20custom%20wedding%20website";
 
 type FeatureItem = string | { text: string; tooltip: string };
 
@@ -76,6 +82,44 @@ const packages = [
   },
 ];
 
+const processSteps = [
+  {
+    step: 1,
+    variant: "lime" as const,
+    title: "Vision Call",
+    description:
+      "We learn about your wedding theme, colour palette, venue, and everything that makes your day unique — so the website feels personal, not generic.",
+  },
+  {
+    step: 2,
+    variant: "purple" as const,
+    title: "Design & Theme",
+    description:
+      "A high-fidelity mockup designed specifically to match your wedding aesthetic. You approve every element before a single line of code is written.",
+  },
+  {
+    step: 3,
+    variant: "cyan" as const,
+    title: "Build & Integrate",
+    description:
+      "Custom Next.js build with RSVP system, Google Maps, countdown timer, and payment gateways for your gift registry — all connected and tested.",
+  },
+  {
+    step: 4,
+    variant: "glass" as const,
+    title: "Content & Setup",
+    description:
+      "We populate the site with your photos, copy, venue details, and itinerary. Your RSVP form is configured with your specific questions and deadline.",
+  },
+  {
+    step: 5,
+    variant: "lime" as const,
+    title: "Launch & Handover",
+    description:
+      "Your site goes live on your custom domain. We walk you through how to check RSVPs, update details, and export your guest list anytime.",
+  },
+];
+
 const faqItems = [
   {
     question: "Can we keep the website active after the wedding?",
@@ -100,14 +144,18 @@ const faqItems = [
 ];
 
 export const WeddingPage = () => {
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.1);
   const { ref: problemsRef, isVisible: problemsVisible } =
     useScrollAnimation(0.1);
   const { ref: solutionRef, isVisible: solutionVisible } =
     useScrollAnimation(0.1);
+  const { ref: warrantyRef, isVisible: warrantyVisible } =
+    useScrollAnimation(0.15);
+  const { ref: processRef, isVisible: processVisible } =
+    useScrollAnimation(0.1);
   const { ref: packagesRef, isVisible: packagesVisible } =
     useScrollAnimation(0.1);
-  const { ref: includesRef, isVisible: includesVisible } =
-    useScrollAnimation(0.1);
+  const { ref: dragRef, events: dragEvents, isDragging } = useDraggableScroll();
 
   return (
     <>
@@ -127,6 +175,60 @@ export const WeddingPage = () => {
           </span>
         }
       />
+
+      {/* ── STATS STRIP ── */}
+      <section
+        ref={statsRef}
+        className="border-y border-white/[0.06] py-10 md:py-12 px-6"
+      >
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div
+            className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 opacity-0 ${
+              statsVisible ? "animate-[fadeInUp_0.6s_ease-out_0.1s_both]" : ""
+            }`}
+          >
+            {[
+              {
+                value: "R0",
+                label: "Monthly fees — ever, for any package",
+                color: "#e7fe56",
+              },
+              {
+                value: "0%",
+                label: "Commission on gift fund contributions",
+                color: "#72f5e3",
+              },
+              {
+                value: "6 mo",
+                label: "Warranty included on every project",
+                color: "#d5bff0",
+              },
+              {
+                value: "< 48h",
+                label: "Turnaround on last-minute content changes",
+                color: "#e7fe56",
+              },
+            ].map((stat, idx) => (
+              <div
+                key={idx}
+                className={`${
+                  idx < 3 ? "md:border-r md:border-white/[0.06]" : ""
+                } md:px-10 first:md:pl-0 last:md:pr-0`}
+              >
+                <p
+                  className="text-4xl md:text-5xl font-bold tracking-tight mb-1.5 font-obviously"
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </p>
+                <p className="text-white/40 text-sm leading-snug">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── PROBLEMS ── */}
       <section ref={problemsRef} className="relative py-16 md:py-28 px-6">
@@ -155,7 +257,7 @@ export const WeddingPage = () => {
                 },
                 {
                   Icon: MapPin,
-                  title: "The \"Where is the venue?\" Texts",
+                  title: 'The "Where is the venue?" Texts',
                   desc: "On the morning of your wedding, your phone is blowing up with guests asking for the address, the time, or the dress code.",
                 },
                 {
@@ -206,7 +308,9 @@ export const WeddingPage = () => {
               A Centralised Digital Hub for Your Guests
             </h2>
             <p className="text-white/55 text-base leading-relaxed text-center max-w-2xl mx-auto mb-14">
-              We design beautiful, custom-coded wedding websites that act as your digital invitation and guest management system — far beyond a basic PDF invite.
+              We design beautiful, custom-coded wedding websites that act as your
+              digital invitation and guest management system — far beyond a basic
+              PDF invite.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -221,7 +325,7 @@ export const WeddingPage = () => {
                   Icon: MapPin,
                   number: "02",
                   title: "Interactive Itineraries & Maps",
-                  desc: "Whether you have a single service or a multi-part celebration, we lay out the timeline beautifully. With integrated Google Maps, guests just tap \"Get Directions\" and drive straight to the venue.",
+                  desc: 'Whether you have a single service or a multi-part celebration, we lay out the timeline beautifully. With integrated Google Maps, guests just tap "Get Directions" and drive straight to the venue.',
                 },
                 {
                   Icon: Gift,
@@ -259,50 +363,176 @@ export const WeddingPage = () => {
       </section>
 
       {/* ── WHAT'S INCLUDED ── */}
-      <section ref={includesRef} className="relative py-16 md:py-20 px-6">
+      <section ref={warrantyRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
-            className={`opacity-0 ${
-              includesVisible
+            className={`mb-10 opacity-0 ${
+              warrantyVisible
                 ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                 : ""
             }`}
           >
-            <p className="text-[#72f5e3] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
-              Every Package Includes
-            </p>
-            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-12">
-              Built to perform on{" "}
-              <span className="italic text-outline-15">every device</span>
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-white mb-3">
+              What&apos;s{" "}
+              <span className="italic text-outline-2">included</span>
             </h2>
+            <p className="text-lg text-white/70 max-w-[600px]">
+              Every wedding website ships with built-in peace of mind — no
+              hidden costs, no surprises.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  Icon: Image,
-                  title: "Bespoke Design",
-                  desc: "Tailored to your wedding theme and colours. No generic templates — every site is built from scratch to match your aesthetic.",
-                },
-                {
-                  Icon: DeviceMobile,
-                  title: "Mobile-First Performance",
-                  desc: "99% of your guests will view this on their phones. Our Next.js builds ensure the site loads instantly, every time.",
-                },
-                {
-                  Icon: Globe,
-                  title: "Custom Domain",
-                  desc: "A memorable domain like www.boikanyo-and-lesego.co.za to keep it premium and personal.",
-                },
-              ].map(({ Icon, title, desc }) => (
-                <div
-                  key={title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex flex-col gap-4"
-                >
-                  <Icon className="w-8 h-8 text-[#72f5e3]" />
-                  <h3 className="text-white font-semibold text-lg">{title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Warranty Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.3s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                6-Month Warranty
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                Bug fixes, content updates, and browser compatibility — all
+                covered for 6 months post-launch at no extra charge. Perfect for
+                last-minute wedding day changes.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Code bug fixes & broken links",
+                  "Browser compatibility patches",
+                  "Minor text & image swaps",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Domain & Hosting Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.5s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <CloudArrowUp className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                Custom Domain &amp; Hosting
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                Your personalised domain (e.g.{" "}
+                <em>www.boikanyo-and-lesego.co.za</em>) and one year of hosting
+                are included — no extra cost, no setup hassle.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Custom .co.za domain — included",
+                  "First year hosting — free",
+                  "Free SSL Certificate",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bespoke Design Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.7s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <Toolbox className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                Bespoke Design
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                No generic templates. Every site is built from scratch to match
+                your wedding aesthetic, colours, and theme — designed to load
+                instantly on every phone.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Tailored to your theme & colours",
+                  "Mobile-first, sub-second load times",
+                  "Instant updates — any time",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR PROCESS ── */}
+      <section ref={processRef} className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div
+            className={`mb-10 opacity-0 ${
+              processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+            }`}
+          >
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px]">
+              Our <span className="italic text-outline-15">process</span>
+            </h2>
+            <p className="mt-4 text-white/70 text-lg max-w-[600px]">
+              From first conversation to your live wedding website — a clear,
+              structured build every time.
+            </p>
+          </div>
+
+          <div
+            className="-mx-6 md:-mx-12"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, black 80%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to right, black 80%, transparent 100%)",
+            }}
+          >
+            <div
+              ref={dragRef}
+              {...dragEvents}
+              className={`overflow-x-auto scrollbar-hide snap-x snap-mandatory md:snap-none scroll-px-6 md:scroll-px-12 px-6 md:px-12 pb-8 ${
+                isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+              }`}
+            >
+              <div className="flex gap-4 md:gap-8 w-max justify-start pr-12 md:pr-32 pointer-events-none">
+                {processSteps.map((card, idx) => (
+                  <div
+                    key={card.step}
+                    className={`snap-start snap-always md:snap-align-none w-[280px] md:w-[400px] shrink-0 transition-all duration-700 pointer-events-auto ${
+                      processVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                    }`}
+                    style={{ transitionDelay: `${idx * 150}ms` }}
+                  >
+                    <ProcessCard {...card} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -323,7 +553,8 @@ export const WeddingPage = () => {
               <span className="h-px flex-1 bg-white/10 ml-4 hidden md:block" />
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[650px]">
-              Once-off pricing. No subscriptions, no hidden fees. Just a beautiful website for the most important day of your life.
+              Once-off pricing. No subscriptions, no hidden fees. Just a
+              beautiful website for the most important day of your life.
             </p>
           </div>
 
@@ -333,7 +564,9 @@ export const WeddingPage = () => {
                 key={pkg.title}
                 className={`relative flex flex-col h-full rounded-2xl opacity-0 ${
                   packagesVisible
-                    ? `animate-[fadeInUp_0.8s_ease-out_${["0.2s", "0.35s"][pkgIdx]}_both]`
+                    ? `animate-[fadeInUp_0.8s_ease-out_${
+                        ["0.2s", "0.35s"][pkgIdx]
+                      }_both]`
                     : ""
                 }`}
                 style={
@@ -368,7 +601,9 @@ export const WeddingPage = () => {
                   )}
                   <div className="mt-4 flex items-center justify-center gap-3">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-xs text-white/50 font-semibold">from</span>
+                      <span className="text-xs text-white/50 font-semibold">
+                        from
+                      </span>
                       <span className="text-2xl font-semibold text-white">
                         {pkg.price}
                       </span>
@@ -426,7 +661,8 @@ export const WeddingPage = () => {
         description={
           <>
             <span className="text-white font-semibold">Got questions?</span>{" "}
-            Everything you need to know about our custom wedding websites and digital invitation packages.
+            Everything you need to know about our custom wedding websites and
+            digital invitation packages.
           </>
         }
       />

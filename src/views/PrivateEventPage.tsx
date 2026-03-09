@@ -13,11 +13,16 @@ import {
   Lightning,
   DeviceMobile,
   Sparkle,
+  ShieldCheck,
+  CloudArrowUp,
+  Toolbox,
 } from "@phosphor-icons/react";
 import { ServiceHero } from "@/components/ServiceHero";
+import { ProcessCard } from "@/components/ProcessCard";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/sections/FAQ";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useDraggableScroll } from "@/hooks/useDraggableScroll";
 
 const WA_BASE =
   "https://wa.me/27814272624?text=Hi%2C%20I'm%20interested%20in%20a%20private%20event%20website";
@@ -76,6 +81,44 @@ const packages = [
   },
 ];
 
+const processSteps = [
+  {
+    step: 1,
+    variant: "lime" as const,
+    title: "Event Brief",
+    description:
+      "We learn about your event — the theme, vibe, guest count, and everything you want attendees to feel when they land on the page.",
+  },
+  {
+    step: 2,
+    variant: "purple" as const,
+    title: "Design & Theming",
+    description:
+      "A high-fidelity design mockup matching your event's aesthetic. You approve every element before development begins.",
+  },
+  {
+    step: 3,
+    variant: "cyan" as const,
+    title: "Build & Integrate",
+    description:
+      "Custom Next.js development with RSVP forms, ticketing, payment gateways, countdown timers, and Google Maps — fully connected.",
+  },
+  {
+    step: 4,
+    variant: "glass" as const,
+    title: "Setup & Testing",
+    description:
+      "All event details, RSVP questions, and payment flows are configured and tested end-to-end before anything goes live.",
+  },
+  {
+    step: 5,
+    variant: "lime" as const,
+    title: "Launch & Go Live",
+    description:
+      "Your event page goes live on your custom link. Share it with guests and watch RSVPs roll in — everything tracked in your private dashboard.",
+  },
+];
+
 const faqItems = [
   {
     question: "What kind of events is this suited for?",
@@ -100,13 +143,18 @@ const faqItems = [
 ];
 
 export const PrivateEventPage = () => {
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.1);
   const { ref: problemsRef, isVisible: problemsVisible } =
     useScrollAnimation(0.1);
   const { ref: solutionRef, isVisible: solutionVisible } =
     useScrollAnimation(0.1);
-  const { ref: whyRef, isVisible: whyVisible } = useScrollAnimation(0.1);
+  const { ref: warrantyRef, isVisible: warrantyVisible } =
+    useScrollAnimation(0.15);
+  const { ref: processRef, isVisible: processVisible } =
+    useScrollAnimation(0.1);
   const { ref: packagesRef, isVisible: packagesVisible } =
     useScrollAnimation(0.1);
+  const { ref: dragRef, events: dragEvents, isDragging } = useDraggableScroll();
 
   return (
     <>
@@ -126,6 +174,60 @@ export const PrivateEventPage = () => {
           </span>
         }
       />
+
+      {/* ── STATS STRIP ── */}
+      <section
+        ref={statsRef}
+        className="border-y border-white/[0.06] py-10 md:py-12 px-6"
+      >
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div
+            className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 opacity-0 ${
+              statsVisible ? "animate-[fadeInUp_0.6s_ease-out_0.1s_both]" : ""
+            }`}
+          >
+            {[
+              {
+                value: "R0",
+                label: "Monthly fees — ever, for any package",
+                color: "#e7fe56",
+              },
+              {
+                value: "0%",
+                label: "Commission on ticket or fund collection",
+                color: "#72f5e3",
+              },
+              {
+                value: "3 days",
+                label: "Minimum turnaround from deposit to live",
+                color: "#d5bff0",
+              },
+              {
+                value: "100%",
+                label: "Private RSVP list — guests only, no leaks",
+                color: "#e7fe56",
+              },
+            ].map((stat, idx) => (
+              <div
+                key={idx}
+                className={`${
+                  idx < 3 ? "md:border-r md:border-white/[0.06]" : ""
+                } md:px-10 first:md:pl-0 last:md:pr-0`}
+              >
+                <p
+                  className="text-4xl md:text-5xl font-bold tracking-tight mb-1.5 font-obviously"
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </p>
+                <p className="text-white/40 text-sm leading-snug">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── PROBLEMS ── */}
       <section ref={problemsRef} className="relative py-16 md:py-28 px-6">
@@ -155,7 +257,7 @@ export const PrivateEventPage = () => {
                 {
                   Icon: ListChecks,
                   title: "Unclear Numbers",
-                  desc: "When you're paying for catering, a venue, or a bar tab per head, \"I think I'm coming\" isn't good enough. You need hard numbers, but people are notoriously bad at committing.",
+                  desc: 'When you\'re paying for catering, a venue, or a bar tab per head, "I think I\'m coming" isn\'t good enough. You need hard numbers, but people are notoriously bad at committing.',
                 },
                 {
                   Icon: CurrencyDollar,
@@ -205,7 +307,8 @@ export const PrivateEventPage = () => {
               A Premium Event Landing Page
             </h2>
             <p className="text-white/55 text-base leading-relaxed text-center max-w-2xl mx-auto mb-14">
-              We build high-impact, temporary event websites designed to build hype and automate your event management.
+              We build high-impact, temporary event websites designed to build
+              hype and automate your event management.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -227,7 +330,7 @@ export const PrivateEventPage = () => {
                 },
                 {
                   number: "04",
-                  title: "The \"Need to Know\" Section",
+                  title: 'The "Need to Know" Section',
                   desc: "Eliminate repetitive questions. Clear, stylish sections outlining the itinerary, dress code with visual mood boards, parking instructions, and integrated Google Maps for the venue.",
                 },
               ].map(({ number, title, desc }) => (
@@ -253,53 +356,177 @@ export const PrivateEventPage = () => {
         </div>
       </section>
 
-      {/* ── WHY CUSTOM ── */}
-      <section ref={whyRef} className="relative py-16 md:py-20 px-6">
+      {/* ── WHAT'S INCLUDED ── */}
+      <section ref={warrantyRef} className="relative z-10 py-16 md:py-28 px-6">
         <div className="max-w-[1400px] w-full mx-auto">
           <div
-            className={`opacity-0 ${
-              whyVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+            className={`mb-10 opacity-0 ${
+              warrantyVisible
+                ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                : ""
             }`}
           >
-            <p className="text-[#e7fe56] text-sm font-semibold uppercase tracking-widest mb-3 text-center">
-              Why Choose a Custom Event Site?
-            </p>
-            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-center mb-12">
-              Unlike Facebook Events or digital flyers
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-white mb-3">
+              What&apos;s{" "}
+              <span className="italic text-outline-2">included</span>
             </h2>
+            <p className="text-lg text-white/70 max-w-[600px]">
+              Every event website ships with built-in peace of mind — no hidden
+              costs, no surprises.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  Icon: Sparkle,
-                  title: "Premium First Impression",
-                  desc: "A custom webpage shows your guests this is a must-attend occasion. The quality of your invitation sets the tone for the entire event.",
-                },
-                {
-                  Icon: DeviceMobile,
-                  title: "No App Downloads",
-                  desc: "Our sites load instantly on mobile and require zero app downloads from your guests. Just share a link and they're in.",
-                },
-                {
-                  Icon: Timer,
-                  title: "Temporary by Design",
-                  desc: "Your event site disappears when you no longer need it. Clean, purposeful, and built for a specific moment in time.",
-                },
-                {
-                  Icon: Lightning,
-                  title: "Lightning Fast",
-                  desc: "Built on Next.js, your event page loads in under a second — even on slow mobile connections at the venue.",
-                },
-              ].map(({ Icon, title, desc }) => (
-                <div
-                  key={title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex flex-col gap-4"
-                >
-                  <Icon className="w-8 h-8 text-[#e7fe56]" />
-                  <h3 className="text-white font-semibold text-lg">{title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Warranty Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.3s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                6-Month Warranty
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                Bug fixes, content edits, and browser compatibility — all
+                covered for 6 months post-launch at no extra charge. Last-minute
+                event changes included.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Code bug fixes & broken links",
+                  "Browser compatibility patches",
+                  "Minor text & image swaps",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Hosting & Domain Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#d5bff0] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.5s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <CloudArrowUp className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                Custom Link &amp; Hosting
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                Your event gets its own branded link or domain with fast hosting
+                and an SSL certificate — included in every package at no
+                additional cost.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Custom event domain or link",
+                  "Hosting for the event duration",
+                  "Free SSL Certificate",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Private Dashboard Card */}
+            <div
+              className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#72f5e3] text-black flex flex-col opacity-0 ${
+                warrantyVisible
+                  ? "animate-[fadeInUp_0.8s_ease-out_0.7s_both]"
+                  : ""
+              }`}
+            >
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/10 flex items-center justify-center mb-5 md:mb-6">
+                <Toolbox className="w-5 h-5" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">
+                Private Guest Dashboard
+              </h3>
+              <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
+                Track RSVPs in real-time, export your guest list for caterers,
+                and monitor ticket or fund contributions — all from your private
+                dashboard.
+              </p>
+              <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
+                {[
+                  "Real-time RSVP tracking",
+                  "Exportable guest list (CSV)",
+                  "Payment & contribution overview",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" />
+                    <span className="text-sm">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR PROCESS ── */}
+      <section ref={processRef} className="relative z-10 py-16 md:py-28 px-6">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <div
+            className={`mb-10 opacity-0 ${
+              processVisible ? "animate-[fadeInUp_0.8s_ease-out_0.2s_both]" : ""
+            }`}
+          >
+            <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px]">
+              Our <span className="italic text-outline-15">process</span>
+            </h2>
+            <p className="mt-4 text-white/70 text-lg max-w-[600px]">
+              From first conversation to your live event page — as fast as 3
+              working days.
+            </p>
+          </div>
+
+          <div
+            className="-mx-6 md:-mx-12"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, black 80%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to right, black 80%, transparent 100%)",
+            }}
+          >
+            <div
+              ref={dragRef}
+              {...dragEvents}
+              className={`overflow-x-auto scrollbar-hide snap-x snap-mandatory md:snap-none scroll-px-6 md:scroll-px-12 px-6 md:px-12 pb-8 ${
+                isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+              }`}
+            >
+              <div className="flex gap-4 md:gap-8 w-max justify-start pr-12 md:pr-32 pointer-events-none">
+                {processSteps.map((card, idx) => (
+                  <div
+                    key={card.step}
+                    className={`snap-start snap-always md:snap-align-none w-[280px] md:w-[400px] shrink-0 transition-all duration-700 pointer-events-auto ${
+                      processVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                    }`}
+                    style={{ transitionDelay: `${idx * 150}ms` }}
+                  >
+                    <ProcessCard {...card} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -320,7 +547,8 @@ export const PrivateEventPage = () => {
               <span className="h-px flex-1 bg-white/10 ml-4 hidden md:block" />
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[650px]">
-              Once-off pricing. No subscriptions. Just a premium digital experience for one unforgettable event.
+              Once-off pricing. No subscriptions. Just a premium digital
+              experience for one unforgettable event.
             </p>
           </div>
 
@@ -330,7 +558,9 @@ export const PrivateEventPage = () => {
                 key={pkg.title}
                 className={`relative flex flex-col h-full rounded-2xl opacity-0 ${
                   packagesVisible
-                    ? `animate-[fadeInUp_0.8s_ease-out_${["0.2s", "0.35s"][pkgIdx]}_both]`
+                    ? `animate-[fadeInUp_0.8s_ease-out_${
+                        ["0.2s", "0.35s"][pkgIdx]
+                      }_both]`
                     : ""
                 }`}
                 style={
@@ -365,7 +595,9 @@ export const PrivateEventPage = () => {
                   )}
                   <div className="mt-4 flex items-center justify-center gap-3">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-xs text-white/50 font-semibold">from</span>
+                      <span className="text-xs text-white/50 font-semibold">
+                        from
+                      </span>
                       <span className="text-2xl font-semibold text-white">
                         {pkg.price}
                       </span>
@@ -423,7 +655,8 @@ export const PrivateEventPage = () => {
         description={
           <>
             <span className="text-white font-semibold">Got questions?</span>{" "}
-            Everything you need to know about our private event and milestone birthday website packages.
+            Everything you need to know about our private event and milestone
+            birthday website packages.
           </>
         }
       />
