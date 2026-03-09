@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   authors: [{ name: "LMWebDesign" }],
   alternates: { canonical: DOMAIN },
+  // Bing Webmaster Tools verification — replace with your code from https://www.bing.com/webmasters
+  // verification: { other: { "msvalidate.01": "YOUR_BING_VERIFICATION_CODE_HERE" } },
   openGraph: {
     type: "website",
     siteName: "LMWebDesign",
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     title: "Web Design Midrand & Johannesburg | LMWebDesign",
     description:
       "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
-    images: [{ url: "/lmwebdesignlogo.png", alt: "LMWebDesign logo" }],
+    images: [{ url: "/lmwebdesignlogo.png", alt: "LMWebDesign logo", width: 512, height: 512 }],
     locale: "en_ZA",
   },
   twitter: {
@@ -57,10 +59,14 @@ const localBusinessSchema = {
     addressRegion: CONTACT_DETAILS.address.region,
     addressCountry: CONTACT_DETAILS.address.countryCode,
   },
-  areaServed: {
-    "@type": "Country",
-    name: "South Africa",
-  },
+  priceRange: "$$",
+  areaServed: [
+    { "@type": "City", name: "Midrand" },
+    { "@type": "City", name: "Johannesburg" },
+    { "@type": "City", name: "Pretoria" },
+    { "@type": "AdministrativeArea", name: "Gauteng" },
+    { "@type": "Country", name: "South Africa" },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Web Services",
@@ -91,7 +97,9 @@ const localBusinessSchema = {
       },
     ],
   },
-  sameAs: ["https://www.instagram.com/lmwebdesign/"],
+  sameAs: [
+    "https://www.instagram.com/lmwebdesign/",
+  ],
 };
 
 export default function RootLayout({
@@ -100,7 +108,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en-ZA">
       <head>
         <link
           rel="icon"
@@ -108,6 +116,11 @@ export default function RootLayout({
           href="/lmwebdesignlogo.png"
           sizes="any"
         />
+        {/* Geo meta tags — help Bing and other engines with local relevance */}
+        <meta name="geo.region" content="ZA-GP" />
+        <meta name="geo.placename" content="Midrand, Gauteng, South Africa" />
+        <meta name="geo.position" content="-26.0122;28.1284" />
+        <meta name="ICBM" content="-26.0122, 28.1284" />
         {/* Preconnect only to origins actually used at page load */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
