@@ -10,7 +10,7 @@ import {
 import { CaseStudyData } from "@/components/templates/CaseStudyLayout";
 
 export const xclusiveBarberData: CaseStudyData = {
-  websiteUrl: "https://www.xclusivebarber.co.za",
+  websiteUrl: "https://xclusivebarber.co.za",
   category: "Barber & Grooming",
   title: (
     <>
@@ -20,105 +20,105 @@ export const xclusiveBarberData: CaseStudyData = {
     </>
   ),
   description:
-    "How we replaced disruptive mid-haircut phone calls with a seamless, automated Next.js booking platform, helping a Durban barbershop get found on Google and fill every chair.",
+    "Custom booking platform built for Xclusive Barber in Davenport, Durban. The system moved the shop from walk-in to scheduled operations, eliminated queue losses, and gave customers full visibility into barber availability, wait times, and service pricing.",
   location: "Davenport, Durban",
   serviceType: "Barber Shop",
-  features: "Custom Web Design & Booking System",
+  features: "Booking Platform & Local SEO",
   previewImage: {
     src: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
-    alt: "Custom web design Durban — Xclusive Barber website with salon online booking system by LMWebDesign",
+    alt: "Xclusive Barber Davenport Durban — custom booking platform and barbershop website by LMWebDesign",
   },
   problem: {
     quote:
-      "Phone calls were killing productivity. Barbers were forced to stop mid-haircut to take bookings, costing them 3 to 4 appointments a day.",
+      "Customers were walking in, seeing the queue, and walking out. That revenue was gone before the shop even knew it was happening.",
     paragraphs: [
-      "Xclusive Barber is a popular grooming destination in Davenport, Durban, known for precision fades, beard sculpting, and a loyal local following. But their growth was being strangled by two operational headaches.",
-      'When potential clients searched for <span class="text-white/80">&quot;barber in Davenport&quot;</span> or <span class="text-white/80">&quot;haircut near me Chatsworth&quot;</span>, Xclusive Barber didn\'t exist online. Every unanswered Google search was a booking handed to a competitor.',
-      "Every booking came through phone calls, often mid-haircut. Barbers were forced to stop, wipe their hands, and take calls, disrupting the client in the chair and creating a bottleneck that cost real revenue daily.",
+      "Xclusive Barber is an established grooming shop in Davenport, Durban, with a solid local reputation for precision fades and beard work. The problem was operational: the shop had no online presence and no appointment system.",
+      "Walk-in customers would arrive, see the wait, and leave without booking. Because there was no online channel, those customers had no way to check availability in advance or hold a slot. The shop had no visibility into how frequently this was happening or how much revenue it represented.",
+      'Local customers also lacked basic information before making the trip. There was no way to see which barbers were on shift, what the current wait looked like, or what specific services cost. That absence of transparency was enough to push customers toward competitors who offered it. People searching for <span class="text-white/80">&quot;barber in Davenport&quot;</span> or <span class="text-white/80">&quot;haircut near me Durban&quot;</span> were not finding the shop at all.',
     ],
   },
   solution: {
     quote:
-      "A booking platform that runs itself. Clients browse, pick a barber, choose a time, and confirm without a single phone call.",
+      "A scheduled operation with full pricing and availability transparency. Customers know exactly who is cutting, when, and at what cost before they arrive.",
     paragraphs: [
-      "We built a complete digital solution as specialist small business website developers: a custom-designed website paired with a salon online booking system that eliminated every phone interruption.",
-      "Our custom Next.js booking system lets clients browse services, pick a barber, choose a time slot, and confirm, all without a single phone call. Automated reminders cut no-shows, and the team stays focused on the craft.",
-      'On-page SEO targeting <span class="text-white/80">&quot;barber in Davenport&quot;</span> and <span class="text-white/80">&quot;best barber Durban&quot;</span> combined with Schema.org structured data ensures Xclusive Barber now appears in the Google Map Pack where local customers actually look.',
+      "The solution was a production booking platform with a Next.js and TypeScript frontend, an ASP.NET Core 10 Web API backend hosted on Azure, and a Supabase PostgreSQL database with Row Level Security. The platform was also built with local SEO as a core requirement, not an afterthought.",
+      "Customers can view which barbers are working on a given day, see verified service prices, and book a specific time slot. Pricing is fetched and confirmed server-side at checkout, so the price a customer sees is the price the database holds. There is no client-side manipulation possible.",
+      'The site targets search terms like <span class="text-white/80">&quot;barber in Davenport&quot;</span>, <span class="text-white/80">&quot;barbershop Durban&quot;</span>, and related local phrases through structured on-page SEO and Schema.org markup. The goal was to generate consistent inbound leads from customers who are actively looking for a barber in the area.',
     ],
   },
   deliverables: {
     description:
-      "A high-performance website and automated booking system that replaced phone chaos with a revenue machine for this Durban barber shop.",
+      "A production booking platform with payment integration, automated communication, custom business logic, and admin tooling built to run a Durban barbershop as a scheduled operation.",
     highlights: [
       {
         number: "01",
         icon: Globe,
-        title: "Custom Web Design Built for Durban Barbers",
+        title: "Full-Stack Booking Platform",
         description:
-          "We designed a fully bespoke website that captures the premium identity of Xclusive Barber. Bold typography, a dark-themed aesthetic, and high-quality imagery work together to build instant trust with new visitors searching for a barber in Davenport or Durban.",
+          "Built with a Next.js and TypeScript frontend and an ASP.NET Core 10 Web API backend on Azure, backed by Supabase PostgreSQL with Row Level Security. Customers browse barber availability by day, select from verified service prices, and book specific time slots. The shop transitioned from walk-in to fully scheduled.",
       },
       {
         number: "02",
         icon: CalendarCheck,
-        title: "Salon Online Booking System Setup",
+        title: "Double Booking Prevention and Business Rules",
         description:
-          "We replaced the chaos of mid-haircut phone calls with a 100% automated Next.js booking platform. Clients now book appointments 24/7, receive automated confirmations, and the team never has to put down their clippers to answer the phone again.",
+          "The C# backend load balances appointments and returns a 409 Conflict when slots overlap, handling race conditions from concurrent booking attempts. The database enforces the same constraint through a partial unique index. Shop rules are built directly into the API: a R10 penalty for arriving 15 minutes late, mandatory rescheduling at 30 minutes, and automatic cancellation of unpaid holds after 10 minutes.",
       },
       {
         number: "03",
         icon: DeviceMobile,
-        title: "Mobile-First, Sub-Second Load Times",
+        title: "Secure Payments and Automated Communication",
         description:
-          "Over 80% of Xclusive Barber's clients search on their phones. We built a fully responsive, performance-optimised site that loads in under 0.8 seconds on mobile, so customers in Davenport and Chatsworth can find and book in seconds.",
+          "Yoco handles checkouts. Service prices are fetched directly from the database at checkout time, making client-side price tampering impossible. Custom branded emails trigger automatically for booking confirmations, reschedules, and cancellations, keeping customers informed without any manual input from staff.",
       },
       {
         number: "04",
         icon: MagnifyingGlass,
-        title: "Local SEO for Barber Shops in Durban",
+        title: "Local SEO and Admin Dashboard",
         description:
-          "We implemented on-page SEO and Schema.org structured data targeting high-intent phrases like 'barber in Davenport', 'custom web design Durban', and 'haircut Chatsworth'. The result: improved Google Map Pack visibility and more organic walk-ins from local search.",
+          "On-page SEO and Schema.org structured data targeting 'barber Davenport', 'barbershop Durban', and related local terms gives the shop consistent visibility in local search results and the Google Map Pack. The admin CRM lets the owner track daily revenue, individual barber performance, and cancellation metrics across any date range.",
       },
     ],
   },
   results: {
     description:
-      "Hard numbers that prove our custom web design work saves business owners time and makes them money.",
+      "Outcomes after the platform launched at Xclusive Barber in Davenport, Durban.",
     metrics: [
       {
-        metric: "< 0.8s",
-        label: "Mobile Load Time",
+        metric: "0",
+        label: "Queue Walk-Outs",
         description:
-          "Sub-second page loads on 3G and 4G networks, keeping bounce rates near zero",
+          "Customers book in advance. The shop no longer loses revenue to walk-ins who leave after seeing the wait",
       },
       {
         metric: "100%",
         label: "Automated Scheduling",
         description:
-          "Zero phone interruptions during haircuts. Every booking handled automatically",
+          "Every booking, confirmation, reschedule, and cancellation is handled by the platform without staff intervention",
       },
       {
         metric: "Top 3",
         label: "Local Map Pack",
         description:
-          "Ranking in Google's local pack for 'barber Davenport' and 'barber near me Durban'",
+          "Ranking in Google's local pack for 'barber Davenport' and related search terms in Durban",
       },
       {
-        metric: "40%+",
-        label: "More Monthly Bookings",
+        metric: "Full",
+        label: "Pricing Transparency",
         description:
-          "Measurable increase in appointment volume within the first 60 days of launch",
+          "Customers see verified service costs before booking. Prices are enforced server-side at checkout",
       },
     ],
   },
   techStack: [
     "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Vercel",
-    "Custom Booking API",
-    "Google Maps Integration",
+    "TypeScript",
+    "ASP.NET Core 10",
+    "C#",
+    "Azure",
+    "Supabase PostgreSQL",
+    "Yoco Payments",
     "Schema.org Markup",
-    "Responsive Images",
   ],
   cta: {
     title: (
@@ -128,7 +128,7 @@ export const xclusiveBarberData: CaseStudyData = {
       </>
     ),
     description:
-      "Whether you're a barber in Durban, a salon in Johannesburg, or any small business in South Africa that's tired of answering the phone, we build websites that get you found, booked, and paid.",
+      "Whether you run a barber shop in Durban, a salon in Johannesburg, or any service business in South Africa that needs a proper booking system, we build platforms that handle scheduling, payments, and customer communication end to end.",
   },
 };
 
