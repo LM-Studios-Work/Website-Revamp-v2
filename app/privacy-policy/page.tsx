@@ -4,7 +4,7 @@ import { CONTACT_DETAILS } from "@/constants/contact";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "LMWebDesign Privacy Policy — how we collect, use, and protect your personal information in compliance with the Protection of Personal Information Act (POPIA).",
+    "LMWebDesign Privacy Policy: how we collect, use, and protect your personal information in compliance with the Protection of Personal Information Act (POPIA).",
   robots: { index: true, follow: true },
 };
 
@@ -57,23 +57,23 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-white">Contact details</strong> — your
+                <strong className="text-white">Contact details</strong>: your
                 name, email address, and phone number submitted via our contact
                 form or direct communication.
               </li>
               <li>
-                <strong className="text-white">Project information</strong> —
+                <strong className="text-white">Project information</strong>:
                 business name, website requirements, and other details you share
                 during a project consultation.
               </li>
               <li>
-                <strong className="text-white">Usage data</strong> — anonymous
+                <strong className="text-white">Usage data</strong>: anonymous
                 browsing data collected via Google Analytics 4 (pages visited,
                 session duration, device type, approximate location). This data
                 does not identify you personally.
               </li>
               <li>
-                <strong className="text-white">Cookies</strong> — small files
+                <strong className="text-white">Cookies</strong>: small files
                 stored by your browser to enable site functionality and
                 analytics. See Section 7 for more detail.
               </li>
@@ -122,22 +122,22 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
               <li>
-                <strong className="text-white">Contractual necessity</strong> —
+                <strong className="text-white">Contractual necessity</strong>:
                 processing required to deliver the services you have engaged us
                 for.
               </li>
               <li>
-                <strong className="text-white">Legitimate interest</strong> —
+                <strong className="text-white">Legitimate interest</strong>:
                 improving our services and communicating with prospective
                 clients.
               </li>
               <li>
-                <strong className="text-white">Consent</strong> — where you
+                <strong className="text-white">Consent</strong>: where you
                 have explicitly agreed to receive communications or where
                 cookies require your consent.
               </li>
               <li>
-                <strong className="text-white">Legal obligation</strong> —
+                <strong className="text-white">Legal obligation</strong>:
                 where South African law requires us to process or retain
                 certain information.
               </li>
@@ -155,7 +155,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-white">Service providers</strong> —
+                <strong className="text-white">Service providers</strong>:
                 third-party tools we use to operate our business (e.g., Google
                 Analytics, hosting providers). These parties are bound by their
                 own privacy policies and data processing agreements.

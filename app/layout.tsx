@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   authors: [{ name: "LMWebDesign" }],
   alternates: { canonical: DOMAIN },
-  // Bing Webmaster Tools verification — replace with your code from https://www.bing.com/webmasters
+  // Bing Webmaster Tools verification: replace with your code from https://www.bing.com/webmasters
   // verification: { other: { "msvalidate.01": "YOUR_BING_VERIFICATION_CODE_HERE" } },
   openGraph: {
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: DOMAIN,
     title: "Web Design Midrand & Johannesburg | LMWebDesign",
     description:
-      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
+      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses, also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
     images: [{ url: "/lmwebdesignlogo.png", alt: "LMWebDesign logo", width: 512, height: 512 }],
     locale: "en_ZA",
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Web Design Midrand & Johannesburg | LMWebDesign",
     description:
-      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses — also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
+      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses, also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
     images: ["/lmwebdesignlogo.png"],
   },
 };
@@ -116,7 +116,7 @@ export default function RootLayout({
           href="/lmwebdesignlogo.png"
           sizes="any"
         />
-        {/* Geo meta tags — help Bing and other engines with local relevance */}
+        {/* Geo meta tags: help Bing and other engines with local relevance */}
         <meta name="geo.region" content="ZA-GP" />
         <meta name="geo.placename" content="Midrand, Gauteng, South Africa" />
         <meta name="geo.position" content="-26.0122;28.1284" />
@@ -158,7 +158,7 @@ export default function RootLayout({
             className="relative flex flex-col h-full overflow-x-hidden overflow-y-auto w-full"
             data-scroll-container
           >
-            {/* Layer 0: Fallback background image — loads first, always visible */}
+            {/* Layer 0: Fallback background image, loads first, always visible */}
             <div
               className="fixed inset-0 pointer-events-none"
               style={{ zIndex: 0 }}
