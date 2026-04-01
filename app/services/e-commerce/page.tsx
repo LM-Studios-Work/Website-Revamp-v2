@@ -3,17 +3,17 @@ import { EcommercePage } from "@/views/EcommercePage";
 
 export const metadata: Metadata = {
   title:
-    "E-Commerce Web Design South Africa | High-Performance Online Stores | From R8,999 | LMWebDesign",
+    "E-Commerce Setup for Small SA Businesses | Online Store From R8,999",
   description:
-    "Custom-built e-commerce stores engineered for performance and conversion. Features local South African payment gateways, automated courier integration, and WhatsApp cart recovery. Once-off packages from R8,999. 6-month warranty included.",
+    "Custom e-commerce stores for South African small businesses. Yoco, PayFast & Ozow payments, automated courier integration, and WhatsApp cart recovery. Once-off from R8,999 with 6-month warranty. No monthly platform fees.",
   alternates: {
     canonical: "https://www.lmwebdesign.co.za/services/e-commerce",
   },
   openGraph: {
     title:
-      "E-Commerce Web Design South Africa | High-Performance Online Stores | From R8,999 | LMWebDesign",
+      "E-Commerce Setup for Small SA Businesses | Online Store From R8,999 | LMWebDesign",
     description:
-      "Custom-built e-commerce stores with local SA payment integration, automated shipping, and WhatsApp cart recovery. From R8,999 with 6-month warranty.",
+      "Custom e-commerce stores with local SA payment integration, automated shipping, and WhatsApp cart recovery. From R8,999 with 6-month warranty.",
     url: "https://www.lmwebdesign.co.za/services/e-commerce",
   },
 };

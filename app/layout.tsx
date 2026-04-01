@@ -12,11 +12,11 @@ const DOMAIN = "https://www.lmwebdesign.co.za";
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
   title: {
-    default: "Web Design Midrand & Johannesburg | LMWebDesign",
+    default: "Affordable Web Design Midrand & Johannesburg | Small Business Specialist | LMWebDesign",
     template: "%s | LMWebDesign",
   },
   description:
-    "LMWebDesign builds affordable, SEO-optimized websites and automated booking systems for South African businesses. Based in Midrand, Gauteng. Get found on Google and start closing more leads.",
+    "Affordable, SEO-optimized websites and automated booking systems for South African small businesses. Based in Midrand, Gauteng. Once-off pricing from R1,999. Get found on Google and start closing more leads.",
   robots: { index: true, follow: true },
   authors: [{ name: "LMWebDesign" }],
   alternates: { canonical: DOMAIN },
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "LMWebDesign",
     url: DOMAIN,
-    title: "Web Design Midrand & Johannesburg | LMWebDesign",
+    title: "Affordable Web Design Midrand & Johannesburg | Small Business Specialist | LMWebDesign",
     description:
-      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses, also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
+      "Affordable, high-performance websites for Midrand and Johannesburg small businesses. Once-off pricing, no monthly fees. Get found on Google and start closing more leads.",
     images: [{ url: "/lmwebdesignlogo.png", alt: "LMWebDesign logo", width: 512, height: 512 }],
     locale: "en_ZA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Design Midrand & Johannesburg | LMWebDesign",
+    title: "Affordable Web Design Midrand & Johannesburg | Small Business Specialist | LMWebDesign",
     description:
-      "LMWebDesign builds high-performance, SEO-optimized websites for Midrand businesses, also serving Johannesburg and across Gauteng. Based in Midrand. Get found on Google and start closing more leads.",
+      "Affordable, high-performance websites for Midrand and Johannesburg small businesses. Once-off pricing, no monthly fees. Get found on Google and start closing more leads.",
     images: ["/lmwebdesignlogo.png"],
   },
 };

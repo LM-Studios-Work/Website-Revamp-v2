@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { WeddingPage } from "@/views/WeddingPage";
 
 export const metadata: Metadata = {
-  title: "Custom Wedding Websites & Digital Invitations South Africa | LMWebDesign",
+  title: "Custom Wedding Invitation Websites Gauteng | RSVP & Gift Registry Built In",
   description:
-    "Beautiful, custom-coded wedding websites for South African couples. Automated RSVP tracking, interactive maps, seamless gift registries, and instant updates.",
+    "Beautiful, custom-coded wedding websites for South African couples. Automated RSVP tracking, interactive maps, Yuppiechef registry integration, and Yoco/PayFast gift funds. Stop chasing RSVPs on WhatsApp.",
   alternates: {
     canonical: "https://www.lmwebdesign.co.za/services/custom-wedding-websites",
   },
   openGraph: {
-    title: "Custom Wedding Websites & Digital Invitations South Africa | LMWebDesign",
+    title: "Custom Wedding Invitation Websites Gauteng | RSVP & Gift Registry | LMWebDesign",
     description:
-      "Stop chasing RSVPs. Give your guests a seamless digital experience while you focus on enjoying your big day.",
+      "Stop chasing RSVPs. Custom wedding websites with automated RSVP tracking, gift registries, and payment integration for South African couples.",
     url: "https://www.lmwebdesign.co.za/services/custom-wedding-websites",
   },
 };
