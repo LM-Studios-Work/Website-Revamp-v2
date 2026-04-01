@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import WebDesignJohannesburgClient from "./client";
 
 export const metadata: Metadata = {
-  title: "Custom Web Design Johannesburg | No Retainers | LMWebDesign",
+  title: "Affordable Web Design Johannesburg | From R1,999 | No Monthly Fees",
   description:
-    "Professional web design services in Johannesburg. LMWebDesign builds fast, SEO-optimized websites for Joburg businesses. Get a quote today.",
+    "Website developers in Johannesburg building fast, SEO-optimized sites for small businesses. Once-off pricing from R1,999, no retainers. Get online and found on Google in 7 days.",
   alternates: {
     canonical: "https://www.lmwebdesign.co.za/web-design-johannesburg",
   },
   openGraph: {
-    title: "Custom Web Design Johannesburg | No Retainers | LMWebDesign",
+    title: "Affordable Web Design Johannesburg | From R1,999 | No Monthly Fees | LMWebDesign",
     description:
-      "Professional web design services in Johannesburg. LMWebDesign builds fast, SEO-optimized websites for Joburg businesses.",
+      "Website developers in Johannesburg building fast, SEO-optimized sites for small businesses. Once-off pricing from R1,999.",
     url: "https://www.lmwebdesign.co.za/web-design-johannesburg",
   },
 };

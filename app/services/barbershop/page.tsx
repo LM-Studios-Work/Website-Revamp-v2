@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { BarbershopPage } from "@/views/BarbershopPage";
 
 export const metadata: Metadata = {
-  title: "Barbershop Web Design & Booking Systems | LMWebDesign",
+  title: "Professional Barbershop Websites & Online Booking South Africa | From R4,999",
   description:
-    "Custom websites and automated booking systems for South African barbershops. Eliminate queue walk-outs, no-shows, and WhatsApp chaos with your own branded platform.",
+    "Custom websites and automated booking systems built specifically for SA barbershops. Stop losing clients to no-shows and WhatsApp chaos. Online bookings, payments via Yoco/PayFast, and a branded platform your clients will love.",
   alternates: { canonical: "https://www.lmwebdesign.co.za/services/barbershop" },
   openGraph: {
-    title: "Barbershop Web Design & Booking Systems | LMWebDesign",
+    title: "Professional Barbershop Websites & Online Booking South Africa | LMWebDesign",
     description:
-      "Custom websites and automated booking systems for South African barbershops.",
+      "Custom websites and automated booking systems built specifically for South African barbershops. Online bookings, Yoco/PayFast payments, branded platform.",
     url: "https://www.lmwebdesign.co.za/services/barbershop",
   },
 };

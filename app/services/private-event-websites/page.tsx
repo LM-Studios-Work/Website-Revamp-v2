@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { PrivateEventPage } from "@/views/PrivateEventPage";
 
 export const metadata: Metadata = {
-  title: "Private Event & Birthday Websites South Africa | Digital Invites | LMWebDesign",
+  title: "Private Event & Birthday Party Websites South Africa | RSVPs & Ticketing",
   description:
-    "Custom event landing pages for milestone birthdays, baby showers, VIP dinners, and private parties. Automated RSVPs, built-in ticketing, and fund collection.",
+    "Custom event landing pages for milestone birthdays, baby showers, and VIP gatherings. Replace messy WhatsApp groups with automated RSVPs, built-in ticketing via Yoco/PayFast, and fund collection. Gauteng-based.",
   alternates: {
     canonical: "https://www.lmwebdesign.co.za/services/private-event-websites",
   },
   openGraph: {
-    title: "Private Event & Birthday Websites South Africa | LMWebDesign",
+    title: "Private Event & Birthday Party Websites South Africa | RSVPs & Ticketing | LMWebDesign",
     description:
-      "Replace messy WhatsApp groups with a sleek, custom event landing page that handles RSVPs, ticketing, and event details automatically.",
+      "Replace messy WhatsApp groups with a sleek event landing page. Automated RSVPs, ticketing, and fund collection for SA events.",
     url: "https://www.lmwebdesign.co.za/services/private-event-websites",
   },
 };

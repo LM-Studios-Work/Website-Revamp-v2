@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { HomePage } from "@/views/HomePage";
 
 export const metadata: Metadata = {
-  title: "Web Design South Africa | LMWebDesign",
+  title: "Affordable Web Design Johannesburg & Midrand | Get Online in 7 Days | LMWebDesign",
   description:
-    "Midrand-based studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond. Get found on Google and start closing more leads.",
+    "Small business web design specialist in Gauteng. Fast, SEO-optimized websites from R1,999. No retainers, no monthly fees. Get found on Google and start closing more leads today.",
   alternates: { canonical: "https://www.lmwebdesign.co.za" },
   openGraph: {
-    title: "Web Design South Africa | LMWebDesign",
+    title: "Affordable Web Design Johannesburg & Midrand | Get Online in 7 Days | LMWebDesign",
     description:
-      "Midrand-based studio building high-performance, SEO-optimized websites for businesses across South Africa and beyond. Get found on Google and start closing more leads.",
+      "Small business web design specialist in Gauteng. Fast, SEO-optimized websites from R1,999. No retainers, no monthly fees. Get found on Google and start closing more leads today.",
     url: "https://www.lmwebdesign.co.za",
   },
 };
