@@ -1,3 +1,11 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "lmwebdesign.co.za" }],
+      "destination": "https://www.lmwebdesign.co.za/:path*",
+      "permanent": true
+    }
+  ]
 }
