@@ -49,6 +49,20 @@ export const projects: ProjectCardProps[] = [
       "Travel agency web design for a Thohoyandou-based tour operator — we built a custom tourism booking platform with WhatsApp funnels, boosting group trip fill rates by 60% and local search traffic by 5x.",
     discoverMoreUrl: "/projects/ndilayavhupo-travels",
   },
+  {
+    imageUrl: "/preview/www.zenakocleaning.co.za_(laptop).webp",
+    imageAlt:
+      "Professional cleaning services web design — Zenako Cleaning custom booking platform by LMWebDesign cleaning company website developers",
+    title: "Zenako Cleaning",
+    tags: [
+      { text: "Cleaning & Services", className: tagStyle.lime },
+      { text: "Booking Platform", className: tagStyle.purple },
+      { text: "Service Business", className: tagStyle.teal },
+    ],
+    description:
+      "Professional cleaning services web design — we created a modern booking platform for Zenako Cleaning, enabling customers to schedule services online and streamlining their business operations.",
+    discoverMoreUrl: "https://www.zenakocleaning.co.za/",
+  },
 
   {
     imageUrl: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
