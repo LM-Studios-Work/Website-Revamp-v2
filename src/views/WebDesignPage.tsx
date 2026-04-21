@@ -153,7 +153,7 @@ const packages: {
   },
   {
     title: "ESSENTIAL BUSINESS WEBSITE",
-    price: "R2,499",
+    price: "R2,999",
     roi: "Stop losing leads to competitors. Generate enquiries around the clock while you focus on your business.",
     type: "once-off",
     delivery: "5–7 working days",
