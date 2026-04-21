@@ -5,7 +5,7 @@ const DOMAIN = "https://www.lmwebdesign.co.za";
 
 export const metadata: Metadata = {
   title:
-    "Travel Agency Web Design — Custom Tourism Booking Platform & Local SEO | LMWebDesign",
+    "Travel Agency Web Design — Custom Tourism Booking Platform & Local SEO",
   description:
     "See how our tour operator website developers built a custom tourism booking platform for Ndilayavhupo Travels in Thohoyandou, Limpopo. 60%+ increase in group trip fill rates, sub-second gallery rendering, and 5x organic local search traffic.",
   alternates: {

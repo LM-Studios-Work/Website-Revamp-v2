@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ProjectsPage } from "@/views/ProjectsPage";
 
 export const metadata: Metadata = {
-  title: "Our Projects | LMWebDesign",
+  title: "Our Projects",
   description:
-    "Explore LMWebDesign' portfolio of web design and custom web application projects for South African businesses. See how we've helped clients get found on Google and close more leads.",
+    "Explore LMWebDesign's portfolio of web design and custom web application projects for South African businesses. See how we've helped clients get found on Google and close more leads.",
   alternates: { canonical: "https://www.lmwebdesign.co.za/projects" },
   openGraph: {
     title: "Our Projects | LMWebDesign",

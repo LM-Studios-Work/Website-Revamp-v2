@@ -5,7 +5,7 @@ const DOMAIN = "https://www.lmwebdesign.co.za";
 
 export const metadata: Metadata = {
   title:
-    "Custom Web Design Durban — Barber Website & Salon Online Booking System | LMWebDesign",
+    "Custom Web Design Durban — Barber Website & Salon Online Booking System",
   description:
     "See how our small business website developers built a custom web design in Durban for Xclusive Barber — replacing mid-haircut phone calls with a 100% automated Next.js booking platform. Sub-second load times, local map pack rankings, and 40%+ more monthly bookings.",
   alternates: {

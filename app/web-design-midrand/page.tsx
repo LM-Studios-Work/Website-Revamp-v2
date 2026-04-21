@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import WebDesignMidrandClient from "./client";
 
 export const metadata: Metadata = {
-  title: "Website Design Midrand | From R1,999 | LM Web Studios",
+  title: "Website Design Midrand | From R1,999",
   description:
     "Affordable website design in Midrand. We build custom, SEO-optimized websites for businesses in Waterfall, Kyalami, and Halfway House. Get a free quote today.",
   alternates: {
     canonical: "https://www.lmwebdesign.co.za/web-design-midrand",
   },
   openGraph: {
-    title: "Website Design Midrand | From R1,999 | LM Web Studios",
+    title: "Website Design Midrand | From R1,999 | LMWebDesign",
     description:
       "Professional web design services in Midrand. Custom websites for businesses in Waterfall, Kyalami, and surrounds.",
     url: "https://www.lmwebdesign.co.za/web-design-midrand",
@@ -23,7 +23,7 @@ export default function Page() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        name: "LM Web Studios",
+        name: "LMWebDesign",
         image: "https://www.lmwebdesign.co.za/lmwebdesignlogo.png",
         url: "https://www.lmwebdesign.co.za/web-design-midrand",
         telephone: "", // Add your phone number here if available

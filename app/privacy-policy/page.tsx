@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "LMWebDesign Privacy Policy: how we collect, use, and protect your personal information in compliance with the Protection of Personal Information Act (POPIA).",
   robots: { index: true, follow: true },
+  alternates: { canonical: "https://www.lmwebdesign.co.za/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
