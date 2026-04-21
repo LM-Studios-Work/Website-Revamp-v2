@@ -24,7 +24,7 @@ const JHB_PACKAGES = [
   },
   {
     title: "Business Website",
-    price: "R2,499 - R4,999",
+    price: "R2,999 - R4,999",
     description:
       "Multi-page, SEO-optimized platforms with click-to-call and WhatsApp integration to capture foot traffic.",
     features: [

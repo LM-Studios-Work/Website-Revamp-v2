@@ -33,7 +33,7 @@ const MIDRAND_PACKAGES = [
   },
   {
     title: "Business Website",
-    price: "R2,499 - R4,999",
+    price: "R2,999 - R4,999",
     description:
       "A complete multi-page solution for local businesses. Perfect for service providers in Waterfall, Kyalami, and Halfway House.",
     features: [
