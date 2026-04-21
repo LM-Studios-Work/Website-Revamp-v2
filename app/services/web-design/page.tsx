@@ -4,7 +4,7 @@ import { webDesignFAQ } from "@/sections/FAQ/constants";
 
 export const metadata: Metadata = {
   title:
-    "Web Design Midrand | Perfect 100 Google Score | From R1,999 | LMWebDesign",
+    "Web Design Midrand | Perfect 100 Google Score | From R1,999",
   description:
     "We build lightning-fast, lead-generating websites that score 100/100 on Google PageSpeed. Hand-coded in Next.js. Once-off packages from R1,999. Free hosting, GA4 analytics, WhatsApp funnels & 6-month warranty. Based in Midrand — serving all of South Africa.",
   alternates: {

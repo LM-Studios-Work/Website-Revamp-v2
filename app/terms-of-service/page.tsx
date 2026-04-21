@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "LMWebDesign Terms of Service — the terms and conditions governing our web design, development, SEO, and app development services.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "https://www.lmwebdesign.co.za/terms-of-service" },
 };
 
 export default function TermsOfServicePage() {

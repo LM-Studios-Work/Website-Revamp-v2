@@ -5,7 +5,7 @@ const DOMAIN = "https://www.lmwebdesign.co.za";
 
 export const metadata: Metadata = {
   title:
-    "Logistics Website Developers — Transport Company Web Design & WhatsApp Booking | LMWebDesign",
+    "Logistics Website Developers — Transport Company Web Design & WhatsApp Booking",
   description:
     "See how our logistics website developers built a high-converting transport company web design with custom WhatsApp booking integration for Mr. Float in Zimbabwe. Sub-second load times, 3x daily enquiries, and 6 services unified on one platform.",
   alternates: {

@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     "Affordable, SEO-optimized websites and automated booking systems for South African small businesses. Based in Midrand, Gauteng. Once-off pricing from R1,999. Get found on Google and start closing more leads.",
   robots: { index: true, follow: true },
   authors: [{ name: "LMWebDesign" }],
-  alternates: { canonical: DOMAIN },
   // Bing Webmaster Tools verification: replace with your code from https://www.bing.com/webmasters
   // verification: { other: { "msvalidate.01": "YOUR_BING_VERIFICATION_CODE_HERE" } },
   openGraph: {
