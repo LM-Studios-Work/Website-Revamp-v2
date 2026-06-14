@@ -92,6 +92,20 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "https://aluminiumweb.vercel.app/",
   },
   {
+    imageUrl: "/preview/marshal attorney.webp",
+    imageAlt:
+      "Law firm web design — Marshal Ndlovu Attorneys professional legal services website by LMWebDesign",
+    title: "Marshal Ndlovu Attorneys",
+    tags: [
+      { text: "Legal Services", className: tagStyle.lime },
+      { text: "Professional Portfolios", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "South African law firm providing professional legal services to individuals, businesses, and public sector organizations. Specializing in conveyancing, family law, litigation, labour law, estate administration, and notarial services with a national network of associates.",
+    discoverMoreUrl: "https://www.manattorneys.co.za/",
+  },
+  {
     imageUrl: "/preview/mothupi-and-lesego (1).webp",
     imageAlt: "Mothupi & Lesego - Wedding",
     title: "Mothupi & Lesego - Wedding",
