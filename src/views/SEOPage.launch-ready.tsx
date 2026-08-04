@@ -11,11 +11,11 @@ import { COLORS } from "@/constants/colors";
 
 /**
  * ──────────────────────────────────────────────────────
- * FULL SEO PAGE — ready to swap in when you launch.
+ * FULL SEO PAGE - ready to swap in when you launch.
  *
  * To go live:
  *   1. Rename this file to SEOPage.tsx (replace the current one)
- *   2. Done — all pricing, FAQ, process, and CTA sections are here.
+ *   2. Done - all pricing, FAQ, process, and CTA sections are here.
  * ──────────────────────────────────────────────────────
  */
 
@@ -237,7 +237,7 @@ export const SEOPage = () => {
             variant: "cyan",
             title: "The Fix",
             description:
-              "Before we build, we repair. We fix technical issues holding your site back—improving speed, mobile responsiveness, and site structure.",
+              "Before we build, we repair. We fix technical issues holding your site back - improving speed, mobile responsiveness, and site structure.",
           },
           {
             step: 3,

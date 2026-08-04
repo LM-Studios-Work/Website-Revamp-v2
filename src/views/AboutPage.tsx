@@ -25,7 +25,7 @@ const VALUES_CARDS = [
     variant: "cyan" as const,
     title: "Proven Partnership",
     description:
-      "We treat your project as our own. From initial strategy to final launch, you can count on clear timelines, absolute transparency, and a system that is built to scale as your business grows. No disappearing acts—just results.",
+      "We treat your project as our own. From initial strategy to final launch, you can count on clear timelines, absolute transparency, and a system that is built to scale as your business grows. No disappearing acts, just results.",
   },
 ];
 

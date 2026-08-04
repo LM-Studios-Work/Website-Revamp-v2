@@ -5,7 +5,7 @@ const DOMAIN = "https://www.lmwebdesign.co.za";
 
 export const metadata: Metadata = {
   title:
-    "Logistics Website Developers — Transport Company Web Design & WhatsApp Booking",
+    "Logistics Website Developers - Transport Company Web Design & WhatsApp Booking",
   description:
     "See how our logistics website developers built a high-converting transport company web design with custom WhatsApp booking integration for Mr. Float in Zimbabwe. Sub-second load times, 3x daily enquiries, and 6 services unified on one platform.",
   alternates: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Transport Company Web Design — Mr. Float Logistics Case Study | LMWebDesign",
+      "Transport Company Web Design - Mr. Float Logistics Case Study | LMWebDesign",
     description:
       "How logistics website developers at LMWebDesign built a mobile-optimised landing page with custom WhatsApp booking integration for a Zimbabwe transport company offering taxi rides, car hire, airport shuttles, and package deliveries.",
     url: `${DOMAIN}/projects/mr-float-logistics`,
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
         url: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
         width: 1200,
         height: 630,
-        alt: "Transport company web design — Mr. Float Logistics WhatsApp booking integration by LMWebDesign logistics website developers",
+        alt: "Transport company web design - Mr. Float Logistics WhatsApp booking integration by LMWebDesign logistics website developers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Logistics Website Developers — Transport Company Web Design | LMWebDesign",
+      "Logistics Website Developers - Transport Company Web Design | LMWebDesign",
     description:
       "Custom WhatsApp booking integration and transport company web design for Mr. Float in Zimbabwe. 3x daily enquiries, sub-second loads.",
     images: ["/preview/mrfloatlogistics.com_(laptop) (6).webp"],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "Transport Company Web Design — Mr. Float Logistics WhatsApp Booking Platform",
+  name: "Transport Company Web Design - Mr. Float Logistics WhatsApp Booking Platform",
   description:
     "Case study showing how LMWebDesign logistics website developers built a high-converting transport company web design with custom WhatsApp booking integration for Mr. Float Logistics in Zimbabwe, tripling daily enquiries and unifying six transport services on one platform.",
   url: `${DOMAIN}/projects/mr-float-logistics`,
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Mr. Float Logistics — Transport Company Web Design",
+      name: "Mr. Float Logistics - Transport Company Web Design",
       item: `${DOMAIN}/projects/mr-float-logistics`,
     },
   ],

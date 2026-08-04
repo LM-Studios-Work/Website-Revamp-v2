@@ -14,9 +14,9 @@ export const Footer = () => {
               <FooterColumns />
             </div>
 
-            {/* NAP — Name, Address, Phone */}
+            {/* NAP - Name, Address, Phone */}
             <div className="border-t border-white/10 py-5 flex flex-col md:flex-row md:items-center gap-2 md:gap-6 text-sm text-white/50 font-sans">
-              <span>LMWebDesign — {CONTACT_DETAILS.address.display}</span>
+              <span>LMWebDesign - {CONTACT_DETAILS.address.display}</span>
               <span aria-hidden="true" className="hidden md:inline text-white/20">|</span>
               <a href={`tel:${CONTACT_DETAILS.phone.value}`} className="hover:text-white/80 transition-colors">{CONTACT_DETAILS.phone.display}</a>
               <span aria-hidden="true" className="hidden md:inline text-white/20">|</span>

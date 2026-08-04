@@ -108,7 +108,7 @@ const packages: {
 ];
 
 const processSteps = [
-  { step: 1, variant: "lime" as const, title: "Discovery Call", description: "We learn about your shop, your services, your staff, and how you currently handle bookings — so the system fits your exact workflow." },
+  { step: 1, variant: "lime" as const, title: "Discovery Call", description: "We learn about your shop, your services, your staff, and how you currently handle bookings - so the system fits your exact workflow." },
   { step: 2, variant: "purple" as const, title: "Design & UX", description: "We design the website and booking flow to match your brand. You approve every screen before a single line of code is written." },
   { step: 3, variant: "cyan" as const, title: "Build & Integrate", description: "Custom Next.js development. Payment gateways, booking calendar, and product store are all built and connected." },
   { step: 4, variant: "glass" as const, title: "Setup & Test", description: "Your services, pricing, staff, and hours are all configured. We run end-to-end booking and payment tests before anything goes live." },
@@ -117,9 +117,9 @@ const processSteps = [
 
 const faqItems = [
   { question: "Will I lose my walk-in customers?", answer: "No. You maintain full control over your calendar. You can allocate specific chairs or hours strictly for walk-ins while keeping the rest reserved for guaranteed, prepaid online bookings." },
-  { question: "How do the payment integrations work?", answer: "We connect the site to your existing Yoco, PayFast, or Ozow merchant account. When a client pays for a booking or product, the money goes directly to your account — we never touch your funds." },
+  { question: "How do the payment integrations work?", answer: "We connect the site to your existing Yoco, PayFast, or Ozow merchant account. When a client pays for a booking or product, the money goes directly to your account - we never touch your funds." },
   { question: "Is the system easy for my staff to use?", answer: "Yes. The dashboard is designed to be straightforward. During handover training we show you and your staff how to check the daily schedule, adjust working hours, and manage availability from any device." },
-  { question: "What if I need to change my service prices later?", answer: "You have full access to a simple dashboard where you can update haircut prices, add new services, or change products at any time — no developer required." },
+  { question: "What if I need to change my service prices later?", answer: "You have full access to a simple dashboard where you can update haircut prices, add new services, or change products at any time - no developer required." },
 ];
 
 // ─── Page ───────────────────────────────────────
@@ -146,7 +146,7 @@ export const BarbershopPage = () => {
           </>
         }
         underlineColor="cyan"
-        description="Professional digital storefronts built to manage your schedule, process payments, and eliminate the frustration of long waiting times for your clients. Once-off pricing — you own it outright."
+        description="Professional digital storefronts built to manage your schedule, process payments, and eliminate the frustration of long waiting times for your clients. Once-off pricing - you own it outright."
         badge={
           <span className="text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#72f5e3] text-[#72f5e3]">
             Barbershop Solutions
@@ -161,7 +161,7 @@ export const BarbershopPage = () => {
         <div className="max-w-[1400px] w-full mx-auto">
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 opacity-0 ${statsVisible ? "animate-[fadeInUp_0.6s_ease-out_0.1s_both]" : ""}`}>
             {[
-              { value: "R0", label: "Monthly platform fees — ever", color: "#e7fe56" },
+              { value: "R0", label: "Monthly platform fees - ever", color: "#e7fe56" },
               { value: "0%", label: "Commission taken from your bookings", color: "#72f5e3" },
               { value: "6 mo", label: "Warranty included on every project", color: "#d5bff0" },
               { value: "100%", label: "You own the platform outright", color: "#e7fe56" },
@@ -196,7 +196,7 @@ export const BarbershopPage = () => {
               </p>
               <div className="space-y-3.5">
                 {[
-                  "Clients walk out when they see a long queue — revenue gone",
+                  "Clients walk out when they see a long queue - revenue gone",
                   "No-shows from WhatsApp bookings with no upfront commitment",
                   "Constant interruptions managing your schedule manually",
                   "Paying monthly fees to third-party booking apps you don't own",
@@ -261,7 +261,7 @@ export const BarbershopPage = () => {
               <span className="italic text-outline-15">works while you cut</span>
             </h2>
             <p className="mt-4 text-white/60 text-lg max-w-[620px]">
-              Your website handles bookings, payments, and scheduling automatically — 24 hours a day, on any device, without you lifting a finger.
+              Your website handles bookings, payments, and scheduling automatically - 24 hours a day, on any device, without you lifting a finger.
             </p>
           </div>
 
@@ -271,13 +271,13 @@ export const BarbershopPage = () => {
                 Icon: Calendar,
                 color: "#72f5e3",
                 title: "Seamless Online Bookings",
-                desc: "Clients select their service, choose their preferred barber, and lock in a specific time. They arrive exactly when you're ready — no queue, no confusion.",
+                desc: "Clients select their service, choose their preferred barber, and lock in a specific time. They arrive exactly when you're ready - no queue, no confusion.",
               },
               {
                 Icon: CreditCard,
                 color: "#e7fe56",
                 title: "Upfront Payments & Deposits",
-                desc: "Require a deposit or full payment at the time of booking. When people pay upfront, no-shows drop to near zero — instantly.",
+                desc: "Require a deposit or full payment at the time of booking. When people pay upfront, no-shows drop to near zero - instantly.",
               },
               {
                 Icon: ShoppingCart,
@@ -295,7 +295,7 @@ export const BarbershopPage = () => {
                 Icon: Lightning,
                 color: "#e7fe56",
                 title: "Sub-second Load Times",
-                desc: "Built in Next.js, not WordPress. Your clients book on their phones — our sites load instantly for a frictionless experience.",
+                desc: "Built in Next.js, not WordPress. Your clients book on their phones - our sites load instantly for a frictionless experience.",
               },
               {
                 Icon: LockKey,
@@ -407,7 +407,7 @@ export const BarbershopPage = () => {
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px] text-white mb-3">
               What&apos;s <span className="italic text-outline-2">included</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-[600px]">Every project ships with built-in peace of mind — no hidden costs, no surprises.</p>
+            <p className="text-lg text-white/70 max-w-[600px]">Every project ships with built-in peace of mind - no hidden costs, no surprises.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className={`rounded-[24px] md:rounded-[32px] p-6 md:p-8 bg-[#e7fe56] text-black flex flex-col opacity-0 ${warrantyVisible ? "animate-[fadeInUp_0.8s_ease-out_0.3s_both]" : ""}`}>
@@ -416,7 +416,7 @@ export const BarbershopPage = () => {
               </div>
               <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">6-Month Warranty</h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
-                Bug fixes, browser compatibility, and minor content adjustments — all covered for 6 months post-launch at no extra charge.
+                Bug fixes, browser compatibility, and minor content adjustments - all covered for 6 months post-launch at no extra charge.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
                 {["Code bug fixes & broken links", "Browser compatibility patches", "Minor text & image swaps"].map((f) => (
@@ -433,7 +433,7 @@ export const BarbershopPage = () => {
                 Your first year of hosting is on us. After that, we keep things simple and affordable.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
-                {["First year hosting — free", ".co.za domain — included", "Free SSL certificate"].map((f) => (
+                {["First year hosting - free", ".co.za domain - included", "Free SSL certificate"].map((f) => (
                   <div key={f} className="flex items-start gap-2"><Check className="w-4 h-4 mt-0.5 shrink-0" /><span className="text-sm">{f}</span></div>
                 ))}
               </div>
@@ -444,7 +444,7 @@ export const BarbershopPage = () => {
               </div>
               <h3 className="text-2xl md:text-3xl font-semibold font-obviously mb-3">Technical Health</h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
-                We keep your site fast, secure, and up to date so you can focus on your shop — not maintaining servers.
+                We keep your site fast, secure, and up to date so you can focus on your shop - not maintaining servers.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
                 {["Security & dependency patches", "Hosting & SSL management", "Core Web Vitals monitoring"].map((f) => (
@@ -465,7 +465,7 @@ export const BarbershopPage = () => {
             <h2 className="text-[31.4375px] md:text-[50px] font-semibold font-obviously leading-[37.725px] md:leading-[60px]">
               Our <span className="italic text-outline-15">process</span>
             </h2>
-            <p className="mt-4 text-white/70 text-lg max-w-[600px]">From first conversation to live booking system — a clear, structured build every time.</p>
+            <p className="mt-4 text-white/70 text-lg max-w-[600px]">From first conversation to live booking system - a clear, structured build every time.</p>
           </div>
           <div className="-mx-6 md:-mx-12" style={{ WebkitMaskImage: "linear-gradient(to right, black 80%, transparent 100%)", maskImage: "linear-gradient(to right, black 80%, transparent 100%)" }}>
             <div ref={dragRef} {...dragEvents} className={`overflow-x-auto scrollbar-hide snap-x snap-mandatory md:snap-none scroll-px-6 md:scroll-px-12 px-6 md:px-12 pb-8 ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}`}>
@@ -494,7 +494,7 @@ export const BarbershopPage = () => {
                   Check out our latest{" "}
                   <span className="italic text-outline-15">barbershop project</span>
                 </h2>
-                <p className="text-white/50 text-base max-w-md">See exactly what we built for Xclusive Barber — a full booking and e-commerce system live in production.</p>
+                <p className="text-white/50 text-base max-w-md">See exactly what we built for Xclusive Barber - a full booking and e-commerce system live in production.</p>
               </div>
               <a
                 href="/projects/xclusive-barber"

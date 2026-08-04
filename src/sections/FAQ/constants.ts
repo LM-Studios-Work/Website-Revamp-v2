@@ -51,7 +51,7 @@ export const seoFAQ: FAQItem[] = [
   {
     question: "Do you do keyword research?",
     answer:
-      "Absolutely. We don't guess what your customers are searching for; we use advanced data tools to find the exact terms they use. For our Essential package, we focus on high-intent local keywords—terms that indicate a user is ready to hire someone nearby.",
+      "Absolutely. We don't guess what your customers are searching for; we use advanced data tools to find the exact terms they use. For our Essential package, we focus on high-intent local keywords - terms that indicate a user is ready to hire someone nearby.",
   },
   {
     question: "How soon can I see SEO results?",
@@ -74,7 +74,7 @@ export const marketingFAQ: FAQItem[] = [
   {
     question: "Do you run A/B tests?",
     answer:
-      "Yes — we design and run experiments to improve conversion rates and measure impact.",
+      "Yes - we design and run experiments to improve conversion rates and measure impact.",
   },
   {
     question: "Can you integrate analytics tools?",

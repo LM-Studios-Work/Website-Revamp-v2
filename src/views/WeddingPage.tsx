@@ -88,7 +88,7 @@ const processSteps = [
     variant: "lime" as const,
     title: "Vision Call",
     description:
-      "We learn about your wedding theme, colour palette, venue, and everything that makes your day unique — so the website feels personal, not generic.",
+      "We learn about your wedding theme, colour palette, venue, and everything that makes your day unique - so the website feels personal, not generic.",
   },
   {
     step: 2,
@@ -102,7 +102,7 @@ const processSteps = [
     variant: "cyan" as const,
     title: "Build & Integrate",
     description:
-      "Custom Next.js build with RSVP system, Google Maps, countdown timer, and payment gateways for your gift registry — all connected and tested.",
+      "Custom Next.js build with RSVP system, Google Maps, countdown timer, and payment gateways for your gift registry - all connected and tested.",
   },
   {
     step: 4,
@@ -124,7 +124,7 @@ const faqItems = [
   {
     question: "Can we keep the website active after the wedding?",
     answer:
-      "Absolutely. Many couples keep the site live as a digital memory — especially with the post-wedding photo gallery. We can keep your site active for as long as you'd like.",
+      "Absolutely. Many couples keep the site live as a digital memory - especially with the post-wedding photo gallery. We can keep your site active for as long as you'd like.",
   },
   {
     question: "How does the RSVP system work exactly?",
@@ -139,7 +139,7 @@ const faqItems = [
   {
     question: "What if the venue or time changes last minute?",
     answer:
-      "That's one of the biggest advantages of a digital website over printed cards. We can update any detail — venue address, time, itinerary changes — and every guest who visits the link sees the correct information immediately.",
+      "That's one of the biggest advantages of a digital website over printed cards. We can update any detail - venue address, time, itinerary changes - and every guest who visits the link sees the correct information immediately.",
   },
 ];
 
@@ -190,7 +190,7 @@ export const WeddingPage = () => {
             {[
               {
                 value: "R0",
-                label: "Monthly fees — ever, for any package",
+                label: "Monthly fees - ever, for any package",
                 color: "#e7fe56",
               },
               {
@@ -309,7 +309,7 @@ export const WeddingPage = () => {
             </h2>
             <p className="text-white/55 text-base leading-relaxed text-center max-w-2xl mx-auto mb-14">
               We design beautiful, custom-coded wedding websites that act as your
-              digital invitation and guest management system — far beyond a basic
+              digital invitation and guest management system - far beyond a basic
               PDF invite.
             </p>
 
@@ -319,7 +319,7 @@ export const WeddingPage = () => {
                   Icon: Check,
                   number: "01",
                   title: "Automated, Strict RSVP Tracking",
-                  desc: "Send your guests a unique link. They visit your website, select meal preferences, and confirm attendance. Set strict deadlines — the system compiles a clean list for your caterers automatically. No chasing required.",
+                  desc: "Send your guests a unique link. They visit your website, select meal preferences, and confirm attendance. Set strict deadlines - the system compiles a clean list for your caterers automatically. No chasing required.",
                 },
                 {
                   Icon: MapPin,
@@ -377,7 +377,7 @@ export const WeddingPage = () => {
               <span className="italic text-outline-2">included</span>
             </h2>
             <p className="text-lg text-white/70 max-w-[600px]">
-              Every wedding website ships with built-in peace of mind — no
+              Every wedding website ships with built-in peace of mind - no
               hidden costs, no surprises.
             </p>
           </div>
@@ -398,7 +398,7 @@ export const WeddingPage = () => {
                 6-Month Warranty
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
-                Bug fixes, content updates, and browser compatibility — all
+                Bug fixes, content updates, and browser compatibility - all
                 covered for 6 months post-launch at no extra charge. Perfect for
                 last-minute wedding day changes.
               </p>
@@ -433,12 +433,12 @@ export const WeddingPage = () => {
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
                 Your personalised domain (e.g.{" "}
                 <em>www.boikanyo-and-lesego.co.za</em>) and one year of hosting
-                are included — no extra cost, no setup hassle.
+                are included - no extra cost, no setup hassle.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
                 {[
-                  "Custom .co.za domain — included",
-                  "First year hosting — free",
+                  "Custom .co.za domain - included",
+                  "First year hosting - free",
                   "Free SSL Certificate",
                 ].map((f) => (
                   <div key={f} className="flex items-start gap-2">
@@ -465,14 +465,14 @@ export const WeddingPage = () => {
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
                 No generic templates. Every site is built from scratch to match
-                your wedding aesthetic, colours, and theme — designed to load
+                your wedding aesthetic, colours, and theme - designed to load
                 instantly on every phone.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
                 {[
                   "Tailored to your theme & colours",
                   "Mobile-first, sub-second load times",
-                  "Instant updates — any time",
+                  "Instant updates - any time",
                 ].map((f) => (
                   <div key={f} className="flex items-start gap-2">
                     <Check className="w-4 h-4 mt-0.5 shrink-0" />
@@ -497,7 +497,7 @@ export const WeddingPage = () => {
               Our <span className="italic text-outline-15">process</span>
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[600px]">
-              From first conversation to your live wedding website — a clear,
+              From first conversation to your live wedding website - a clear,
               structured build every time.
             </p>
           </div>

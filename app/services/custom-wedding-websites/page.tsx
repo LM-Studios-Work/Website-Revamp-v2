@@ -25,7 +25,7 @@ const faqSchema = {
       name: "Can we keep the website active after the wedding?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Absolutely. Many couples keep the site live as a digital memory — especially with the post-wedding photo gallery. We can keep your site active for as long as you'd like.",
+        text: "Absolutely. Many couples keep the site live as a digital memory - especially with the post-wedding photo gallery. We can keep your site active for as long as you'd like.",
       },
     },
     {
@@ -49,7 +49,7 @@ const faqSchema = {
       name: "What if the venue or time changes last minute?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We can update any detail — venue address, time, itinerary changes — and every guest who visits the link sees the correct information immediately.",
+        text: "We can update any detail - venue address, time, itinerary changes - and every guest who visits the link sees the correct information immediately.",
       },
     },
   ],

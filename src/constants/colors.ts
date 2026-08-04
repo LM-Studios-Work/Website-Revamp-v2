@@ -1,4 +1,4 @@
-/** Centralized brand color palette — single source of truth for the whole app. */
+/** Centralized brand color palette - single source of truth for the whole app. */
 export const COLORS = {
   lime: "#e7fe56",
   purple: "#d5bff0",

@@ -5,7 +5,7 @@ export type ServicesMarqueeProps = {
   reverse?: boolean;
 };
 
-/* Small decorative separator — purple squiggle */
+/* Small decorative separator - purple squiggle */
 const PurpleSquiggle = () => (
   <svg
     className="w-8 h-8 md:w-12 md:h-12 mx-4 md:mx-6 shrink-0"
@@ -29,7 +29,7 @@ const PurpleSquiggle = () => (
   </svg>
 );
 
-/* Small decorative separator — lime dot */
+/* Small decorative separator - lime dot */
 const LimeDot = () => (
   <svg
     className="w-4 h-4 md:w-5 md:h-5 mx-4 md:mx-6 shrink-0"

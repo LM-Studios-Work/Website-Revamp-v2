@@ -28,7 +28,7 @@ export const HeroVideoOverlay = () => {
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute -top-[12%] left-0 w-full h-[112%] object-cover"
           style={{ objectPosition: "center 55%" }}
           onError={() => setVideoError(true)}
         >

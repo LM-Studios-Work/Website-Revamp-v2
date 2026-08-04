@@ -162,12 +162,12 @@ export default function PrivacyPolicyPage() {
                 own privacy policies and data processing agreements.
               </li>
               <li>
-                <strong className="text-white">Legal requirements</strong> —
+                <strong className="text-white">Legal requirements</strong>  - 
                 where disclosure is required by law, court order, or a
                 regulatory authority.
               </li>
               <li>
-                <strong className="text-white">Business continuity</strong> —
+                <strong className="text-white">Business continuity</strong>  - 
                 in the event of a merger or acquisition, your information may
                 transfer to the successor entity under the same terms.
               </li>
@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-white">Google Analytics 4</strong> —
+                <strong className="text-white">Google Analytics 4</strong>  - 
                 anonymous site traffic analysis. Google may process data outside
                 South Africa. See{" "}
                 <a
@@ -199,7 +199,7 @@ export default function PrivacyPolicyPage() {
                 .
               </li>
               <li>
-                <strong className="text-white">Vercel</strong> — website
+                <strong className="text-white">Vercel</strong> - website
                 hosting and edge network infrastructure.
               </li>
             </ul>
@@ -219,12 +219,12 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-white">Essential cookies</strong> —
+                <strong className="text-white">Essential cookies</strong>  - 
                 necessary for the website to function correctly. These cannot be
                 disabled.
               </li>
               <li>
-                <strong className="text-white">Analytics cookies</strong> —
+                <strong className="text-white">Analytics cookies</strong>  - 
                 used by Google Analytics 4 to collect anonymous usage
                 statistics. You may opt out via your browser settings or a
                 Google Analytics opt-out browser add-on.
@@ -263,24 +263,24 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-white">Access</strong> — request a copy
+                <strong className="text-white">Access</strong> - request a copy
                 of the personal information we hold about you.
               </li>
               <li>
-                <strong className="text-white">Correction</strong> — ask us to
+                <strong className="text-white">Correction</strong> - ask us to
                 correct inaccurate or incomplete information.
               </li>
               <li>
-                <strong className="text-white">Deletion</strong> — request that
+                <strong className="text-white">Deletion</strong> - request that
                 we delete your personal information (subject to legal retention
                 obligations).
               </li>
               <li>
-                <strong className="text-white">Objection</strong> — object to
+                <strong className="text-white">Objection</strong> - object to
                 certain types of processing, including direct marketing.
               </li>
               <li>
-                <strong className="text-white">Complaint</strong> — lodge a
+                <strong className="text-white">Complaint</strong> - lodge a
                 complaint with the{" "}
                 <strong className="text-white">
                   Information Regulator of South Africa

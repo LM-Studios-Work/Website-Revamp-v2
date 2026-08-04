@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { Review } from "@/types/reviews";
 
 // Fallback reviews shown when the Google Places API is unavailable or over quota.
-// These are real clients — kept as a safety net, not as fabricated content.
+// These are real clients - kept as a safety net, not as fabricated content.
 const FALLBACK_REVIEWS: Review[] = [
   {
     name: "Rocky",

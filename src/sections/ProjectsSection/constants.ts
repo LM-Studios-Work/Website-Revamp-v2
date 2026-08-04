@@ -11,7 +11,7 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
     imageAlt:
-      "Custom web design Durban — Xclusive Barber salon online booking system by small business website developers LMWebDesign",
+      "Custom web design in Durban for Xclusive Barber salon online booking system by small business website developers LMWebDesign",
     title: "Xclusive Barber - Davenport",
     tags: [
       { text: "Barber & Grooming", className: tagStyle.lime },
@@ -19,7 +19,7 @@ export const projects: ProjectCardProps[] = [
       { text: "Website Design", className: tagStyle.teal },
     ],
     description:
-      "Custom web design Durban — we replaced mid-haircut phone calls with a 100% automated Next.js booking platform, delivering sub-second load times and top 3 local map pack rankings.",
+      "Custom web design in Durban where we replaced mid-haircut phone calls with a 100% automated Next.js booking platform, delivering sub-second load times and top 3 local map pack rankings.",
     discoverMoreUrl: "/projects/xclusive-barber",
   },
   {
@@ -38,7 +38,7 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
     imageAlt:
-      "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LMWebDesign tour operator website developers",
+      "Travel agency web design for Ndilayavhupo Travels custom tourism booking platform by LMWebDesign tour operator website developers",
     title: "Ndilayavhupo Travels",
     tags: [
       { text: "Travel & Tourism", className: tagStyle.lime },
@@ -46,13 +46,13 @@ export const projects: ProjectCardProps[] = [
       { text: "Local SEO", className: tagStyle.teal },
     ],
     description:
-      "Travel agency web design for a Thohoyandou-based tour operator — we built a custom tourism booking platform with WhatsApp funnels, boosting group trip fill rates by 60% and local search traffic by 5x.",
+      "Travel agency web design for a Thohoyandou-based tour operator where we built a custom tourism booking platform with WhatsApp funnels, boosting group trip fill rates by 60% and local search traffic by 5x.",
     discoverMoreUrl: "/projects/ndilayavhupo-travels",
   },
   {
     imageUrl: "/preview/www.zenakocleaning.co.za_(laptop).webp",
     imageAlt:
-      "Professional cleaning services web design — Zenako Cleaning custom booking platform by LMWebDesign cleaning company website developers",
+      "Professional cleaning services web design for Zenako Cleaning custom booking platform by LMWebDesign cleaning company website developers",
     title: "Zenako Cleaning",
     tags: [
       { text: "Cleaning & Services", className: tagStyle.lime },
@@ -60,14 +60,14 @@ export const projects: ProjectCardProps[] = [
       { text: "Service Business", className: tagStyle.teal },
     ],
     description:
-      "Professional cleaning services web design — we created a modern booking platform for Zenako Cleaning, enabling customers to schedule services online and streamlining their business operations.",
+      "Professional cleaning services web design featuring a modern booking platform for Zenako Cleaning, enabling customers to schedule services online and streamlining their business operations.",
     discoverMoreUrl: "https://www.zenakocleaning.co.za/",
   },
 
   {
     imageUrl: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
     imageAlt:
-      "Transport company web design — Mr. Float Logistics custom WhatsApp booking integration by LMWebDesign logistics website developers",
+      "Transport company web design for Mr. Float Logistics custom WhatsApp booking integration by LMWebDesign logistics website developers",
     title: "Mr. Float Logistics",
     tags: [
       { text: "Logistics & Transport", className: tagStyle.lime },
@@ -75,7 +75,7 @@ export const projects: ProjectCardProps[] = [
       { text: "Lead Generation", className: tagStyle.teal },
     ],
     description:
-      "Transport company web design with custom WhatsApp booking integration — we unified six services (taxi, car hire, airport shuttles, deliveries) into one high-converting platform, tripling daily enquiries.",
+      "Transport company web design with custom WhatsApp booking integration where we unified six services (taxi, car hire, airport shuttles, deliveries) into one high-converting platform, tripling daily enquiries.",
     discoverMoreUrl: "/projects/mr-float-logistics",
   },
   {
@@ -94,7 +94,7 @@ export const projects: ProjectCardProps[] = [
   {
     imageUrl: "/preview/marshal attorney.webp",
     imageAlt:
-      "Law firm web design — Marshal Ndlovu Attorneys professional legal services website by LMWebDesign",
+      "Law firm web design for Marshal Ndlovu Attorneys professional legal services website by LMWebDesign",
     title: "Marshal Ndlovu Attorneys",
     tags: [
       { text: "Legal Services", className: tagStyle.lime },
@@ -104,6 +104,20 @@ export const projects: ProjectCardProps[] = [
     description:
       "South African law firm providing professional legal services to individuals, businesses, and public sector organizations. Specializing in conveyancing, family law, litigation, labour law, estate administration, and notarial services with a national network of associates.",
     discoverMoreUrl: "https://www.manattorneys.co.za/",
+  },
+  {
+    imageUrl: "/preview/www.opticoreholdings.co.za_(Nest Hub Max) (1).webp",
+    imageAlt:
+      "Professional facility management and hygiene services web design for OptiCore Holdings by LMWebDesign",
+    title: "OptiCore Holdings",
+    tags: [
+      { text: "Logistics & Services", className: tagStyle.lime },
+      { text: "Business Solutions", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "Professional facility management and hygiene operations across Johannesburg and South Africa. Providing reliable commercial and residential cleaning, medical-grade disinfection, pest control, and PPE medical supplies.",
+    discoverMoreUrl: "https://www.opticoreholdings.co.za/",
   },
   {
     imageUrl: "/preview/mothupi-and-lesego (1).webp",

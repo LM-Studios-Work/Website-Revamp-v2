@@ -5,7 +5,7 @@ const DOMAIN = "https://www.lmwebdesign.co.za";
 
 export const metadata: Metadata = {
   title:
-    "Travel Agency Web Design — Custom Tourism Booking Platform & Local SEO",
+    "Travel Agency Web Design - Custom Tourism Booking Platform & Local SEO",
   description:
     "See how our tour operator website developers built a custom tourism booking platform for Ndilayavhupo Travels in Thohoyandou, Limpopo. 60%+ increase in group trip fill rates, sub-second gallery rendering, and 5x organic local search traffic.",
   alternates: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Travel Agency Web Design — Ndilayavhupo Travels Case Study | LMWebDesign",
+      "Travel Agency Web Design - Ndilayavhupo Travels Case Study | LMWebDesign",
     description:
       "How tour operator website developers at LMWebDesign built a visually immersive custom tourism booking platform with WhatsApp booking funnels for a Thohoyandou-based travel agency specialising in shared group tours and Limpopo travel packages.",
     url: `${DOMAIN}/projects/ndilayavhupo-travels`,
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
         url: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
         width: 1200,
         height: 630,
-        alt: "Travel agency web design — Ndilayavhupo Travels custom tourism booking platform by LMWebDesign tour operator website developers",
+        alt: "Travel agency web design - Ndilayavhupo Travels custom tourism booking platform by LMWebDesign tour operator website developers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Tour Operator Website Developers — Travel Agency Web Design | LMWebDesign",
+      "Tour Operator Website Developers - Travel Agency Web Design | LMWebDesign",
     description:
       "Custom tourism booking platform for Ndilayavhupo Travels. 60%+ fill rate increase, sub-second galleries, 5x local search traffic.",
     images: ["/preview/www.ndilayavhupo.co.za_(laptop) (2).webp"],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "Travel Agency Web Design — Ndilayavhupo Travels Custom Tourism Booking Platform",
+  name: "Travel Agency Web Design - Ndilayavhupo Travels Custom Tourism Booking Platform",
   description:
     "Case study showing how LMWebDesign tour operator website developers built a custom tourism booking platform with WhatsApp booking funnels and local SEO for travel agencies, increasing group trip fill rates by 60%+ and organic local search traffic by 5x for Ndilayavhupo Travels in Thohoyandou, Limpopo.",
   url: `${DOMAIN}/projects/ndilayavhupo-travels`,
@@ -53,7 +53,7 @@ const caseStudySchema = {
   },
   about: {
     "@type": "TouristTrip",
-    name: "Ndilayavhupo Travels — Shared Group Tours & Limpopo Travel Packages",
+    name: "Ndilayavhupo Travels - Shared Group Tours & Limpopo Travel Packages",
     description:
       "Thohoyandou-based travel agency specialising in shared group tours, Limpopo travel packages, and authentic South African travel experiences with an automated WhatsApp booking funnel.",
     touristType: "Group Travellers",
@@ -95,7 +95,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Ndilayavhupo Travels — Travel Agency Web Design",
+      name: "Ndilayavhupo Travels - Travel Agency Web Design",
       item: `${DOMAIN}/projects/ndilayavhupo-travels`,
     },
   ],

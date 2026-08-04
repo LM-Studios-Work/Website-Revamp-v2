@@ -175,7 +175,7 @@ export default function RootLayout({
               />
             </div>
 
-            {/* Layer 1: Interactive particles — spans full page */}
+            {/* Layer 1: Interactive particles - spans full page */}
             <ParticleBackground />
 
             <Header />

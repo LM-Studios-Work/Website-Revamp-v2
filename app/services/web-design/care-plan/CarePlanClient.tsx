@@ -69,13 +69,13 @@ const whyCarePlan = [
   {
     Icon: CloudArrowUp,
     title: "Hosting That Never Fails",
-    body: "We host on enterprise-grade infrastructure with 99.9% uptime SLA. A site that goes down loses customers and ranking — ours don't.",
+    body: "We host on enterprise-grade infrastructure with 99.9% uptime SLA. A site that goes down loses customers and ranking - ours don't.",
     color: "#e7fe56",
   },
   {
     Icon: Headset,
     title: "A Team On Standby",
-    body: "Need a phone number changed or a new product added? Submit via WhatsApp and it's done — no quotes, no invoices, no friction.",
+    body: "Need a phone number changed or a new product added? Submit via WhatsApp and it's done - no quotes, no invoices, no friction.",
     color: "#d5bff0",
   },
   {

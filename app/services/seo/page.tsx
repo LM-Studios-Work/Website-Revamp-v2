@@ -23,7 +23,7 @@ const faqSchema = {
       name: "Do you do keyword research?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Absolutely. We don't guess what your customers are searching for; we use advanced data tools to find the exact terms they use. For our Essential package, we focus on high-intent local keywords—terms that indicate a user is ready to hire someone nearby.",
+        text: "Absolutely. We don't guess what your customers are searching for; we use advanced data tools to find the exact terms they use. For our Essential package, we focus on high-intent local keywords - terms that indicate a user is ready to hire someone nearby.",
       },
     },
     {

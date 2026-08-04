@@ -4,7 +4,7 @@ import { CONTACT_DETAILS } from "@/constants/contact";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "LMWebDesign Terms of Service — the terms and conditions governing our web design, development, SEO, and app development services.",
+    "LMWebDesign Terms of Service - the terms and conditions governing our web design, development, SEO, and app development services.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://www.lmwebdesign.co.za/terms-of-service" },
 };
@@ -57,20 +57,20 @@ export default function TermsOfServicePage() {
             <p className="mb-3">LMWebDesign provides:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-white">Web Design &amp; Development</strong> —
+                <strong className="text-white">Web Design &amp; Development</strong>  - 
                 custom website design, development, and deployment.
               </li>
               <li>
-                <strong className="text-white">App Development</strong> — custom
+                <strong className="text-white">App Development</strong> - custom
                 web and mobile application development.
               </li>
               <li>
-                <strong className="text-white">SEO Services</strong> — search
+                <strong className="text-white">SEO Services</strong> - search
                 engine optimisation strategy and implementation.
               </li>
               <li>
                 <strong className="text-white">Ongoing Support &amp; Maintenance</strong>{" "}
-                — post-launch website updates and technical support.
+                - post-launch website updates and technical support.
               </li>
             </ul>
             <p className="mt-3">

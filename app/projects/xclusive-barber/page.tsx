@@ -5,15 +5,15 @@ const DOMAIN = "https://www.lmwebdesign.co.za";
 
 export const metadata: Metadata = {
   title:
-    "Custom Web Design Durban — Barber Website & Salon Online Booking System",
+    "Custom Web Design Durban - Barber Website & Salon Online Booking System",
   description:
-    "See how our small business website developers built a custom web design in Durban for Xclusive Barber — replacing mid-haircut phone calls with a 100% automated Next.js booking platform. Sub-second load times, local map pack rankings, and 40%+ more monthly bookings.",
+    "See how our small business website developers built a custom web design in Durban for Xclusive Barber - replacing mid-haircut phone calls with a 100% automated Next.js booking platform. Sub-second load times, local map pack rankings, and 40%+ more monthly bookings.",
   alternates: {
     canonical: `${DOMAIN}/projects/xclusive-barber`,
   },
   openGraph: {
     title:
-      "Custom Web Design Durban — Barber Booking System Case Study | LMWebDesign",
+      "Custom Web Design Durban - Barber Booking System Case Study | LMWebDesign",
     description:
       "How we built a salon online booking system setup for Xclusive Barber in Davenport, Durban. 100% automated scheduling, sub-second load times, and top 3 local map pack rankings.",
     url: `${DOMAIN}/projects/xclusive-barber`,
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
         url: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
         width: 1200,
         height: 630,
-        alt: "Custom web design Durban — Xclusive Barber salon online booking system by LMWebDesign small business website developers",
+        alt: "Custom web design Durban - Xclusive Barber salon online booking system by LMWebDesign small business website developers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Custom Web Design Durban — Barber Booking System | LMWebDesign",
+      "Custom Web Design Durban - Barber Booking System | LMWebDesign",
     description:
       "Small business website developers replaced mid-haircut phone calls with a 100% automated booking platform for a Durban barber shop.",
     images: ["/preview/v0-barbershop-durban.vercel.app_(laptop).webp"],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "Custom Web Design Durban — Xclusive Barber Website & Salon Online Booking System",
+  name: "Custom Web Design Durban - Xclusive Barber Website & Salon Online Booking System",
   description:
     "Case study showing how LMWebDesign small business website developers built a custom web design in Durban with a salon online booking system setup for Xclusive Barber in Davenport, eliminating phone disruptions and increasing monthly bookings by 40%+.",
   url: `${DOMAIN}/projects/xclusive-barber`,
@@ -90,7 +90,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Xclusive Barber — Custom Web Design Durban",
+      name: "Xclusive Barber - Custom Web Design Durban",
       item: `${DOMAIN}/projects/xclusive-barber`,
     },
   ],

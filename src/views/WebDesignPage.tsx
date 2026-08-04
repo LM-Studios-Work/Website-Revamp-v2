@@ -147,7 +147,7 @@ const packages: {
       {
         text: "Google Maps Integration",
         tooltip:
-          "Appear in Google Maps searches so local clients can find you instantly — for free.",
+          "Appear in Google Maps searches so local clients can find you instantly - for free.",
       },
     ],
   },
@@ -170,7 +170,7 @@ const packages: {
       {
         text: "Direct-to-WhatsApp Lead Funnel",
         tooltip:
-          "Routes website visitors directly to your phone so you can close deals instantly — no email delays, no missed leads.",
+          "Routes website visitors directly to your phone so you can close deals instantly - no email delays, no missed leads.",
       },
       "Social media integration",
       {
@@ -187,14 +187,14 @@ const packages: {
       {
         text: "Advanced Tracking & Analytics (GA4 & Meta Pixel)",
         tooltip:
-          "Know exactly who visits, where they come from, and what they click — so you can slash ad costs and double your leads.",
+          "Know exactly who visits, where they come from, and what they click - so you can slash ad costs and double your leads.",
       },
     ],
   },
   {
     title: "PROFESSIONAL BUSINESS WEBSITE",
     price: "R4,999",
-    roi: "The complete lead-generation machine. Rank higher, capture more leads, and convert visitors into paying clients — automatically.",
+    roi: "The complete lead-generation machine. Rank higher, capture more leads, and convert visitors into paying clients - automatically.",
     type: "once-off",
     delivery: "7–12 working days",
     popular: true,
@@ -213,7 +213,7 @@ const packages: {
       {
         text: "Direct-to-WhatsApp Lead Funnel",
         tooltip:
-          "Routes website visitors directly to your phone so you can close deals instantly — no email delays, no missed leads.",
+          "Routes website visitors directly to your phone so you can close deals instantly - no email delays, no missed leads.",
       },
       {
         text: "Local SEO optimisation",
@@ -224,7 +224,7 @@ const packages: {
       {
         text: "Advanced Tracking & Analytics (GA4 & Meta Pixel)",
         tooltip:
-          "Know exactly who visits, where they come from, and what they click — so you can slash ad costs and double your leads.",
+          "Know exactly who visits, where they come from, and what they click - so you can slash ad costs and double your leads.",
       },
     ],
   },
@@ -244,7 +244,7 @@ const packages: {
       {
         text: "Google Maps Integration",
         tooltip:
-          "Guests tap once to get directions — zero confusion, maximum attendance.",
+          "Guests tap once to get directions - zero confusion, maximum attendance.",
       },
       "Gift registry or payment links",
       "Optional password protection",
@@ -419,7 +419,7 @@ export const WebDesignPage = () => {
             </h2>
             <p className="mt-4 text-white/60 text-lg max-w-[620px]">
               Every site we build scores 100/100 on Google&apos;s official
-              performance tool — meaning lower ad costs, higher rankings, and
+              performance tool - meaning lower ad costs, higher rankings, and
               faster load times than competitors.
             </p>
           </div>
@@ -736,7 +736,7 @@ export const WebDesignPage = () => {
             </p>
           </div>
 
-          {/* Process steps — single horizontal scroll on all devices */}
+          {/* Process steps - single horizontal scroll on all devices */}
           <div
             className="-mx-6 md:-mx-12"
             style={{
@@ -783,7 +783,7 @@ export const WebDesignPage = () => {
                 <span className="italic text-outline-2">included</span>
               </h2>
               <p className="text-lg text-white/70 max-w-[600px]">
-                Every project ships with built-in peace of mind — no hidden
+                Every project ships with built-in peace of mind - no hidden
                 costs, no surprises.
               </p>
             </div>
@@ -854,9 +854,9 @@ export const WebDesignPage = () => {
                   </p>
                   <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
                     {[
-                      "First year hosting — free",
-                      ".com renewal — R400 / year",
-                      ".co.za renewal — R200 / year",
+                      "First year hosting - free",
+                      ".com renewal - R400 / year",
+                      ".co.za renewal - R200 / year",
                     ].map((f) => (
                       <div key={f} className="flex items-start gap-2">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" />

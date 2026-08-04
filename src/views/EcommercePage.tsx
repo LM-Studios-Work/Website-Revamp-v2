@@ -103,7 +103,7 @@ const packages: {
       {
         text: "Secure payment integration",
         tooltip:
-          "PayFast, Yoco, or Ozow — your choice. All PCI-DSS compliant and configured for SA from day one.",
+          "PayFast, Yoco, or Ozow - your choice. All PCI-DSS compliant and configured for SA from day one.",
       },
       "Inventory management dashboard",
     ],
@@ -179,7 +179,7 @@ const processSteps = [
     variant: "glass" as const,
     title: "Stock & Setup",
     description:
-      "We upload your first product batch, configure shipping, and connect your payment gateway — ready to sell from day one.",
+      "We upload your first product batch, configure shipping, and connect your payment gateway - ready to sell from day one.",
   },
   {
     step: 5,
@@ -216,32 +216,32 @@ export function EcommercePage() {
     {
       question: "Can I manage products myself after launch?",
       answer:
-        "Absolutely. Every store includes a user-friendly product management dashboard where you can add, edit, and remove products at any time — no technical knowledge required. All tiers support unlimited products, so your store can grow as big as your business.",
+        "Absolutely. Every store includes a user-friendly product management dashboard where you can add, edit, and remove products at any time - no technical knowledge required. All tiers support unlimited products, so your store can grow as big as your business.",
     },
     {
       question: "What payment gateways do you support?",
       answer:
-        "We integrate PayFast, Yoco, and Ozow by default — all South African-friendly, PCI-compliant, and supporting credit cards, Instant EFT, Apple Pay, and Google Pay. Your customers can pay the way they prefer, with zero friction at checkout.",
+        "We integrate PayFast, Yoco, and Ozow by default - all South African-friendly, PCI-compliant, and supporting credit cards, Instant EFT, Apple Pay, and Google Pay. Your customers can pay the way they prefer, with zero friction at checkout.",
     },
     {
       question: "Is hosting and a domain included?",
       answer:
-        "Yes. Every package includes Premium Web Hosting, a Free .co.za Domain Registration, and a Free SSL Certificate — all set up for you. Your store will be live on a fast, secure, and professional domain from day one.",
+        "Yes. Every package includes Premium Web Hosting, a Free .co.za Domain Registration, and a Free SSL Certificate - all set up for you. Your store will be live on a fast, secure, and professional domain from day one.",
     },
     {
       question: "How will I learn to run my store?",
       answer:
-        "We include Store Management Training with every package. You'll receive a personal Zoom walkthrough or a set of video tutorials that teach you how to manage products, view orders, process refunds, and update your store content — so you're fully independent after launch.",
+        "We include Store Management Training with every package. You'll receive a personal Zoom walkthrough or a set of video tutorials that teach you how to manage products, view orders, process refunds, and update your store content - so you're fully independent after launch.",
     },
     {
       question: "What if I need help after the warranty ends?",
       answer:
-        "After your 6-month warranty, optional Care Plans start at R199/month. These cover security updates, backups, and technical support — keeping your store fast and secure without you lifting a finger.",
+        "After your 6-month warranty, optional Care Plans start at R199/month. These cover security updates, backups, and technical support - keeping your store fast and secure without you lifting a finger.",
     },
     {
       question: "Why not just use Shopify or WooCommerce?",
       answer:
-        "Shopify charges R300–R2,000+ per month in platform fees and takes a cut of every sale. WooCommerce relies on dozens of plugins that slow your site and create security holes. Our custom Next.js stores are yours outright — no monthly platform tax, no forced plugin ecosystem, and no compromises on speed or security.",
+        "Shopify charges R300–R2,000+ per month in platform fees and takes a cut of every sale. WooCommerce relies on dozens of plugins that slow your site and create security holes. Our custom Next.js stores are yours outright - no monthly platform tax, no forced plugin ecosystem, and no compromises on speed or security.",
     },
     {
       question: "Do you build in South Africa?",
@@ -263,14 +263,14 @@ export function EcommercePage() {
       variant: "purple" as const,
       title: "SA Payment Integration",
       description:
-        "Frictionless checkout with trusted local gateways: PayFast, Yoco, and Ozow. Support for Cards, Instant EFT, Apple Pay, and Google Pay — your customers pay the way they want.",
+        "Frictionless checkout with trusted local gateways: PayFast, Yoco, and Ozow. Support for Cards, Instant EFT, Apple Pay, and Google Pay - your customers pay the way they want.",
     },
     {
       step: 3,
       variant: "cyan" as const,
       title: "Easy Store Management",
       description:
-        "A clean, intuitive backend dashboard lets you manage products, track orders, and update your store in minutes — no developer needed. We also train you personally before handover.",
+        "A clean, intuitive backend dashboard lets you manage products, track orders, and update your store in minutes - no developer needed. We also train you personally before handover.",
     },
   ];
 
@@ -282,7 +282,7 @@ export function EcommercePage() {
     },
     {
       feature: "Monthly Platform Cost",
-      custom: "R0 — you own it outright",
+      custom: "R0 - you own it outright",
       wordpress: "R500–R2,000+/month (Shopify, WooCommerce plugins)",
     },
     {
@@ -297,32 +297,32 @@ export function EcommercePage() {
     },
     {
       feature: "SA Payment Gateways",
-      custom: "PayFast, Yoco, Ozow — native",
+      custom: "PayFast, Yoco, Ozow - native",
       wordpress: "Complex third-party setups",
     },
     {
       feature: "Customisation",
-      custom: "Fully bespoke — your brand, your rules",
+      custom: "Fully bespoke - your brand, your rules",
       wordpress: "Limited by theme constraints",
     },
     {
       feature: "Sales Commission",
-      custom: "0% — keep every rand",
+      custom: "0% - keep every rand",
       wordpress: "Up to 2% per transaction (Shopify)",
     },
     {
       feature: "Store Training Included",
-      custom: "Yes — Zoom or video tutorials",
-      wordpress: "No — you figure it out",
+      custom: "Yes - Zoom or video tutorials",
+      wordpress: "No - you figure it out",
     },
     {
       feature: "SSL & Domain Included",
-      custom: "Yes — free with every package",
+      custom: "Yes - free with every package",
       wordpress: "Paid add-ons",
     },
     {
       feature: "Business Email Included",
-      custom: "Yes — professional emails included",
+      custom: "Yes - professional emails included",
       wordpress: "Paid add-on",
     },
   ];
@@ -354,7 +354,7 @@ export function EcommercePage() {
             {[
               {
                 value: "R0",
-                label: "Monthly platform fees — ever",
+                label: "Monthly platform fees - ever",
                 color: "#e7fe56",
               },
               {
@@ -418,7 +418,7 @@ export function EcommercePage() {
                 </span>
               </h2>
               <p className="text-base text-white/55 leading-relaxed mb-8 max-w-[480px]">
-                Shopify, WooCommerce, Wix — they all charge a monthly platform
+                Shopify, WooCommerce, Wix - they all charge a monthly platform
                 fee, forever. Miss a payment and your store goes dark. We build
                 a custom store you own outright. No subscriptions. No
                 middlemen. No compromise.
@@ -427,7 +427,7 @@ export function EcommercePage() {
                 {[
                   "Platform fees compound year over year with no end in sight",
                   "Plugin bloat slows load times and tanks your Google ranking",
-                  "Clunky checkout causes cart abandonment — every rand left behind",
+                  "Clunky checkout causes cart abandonment - every rand left behind",
                   "You're locked into their ecosystem, not your own brand",
                 ].map((item, idx) => (
                   <div
@@ -567,7 +567,7 @@ export function EcommercePage() {
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[650px]">
               No monthly retainers. No cuts from your sales. No hidden limits.
-              What you see is what you pay — once.
+              What you see is what you pay - once.
             </p>
           </div>
 
@@ -686,7 +686,7 @@ export function EcommercePage() {
               <span className="italic text-outline-2">included</span>
             </h2>
             <p className="text-lg text-white/70 max-w-[600px]">
-              Every store ships with built-in peace of mind — no hidden costs,
+              Every store ships with built-in peace of mind - no hidden costs,
               no surprises.
             </p>
           </div>
@@ -708,7 +708,7 @@ export function EcommercePage() {
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
                 Bug fixes, browser compatibility (Chrome, Safari, Edge), and
-                minor content adjustments — all covered for 6 months post-launch
+                minor content adjustments - all covered for 6 months post-launch
                 at no extra charge.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
@@ -751,12 +751,12 @@ export function EcommercePage() {
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
                 Your first year of hosting is on us. After that, we keep things
-                simple and affordable — no hidden infrastructure costs.
+                simple and affordable - no hidden infrastructure costs.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
                 {[
-                  "First year hosting — free",
-                  ".co.za domain — included",
+                  "First year hosting - free",
+                  ".co.za domain - included",
                   "Free SSL certificate",
                 ].map((f) => (
                   <div key={f} className="flex items-start gap-2">
@@ -783,7 +783,7 @@ export function EcommercePage() {
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
                 We keep your store fast, secure, and up to date so you can focus
-                on selling — not maintaining servers.
+                on selling - not maintaining servers.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
                 {[
@@ -817,12 +817,12 @@ export function EcommercePage() {
               Our <span className="italic text-outline-15">process</span>
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[600px]">
-              From first conversation to live online store — a clear, structured
+              From first conversation to live online store - a clear, structured
               build every time.
             </p>
           </div>
 
-          {/* Process steps — horizontal scroll */}
+          {/* Process steps - horizontal scroll */}
           <div
             className="-mx-6 md:-mx-12"
             style={{
@@ -942,7 +942,7 @@ export function EcommercePage() {
             </h2>
             <p className="text-white/55 text-lg max-w-2xl mt-4">
               Not all stores are created equal. Here&apos;s what you&apos;re
-              actually getting — and what you&apos;re giving up — when you
+              actually getting - and what you&apos;re giving up - when you
               choose a cheap template over a custom build.
             </p>
           </div>
@@ -1043,7 +1043,7 @@ export function EcommercePage() {
           </h2>
           <p className="text-lg text-white/70 mb-10 max-w-[580px] mx-auto">
             Get a free quote in 24 hours. Or just send a voice note on WhatsApp
-            — we&apos;re real people, not a call centre.
+            - we&apos;re real people, not a call centre.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

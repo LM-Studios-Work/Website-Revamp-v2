@@ -54,7 +54,7 @@ export const ScrollableCardRow = ({
 
   return (
     <div>
-      {/* Navigation arrows — mobile only (hidden when plainScroll) */}
+      {/* Navigation arrows - mobile only (hidden when plainScroll) */}
       {!plainScroll && (
         <div className="flex gap-3 mb-5 md:hidden">
           <button
@@ -104,7 +104,7 @@ export const ScrollableCardRow = ({
         </div>
       )}
 
-      {/* Scrollable on mobile — bleeds past parent padding; grid on desktop */}
+      {/* Scrollable on mobile - bleeds past parent padding; grid on desktop */}
       <div
         ref={scrollRef}
         className={`-mx-6 px-6 flex gap-4 overflow-x-auto ${

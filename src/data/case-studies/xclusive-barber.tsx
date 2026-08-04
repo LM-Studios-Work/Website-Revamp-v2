@@ -26,7 +26,7 @@ export const xclusiveBarberData: CaseStudyData = {
   features: "Booking Platform & Local SEO",
   previewImage: {
     src: "/preview/v0-barbershop-durban.vercel.app_(laptop).webp",
-    alt: "Xclusive Barber Davenport Durban — custom booking platform and barbershop website by LMWebDesign",
+    alt: "Xclusive Barber Davenport Durban - custom booking platform and barbershop website by LMWebDesign",
   },
   problem: {
     quote:

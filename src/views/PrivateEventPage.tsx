@@ -87,7 +87,7 @@ const processSteps = [
     variant: "lime" as const,
     title: "Event Brief",
     description:
-      "We learn about your event — the theme, vibe, guest count, and everything you want attendees to feel when they land on the page.",
+      "We learn about your event - the theme, vibe, guest count, and everything you want attendees to feel when they land on the page.",
   },
   {
     step: 2,
@@ -101,7 +101,7 @@ const processSteps = [
     variant: "cyan" as const,
     title: "Build & Integrate",
     description:
-      "Custom Next.js development with RSVP forms, ticketing, payment gateways, countdown timers, and Google Maps — fully connected.",
+      "Custom Next.js development with RSVP forms, ticketing, payment gateways, countdown timers, and Google Maps - fully connected.",
   },
   {
     step: 4,
@@ -115,7 +115,7 @@ const processSteps = [
     variant: "lime" as const,
     title: "Launch & Go Live",
     description:
-      "Your event page goes live on your custom link. Share it with guests and watch RSVPs roll in — everything tracked in your private dashboard.",
+      "Your event page goes live on your custom link. Share it with guests and watch RSVPs roll in - everything tracked in your private dashboard.",
   },
 ];
 
@@ -189,7 +189,7 @@ export const PrivateEventPage = () => {
             {[
               {
                 value: "R0",
-                label: "Monthly fees — ever, for any package",
+                label: "Monthly fees - ever, for any package",
                 color: "#e7fe56",
               },
               {
@@ -204,7 +204,7 @@ export const PrivateEventPage = () => {
               },
               {
                 value: "100%",
-                label: "Private RSVP list — guests only, no leaks",
+                label: "Private RSVP list - guests only, no leaks",
                 color: "#e7fe56",
               },
             ].map((stat, idx) => (
@@ -371,7 +371,7 @@ export const PrivateEventPage = () => {
               <span className="italic text-outline-2">included</span>
             </h2>
             <p className="text-lg text-white/70 max-w-[600px]">
-              Every event website ships with built-in peace of mind — no hidden
+              Every event website ships with built-in peace of mind - no hidden
               costs, no surprises.
             </p>
           </div>
@@ -392,7 +392,7 @@ export const PrivateEventPage = () => {
                 6-Month Warranty
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
-                Bug fixes, content edits, and browser compatibility — all
+                Bug fixes, content edits, and browser compatibility - all
                 covered for 6 months post-launch at no extra charge. Last-minute
                 event changes included.
               </p>
@@ -426,7 +426,7 @@ export const PrivateEventPage = () => {
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
                 Your event gets its own branded link or domain with fast hosting
-                and an SSL certificate — included in every package at no
+                and an SSL certificate - included in every package at no
                 additional cost.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
@@ -459,7 +459,7 @@ export const PrivateEventPage = () => {
               </h3>
               <p className="text-black/80 text-sm md:text-base leading-relaxed font-medium flex-1">
                 Track RSVPs in real-time, export your guest list for caterers,
-                and monitor ticket or fund contributions — all from your private
+                and monitor ticket or fund contributions - all from your private
                 dashboard.
               </p>
               <div className="mt-5 pt-4 border-t border-black/10 space-y-1.5">
@@ -491,7 +491,7 @@ export const PrivateEventPage = () => {
               Our <span className="italic text-outline-15">process</span>
             </h2>
             <p className="mt-4 text-white/70 text-lg max-w-[600px]">
-              From first conversation to your live event page — as fast as 3
+              From first conversation to your live event page - as fast as 3
               working days.
             </p>
           </div>
