@@ -23,17 +23,17 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "/projects/xclusive-barber",
   },
   {
-    imageUrl: "/preview/www.sssksolutions.co.za.webp",
-    imageAlt: "SSSK Environmental Services Website Preview",
-    title: "SSSK Environmental Services",
+    imageUrl: "/preview/cbconsult.co.za.png",
+    imageAlt: "CB Consult Website Preview",
+    title: "CB Consult",
     tags: [
-      { text: "Logistics & Services", className: tagStyle.lime },
-      { text: "Business Solutions", className: tagStyle.purple },
+      { text: "Business Solutions", className: tagStyle.lime },
+      { text: "Consulting", className: tagStyle.purple },
       { text: "Informational", className: tagStyle.teal },
     ],
     description:
-      "Leading the way in environmental protection and hazardous spill remediation. Emergency spill response, pollution control, and waste management. 24/7 helpline: 071 788 1312.",
-    discoverMoreUrl: "https://sssksolutions.co.za",
+      "Professional business consulting services website, providing expert advice and solutions for growing businesses.",
+    discoverMoreUrl: "https://cbconsult.co.za",
   },
   {
     imageUrl: "/preview/www.ndilayavhupo.co.za_(laptop) (2).webp",
@@ -50,20 +50,31 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "/projects/ndilayavhupo-travels",
   },
   {
-    imageUrl: "/preview/www.zenakocleaning.co.za_(laptop).webp",
-    imageAlt:
-      "Professional cleaning services web design for Zenako Cleaning custom booking platform by LMWebDesign cleaning company website developers",
-    title: "Zenako Cleaning",
+    imageUrl: "/preview/www.sssksolutions.co.za.webp",
+    imageAlt: "SSSK Environmental Services Website Preview",
+    title: "SSSK Environmental Services",
     tags: [
-      { text: "Cleaning & Services", className: tagStyle.lime },
-      { text: "Booking Platform", className: tagStyle.purple },
-      { text: "Service Business", className: tagStyle.teal },
+      { text: "Logistics & Services", className: tagStyle.lime },
+      { text: "Business Solutions", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
     ],
     description:
-      "Professional cleaning services web design featuring a modern booking platform for Zenako Cleaning, enabling customers to schedule services online and streamlining their business operations.",
-    discoverMoreUrl: "https://www.zenakocleaning.co.za/",
+      "Leading the way in environmental protection and hazardous spill remediation. Emergency spill response, pollution control, and waste management. 24/7 helpline: 071 788 1312.",
+    discoverMoreUrl: "https://sssksolutions.co.za",
   },
-
+  {
+    imageUrl: "/preview/charloxytransport.co.za.png",
+    imageAlt: "Charloxy Transport Website Preview",
+    title: "Charloxy Transport",
+    tags: [
+      { text: "Logistics & Transport", className: tagStyle.lime },
+      { text: "Fleet Management", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "Transport and logistics company website showcasing fleet services, route planning, and secure cargo delivery solutions.",
+    discoverMoreUrl: "https://charloxytransport.co.za",
+  },
   {
     imageUrl: "/preview/mrfloatlogistics.com_(laptop) (6).webp",
     imageAlt:
@@ -77,73 +88,6 @@ export const projects: ProjectCardProps[] = [
     description:
       "Transport company web design with custom WhatsApp booking integration where we unified six services (taxi, car hire, airport shuttles, deliveries) into one high-converting platform, tripling daily enquiries.",
     discoverMoreUrl: "/projects/mr-float-logistics",
-  },
-  {
-    imageUrl: "/preview/aluminiumweb.vercel.app_(laptop) (1).webp",
-    imageAlt: "Vuza Trading",
-    title: "Vuza Trading",
-    tags: [
-      { text: "Logistics & Services", className: tagStyle.lime },
-      { text: "Business Solutions", className: tagStyle.purple },
-      { text: "Informational", className: tagStyle.teal },
-    ],
-    description:
-      "A professional trading platform with real-time analytics and user-friendly interface.",
-    discoverMoreUrl: "https://aluminiumweb.vercel.app/",
-  },
-  {
-    imageUrl: "/preview/marshal attorney.webp",
-    imageAlt:
-      "Law firm web design for Marshal Ndlovu Attorneys professional legal services website by LMWebDesign",
-    title: "Marshal Ndlovu Attorneys",
-    tags: [
-      { text: "Legal Services", className: tagStyle.lime },
-      { text: "Professional Portfolios", className: tagStyle.purple },
-      { text: "Informational", className: tagStyle.teal },
-    ],
-    description:
-      "South African law firm providing professional legal services to individuals, businesses, and public sector organizations. Specializing in conveyancing, family law, litigation, labour law, estate administration, and notarial services with a national network of associates.",
-    discoverMoreUrl: "https://www.manattorneys.co.za/",
-  },
-  {
-    imageUrl: "/preview/www.opticoreholdings.co.za_(Nest Hub Max) (1).webp",
-    imageAlt:
-      "Professional facility management and hygiene services web design for OptiCore Holdings by LMWebDesign",
-    title: "OptiCore Holdings",
-    tags: [
-      { text: "Logistics & Services", className: tagStyle.lime },
-      { text: "Business Solutions", className: tagStyle.purple },
-      { text: "Informational", className: tagStyle.teal },
-    ],
-    description:
-      "Professional facility management and hygiene operations across Johannesburg and South Africa. Providing reliable commercial and residential cleaning, medical-grade disinfection, pest control, and PPE medical supplies.",
-    discoverMoreUrl: "https://www.opticoreholdings.co.za/",
-  },
-  {
-    imageUrl: "/preview/mothupi-and-lesego (1).webp",
-    imageAlt: "Mothupi & Lesego - Wedding",
-    title: "Mothupi & Lesego - Wedding",
-    tags: [
-      { text: "Personal & Events", className: tagStyle.lime },
-      { text: "Interactive / Special", className: tagStyle.purple },
-      { text: "Informational", className: tagStyle.teal },
-    ],
-    description:
-      "A wedding invitation with an interactive map and a gift registry.",
-    discoverMoreUrl: "https://mothupi-and-lesego.co.za",
-  },
-
-  {
-    imageUrl: "/preview/monareselahle.co.za_(laptop) (1).webp",
-    imageAlt: "Monare Selahle",
-    title: "Monare Selahle",
-    tags: [
-      { text: "Technology", className: tagStyle.lime },
-      { text: "Professional Portfolios", className: tagStyle.purple },
-      { text: "Showcase", className: tagStyle.teal },
-    ],
-    description: "Modern portfolio for a Computer Science student.",
-    discoverMoreUrl: "https://monareselahle.co.za",
   },
   {
     imageUrl: "/preview/www.rokundamboyi.com_(laptop) (1).webp",
@@ -172,6 +116,20 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "https://shotsbyozee.co.za",
   },
   {
+    imageUrl: "/preview/marshal attorney.webp",
+    imageAlt:
+      "Law firm web design for Marshal Ndlovu Attorneys professional legal services website by LMWebDesign",
+    title: "Marshal Ndlovu Attorneys",
+    tags: [
+      { text: "Legal Services", className: tagStyle.lime },
+      { text: "Professional Portfolios", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "South African law firm providing professional legal services to individuals, businesses, and public sector organizations. Specializing in conveyancing, family law, litigation, labour law, estate administration, and notarial services with a national network of associates.",
+    discoverMoreUrl: "https://www.manattorneys.co.za/",
+  },
+  {
     imageUrl: "/preview/uvhu-portfolio-9rw1.vercel.app_(laptop).webp",
     imageAlt: "Gordian Malaka",
     title: "Gordian Malaka",
@@ -182,6 +140,72 @@ export const projects: ProjectCardProps[] = [
     ],
     description: "A film student who has a passion for photography.",
     discoverMoreUrl: "https://uvhu-portfolio-9rw1.vercel.app/",
+  },
+  {
+    imageUrl: "/preview/www.zenakocleaning.co.za_(laptop).webp",
+    imageAlt:
+      "Professional cleaning services web design for Zenako Cleaning custom booking platform by LMWebDesign cleaning company website developers",
+    title: "Zenako Cleaning",
+    tags: [
+      { text: "Cleaning & Services", className: tagStyle.lime },
+      { text: "Booking Platform", className: tagStyle.purple },
+      { text: "Service Business", className: tagStyle.teal },
+    ],
+    description:
+      "Professional cleaning services web design featuring a modern booking platform for Zenako Cleaning, enabling customers to schedule services online and streamlining their business operations.",
+    discoverMoreUrl: "https://www.zenakocleaning.co.za/",
+  },
+  {
+    imageUrl: "/preview/aluminiumweb.vercel.app_(laptop) (1).webp",
+    imageAlt: "Vuza Trading",
+    title: "Vuza Trading",
+    tags: [
+      { text: "Logistics & Services", className: tagStyle.lime },
+      { text: "Business Solutions", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "A professional trading platform with real-time analytics and user-friendly interface.",
+    discoverMoreUrl: "https://aluminiumweb.vercel.app/",
+  },
+  {
+    imageUrl: "/preview/www.opticoreholdings.co.za_(Nest Hub Max) (1).webp",
+    imageAlt:
+      "Professional facility management and hygiene services web design for OptiCore Holdings by LMWebDesign",
+    title: "OptiCore Holdings",
+    tags: [
+      { text: "Logistics & Services", className: tagStyle.lime },
+      { text: "Business Solutions", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "Professional facility management and hygiene operations across Johannesburg and South Africa. Providing reliable commercial and residential cleaning, medical-grade disinfection, pest control, and PPE medical supplies.",
+    discoverMoreUrl: "https://www.opticoreholdings.co.za/",
+  },
+  {
+    imageUrl: "/preview/mothupi-and-lesego (1).webp",
+    imageAlt: "Mothupi & Lesego - Wedding",
+    title: "Mothupi & Lesego - Wedding",
+    tags: [
+      { text: "Personal & Events", className: tagStyle.lime },
+      { text: "Interactive / Special", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "A wedding invitation with an interactive map and a gift registry.",
+    discoverMoreUrl: "https://mothupi-and-lesego.co.za",
+  },
+  {
+    imageUrl: "/preview/monareselahle.co.za_(laptop) (1).webp",
+    imageAlt: "Monare Selahle",
+    title: "Monare Selahle",
+    tags: [
+      { text: "Technology", className: tagStyle.lime },
+      { text: "Professional Portfolios", className: tagStyle.purple },
+      { text: "Showcase", className: tagStyle.teal },
+    ],
+    description: "Modern portfolio for a Computer Science student.",
+    discoverMoreUrl: "https://monareselahle.co.za",
   },
 ];
 
