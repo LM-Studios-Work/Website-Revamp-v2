@@ -50,6 +50,19 @@ export const projects: ProjectCardProps[] = [
     discoverMoreUrl: "/projects/ndilayavhupo-travels",
   },
   {
+    imageUrl: "/preview/www.angiescleaningcenturion.co.za_(lomagugu).webp",
+    imageAlt: "Angie's Cleaning Centurion Website Preview",
+    title: "Angie's Cleaning Centurion",
+    tags: [
+      { text: "Cleaning & Services", className: tagStyle.lime },
+      { text: "Service Business", className: tagStyle.purple },
+      { text: "Informational", className: tagStyle.teal },
+    ],
+    description:
+      "Professional cleaning services providing top-quality residential and commercial cleaning solutions in Centurion.",
+    discoverMoreUrl: "https://www.angiescleaningcenturion.co.za",
+  },
+  {
     imageUrl: "/preview/www.sssksolutions.co.za.webp",
     imageAlt: "SSSK Environmental Services Website Preview",
     title: "SSSK Environmental Services",
