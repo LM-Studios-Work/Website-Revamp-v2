@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export type ProjectCardProps = {
   imageUrl: string;
@@ -51,9 +52,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
           />
         </div>
         <div className="grow p-6">
-          <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
-            {props.title}
-          </h3>
+          <Link href={props.discoverMoreUrl} className="hover:text-white/80 transition-colors">
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
+              {props.title}
+            </h3>
+          </Link>
           <ul className="list-none pl-0 mb-4 flex flex-wrap gap-1.5">
             {props.tags.map((tag, index) => (
               <li key={index} className={tag.className}>
@@ -66,8 +69,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
           </p>
         </div>
         <div className="px-6 pb-6">
-          <a
+          <Link
             href={props.discoverMoreUrl}
+            aria-label={`Discover more about ${props.title}`}
             className="inline-flex items-center text-sm font-medium text-white hover:text-[#d4ff00] transition-colors"
           >
             <span className="w-8 h-8 bg-[#d4ff00] rounded-full flex items-center justify-center mr-2.5 transition-transform duration-300 md:group-hover:rotate-45">
@@ -86,7 +90,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
               </svg>
             </span>
             Discover more
-          </a>
+          </Link>
         </div>
       </div>
     </div>
